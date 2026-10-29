@@ -1,0 +1,9 @@
+{
+  "release_url": "https://github.com/ages2001/Acik-Kapi-Oyunu/releases/tag/fp10-nt31-dev-2026-10-29-r2",
+  "download_url": "https://github.com/ages2001/Acik-Kapi-Oyunu/releases/download/fp10-nt31-dev-2026-10-29-r2/FP10R2.zip",
+  "bytes": 130252841,
+  "sha256": "40422b8d13510f272d979844b731ba5261cbabddefdaf055618836a00b85af94",
+  "download_and_hash_verified": true,
+  "source_commit": "eb07491eed3e41aaa43cbf415491f1f42bda7de2",
+  "workflow_run": "40947655323"
+}
