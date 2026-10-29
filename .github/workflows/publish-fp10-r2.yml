@@ -1,0 +1,75 @@
+name: Publish FP10 R2 development archive
+on:
+  push:
+    branches: [fp10-r2-package]
+    paths:
+      - 'downloads/fp10-r2/**'
+      - '.github/workflows/publish-fp10-r2.yml'
+permissions:
+  contents: write
+concurrency:
+  group: publish-fp10-r2
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reconstruct and verify original archive
+        working-directory: downloads/fp10-r2
+        run: |
+          set -euo pipefail
+          cat FP10R2.zip.001 FP10R2.zip.002 FP10R2.zip.003 FP10R2.zip.004 FP10R2.zip.005 > FP10R2.zip
+          sha256sum -c SHA256.txt
+          test "$(stat -c %s FP10R2.zip)" = 130252841
+          unzip -tq FP10R2.zip
+      - name: Publish prerelease and verify downloaded asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TARGET: ${{ github.sha }}
+        working-directory: downloads/fp10-r2
+        run: |
+          set -euo pipefail
+          tag=fp10-nt31-dev-2026-10-29-r2
+          if gh release view "$tag" --json url > /dev/null 2>&1; then
+            gh release download "$tag" --pattern FP10R2.zip --dir existing
+            (cd existing && sha256sum -c ../SHA256.txt)
+          else
+            gh release create "$tag" FP10R2.zip SHA256.txt \
+              --target "$RELEASE_TARGET" --prerelease \
+              --title 'Flash Player NT 3.1 — R2 development snapshot' \
+              --notes-file RELEASE-NOTES.md
+          fi
+          gh release download "$tag" --pattern FP10R2.zip --dir verified
+          (cd verified && sha256sum -c ../SHA256.txt)
+          gh release view "$tag" --json url,assets > release-response.json
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          release = json.loads(Path('release-response.json').read_text())
+          asset = next(a for a in release['assets'] if a['name'] == 'FP10R2.zip')
+          assert asset['size'] == 130252841
+          assert asset['state'] == 'uploaded'
+          receipt = {
+              'release_url': release['url'],
+              'download_url': asset['url'],
+              'bytes': asset['size'],
+              'sha256': '40422b8d13510f272d979844b731ba5261cbabddefdaf055618836a00b85af94',
+              'download_and_hash_verified': True,
+              'source_commit': os.environ['RELEASE_TARGET'],
+              'workflow_run': os.environ['GITHUB_RUN_ID']
+          }
+          Path('RELEASE.json').write_text(json.dumps(receipt, indent=2) + '\n')
+          PY
+      - name: Record verified delivery on package branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add downloads/fp10-r2/RELEASE.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record verified FP10 R2 release download'
+            git push origin HEAD:fp10-r2-package
+          fi
