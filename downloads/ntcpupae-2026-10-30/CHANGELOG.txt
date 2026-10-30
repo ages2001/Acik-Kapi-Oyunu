@@ -1,0 +1,10 @@
+Changelog:
+
+2026-10-30 - NT 3.1 sparse-PFN fix
+
+- Added a validated NT 3.1 MP PFN-record mapping guard for the observed kernel.
+- Preserved the existing PE section layout and original valid-record behavior.
+- Enabled loader replacement on NT 3.1 and retained the first *.OLD backups.
+- Added sparse-PFN status to the GUI completion message.
+- Rebuilt the GUI with its icon, NT 3.1 headers and explicit stack sizes.
+- Added four-processor desktop evidence and documented the limits of validation.
