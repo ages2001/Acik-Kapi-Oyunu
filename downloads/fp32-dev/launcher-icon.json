@@ -2,9 +2,10 @@
   "source_sha256": "a4b333ac1da12026989549015303d82231982838bccfb544ba5fd188746066f0",
   "source_group": 200,
   "launcher_group": 200,
-  "all_frames_byte_identical": true,
-  "all_icon_and_group_resources_byte_identical": true,
-  "resource_count": 46,
+  "original_frames_byte_identical": true,
+  "legacy_fallbacks": "16/32px VGA16 palette fallback; alpha <128 becomes transparent. Original 32-bit images retained.",
+  "selected_icon": "Dark-red application logo, not the SWF document icon",
+  "resource_count": 8,
   "frames": [
     {
       "width": 256,
@@ -37,5 +38,5 @@
       "sha256": "3bd1e65583ee99020f114d24e6009f5db92f3335254b523a67170f0223e9a968"
     }
   ],
-  "launcher_sha256": "e655366782cc64f11b6d58f27346e5873c9611a7cbcd4b0c1d53f307900f7551"
+  "launcher_sha256": "fb6b0d197ec600fec0697d83d428f4f438f90feefa4beaef37421862f4ce3794"
 }

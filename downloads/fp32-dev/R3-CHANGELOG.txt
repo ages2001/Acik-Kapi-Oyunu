@@ -1,0 +1,35 @@
+Flash Player 32 legacy port - 2026-11-01 R3 development checkpoint
+
+This is not a complete port or a universal installer.
+
+Changes
+- Store legacy saved-game data under installation-owned UserData, with full
+  NT user SID separation and persistent FAT-compatible Unicode name mapping.
+- Preserve private save data through uninstall.
+- Implement real Automation BSTR allocation/free with native-provider preference.
+- Make routine diagnostics opt-in via FP32_TRACE=1. Fatal exception and missing
+  required API reports remain enabled. Preserve callers' last-error values.
+- Correct drive-root launcher working directory and report startup error codes.
+- Select the original dark-red application icon; retain original high-color
+  frames and add legacy 16-color fallbacks. Fix shortcut icon source.
+- Update installer payload; retain Next/Back, editable path and progress UI.
+
+Validation
+- NT3.1 save-path adapter: 48 checks, zero errors.
+- NT3.1 heap locks: 16 checks, zero errors.
+- NT3.1 Automation strings: 12 checks, zero errors.
+- NT3.1 opt-in/fatal diagnostics: 8 checks, zero errors.
+- Real AS2 SharedObject survives player and Windows restarts.
+- Fresh R3 native installation and uninstall tested; 37 UserData files retain
+  identical paths, sizes and CRC32 values after removal. Original FP32 reloads
+  counter 1 after Windows restart and reinstallation of the same package.
+
+Known blockers
+- SM63 Start can produce an unexpected dynamic Star Coin overlay; full gameplay
+  and acceptable speed remain unverified.
+- 123 required imported functions still end diagnostic execution when reached.
+- Experimental HeapWalk failed large-allocation coverage and is excluded.
+- Full Win9x/Win32s/NT3.5x/NT4 runtime integration and tests are unfinished.
+- No validated GPU acceleration, non-SSE2 FP32 path, or YMM/ZMM preservation.
+- Installer currently accepts NT3.1 only and requires a destination without
+  spaces for native Program Manager shortcut icons.

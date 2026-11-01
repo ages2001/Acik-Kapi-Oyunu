@@ -1,0 +1,10 @@
+{
+  "os": "Windows NT 3.1",
+  "save_tree_files": 37,
+  "before_after_native_manifest_equal": true,
+  "manifest_sha256": "ad65f3d8b4499ff8bd8d8f28e2214dc2a6f240127994fe2d2b6273fd663b9b93",
+  "scope": "One AS2 SharedObject on one NT3.1 account. All private storage paths, sizes and CRC32 values identical immediately after uninstall; original FP32 read counter 1 after Windows restart and reinstallation.",
+  "reinstall_after_windows_restart": true,
+  "original_fp32_loaded_counter_after_reinstall": 1,
+  "screenshot": "screenshots/678-r3-save-after-reinstall.png"
+}

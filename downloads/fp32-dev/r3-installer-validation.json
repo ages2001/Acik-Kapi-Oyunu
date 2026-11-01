@@ -1,0 +1,19 @@
+{
+  "installer_sha256": "38ca32a01ca5ea93ac6881b65f5fc3cf018550e4a70896d738b318253a78a3ca",
+  "os": "Windows NT 3.1",
+  "default_path": "C:\\FP10",
+  "wizard_next_back_finish": true,
+  "fresh_install_and_reinstall": true,
+  "player_shortcut_native_double_click": true,
+  "uninstaller_shortcut_native_double_click": true,
+  "uninstaller_shortcut_confirmation_cancelled_without_removal": true,
+  "swf_association_native_shell_execute_with_space_in_name": true,
+  "swf_association_fixture": "C:\\FP32\\RED A.SWF",
+  "uninstall_restored_prior_swf_class": "ShockwaveFlash.ShockwaveFlash",
+  "save_preservation": "r3-save-uninstall.json",
+  "limits": [
+    "NT3.1 only; no claim of universal installer.",
+    "No full native File Manager double-click test in this R3 run; ShellExecute and both Program Manager shortcuts verified.",
+    "No full gameplay or full menu-command coverage."
+  ]
+}

@@ -4,7 +4,7 @@
   "completed_port": false,
   "fp32_player_window_reached": true,
   "fp32_swf_playback_verified": true,
-  "last_guest_cpu": "QEMU TCG Pentium III + SSE2, one CPU, 64 MiB, classic VGA; WINSIMD 1.1 plus current UP/MP XMM research driver",
+  "last_guest_cpu": "QEMU TCG Pentium III + SSE2, one CPU, 512 MiB with supplied NTLDR/NTDETECT, WINVBE 800x600x32, AC97; WINSIMD plus XMM guard",
   "passed_checks": {
     "file_adapter": {
       "nt31": 12,
@@ -66,6 +66,85 @@
       "player_files_removed": true,
       "unrelated_root_and_app_files_preserved": true,
       "uninstaller_removed_after_reboot": true
+    },
+    "save_path_adapter": {
+      "nt31": 48,
+      "errors": 0,
+      "includes": [
+        "Unicode long names",
+        "extended path lookup",
+        "buffer sizing",
+        "deliberate alias hash collision",
+        "corrupt metadata rejection"
+      ]
+    },
+    "heap_lock": {
+      "nt31": 16,
+      "errors": 0
+    },
+    "sharedobject_persistence": {
+      "os": "Windows NT 3.1",
+      "filesystem": "FAT16",
+      "engine": "original Adobe Flash Player 32.0.0.465 with compatibility DLLs",
+      "fixture": "C:\\FP32\\SAVETEST.SWF",
+      "storage": "D:\\UserData\\<full SID in 8-character components>",
+      "native_os_appdata_required": false,
+      "sharedobject_type": "object",
+      "flush_result": true,
+      "counter_written": 1,
+      "counter_reopened": 1,
+      "counter_after_guest_reboot": 1,
+      "physical_sol": "USERDATA/01050000/00000005/15000000/FE42A806/582B1109/271E2600/E8030000/3A454B3B/78196FB6/2E7109F9/AFFB1FDB/047846F0/91C956B2/5CDAAC4E/A1AE4C1A",
+      "sol_bytes": 100,
+      "sol_sha256": "66d049f2ca74fac61480ba7aaf96721438566f9b67d7f76a6a16726a222ea0a3",
+      "sol_counter_decoded": 1.0,
+      "screenshots": [
+        "629-save-flush-result.png",
+        "630-save-reopen.png",
+        "634-save-after-reboot.png"
+      ],
+      "limits": [
+        "One AS2 SharedObject probe on one NT 3.1 account.",
+        "Not a pass for every game, AS3 save code, other OSes or user isolation. R3 uninstall/reinstall was subsequently verified separately."
+      ]
+    },
+    "automation_strings": {
+      "nt31_checks": 12,
+      "errors": 0
+    },
+    "optional_diagnostics": {
+      "nt31_checks": 8,
+      "errors": 0,
+      "fatal_diagnostics_always_enabled": true
+    },
+    "r3_installer_save_preservation": {
+      "os": "Windows NT 3.1",
+      "save_tree_files": 37,
+      "before_after_native_manifest_equal": true,
+      "manifest_sha256": "ad65f3d8b4499ff8bd8d8f28e2214dc2a6f240127994fe2d2b6273fd663b9b93",
+      "scope": "One AS2 SharedObject on one NT3.1 account. All private storage paths, sizes and CRC32 values identical immediately after uninstall; original FP32 read counter 1 after Windows restart and reinstallation.",
+      "reinstall_after_windows_restart": true,
+      "original_fp32_loaded_counter_after_reinstall": 1,
+      "screenshot": "screenshots/678-r3-save-after-reinstall.png"
+    },
+    "r3_installer": {
+      "installer_sha256": "38ca32a01ca5ea93ac6881b65f5fc3cf018550e4a70896d738b318253a78a3ca",
+      "os": "Windows NT 3.1",
+      "default_path": "C:\\FP10",
+      "wizard_next_back_finish": true,
+      "fresh_install_and_reinstall": true,
+      "player_shortcut_native_double_click": true,
+      "uninstaller_shortcut_native_double_click": true,
+      "uninstaller_shortcut_confirmation_cancelled_without_removal": true,
+      "swf_association_native_shell_execute_with_space_in_name": true,
+      "swf_association_fixture": "C:\\FP32\\RED A.SWF",
+      "uninstall_restored_prior_swf_class": "ShockwaveFlash.ShockwaveFlash",
+      "save_preservation": "r3-save-uninstall.json",
+      "limits": [
+        "NT3.1 only; no claim of universal installer.",
+        "No full native File Manager double-click test in this R3 run; ShellExecute and both Program Manager shortcuts verified.",
+        "No full gameplay or full menu-command coverage."
+      ]
     }
   },
   "native_probe": {
@@ -106,7 +185,7 @@
     "NT3.51/NT4 FP32 runtime tests; NT3.5/Win98/ME images not staged.",
     "Final classic VGA tests on every target OS."
   ],
-  "installer": "Single-file NT3.1 development SETUP32.EXE: Next/Back/Cancel, editable destination, progress, Finish. Default C:\\FP10, separate APP folder, two shortcuts, native association. Custom install/uninstall restores previous SWF value and preserves unrelated root/APP files. Current default install and final shortcut/double-click validation ongoing. Requires separate XMM research driver; not universal.",
+  "installer": "R3 single-file NT3.1 development installer freshly installed, uninstalled and reinstalled in C:\\FP10. Next/Back, editable destination, progress, Finish, both icon sources and SWF registration verified. Uninstall restores the prior association and preserves all 37 private save files; the original player reloads its AS2 counter after Windows restart/reinstall. Other-OS installers remain unfinished; separate XMM driver required.",
   "fp10_checkpoint": "fp32/checkpoints/fp10-before-fp32.zip",
   "test_screenshots": [
     "screenshots/438-win32s-capabilities.png",
@@ -141,7 +220,20 @@
     "screenshots/585-fp32-shortcuts.png",
     "screenshots/583-fp32-double-click.png",
     "screenshots/589-original-icons-preserved.png",
-    "screenshots/590-icon-launcher-blank-window.png"
+    "screenshots/590-icon-launcher-blank-window.png",
+    "screenshots/629-save-flush-result.png",
+    "screenshots/630-save-reopen.png",
+    "screenshots/634-save-after-reboot.png",
+    "screenshots/649-sm63-fresh-path.png",
+    "screenshots/652-linux-sm63-start.png",
+    "screenshots/654-nt31-clean-save-menu.png",
+    "screenshots/667-r3-path.png",
+    "screenshots/668-r3-progress.png",
+    "screenshots/670-r3-shortcuts.png",
+    "screenshots/678-r3-save-after-reinstall.png",
+    "screenshots/679-r3-swf-association.png",
+    "screenshots/680-r3-shortcut-launch.png",
+    "screenshots/681-r3-uninstall-shortcut.png"
   ],
   "guest_notes": {
     "win95": "Serial helper now works. Floppy drive A: remains unavailable to this guest. AC97 driver installation pending. Latest shutdown powered QEMU off normally. Earlier PnP shutdown stalled; QEMU was stopped before offline copying.",
@@ -171,5 +263,20 @@
     "Megaman X Virus Mission",
     "Takeover"
   ],
-  "requested_game_inputs": "All five additional titles downloaded and SWF stream lengths verified. Final Fantasy Sonic X6; MMS RPG 1-4; Sonic RPG Eps 10 v1.3.6; Mega Man X Virus Mission; Takeover. Sources and SHA256 in game-inputs.json. Gameplay remains untested for these additional titles."
+  "requested_game_inputs": "All five additional titles downloaded and SWF stream lengths verified. Final Fantasy Sonic X6; MMS RPG 1-4; Sonic RPG Eps 10 v1.3.6; Mega Man X Virus Mission; Takeover. Sources and SHA256 in game-inputs.json. Gameplay remains untested for these additional titles.",
+  "saved_game_policy": "NT3.xx and Win3.1x/Win32s must not assume native AppData. Use application-owned UserData, preserving it on uninstall/update; see SAVED-GAMES.md. Current full runtime tests are NT3.1 only.",
+  "required_imports_remaining_unimplemented": 123,
+  "rea_folder_path_evidence": "reports/rea-folder-path.json: original 0x004d358e wrapper confirms SHGetFolderPathW callback behavior.",
+  "sm63_current_blocker": "Unexpected dynamic StarcoinMessage after Start, including fresh movie path and diagnostic loadMovie wrapper. Full gameplay is not verified.",
+  "heap_walk_experiment": {
+    "enabled_in_product": false,
+    "checks": 751,
+    "errors": 2,
+    "reason": "NT3.1 large virtual allocations are absent from native heap segment lists; two 2 MiB allocation coverage assertions failed."
+  },
+  "baseline_comparison": {
+    "linux_adobe_fp32": "Normal SM63 menu reached after Start. No audio baseline; no Windows equivalence claim.",
+    "wine_wow64": "Failed to establish a usable original Windows FP32 baseline; no port conclusion drawn."
+  },
+  "trace_policy": "Routine tracing requires FP32_TRACE=1. Missing required APIs and unhandled exception reports remain enabled."
 }

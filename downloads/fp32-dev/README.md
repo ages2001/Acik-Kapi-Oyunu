@@ -1,52 +1,58 @@
 # FP32 legacy-port development checkpoint
 
-[Download the complete FP32DEV-20261101-R2.zip](FP32DEV-20261101-R2.zip?raw=true)
-or the [single-file NT 3.1 development installer](SETUP32-20261101-R2.EXE?raw=true).
+[Download the complete R3 ZIP](FP32DEV-20261101-R3.zip?raw=true) or the
+[single-file NT 3.1 development installer](SETUP32-20261101-R3.EXE?raw=true).
 
-The original Adobe FP32 now opens its native window and plays specific SWF
-fixtures on NT 3.1, including AS2 motion, AS3 shapes, a captured PCM tone, and
-different video frames. SM63 reaches its first level and responds to arrow
-input and the tutorial's Z key. Full gameplay and acceptable speed are not
-established: classic VGA currently shows approximately 1-5 FPS in that scene.
+**This is not a completed cross-platform port.** Original Adobe FP32 remains
+the engine. The package contains compatibility source, original build inputs,
+native probes, test evidence and the earlier FP10 checkpoint. Games and guest
+OS disks are not bundled.
 
-**This is not a completed cross-platform port.** The NT 3.1 development
-installer has Next/Back, editable destination, progress, two shortcuts and SWF
-association handling. It defaults to C:\FP10 and currently requires a folder
-without spaces. It requires SSE2 and a separately installed compatible XMM
-research driver. The installer does not support the other requested OSes yet.
-The ZIP includes source, original inputs, probes, evidence, and the earlier
-FP10 checkpoint. The original Adobe engine remains the runtime.
+R3 fixes legacy save storage without assuming an OS AppData folder, real BSTR
+allocation, drive-root launcher startup, routine diagnostic overhead and the
+application icon. The original dark-red application logo is selected; legacy
+16-color fallbacks accompany the unchanged high-color frames. The uninstaller
+uses a red cross. See [changes](R3-CHANGELOG.txt) and [icon details](ORIGINAL-ICON.md).
 
-The launcher retains every original icon and group resource byte-for-byte;
-native NT31 icon extraction matches the engine. The uninstaller has a red
-cross. See [icon evidence](ORIGINAL-ICON.md). Additional requested game files
-have been downloaded and their SWF lengths verified, but have not yet been
-gameplay-tested: see [game sources](GAME-INPUTS.md). Games are not bundled.
+The R3 installer was freshly installed, removed and reinstalled on NT 3.1.
+Next/Back/Finish, destination selection, progress, both native Program Manager
+shortcut launches and native SWF association opening were verified. All 37
+private save files retained identical paths, sizes and CRC32 values after
+uninstall; original FP32 read counter 1 after Windows restart/reinstallation.
+See [installer evidence](r3-installer-validation.json) and
+[save evidence](r3-save-uninstall.json). Back up the **entire UserData tree**,
+including name maps; see [saved-game storage](SAVED-GAMES.md).
 
-The original CryptoAPI startup failure was resolved with a real adapted NT4
-RSA provider. Ordinal imports, NULL-window-procedure handling and an AS3
-critical-section adapter were also fixed and tested. REA/Ghidra analysis of
-the original AS3 lock function is included. Earlier ZIPs describe superseded
-startup failures and remain available only as historical checkpoints.
+The installer supports NT 3.1 only, defaults to C:\FP10, and currently requires
+a destination without spaces for native Program Manager icons. SSE2 and a
+separately loaded compatible XMM research driver are prerequisites.
 
-Win9x/Win32s runtime integration, Win32s threads, all-OS installers/tests,
-complete menu/game/media validation, performance and production SIMD context
-preservation remain unfinished. No FP32 GPU acceleration is validated.
-See [STATUS.json](STATUS.json) for the detailed scope.
+SM63 still produces an unexpected Star Coin overlay after Start in the current
+lab. **Full gameplay and acceptable performance have not passed.** Earlier
+first-level observations do not override this current regression. See
+[the blocker report](SM63-CURRENT-BLOCKER.md). Another 123 required imported
+functions still stop diagnostic execution when reached; they are not success
+stubs. The experimental HeapWalk implementation failed large-allocation tests
+and is excluded.
 
-Separate packages: [WINSIMD XMM research checkpoint](../winsimd-1.2-dev/README.md)
-and [NTCPUPAE NT31 patcher fix](../ntcpupae-2026-10-30/README.md).
+Full Win9x/Win32s/NT3.5x/NT4 runtime integration, Win32s threading, universal
+installation, complete menu/media/game coverage and final per-OS VGA tests are
+unfinished. GPU acceleration and YMM/ZMM preservation are not validated.
+Additional requested games are available as test inputs but are not certified
+playable; see [game sources](GAME-INPUTS.md). See [STATUS.json](STATUS.json).
 
-ZIP: 36,147,397 bytes, 384 payload files. Every payload
-SHA-256 and ZIP CRC verified. SHA-256:
-`461477a38b9f5242b52088bd0391d594590742bb6295faa4f8cfcf3510d3b367`
+![R3 installer progress](screenshots/668-r3-progress.png)
+![Native player and uninstall icons](screenshots/670-r3-shortcuts.png)
+![Saved counter after uninstall, Windows restart and reinstall](screenshots/678-r3-save-after-reinstall.png)
 
-Installer: 19,313,296 bytes. SHA-256:
-`5d3f788ea9a4ab2fdfabd7337cbcfb7d909ded059f858df84f7be2f91e17dc3a`
+ZIP: 37,117,460 bytes; 488 payload files. Every
+ZIP CRC and payload SHA-256 was verified. SHA-256:
+`331ba481c071a9294d3f1e24f680fcb545d37401995fe211e40d17c1f3158728`
 
-The installer logic was tested before the final icon-only payload update;
-all 23 final embedded payload CRCs and hashes match their build manifest.
-Native final-launcher icon extraction and no-file startup pass. A fresh
-installation of that final payload remains to be repeated.
+Installer: 18,199,184 bytes. SHA-256:
+`38ca32a01ca5ea93ac6881b65f5fc3cf018550e4a70896d738b318253a78a3ca`
 
-[Public-download verification and R2 native follow-up screenshots](R2-FOLLOWUP.md).
+[Historical R2 ZIP](FP32DEV-20261101-R2.zip?raw=true) and
+[R2 verification](R2-FOLLOWUP.md) remain unchanged. Separate packages:
+[WINSIMD research checkpoint](../winsimd-1.2-dev/README.md) and
+[NTCPUPAE patcher fix](../ntcpupae-2026-10-30/README.md).

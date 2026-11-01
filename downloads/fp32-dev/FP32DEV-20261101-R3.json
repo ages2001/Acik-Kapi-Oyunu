@@ -1,0 +1,10 @@
+{
+  "file": "FP32DEV-20261101-R3.zip",
+  "bytes": 37117460,
+  "sha256": "331ba481c071a9294d3f1e24f680fcb545d37401995fe211e40d17c1f3158728",
+  "payload_files": 488,
+  "verification": "Every ZIP CRC and every payload SHA-256 verified.",
+  "completed_port": false,
+  "player_playback_verified": true,
+  "scope": "NT3.1 development checkpoint with tested save storage, BSTR, diagnostics and installer; SM63 gameplay and other OS runtimes remain incomplete. See STATUS.json."
+}
