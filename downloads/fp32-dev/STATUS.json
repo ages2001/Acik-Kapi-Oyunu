@@ -333,9 +333,9 @@
   "sm63_current_investigation": {
     "coin_cause": "R3 incorrectly hides PF6/PF10 even with XMM preservation active; original FP32 CRT selects a path that accepts non-finite shape hits in negative-origin geometry.",
     "fix_status": "Query-based PF6/PF10 implementation built. Native NT31 driver status, FP32 startup gate and shape fixtures pass. Full SM63 save/reopen/performance remains unfinished.",
-    "diagnostic_gameplay": "Untouched SM63 reaches second tutorial area; 41 ordinary coins, jumps, sign interaction, ground pound and water traversal observed.",
+    "diagnostic_gameplay": "Untouched SM63 reached fourth tutorial area; 79 ordinary coins, jumping, ground pound, water traversal and hover FLUDD observed. No real progression save checkpoint reached.",
     "performance": "Approximately 5\u20136 FPS in QEMU TCG; not an acceptable-speed completion.",
-    "public_zip_fix_included": false
+    "public_zip_fix_included": true
   },
   "winsimd_delivery": {
     "public_url": "https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/fp32-dev-2026-10-30/downloads/winsimd-1.2-dev/WINSIMD-1.2-DEV-20261101-R2.zip",
@@ -345,25 +345,26 @@
     "contains": "Complete source, validated NT31 UP/MP XMM guard, loader, binaries, tests, English changelog. Excludes the new readiness-query candidate."
   },
   "active_lab_resume": {
-    "game": "Untouched D:\\SM63OK.SWF, fourth tutorial area near castle platforms, hover FLUDD acquired, 72 ordinary coins; no shine yet.",
-    "state": "Main QEMU resumed with QMP cont; SM63 remains paused in the fourth tutorial area. Separate MP query lab shut down through native REBOOT after completed tests.",
+    "game": "Untouched D:\\SM63OK.SWF, fourth tutorial area, back on lower ground after upper platform attempts; hover FLUDD, 79 ordinary coins, zero shines/star coins.",
+    "state": "Main QEMU is QMP-stopped, native game active. Continue with game_input.py --suspend-vm, without --resume-before. MP query lab shut down.",
     "engine": "D:\\APP\\FP32.EXE final WinINet guard; D:\\F32K.DLL still hardware-only diagnostic F32KCPU.DLL; prior XMM guard loaded.",
-    "query_lab": "MP query protocol, 4-worker/181-affinity-round and 640-worker-lifetime tests passed. MP query test disk now has C:\\F32TEST installed and 512 MiB. Native probe saved counter 1 across OS reboot. Testing standard VGA next because Cirrus maps native dark red to pink.",
-    "new_sources": "Query-aware F32K and FPCPU built and tested in query lab. Not installed in current gameplay VM or public R3 archive."
+    "query_lab": "MP query protocol, four-worker/181-affinity-round and 640-worker-lifetime tests passed. Installed query-aware FP32 passed Start/Story and AS2 persistence across restart. Standard VGA reproduced native palette discrepancy.",
+    "new_sources": "Query-aware DLL/driver are included in published R4. Main gameplay VM still uses the hardware-only diagnostic DLL. Later input-helper changes are separate follow-up source."
   },
   "sm63_latest_gameplay": {
     "original_swf_unchanged": true,
     "native_input_only": true,
     "triple_jump_ledge_passed": true,
     "tutorial_area": 4,
-    "ordinary_coins": 72,
+    "ordinary_coins": 79,
     "shines": 0,
     "star_coins": 0,
     "real_save_reopen": "pending",
     "evidence": [
       "captures/sm63-running-up-pulses/12.png",
       "screenshots/793-sm63-after-triple.png",
-      "captures/sm63-tutorial-third-run2/17.png"
+      "captures/sm63-tutorial-third-run2/17.png",
+      "captures/sm63-main-upper-vine/08.png"
     ],
     "performance": "Native HUD varies roughly 3\u20138 FPS in these tutorial segments; performance requirement not met.",
     "hover_fludd_acquired": true,
@@ -429,7 +430,7 @@
       "screenshot": "screenshots/814-mp-missing-context-gate.png"
     }
   },
-  "fp32_installer_default_nt31": "C:\\FP32 (candidate rebuilt and native wizard/install tested; public R3 unchanged)",
+  "fp32_installer_default_nt31": "C:\\FP32, native wizard/install tested and published in R4.",
   "vga_color_limit": {
     "guest_display": "QEMU cirrus-vga, native NT31 4bpp",
     "native_GetPixel_dark_red": "0x00000080",
@@ -442,7 +443,7 @@
     "probe_uses_flash_adapter": false,
     "finding": "Native GDI FillRect and ExtractIcon/DrawIcon both show the same incorrect host-visible dark red. Do not modify icon resources to compensate before checking the emulated display.",
     "screenshot": "screenshots/816-native-vga-color-probe.png",
-    "next_check": "Standard VGA with the same guest disk.",
+    "next_check": "Identify guest/display palette cause; both Cirrus and standard VGA reproduce it.",
     "standard_vga_retest": "Same native GDI/DrawIcon host-visible colors with standard VGA and stdvga BIOS; not isolated to Cirrus.",
     "standard_vga_screenshot": "screenshots/818-standard-vga-colors.png",
     "status": "Unresolved guest/virtual-display palette discrepancy. The icon resource and native GetPixel both identify dark red; no compensating icon recolor applied."
@@ -460,5 +461,25 @@
     "scope": "Start/menu regression only. No sound device in this MP configuration; no gameplay performance comparison.",
     "story_click_reached_file_selection": true,
     "story_screenshot": "screenshots/823-mp-sm63-story.png"
+  },
+  "published_r4": {
+    "commit": "1a996b6",
+    "downloads": [
+      {
+        "url": "https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/fp32-dev-2026-10-30/downloads/fp32-dev/FP32DEV-20261101-R4.zip",
+        "http_status": 200,
+        "bytes": 43621446,
+        "sha256": "641fd1765c48e09ce90b70b7c5151d8c3bbd325e3102104783b50483fa90b224",
+        "local_copy": "/workspace/exports/FP32DEV-20261101-R4.zip"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/fp32-dev-2026-10-30/downloads/fp32-dev/SETUP32-20261101-R4.EXE",
+        "http_status": 200,
+        "bytes": 18203280,
+        "sha256": "107efab3e1e8d296b6f1a722b9188a5250b2e42540e6ad4276e963be603cda3a",
+        "local_copy": "/workspace/exports/SETUP32-20261101-R4.EXE"
+      }
+    ],
+    "zip_crc_verified": true
   }
 }
