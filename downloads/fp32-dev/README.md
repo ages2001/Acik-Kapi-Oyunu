@@ -1,23 +1,29 @@
 # FP32 legacy-port development checkpoint
 
-[Download FP32DEV.zip](FP32DEV.zip?raw=true) (21,342,653 bytes).
+[Download the current FP32DEV-20261101.zip](FP32DEV-20261101.zip?raw=true).
+28,343,088 bytes; 255 payload files. Every CRC and payload SHA-256 was verified.
 
-**This is not a completed player port or installer.** FP32 has not opened its
-player window or played a SWF on the legacy guests. The archive contains the
-original supplied player, diagnostic adaptations, source, component tests and
-the actual results, including failures. It preserves the earlier FP10 source
-checkpoint and does not replace the FP10 R2 download.
+**This is not a completed player or installer.** The original Adobe engine has
+not reached its player window or played a SWF on these legacy guests. The ZIP
+contains the supplied original, diagnostic adaptations, compatibility sources,
+component tests, logs and the preserved FP10 source checkpoint.
 
-- File adapter: 12 checks pass on NT 3.1, Windows 95 RTM and Win3.1 + Win32s 1.30c.
-- Core adapter: seven checks pass on NT 3.1 and Windows 95, including concurrent
-  threads and 2,048 list entries.
-- A one-site LFENCE adaptation advances startup; a later required SSE2 operation
-  still faults before the GUI. Win32s threading is not implemented.
-- Full player behavior, all OS targets, FP32 setup and final VGA tests remain
-  unfinished. No FP32 GPU acceleration is claimed.
+The SSE2 startup instruction now executes on the NT 3.1 research test guest.
+The observed blocker is CryptAcquireContextA. Original-code analysis confirms
+that both identified RNG callers deliberately fault on RNG failure. A real
+cryptographic backend remains necessary; no dummy randomness or failure bypass
+is implemented. See crypto-startup-contract.json and STATUS.json.
 
-SHA-256:
-`361af5cb2836ebb05f8253270bc0153b8c741961572a7f0646d68ef947669761`
+File, core, command-line and shell-execution component results are included.
+Win32s threading, full player operation, all-OS validation and FP32 setup remain
+unfinished. No validated FP32 GPU acceleration is claimed.
 
-All ZIP CRCs and all 201 payload hashes were verified. `FP32DEV.json` records the
-archive receipt; the ZIP includes `SHA256SUMS.txt` and detailed `STATUS.json`.
+The [WINSIMD XMM research checkpoint](../winsimd-1.2-dev/README.md) and
+[NTCPUPAE NT31 patcher fix](../ntcpupae-2026-10-30/README.md) are separate packages.
+They are not silently installed by this diagnostic archive.
+
+Current archive SHA-256:
+`67aec844b43f396383d1444872b8d125956751ac66a71e152920a275743bc3ae`
+
+The earlier FP32DEV.zip is retained as a historical checkpoint and lacks the
+newer startup adapters, SSE2 gate and updated evidence. It is not the latest ZIP.

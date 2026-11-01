@@ -1,0 +1,9 @@
+{
+  "file": "FP32DEV-20261101.zip",
+  "bytes": 28343088,
+  "sha256": "67aec844b43f396383d1444872b8d125956751ac66a71e152920a275743bc3ae",
+  "payload_files": 255,
+  "verification": "Every ZIP CRC and every payload SHA-256 verified.",
+  "completed_port": false,
+  "player_playback_verified": false
+}

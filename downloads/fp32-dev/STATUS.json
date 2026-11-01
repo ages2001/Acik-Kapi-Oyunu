@@ -1,0 +1,96 @@
+{
+  "active_target": "Original Adobe Flash Player 32.0.0.465",
+  "original_sha256": "a4b333ac1da12026989549015303d82231982838bccfb544ba5fd188746066f0",
+  "completed_port": false,
+  "fp32_player_window_reached": false,
+  "fp32_swf_playback_verified": false,
+  "last_guest_cpu": "QEMU TCG Pentium III + SSE2, one CPU, classic VGA; WINSIMD 1.1 plus validated UP-only XMM research adapter",
+  "passed_checks": {
+    "file_adapter": {
+      "nt31": 12,
+      "windows95_rtm": 12,
+      "windows31_win32s130c": 12
+    },
+    "core_adapter": {
+      "nt31": 7,
+      "windows95_rtm": 7
+    },
+    "lfence_trampoline_emulator": 512,
+    "command_line_adapter": {
+      "nt31": 33
+    },
+    "shell_execute_adapter": {
+      "nt31": 9
+    },
+    "xmm_preservation": {
+      "nt31_up_threads": 4,
+      "xmm_mxcsr_x87_mismatches": 0,
+      "scope": "Exact NT31 UP/MP kernels in QEMU; research driver, not production.",
+      "nt31_mp_threads": 4,
+      "nt31_mp_cpus": 4,
+      "affinity_rounds": 342,
+      "observed_cpu_mask": "0xF",
+      "thread_lifetimes": 640
+    }
+  },
+  "native_probe": {
+    "windows95_rtm": "Real thread completes with return 67; native CreateFileW returns error 120.",
+    "windows31_win32s130c": "Native CreateThread and CreateFileW return error 120."
+  },
+  "actual_fp32_faults": [
+    {
+      "address": "0x009b3204",
+      "instruction": "LFENCE",
+      "status": "One-site diagnostic adapter passes its unit contract and advances guest startup."
+    },
+    {
+      "address": "0x0044b3a0",
+      "instruction": "MOVD XMM0,[0x010ebb20]",
+      "status": "Passed on the SSE2-enabled UP guest with the research XMM guard; still unsupported on non-SSE2 hardware."
+    }
+  ],
+  "implementation": {
+    "nt31_proxy": "Includes tested SList, pointer encoding and CreateThread NULL-ID adapter.",
+    "file_adapter": "Same DLL tested on NT31, Win95, Win32s; full Win9x/Win32s player proxy integration pending.",
+    "win32s_threads": "No implementation yet.",
+    "sse2": "FP32 retains SSE2. Hardware gate verified. NT31 UP/MP research XMM preservation passes four-thread stress; production and other OS support unfinished.",
+    "gpu": "No validated FP32 GPU acceleration.",
+    "startup": "CommandLineToArgvW passes 33 checks; ShellExecuteExW subset passes 9 real-process checks. FP32 rejects DLLs beside its EXE. Moving FP32.EXE alone to C:\\FP32\\APP and launching with original -relaunched flag (compatibility DLLs in the parent working directory) passes this check unchanged. Next observed missing call: advapi32!CryptAcquireContextA at 0x00becc40. No GUI or SWF playback yet.",
+    "guid": "CoCreateGuid delegates to native RPC UuidCreate; this NIC-less NT 3.1 guest returns RPC_S_UUID_NO_ADDRESS (HRESULT 0x800706cb). No successful GUID creation claimed.",
+    "crypto": "CryptAcquireContextA/GenRandom require a real backend. Two identified original callers deliberately fault if RNG fails; provider-absence fallback is insufficient. See crypto-startup-contract.json. No dummy randomness or bypass implemented."
+  },
+  "pending": [
+    "Production XMM preservation on supported legacy OSes; NT31 four-CPU research test passes. YMM/ZMM preservation is not implemented. FP32 remains SSE2.",
+    "Full Win9x API/Unicode proxy integration.",
+    "Win32s threading, synchronization and memory runtime.",
+    "FP32 window, menus, input, audio/video and uploaded SWF tests.",
+    "FP32 installer integration, editable path/progress, shortcuts, About credits and association/uninstall validation.",
+    "NT3.51/NT4 FP32 runtime tests; NT3.5/Win98/ME images not staged.",
+    "Final classic VGA tests on every target OS."
+  ],
+  "installer": "FP10 wizard sources preserved; no FP32 installer is complete.",
+  "fp10_checkpoint": "fp32/checkpoints/fp10-before-fp32.zip",
+  "test_screenshots": [
+    "screenshots/438-win32s-capabilities.png",
+    "screenshots/448-win32s-files2.png",
+    "screenshots/449-nt31-files.png",
+    "screenshots/452-win95-caps.png",
+    "screenshots/453-win95-file-adapter.png",
+    "screenshots/477-nt31-command-line-tests.png",
+    "screenshots/509-fixed-patcher-four-cpu-desktop.png",
+    "screenshots/510-nt31-xmm-migration.png"
+  ],
+  "guest_notes": {
+    "win95": "Serial helper now works. Floppy drive A: remains unavailable to this guest. AC97 driver installation pending. Latest shutdown powered QEMU off normally. Earlier PnP shutdown stalled; QEMU was stopped before offline copying.",
+    "nt31": "FP32 diagnostic C:\\FP32 is a test directory, not the final default installation policy."
+  },
+  "rea": "REA/Ghidra successfully analyzed the original observed SSE2 initializer with one runtime-derived function seed. Recovered operation: DAT_0113d308 = (float)DAT_010ebb20. Caller coverage is incomplete; this is not original source or a CPU compatibility fix.",
+  "user_policy_update": "FP10: automatic usable SSE2 or non-SSE2 mode, matching About label. FP32: SSE2 and About label, error/exit without SSE2; consider non-SSE2 only if required sites are few. WINSIMD 1.2 requested separately with transparent XMM/MXCSR preservation, threading/SMP, English CHANGELOG.txt matching GitHub releases.",
+  "simd_coverage": {
+    "ghidra_decoded_instructions": 70332,
+    "instructions_in_recovered_functions": 51691,
+    "recovered_functions_containing_simd": 2834,
+    "limitation": "Static coverage, not complete reachability. Too widespread to treat as a few isolated components."
+  },
+  "multiprocessor_experiment": "Retried at user request: rebuilt NTCPUPAE GUI-generated kernel boots to four-CPU desktop; 342-round XMM migration test passes. See winsimd-1.2/test/results/NT31-MP-STATUS.md."
+}
