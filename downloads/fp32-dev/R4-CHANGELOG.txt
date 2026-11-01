@@ -1,0 +1,24 @@
+Changelog:
+
+FP32 NT 3.1 development checkpoint R4 - 2026-11-01
+
+- Report SSE/SSE2 only when hardware and actual XMM context readiness agree.
+- Add the versioned query-bearing WINSIMD research driver and its source.
+- Stop before original FP32 initialization if XMM preservation is unavailable;
+  the message recommends Flash Player 10.
+- Fix the false SM63 title-scene Star Coin hit through truthful CPU features.
+  Installed MP build: Start and Story reach normal menu/file selection.
+- Guard the original WinINet retry path against null or failed initialization.
+  4,096 emulated register/flags/stack/relocation contracts pass; this is not
+  a full Takeover or network-support certification.
+- Default the NT 3.1 FP32 wizard to C:\FP32; validate a custom C:\F32TEST install.
+- Verify query protocol, four workers, 181 affinity rounds and 640 worker
+  lifetimes on the exact four-CPU NT 3.1 MP kernel, with zero failures.
+- Verify an AS2 save fixture across player restart and Windows reboot on MP.
+- Keep the installed and diagnostic original-player payloads identical.
+
+Not complete: SM63 real progression save/reopen and acceptable speed; 123
+required imports; full Win9x/Win32s/NT3.5x/NT4 runtimes; universal installer;
+complete menu/media/game coverage; GPU acceleration; production SIMD driver
+installation rendezvous; YMM/ZMM preservation. Native VGA dark-red display
+also remains under investigation. See STATUS.json and the included evidence.

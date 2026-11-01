@@ -1,0 +1,13 @@
+{
+  "default_nt31": "C:\\FP32",
+  "custom_path_test": "C:\\F32TEST",
+  "default_path_screenshot": "screenshots/804-fp32-default-path.png",
+  "ready_screenshot": "screenshots/805-fp32-ready-install.png",
+  "progress_screenshot": "screenshots/806-fp32-install-progress.png",
+  "installer_sha256": "107efab3e1e8d296b6f1a722b9188a5250b2e42540e6ad4276e963be603cda3a",
+  "scope": "NT31 MP, 4 CPUs, 512 MiB. Default C:\\FP32 and custom C:\\F32TEST wizard install passed. Full product and other OS validation incomplete.",
+  "native_install_complete": true,
+  "finish_screenshot": "screenshots/808-fp32-install-finish.png",
+  "fp32_launch_after_install": true,
+  "native_mp_hitshape": "All nine non-finite rows rejected; finite inside=true, outside=false. Screenshot 809."
+}

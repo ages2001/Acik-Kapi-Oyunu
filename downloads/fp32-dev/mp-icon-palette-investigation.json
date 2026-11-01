@@ -1,0 +1,17 @@
+{
+  "guest_display": "QEMU cirrus-vga, native NT31 4bpp",
+  "native_GetPixel_dark_red": "0x00000080",
+  "native_GetPixel_icon_red": "0x00000080",
+  "host_display_dark_red_rgb": [
+    168,
+    0,
+    87
+  ],
+  "probe_uses_flash_adapter": false,
+  "finding": "Native GDI FillRect and ExtractIcon/DrawIcon both show the same incorrect host-visible dark red. Do not modify icon resources to compensate before checking the emulated display.",
+  "screenshot": "screenshots/816-native-vga-color-probe.png",
+  "next_check": "Standard VGA with the same guest disk.",
+  "standard_vga_retest": "Same native GDI/DrawIcon host-visible colors with standard VGA and stdvga BIOS; not isolated to Cirrus.",
+  "standard_vga_screenshot": "screenshots/818-standard-vga-colors.png",
+  "status": "Unresolved guest/virtual-display palette discrepancy. The icon resource and native GetPixel both identify dark red; no compensating icon recolor applied."
+}

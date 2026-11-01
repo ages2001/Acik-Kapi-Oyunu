@@ -1,4 +1,21 @@
-# SM63 Start blocker: current evidence
+# SM63 status and original Start-blocker evidence
+
+The Start/false-Star-Coin blocker is fixed in the current NT3.1 test candidate,
+not in the published R3 archive. The original CRT queried SSE2 through
+IsProcessorFeaturePresent, while the R3 compatibility API always denied it.
+With correctly reported features in the XMM-guarded guest, non-finite hit-test
+inputs are rejected and the untouched game enters normal gameplay. The
+query-aware replacement also passes the isolated hit-test fixture in a
+separate NT3.1 guest. See SM63-CPU-FEATURE-NOTES.md for the REA evidence and
+the CPU/OS readiness policy.
+
+Native gameplay has reached the third tutorial area, crossed the triple-jump
+ledge, opened and collected the hover-FLUDD equipment and used its water jets
+to climb platforms. This is partial gameplay validation: the real progress
+save/reopen test is pending and roughly 3–8 FPS does not meet the performance
+requirement. Other operating systems remain unvalidated.
+
+## Historical R3 investigation
 
 The original user-supplied Super Mario 63 SWF is byte-identical in the guest
 (SHA-256 6f8dc22d74963cb75928fcac6ad67769384c3088bb419f9995e24b81d8411e1c).

@@ -1,0 +1,23 @@
+{
+  "scene": "SM63 second tutorial, stationary at triple-jump ledge, original movie and existing diagnostic F32KCPU",
+  "sizes": {
+    "small": [
+      225,
+      150
+    ],
+    "normal": [
+      450,
+      300
+    ]
+  },
+  "screenshots": [
+    "fp32/captures/sm63-smallsize-host-timing/last.png",
+    "fp32/captures/sm63-fullsize-fast-sampling/last.png"
+  ],
+  "observation": "Both final screenshots display approximately 8.5 on the game FPS counter. Quarter pixel area did not demonstrate a major improvement in this bounded sample. Normal size restored.",
+  "display_change_counts": {
+    "small": 103,
+    "normal": 155
+  },
+  "caution": "Screen-content transitions can include partial GDI updates or multiple updates per SWF frame. Do not label these counts as game FPS. This is one sequential A/B observation, not a repeated controlled benchmark."
+}

@@ -1,0 +1,24 @@
+{
+  "os": "NT31 MP",
+  "processors": 4,
+  "memory_configuration_mib": 512,
+  "installed_root": "C:\\F32TEST",
+  "driver": "query candidate",
+  "fixture": "C:\\FP32\\SAVETEST.SWF",
+  "flush_result": true,
+  "counter_written": 1,
+  "independent_player_read_counter": 1,
+  "old_player_window_absent_from_native_enum": true,
+  "os_restart_read": 1,
+  "screenshots": [
+    "screenshots/811-mp-save-written.png",
+    "screenshots/812-mp-save-reopened.png",
+    "screenshots/815-mp-save-after-reboot.png"
+  ],
+  "scope": "AS2 fixture only; not SM63 real progression or other OS save validation.",
+  "missing_context_gate": {
+    "blocked_before_guard_load": true,
+    "recommendation": "Use Flash Player 10",
+    "screenshot": "screenshots/814-mp-missing-context-gate.png"
+  }
+}

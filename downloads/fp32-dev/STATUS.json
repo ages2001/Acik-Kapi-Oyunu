@@ -145,6 +145,20 @@
         "No full native File Manager double-click test in this R3 run; ShellExecute and both Program Manager shortcuts verified.",
         "No full gameplay or full menu-command coverage."
       ]
+    },
+    "wininet_guard_x86_contract": {
+      "cases": 4096,
+      "passed": 4096,
+      "image_sha256": "2f09f7eecabc16e56cfa9c1f6c5ba06b63cce8d0c9cda1591b41c7a5bf02a136",
+      "null_path_cases": 2048,
+      "non_null_pointer_cases": 2048,
+      "successful_initialization_cases": 512,
+      "failure_cleanup_cases": 3584,
+      "image_bases": [
+        "0x00400000",
+        "0x14000000"
+      ],
+      "scope": "Register/flags/stack/displaced-instruction and relocated relative-branch contracts only. Native game verification is separate."
     }
   },
   "native_probe": {
@@ -233,13 +247,43 @@
     "screenshots/678-r3-save-after-reinstall.png",
     "screenshots/679-r3-swf-association.png",
     "screenshots/680-r3-shortcut-launch.png",
-    "screenshots/681-r3-uninstall-shortcut.png"
+    "screenshots/681-r3-uninstall-shortcut.png",
+    "screenshots/703-takeover-max.png",
+    "screenshots/713-takeover-menu.png",
+    "screenshots/714-takeover-start.png",
+    "screenshots/715-takeover-newgame.png",
+    "screenshots/716-takeover-campaign.png",
+    "screenshots/683-ffsx6-menu.png",
+    "screenshots/684-ffsx6-play.png",
+    "screenshots/687-mms1-title.png",
+    "screenshots/688-mms1-play.png",
+    "screenshots/689-mms1-space.png",
+    "screenshots/691-sonic10-state.png",
+    "screenshots/692-sonic10-after-play.png",
+    "screenshots/693-sonic10-intro.png",
+    "screenshots/696-megax-combat.png",
+    "screenshots/697-megax-attack.png",
+    "screenshots/793-sm63-after-triple.png",
+    "screenshots/794-sm63-after-fludd.png",
+    "screenshots/801-mp-query-protocol.png",
+    "screenshots/804-fp32-default-path.png",
+    "screenshots/806-fp32-install-progress.png",
+    "screenshots/808-fp32-install-finish.png",
+    "screenshots/809-mp-hitshape.png",
+    "screenshots/811-mp-save-written.png",
+    "screenshots/812-mp-save-reopened.png",
+    "screenshots/814-mp-missing-context-gate.png",
+    "screenshots/815-mp-save-after-reboot.png",
+    "screenshots/816-native-vga-color-probe.png",
+    "screenshots/818-standard-vga-colors.png",
+    "screenshots/822-mp-sm63-menu.png",
+    "screenshots/823-mp-sm63-story.png"
   ],
   "guest_notes": {
     "win95": "Serial helper now works. Floppy drive A: remains unavailable to this guest. AC97 driver installation pending. Latest shutdown powered QEMU off normally. Earlier PnP shutdown stalled; QEMU was stopped before offline copying.",
-    "nt31": "FP32 diagnostic C:\\FP32 is a test directory, not the final default installation policy."
+    "nt31": "Candidate installer now defaults to C:\\FP32; native custom C:\\F32TEST install tested on MP. Existing main-lab C:\\FP32 also contains unrelated diagnostics."
   },
-  "rea": "REA/Ghidra successfully analyzed the original observed SSE2 initializer with one runtime-derived function seed. Recovered operation: DAT_0113d308 = (float)DAT_010ebb20. Caller coverage is incomplete; this is not original source or a CPU compatibility fix. REA/Ghidra also analyzed original function 0x00c096d0: two TryEnterCriticalSection calls with TLS-dependent contention behavior, paired LeaveCriticalSection. See REA-AS3-LOCK.md.",
+  "rea": "REA/Ghidra successfully analyzed the original observed SSE2 initializer with one runtime-derived function seed. Recovered operation: DAT_0113d308 = (float)DAT_010ebb20. Caller coverage is incomplete; this is not original source or a CPU compatibility fix. REA/Ghidra also analyzed original function 0x00c096d0: two TryEnterCriticalSection calls with TLS-dependent contention behavior, paired LeaveCriticalSection. See REA-AS3-LOCK.md. Original WinINet worker 0x006b112a analyzed: cached failure state 2 enters a null dynamic InternetOpenA call on retry; original request-failure cleanup identified.",
   "user_policy_update": "FP10: automatic usable SSE2 or non-SSE2 mode, matching About label. FP32: SSE2 and About label, error/exit without SSE2; consider non-SSE2 only if required sites are few. WINSIMD 1.2 requested separately with transparent XMM/MXCSR preservation, threading/SMP, English CHANGELOG.txt matching GitHub releases.",
   "simd_coverage": {
     "ghidra_decoded_instructions": 70332,
@@ -248,12 +292,12 @@
     "limitation": "Static coverage, not complete reachability. Too widespread to treat as a few isolated components."
   },
   "multiprocessor_experiment": "Retried at user request: rebuilt NTCPUPAE GUI-generated kernel boots to four-CPU desktop; 342-round XMM migration test passes. See winsimd-1.2/test/results/NT31-MP-STATUS.md.",
-  "fp32_swf_playback_scope": "NT31 classic VGA: red-stage, AS2 motion, AS3 reference graphics, PCM tone and two different video frames. Super Mario 63: Start/Story/File A/Create, first level, arrow response and Z tutorial dismissal. Jump not confirmed; low performance and broader game coverage remain open.",
+  "fp32_swf_playback_scope": "NT31 AS2/AS3, audio and video fixtures pass within documented scopes. SM63 candidate reaches fourth tutorial area with ordinary coins and hover-FLUDD; real progress save and full gameplay remain unfinished. MP query-aware installed player passes HITSHAPE and AS2 save across OS reboot.",
   "unavailable_test_inputs": {
     "isaac.swf": "Uploaded file exceeds the 32 MiB executor transfer limit.",
     "smbc.swf": "Uploaded file exceeds the 32 MiB executor transfer limit."
   },
-  "performance": "Mario first-level scene counter observed approximately 1-5 FPS on classic VGA under shared host load. Not acceptable-performance certification; independent timing pending.",
+  "performance": "SM63 NT31 WINVBE/QEMU TCG gameplay varies roughly 3-8 FPS. Quarter-area viewport trial did not show a major improvement. Performance requirement not met; no SMP speedup claim.",
   "installer_path_limit": "The NT31 development wizard requires a folder without spaces because native Program Manager drops shortcut icons for space-containing icon-source paths. SWF filenames with spaces are separately supported.",
   "requested_game_test_order": [
     "Super Mario 63 (2010)",
@@ -263,11 +307,11 @@
     "Megaman X Virus Mission",
     "Takeover"
   ],
-  "requested_game_inputs": "All five additional titles downloaded and SWF stream lengths verified. Final Fantasy Sonic X6; MMS RPG 1-4; Sonic RPG Eps 10 v1.3.6; Mega Man X Virus Mission; Takeover. Sources and SHA256 in game-inputs.json. Gameplay remains untested for these additional titles.",
+  "requested_game_inputs": "Additional original SWFs staged; bounded native NT3.1 observations in r3-game-followup.json and network-guard-null-only-native.json. No complete playthrough certification.",
   "saved_game_policy": "NT3.xx and Win3.1x/Win32s must not assume native AppData. Use application-owned UserData, preserving it on uninstall/update; see SAVED-GAMES.md. Current full runtime tests are NT3.1 only.",
   "required_imports_remaining_unimplemented": 123,
   "rea_folder_path_evidence": "reports/rea-folder-path.json: original 0x004d358e wrapper confirms SHGetFolderPathW callback behavior.",
-  "sm63_current_blocker": "Unexpected dynamic StarcoinMessage after Start, including fresh movie path and diagnostic loadMovie wrapper. Full gameplay is not verified.",
+  "sm63_current_blocker": "False title-scene star-coin hit fixed in the development candidate by truthful PF6/PF10 reporting with XMM readiness. Actual tutorial save/reopen and acceptable performance remain unverified.",
   "heap_walk_experiment": {
     "enabled_in_product": false,
     "checks": 751,
@@ -278,5 +322,143 @@
     "linux_adobe_fp32": "Normal SM63 menu reached after Start. No audio baseline; no Windows equivalence claim.",
     "wine_wow64": "Failed to establish a usable original Windows FP32 baseline; no port conclusion drawn."
   },
-  "trace_policy": "Routine tracing requires FP32_TRACE=1. Missing required APIs and unhandled exception reports remain enabled."
+  "trace_policy": "Routine tracing requires FP32_TRACE=1. Missing required APIs and unhandled exception reports remain enabled.",
+  "checkpoint": "2026-11-01 R4",
+  "latest_user_priorities": {
+    "order": "Resolve SM63 first, then remaining tasks. Do not call partial gameplay a full pass.",
+    "fp32_default_path": "C:\\FP32 on NT3.x / Win3.1x; FP32 directory name for later-OS setup policy.",
+    "fp32_missing_sse2_message": "Recommend Flash Player 10, without referring to a separate non-SSE2 build.",
+    "fp10_cpu_policy": "One application, automatic usable SSE2/non-SSE2 selection and matching About label."
+  },
+  "sm63_current_investigation": {
+    "coin_cause": "R3 incorrectly hides PF6/PF10 even with XMM preservation active; original FP32 CRT selects a path that accepts non-finite shape hits in negative-origin geometry.",
+    "fix_status": "Query-based PF6/PF10 implementation built. Native NT31 driver status, FP32 startup gate and shape fixtures pass. Full SM63 save/reopen/performance remains unfinished.",
+    "diagnostic_gameplay": "Untouched SM63 reaches second tutorial area; 41 ordinary coins, jumps, sign interaction, ground pound and water traversal observed.",
+    "performance": "Approximately 5\u20136 FPS in QEMU TCG; not an acceptable-speed completion.",
+    "public_zip_fix_included": false
+  },
+  "winsimd_delivery": {
+    "public_url": "https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/fp32-dev-2026-10-30/downloads/winsimd-1.2-dev/WINSIMD-1.2-DEV-20261101-R2.zip",
+    "http_status_verified": 200,
+    "sha256": "fa75d0e3f30b2dd36e68d44bcf09eb59ad63220ca0f548b451133d3ab6ca5e08",
+    "local_copy": "/workspace/exports/WINSIMD-1.2-XMM-Source.zip",
+    "contains": "Complete source, validated NT31 UP/MP XMM guard, loader, binaries, tests, English changelog. Excludes the new readiness-query candidate."
+  },
+  "active_lab_resume": {
+    "game": "Untouched D:\\SM63OK.SWF, fourth tutorial area near castle platforms, hover FLUDD acquired, 72 ordinary coins; no shine yet.",
+    "state": "Main QEMU resumed with QMP cont; SM63 remains paused in the fourth tutorial area. Separate MP query lab shut down through native REBOOT after completed tests.",
+    "engine": "D:\\APP\\FP32.EXE final WinINet guard; D:\\F32K.DLL still hardware-only diagnostic F32KCPU.DLL; prior XMM guard loaded.",
+    "query_lab": "MP query protocol, 4-worker/181-affinity-round and 640-worker-lifetime tests passed. MP query test disk now has C:\\F32TEST installed and 512 MiB. Native probe saved counter 1 across OS reboot. Testing standard VGA next because Cirrus maps native dark red to pink.",
+    "new_sources": "Query-aware F32K and FPCPU built and tested in query lab. Not installed in current gameplay VM or public R3 archive."
+  },
+  "sm63_latest_gameplay": {
+    "original_swf_unchanged": true,
+    "native_input_only": true,
+    "triple_jump_ledge_passed": true,
+    "tutorial_area": 4,
+    "ordinary_coins": 72,
+    "shines": 0,
+    "star_coins": 0,
+    "real_save_reopen": "pending",
+    "evidence": [
+      "captures/sm63-running-up-pulses/12.png",
+      "screenshots/793-sm63-after-triple.png",
+      "captures/sm63-tutorial-third-run2/17.png"
+    ],
+    "performance": "Native HUD varies roughly 3\u20138 FPS in these tutorial segments; performance requirement not met.",
+    "hover_fludd_acquired": true,
+    "hover_fludd_used": true,
+    "save_before_checkpoint": {
+      "files_scanned": 50,
+      "scan_errors": 0,
+      "object_name": "SuperMarioSunshine128SavedFile",
+      "FileA_true_stars": [],
+      "decoded_report": "sm63-before-shine-decoded.json"
+    }
+  },
+  "nt31_mp_patch_delivery": {
+    "url": "https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/fp32-dev-2026-10-30/downloads/ntcpupae-2026-10-30/NTCPUPAE-NT31-FIX-r2.zip",
+    "http_status": 200,
+    "bytes": 524645,
+    "sha256": "5e404b9ade6b2986b592f72e5b7f804ae41e0891fe5f2c581fd79945affa3578",
+    "zip_crc_ok": true,
+    "all_member_hashes_verified": true,
+    "local_copy": "/workspace/exports/NT31-MP-Patch-r2-Source.zip"
+  },
+  "query_driver_mp_validation": {
+    "processors": 4,
+    "query_checks": 4,
+    "query_failures": 0,
+    "affinity_rounds": 181,
+    "affinity_errors": 0,
+    "xmm_workers": 4,
+    "xmm_mxcsr_x87_failures": 0,
+    "thread_lifetimes": 640,
+    "churn_failures": 0,
+    "logs": [
+      "mp-query-before-load.txt",
+      "mp-query-driver-load.txt",
+      "mp-query-protocol.txt",
+      "mp-query-xmm-workers.txt",
+      "mp-query-thread-churn.txt"
+    ],
+    "screenshot": "screenshots/801-mp-query-protocol.png",
+    "scope": "QEMU TCG, patched exact NT31 MP kernel 0x2c51c08a, 128 MiB, four CPUs. Not an FP32 SMP gameplay/performance pass."
+  },
+  "mp_as2_save_fixture": {
+    "os": "NT31 MP",
+    "processors": 4,
+    "memory_configuration_mib": 512,
+    "installed_root": "C:\\F32TEST",
+    "driver": "query candidate",
+    "fixture": "C:\\FP32\\SAVETEST.SWF",
+    "flush_result": true,
+    "counter_written": 1,
+    "independent_player_read_counter": 1,
+    "old_player_window_absent_from_native_enum": true,
+    "os_restart_read": 1,
+    "screenshots": [
+      "screenshots/811-mp-save-written.png",
+      "screenshots/812-mp-save-reopened.png",
+      "screenshots/815-mp-save-after-reboot.png"
+    ],
+    "scope": "AS2 fixture only; not SM63 real progression or other OS save validation.",
+    "missing_context_gate": {
+      "blocked_before_guard_load": true,
+      "recommendation": "Use Flash Player 10",
+      "screenshot": "screenshots/814-mp-missing-context-gate.png"
+    }
+  },
+  "fp32_installer_default_nt31": "C:\\FP32 (candidate rebuilt and native wizard/install tested; public R3 unchanged)",
+  "vga_color_limit": {
+    "guest_display": "QEMU cirrus-vga, native NT31 4bpp",
+    "native_GetPixel_dark_red": "0x00000080",
+    "native_GetPixel_icon_red": "0x00000080",
+    "host_display_dark_red_rgb": [
+      168,
+      0,
+      87
+    ],
+    "probe_uses_flash_adapter": false,
+    "finding": "Native GDI FillRect and ExtractIcon/DrawIcon both show the same incorrect host-visible dark red. Do not modify icon resources to compensate before checking the emulated display.",
+    "screenshot": "screenshots/816-native-vga-color-probe.png",
+    "next_check": "Standard VGA with the same guest disk.",
+    "standard_vga_retest": "Same native GDI/DrawIcon host-visible colors with standard VGA and stdvga BIOS; not isolated to Cirrus.",
+    "standard_vga_screenshot": "screenshots/818-standard-vga-colors.png",
+    "status": "Unresolved guest/virtual-display palette discrepancy. The icon resource and native GetPixel both identify dark red; no compensating icon recolor applied."
+  },
+  "sm63_mp_query_build": {
+    "installed_root": "C:\\F32TEST",
+    "processors": 4,
+    "configured_memory_mib": 512,
+    "display": "standard VGA, native 4bpp",
+    "query_guard_loaded": true,
+    "untouched_swf": "C:\\SM63OK.SWF",
+    "start_click_reached_normal_menu": true,
+    "false_star_coin_overlay_seen": false,
+    "screenshot": "screenshots/822-mp-sm63-menu.png",
+    "scope": "Start/menu regression only. No sound device in this MP configuration; no gameplay performance comparison.",
+    "story_click_reached_file_selection": true,
+    "story_screenshot": "screenshots/823-mp-sm63-story.png"
+  }
 }

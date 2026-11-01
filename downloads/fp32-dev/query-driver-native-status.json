@@ -1,0 +1,36 @@
+{
+  "status": "NT31 UP and four-CPU MP native readiness query and XMM/MXCSR/x87 preservation checks passed",
+  "first_candidate": "Checksum mismatch after import-name edit; fixed by recomputing PE checksum.",
+  "second_candidate": "Bugcheck during load. Bounds-checked writes to the four NT31 dispatch entries replaced the modern maximum-code loop; the subsequent candidate loads and passes native query/state tests.",
+  "published_zip": "WINSIMD-1.2-DEV-20261101-R2.zip remains unchanged and excludes this query candidate.",
+  "third_candidate": {
+    "driver_sha256": "00379496b7a5c1c99060079fe9801ddd2b0b6c37d2998342df814854150c68e7",
+    "query_checks": 4,
+    "query_failures": 0,
+    "xmm_workers": 4,
+    "xmm_mxcsr_x87_failures": 0,
+    "processors": 1,
+    "mp_query_retest": {
+      "processors": 4,
+      "query_checks": 4,
+      "query_failures": 0,
+      "affinity_rounds": 181,
+      "affinity_errors": 0,
+      "xmm_workers": 4,
+      "xmm_mxcsr_x87_failures": 0,
+      "thread_lifetimes": 640,
+      "churn_failures": 0,
+      "logs": [
+        "mp-query-before-load.txt",
+        "mp-query-driver-load.txt",
+        "mp-query-protocol.txt",
+        "mp-query-xmm-workers.txt",
+        "mp-query-thread-churn.txt"
+      ],
+      "screenshot": "screenshots/801-mp-query-protocol.png",
+      "scope": "QEMU TCG, patched exact NT31 MP kernel 0x2c51c08a, 128 MiB, four CPUs. Not an FP32 SMP gameplay/performance pass."
+    }
+  },
+  "fp32_gate": "Native CPUGATE.EXE passed SSE2 hardware plus actual context readiness (screenshot 782).",
+  "fp32_hit_shapes": "Original FP32 via launcher: all nine non-finite shape cases reject NaN/Infinity; finite inside=true/outside=false (screenshot 784)."
+}
