@@ -1,0 +1,20 @@
+{
+  "commit": "1a996b6",
+  "downloads": [
+    {
+      "url": "https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/fp32-dev-2026-10-30/downloads/fp32-dev/FP32DEV-20261101-R4.zip",
+      "http_status": 200,
+      "bytes": 43621446,
+      "sha256": "641fd1765c48e09ce90b70b7c5151d8c3bbd325e3102104783b50483fa90b224",
+      "local_copy": "/workspace/exports/FP32DEV-20261101-R4.zip"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/fp32-dev-2026-10-30/downloads/fp32-dev/SETUP32-20261101-R4.EXE",
+      "http_status": 200,
+      "bytes": 18203280,
+      "sha256": "107efab3e1e8d296b6f1a722b9188a5250b2e42540e6ad4276e963be603cda3a",
+      "local_copy": "/workspace/exports/SETUP32-20261101-R4.EXE"
+    }
+  ],
+  "zip_crc_verified": true
+}
