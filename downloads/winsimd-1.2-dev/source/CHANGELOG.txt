@@ -1,0 +1,16 @@
+Changelog:
+
+Version 1.2 - development checkpoint, 2026-11-01 (not a final release)
+
+- Added exact-kernel NT 3.1 UP/MP XMM0-XMM7 and MXCSR preservation research code.
+- Added four-worker preemption and verified native-NT affinity migration tests.
+- Verified a four-CPU run with 342 affinity rounds and zero XMM/MXCSR/x87 errors.
+- Fixed NT 3.1 CPU-coverage diagnostics to use the KPRCB affinity mask; all four
+  CPUs are now observed (mask 0xF).
+- Passed 640 worker lifetimes with zero errors; observed 647 retired slots
+  including test/control threads, with a peak of 41 active slots.
+- Refused replacement of an already-running research driver in LOADXMM.
+- Retained the bounded 512-entry table and exact-kernel checks; production
+  installation rendezvous and broader OS integration remain unfinished.
+- YMM and ZMM context preservation is not implemented. This is not an AVX or
+  AVX-512 concurrency fix, and it is not a universal WINSIMD 1.2 release.
