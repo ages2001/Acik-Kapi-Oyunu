@@ -9,6 +9,8 @@ Version 1.2 - development checkpoint, 2026-11-01 (not a final release)
   CPUs are now observed (mask 0xF).
 - Passed 640 worker lifetimes with zero errors; observed 647 retired slots
   including test/control threads, with a peak of 41 active slots.
+- Verified the current driver and loader after a clean UP reboot: four workers,
+  zero XMM/MXCSR/x87 mismatches.
 - Refused replacement of an already-running research driver in LOADXMM.
 - Retained the bounded 512-entry table and exact-kernel checks; production
   installation rendezvous and broader OS integration remain unfinished.

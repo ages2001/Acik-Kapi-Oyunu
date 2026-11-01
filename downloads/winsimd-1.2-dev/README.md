@@ -57,7 +57,9 @@ retired slots, and the observed CPU mask.
 The latest migration run used the GUI-generated patched kernel: four workers,
 342 affinity rounds, no affinity errors, and zero XMM/MXCSR/x87 mismatches.
 The corrected CPU diagnostic reports mask 0xF. A separate 640-worker-lifetime
-test passed with zero mismatches. Afterwards the metrics showed 24 active slots,
+test passed with zero mismatches. The current loader and driver also passed
+a clean UP reboot and a four-worker preservation test with zero mismatches.
+Afterwards the metrics showed 24 active slots,
 41 peak slots, 647 retired slots and CPU mask 0xF. This does not establish
 unlimited simultaneous-thread capacity. See test/results/ for raw logs;
 older runs are retained under their original names.
@@ -75,7 +77,8 @@ python3 scripts/build_legacy_test.py
 
 The original general-driver build is still scripts/build.sh. It does not include
 this research hook. This package includes English source, test binaries and
-results; it does not claim working FP32 playback or a universal SIMD driver.
+results; FP32 playback evidence is published separately. This package does not certify
+a completed player port or a universal SIMD driver.
 
 Source lineage: https://github.com/ages2001/WINSIMD, v1.1. The supplied LICENSE
 file is retained. This branch adds the separate research adapter described above.

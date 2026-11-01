@@ -11,7 +11,9 @@
   "limitations": [
     "SSE2 only; YMM/ZMM preservation absent",
     "Research hook installation lacks an all-CPU rendezvous",
-    "512 simultaneous state slots",
-    "LOADXMM initial load used previous installer build; updated refusal path separately tested"
-  ]
+    "512 simultaneous state slots"
+  ],
+  "up_current_build_log": "nt31-up-current-build-xmm.txt",
+  "up_current_loader_log": "nt31-up-current-loader.txt",
+  "up_current_build_result": "Clean reboot, current loader starts service, four workers, zero mismatches."
 }

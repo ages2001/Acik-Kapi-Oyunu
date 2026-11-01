@@ -1,3 +1,3 @@
 Upstream: https://github.com/ages2001/WINSIMD
-Local research commit: fb1f1babfa44effd8d03382cfc5ef596ccff5e93
+Local research commit: 3e7a7f3c4034c5029c29daf2cfe1bec280fdd6a3
 Direct push to WINSIMD returned HTTP 403. Published in the authorized Acik-Kapi-Oyunu repository.

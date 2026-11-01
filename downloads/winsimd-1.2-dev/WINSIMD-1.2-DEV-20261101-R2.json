@@ -1,0 +1,8 @@
+{
+  "file": "WINSIMD-1.2-DEV-20261101-R2.zip",
+  "bytes": 231712,
+  "sha256": "fa75d0e3f30b2dd36e68d44bcf09eb59ad63220ca0f548b451133d3ab6ca5e08",
+  "source_commit": "3e7a7f3c4034c5029c29daf2cfe1bec280fdd6a3",
+  "verification": "Every payload SHA256 and ZIP CRC verified.",
+  "complete_release": false
+}
