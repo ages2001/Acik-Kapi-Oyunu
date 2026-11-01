@@ -2,9 +2,9 @@
   "active_target": "Original Adobe Flash Player 32.0.0.465",
   "original_sha256": "a4b333ac1da12026989549015303d82231982838bccfb544ba5fd188746066f0",
   "completed_port": false,
-  "fp32_player_window_reached": false,
-  "fp32_swf_playback_verified": false,
-  "last_guest_cpu": "QEMU TCG Pentium III + SSE2, one CPU, classic VGA; WINSIMD 1.1 plus validated UP-only XMM research adapter",
+  "fp32_player_window_reached": true,
+  "fp32_swf_playback_verified": true,
+  "last_guest_cpu": "QEMU TCG Pentium III + SSE2, one CPU, 64 MiB, classic VGA; WINSIMD 1.1 plus current UP/MP XMM research driver",
   "passed_checks": {
     "file_adapter": {
       "nt31": 12,
@@ -30,7 +30,42 @@
       "nt31_mp_cpus": 4,
       "affinity_rounds": 342,
       "observed_cpu_mask": "0xF",
-      "thread_lifetimes": 640
+      "thread_lifetimes": 640,
+      "current_build_up_reboot_test": "Latest driver and loader: four workers, zero errors after clean reboot."
+    },
+    "crypto_rng": {
+      "nt31_checks": 17,
+      "concurrent_workers": 4,
+      "generated_bytes": 524288,
+      "provider": "User-supplied NT4 SP1 RSA base CSP, executable sections unchanged",
+      "elapsed_ms": 31440,
+      "scope": "Ephemeral PROV_RSA_FULL contexts only; functional tests, not a cryptographic audit."
+    },
+    "null_window_proc": {
+      "nt31_checks": 10
+    },
+    "ordinal_exports": {
+      "static_contracts": 36,
+      "nt31_winsock_startup": "Native and proxy ordinal/name resolve to same function and both return success."
+    },
+    "try_critical_section": {
+      "nt31_up": 14,
+      "nt31_four_cpu": 14,
+      "protected_increments_each": 8000,
+      "overlapping_owners": 0
+    },
+    "native_input_fixture": {
+      "mouse_down_events": 1,
+      "accepted_clicks": 1,
+      "z_key_down_delta": 1,
+      "z_key_up_delta": 1,
+      "scope": "One small AS2 fixture; does not certify every game."
+    },
+    "installer_custom_uninstall": {
+      "previous_swf_value_restored": true,
+      "player_files_removed": true,
+      "unrelated_root_and_app_files_preserved": true,
+      "uninstaller_removed_after_reboot": true
     }
   },
   "native_probe": {
@@ -55,20 +90,23 @@
     "win32s_threads": "No implementation yet.",
     "sse2": "FP32 retains SSE2. Hardware gate verified. NT31 UP/MP research XMM preservation passes four-thread stress; production and other OS support unfinished.",
     "gpu": "No validated FP32 GPU acceleration.",
-    "startup": "CommandLineToArgvW passes 33 checks; ShellExecuteExW subset passes 9 real-process checks. FP32 rejects DLLs beside its EXE. Moving FP32.EXE alone to C:\\FP32\\APP and launching with original -relaunched flag (compatibility DLLs in the parent working directory) passes this check unchanged. Next observed missing call: advapi32!CryptAcquireContextA at 0x00becc40. No GUI or SWF playback yet.",
+    "startup": "Original FP32 window, native menus/Open/About, AS2 motion, AS3 graphics, PCM tone and video frames. Parent-directory launcher starts original APP\\FP32.EXE with correct DLL working directory and no debugger/time limit. Quoted SWF filename with a space verified.",
     "guid": "CoCreateGuid delegates to native RPC UuidCreate; this NIC-less NT 3.1 guest returns RPC_S_UUID_NO_ADDRESS (HRESULT 0x800706cb). No successful GUID creation claimed.",
-    "crypto": "CryptAcquireContextA/GenRandom require a real backend. Two identified original callers deliberately fault if RNG fails; provider-absence fallback is insufficient. See crypto-startup-contract.json. No dummy randomness or bypass implemented."
+    "crypto": "NT4 RSA CSP loads on NT31 through three kernel API adaptations. AcquireContext A/W, GenRandom and ReleaseContext bridged and tested; broader CryptoAPI unfinished.",
+    "audio": "AUDIONT 1.1 installed; native waveOut count 1. Original FP32 AVTEST.SWF 440 Hz PCM tone captured from QEMU AC97, peak 15488. Functional tone test, not all-codec coverage.",
+    "launcher": "New native NT launcher. One local path resolved before changing child working directory; uses the original player filename argument without -relaunched. Native NT31 ShellExecute association verified. Final icon-bearing launcher also opens the native blank player with no file argument (screenshot 590).",
+    "launcher_icon": "All 40 original RT_ICON and six RT_GROUP_ICON resources match the supplied EXE byte-for-byte. Native NT31 ExtractIcon/DrawIcon shows the same launcher and engine image (screenshot 589)."
   },
   "pending": [
     "Production XMM preservation on supported legacy OSes; NT31 four-CPU research test passes. YMM/ZMM preservation is not implemented. FP32 remains SSE2.",
     "Full Win9x API/Unicode proxy integration.",
     "Win32s threading, synchronization and memory runtime.",
-    "FP32 window, menus, input, audio/video and uploaded SWF tests.",
-    "FP32 installer integration, editable path/progress, shortcuts, About credits and association/uninstall validation.",
+    "Complete FP32 menu/button/input and representative game tests; broader audio/video validation and acceptable performance.",
+    "Finish current FP32 NT31 installer/shortcut validation and integrate/test all other OS installers. About credits/SSE2 display verified on NT31.",
     "NT3.51/NT4 FP32 runtime tests; NT3.5/Win98/ME images not staged.",
     "Final classic VGA tests on every target OS."
   ],
-  "installer": "FP10 wizard sources preserved; no FP32 installer is complete.",
+  "installer": "Single-file NT3.1 development SETUP32.EXE: Next/Back/Cancel, editable destination, progress, Finish. Default C:\\FP10, separate APP folder, two shortcuts, native association. Custom install/uninstall restores previous SWF value and preserves unrelated root/APP files. Current default install and final shortcut/double-click validation ongoing. Requires separate XMM research driver; not universal.",
   "fp10_checkpoint": "fp32/checkpoints/fp10-before-fp32.zip",
   "test_screenshots": [
     "screenshots/438-win32s-capabilities.png",
@@ -78,13 +116,38 @@
     "screenshots/453-win95-file-adapter.png",
     "screenshots/477-nt31-command-line-tests.png",
     "screenshots/509-fixed-patcher-four-cpu-desktop.png",
-    "screenshots/510-nt31-xmm-migration.png"
+    "screenshots/510-nt31-xmm-migration.png",
+    "screenshots/512-nt31-crypto-passed.png",
+    "screenshots/513-fp32-after-ordinal-fix.png",
+    "screenshots/519-fp32-red-stage.png",
+    "screenshots/520-fp32-action-first.png",
+    "screenshots/521-fp32-action-second.png",
+    "screenshots/525-fp32-video.png",
+    "screenshots/526-fp32-video-second.png",
+    "screenshots/528-fp32-as3-after-lock.png",
+    "screenshots/532-fp32-mario-start.png",
+    "screenshots/534-fp32-mario-files.png",
+    "screenshots/538-fp32-mario-stage.png",
+    "screenshots/543-fp32-mario-after-z.png",
+    "screenshots/547-fp32-key-click.png",
+    "screenshots/551-fp32-about.png",
+    "screenshots/555-fp32-launcher-spaces.png",
+    "screenshots/562-fp32-install-progress.png",
+    "screenshots/571-fp32-uninstalled.png",
+    "screenshots/573-fp32-setup-welcome-fixed.png",
+    "screenshots/574-fp32-path-validation.png",
+    "screenshots/576-fp32-default-installed.png",
+    "screenshots/577-fp32-installed-association.png",
+    "screenshots/585-fp32-shortcuts.png",
+    "screenshots/583-fp32-double-click.png",
+    "screenshots/589-original-icons-preserved.png",
+    "screenshots/590-icon-launcher-blank-window.png"
   ],
   "guest_notes": {
     "win95": "Serial helper now works. Floppy drive A: remains unavailable to this guest. AC97 driver installation pending. Latest shutdown powered QEMU off normally. Earlier PnP shutdown stalled; QEMU was stopped before offline copying.",
     "nt31": "FP32 diagnostic C:\\FP32 is a test directory, not the final default installation policy."
   },
-  "rea": "REA/Ghidra successfully analyzed the original observed SSE2 initializer with one runtime-derived function seed. Recovered operation: DAT_0113d308 = (float)DAT_010ebb20. Caller coverage is incomplete; this is not original source or a CPU compatibility fix.",
+  "rea": "REA/Ghidra successfully analyzed the original observed SSE2 initializer with one runtime-derived function seed. Recovered operation: DAT_0113d308 = (float)DAT_010ebb20. Caller coverage is incomplete; this is not original source or a CPU compatibility fix. REA/Ghidra also analyzed original function 0x00c096d0: two TryEnterCriticalSection calls with TLS-dependent contention behavior, paired LeaveCriticalSection. See REA-AS3-LOCK.md.",
   "user_policy_update": "FP10: automatic usable SSE2 or non-SSE2 mode, matching About label. FP32: SSE2 and About label, error/exit without SSE2; consider non-SSE2 only if required sites are few. WINSIMD 1.2 requested separately with transparent XMM/MXCSR preservation, threading/SMP, English CHANGELOG.txt matching GitHub releases.",
   "simd_coverage": {
     "ghidra_decoded_instructions": 70332,
@@ -92,5 +155,21 @@
     "recovered_functions_containing_simd": 2834,
     "limitation": "Static coverage, not complete reachability. Too widespread to treat as a few isolated components."
   },
-  "multiprocessor_experiment": "Retried at user request: rebuilt NTCPUPAE GUI-generated kernel boots to four-CPU desktop; 342-round XMM migration test passes. See winsimd-1.2/test/results/NT31-MP-STATUS.md."
+  "multiprocessor_experiment": "Retried at user request: rebuilt NTCPUPAE GUI-generated kernel boots to four-CPU desktop; 342-round XMM migration test passes. See winsimd-1.2/test/results/NT31-MP-STATUS.md.",
+  "fp32_swf_playback_scope": "NT31 classic VGA: red-stage, AS2 motion, AS3 reference graphics, PCM tone and two different video frames. Super Mario 63: Start/Story/File A/Create, first level, arrow response and Z tutorial dismissal. Jump not confirmed; low performance and broader game coverage remain open.",
+  "unavailable_test_inputs": {
+    "isaac.swf": "Uploaded file exceeds the 32 MiB executor transfer limit.",
+    "smbc.swf": "Uploaded file exceeds the 32 MiB executor transfer limit."
+  },
+  "performance": "Mario first-level scene counter observed approximately 1-5 FPS on classic VGA under shared host load. Not acceptable-performance certification; independent timing pending.",
+  "installer_path_limit": "The NT31 development wizard requires a folder without spaces because native Program Manager drops shortcut icons for space-containing icon-source paths. SWF filenames with spaces are separately supported.",
+  "requested_game_test_order": [
+    "Super Mario 63 (2010)",
+    "Final Fantasy Sonic X6",
+    "MMS RPG 1-4",
+    "Sonic RPG Eps 10",
+    "Megaman X Virus Mission",
+    "Takeover"
+  ],
+  "requested_game_inputs": "All five additional titles downloaded and SWF stream lengths verified. Final Fantasy Sonic X6; MMS RPG 1-4; Sonic RPG Eps 10 v1.3.6; Mega Man X Virus Mission; Takeover. Sources and SHA256 in game-inputs.json. Gameplay remains untested for these additional titles."
 }

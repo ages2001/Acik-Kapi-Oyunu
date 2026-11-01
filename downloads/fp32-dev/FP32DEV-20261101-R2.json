@@ -1,0 +1,10 @@
+{
+  "file": "FP32DEV-20261101-R2.zip",
+  "bytes": 36147397,
+  "sha256": "461477a38b9f5242b52088bd0391d594590742bb6295faa4f8cfcf3510d3b367",
+  "payload_files": 384,
+  "verification": "Every ZIP CRC and every payload SHA-256 verified.",
+  "completed_port": false,
+  "player_playback_verified": true,
+  "scope": "Specific NT3.1 fixtures and short Mario interaction only; see STATUS.json."
+}

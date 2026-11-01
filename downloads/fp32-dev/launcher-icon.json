@@ -1,0 +1,41 @@
+{
+  "source_sha256": "a4b333ac1da12026989549015303d82231982838bccfb544ba5fd188746066f0",
+  "source_group": 200,
+  "launcher_group": 200,
+  "all_frames_byte_identical": true,
+  "all_icon_and_group_resources_byte_identical": true,
+  "resource_count": 46,
+  "frames": [
+    {
+      "width": 256,
+      "height": 256,
+      "bytes": 270376,
+      "sha256": "b8f7dcfc90c519bc06aee030594250465160ad9558b047d8c4a3b581834d6bee"
+    },
+    {
+      "width": 48,
+      "height": 48,
+      "bytes": 9640,
+      "sha256": "200c93c800ef941aa96b15d6c21ff229bd59be557f50e080791d9af12b942275"
+    },
+    {
+      "width": 32,
+      "height": 32,
+      "bytes": 4264,
+      "sha256": "f08ec6fc911795a9c31e064fed82417dace3837d558ba5b80e73ff826aa86ce9"
+    },
+    {
+      "width": 24,
+      "height": 24,
+      "bytes": 2440,
+      "sha256": "2fb7fc63c682579fd061860b3e966a49fcb92df0d2df037a4a42cfb6da3dcc96"
+    },
+    {
+      "width": 16,
+      "height": 16,
+      "bytes": 1128,
+      "sha256": "3bd1e65583ee99020f114d24e6009f5db92f3335254b523a67170f0223e9a968"
+    }
+  ],
+  "launcher_sha256": "e655366782cc64f11b6d58f27346e5873c9611a7cbcd4b0c1d53f307900f7551"
+}
