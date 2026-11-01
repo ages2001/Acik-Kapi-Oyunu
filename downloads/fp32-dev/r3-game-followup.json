@@ -1,0 +1,51 @@
+{
+  "installer_sha256": "38ca32a01ca5ea93ac6881b65f5fc3cf018550e4a70896d738b318253a78a3ca",
+  "os": "Windows NT 3.1",
+  "display": "WINVBE 800x600x32, QEMU VGA device",
+  "gpu_acceleration_verified": false,
+  "tests": [
+    {
+      "game": "Final Fantasy Sonic X6",
+      "result": "Menu, Play input and prologue dialogue/animation reached. Native AC97 output non-silent.",
+      "screenshots": [
+        "683-ffsx6-menu.png",
+        "684-ffsx6-play.png"
+      ],
+      "full_gameplay_pass": false
+    },
+    {
+      "game": "MMS RPG 1",
+      "result": "Preloader Play, game Play and first dialogue reached. Space advanced Mario dialogue to Bowser dialogue.",
+      "screenshots": [
+        "687-mms1-title.png",
+        "688-mms1-play.png",
+        "689-mms1-space.png"
+      ],
+      "full_gameplay_pass": false
+    },
+    {
+      "game": "Sonic RPG 10 v1.3.6",
+      "result": "284501034-byte SWF loaded; Play started animated series intro.",
+      "screenshots": [
+        "691-sonic10-state.png",
+        "692-sonic10-after-play.png",
+        "693-sonic10-intro.png"
+      ],
+      "full_gameplay_pass": false
+    },
+    {
+      "game": "Mega Man X Virus Mission",
+      "result": "Play, Go to Battle, and one Attack turn completed. Enemy HP 26000 to 25378; player HP 2000 to 1689; Limit 0 to 8%.",
+      "screenshots": [
+        "696-megax-combat.png",
+        "697-megax-attack.png"
+      ],
+      "full_gameplay_pass": false
+    }
+  ],
+  "limitations": [
+    "No full battle/playthrough, save/load or frame-rate certification for these games.",
+    "SM63 blocker remains open.",
+    "These are follow-up observations after the immutable R3 ZIP was published."
+  ]
+}

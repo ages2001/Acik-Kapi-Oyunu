@@ -1,0 +1,18 @@
+[
+  {
+    "file": "FP32DEV-20261101-R3.zip",
+    "url": "https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/fp32-dev-2026-10-30/downloads/fp32-dev/FP32DEV-20261101-R3.zip",
+    "http_status": 200,
+    "bytes": 37117460,
+    "sha256": "331ba481c071a9294d3f1e24f680fcb545d37401995fe211e40d17c1f3158728",
+    "matches_local": true
+  },
+  {
+    "file": "SETUP32-20261101-R3.EXE",
+    "url": "https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/fp32-dev-2026-10-30/downloads/fp32-dev/SETUP32-20261101-R3.EXE",
+    "http_status": 200,
+    "bytes": 18199184,
+    "sha256": "38ca32a01ca5ea93ac6881b65f5fc3cf018550e4a70896d738b318253a78a3ca",
+    "matches_local": true
+  }
+]

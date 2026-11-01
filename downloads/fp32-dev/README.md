@@ -38,8 +38,9 @@ and is excluded.
 Full Win9x/Win32s/NT3.5x/NT4 runtime integration, Win32s threading, universal
 installation, complete menu/media/game coverage and final per-OS VGA tests are
 unfinished. GPU acceleration and YMM/ZMM preservation are not validated.
-Additional requested games are available as test inputs but are not certified
-playable; see [game sources](GAME-INPUTS.md). See [STATUS.json](STATUS.json).
+Additional games remain uncertified. New NT3.1 start/menu/intro observations
+after publication are tracked in [R3 follow-up](R3-FOLLOWUP.md); the R3 ZIP
+remains unchanged. See [game sources](GAME-INPUTS.md) and [STATUS.json](STATUS.json).
 
 ![R3 installer progress](screenshots/668-r3-progress.png)
 ![Native player and uninstall icons](screenshots/670-r3-shortcuts.png)

@@ -1,0 +1,9 @@
+{
+  "game": "Final Fantasy Sonic X6",
+  "scope": "Six seconds from the native QEMU AC97 stream during the FFSX6 menu-to-prologue session; exact menu/prologue segment not isolated. Non-silent output is not a full audio or synchronization pass.",
+  "sample_rate": 44100,
+  "channels": 2,
+  "duration_seconds": 6.0,
+  "peak": 23827,
+  "rms": 4639.513576918592
+}
