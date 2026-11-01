@@ -48,3 +48,5 @@ The installer logic was tested before the final icon-only payload update;
 all 23 final embedded payload CRCs and hashes match their build manifest.
 Native final-launcher icon extraction and no-file startup pass. A fresh
 installation of that final payload remains to be repeated.
+
+[Public-download verification and R2 native follow-up screenshots](R2-FOLLOWUP.md).
