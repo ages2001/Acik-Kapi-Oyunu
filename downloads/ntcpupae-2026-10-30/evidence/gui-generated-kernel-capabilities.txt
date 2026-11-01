@@ -1,0 +1,12 @@
+Logical processors 00000004
+Active processor mask 0000000F
+GetVersion 02100A03
+CreateThread handle 00000084
+CreateThread error 00000000
+Thread wait 00000000
+Thread result 00000043
+CreateFileW export 7787CCD0
+CreateFileW handle 00000084
+CreateFileW error 00000000
+CPUID EDX 1783FBFD
+CPU SSE2 bit 00000001

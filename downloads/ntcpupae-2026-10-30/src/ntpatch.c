@@ -311,7 +311,11 @@ static int replace_loader(const char* fname, const BYTE* data, DWORD len){
     char dst[24]; m_strcpy(dst,g_bootdrv); m_strcat(dst,fname);
     DWORD at=GetFileAttributesA(dst);
     if(at!=0xFFFFFFFF){
-        char bak[32]; m_strcpy(bak,dst); m_strcat(bak,".OLD");
+        char bak[32]; int bi=0,ni=0;
+        m_strcpy(bak,g_bootdrv); bi=m_strlen(bak);
+        /* NT 3.1 FAT needs 8.3 names: NTDETECT.OLD, not NTDETECT.COM.OLD. */
+        while(fname[ni] && fname[ni]!='.' && ni<8) bak[bi++]=fname[ni++];
+        bak[bi]=0; m_strcat(bak,".OLD");
         SetFileAttributesA(dst,FILE_ATTRIBUTE_NORMAL);
         DWORD ba=GetFileAttributesA(bak);
         /* Keep the first rollback copy across repeated patch operations. */

@@ -4,7 +4,11 @@ Changelog:
 
 - Added a validated NT 3.1 MP PFN-record mapping guard for the observed kernel.
 - Preserved the existing PE section layout and original valid-record behavior.
+- Fixed loader-backup names for NT 3.1 FAT (NTLDR.OLD and NTDETECT.OLD).
 - Enabled loader replacement on NT 3.1 and retained the first *.OLD backups.
 - Added sparse-PFN status to the GUI completion message.
 - Rebuilt the GUI with its icon, NT 3.1 headers and explicit stack sizes.
 - Added four-processor desktop evidence and documented the limits of validation.
+
+Revision 2 validation: the rebuilt GUI was run twice on a fresh VHD; loader
+replacement, original-backup retention and a single MP boot entry were checked.

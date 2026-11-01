@@ -1,0 +1,12 @@
+{
+  "HALMPCPU.DLL": "9bf895000cd514b7ee3d2a0e5a4318d44be10d5dd48779911d0065c055be38ab",
+  "NTKRCPU.EXE": "3d71cc85f22f5dc25ec2e344ad9b646d9c24d852ee537b290c2ef1ca69eda92d",
+  "NTDETECT.OLD": "bd0101d7ed70e5a75499eaca24d7422211c46047a8429fc357a83be5389ab7e1",
+  "NTLDR.OLD": "941a3434af90819617ffd3edfa2eaa760caa2a128769b039061a9ab106341fe6",
+  "NTDETECT.COM": "17ed3744ff8cb847ef89d0e42111e6ba27bd688b160a594a3abef078e05c4868",
+  "BOOT.INI": "3c8acee4cdc75032dc6a824d2a5edda92531da512cdce367c9bf600dffa52ba2",
+  "NTLDR": "73728847c40536324ec898fde01a6a3d267060ecd8417d6f8c40e2a9c852a33c",
+  "guard_rva": "0x5f39d",
+  "kernel_checksum_valid": true,
+  "first_loader_backups_preserved_after_second_run": true
+}

@@ -24,11 +24,12 @@ The embedded loader bytes already match the user's latest supplied files:
 - NTLDR: 73728847c40536324ec898fde01a6a3d267060ecd8417d6f8c40e2a9c852a33c
 - NTDETECT.COM: 17ed3744ff8cb847ef89d0e42111e6ba27bd688b160a594a3abef078e05c4868
 
+The backups use NT 3.1-compatible 8.3 names: NTLDR.OLD and NTDETECT.OLD.
 The first *.OLD loader backups are retained across subsequent patch operations.
 Original kernel/HAL files are retained; the GUI writes NTKRCPU.EXE and HALMPCPU.DLL
 and adds a boot entry. The completion dialog now reports the sparse-PFN guard.
 
-## Test status at this immediate upload
+## Verified test status (revision 2)
 
 - The original GUI was rerun on a fresh fixed-size VHD; its output matched the
   previous patcher output byte for byte and reproduced the fault with the new loaders.
@@ -38,8 +39,16 @@ and adds a boot entry. The completion dialog now reports the sparse-PFN guard.
   thread completed successfully. See evidence/nt31-four-processors.png.
 - The rebuilt GUI executable has a valid PE checksum, NT 3.1 header versions,
   embedded icon, an explicit stack allocation, and no CRT dependency.
-- End-to-end validation of this rebuilt GUI's generated kernel is still pending
-  at this requested immediate upload. Further results will be added to this folder.
+- The rebuilt GUI was run twice on a second fresh VHD. It generated the guarded
+  kernel, installed the exact supplied loaders, retained the first NTLDR.OLD and
+  NTDETECT.OLD backups, and left a single added MP boot entry.
+- The generated kernel has a valid PE checksum, retains all ten original PE
+  sections, and passes 320 independent memory/register cases. Its VHD boots to
+  the NT 3.1 desktop with four CPUs, active mask 0xF, and a successful worker
+  thread. See evidence/gui-generated-kernel-four-cpu-desktop.png and its log.
+- The separate XMM research adapter passed a four-thread test on the earlier
+  four-CPU guarded-kernel guest: 227 affinity rounds, zero XMM/MXCSR/x87 errors.
+  This is additional driver evidence, not a WINSIMD production release.
 - This is not a completed Flash Player port or WINSIMD 1.2 release. No new
   bare-metal, NT 3.5x or NT 4 runtime coverage is claimed.
 
