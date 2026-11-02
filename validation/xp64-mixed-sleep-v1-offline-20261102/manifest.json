@@ -1,0 +1,61 @@
+{
+  "utc": "2026-11-02T15:20:49.707811+00:00",
+  "guest": "xp64-usbnet-mixed-sleep-probe-v1-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 539648,
+      "sha256": "20b6ea186a86740e3aea741cfc3790b93ce66b39e80baf2f3a6fc2402faa2dca"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    },
+    "RLTTEST/USBLOG.TXT": {
+      "file": "USBLOG.TXT",
+      "size": 1171,
+      "sha256": "e1b98cd623ade2a052b30ed9f3b70d393ac2ca38241690dbc986f3a39d0b7f87"
+    },
+    "RLTTEST/USBLOG.EXE": {
+      "file": "USBLOG.EXE",
+      "size": 6845,
+      "sha256": "df2690acd4b575dac7d2cb94a9a271a976fbf8d422fe5bb5fb288fdef0f235e7"
+    },
+    "RLTTEST/SLPTEST.EXE": {
+      "file": "SLPTEST.EXE",
+      "size": 11931,
+      "sha256": "d549ed45ecfcdcabdc23fc5dcf54b2c356d7775e3c549a3002c8311057cb639b"
+    },
+    "RLTTEST/SLPTEST.SYS": {
+      "file": "SLPTEST.SYS",
+      "size": 11187,
+      "sha256": "dc47f439966d814f932747b08a8599bc16e87c2f90e1209e76d21ffbbb36312e"
+    },
+    "RLTTEST/HCPOWER.EXE": {
+      "file": "HCPOWER.EXE",
+      "size": 11754,
+      "sha256": "5d41ac14ae793f0470039924d248b929472d35f79990742e48010289395c9b93"
+    },
+    "RLTTEST/HCPOWER.SYS": {
+      "file": "HCPOWER.SYS",
+      "size": 11433,
+      "sha256": "217ebb498a307eb77ff6581b0d3c63002fa2a134876fcdeccf5769948ae1091f"
+    },
+    "RLTTEST/MKEY2.EXE": {
+      "file": "MKEY2.EXE",
+      "size": 12604,
+      "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549"
+    },
+    "MIXTEST/KEY.LOG": {
+      "file": "KEY.LOG",
+      "size": 184,
+      "sha256": "c5f9434452db968d50fc3190f7d61634641fb13d0391e5b00c98bfb9ac211777"
+    },
+    "MIXTEST/MIXNET.INF": {
+      "file": "MIXNET.INF",
+      "size": 8218,
+      "sha256": "49acf9c1e1277774cbcf76c06c885fc5d01099e65fd44966065bfd0deb867ee4"
+    }
+  }
+}

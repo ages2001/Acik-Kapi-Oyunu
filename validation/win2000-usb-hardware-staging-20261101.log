@@ -1,0 +1,35 @@
+No errors were found on the image.
+12445/26658 = 46.68% allocated, 92.28% fragmented, 91.80% compressed clusters
+Image end offset: 327352320
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127.qcow2",
+  "sha256_before_boot": "d2046768a82e9588dfa339495d2c2e27bbb8bb60a7855568cc0a259931af4b70",
+  "files": [
+    {
+      "guest_path": "WINNT/system32/drivers/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5.sys",
+      "size": 514732,
+      "sha256": "b5df28381087e2c942d5269425309e845728a658b6d8d7abafe558df4167e430",
+      "old_size": 276525,
+      "old_sha256": "d5f100af6d6dae6a73a86213a8aba1e2aff83eb486fb285d5087a6b854be2ffb"
+    },
+    {
+      "guest_path": "rlttest/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5.sys",
+      "size": 514732,
+      "sha256": "b5df28381087e2c942d5269425309e845728a658b6d8d7abafe558df4167e430",
+      "old_size": 276525,
+      "old_sha256": "d5f100af6d6dae6a73a86213a8aba1e2aff83eb486fb285d5087a6b854be2ffb"
+    },
+    {
+      "guest_path": "rlttest/i386/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5.sys",
+      "size": 514732,
+      "sha256": "b5df28381087e2c942d5269425309e845728a658b6d8d7abafe558df4167e430",
+      "old_size": 276525,
+      "old_sha256": "d5f100af6d6dae6a73a86213a8aba1e2aff83eb486fb285d5087a6b854be2ffb"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

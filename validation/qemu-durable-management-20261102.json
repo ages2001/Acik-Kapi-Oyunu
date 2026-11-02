@@ -1,0 +1,19 @@
+{
+  "binaries": {
+    "qemu-system-i386": {
+      "previous_sha256": "2b9c9d92e23a997e9a863edd90edf9d1613b6588b38c752e7070f646c277df2a",
+      "sha256": "e296ab523280432e7768c7b6c9c36235c2c7fd90fa471d7f03385e3c1acbab84"
+    },
+    "qemu-system-x86_64": {
+      "previous_sha256": "37a91463e5572e82283e7eb4994a49c5acde5b984b049dc9fd82e573780bb826",
+      "sha256": "210e3148db1ab8679aa6151fa4ccfc046299dbc001aa727128d254d6603c7319"
+    }
+  },
+  "tests": [
+    "qemu-management-i386-v1-20261102.json",
+    "qemu-management-x64-v1-20261102.json",
+    "qemu-mac-management-regression-v1-20261102.json",
+    "qemu-management-data-hotplug-regression-v1-20261102.log",
+    "qemu-management-profile-dma-v1-20261102.json"
+  ]
+}

@@ -1,0 +1,1 @@
+PASS: 1000 reset completions across 400 worker lifetimes; success/failure, duplicate, reentrant reset, stop during recovery, handle failures; completion at DISPATCH with no lock; all 401 threads joined/released

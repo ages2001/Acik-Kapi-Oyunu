@@ -1,0 +1,28 @@
+{
+  "guest": "nt31-usbsetup-classreset-rtl8117-8127",
+  "token": "classreset-20261102-c2-cable-down",
+  "mask": 2,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T12:27:20.999751+00:00",
+  "paths": [
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 95856,
+      "end_offset": 108096,
+      "capture_prefix_sha256": "990e9e1f5fcc5aa33cbd4df82d06e35751fa0faf8dda1803a28f73e777317495",
+      "screenshot": "nt31-usbsetup-classreset-rtl8117-8127-classreset-20261102-c2-cable-down-pci.png",
+      "ocr": "nt31-usbsetup-classreset-rtl8117-8127-classreset-20261102-c2-cable-down-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "7f1e9a1a77aaa48a587247ecacaff741700bef8a217dabd0b4c9d08bbdadfb99"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 4,
+  "finished_utc": "2026-11-02T12:27:26.897792+00:00"
+}

@@ -1,0 +1,9 @@
+{
+  "guest": "nt31-firmware-slot-8127",
+  "utc": "2026-10-30T05:06:38.610678+00:00",
+  "source": "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys",
+  "size": 230912,
+  "sha256": "0643b4cbc540cd76d3fe08160f3284beb66058b4d836f8860bec2ca558350711",
+  "previous_checkpoint": "nt31-ownership-slot-8127.raw",
+  "scope": "IDE/native PCIe RTL8127; passive initial PHY/firmware upload. MCU instruction execution/physical calibration not modeled."
+}

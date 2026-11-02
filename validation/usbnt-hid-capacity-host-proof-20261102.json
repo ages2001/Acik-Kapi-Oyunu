@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-02T09:11:29.845844+00:00",
+  "result": "PASS",
+  "before_result": "FAIL: fifth HID interface accepted without a removal-table slot",
+  "after_result": "PASS: 1000 composite and global capacity schedules, active-transfer teardown and allocation/pipe failures",
+  "files": {
+    "usbnt-hid-capacity-before-20261102.log": "7e3a5f74afa3ecc5467df55d19d763f4488da0895d757f255dc03a0c5e08133b",
+    "usbnt-hid-capacity-after-20261102.log": "707c971a6d769bb40cd51a188311c06e97c7b374edc57012e4165d3f01c48a70",
+    "test_usbnt_hid_capacity.c": "4b8bc641271e07b951a0fce24c13d77bdcc809a2904cbe350e053b13608cde96",
+    "usbnt-before-hid-capacity-20261102/usbhid.c": "7f503a56b458e392eb463d14bd8367c9fbae4cd2bb01f4ec96a12a29240a0702"
+  },
+  "source_sha256": "0ede1b2e100e8c6d1d2be0feffcc7f0b19422b18f4d05cc0996ba55c6d7564d5",
+  "scope": "Production usbhid.c and hidparse.c compiled with ASan/UBSan. Mock DMA/control/endpoint transport; not NT ABI or real-controller proof."
+}

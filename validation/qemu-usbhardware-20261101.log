@@ -1,0 +1,22 @@
+PASS: vendor PHY transport signatures
+PASS QEMU register/PHY transport v1 package00: prepare885 enable12 transfers
+PASS QEMU register/PHY transport v2 package00: prepare408 enable12 transfers
+PASS QEMU register/PHY transport v3 package00: prepare324 enable19 transfers
+PASS QEMU register/PHY transport v4 package00: prepare653 enable19 transfers
+PASS QEMU register/PHY transport v5 package00: prepare584 enable19 transfers
+PASS QEMU register/PHY transport v6 package00: prepare514 enable19 transfers
+PASS QEMU register/PHY transport v7 package00: prepare115 enable12 transfers
+PASS QEMU register/PHY transport v8 package00: prepare227 enable21 transfers
+PASS QEMU register/PHY transport v9 package00: prepare692 enable21 transfers
+PASS QEMU register/PHY transport v10 package00: prepare1995 enable31 transfers
+PASS QEMU register/PHY transport v11 package00: prepare2189 enable31 transfers
+PASS QEMU register/PHY transport v12 package00: prepare5796 enable31 transfers
+PASS QEMU register/PHY transport v13 package00: prepare1843 enable31 transfers
+PASS QEMU register/PHY transport v14 package00: prepare478 enable25 transfers
+PASS QEMU register/PHY transport v15 package00: prepare1831 enable31 transfers
+PASS QEMU register/PHY transport v16 package00: prepare4098 enable29 transfers
+PASS QEMU register/PHY transport v17 package18: prepare7443 enable28 transfers
+PASS QEMU register/PHY transport v17 package1a: prepare7443 enable28 transfers
+PASS QEMU register/PHY transport v17 package1c: prepare7324 enable28 transfers
+PASS QEMU register/PHY transport v17 package1e: prepare7324 enable28 transfers
+PASS: production QEMU PHY fault injection and corrupted firmware transport rejection

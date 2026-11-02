@@ -1,0 +1,12 @@
+== built /workspace/rltklant-work/RLTKLANT/build/ndis5/rltklant.sys ==
+AddressOfEntryPoint	00001100
+MajorSubsystemVersion	4
+MinorSubsystemVersion	0
+Subsystem		00000001	(NT native)
+	DLL Name: HAL.DLL
+	DLL Name: NDIS.SYS
+	DLL Name: ntoskrnl.exe
+	DLL Name: HAL.dll
+	DLL Name: ntoskrnl.exe
+	DLL Name: USBD.SYS
+-rwx------ 1 agent agent 91286 Oct 29 20:36 rltklant.sys

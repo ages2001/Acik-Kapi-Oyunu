@@ -1,0 +1,1 @@
+PASS: DHCP exact-length truncation, header/cookie/MAC/XID mismatch, malformed options and 65536 bounded fuzz datagrams

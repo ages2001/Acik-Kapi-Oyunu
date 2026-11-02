@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-02T01:23:41.883984+00:00",
+  "scope": "Actual NT5 orderly PnP worker teardown/reload plus Windows 2000 asynchronous protocol reset; not surprise-removal or physical silicon validation",
+  "systems": {
+    "win2000": {
+      "driver_sha256": "89340995b837ca23f3121eb8e2700b999cc3744feaa0296a8f8f41dcebe6f3d7",
+      "orderly_pnp_transitions": 36,
+      "protocol_reset_completions": 18,
+      "protocol_reset_result": "PASS",
+      "offline_manifest": "validation/win2000-passivereset-offline-20261102/manifest.json"
+    },
+    "xp64": {
+      "driver_sha256": "1ffb0bbd1c683b2830890b16706f45af4f2018054078da7577ee500d55dfede4",
+      "orderly_pnp_transitions": 36,
+      "protocol_reset_completions": 0,
+      "protocol_reset_result": "NOT_RESETTABLE; no successful driver reset credited",
+      "offline_manifest": "validation/xp64-passivereset-offline-20261102/manifest.json"
+    }
+  }
+}

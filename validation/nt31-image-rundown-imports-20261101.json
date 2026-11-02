@@ -1,0 +1,81 @@
+{
+  "utc": "2026-11-01T17:41:09.993794+00:00",
+  "results": [
+    {
+      "target": "ndisnt31",
+      "sha256": "596c250f7353d7ced3ddefc5ec34db4ac00fc48830559a50760091e4e344190a",
+      "imports_verified": 52,
+      "references": {
+        "hal.dll": {
+          "path": "/workspace/rltklant-vm/install/nt31-exports/hal.dll",
+          "sha256": "b8b9bc98421f2773772ecc01a3db52a5a7729b6417c0f59d04456f2d3030e6ad"
+        },
+        "ndis.sys": {
+          "path": "/workspace/rltklant-vm/install/nt31-exports/ndis.sys",
+          "sha256": "66cd1dde5910cd4f18ab017f8132a8bed004473996393536cb8cd15637eaf696"
+        },
+        "ntoskrnl.exe": {
+          "path": "/workspace/rltklant-vm/install/nt31-exports/ntoskrnl.exe",
+          "sha256": "fa93543f775ef08be70e8d07b5b4ee6317d66a46074e7984e1c6324796833ef0"
+        }
+      }
+    },
+    {
+      "target": "ndis3",
+      "sha256": "118a262b58f5f628c17c76ea717cba528714d113fcad9b039ea3022fb3073831",
+      "imports_verified": 55,
+      "references": {
+        "hal.dll": {
+          "path": "/workspace/rltklant-vm/install/nt351-standard/hal.dll",
+          "sha256": "0f7938412c7bd38855450e67d7c222811cb55e821c7fdcc3db9c231d99171c57"
+        },
+        "ndis.sys": {
+          "path": "/workspace/rltklant-vm/install/nt351-standard/installed-ndis.sys",
+          "sha256": "a991c599fa98335cbb02731dff0b97c498a1a77c0366a316735f102570a1acdc"
+        },
+        "ntoskrnl.exe": {
+          "path": "/workspace/rltklant-vm/install/nt351-standard/NTOSKRNL.EXE",
+          "sha256": "6b81e71dd63f93049fd65c3e62c0c197bf51cf5fc478715bd57fa1fcc99aa82a"
+        }
+      }
+    },
+    {
+      "target": "ndis5",
+      "sha256": "89f4f95de3dc3d25b45136ff97509c9c72cc2681923a520266292607daef08e2",
+      "imports_verified": 72,
+      "references": {
+        "hal.dll": {
+          "path": "/workspace/rltklant-vm/install/win2000-standard/hal.dll",
+          "sha256": "ad863d1b51d6d1f67c1b8150a097d4ee26aa2ae13e14c6121bbdb1e634df1501"
+        },
+        "ndis.sys": {
+          "path": "/workspace/rltklant-vm/install/win2000-standard/ndis.sys",
+          "sha256": "273cfc323cec064e1168209ac4a3ec17fa947c57271f39613eaca70cba764c58"
+        },
+        "ntoskrnl.exe": {
+          "path": "/workspace/rltklant-vm/install/win2000-standard/ntoskrnl.exe",
+          "sha256": "a89254608f243574e99210afc103d0e3f272d91a1277f8e4599e47343a042769"
+        }
+      }
+    },
+    {
+      "target": "ndis5x64",
+      "sha256": "5c15d2bf09b4432c6dd6ec092e544e14715886d35f82989130e214ad85d56202",
+      "imports_verified": 65,
+      "references": {
+        "hal.dll": {
+          "path": "/workspace/rltklant-vm/install/xp64-kernel/hal.dll",
+          "sha256": "e942f223a8c630ef6919c9d95b9a847fd8f54a58ccd863d01befaeffcb303cc4"
+        },
+        "ndis.sys": {
+          "path": "/workspace/rltklant-vm/install/xp64-kernel/ndis.sys",
+          "sha256": "69e310c3d8021fbc8df68ad040b76c73949afb038fbbccf8bd2ca06d2b5e4f66"
+        },
+        "ntoskrnl.exe": {
+          "path": "/workspace/rltklant-vm/install/xp64-kernel/ntoskrnl.exe",
+          "sha256": "6e2f369fd7dc0bfff03edc778f51353bb06be4f060b6374ada415a9ae119dc99"
+        }
+      }
+    }
+  ]
+}

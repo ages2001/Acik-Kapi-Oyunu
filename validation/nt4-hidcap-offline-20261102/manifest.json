@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T09:32:46.054851+00:00",
+  "guest": "nt4-ndis-dual-hidcap-8127",
+  "files": {
+    "WINNT4/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 411648,
+      "sha256": "92d6f836da50302b026ac16f1e02daba932dbebd3c233beab1a8eb4374b53d4c"
+    },
+    "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    }
+  }
+}

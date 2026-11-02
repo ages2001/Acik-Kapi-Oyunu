@@ -1,0 +1,36 @@
+Formatting '/workspace/rltklant-vm/run/xp64-usbnet-hcpower-release-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=5368709120 backing_file=/tmp/rltk-growing-fat-ekqpz2gu/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+15/81920 = 0.02% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1376256
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/xp64-usbnet-hcpower-release-8127.qcow2",
+  "sha256_before_boot": "08dba061ee83ebdd8c4c76ebfea38f54f2d8ad859c656957c1180ac70b85c534",
+  "files": [
+    {
+      "guest_path": "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-hcd-release-v1-20261102/amd64.sys",
+      "size": 525312,
+      "sha256": "746574178357c8ba3a9b76da9bb9d68e9585355fcc86bb2682521bd02704e47c",
+      "old_size": 521728,
+      "old_sha256": "dfed77a964f30d23fc6d7a247f9c95880edc1ba32a7134ace703c195f82a9d4d"
+    },
+    {
+      "guest_path": "RLTTEST/HCPOWER.SYS",
+      "source": "/workspace/rltklant-work/validation/usbnt-hc-power-probe-amd64-20261102/HCPOWER.SYS",
+      "size": 11433,
+      "sha256": "f96ada00e0f5f065455a15b686aa68a7c0058bbb1dbc63b4d09318daaa03f1c2",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTTEST/HCPOWER.EXE",
+      "source": "/workspace/rltklant-work/validation/usbnt-hc-power-probe-amd64-20261102/HCPOWER.EXE",
+      "size": 11554,
+      "sha256": "fa188bdd9b0700dda1274f44575b1834d36d5198036fda799f97d2fb7cf7d820",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

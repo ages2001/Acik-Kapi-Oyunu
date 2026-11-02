@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-01T20:36:27.952453+00:00",
+  "scope": "Read-only extraction after actual NCPA install and normal shutdown",
+  "files": {
+    "SYSTEM": {
+      "guest_path": "WINNT351/system32/config/SYSTEM",
+      "size": 573440,
+      "sha256": "91cd2aaa38153ca96282d5a40ccd8e6a13c3216155b787cc9f56295086b3c4a1"
+    },
+    "SOFTWARE": {
+      "guest_path": "WINNT351/system32/config/SOFTWARE",
+      "size": 208896,
+      "sha256": "b9c9ab6b4396b8010194369c2d29805c3b6d0f6007c265a27732665add45999b"
+    },
+    "RLTUSB.EXE": {
+      "guest_path": "WINNT351/system32/RLTUSB.EXE",
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "matches_package": true
+    },
+    "RLTKLANT.SYS": {
+      "guest_path": "WINNT351/system32/drivers/RLTKLANT.SYS",
+      "size": 503183,
+      "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615",
+      "matches_package": true
+    }
+  }
+}

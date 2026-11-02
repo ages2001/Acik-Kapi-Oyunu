@@ -1,0 +1,25 @@
+{
+  "utc": "2026-11-02T05:56:19.850658+00:00",
+  "result": "PASS",
+  "binaries": [
+    {
+      "name": "qemu-system-i386",
+      "before_sha256": "e296ab523280432e7768c7b6c9c36235c2c7fd90fa471d7f03385e3c1acbab84",
+      "sha256": "8de6bf9206c04b049be0f3b5692d535207143f8c99ee9c3d5825ae64b8d8e6b5",
+      "backup": "/workspace/rltklant-tools/qemu-bin/before-8139-filter-20261102/qemu-system-i386.gz"
+    },
+    {
+      "name": "qemu-system-x86_64",
+      "before_sha256": "210e3148db1ab8679aa6151fa4ccfc046299dbc001aa727128d254d6603c7319",
+      "sha256": "98a60959afb8ebdc57e2695f5e85f3aa4ff0210f4c2e074a083d8ffefb5a2a27",
+      "backup": "/workspace/rltklant-tools/qemu-bin/before-8139-filter-20261102/qemu-system-x86_64.gz"
+    }
+  ],
+  "patch": "RLTKLANT/qemu/patches/rtl8139-preserve-filter-ring.patch",
+  "checks": [
+    "qemu-rtl8139-filter-i386-fixed-20261102.json",
+    "qemu-rtl8139-filter-x64-fixed-20261102.json",
+    "qemu-rtl8139-filter-cplus-regression-20261102.log"
+  ],
+  "scope": "Durable binaries match tested build; prior binaries losslessly archived. Existing live guests retain prior binaries and launch hashes."
+}

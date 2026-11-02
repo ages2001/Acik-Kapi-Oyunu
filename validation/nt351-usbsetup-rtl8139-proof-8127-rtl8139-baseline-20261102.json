@@ -1,0 +1,11 @@
+{
+  "guest": "nt351-usbsetup-rtl8139-proof-8127",
+  "token": "rtl8139-baseline-20261102",
+  "mask": 3,
+  "utc": "2026-11-02T05:16:17.915064+00:00",
+  "peer": [
+    "127.0.0.1",
+    42489
+  ],
+  "report": "TOKEN rtl8139-baseline-20261102\r\nMASK 3\r\nPATH 10.0.2.2 REPLIES 0 PAYLOAD 1472\r\nPATH 10.0.3.2 REPLIES 4 PAYLOAD 1472\r\nTOTAL 4 EXPECTED 8\r\nFAIL\r\n"
+}

@@ -1,0 +1,201 @@
+#!/usr/bin/env python3
+"""
+makecat.py - build a Windows security catalog (rltklant.cat) for the
+RLTKLANT 2000/XP universal driver package, self-signed with a generated
+code-signing certificate.
+
+This produces a structurally-correct PKCS#7/CTL catalog (szOID_CATALOG_LIST,
+SHA1 subject algorithm) whose members are the package files with their
+*Authenticode* hashes (PE files) / flat SHA1 (the INF), the same hashes
+Windows computes.  Because it is self-signed, Windows still treats it as
+"not WHQL-signed" until the accompanying rltklant.cer test certificate is
+installed into the Trusted Publishers / Root store; for a production
+catalog regenerate it on Windows with inf2cat + signtool (see makecat.cmd).
+
+Usage:  python3 makecat.py            (run from the folder holding netrtlk.inf)
+Needs:  asn1crypto, cryptography
+"""
+import hashlib, struct, os, datetime
+from asn1crypto import core, cms, algos, x509 as a_x509
+from cryptography import x509
+from cryptography.hazmat.primitives import hashes, serialization
+from cryptography.hazmat.primitives.asymmetric import rsa
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+FILES = ["netrtlk.inf", os.path.join("i386", "RLTKLANT.SYS"),
+         os.path.join("amd64", "RLTKLANT.SYS")]
+
+# ---- OIDs ---------------------------------------------------------------
+OID_SIGNED_DATA   = "1.2.840.113549.1.7.2"
+OID_CTL           = "1.3.6.1.4.1.311.10.1"
+OID_CATALOG_LIST  = "1.3.6.1.4.1.311.12.1.1"
+OID_CAT_NAMEVALUE = "1.3.6.1.4.1.311.12.2.1"
+OID_CAT_MEMBERINFO= "1.3.6.1.4.1.311.12.2.2"
+OID_SPC_INDIRECT  = "1.3.6.1.4.1.311.2.1.4"
+OID_SPC_PE_IMAGE  = "1.3.6.1.4.1.311.2.1.15"
+OID_SHA1          = "1.3.14.3.2.26"
+
+def flat_sha1(path):
+    h = hashlib.sha1()
+    with open(path, "rb") as f: h.update(f.read())
+    return h.digest()
+
+def authenticode_sha1(path):
+    """Authenticode PE hash: whole file except the OptionalHeader checksum
+    (4 bytes) and the Certificate-Table data-directory entry (8 bytes), and
+    excluding any attribute certificate table (none in an unsigned image)."""
+    data = bytearray(open(path, "rb").read())
+    if data[:2] != b"MZ":
+        return flat_sha1(path)
+    pe = struct.unpack_from("<I", data, 0x3C)[0]
+    if data[pe:pe+4] != b"PE\0\0":
+        return flat_sha1(path)
+    opt = pe + 24
+    magic = struct.unpack_from("<H", data, opt)[0]
+    cksum_off = opt + 64
+    # data directories start at opt+96 (PE32) / opt+112 (PE32+)
+    dd_off = opt + (96 if magic == 0x10b else 112)
+    cert_dir_off = dd_off + 4 * 8          # 5th directory = Certificate Table
+    h = hashlib.sha1()
+    h.update(data[0:cksum_off])            # up to checksum
+    h.update(data[cksum_off+4:cert_dir_off])   # skip 4-byte checksum
+    h.update(data[cert_dir_off+8:])        # skip 8-byte cert-table dir entry
+    return h.digest()
+
+# ---- CTL ASN.1 ----------------------------------------------------------
+class SetOfAny(core.SetOf):
+    _child_spec = core.Any
+
+class CatAttribute(core.Sequence):
+    _fields = [("type", core.ObjectIdentifier), ("values", SetOfAny)]
+
+class CatAttributes(core.SequenceOf):
+    _child_spec = CatAttribute
+
+class CatalogMember(core.Sequence):
+    _fields = [("tag", core.OctetString), ("attributes", CatAttributes)]
+
+class CatalogMembers(core.SequenceOf):
+    _child_spec = CatalogMember
+
+class UsageOIDs(core.SequenceOf):
+    _child_spec = core.ObjectIdentifier
+
+class CTL(core.Sequence):
+    _fields = [
+        ("subjectUsage", UsageOIDs),
+        ("thisUpdate", core.UTCTime),
+        ("subjectAlgorithm", algos.DigestAlgorithm),
+        ("members", CatalogMembers),
+    ]
+
+class NameValue(core.Sequence):
+    _fields = [("name", core.BMPString), ("flags", core.Integer),
+               ("value", core.OctetString)]
+
+class MemberInfo(core.Sequence):
+    _fields = [("subjGuid", core.BMPString), ("certVersion", core.Integer)]
+
+class SpcAttrType(core.Sequence):
+    _fields = [("type", core.ObjectIdentifier), ("value", core.Any, {"optional": True})]
+
+class DigestInfo(core.Sequence):
+    _fields = [("algo", algos.DigestAlgorithm), ("digest", core.OctetString)]
+
+class SpcIndirectData(core.Sequence):
+    _fields = [("data", SpcAttrType), ("messageDigest", DigestInfo)]
+
+def nv(name, value_bytes, flags):
+    return NameValue({"name": name, "flags": flags, "value": value_bytes})
+
+def build_member(path, name):
+    is_pe = path.lower().endswith(".sys")
+    digest = authenticode_sha1(path) if is_pe else flat_sha1(path)
+    tag = digest.hex().upper().encode("ascii")
+
+    spc_type = SpcAttrType({"type": OID_SPC_PE_IMAGE}) if is_pe else SpcAttrType({"type": OID_SPC_PE_IMAGE})
+    spc = SpcIndirectData({
+        "data": spc_type,
+        "messageDigest": DigestInfo({
+            "algo": {"algorithm": OID_SHA1}, "digest": digest})})
+
+    # OSAttr: 2000, XP, XP x64 / 2003
+    osattr = "2:5.0,2:5.1,2:5.2".encode("utf-16-le")
+    fname  = name.encode("utf-16-le")
+
+    attrs = CatAttributes([
+        CatAttribute({"type": OID_SPC_INDIRECT,
+                      "values": SetOfAny([core.Any.load(spc.dump())])}),
+        CatAttribute({"type": OID_CAT_MEMBERINFO,
+                      "values": SetOfAny([core.Any.load(
+                          MemberInfo({"subjGuid": "{C689AAB8-8E78-11D0-8C47-00C04FC295EE}",
+                                      "certVersion": 0x200}).dump())])}),
+        CatAttribute({"type": OID_CAT_NAMEVALUE,
+                      "values": SetOfAny([core.Any.load(nv("File", fname, 0x10010001).dump()),
+                                          core.Any.load(nv("OSAttr", osattr, 0x10010001).dump())])}),
+    ])
+    return CatalogMember({"tag": tag, "attributes": attrs}), digest
+
+def main():
+    members, digests = [], []
+    for rel in FILES:
+        p = os.path.join(HERE, rel)
+        name = os.path.basename(rel)
+        m, d = build_member(p, name)
+        members.append(m); digests.append((rel, d.hex()))
+
+    ctl = CTL({
+        "subjectUsage": UsageOIDs([OID_CATALOG_LIST]),
+        "thisUpdate": datetime.datetime(2026, 10, 27, tzinfo=datetime.timezone.utc),
+        "subjectAlgorithm": {"algorithm": OID_SHA1},
+        "members": CatalogMembers(members),
+    })
+    ctl_der = ctl.dump()
+
+    # self-signed code-signing certificate
+    key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
+    name = x509.Name([x509.NameAttribute(x509.NameOID.COMMON_NAME, "RLTKLANT Test (ages2001)")])
+    cert = (x509.CertificateBuilder().subject_name(name).issuer_name(name)
+            .public_key(key.public_key()).serial_number(x509.random_serial_number())
+            .not_valid_before(datetime.datetime(2026,1,1,tzinfo=datetime.timezone.utc))
+            .not_valid_after(datetime.datetime(2036,1,1,tzinfo=datetime.timezone.utc))
+            .add_extension(x509.ExtendedKeyUsage([x509.ExtendedKeyUsageOID.CODE_SIGNING]), False)
+            .sign(key, hashes.SHA256()))
+
+    # PKCS#7 SignedData over the CTL
+    cert_a = a_x509.Certificate.load(cert.public_bytes(serialization.Encoding.DER))
+    md = hashlib.sha256(ctl_der).digest()
+    signed_attrs = cms.CMSAttributes([
+        cms.CMSAttribute({"type": "content_type", "values": [OID_CTL]}),
+        cms.CMSAttribute({"type": "message_digest", "values": [md]}),
+    ])
+    sig = key.sign(signed_attrs.dump(), __import__("cryptography.hazmat.primitives.asymmetric.padding",
+                   fromlist=["PKCS1v15"]).PKCS1v15(), hashes.SHA256())
+    si = cms.SignerInfo({
+        "version": "v1",
+        "sid": cms.SignerIdentifier({"issuer_and_serial_number": cms.IssuerAndSerialNumber(
+            {"issuer": cert_a.issuer, "serial_number": cert.serial_number})}),
+        "digest_algorithm": {"algorithm": "sha256"},
+        "signed_attrs": signed_attrs,
+        "signature_algorithm": {"algorithm": "rsassa_pkcs1v15"},
+        "signature": sig,
+    })
+    sd = cms.SignedData({
+        "version": "v1",
+        "digest_algorithms": [{"algorithm": "sha256"}],
+        "encap_content_info": {"content_type": OID_CTL, "content": core.ParsableOctetString(ctl_der)},
+        "certificates": [cert_a],
+        "signer_infos": [si],
+    })
+    ci = cms.ContentInfo({"content_type": "signed_data", "content": sd})
+
+    open(os.path.join(HERE, "rltklant.cat"), "wb").write(ci.dump())
+    open(os.path.join(HERE, "rltklant.cer"), "wb").write(
+        cert.public_bytes(serialization.Encoding.DER))
+    print("wrote rltklant.cat (%d bytes) + rltklant.cer" %
+          os.path.getsize(os.path.join(HERE, "rltklant.cat")))
+    for rel, hx in digests:
+        print("  %-22s sha1(authenticode/flat)=%s" % (rel, hx))
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,38 @@
+TOKEN retirement-20261102-device-1
+DEVICE USB\VID_0BDA&PID_8153\0001-0000:00:02.0-1
+NAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472
+PASS
+
+PASS device 1: actual initialization and four full-MTU replies
+TOKEN retirement-20261102-device-2
+DEVICE USB\VID_0BDA&PID_8153\0001-0000:00:02.0-1
+NAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472
+PASS
+
+PASS device 2: actual initialization and four full-MTU replies
+TOKEN retirement-20261102-device-3
+DEVICE USB\VID_0BDA&PID_8153\0001-0000:00:02.0-1
+NAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472
+PASS
+
+PASS device 3: actual initialization and four full-MTU replies
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_report.py", line 7, in <module>
+    s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM);s.bind(('127.0.0.1',18200));s.settimeout(35)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 98] Address already in use
+/workspace/rltklant-work/validation/xp64-usbnet-retirement-8127-retirement-20261102-power-each-screen.png
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_controller_power_each.py", line 57, in <module>
+    call('native_report.py', token, 'nprobe64.exe' if guest.startswith('xp64') else 'nprobe5.exe')
+  File "/workspace/rltklant-work/validation/native_controller_power_each.py", line 23, in call
+    subprocess.run([sys.executable,str(v/script),guest,*args],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/workspace/rltklant-tools/venv/bin/python3', '/workspace/rltklant-work/validation/native_report.py', 'xp64-usbnet-retirement-8127', 'retirement-20261102-system-1', 'nprobe64.exe']' returned non-zero exit status 1.

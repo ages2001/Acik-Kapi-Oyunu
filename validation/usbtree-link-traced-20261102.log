@@ -1,0 +1,1 @@
+/workspace/rltklant-tools/root/usr/bin/../lib/gcc/i686-w64-mingw32/14-win32/../../../../i686-w64-mingw32/bin/ld: error: /tmp/rltklant-usbtree-link-20261102/traced.exe(.rsrc) is too large (0x1200 bytes)

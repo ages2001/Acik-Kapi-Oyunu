@@ -1,0 +1,17 @@
+{
+  "guest": "win2000-standard-usbnet-stall-ehci-8127",
+  "files": [
+    {
+      "source": "/workspace/rltklant-work/validation/ftp-fixture/stall32.sys",
+      "size": 91798,
+      "sha256": "dac82c3edf56876ba30a416b88baaeaad75c079765a1499da788c75970f76877"
+    },
+    {
+      "source": "/workspace/rltklant-work/validation/ftp-fixture/ustall32.sys",
+      "size": 480768,
+      "sha256": "4fc09eea6e29262810be29a2312a433e357c8341afdf2f3cdc6ed4bf70a464e0"
+    }
+  ],
+  "previous_checkpoint": "win2000-standard-usbnet-native-ehci-8127",
+  "scope": "AHCI and USBNT EHCI, NIC copied after removal; USBNT replacement scheduled via MoveFileEx on next boot; verify application"
+}

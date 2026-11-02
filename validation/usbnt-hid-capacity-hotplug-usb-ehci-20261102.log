@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/USBNT/test/thotplug.py", line 23, in <module>
+    disk(first); disk(second, 32)
+    ^^^^^^^^^^^
+  File "/workspace/rltklant-work/USBNT/test/qharn.py", line 138, in disk
+    subprocess.check_call(["qemu-img", "create", "-f", "raw", path, "%dM" % size_mb],
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 408, in check_call
+    retcode = call(*popenargs, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 389, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'qemu-img'

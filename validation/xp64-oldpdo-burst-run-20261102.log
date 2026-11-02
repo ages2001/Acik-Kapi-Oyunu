@@ -1,0 +1,84 @@
+/workspace/rltklant-work/validation/xp64-usbnet-hcpower-oldpdo-8127-oldpdo-burst-20261102-controller-power-screen.png
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_controller_power_cycles.py", line 54, in <module>
+    assert states == ['HCPTEST D3=00000000','HCPTEST D0=00000000']*3 + ['HCPTEST S3=00000000','HCPTEST S0=00000000']*3, trace
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: HCPTEST object=00000000
+HCPTEST D3=00000000
+HCPTEST D0=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+HCPTEST object=00000000
+USBNIC-INIT hardware 00000003
+USBNIC-INIT space 00000001
+USBNIC-INIT register 0000F97C
+USBNIC-INIT operations 00000148
+USBNIC-INIT delay-ms 00000009
+NATIVE-INIT attach C0000001
+RLTK INIT FAIL st=0xC000009A
+HCPTEST S3=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+HCPTEST S0=00000000
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+HCPTEST object=00000000
+HCPTEST S3=00000000
+HCPTEST S0=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+HCPTEST object=00000000
+USBNIC-INIT hardware 00000003
+USBNIC-INIT space 00000001
+USBNIC-INIT register 0000FBBC
+USBNIC-INIT operations 000001D8
+USBNIC-INIT delay-ms 00000009
+NATIVE-INIT attach C0000001
+RLTK INIT FAIL st=0xC000009A
+HCPTEST S3=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+HCPTEST S0=00000000
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+HCPTEST object=00000000
+HCPTEST D3=00000000
+HCPTEST D0=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+HCPTEST object=00000000
+USBNIC-INIT hardware 00000003
+USBNIC-INIT space 00000001
+USBNIC-INIT register 0000FB54
+USBNIC-INIT operations 000001BE
+USBNIC-INIT delay-ms 00000009
+NATIVE-INIT attach C0000001
+RLTK INIT FAIL st=0xC000009A
+HCPTEST S3=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+HCPTEST S0=00000000
+

@@ -1,0 +1,29 @@
+{
+  "utc": "2026-11-02T09:23:24.622353+00:00",
+  "result": "PASS",
+  "files": 280,
+  "archive_sha256": "fd701fb5ab7534d460e3bd7c4acb3262539733347f29708a16262131298a29bb",
+  "included_checks": {
+    "test/host/thidcapacity.c": {
+      "bytes": 4193,
+      "sha256": "4d44dee63baab1327d93566cf885a9cb7a3fbfbe7f6f331bc4e158f281225354"
+    },
+    "test/host/thidcapacity.sh": {
+      "bytes": 471,
+      "sha256": "93540fe0ea86f17ee38f1b03dc6e0445073402dc240518b5214a7877974bfefe"
+    },
+    "src/usbhid.c": {
+      "bytes": 25512,
+      "sha256": "0ede1b2e100e8c6d1d2be0feffcc7f0b19422b18f4d05cc0996ba55c6d7564d5"
+    },
+    "CHANGELOG.md": {
+      "bytes": 14468,
+      "sha256": "80fc43494c674b9a0edfc2d18f9b5a503b31b5aa06a8b4a7dc5dcfff15853a9e"
+    },
+    "RELEASE-1.3-STATUS.md": {
+      "bytes": 8026,
+      "sha256": "6a5a03a5339ff2e4b8b4629bd32fa20df22059a7fc1f5c9ecb2733ca7055308c"
+    }
+  },
+  "scope": "Two temporary current-source archives, identical bytes and complete readback. Tests included, unreleased status preserved. Temporary archives removed; not a USBNT 1.3 release."
+}

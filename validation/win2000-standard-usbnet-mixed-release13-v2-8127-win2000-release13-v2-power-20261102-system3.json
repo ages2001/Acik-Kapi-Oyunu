@@ -1,0 +1,10 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-release13-v2-8127",
+  "utc": "2026-11-02T18:39:01.926284+00:00",
+  "token": "win2000-release13-v2-power-20261102-system3",
+  "report": "TOKEN win2000-release13-v2-power-20261102-system3\r\nDEVICE USB\\VID_0BDA&PID_8153&MI_00\\3&227AC3A4&0&0&01&01&0&00\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+  "peer": [
+    "127.0.0.1",
+    58958
+  ]
+}

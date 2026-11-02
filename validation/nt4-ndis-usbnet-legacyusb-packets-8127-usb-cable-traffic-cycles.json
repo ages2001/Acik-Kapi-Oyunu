@@ -1,0 +1,40 @@
+{
+  "guest": "nt4-ndis-usbnet-legacyusb-packets-8127",
+  "verified_utc": "2026-10-29T18:10:54.640150+00:00",
+  "results": [
+    {
+      "cycle": 1,
+      "model": "usb-rtl8150",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    },
+    {
+      "cycle": 2,
+      "model": "usb-rtl8150",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    },
+    {
+      "cycle": 3,
+      "model": "usb-rtl8150",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    },
+    {
+      "cycle": 4,
+      "model": "usb-rtl8150",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    }
+  ],
+  "pcap_sha256": "ab905821ac95e789ff3ea6ad6ba4482686197f1db04753c08eb3d3ea598f1d2a",
+  "scope": "Persistent USBNT miniport on emulated hardware; not native USB PDO/PnP or physical-device certification"
+}

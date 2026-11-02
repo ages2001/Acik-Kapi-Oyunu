@@ -1,0 +1,43 @@
+{
+  "guest": "nt31-usbsetup-rtl8139-rxtx-8127",
+  "token": "rxtx-usb-20261102-baseline",
+  "mask": 3,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T06:25:20.770949+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 36464,
+      "end_offset": 48704,
+      "capture_prefix_sha256": "ab81d8bd1412fa27b888da0dde34b0bba35759e3e423d6d96d6c561c17238b23",
+      "screenshot": "nt31-usbsetup-rtl8139-rxtx-8127-rxtx-usb-20261102-baseline-usb.png",
+      "ocr": "nt31-usbsetup-rtl8139-rxtx-8127-rxtx-usb-20261102-baseline-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "45e160a31c602f77720d2a59eae2bbc4c79ffabb740968c5c03103855fa21a82"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 6876792,
+      "end_offset": 6889032,
+      "capture_prefix_sha256": "7ef292c07c7099574f90715de19ee0c72ef25084950cff64f8913f7f38f1e165",
+      "screenshot": "nt31-usbsetup-rtl8139-rxtx-8127-rxtx-usb-20261102-baseline-pci.png",
+      "ocr": "nt31-usbsetup-rtl8139-rxtx-8127-rxtx-usb-20261102-baseline-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "c7e6d8753cf42edd40c6a1c6b086905af062b6444e6acd0fcde15f17314b1489"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T06:25:32.223898+00:00"
+}

@@ -1,0 +1,36 @@
+/workspace/rltklant-work/validation/nt31-usbsetup-capacity-rtl8117-8127-capacity-20261102-baseline-usb.png
+Estimating resolution as 123
+Detected 11 diacritics
+Warning:guessing pitch as xheight on row 3, block 3
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/nt31_network_report.py", line 93, in <module>
+    assert re.search(pattern, ocr, re.I), 'inbox ping receipt summary was not verified: ' + ocr
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: inbox ping receipt summary was not verified: er Ta]
+
+ns indow Help |
+a
+md [~|-
+
+lc:\users\default ping -n 4 -1 1472 10.0,2.2
+Pinging host 10.0.2.2 Cunnaned? : 10.0.2.2
+CHP
+
+CMP
+CMP
+icMP Echo Reply:TIL 255
+
+Hest 10-0.2-2 replied to all 4 of the 4ypings
+
+lc:\users\default>.
+
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/legacy_sibling_cycles.py", line 79, in <module>
+    result['baseline'] = probe(tag + '-baseline', all_paths); save()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/rltklant-work/validation/legacy_sibling_cycles.py", line 72, in probe
+    subprocess.run([sys.executable, str(here / helper), guest, token, str(mask)], check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '/workspace/rltklant-work/validation/nt31_network_report.py', 'nt31-usbsetup-capacity-rtl8117-8127', 'capacity-20261102-baseline', '3']' returned non-zero exit status 1.

@@ -1,0 +1,99 @@
+{
+  "guest": "xp64-usbnet-mixed-sleep-v3-8127",
+  "utc": "2026-11-02T16:00:52.453906+00:00",
+  "scope": "Injected controller D3/D0 and system-power IRPs with mixed NIC/HID owners.\n\nNo ACPI machine sleep is asserted. Same PDO/gen confirmation requires the\nstopped guest USBLOG.TXT, beyond the live network/input evidence recorded here.\n",
+  "result": "PASS_LIVE_PENDING_STOPPED_PDO_READBACK",
+  "rows": [
+    {
+      "mode": "device",
+      "cycle": 1,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n",
+      "network": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-device1.json",
+        "sha256": "580d5c35be15d9189f8b073a1ce351d9fc500cd5060b88e601aeb90cfc33915c"
+      },
+      "keyboard": {
+        "file": "xp64-mixed-sleep-v3-cycles-20261102-device1-key.json",
+        "sha256": "762dfef78446dd123e9c480627a56d1fac41b309f122bcc29ffe21fc21df0349"
+      },
+      "seconds": 30.747
+    },
+    {
+      "mode": "device",
+      "cycle": 2,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n",
+      "network": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-device2.json",
+        "sha256": "4cfdfdfc2815cbd3b20a8d6f1932444297cb9668c3fad762178ba92d66c65135"
+      },
+      "keyboard": {
+        "file": "xp64-mixed-sleep-v3-cycles-20261102-device2-key.json",
+        "sha256": "7167eaec1cf43a3532466ae1c3d02e88c5346f91b60184dab47fc4611d1761de"
+      },
+      "seconds": 30.553
+    },
+    {
+      "mode": "device",
+      "cycle": 3,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n",
+      "network": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-device3.json",
+        "sha256": "9b8a3ee14be1ece711e1341f7f106723d3a4583605abf00f0272bbdee4da07d2"
+      },
+      "keyboard": {
+        "file": "xp64-mixed-sleep-v3-cycles-20261102-device3-key.json",
+        "sha256": "405d2acce42eab9aba683780b6506301f78a9edd48f5549955b75149e8c6a8e3"
+      },
+      "seconds": 30.605
+    },
+    {
+      "mode": "system",
+      "cycle": 1,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n",
+      "network": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-system1.json",
+        "sha256": "bb9ea82418a0810d0c43cadbe2e4a455e8a74b1d653e54fddc282c7497df7927"
+      },
+      "keyboard": {
+        "file": "xp64-mixed-sleep-v3-cycles-20261102-system1-key.json",
+        "sha256": "6663c455e70232a49f22450c21a60aef4d5401726a44179da7fc87638568125a"
+      },
+      "seconds": 31.193
+    },
+    {
+      "mode": "system",
+      "cycle": 2,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n",
+      "network": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-system2.json",
+        "sha256": "756bf9958c62de9208ed0f6da8b699d61d353e30df6d255ab5d29f7f64b58aa7"
+      },
+      "keyboard": {
+        "file": "xp64-mixed-sleep-v3-cycles-20261102-system2-key.json",
+        "sha256": "6c8fc2c6fe92d10788701f67a6aa4dcae5060a6fb67f309cfb5e72d05c39af99"
+      },
+      "seconds": 31.042
+    },
+    {
+      "mode": "system",
+      "cycle": 3,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n",
+      "network": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-system3.json",
+        "sha256": "b4d3a0eb3602307475c9f2ac11a7d6c3beb271cf191b1aaf2016b9d7f934858e"
+      },
+      "keyboard": {
+        "file": "xp64-mixed-sleep-v3-cycles-20261102-system3-key.json",
+        "sha256": "5514ed4858e58ad07481e9733db664e0ebae8666e4107564b11bf8f2ac0f096b"
+      },
+      "seconds": 31.08
+    }
+  ],
+  "network_instance": "DEVICE USB\\VID_0BDA&PID_8153&MI_00\\1&2B53A856&0&0&01&01&0&00"
+}

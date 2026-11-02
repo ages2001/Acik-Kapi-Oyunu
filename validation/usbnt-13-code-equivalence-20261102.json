@@ -1,0 +1,65 @@
+{
+  "result": "PASS_IDENTICAL_CODE_AND_STATE_LAYOUT",
+  "scope": "All existing loaded sections and RVAs match except the one-character product version string. Added version resource, file alignment, relocation directory position and PE headers differ. This does not substitute for exact installed boot/upgrade validation.",
+  "rows": [
+    {
+      "arch": "legacy",
+      "before_sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6",
+      "after_sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e",
+      "identical_loaded_sections": [
+        ".text",
+        ".data",
+        ".bss",
+        ".idata"
+      ],
+      "version_only_changes": [
+        {
+          "section": ".rdata",
+          "offset": 10594,
+          "before": "1.2",
+          "after": "1.3"
+        }
+      ]
+    },
+    {
+      "arch": "i386",
+      "before_sha256": "073c5544dc34b42b4ef25af79c24475457c24f7c966981866952a2f3c3fc3963",
+      "after_sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b",
+      "identical_loaded_sections": [
+        ".text",
+        ".data",
+        ".bss",
+        ".idata"
+      ],
+      "version_only_changes": [
+        {
+          "section": ".rdata",
+          "offset": 39389,
+          "before": "1.2",
+          "after": "1.3"
+        }
+      ]
+    },
+    {
+      "arch": "amd64",
+      "before_sha256": "44a78f6b6ac9e4ab6f82e07e0f1bfe5c9b51332857d095b4d271f49140c56763",
+      "after_sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1",
+      "identical_loaded_sections": [
+        ".text",
+        ".data",
+        ".pdata",
+        ".xdata",
+        ".bss",
+        ".idata"
+      ],
+      "version_only_changes": [
+        {
+          "section": ".rdata",
+          "offset": 43689,
+          "before": "1.2",
+          "after": "1.3"
+        }
+      ]
+    }
+  ]
+}

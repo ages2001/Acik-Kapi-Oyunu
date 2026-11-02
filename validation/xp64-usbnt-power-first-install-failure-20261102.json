@@ -1,0 +1,7 @@
+{
+  "result": "FAIL_INSTALL_ATTEMPT",
+  "utc": "2026-11-02T07:20:58.400302+00:00",
+  "guest": "xp64-usbnet-usbnt-power-8127",
+  "screenshot": "xp64-usbnt-power-install-log-20261102.png",
+  "reason": "Installer copied usbnt.inf, then reported failure copying usbntkbd.inf after an additional unsigned-driver prompt. UI automation incorrectly sent command input while a repeated modal dialog was active. Preserve UINST1.LOG and retry with explicit observation of each prompt. No driver failure or successful USBNT x64 installation is inferred."
+}

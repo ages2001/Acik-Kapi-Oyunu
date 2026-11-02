@@ -1,0 +1,1 @@
+PASS: both kernel wait wrappers, 0..2000 ms, signed 100 ns intervals, zero delay, failure and overflow guards

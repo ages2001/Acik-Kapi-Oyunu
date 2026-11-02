@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-01T21:13:52.871936+00:00",
+  "guest": "nt31-usbsetup-ncpa-v4-reboot-8127",
+  "pcap_offsets": {
+    "usb.pcap": 209963,
+    "pci.pcap": 242693
+  },
+  "candidate": "frozen-builds/dhcp-interface-select-20261101/manifest.json",
+  "command": "C:\\RLTTEST\\DHCPSEL.EXE /auto /apply",
+  "expected_enabled_service": "RLTKLANT02",
+  "expected_skipped_service": "RLTKLANT01",
+  "expected_network": "10.0.3.0/24",
+  "winsock_exports_verified": [
+    "WSACleanup",
+    "WSAStartup",
+    "bind",
+    "closesocket",
+    "htonl",
+    "htons",
+    "inet_addr",
+    "ntohl",
+    "recvfrom",
+    "select",
+    "sendto",
+    "setsockopt",
+    "socket"
+  ]
+}

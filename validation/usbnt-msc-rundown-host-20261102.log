@@ -1,0 +1,9 @@
+/usr/bin/ld: /tmp/cctQ2A19.o: in function `setup':
+/workspace/rltklant-work/USBNT/test/host/tmscrundown.c:67:(.text.setup+0x53a): undefined reference to `PUTBE16'
+/usr/bin/ld: /tmp/cctQ2A19.o: in function `UasBuildCommand':
+/workspace/rltklant-work/USBNT/test/host/../../src/usbmsc.c:618:(.text.UasBuildCommand+0xf2): undefined reference to `PUTBE16'
+/usr/bin/ld: /tmp/cctQ2A19.o: in function `BuildCbw':
+/workspace/rltklant-work/USBNT/test/host/../../src/usbmsc.c:299:(.text.BuildCbw+0xe2): undefined reference to `PUT32'
+/usr/bin/ld: /workspace/rltklant-work/USBNT/test/host/../../src/usbmsc.c:300:(.text.BuildCbw+0x128): undefined reference to `PUT32'
+/usr/bin/ld: /workspace/rltklant-work/USBNT/test/host/../../src/usbmsc.c:301:(.text.BuildCbw+0x143): undefined reference to `PUT32'
+collect2: error: ld returned 1 exit status

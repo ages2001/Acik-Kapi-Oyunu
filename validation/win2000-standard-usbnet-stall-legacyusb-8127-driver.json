@@ -1,0 +1,8 @@
+{
+  "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+  "source": "/workspace/rltklant-work/validation/ftp-fixture/stall32.sys",
+  "size": 91798,
+  "sha256": "dac82c3edf56876ba30a416b88baaeaad75c079765a1499da788c75970f76877",
+  "previous_checkpoint": "win2000-standard-usbnet-trace-legacyusb-8127",
+  "scope": "Native stalled-pipe recovery and current PCI DMA/PHY code; physical validation and firmware integration still pending"
+}

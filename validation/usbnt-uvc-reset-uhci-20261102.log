@@ -1,0 +1,226 @@
+  harness: start
+  usbnt: found UHCI at 00:02.0 (8086:7020) irq 10 io 0000c000
+  usbnt: uhci: 2 ports at io c000
+  usbnt: acpi: 5 tables (RSDT at 0ffe1c17)
+  usbnt: aml: 337 named objects from the ACPI tables
+  usbnt: device 0: 46f4:0103 class ef, full speed, UHCI port 1 depth 0, addr 1
+  usbnt: device 0: QEMU QEMU UVC Test Camera
+  usbnt: device 0: video camera, UVC 1.10, 2 format(s), 3 iso setting(s)
+  usbnt:   format 1: YUY2, 3 frame size(s), first 160x120
+  usbnt:   format 2: MJPG, 2 frame size(s), first 320x240
+  harness: client arrival notification 0
+  usbnt: device 1: 0409:55aa class 09, full speed, UHCI port 2 depth 0, addr 2
+  usbnt: device 1: QEMU QEMU USB Hub
+  usbnt: device 1: hub with 8 ports
+  harness: client arrival notification 1
+  usbnt: device 2: 0627:0001 class 00, full speed, UHCI port 2 hub port 1, addr 3
+  usbnt: device 2: QEMU QEMU USB Keyboard
+  usbnt: device 2: keyboard
+  harness: client arrival notification 2
+  harness: ready
+  CAM id=100 dev=0 uvc=10 formats=2 controls=5fc streaming=0 name=QEMU UVC Test Camera
+  VFMT 0 YUY2 bpp=16 frames=3: 160x120/333333/3 320x240/333333/3 640x480/333333/3
+  VFMT 1 MJPG bpp=0 frames=2: 320x240/333333/2 640x480/333333/2
+  VLS count=1
+ok   camera found
+ok   formats YUY2 + MJPG
+ok   frame sizes
+ok   processing unit controls
+ok   name
+  usbnt: video 0: 160x120 YUY2 every 33.3333 ms, setting 3 (1023 bytes), payload 1023, frame 38400
+  VSTART r=0 YUY2 160x120 max=38400 interval=333333
+ok   start YUY2
+  VFRAME seq=1 bytes=38400 YUY2 160x120 flags=0
+  VBARS 235 210 170 145 106 81 41 16 box=0
+  VFRAME seq=2 bytes=38400 YUY2 160x120 flags=0
+  VFRAME seq=3 bytes=38400 YUY2 160x120 flags=0
+  VFRAME seq=4 bytes=38400 YUY2 160x120 flags=0
+  VBARS 235 210 170 145 106 81 41 16 box=3
+  VGRAB frames=4 errors=0 seqspan=3 ms=112
+ok   YUY2 frames
+ok   YUY2 frames complete
+ok   colour bars [235, 210, 170, 145, 106, 81, 41, 16]
+ok   picture moves (['0', '3'])
+  VCTL r=0 sel=2 value=0 min=-64 max=64 def=0 res=1
+ok   brightness range
+  VCTL r=0 sel=2 value=40 min=-64 max=64 def=0 res=1
+  VCTL r=0 sel=2 value=40 min=-64 max=64 def=0 res=1
+ok   brightness set
+  VFRAME seq=5 bytes=38400 YUY2 160x120 flags=0
+  VBARS 235 210 170 145 106 81 41 16 box=4
+  VFRAME seq=6 bytes=38400 YUY2 160x120 flags=0
+  VFRAME seq=7 bytes=38400 YUY2 160x120 flags=0
+  VBARS 255 250 210 185 146 121 81 56 box=6
+  VGRAB frames=3 errors=0 seqspan=2 ms=80
+ok   brighter picture (black bar 56)
+  VCTL r=0 sel=2 value=0 min=-64 max=64 def=0 res=1
+  VSTOP r=0
+  usbnt: video 0: 320x240 MJPG every 33.3333 ms, setting 2 (512 bytes), payload 243, frame 142336
+  VSTART r=0 MJPG 320x240 max=142336 interval=333333
+ok   start MJPEG
+  VFRAME seq=8 bytes=4966 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=4966
+  VFRAME seq=9 bytes=5058 MJPG 320x240 flags=0
+  VFRAME seq=10 bytes=5041 MJPG 320x240 flags=0
+  VFRAME seq=11 bytes=5013 MJPG 320x240 flags=0
+  VFRAME seq=12 bytes=5009 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=5009
+  VGRAB frames=5 errors=0 seqspan=4 ms=129
+ok   MJPEG frames
+ok   whole JPEG frames
+ok   DHT as the camera sends it
+  usbnt: video 0: 320x240 MJPG every 66.6666 ms, setting 2 (512 bytes), payload 130, frame 142336
+  VSTART r=0 MJPG 320x240 max=142336 interval=666666
+ok   restart 320x240 15 fps
+  VFRAME seq=13 bytes=5048 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=5048
+  VFRAME seq=14 bytes=5069 MJPG 320x240 flags=0
+  VFRAME seq=15 bytes=4957 MJPG 320x240 flags=0
+  VFRAME seq=16 bytes=4966 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=4966
+  VGRAB frames=4 errors=0 seqspan=3 ms=192
+ok   frames after restart
+  VCTL r=0 sel=2 value=40 min=-64 max=64 def=0 res=1
+  usbnt: video 0: 320x240 MJPG every 66.6666 ms, setting 2 (512 bytes), payload 130, frame 142336
+  VRESET index=0 result=0
+ok   physical reset 0
+  CAM id=100 dev=0 uvc=10 formats=2 controls=5fc streaming=1 name=QEMU UVC Test Camera
+  VFMT 0 YUY2 bpp=16 frames=3: 160x120/333333/3 320x240/333333/3 640x480/333333/3
+  VFMT 1 MJPG bpp=0 frames=2: 320x240/333333/2 640x480/333333/2
+  VLS count=1
+ok   same active camera ID
+  VCTL r=0 sel=2 value=40 min=-64 max=64 def=0 res=1
+ok   brightness restored
+  VFRAME seq=17 bytes=5066 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=5066
+  VFRAME seq=18 bytes=4982 MJPG 320x240 flags=0
+  VFRAME seq=19 bytes=4978 MJPG 320x240 flags=0
+  VFRAME seq=20 bytes=5012 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=5012
+  VGRAB frames=4 errors=0 seqspan=3 ms=192
+ok   four fresh frames with increasing sequence
+ok   complete JPEG after reset
+  KEY 2a down
+  KEY 30 down
+  KEY 30 up
+  KEY 2a up
+ok   keyboard sibling after reset
+  usbnt: video 0: 320x240 MJPG every 66.6666 ms, setting 2 (512 bytes), payload 130, frame 142336
+  VRESET index=0 result=0
+ok   physical reset 1
+  CAM id=100 dev=0 uvc=10 formats=2 controls=5fc streaming=1 name=QEMU UVC Test Camera
+  VFMT 0 YUY2 bpp=16 frames=3: 160x120/333333/3 320x240/333333/3 640x480/333333/3
+  VFMT 1 MJPG bpp=0 frames=2: 320x240/333333/2 640x480/333333/2
+  VLS count=1
+ok   same active camera ID
+  VCTL r=0 sel=2 value=40 min=-64 max=64 def=0 res=1
+ok   brightness restored
+  VFRAME seq=27 bytes=4978 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=4978
+  VFRAME seq=28 bytes=5012 MJPG 320x240 flags=0
+  VFRAME seq=29 bytes=5038 MJPG 320x240 flags=0
+  VFRAME seq=30 bytes=4928 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=4928
+  VGRAB frames=4 errors=0 seqspan=3 ms=192
+ok   four fresh frames with increasing sequence
+ok   complete JPEG after reset
+  KEY 2a down
+  KEY 30 down
+  KEY 30 up
+  KEY 2a up
+ok   keyboard sibling after reset
+  usbnt: video 0: 320x240 MJPG every 66.6666 ms, setting 2 (512 bytes), payload 130, frame 142336
+  VRESET index=0 result=0
+ok   physical reset 2
+  CAM id=100 dev=0 uvc=10 formats=2 controls=5fc streaming=1 name=QEMU UVC Test Camera
+  VFMT 0 YUY2 bpp=16 frames=3: 160x120/333333/3 320x240/333333/3 640x480/333333/3
+  VFMT 1 MJPG bpp=0 frames=2: 320x240/333333/2 640x480/333333/2
+  VLS count=1
+ok   same active camera ID
+  VCTL r=0 sel=2 value=40 min=-64 max=64 def=0 res=1
+ok   brightness restored
+  VFRAME seq=37 bytes=5038 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=5038
+  VFRAME seq=38 bytes=4928 MJPG 320x240 flags=0
+  VFRAME seq=39 bytes=4877 MJPG 320x240 flags=0
+  VFRAME seq=40 bytes=5009 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=5009
+  VGRAB frames=4 errors=0 seqspan=3 ms=192
+ok   four fresh frames with increasing sequence
+ok   complete JPEG after reset
+  KEY 2a down
+  KEY 30 down
+  KEY 30 up
+  KEY 2a up
+ok   keyboard sibling after reset
+  usbnt: video 0: 320x240 MJPG every 66.6666 ms, setting 2 (512 bytes), payload 130, frame 142336
+  VRESET index=0 result=0
+ok   physical reset 3
+  CAM id=100 dev=0 uvc=10 formats=2 controls=5fc streaming=1 name=QEMU UVC Test Camera
+  VFMT 0 YUY2 bpp=16 frames=3: 160x120/333333/3 320x240/333333/3 640x480/333333/3
+  VFMT 1 MJPG bpp=0 frames=2: 320x240/333333/2 640x480/333333/2
+  VLS count=1
+ok   same active camera ID
+  VCTL r=0 sel=2 value=40 min=-64 max=64 def=0 res=1
+ok   brightness restored
+  VFRAME seq=47 bytes=4877 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=4877
+  VFRAME seq=48 bytes=5009 MJPG 320x240 flags=0
+  VFRAME seq=49 bytes=5066 MJPG 320x240 flags=0
+  VFRAME seq=50 bytes=4982 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=4982
+  VGRAB frames=4 errors=0 seqspan=3 ms=192
+ok   four fresh frames with increasing sequence
+ok   complete JPEG after reset
+  KEY 2a down
+  KEY 30 down
+  KEY 30 up
+  KEY 2a up
+ok   keyboard sibling after reset
+  usbnt: video 0: 320x240 MJPG every 66.6666 ms, setting 2 (512 bytes), payload 130, frame 142336
+  VRESET index=0 result=0
+ok   physical reset 4
+  CAM id=100 dev=0 uvc=10 formats=2 controls=5fc streaming=1 name=QEMU UVC Test Camera
+  VFMT 0 YUY2 bpp=16 frames=3: 160x120/333333/3 320x240/333333/3 640x480/333333/3
+  VFMT 1 MJPG bpp=0 frames=2: 320x240/333333/2 640x480/333333/2
+  VLS count=1
+ok   same active camera ID
+  VCTL r=0 sel=2 value=40 min=-64 max=64 def=0 res=1
+ok   brightness restored
+  VFRAME seq=57 bytes=5066 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=5066
+  VFRAME seq=58 bytes=4982 MJPG 320x240 flags=0
+  VFRAME seq=59 bytes=4978 MJPG 320x240 flags=0
+  VFRAME seq=60 bytes=5012 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=5012
+  VGRAB frames=4 errors=0 seqspan=3 ms=191
+ok   four fresh frames with increasing sequence
+ok   complete JPEG after reset
+  KEY 2a down
+  KEY 30 down
+  KEY 30 up
+  KEY 2a up
+ok   keyboard sibling after reset
+ok   control request replayed on every reset
+  VFRAME seq=66 bytes=4982 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=4982
+  VFRAME none r=0
+  VGRAB frames=1 errors=0 seqspan=0 ms=0
+  usbnt: device 0: removed
+  harness: client removal notification 0
+  usbnt: device 0: video camera removed
+  VLS count=0
+ok   camera gone after unplug
+  uvc: set_interface if=1 alt=2
+  uvc: stream on (alt): MJPG 320x240 interval 666666
+  uvc: stats alt=2 frames=46 payloads=697 idle=1838 brightness=40
+  uvc: set_interface if=1 alt=0
+  uvc: stats alt=0 frames=56 payloads=802 idle=2347 brightness=40
+  uvc: SET control 02 = 40
+  uvc: SET probe fmt 2 frame 1 interval 666666 -> frame 6090 payload 130 (len 34)
+  uvc: SET commit fmt 2 frame 1 interval 666666 -> frame 6090 payload 130 (len 34)
+  uvc: set_interface if=1 alt=2
+  uvc: stream on (alt): MJPG 320x240 interval 666666
+  uvc: stats alt=2 frames=56 payloads=802 idle=2347 brightness=40
+  uvc: stats alt=2 frames=66 payloads=907 idle=2856 brightness=40
+RESULT uvc-reset uhci PASS

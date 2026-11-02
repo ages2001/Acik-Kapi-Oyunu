@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-02T07:17:47.055591+00:00",
+  "guest": "win2000-standard-usbnet-power-v2-ehci-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 483840,
+      "sha256": "c39d4b27157a266430e79aee71b34a284a10fe6a5efdf8cc4be72858ba5972c8"
+    },
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 555860,
+      "sha256": "69d92dc9dc2567ab814ae39744977338444a7f3bcf06a4cb207d1dcc1bc50418"
+    },
+    "RLTTEST/POWER.LOG": {
+      "file": "POWER.LOG",
+      "size": 81,
+      "sha256": "efa88177b7624fcfbe4b1fb0e0ba7942a897670a6511541ea80db2d52d1f4151"
+    },
+    "RLTTEST/UPOWER.SYS": {
+      "file": "UPOWER.SYS",
+      "size": 12558,
+      "sha256": "54a41b06460817766b4817602dbce36f393f04857cf5501c4e523c3025353340"
+    },
+    "RLTTEST/UPOWER.EXE": {
+      "file": "UPOWER.EXE",
+      "size": 11761,
+      "sha256": "483c04e8da5e16c2f05227986df4895e2189c1c76e54ab45a66e6aceeff26dab"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+[
+  {
+    "phase": "initial",
+    "record": {
+      "source": "xp64-irq-multi-8127.raw",
+      "sha256": "baf172c64bcb0a9309aced43f0a5b463077bef305740cfbde6a1e1efdbf74cd8"
+    }
+  },
+  {
+    "phase": "persistent-rx",
+    "verified_utc": "2026-10-29T20:25:26.048905+00:00",
+    "source": "async64.sys",
+    "sha256": "43e7ba7ea44a8baa6417aca8c1ff109a59f752ec606097584ffcb5656f7230f6",
+    "installation": "FTP transfer completed in guest; native PnP unload, copy to system driver and both package locations, then reinsert; screenshots record copy results",
+    "scope": "Async-prefixed reports use this binary; original and names-prefixed reports precede it"
+  },
+  {
+    "phase": "persistent-rx-reset-hook",
+    "recorded_utc": "2026-10-29T20:46:33.313662+00:00",
+    "source": "reset64.sys",
+    "sha256": "b22cd579720afb1a8ede85efacad9f2b56aa8c082b3d68aa7c8258c349458fa0",
+    "installation": "Completed guest FTP plus unload and successful copies to all three driver/package locations; reinsert/probe passed",
+    "scope": "reset-prefixed reports, before the later atomic reset/carrier ordering fix; no concurrent NDIS-reset guest proof"
+  },
+  {
+    "phase": "atomic-native-reset-carrier",
+    "recorded_utc": "2026-10-29T20:52:48.867752+00:00",
+    "source": "order64.sys",
+    "sha256": "022c5b5284fd39ebd316d4148be8af7a2ada61737ccfdba195535e6a4b44c8fa",
+    "installation": "Guest FTP completed; PnP unload and three successful package/system driver copies visually verified; new attach probe passed",
+    "scope": "ordered-prefixed reports only; includes MDIO page fix, precedes PCI DMA-order change"
+  }
+]

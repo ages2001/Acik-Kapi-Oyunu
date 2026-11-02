@@ -1,0 +1,8 @@
+mcopy: File "::/WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS" not found
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/stage_fat_hardware.py", line 66, in <module>
+    else:subprocess.run(['mcopy','-i',device,'::/'+guest,str(old)],check=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['mcopy', '-i', '/tmp/rltk-growing-fat-qepjcyu4/copy.raw@@32256', '::/WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS', '/tmp/rltk-growing-fat-qepjcyu4/old0']' returned non-zero exit status 1.

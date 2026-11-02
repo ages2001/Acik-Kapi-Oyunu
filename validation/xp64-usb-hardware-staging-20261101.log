@@ -1,0 +1,51 @@
+No errors were found on the image.
+39080/81920 = 47.71% allocated, 94.67% fragmented, 94.31% compressed clusters
+Image end offset: 1113653248
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127.qcow2",
+  "sha256_before_boot": "43dc33482f32c3db95996df6d3b96302f7332a09a0b5dbc8167fac03bb25ad31",
+  "files": [
+    {
+      "guest_path": "windows/system32/drivers/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5x64.sys",
+      "size": 568893,
+      "sha256": "9071429bc2ab0d526f06a019d209af55b584b1f0cca8a44795df3130cccc708c",
+      "old_size": 81086,
+      "old_sha256": "f96ec58eac90b6d5958df41e9bba7d6282db247db362f962cb5b556d94073738"
+    },
+    {
+      "guest_path": "rlttest/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5x64.sys",
+      "size": 568893,
+      "sha256": "9071429bc2ab0d526f06a019d209af55b584b1f0cca8a44795df3130cccc708c",
+      "old_size": 69674,
+      "old_sha256": "8df0c846750944842fcf25ec0dcb8adab0316a32125b80df60c30b51262fa0c7"
+    },
+    {
+      "guest_path": "rlttest/amd64/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5x64.sys",
+      "size": 568893,
+      "sha256": "9071429bc2ab0d526f06a019d209af55b584b1f0cca8a44795df3130cccc708c",
+      "old_size": 69674,
+      "old_sha256": "8df0c846750944842fcf25ec0dcb8adab0316a32125b80df60c30b51262fa0c7"
+    },
+    {
+      "guest_path": "rlttest/netrtlk.inf",
+      "source": "/workspace/rltklant-work/RLTKLANT/bin/2KXP/netrtlk.inf",
+      "size": 8049,
+      "sha256": "1f09e506d10e7618e67fd7ec8152e7d0cec785038af0706d651499cf9921d0c8",
+      "old_size": 7956,
+      "old_sha256": "ced92ef47bbab5b13258b7b77e72a1297551cef59184b7f806e9d464589b6191"
+    },
+    {
+      "guest_path": "rlttest/nprobe64.exe",
+      "source": "/workspace/rltklant-work/validation/ftp-fixture/nprobe64.exe",
+      "size": 15946,
+      "sha256": "ef258fea0c19534e8cdf75dc4dab06be8c346cc1cab5663ef03249bca25e6d83",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

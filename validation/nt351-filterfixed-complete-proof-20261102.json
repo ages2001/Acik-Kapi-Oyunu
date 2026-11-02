@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "guest": "nt351-usbsetup-rtl8139-filterfixed-8127",
+  "driver_sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0",
+  "qemu_sha256": "8de6bf9206c04b049be0f3b5692d535207143f8c99ee9c3d5825ae64b8d8e6b5",
+  "tcp_bytes_each_direction": 3145728,
+  "reset_callbacks": 3,
+  "rx_watchdog_events": 0,
+  "evidence": "nt351-rtl8139-filterfixed-evidence-20261102/manifest.json",
+  "offline": "nt351-rtl8139-filterfixed-offline-20261102/manifest.json",
+  "wire_proof": "nt351-filterfixed-tcp-wire-proof-20261102.json",
+  "scope": "New QEMU built-in RTL8139 filter correction; real guest TCP baseline, after reset, and after cable cycle; normal shutdown/exact file readback. No physical silicon claim."
+}

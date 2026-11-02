@@ -1,0 +1,1 @@
+PASS: 78 production controller power cases: DISPATCH deferral, lower failure, failed resume/rollback, allocation failure, system-to-device mapping, inline callbacks, removal lifetime, exact completion

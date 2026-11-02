@@ -1,0 +1,2 @@
+test: thidrundown.c:120: release_when_waiting: Assertion `wait_seen && !detached && blocks == 2' failed.
+USBNT/test/host/thidrundown.sh: line 10: 193207 Aborted                 "$test_dir/test"

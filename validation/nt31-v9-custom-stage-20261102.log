@@ -1,0 +1,28 @@
+Formatting '/workspace/rltklant-vm/run/nt31-usbsetup-v9-custom-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=419010560 backing_file=/tmp/rltk-growing-fat-5x4o62uh/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+4/6394 = 0.06% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 589824
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt31-usbsetup-v9-custom-8127.qcow2",
+  "sha256_before_boot": "1b43517a9637f0d9b25f01adc68caf6b8e6b40c714985fbff4c16d796aa97c3d",
+  "files": [
+    {
+      "guest_path": "RLTTEST/PMTEST4.EXE",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/startup-maintenance-v6-20261102/PMTEST4.EXE",
+      "size": 13304,
+      "sha256": "cf8d3c71aa2cbb52e8ae0100b38b62928a6fd2ad701766d44bd4da395be1cefe",
+      "old_size": 13304,
+      "old_sha256": "cf8d3c71aa2cbb52e8ae0100b38b62928a6fd2ad701766d44bd4da395be1cefe"
+    },
+    {
+      "guest_path": "RLTTEST/CUSTOM.BAT",
+      "source": "/workspace/rltklant-work/validation/ftp-fixture/CUSTOM.BAT",
+      "size": 881,
+      "sha256": "286bf2da0276f1369154fd13ec95c444ad1ca6261d912f1fc3beb04a788ffd80",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

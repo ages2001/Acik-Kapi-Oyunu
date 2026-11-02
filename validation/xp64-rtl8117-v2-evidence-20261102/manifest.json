@@ -1,0 +1,136 @@
+{
+  "utc": "2026-11-02T06:50:12.999945+00:00",
+  "guest": "xp64-management-rtl8117-v2-multi-8127",
+  "safeoff_screenshot": "xp64-rtl8117-v2-shutdown-20261102.png",
+  "safeoff_sha256": "098ba26ede684aa190f6f409de15b1044e0a5fe15b0b2b754b0e8d4c74fc744f",
+  "files": {
+    "debug.log": {
+      "bytes": 7798,
+      "sha256": "ce971af2ca2b03382e3e32fd0fec17386c32f77e50078578f4143b0767f3072b"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 95,
+      "sha256": "28c8b46daf4b31edc331222d779ff1fbc3f320b382692555d6474fc78f8e59f9"
+    },
+    "launch.json": {
+      "bytes": 2847,
+      "sha256": "d83e43231fa97156553056b079ccc7d51f3818ef0ab6c9f50d190655e698424d"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "2c778f3b99bf633b6008c22339bec69dd7b022507104a22f2b855963a3f87cf3"
+    },
+    "extra1.pcap": {
+      "bytes": 59734,
+      "sha256": "feb6af7b523aa5db34e095fb75bbe30c4ea7d92dc5537c57236b328beebe1223"
+    },
+    "extra2.pcap": {
+      "bytes": 57185,
+      "sha256": "aaada1f00166540220d82aa7d9798403c15acf750ea6252c1a8ec8217e23aa58"
+    },
+    "extra3.pcap": {
+      "bytes": 59678,
+      "sha256": "4ea4010d86b9b02818cc507622df863cf5f14738477e309c19d00660d94c8038"
+    },
+    "extra4.pcap": {
+      "bytes": 63372,
+      "sha256": "2b4c235b4e666c2e0e3ef6c99d874797ab8be9a0d70a67102f01721214277264"
+    },
+    "extra5.pcap": {
+      "bytes": 61625,
+      "sha256": "05eda4e64efc05f30e64afdb0d6e644d992bbdd75001a6ec7deffbce50c7f387"
+    },
+    "pci.pcap": {
+      "bytes": 61960,
+      "sha256": "6c6841e292b8cf6aa31321be2c75411bee22807e543768ecc155d771fa1667b7"
+    }
+  },
+  "shutdown_evidence": "QMP ACPI shutdown, running=false; framebuffer may retain shutdown text",
+  "qmp_capture": {
+    "guest": "xp64-management-rtl8117-v2-multi-8127",
+    "captured_utc": "2026-11-02T06:48:06.803903+00:00",
+    "qmp_status": {
+      "status": "shutdown",
+      "singlestep": false,
+      "running": false
+    },
+    "launch": {
+      "started_at": 1793600960.2674692,
+      "command": [
+        "/workspace/rltklant-tools/qemu-src/build/qemu-system-x86_64",
+        "-machine",
+        "q35",
+        "-cpu",
+        "qemu64",
+        "-m",
+        "512",
+        "-drive",
+        "file=/workspace/rltklant-vm/run/xp64-management-rtl8117-v2-multi-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+        "-nic",
+        "none",
+        "-display",
+        "none",
+        "-vga",
+        "cirrus",
+        "-qmp",
+        "unix:/workspace/rltklant-vm/run/xp64-management-rtl8117-v2-multi-8127/qmp.sock,server=on,wait=off",
+        "-no-reboot",
+        "-no-shutdown",
+        "-debugcon",
+        "file:/workspace/rltklant-vm/run/xp64-management-rtl8117-v2-multi-8127/debug.log",
+        "-serial",
+        "file:/workspace/rltklant-vm/run/xp64-management-rtl8117-v2-multi-8127/serial.log",
+        "-global",
+        "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+        "-global",
+        "q35-pcihost.pci-hole64-size=0",
+        "-no-hpet",
+        "-device",
+        "piix3-ide,id=legacyide",
+        "-device",
+        "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0,lcyls=652,lheads=255,lsecs=63",
+        "-netdev",
+        "user,id=pci0",
+        "-device",
+        "rtl8127,id=pcinic,netdev=pci0,chip-profile=8127bp,dash-enabled=on",
+        "-object",
+        "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/xp64-management-rtl8117-v2-multi-8127/pci.pcap",
+        "-netdev",
+        "user,id=extra1,net=10.0.3.0/24",
+        "-device",
+        "rtl8169,id=extra1,netdev=extra1,mac=52:54:00:12:35:01",
+        "-object",
+        "filter-dump,id=dump1,netdev=extra1,file=/workspace/rltklant-vm/run/xp64-management-rtl8117-v2-multi-8127/extra1.pcap",
+        "-netdev",
+        "user,id=extra2,net=10.0.4.0/24",
+        "-device",
+        "rtl8168,id=extra2,netdev=extra2,mac=52:54:00:12:35:02,chip-profile=8117,dash-enabled=on",
+        "-object",
+        "filter-dump,id=dump2,netdev=extra2,file=/workspace/rltklant-vm/run/xp64-management-rtl8117-v2-multi-8127/extra2.pcap",
+        "-netdev",
+        "user,id=extra3,net=10.0.5.0/24",
+        "-device",
+        "rtl8125,id=extra3,netdev=extra3,mac=52:54:00:12:35:03,chip-profile=8125bp,dash-enabled=on",
+        "-object",
+        "filter-dump,id=dump3,netdev=extra3,file=/workspace/rltklant-vm/run/xp64-management-rtl8117-v2-multi-8127/extra3.pcap",
+        "-netdev",
+        "user,id=extra4,net=10.0.6.0/24",
+        "-device",
+        "rtl8126,id=extra4,netdev=extra4,mac=52:54:00:12:35:04",
+        "-object",
+        "filter-dump,id=dump4,netdev=extra4,file=/workspace/rltklant-vm/run/xp64-management-rtl8117-v2-multi-8127/extra4.pcap",
+        "-netdev",
+        "user,id=extra5,net=10.0.7.0/24",
+        "-device",
+        "rtl8127,id=extra5,netdev=extra5,mac=52:54:00:12:35:05,chip-profile=8127bp,dash-enabled=on",
+        "-object",
+        "filter-dump,id=dump5,netdev=extra5,file=/workspace/rltklant-vm/run/xp64-management-rtl8117-v2-multi-8127/extra5.pcap"
+      ],
+      "qemu_sha256": "98a60959afb8ebdc57e2695f5e85f3aa4ff0210f4c2e074a083d8ffefb5a2a27"
+    }
+  }
+}

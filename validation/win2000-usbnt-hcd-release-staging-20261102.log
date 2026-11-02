@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/win2000-standard-usbnet-hcpower-release-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=1747006464 backing_file=/tmp/rltk-growing-fat-_aptew3f/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+11/26658 = 0.04% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1048576
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/win2000-standard-usbnet-hcpower-release-8127.qcow2",
+  "sha256_before_boot": "f20e403a6bece3e2dfa285d237c4713c6b810c013d4d4aef819ead40da267424",
+  "files": [
+    {
+      "guest_path": "WINNT/SYSTEM32/DRIVERS/USBNT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-hcd-release-v1-20261102/i386.sys",
+      "size": 487424,
+      "sha256": "27ff9b1eb51c7e1cb5b3b49bcd1a3da6cd177c6f4adf44deed8678e5a5e074ee",
+      "old_size": 485888,
+      "old_sha256": "4cd3475f4faf6c4629fdd858c2184a607de88c34ed4a340d78a78e33ee08f6bb"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

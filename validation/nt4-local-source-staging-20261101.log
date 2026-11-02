@@ -1,0 +1,8 @@
+mcopy: File "::/WINNT4/System32/RLTUSB.EXE" not found
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/stage_fat_hardware.py", line 66, in <module>
+    else:subprocess.run(['mcopy','-i',device,'::/'+guest,str(old)],check=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['mcopy', '-i', '/tmp/rltk-growing-fat-d9xg2e40/copy.raw@@32256', '::/WINNT4/System32/RLTUSB.EXE', '/tmp/rltk-growing-fat-d9xg2e40/old0']' returned non-zero exit status 1.

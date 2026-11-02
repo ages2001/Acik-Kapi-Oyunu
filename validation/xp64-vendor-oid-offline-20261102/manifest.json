@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T02:24:51.158680+00:00",
+  "guest": "xp64-vendor-oid-multi-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 606482,
+      "sha256": "0b8b984ecbaf42a390ab8a0c9a8d6c45a06ff9556732ab669888f16e481a8a0b"
+    },
+    "RLTTEST/VOID.LOG": {
+      "file": "VOID.LOG",
+      "size": 1139,
+      "sha256": "756b08b0b29826580e85a6b4fd0cb8a6aef82c9ce96dfa67b46472912798ec89"
+    },
+    "RLTTEST/PCRT.SYS": {
+      "file": "PCRT.SYS",
+      "size": 14119,
+      "sha256": "446e6fd5bcaf5e734a5817680c8495b40650baaa43a7eea7a9d66979617c2ab0"
+    }
+  }
+}

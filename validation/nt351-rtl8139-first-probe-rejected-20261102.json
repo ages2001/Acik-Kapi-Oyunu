@@ -1,0 +1,6 @@
+{
+  "result": "REJECTED_WRONG_FIXTURE_BINDING_NAME",
+  "observed": "First diagnostic opens absent RLTKLANT2 and returns C0010006, zero resets. Actual fixture has only RLTKLANT1, PCI. The uninstalled USB logical path explains the separate mask-3 baseline failure.",
+  "source": "nt351-v2-firstinstall-20261102-registry.json",
+  "next": "Use RLTKLANT1 and require OID description to contain RTL8139 before any reset. Preserve first diagnostic."
+}

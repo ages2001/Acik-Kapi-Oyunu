@@ -1,0 +1,9 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-sleep-v1-8127",
+  "file": "SLPTEST.EXE",
+  "sha256": "3e1debf1fe5e3d0dfa2cc87cfa17984eeefb87a53b00c87b1269c8dd11f8e97e",
+  "bytes": 12159,
+  "time": 1793631796.56166,
+  "utc": "2026-11-02T15:03:16.561668+00:00",
+  "scope": "Server buffered bytes; guest byte count and ftp prompt still require visual verification"
+}

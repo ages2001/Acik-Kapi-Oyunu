@@ -1,0 +1,4 @@
+PASS: Uhci 1000 full/partial cleanup cycles, halted-DMA and live-endpoint guards
+PASS: Ohci 1000 full/partial cleanup cycles, halted-DMA and live-endpoint guards
+PASS: Ehci 1000 full/partial cleanup cycles, halted-DMA and live-endpoint guards
+PASS: Xhci 1000 full/partial cleanup cycles, halted-DMA and live-endpoint guards

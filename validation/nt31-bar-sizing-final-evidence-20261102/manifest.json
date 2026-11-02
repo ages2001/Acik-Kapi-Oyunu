@@ -1,0 +1,36 @@
+{
+  "utc": "2026-11-02T00:35:26.276159+00:00",
+  "guest": "nt31-usbsetup-bar-sizing-8127",
+  "safeoff_screenshot": "nt31-bar-sizing-shutdown-20261102.png",
+  "safeoff_sha256": "c1849b9d1767524ef421998597c113861481f7039c7798f0ef36bba57db9a775",
+  "files": {
+    "debug.log": {
+      "bytes": 1124,
+      "sha256": "10f7f5f215609edbd767d5182f51695ac2a7bb3b73972f4974ba0b8c8803578a"
+    },
+    "serial.log": {
+      "bytes": 12,
+      "sha256": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44"
+    },
+    "qemu.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "launch.json": {
+      "bytes": 1564,
+      "sha256": "c2f0f408fddee2d7aac2379b258203938ff25263f353aee6a612370a213baaed"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "e2c07996c160e39f4bb41328bace4d462f87e24c1ad50a202674a56c94e1c549"
+    },
+    "usb.pcap": {
+      "bytes": 65408,
+      "sha256": "1de8100e1899d8a84eb806664695adb1911ff55af20262d81530d6ebdeae4d6f"
+    },
+    "pci.pcap": {
+      "bytes": 23182,
+      "sha256": "a055628eb27444f120cca582434038e0ae13c79f74f97aaf955a9f8d69d64daf"
+    }
+  }
+}

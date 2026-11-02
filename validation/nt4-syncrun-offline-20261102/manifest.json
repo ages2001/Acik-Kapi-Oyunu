@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T13:52:03.064616+00:00",
+  "guest": "nt4-ndis-dual-syncrun-8127",
+  "files": {
+    "WINNT4/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 418304,
+      "sha256": "3c5f00721bfcbedb1876ae40ee6288d905bde1339ccef7e2a5ef3f1a8b5f21b4"
+    },
+    "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    }
+  }
+}

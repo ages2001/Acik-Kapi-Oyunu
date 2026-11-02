@@ -1,0 +1,41 @@
+{
+  "utc": "2026-11-02T07:45:17.745022+00:00",
+  "guest": "xp64-usbnet-usbnt-power-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 521728,
+      "sha256": "dfed77a964f30d23fc6d7a247f9c95880edc1ba32a7134ace703c195f82a9d4d"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 612153,
+      "sha256": "c741f31533bdcc327f481cefee2d444fd1adf67e711a5b73c0d70980cc3470c2"
+    },
+    "RLTTEST/POWER.LOG": {
+      "file": "POWER.LOG",
+      "size": 81,
+      "sha256": "256bcfe004621a3c20d3e8caa7debe41c3ac466e7e51860fa1cd6ee8ed182318"
+    },
+    "RLTTEST/USBINST.LOG": {
+      "file": "USBINST.LOG",
+      "size": 683,
+      "sha256": "ba561fcd6eb73583f3a8a738b8a2f49bb2781dbc6f520340347e4fd2d01ad6e7"
+    },
+    "RLTTEST/UINST1.LOG": {
+      "file": "UINST1.LOG",
+      "size": 266,
+      "sha256": "8cdc2b4837c795be141e3300e264fa2c929c862f1bbe005773abf1dca9006a6a"
+    },
+    "RLTTEST/UPOWER.SYS": {
+      "file": "UPOWER.SYS",
+      "size": 11207,
+      "sha256": "95924777530247f6583d28189e60d6035b2200ee5e2def58d9b1b5097c7735eb"
+    },
+    "RLTTEST/UPOWER.EXE": {
+      "file": "UPOWER.EXE",
+      "size": 11554,
+      "sha256": "476cd2cb7cb8fce5578a476ba95a27abc55f63c09ef6a98dec15dc0fed7c96ab"
+    }
+  }
+}

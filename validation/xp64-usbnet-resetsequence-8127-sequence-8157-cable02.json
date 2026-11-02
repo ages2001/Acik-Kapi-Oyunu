@@ -1,0 +1,10 @@
+{
+  "guest": "xp64-usbnet-resetsequence-8127",
+  "utc": "2026-11-01T18:33:41.273721+00:00",
+  "token": "sequence-8157-cable02",
+  "report": "TOKEN sequence-8157-cable02\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:02.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+  "peer": [
+    "127.0.0.1",
+    48634
+  ]
+}

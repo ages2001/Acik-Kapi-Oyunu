@@ -1,0 +1,44 @@
+{
+  "utc": "2026-11-01T23:19:31.955150+00:00",
+  "result": "PASS",
+  "scope": "Custom personal Startup automatic cold-logon DHCP with normal-shutdown registry readback",
+  "checks": {
+    "startup_setting": true,
+    "Startup_RLTKLANT DHCP": true,
+    "Startup_dhcpnt31.exe": true,
+    "Startup_notepad.exe": true,
+    "Startup_Keep personal": true,
+    "RltBoot_RLTKLANT DHCP": true,
+    "RltBoot_dhcpnt31.exe": true,
+    "RltBoot_notepad.exe": true,
+    "RltBoot_Keep personal": true,
+    "ConflictBoot_RLTKLANT DHCP": true,
+    "ConflictBoot_dhcpnt31.exe": true,
+    "ConflictBoot_notepad.exe": true,
+    "ConflictBoot_Keep personal": true,
+    "RLTKLANT01_resources": true,
+    "RLTKLANT02_resources": true
+  },
+  "migration": "nt31-v9-custom-proof-20261102.json",
+  "dhcp": "nt31-v9-custom-boot-dhcp-20261102/manifest.json",
+  "tcpip": {
+    "IPAddress": "10.0.3.15",
+    "SubnetMask": "255.255.255.0",
+    "KeepAlive": 1,
+    "BroadcastType": 1,
+    "ForwardBroadcasts": 0,
+    "Trailers": 0,
+    "DefaultGateway": "10.0.3.2",
+    "NameServer": "10.0.3.3"
+  },
+  "files": {
+    "SYSTEM": "ad6789da0db1e3f247703cb8a5cd74e405dffbd1b4a8ff651994cb9a43d35196",
+    "SOFTWARE": "2cbee0a9850fcd123612a23d51f2e529c65b6a3a0e0592d2f22ebdf4663ff078",
+    "DHCPNT31.LOG": "29ac01d114961d359796b43f3dffcbea4837598b9afc771147abbd335a19da9b",
+    "TEST_000": "0f54959dbe2328b93b41fa03a930f6d789843545ca07d41e1fcc79aaf19f3421"
+  },
+  "limits": [
+    "Preconfigured distinct subnets; no live address replacement or renewal",
+    "No physical hardware claim"
+  ]
+}

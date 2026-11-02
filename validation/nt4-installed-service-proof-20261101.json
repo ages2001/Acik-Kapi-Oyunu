@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-01T19:59:32.943315+00:00",
+  "guest": "nt4-ndis-setup-upgrade-8127",
+  "result": "PASS",
+  "running_with_exit_zero": [
+    "RLTKLANT",
+    "usbnt",
+    "Tcpip",
+    "Dhcp",
+    "LanmanWorkstation",
+    "LanmanServer",
+    "LmHosts",
+    "NetBT",
+    "Rdr"
+  ],
+  "adapter_instance_note": "OpenService(RLTKLANT1) returns 1060/0x424; the NDIS instance key is not a standalone SCM service. The shared RLTKLANT driver is running.",
+  "previous_warning": "SCM Event 7002 missing NetworkProvider member. Actual OS Network Setup installed LanmanWorkstation; the next cold boot displayed no warning, and LmHosts now reports SERVICE_RUNNING with exit code 0.",
+  "probe_sha256": "aa780706ff7fee11903daacd7519c4d0560379038384526377b30c023755efab",
+  "screenshot_sha256": "26e6b13ac936d2d514f922c48db078db4bd73018d6ee5f16ab2784f8fe633f83",
+  "scope": "Actual post-install cold boot; package utility copying and traffic validated separately."
+}

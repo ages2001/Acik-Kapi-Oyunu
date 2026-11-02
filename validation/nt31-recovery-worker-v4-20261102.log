@@ -1,0 +1,1 @@
+PASS: 700 full-MAC reset completions, 100 reentrant reset pairs, 100 deferred binding closes, 100 stop-during-recovery schedules, 100 status callbacks closing current/next bindings while a third survives; completion at DISPATCH without locks; all 401 worker objects joined/released

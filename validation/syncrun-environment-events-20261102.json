@@ -1,0 +1,10 @@
+{
+  "utc": "2026-11-02T13:36:19.267921+00:00",
+  "events": [
+    "Four initial launches using the frozen qemu-bin path failed before BIOS loading; logs were preserved in -bios-startup-failure directories. The launcher now supplies the existing BIOS directory with the explicit binary override.",
+    "Four subsequent test guests were paused with QMP stop as workspace free space approached 7 MiB. Historical inactive QEMU gzip archives were losslessly recompressed to xz; raw driver and VM disk bytes were not changed by that storage operation.",
+    "NT4 received Ctrl-Alt-Delete while the OS-loader menu was still active. With -no-reboot/-no-shutdown this entered QMP shutdown, not a guest driver failure. Its screenshot was preserved; QMP system_reset and cont restarted this test.",
+    "NT3.1, Windows 2000 and XP resumed with QMP cont. All performance observations must distinguish this environmental pause from driver latency.",
+    "NT4 system_reset did not clear QMP shutdown. The stopped pre-OS process was quit with exit 0; empty driver trace and loader-screen evidence were preserved in -loader-key-abort. Relaunch uses the same staged disk."
+  ]
+}

@@ -1,0 +1,7 @@
+LIBRARY NTOSKRNL.EXE
+EXPORTS
+KeInitializeEvent@12
+KeResetEvent@4
+KeSetEvent@12
+KeWaitForSingleObject@20
+MmAllocateContiguousMemory@12

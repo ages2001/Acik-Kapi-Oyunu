@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-01T20:53:19.742734+00:00",
+  "status": "HOST_PASS_GUEST_PENDING",
+  "fixes": [
+    "find_opt bounded by recvfrom byte count; checks length byte and option span",
+    "valid_reply checks minimum/maximum length, BOOTREPLY, hardware type/length, transaction ID, client MAC, magic cookie and bounded END-terminated option stream",
+    "Offer/ACK require exact message-type and server-id sizes; ACK server and offered address must match; missing subnet mask is rejected"
+  ],
+  "test": "test_dhcpnt31_packets.py",
+  "log": "dhcpnt31-packet-tests-20261101.log",
+  "frozen_candidate": "frozen-builds/dhcp-packet-bounds-20261101/manifest.json",
+  "remaining": [
+    "actual NT3.1 DHCP exchange with new candidate",
+    "per-interface routing and opt-in behavior for multiple independent adapters",
+    "complete lease/configuration policy review"
+  ]
+}

@@ -1,0 +1,7 @@
+test: /tmp/tmpa5xg5xll/test.c:304: main: Assertion `!memcmp(a.PermanentAddr,factory,6)&&!memcmp(a.CurrentAddr,configured,6)' failed.
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_dma_start_order.py", line 154, in <module>
+    subprocess.run([str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/tmpa5xg5xll/test']' died with <Signals.SIGABRT: 6>.

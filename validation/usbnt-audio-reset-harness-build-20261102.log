@@ -1,0 +1,35 @@
+../src/usbaudio.c: In function ‘RunCalls’:
+../src/usbaudio.c:1700:25: error: implicit declaration of function ‘OpenNow’ [-Wimplicit-function-declaration]
+ 1700 |             c->Result = OpenNow(c->Id, c->Dir, c->Rate, c->Channels, c->Bits, c->Ops, c->Out);
+      |                         ^~~~~~~
+../src/usbaudio.c: In function ‘UaClose’:
+../src/usbaudio.c:1733:23: error: ‘s’ undeclared (first use in this function)
+ 1733 |         QuiesceStream(s);
+      |                       ^
+../src/usbaudio.c:1733:23: note: each undeclared identifier is reported only once for each function it appears in
+../src/usbaudio.c: In function ‘UaStop’:
+../src/usbaudio.c:1816:9: error: ‘u’ undeclared (first use in this function)
+ 1816 |     if (u == NULL || Dir > 1) {
+      |         ^
+../src/usbaudio.c: In function ‘UaGetStats’:
+../src/usbaudio.c:1832:9: error: ‘u’ undeclared (first use in this function)
+ 1832 |     if (u == NULL || Dir > 1) {
+      |         ^
+../src/usbaudio.c: In function ‘UaSetVolume’:
+../src/usbaudio.c:1846:9: error: ‘u’ undeclared (first use in this function)
+ 1846 |     if (u == NULL || Dir > 1 || !u->Info.HasVolume[Dir]) {
+      |         ^
+../src/usbaudio.c: In function ‘UaSelectInput’:
+../src/usbaudio.c:1865:9: error: ‘u’ undeclared (first use in this function)
+ 1865 |     if (u == NULL || Index >= u->Info.NumInputs) {
+      |         ^
+../src/usbaudio.c: At top level:
+../src/usbaudio.c:1878:12: error: static declaration of ‘OpenNow’ follows non-static declaration
+ 1878 | static int OpenNow(ULONG Id, ULONG Dir, ULONG Rate, ULONG Channels, ULONG Bits, const UA_STREAM_OPS *Ops,
+      |            ^~~~~~~
+../src/usbaudio.c:1700:25: note: previous implicit declaration of ‘OpenNow’ with type ‘int()’
+ 1700 |             c->Result = OpenNow(c->Id, c->Dir, c->Rate, c->Channels, c->Bits, c->Ops, c->Out);
+      |                         ^~~~~~~
+../src/usbaudio.c:1878:12: warning: ‘OpenNow’ defined but not used [-Wunused-function]
+ 1878 | static int OpenNow(ULONG Id, ULONG Dir, ULONG Rate, ULONG Channels, ULONG Bits, const UA_STREAM_OPS *Ops,
+      |            ^~~~~~~

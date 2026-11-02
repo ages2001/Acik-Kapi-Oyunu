@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-01T21:53:48.676374+00:00",
+  "files": {
+    "test_setup_startup_parser.py": {
+      "bytes": 3485,
+      "sha256": "29881d6c7bdc06787cc82aa557e768e644221dfdef2c31dd128e31456370aee9"
+    },
+    "rltsetup.c": {
+      "bytes": 14577,
+      "sha256": "3270aa4ac830c45751bd39d6edc4004f9e40deef8e7e7e037788ed58f071cd3f"
+    },
+    "build-rltsetup.sh": {
+      "bytes": 627,
+      "sha256": "b06bf0ec8abb9ee862625ee9f70c4227cb4bbea60718f24c588c30f96eebff1e"
+    },
+    "RLTSETUP.DLL": {
+      "bytes": 19798,
+      "sha256": "0e10f39b348928bea9d5b281bec5aa402e240bf1f8750fd2501e32d3284fba2f"
+    }
+  },
+  "scope": "Accept counted NT3.1 CF_TEXT without an in-band terminator; guest retest pending"
+}

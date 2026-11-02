@@ -1,0 +1,18 @@
+er Ta]
+
+ns indow Help |
+a
+md [~|-
+
+lc:\users\default ping -n 4 -1 1472 10.0,2.2
+Pinging host 10.0.2.2 Cunnaned? : 10.0.2.2
+CHP
+
+CMP
+CMP
+icMP Echo Reply:TIL 255
+
+Hest 10-0.2-2 replied to all 4 of the 4ypings
+
+lc:\users\default>.
+

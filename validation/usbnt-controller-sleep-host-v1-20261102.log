@@ -1,0 +1,6 @@
+In file included from test/host/tcontrollersleep.c:88:
+src/usbsleep.h: In function ‘SleepRestoreDevice’:
+src/usbsleep.h:69:17: error: comparison of integer expressions of different signedness: ‘ULONG’ {aka ‘long unsigned int’} and ‘int’ [-Werror=sign-compare]
+   69 |         if (got != Dev->ConfigLen) r = USB_ERR_NODEV;
+      |                 ^~
+cc1: all warnings being treated as errors

@@ -1,0 +1,61 @@
+{
+  "utc": "2026-11-02T13:21:32.646075+00:00",
+  "result": "PASS_WITH_OPEN_WINDOWS_AND_RELEASE_WORK",
+  "snapshot": "frozen-builds/usbnt-sync-rundown-v2-20261102",
+  "files": {
+    "legacy": {
+      "size": 418304,
+      "sha256": "3c5f00721bfcbedb1876ae40ee6288d905bde1339ccef7e2a5ef3f1a8b5f21b4"
+    },
+    "i386": {
+      "size": 495616,
+      "sha256": "2c4dc477f30d86ad73c09499da01e68868b052de759f4b203e0197f63ff8d91c"
+    },
+    "amd64": {
+      "size": 534016,
+      "sha256": "090105c3b37098b10dd326fa64a979903e8232cf4a2c033dad2a5d06e10d01d4"
+    },
+    "harness": {
+      "size": 1764412,
+      "sha256": "15b3344e0c1743c93e9bfb1d3fac629f69e6d650b46cd09e470e924154a19777"
+    }
+  },
+  "host_cases": {
+    "delayed_callback_event_timeout": 200,
+    "submission_failure": 100
+  },
+  "native_physical_resets": {
+    "storage": 20,
+    "audio_midi": 5,
+    "video": 5,
+    "card_reader": 5
+  },
+  "evidence": {
+    "usbnt-sync-rundown-host-v1-20261102.log": "451a2ceb2a9ecb1840cd43b429c04bdfedb7c701c4d7e0434da8d392aedae69e",
+    "usbnt-sync-rundown-v2-audio-20261102.log": "a3be2b4e3f00b6c9b9d93f673a4e2557ee454786622c1f74880d79ff09a92fad",
+    "usbnt-sync-rundown-v2-video-20261102.log": "1f61b21bfa6abfdb8a48440f2267e3ea18bb7a6f6fe153b24be153a4154c9c53",
+    "usbnt-sync-rundown-v2-cardreader-20261102.log": "8222fb452548351333760d81478b7ccba691dbf0b0415a8ff400c554705d9232",
+    "usbnt-sync-rundown-v2-xhci-uas-20261102.log": "6c60583cdcf54d6b29caa78410f0d23b82bb12648dac67822303eb3e1b0a578c",
+    "usbnt-sync-rundown-v2-ehci-bot-20261102.log": "c34180597e8658b89476e1a8cc03d74be9f1cf2a34f43d9ccd4d341ad527ce4d",
+    "usbnt-sync-rundown-v2-uhci-bot-20261102.log": "f4a9b3785121f2b0fd103b46a182f20fc05ef83b9d4f6224b95cd3c96f78dfaa",
+    "usbnt-sync-rundown-v2-ohci-bot-20261102.log": "9d4451e6ae6d2a5605fbd56926afe8898abf34e63273d786a8503ab991bcb7c9"
+  },
+  "old_source_failure": {
+    "file": "usbnt-sync-rundown-before-20261102.log",
+    "sha256": "8ef4a1754f33eae70f2e09f2bc8a28e2d196fd9f08e7c756ed198722904fc75e"
+  },
+  "tests": {
+    "USBNT/test/host/tsyncrundown.py": "64cd7f6605a972a998f3b32825068172efc91098f970ee7cd11cfd669cda2251",
+    "USBNT/test/tmscreset.py": "99910709b6bfe68f2fb9f367cbcf3780a802da47cb16c8845147c84f0c8c6d8a",
+    "USBNT/test/tuacreset.py": "a490743064049721027b46d40768db5cb5953377b5891d56709a17d481c54b93",
+    "USBNT/test/tuvcreset.py": "2d60e98f14a06b67a9ee79aab3c504dcc1c928085a812af1e11d3d961f6c71d4",
+    "USBNT/test/trtsxreset.py": "f8208339afbc79f9e11a52b678e8effd78d16b872c18ee4193f2442d6645707b"
+  },
+  "scope": "The synchronous caller retains its event, transfer and DMA owner until the collected completion finishes accessing them, including after cancellation or I/O timeout. The production-source host test detects early return in the prior source. Native QEMU regressions retain storage data, stream settings and sibling input.",
+  "limits": [
+    "Installed Windows evidence for these exact hashes is separate.",
+    "The prior NT3.51 RTL8159 attachment latency failure is not proven fixed.",
+    "Identity-preserving parent sleep, mixed-owner guest fixtures and release media remain open.",
+    "No physical silicon certification. USBNT 1.3 remains unreleased."
+  ]
+}

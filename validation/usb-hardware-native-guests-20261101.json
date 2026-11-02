@@ -1,0 +1,1065 @@
+{
+  "utc": "2026-11-01T17:31:05.201523+00:00",
+  "scope": "Frozen USB hardware builds, not later DMA/port-reset builds; native device name/problem status and guest-checked 1472-byte ICMP; protocol simulation only",
+  "results": [
+    {
+      "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+      "fixture": {
+        "utc": "2026-11-01T16:41:13.384293+00:00",
+        "parent": "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+        "parent_chain": [
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 10944512,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 10887168,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 10887168,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 11730944,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 11669504,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 11669504,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 11599872,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 11542528,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "raw",
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 11542528,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+            "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 1747006464,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+                  "format": "file",
+                  "actual-size": 684900352,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+            "format": "raw",
+            "actual-size": 684900352,
+            "dirty-flag": false
+          }
+        ],
+        "image": "/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127.qcow2",
+        "sha256_before_boot": "d2046768a82e9588dfa339495d2c2e27bbb8bb60a7855568cc0a259931af4b70",
+        "files": [
+          {
+            "guest_path": "WINNT/system32/drivers/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5.sys",
+            "size": 514732,
+            "sha256": "b5df28381087e2c942d5269425309e845728a658b6d8d7abafe558df4167e430",
+            "old_size": 276525,
+            "old_sha256": "d5f100af6d6dae6a73a86213a8aba1e2aff83eb486fb285d5087a6b854be2ffb"
+          },
+          {
+            "guest_path": "rlttest/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5.sys",
+            "size": 514732,
+            "sha256": "b5df28381087e2c942d5269425309e845728a658b6d8d7abafe558df4167e430",
+            "old_size": 276525,
+            "old_sha256": "d5f100af6d6dae6a73a86213a8aba1e2aff83eb486fb285d5087a6b854be2ffb"
+          },
+          {
+            "guest_path": "rlttest/i386/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5.sys",
+            "size": 514732,
+            "sha256": "b5df28381087e2c942d5269425309e845728a658b6d8d7abafe558df4167e430",
+            "old_size": 276525,
+            "old_sha256": "d5f100af6d6dae6a73a86213a8aba1e2aff83eb486fb285d5087a6b854be2ffb"
+          }
+        ],
+        "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+      },
+      "launch": {
+        "started_at": 1793551298.2633452,
+        "command": [
+          "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+          "-machine",
+          "q35",
+          "-cpu",
+          "pentium3",
+          "-m",
+          "128",
+          "-drive",
+          "file=/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+          "-nic",
+          "none",
+          "-display",
+          "none",
+          "-vga",
+          "cirrus",
+          "-qmp",
+          "unix:/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127/qmp.sock,server=on,wait=off",
+          "-no-reboot",
+          "-no-shutdown",
+          "-device",
+          "ich9-ahci,id=ahci",
+          "-device",
+          "ide-hd,drive=bootdisk,bus=ahci.0,bootindex=0",
+          "-debugcon",
+          "file:/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127/debug.log",
+          "-serial",
+          "file:/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127/serial.log",
+          "-device",
+          "usb-ehci,id=ehci",
+          "-netdev",
+          "user,id=n0",
+          "-device",
+          "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+          "-object",
+          "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127/usb.pcap",
+          "-global",
+          "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+          "-global",
+          "q35-pcihost.pci-hole64-size=0",
+          "-no-hpet"
+        ],
+        "qemu_sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a"
+      },
+      "series": [
+        {
+          "file": "win2000-standard-usbnet-hardware-ehci-8127-hardware-8153-native-hotplug.json",
+          "sha256": "58cdc9dfe514e345580bdfc84809e39e3b2e379e5d1fd2df11110b5484de3c63",
+          "result": {
+            "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+            "model": "usb-rtl8153",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T16:45:43.706323+00:00",
+                "token": "hardware-8153-native01",
+                "report": "TOKEN hardware-8153-native01\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:03.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  48002
+                ]
+              },
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T16:46:00.023443+00:00",
+                "token": "hardware-8153-native02",
+                "report": "TOKEN hardware-8153-native02\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:03.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  43374
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "file": "win2000-standard-usbnet-hardware-ehci-8127-hardware-8156-native-hotplug.json",
+          "sha256": "c577e885dffa034a7d82febbd2f5535c006ab596b3209451174c1a9826c59c9e",
+          "result": {
+            "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+            "model": "usb-rtl8156",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T16:46:48.673471+00:00",
+                "token": "hardware-8156-native01",
+                "report": "TOKEN hardware-8156-native01\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:03.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  48829
+                ]
+              },
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T16:47:05.218032+00:00",
+                "token": "hardware-8156-native02",
+                "report": "TOKEN hardware-8156-native02\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:03.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  41995
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "file": "win2000-standard-usbnet-hardware-ehci-8127-hardware-8157-cable-native-cable.json",
+          "sha256": "cffdacfe6416669820f2bd3df4be8ab93187345c69fa84a876cf7d530dbe5102",
+          "result": {
+            "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+            "model": "usb-rtl8157",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:05:04.452533+00:00",
+                "token": "hardware-8157-cable-cable01",
+                "report": "TOKEN hardware-8157-cable-cable01\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  45914
+                ],
+                "network_readiness": {
+                  "evidence": "carrier cycle; existing IPv4 assignment",
+                  "wait_seconds": 7
+                }
+              },
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:05:19.544646+00:00",
+                "token": "hardware-8157-cable-cable02",
+                "report": "TOKEN hardware-8157-cable-cable02\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  59448
+                ],
+                "network_readiness": {
+                  "evidence": "carrier cycle; existing IPv4 assignment",
+                  "wait_seconds": 7
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "win2000-standard-usbnet-hardware-ehci-8127-hardware-8157-ready-native-hotplug.json",
+          "sha256": "cc8c45b4ec6274476288558fed633ecc5a367861439cc7c66efa4bfc28848c6b",
+          "result": {
+            "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+            "model": "usb-rtl8157",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:01:27.416141+00:00",
+                "token": "hardware-8157-ready-native01",
+                "report": "TOKEN hardware-8157-ready-native01\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  50548
+                ],
+                "network_readiness": {
+                  "wait_seconds": 11.031936036000843,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              },
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:01:48.130093+00:00",
+                "token": "hardware-8157-ready-native02",
+                "report": "TOKEN hardware-8157-ready-native02\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  52542
+                ],
+                "network_readiness": {
+                  "wait_seconds": 8.63211379799759,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "win2000-standard-usbnet-hardware-ehci-8127-hardware-8157-stall-native-hotplug.json",
+          "sha256": "b7e3812ba9b70370b5c1d55a306b4dc8f611ad3f8f55986783db593236856c8d",
+          "result": {
+            "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+            "model": "usb-rtl8157",
+            "rx_stall_injected_before_each_remove": true,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:08:09.688488+00:00",
+                "token": "hardware-8157-stall-native01",
+                "report": "TOKEN hardware-8157-stall-native01\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  54139
+                ],
+                "network_readiness": {
+                  "wait_seconds": 12.946837543000584,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              },
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:08:30.366544+00:00",
+                "token": "hardware-8157-stall-native02",
+                "report": "TOKEN hardware-8157-stall-native02\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  53226
+                ],
+                "network_readiness": {
+                  "wait_seconds": 8.435695651001879,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "win2000-standard-usbnet-hardware-ehci-8127-hardware-8159-cable-native-cable.json",
+          "sha256": "5cc5d7adaefb3f29aaf811c51236e680d8c2bdafdfbb1f1cb70ccd5d6338d11c",
+          "result": {
+            "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+            "model": "usb-rtl8159",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:15:05.372080+00:00",
+                "token": "hardware-8159-cable-cable01",
+                "report": "TOKEN hardware-8159-cable-cable01\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:03.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  49281
+                ],
+                "network_readiness": {
+                  "evidence": "carrier cycle; existing IPv4 assignment",
+                  "wait_seconds": 7
+                }
+              },
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:15:20.447866+00:00",
+                "token": "hardware-8159-cable-cable02",
+                "report": "TOKEN hardware-8159-cable-cable02\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:03.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  47982
+                ],
+                "network_readiness": {
+                  "evidence": "carrier cycle; existing IPv4 assignment",
+                  "wait_seconds": 7
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "win2000-standard-usbnet-hardware-ehci-8127-hardware-8159-ready-native-hotplug.json",
+          "sha256": "d87fef7b238839a205749f11a9ed7800926ebea985d85eda430d940936ce14f9",
+          "result": {
+            "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+            "model": "usb-rtl8159",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T16:59:28.678360+00:00",
+                "token": "hardware-8159-ready-native01",
+                "report": "TOKEN hardware-8159-ready-native01\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:03.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  51261
+                ],
+                "network_readiness": {
+                  "wait_seconds": 14.84067302600306,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              },
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T16:59:59.675693+00:00",
+                "token": "hardware-8159-ready-native02",
+                "report": "TOKEN hardware-8159-ready-native02\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:03.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  52704
+                ],
+                "network_readiness": {
+                  "wait_seconds": 18.869737546003307,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "win2000-standard-usbnet-hardware-ehci-8127-hardware-8159-stall-native-hotplug.json",
+          "sha256": "47173564bed2e6680aae315a3b451144a8665dee133745ce186a53e0fded3e3e",
+          "result": {
+            "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+            "model": "usb-rtl8159",
+            "rx_stall_injected_before_each_remove": true,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:15:51.647108+00:00",
+                "token": "hardware-8159-stall-native01",
+                "report": "TOKEN hardware-8159-stall-native01\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:03.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  34290
+                ],
+                "network_readiness": {
+                  "wait_seconds": 19.104111541004386,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              },
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:16:22.788151+00:00",
+                "token": "hardware-8159-stall-native02",
+                "report": "TOKEN hardware-8159-stall-native02\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:03.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  35837
+                ],
+                "network_readiness": {
+                  "wait_seconds": 19.00008990999777,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "win2000-standard-usbnet-hardware-ehci-8127-hardware-8159-switch-native-hotplug.json",
+          "sha256": "dbd824a8564a8189f3db65b11af96a6a92fec656e489148be166256bdd859dd3",
+          "result": {
+            "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+            "model": "usb-rtl8159",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:14:18.929663+00:00",
+                "token": "hardware-8159-switch-native01",
+                "report": "TOKEN hardware-8159-switch-native01\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:03.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  43146
+                ],
+                "network_readiness": {
+                  "wait_seconds": 16.272755130004953,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              },
+              {
+                "guest": "win2000-standard-usbnet-hardware-ehci-8127",
+                "utc": "2026-11-01T17:14:50.248022+00:00",
+                "token": "hardware-8159-switch-native02",
+                "report": "TOKEN hardware-8159-switch-native02\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:03.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  33575
+                ],
+                "network_readiness": {
+                  "wait_seconds": 19.096649658007664,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-hardware-8127",
+      "fixture": {
+        "utc": "2026-11-01T16:42:22.458503+00:00",
+        "parent": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+        "parent_chain": [
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 26673152,
+                  "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 26615808,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "raw",
+            "virtual-size": 5368709120,
+            "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 26615808,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+            "backing-filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 5368709120,
+                  "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+                  "format": "file",
+                  "actual-size": 2542632960,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "virtual-size": 5368709120,
+            "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+            "format": "raw",
+            "actual-size": 2542632960,
+            "dirty-flag": false
+          }
+        ],
+        "image": "/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127.qcow2",
+        "sha256_before_boot": "76ab7957c921aead760b1c93fa1cbbea2c0af83ea0adefa788f91f28f7347002",
+        "files": [
+          {
+            "guest_path": "windows/system32/drivers/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5x64.sys",
+            "size": 568893,
+            "sha256": "9071429bc2ab0d526f06a019d209af55b584b1f0cca8a44795df3130cccc708c",
+            "old_size": 81086,
+            "old_sha256": "f96ec58eac90b6d5958df41e9bba7d6282db247db362f962cb5b556d94073738"
+          },
+          {
+            "guest_path": "rlttest/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5x64.sys",
+            "size": 568893,
+            "sha256": "9071429bc2ab0d526f06a019d209af55b584b1f0cca8a44795df3130cccc708c",
+            "old_size": 69674,
+            "old_sha256": "8df0c846750944842fcf25ec0dcb8adab0316a32125b80df60c30b51262fa0c7"
+          },
+          {
+            "guest_path": "rlttest/amd64/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/usb-hardware-20261101/ndis5x64.sys",
+            "size": 568893,
+            "sha256": "9071429bc2ab0d526f06a019d209af55b584b1f0cca8a44795df3130cccc708c",
+            "old_size": 69674,
+            "old_sha256": "8df0c846750944842fcf25ec0dcb8adab0316a32125b80df60c30b51262fa0c7"
+          },
+          {
+            "guest_path": "rlttest/netrtlk.inf",
+            "source": "/workspace/rltklant-work/RLTKLANT/bin/2KXP/netrtlk.inf",
+            "size": 8049,
+            "sha256": "1f09e506d10e7618e67fd7ec8152e7d0cec785038af0706d651499cf9921d0c8",
+            "old_size": 7956,
+            "old_sha256": "ced92ef47bbab5b13258b7b77e72a1297551cef59184b7f806e9d464589b6191"
+          },
+          {
+            "guest_path": "rlttest/nprobe64.exe",
+            "source": "/workspace/rltklant-work/validation/ftp-fixture/nprobe64.exe",
+            "size": 15946,
+            "sha256": "ef258fea0c19534e8cdf75dc4dab06be8c346cc1cab5663ef03249bca25e6d83",
+            "old_size": null,
+            "old_sha256": null
+          }
+        ],
+        "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency.",
+        "initial_conversion_sha256": "43dc33482f32c3db95996df6d3b96302f7332a09a0b5dbc8167fac03bb25ad31",
+        "compaction": "Empty overlay safely rebased from staged copy to durable original parent; full qemu-img compare passed before first boot."
+      },
+      "launch": {
+        "started_at": 1793551473.7667255,
+        "command": [
+          "/workspace/rltklant-tools/qemu-src/build/qemu-system-x86_64",
+          "-machine",
+          "q35",
+          "-cpu",
+          "qemu64",
+          "-m",
+          "512",
+          "-drive",
+          "file=/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+          "-nic",
+          "none",
+          "-display",
+          "none",
+          "-vga",
+          "cirrus",
+          "-qmp",
+          "unix:/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127/qmp.sock,server=on,wait=off",
+          "-no-reboot",
+          "-no-shutdown",
+          "-debugcon",
+          "file:/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127/debug.log",
+          "-serial",
+          "file:/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127/serial.log",
+          "-device",
+          "usb-ehci,id=ehci",
+          "-netdev",
+          "user,id=n0",
+          "-device",
+          "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+          "-object",
+          "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127/usb.pcap",
+          "-global",
+          "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+          "-global",
+          "q35-pcihost.pci-hole64-size=0",
+          "-no-hpet",
+          "-device",
+          "piix3-ide,id=legacyide",
+          "-device",
+          "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0,lcyls=652,lheads=255,lsecs=63"
+        ],
+        "qemu_sha256": "ce3a860c3b664dc5ee6e625b970ae87c9a29ffec789a3515005da7404968d9e5"
+      },
+      "series": [
+        {
+          "file": "xp64-usbnet-hardware-8127-hardware-8153-ready-native-hotplug.json",
+          "sha256": "282f0e57d784acda931fa79463ec2a0d30594f22d8e31648f8725110744d189d",
+          "result": {
+            "guest": "xp64-usbnet-hardware-8127",
+            "model": "usb-rtl8153",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:06:25.389644+00:00",
+                "token": "hardware-8153-ready-native01",
+                "report": "TOKEN hardware-8153-ready-native01\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  45415
+                ],
+                "network_readiness": {
+                  "wait_seconds": 6.113987659991835,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              },
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:06:40.438254+00:00",
+                "token": "hardware-8153-ready-native02",
+                "report": "TOKEN hardware-8153-ready-native02\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  35319
+                ],
+                "network_readiness": {
+                  "wait_seconds": 3.709509505992173,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "xp64-usbnet-hardware-8127-hardware-8156-ready-native-hotplug.json",
+          "sha256": "5625d33f4b24cd7e4511b5b762ec6d244e7cbcb119c20109726c3cdb2a178715",
+          "result": {
+            "guest": "xp64-usbnet-hardware-8127",
+            "model": "usb-rtl8156",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:13:55.539038+00:00",
+                "token": "hardware-8156-ready-native01",
+                "report": "TOKEN hardware-8156-ready-native01\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:02.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  47449
+                ],
+                "network_readiness": {
+                  "wait_seconds": 5.516686977003701,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              },
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:14:10.610080+00:00",
+                "token": "hardware-8156-ready-native02",
+                "report": "TOKEN hardware-8156-ready-native02\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:02.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  59610
+                ],
+                "network_readiness": {
+                  "wait_seconds": 3.720779733994277,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "xp64-usbnet-hardware-8127-hardware-8157-cable-native-cable.json",
+          "sha256": "5e6f006972d96f7ae7701c29525c18ebe35b958ed60ca84f99c3f6fda0a2a413",
+          "result": {
+            "guest": "xp64-usbnet-hardware-8127",
+            "model": "usb-rtl8157",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:21:48.388155+00:00",
+                "token": "hardware-8157-cable-cable01",
+                "report": "TOKEN hardware-8157-cable-cable01\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:02.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  35815
+                ],
+                "network_readiness": {
+                  "evidence": "carrier cycle; existing IPv4 assignment",
+                  "wait_seconds": 7
+                }
+              },
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:22:03.480043+00:00",
+                "token": "hardware-8157-cable-cable02",
+                "report": "TOKEN hardware-8157-cable-cable02\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:02.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  41130
+                ],
+                "network_readiness": {
+                  "evidence": "carrier cycle; existing IPv4 assignment",
+                  "wait_seconds": 7
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "xp64-usbnet-hardware-8127-hardware-8157-ready-native-hotplug.json",
+          "sha256": "049eb0f0e2597cc70fa8286f11c21de7d5cab6ef92a07f01ee3be89203bb63da",
+          "result": {
+            "guest": "xp64-usbnet-hardware-8127",
+            "model": "usb-rtl8157",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:21:00.816205+00:00",
+                "token": "hardware-8157-ready-native01",
+                "report": "TOKEN hardware-8157-ready-native01\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:02.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  53552
+                ],
+                "network_readiness": {
+                  "wait_seconds": 7.92571929100086,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              },
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:21:17.680799+00:00",
+                "token": "hardware-8157-ready-native02",
+                "report": "TOKEN hardware-8157-ready-native02\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:02.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  40424
+                ],
+                "network_readiness": {
+                  "wait_seconds": 5.427070028992603,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "xp64-usbnet-hardware-8127-hardware-8157-stall-native-hotplug.json",
+          "sha256": "7ee157909f51d81ded50be8d98fe0ddce157ba27ee4fa88fd9214aa964cf12ac",
+          "result": {
+            "guest": "xp64-usbnet-hardware-8127",
+            "model": "usb-rtl8157",
+            "rx_stall_injected_before_each_remove": true,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:22:21.043138+00:00",
+                "token": "hardware-8157-stall-native01",
+                "report": "TOKEN hardware-8157-stall-native01\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:02.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  59351
+                ],
+                "network_readiness": {
+                  "wait_seconds": 6.218046815003618,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              },
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:22:41.148426+00:00",
+                "token": "hardware-8157-stall-native02",
+                "report": "TOKEN hardware-8157-stall-native02\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:02.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  34207
+                ],
+                "network_readiness": {
+                  "wait_seconds": 8.729316184006166,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "xp64-usbnet-hardware-8127-hardware-8159-cable-native-cable.json",
+          "sha256": "c51f49b7555b3bf7878c481f66a3fa21299e38f3f7a9407cedc0d5f7eb144f62",
+          "result": {
+            "guest": "xp64-usbnet-hardware-8127",
+            "model": "usb-rtl8159",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:25:56.386224+00:00",
+                "token": "hardware-8159-cable-cable01",
+                "report": "TOKEN hardware-8159-cable-cable01\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  51979
+                ],
+                "network_readiness": {
+                  "evidence": "carrier cycle; existing IPv4 assignment",
+                  "wait_seconds": 7
+                }
+              },
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:26:11.424092+00:00",
+                "token": "hardware-8159-cable-cable02",
+                "report": "TOKEN hardware-8159-cable-cable02\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  44818
+                ],
+                "network_readiness": {
+                  "evidence": "carrier cycle; existing IPv4 assignment",
+                  "wait_seconds": 7
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "xp64-usbnet-hardware-8127-hardware-8159-ready-native-hotplug.json",
+          "sha256": "7c494159268c3a89a135d9eadb4e3b12d0a575d094dbc257e66793da56ce1631",
+          "result": {
+            "guest": "xp64-usbnet-hardware-8127",
+            "model": "usb-rtl8159",
+            "rx_stall_injected_before_each_remove": false,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:25:21.216313+00:00",
+                "token": "hardware-8159-ready-native01",
+                "report": "TOKEN hardware-8159-ready-native01\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  33831
+                ],
+                "network_readiness": {
+                  "wait_seconds": 7.533972000004724,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              },
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:25:41.289321+00:00",
+                "token": "hardware-8159-ready-native02",
+                "report": "TOKEN hardware-8159-ready-native02\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  46682
+                ],
+                "network_readiness": {
+                  "wait_seconds": 8.832021958995028,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "file": "xp64-usbnet-hardware-8127-hardware-8159-stall-native-hotplug.json",
+          "sha256": "3a1ec32e49e8899ac81c0554c690dfa06bb7045dc669886d2b9cdd91cd943ea5",
+          "result": {
+            "guest": "xp64-usbnet-hardware-8127",
+            "model": "usb-rtl8159",
+            "rx_stall_injected_before_each_remove": true,
+            "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+            "cycles": [
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:26:31.404654+00:00",
+                "token": "hardware-8159-stall-native01",
+                "report": "TOKEN hardware-8159-stall-native01\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  55789
+                ],
+                "network_readiness": {
+                  "wait_seconds": 8.52807904400106,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              },
+              {
+                "guest": "xp64-usbnet-hardware-8127",
+                "utc": "2026-11-01T17:26:51.478996+00:00",
+                "token": "hardware-8159-stall-native02",
+                "report": "TOKEN hardware-8159-stall-native02\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+                "peer": [
+                  "127.0.0.1",
+                  53600
+                ],
+                "network_readiness": {
+                  "wait_seconds": 8.643354184998316,
+                  "evidence": "fresh assigned-source ARP"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "completed_cycles": 34
+}

@@ -1,0 +1,118 @@
+{
+  "utc": "2026-10-30T04:25:56.451889+00:00",
+  "scope": "Actual guest NDIS/USB traffic against bounded QEMU protocol models; HTTP counts visually verified in saved screenshots. Not physical silicon or complete family coverage.",
+  "results": [
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "model_at_baseline": "RTL8150",
+      "stalls_recovered": 10,
+      "stalled_removals_recovered": 10,
+      "matched_payload_replies": 80,
+      "http_after_cycles_pass": 10,
+      "http_after_cycles_fail": 0,
+      "driver_sha256": "dac82c3edf56876ba30a416b88baaeaad75c079765a1499da788c75970f76877",
+      "qemu_sha256": "28758a74c18a58bdaa164e093f36e76d38c64754ee0e923ed371579f7ae0f684",
+      "evidence": [
+        "win2000-standard-usbnet-stall-legacyusb-8127-recovery-stall-cycles.json",
+        "win2000-standard-usbnet-stall-legacyusb-8127-stall-remove-native-hotplug.json"
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-ehci-8127",
+      "model_at_baseline": "RTL8153",
+      "stalls_recovered": 10,
+      "stalled_removals_recovered": 10,
+      "matched_payload_replies": 80,
+      "http_after_cycles_pass": 10,
+      "http_after_cycles_fail": 0,
+      "driver_sha256": "dac82c3edf56876ba30a416b88baaeaad75c079765a1499da788c75970f76877",
+      "qemu_sha256": "28758a74c18a58bdaa164e093f36e76d38c64754ee0e923ed371579f7ae0f684",
+      "evidence": [
+        "win2000-standard-usbnet-stall-ehci-8127-recovery-stall-cycles.json",
+        "win2000-standard-usbnet-stall-ehci-8127-stall-remove-native-hotplug.json"
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "model_at_baseline": "RTL8153",
+      "stalls_recovered": 10,
+      "stalled_removals_recovered": 10,
+      "matched_payload_replies": 80,
+      "http_after_cycles_pass": 10,
+      "http_after_cycles_fail": 0,
+      "driver_sha256": "b23fd46b56a5ef55deebbb17a9cf00390c67c47b713d9e094a2a0f192dfadd20",
+      "qemu_sha256": "a8ff64bf4a405f9f62b34de0f2aae3db14b16061561fdef7e2a2812a6371d222",
+      "evidence": [
+        "xp64-usbnet-stall-8127-recovery-stall-cycles.json",
+        "xp64-usbnet-stall-8127-stall-remove-native-hotplug.json"
+      ]
+    }
+  ],
+  "extended_profiles": [
+    {
+      "guest": "win2000-standard-usbnet-stall-ehci-8127",
+      "profile": "rtl8156",
+      "recovered_stalls": 5,
+      "matched_payload_replies": 20,
+      "evidence": "win2000-standard-usbnet-stall-ehci-8127-rtl8156-stall-cycles.json"
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-ehci-8127",
+      "profile": "rtl8157",
+      "recovered_stalls": 5,
+      "matched_payload_replies": 20,
+      "evidence": "win2000-standard-usbnet-stall-ehci-8127-rtl8157-stall-cycles.json"
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-ehci-8127",
+      "profile": "rtl8159",
+      "recovered_stalls": 5,
+      "matched_payload_replies": 20,
+      "evidence": "win2000-standard-usbnet-stall-ehci-8127-rtl8159-stall-cycles.json"
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "profile": "rtl8156",
+      "recovered_stalls": 5,
+      "matched_payload_replies": 20,
+      "evidence": "xp64-usbnet-stall-8127-rtl8156-stall-cycles.json"
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "profile": "rtl8157",
+      "recovered_stalls": 5,
+      "matched_payload_replies": 20,
+      "evidence": "xp64-usbnet-stall-8127-rtl8157-stall-cycles.json"
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "profile": "rtl8159",
+      "recovered_stalls": 5,
+      "matched_payload_replies": 20,
+      "evidence": "xp64-usbnet-stall-8127-rtl8159-stall-cycles.json"
+    }
+  ],
+  "total_recovered_stalls": 60,
+  "total_stalled_removals": 30,
+  "updated_utc": "2026-10-30T04:31:43.881658+00:00",
+  "cable_checks": [
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "profile": "RTL8150",
+      "cycles": 4,
+      "evidence": "win2000-standard-usbnet-stall-legacyusb-8127-stall-current-native-cable.json"
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-ehci-8127",
+      "profile": "RTL8156",
+      "cycles": 4,
+      "evidence": "win2000-standard-usbnet-stall-ehci-8127-stall-8156-native-cable.json"
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "profile": "RTL8156",
+      "cycles": 4,
+      "evidence": "xp64-usbnet-stall-8127-stall-8156-native-cable.json"
+    }
+  ]
+}

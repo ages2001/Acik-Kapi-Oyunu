@@ -1,0 +1,9 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-v1-8127",
+  "file": "MKEY2.EXE",
+  "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549",
+  "bytes": 12604,
+  "time": 1793628775.368488,
+  "utc": "2026-11-02T14:12:55.368497+00:00",
+  "scope": "Server buffered bytes; guest byte count and ftp prompt still require visual verification"
+}

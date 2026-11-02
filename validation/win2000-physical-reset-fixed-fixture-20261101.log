@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-fixed-ehci-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=1747006464 backing_file=/tmp/rltk-growing-fat-lfsl6g84/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+2/26658 = 0.01% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 458752
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-fixed-ehci-8127.qcow2",
+  "sha256_before_boot": "61ca94637e6b816439f4cacedd103fdf64f402d7f84685ddd13469a0c6b03d0b",
+  "files": [
+    {
+      "guest_path": "rlttest/rreset.sys",
+      "source": "/workspace/rltklant-work/validation/rreset.sys",
+      "size": 10476,
+      "sha256": "becde58448808ca33027198fae68b78bb60530e89c36afea6eb8c2a0c90c7f2a",
+      "old_size": 9737,
+      "old_sha256": "450d0b741355e5dcec8aec0cf8e8519b97f10d71359e1c03278e835fab652b11"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

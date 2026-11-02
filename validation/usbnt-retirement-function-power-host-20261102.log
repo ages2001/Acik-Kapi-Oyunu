@@ -1,0 +1,1 @@
+PASS: 24 production function-power cases; own/shared EP0, queued/active rundown, sibling isolation, preserved contexts/toggles, D0 reset recovery, invalid states, removal and IRP completion

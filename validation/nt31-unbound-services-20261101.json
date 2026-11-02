@@ -1,0 +1,5 @@
+{
+  "scope": "INVALID preparation attempt; no Start values changed and the resulting fixture was not booted",
+  "changes": [],
+  "reason": "hivex does not support NT3.1 hive v1.1; superseded by nt31-unbound-system-fixed-20261101.json"
+}

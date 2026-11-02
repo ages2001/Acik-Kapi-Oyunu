@@ -1,0 +1,11 @@
+PASS usb-rtl8150 cable cycle 1 up=False UNT-LINK id=00000001 up=00000000 status=00000000
+PASS usb-rtl8150 cable cycle 1 up=True UNT-LINK id=00000001 up=00000001 status=00000000
+PASS usb-rtl8150 cable cycle 2 up=False UNT-LINK id=00000001 up=00000000 status=00000000
+PASS usb-rtl8150 cable cycle 2 up=True UNT-LINK id=00000001 up=00000001 status=00000000
+PASS usb-rtl8150 cable cycle 3 up=False UNT-LINK id=00000001 up=00000000 status=00000000
+PASS usb-rtl8150 cable cycle 3 up=True UNT-LINK id=00000001 up=00000001 status=00000000
+PASS usb-rtl8150 cable cycle 4 up=False UNT-LINK id=00000001 up=00000000 status=00000000
+PASS usb-rtl8150 cable cycle 4 up=True UNT-LINK id=00000001 up=00000001 status=00000000
+PASS usb-rtl8150 cable cycle 5 up=False UNT-LINK id=00000001 up=00000000 status=00000000
+PASS usb-rtl8150 cable cycle 5 up=True UNT-LINK id=00000001 up=00000001 status=00000000
+PASS: 10 cable transitions across 1 profiles; no USB detach during cable changes

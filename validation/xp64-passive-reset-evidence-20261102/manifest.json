@@ -1,0 +1,136 @@
+{
+  "utc": "2026-11-02T01:23:20.550608+00:00",
+  "guest": "xp64-passivereset-multi-8127",
+  "safeoff_screenshot": "xp64-passivereset-poweroff-20261102.png",
+  "safeoff_sha256": "098ba26ede684aa190f6f409de15b1044e0a5fe15b0b2b754b0e8d4c74fc744f",
+  "files": {
+    "debug.log": {
+      "bytes": 8238,
+      "sha256": "a78db052b8d4f52fad4c61abce5085a50f342591537bd4b30e8eb0d43601e455"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 95,
+      "sha256": "28c8b46daf4b31edc331222d779ff1fbc3f320b382692555d6474fc78f8e59f9"
+    },
+    "launch.json": {
+      "bytes": 2615,
+      "sha256": "d2fcedc2a3972fef0e5d3e7a2968447ea4724dda4ffd5bb10f16467be16c6299"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "b5c81cfa45f3dddd9450b1e96f003ddd515e7e31e8b0d0b011d1b9980fbf28b3"
+    },
+    "extra1.pcap": {
+      "bytes": 73749,
+      "sha256": "e86762fdab113dcd8294d2c7c3163682c30e35ebe947b1c5416d9cc59ee5f6d9"
+    },
+    "extra2.pcap": {
+      "bytes": 73761,
+      "sha256": "64e3acad0bc808442deeacfc974b47f101e8c6ab0f95e28da62d0844596a47a1"
+    },
+    "extra3.pcap": {
+      "bytes": 78656,
+      "sha256": "1a6fc00a15895196fb2f4576f30cea4f76be62f64638e85c275805b00c96d818"
+    },
+    "extra4.pcap": {
+      "bytes": 77933,
+      "sha256": "1e07ce90dfd6db42a7d3a84354df654680ef6dac7edcfb39274516f2c4f01054"
+    },
+    "extra5.pcap": {
+      "bytes": 72831,
+      "sha256": "93dc4ac32d58c60a01cf92696cecf6cfd47ec033adbf9de7cad9ded6fa33ea3a"
+    },
+    "pci.pcap": {
+      "bytes": 135613,
+      "sha256": "a5a5a565854ebd8ced74a14d21dd37eed67fb74db965c9d8cd3d7a833384b0bc"
+    }
+  },
+  "shutdown_evidence": "QMP ACPI shutdown, running=false; framebuffer may retain shutdown text",
+  "qmp_capture": {
+    "guest": "xp64-passivereset-multi-8127",
+    "captured_utc": "2026-11-02T01:22:03.917926+00:00",
+    "qmp_status": {
+      "status": "shutdown",
+      "singlestep": false,
+      "running": false
+    },
+    "launch": {
+      "started_at": 1793581397.2490647,
+      "command": [
+        "/workspace/rltklant-tools/qemu-src/build/qemu-system-x86_64",
+        "-machine",
+        "q35",
+        "-cpu",
+        "qemu64",
+        "-m",
+        "512",
+        "-drive",
+        "file=/workspace/rltklant-vm/run/xp64-passivereset-multi-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+        "-nic",
+        "none",
+        "-display",
+        "none",
+        "-vga",
+        "cirrus",
+        "-qmp",
+        "unix:/workspace/rltklant-vm/run/xp64-passivereset-multi-8127/qmp.sock,server=on,wait=off",
+        "-no-reboot",
+        "-no-shutdown",
+        "-debugcon",
+        "file:/workspace/rltklant-vm/run/xp64-passivereset-multi-8127/debug.log",
+        "-serial",
+        "file:/workspace/rltklant-vm/run/xp64-passivereset-multi-8127/serial.log",
+        "-global",
+        "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+        "-global",
+        "q35-pcihost.pci-hole64-size=0",
+        "-no-hpet",
+        "-device",
+        "piix3-ide,id=legacyide",
+        "-device",
+        "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0,lcyls=652,lheads=255,lsecs=63",
+        "-netdev",
+        "user,id=pci0",
+        "-device",
+        "rtl8127,id=pcinic,netdev=pci0",
+        "-object",
+        "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/xp64-passivereset-multi-8127/pci.pcap",
+        "-netdev",
+        "user,id=extra1,net=10.0.3.0/24",
+        "-device",
+        "rtl8169,id=extra1,netdev=extra1,mac=52:54:00:12:35:01",
+        "-object",
+        "filter-dump,id=dump1,netdev=extra1,file=/workspace/rltklant-vm/run/xp64-passivereset-multi-8127/extra1.pcap",
+        "-netdev",
+        "user,id=extra2,net=10.0.4.0/24",
+        "-device",
+        "rtl8168,id=extra2,netdev=extra2,mac=52:54:00:12:35:02",
+        "-object",
+        "filter-dump,id=dump2,netdev=extra2,file=/workspace/rltklant-vm/run/xp64-passivereset-multi-8127/extra2.pcap",
+        "-netdev",
+        "user,id=extra3,net=10.0.5.0/24",
+        "-device",
+        "rtl8125,id=extra3,netdev=extra3,mac=52:54:00:12:35:03",
+        "-object",
+        "filter-dump,id=dump3,netdev=extra3,file=/workspace/rltklant-vm/run/xp64-passivereset-multi-8127/extra3.pcap",
+        "-netdev",
+        "user,id=extra4,net=10.0.6.0/24",
+        "-device",
+        "rtl8126,id=extra4,netdev=extra4,mac=52:54:00:12:35:04",
+        "-object",
+        "filter-dump,id=dump4,netdev=extra4,file=/workspace/rltklant-vm/run/xp64-passivereset-multi-8127/extra4.pcap",
+        "-netdev",
+        "user,id=extra5,net=10.0.7.0/24",
+        "-device",
+        "rtl8127,id=extra5,netdev=extra5,mac=52:54:00:12:35:05",
+        "-object",
+        "filter-dump,id=dump5,netdev=extra5,file=/workspace/rltklant-vm/run/xp64-passivereset-multi-8127/extra5.pcap"
+      ],
+      "qemu_sha256": "0b28dba57820fa3ff74e9ad29d259ae46895c66c4b9a23e65c2305e2731c39b3"
+    }
+  }
+}

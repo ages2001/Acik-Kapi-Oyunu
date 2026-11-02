@@ -1,0 +1,86 @@
+{
+  "utc": "2026-11-02T13:38:47.216584+00:00",
+  "scope": "Lossless recompression of inactive historical QEMU binaries. VM disks and active binaries unchanged.",
+  "files": [
+    {
+      "previous_archive": "/workspace/rltklant-tools/qemu-bin/before-8139-filter-20261102/qemu-system-i386.gz",
+      "archive": "/workspace/rltklant-tools/qemu-bin/before-8139-filter-20261102/qemu-system-i386.xz",
+      "size": 76402120,
+      "gzip_bytes": 26817482,
+      "xz_bytes": 18586116,
+      "sha256": "e296ab523280432e7768c7b6c9c36235c2c7fd90fa471d7f03385e3c1acbab84"
+    },
+    {
+      "previous_archive": "/workspace/rltklant-tools/qemu-bin/before-8139-filter-20261102/qemu-system-x86_64.gz",
+      "archive": "/workspace/rltklant-tools/qemu-bin/before-8139-filter-20261102/qemu-system-x86_64.xz",
+      "size": 76605744,
+      "gzip_bytes": 26908847,
+      "xz_bytes": 18658044,
+      "sha256": "210e3148db1ab8679aa6151fa4ccfc046299dbc001aa727128d254d6603c7319"
+    },
+    {
+      "previous_archive": "/workspace/rltklant-tools/qemu-bin/before-mac-registers-20261102/qemu-system-i386.gz",
+      "archive": "/workspace/rltklant-tools/qemu-bin/before-mac-registers-20261102/qemu-system-i386.xz",
+      "size": 76386128,
+      "gzip_bytes": 26808751,
+      "xz_bytes": 18586712,
+      "sha256": "d651fe629799661c2fda009bf67cc2ab52cb6e49499cac92604b38ceb854162f"
+    },
+    {
+      "previous_archive": "/workspace/rltklant-tools/qemu-bin/before-mac-registers-20261102/qemu-system-x86_64.gz",
+      "archive": "/workspace/rltklant-tools/qemu-bin/before-mac-registers-20261102/qemu-system-x86_64.xz",
+      "size": 76589760,
+      "gzip_bytes": 26906033,
+      "xz_bytes": 18645976,
+      "sha256": "207b16c3ce1959f07704336cb2cf6e5845f461800c50888d2b6ed06ab045f3df"
+    },
+    {
+      "previous_archive": "/workspace/rltklant-tools/qemu-bin/before-management-20261102/qemu-system-i386.gz",
+      "archive": "/workspace/rltklant-tools/qemu-bin/before-management-20261102/qemu-system-i386.xz",
+      "size": 76397152,
+      "gzip_bytes": 26712021,
+      "xz_bytes": 18596120,
+      "sha256": "2b9c9d92e23a997e9a863edd90edf9d1613b6588b38c752e7070f646c277df2a"
+    },
+    {
+      "previous_archive": "/workspace/rltklant-tools/qemu-bin/before-management-20261102/qemu-system-x86_64.gz",
+      "archive": "/workspace/rltklant-tools/qemu-bin/before-management-20261102/qemu-system-x86_64.xz",
+      "size": 76600768,
+      "gzip_bytes": 26804519,
+      "xz_bytes": 18661436,
+      "sha256": "37a91463e5572e82283e7eb4994a49c5acde5b984b049dc9fd82e573780bb826"
+    },
+    {
+      "previous_archive": "/workspace/rltklant-tools/qemu-bin/before-pci-alias-20261102/qemu-system-i386.gz",
+      "archive": "/workspace/rltklant-tools/qemu-bin/before-pci-alias-20261102/qemu-system-i386.xz",
+      "size": 76312800,
+      "gzip_bytes": 26806350,
+      "xz_bytes": 18585904,
+      "sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a"
+    },
+    {
+      "previous_archive": "/workspace/rltklant-tools/qemu-bin/before-pci-alias-20261102/qemu-system-x86_64.gz",
+      "archive": "/workspace/rltklant-tools/qemu-bin/before-pci-alias-20261102/qemu-system-x86_64.xz",
+      "size": 76516432,
+      "gzip_bytes": 26903453,
+      "xz_bytes": 18648096,
+      "sha256": "ce3a860c3b664dc5ee6e625b970ae87c9a29ffec789a3515005da7404968d9e5"
+    },
+    {
+      "previous_archive": "/workspace/rltklant-tools/qemu-bin/before-watchdog-20261102/qemu-system-i386.gz",
+      "archive": "/workspace/rltklant-tools/qemu-bin/before-watchdog-20261102/qemu-system-i386.xz",
+      "size": 76396216,
+      "gzip_bytes": 26813785,
+      "xz_bytes": 18588168,
+      "sha256": "efb4a87c7f37bdf16a5a19295bc5cac2d30cdbd1ba4211536c327f6cf8b7a555"
+    },
+    {
+      "previous_archive": "/workspace/rltklant-tools/qemu-bin/before-watchdog-20261102/qemu-system-x86_64.gz",
+      "archive": "/workspace/rltklant-tools/qemu-bin/before-watchdog-20261102/qemu-system-x86_64.xz",
+      "size": 76599840,
+      "gzip_bytes": 26909499,
+      "xz_bytes": 18655968,
+      "sha256": "0b28dba57820fa3ff74e9ad29d259ae46895c66c4b9a23e65c2305e2731c39b3"
+    }
+  ]
+}

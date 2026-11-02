@@ -1,0 +1,360 @@
+{
+  "utc": "2026-11-02T16:27:55.846532+00:00",
+  "result": "PASS_BOUNDED_FIVE_OS_REGRESSION_WITH_LIMITS",
+  "snapshot": "usbnt-controller-sleep-v3-20261102",
+  "rows": [
+    {
+      "os": "nt31",
+      "guest": "nt31-usbsetup-sleep-v3-rtl8117-8127",
+      "result": "PASS_BOUNDED_QEMU_REGRESSION",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 419328,
+          "sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 538624,
+          "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+        }
+      },
+      "usb_hotplug_cycles": 4,
+      "carrier_cycles": 4,
+      "full_payload_replies": 104,
+      "evidence": {
+        "nt31-sleep-v3-offline-20261102/manifest.json": "4a948901bc85e3f26c8c3495337c3aa7da38bd64486e50b628760e6c7d1d4b35",
+        "nt31-sleep-v3-evidence-20261102/manifest.json": "d0ea00a85203d7591554b672f767a351aba7350d2e1628eb5159b0e756367e52",
+        "nt31-usbsetup-sleep-v3-rtl8117-8127-sleep-v3-20261102-sibling-matrix.json": "5b91a288224aa56cc5f12b6ccf5f4c4d7062f70724e543e46143897395339479"
+      }
+    },
+    {
+      "os": "nt4",
+      "guest": "nt4-ndis-dual-sleep-v3-8127",
+      "result": "PASS_BOUNDED_QEMU_REGRESSION",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 419328,
+          "sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 540920,
+          "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+        }
+      },
+      "usb_hotplug_cycles": 8,
+      "carrier_cycles": 8,
+      "full_payload_replies": 332,
+      "evidence": {
+        "nt4-sleep-v3-offline-20261102/manifest.json": "4bb4014ea32d5287cad2a8d552147c047e2a4baf60134eeff8b916020f768b3d",
+        "nt4-sleep-v3-evidence-20261102/manifest.json": "25b323d002887bc0a1a5cc02741148a82fb8ebf0bc2ff4c644980f2d3b1793b4",
+        "nt4-ndis-dual-sleep-v3-8127-sleep-v3-20261102-sibling-matrix.json": "538eb96cbbdb8b9de9f92538d3383293b99b3ad40335c49548ba7efb2d123946"
+      }
+    },
+    {
+      "os": "nt351",
+      "guest": "nt351-usbsetup-sleep-v3-rtl8139-8127",
+      "result": "PASS_WITH_PRIOR_ATTACHMENT_LATENCY_FINDING_OPEN",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 419328,
+          "sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 540920,
+          "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+        },
+        "TCP35.LOG": {
+          "file": "TCP35.LOG",
+          "size": 620,
+          "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+        }
+      },
+      "usb_hotplug_cycles": 4,
+      "carrier_cycles": 4,
+      "full_payload_replies": 68,
+      "tcp_bytes_each_direction": 3145728,
+      "registered_mac_resets": 3,
+      "rx_watchdog_events": 0,
+      "limits": [
+        "PCI-only TCP/IP binding; no USB TCP/IP claimed for this NT3.51 fixture.",
+        "Two older RTL8159 30-second attachment failures remain unexplained; this pass does not prove a timing fix."
+      ],
+      "evidence": {
+        "nt351-sleep-v3-offline-20261102/manifest.json": "6b554086f73b1f4a69f4e4e80ab9896d2a0ad5a61d1e76a0de81e3c365f2350a",
+        "nt351-sleep-v3-evidence-20261102/manifest.json": "41a54a2b167334f0fdcc1a035245c0a989e8e7892eaa4cc6ad915eca20ee90b8",
+        "nt351-usbsetup-sleep-v3-rtl8139-8127-sleep-v3-20261102-sibling-matrix.json": "6bacfaab66bc93a0a6374657725c9746cd1b1d0adfbcf1fa968cb3b3f04b6523",
+        "nt351-sleep-v3-20261102-registered-reset.json": "f3a8dd6b05c8ec034b0ef2eebcb45e8681a969029b627b0bcfcfa0778cbe0d5e",
+        "nt351-sleep-v3-tcp-wire-proof-20261102.json": "a9dce1f75990b0e0b205d6b8711913f23ffba4b45ba2f84e2cdfd169f988098c",
+        "nt351-sleep-v3-20261102-tcp-baseline.json": "1a9908a68b7e8582f975d301eefe47757f6f9e5e1fc6f3e953ec849b57733537",
+        "nt351-sleep-v3-20261102-tcp-baseline-screen.png": "f5f4bea715ecb6ca52240c250a1b67358af7d6c62d1e9516f9ad855055db95d2",
+        "nt351-sleep-v3-20261102-tcp-reset.json": "c119a224cb73f2e3e5b61a1bdab240f519f7f1f7d4cd18fe2d23349e387ea6bb",
+        "nt351-sleep-v3-20261102-tcp-reset-screen.png": "ff722d0c007120a501a7a12c637427e9071025842b9e5ec57f3728333882d8d7",
+        "nt351-sleep-v3-20261102-tcp-cable.json": "c0637c33df2dd1a11aa1f26753bef4a3a31063559f8a8d858b92a1504efd24ac",
+        "nt351-sleep-v3-20261102-tcp-cable-screen.png": "8b24074473c13c1cfae84129b52ed9a78cc24570fe1a8f14328a9b85114bc216"
+      }
+    },
+    {
+      "os": "win2000",
+      "guest": "win2000-standard-usbnet-mixed-sleep-v3-8127",
+      "result": "PASS_BOUNDED_QEMU_REGRESSION",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 499712,
+          "sha256": "073c5544dc34b42b4ef25af79c24475457c24f7c966981866952a2f3c3fc3963"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 557016,
+          "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+        },
+        "SLPDONE.TXT": {
+          "file": "SLPDONE.TXT",
+          "size": 2400,
+          "sha256": "42021e3e50d79bdfcdbe74e0206986c4091d437fd142b51d71c6ca8a1af1a7d9"
+        },
+        "USBLOG.TXT": {
+          "file": "USBLOG.TXT",
+          "size": 3606,
+          "sha256": "da25fe480a835e3b7ec73fe3b4b8d7fda06a8c10be45452fae2a972ebad96185"
+        },
+        "KEY.LOG": {
+          "file": "KEY.LOG",
+          "size": 4427,
+          "sha256": "50cb314d0bb9c3343f98459f79375d53c43b7e1971b0243f100ad05b560705b4"
+        },
+        "HCPOWER.EXE": {
+          "file": "HCPOWER.EXE",
+          "size": 11967,
+          "sha256": "3b3568c3427a83d849365a93449466f65b97fe2da4b9dca0c96a936efa058a78"
+        },
+        "HCPOWER.SYS": {
+          "file": "HCPOWER.SYS",
+          "size": 12790,
+          "sha256": "189c3d10544e2e2957669401dea507f1e666dfcb9f61bf428d278eab18bd2817"
+        },
+        "SLPTEST.EXE": {
+          "file": "SLPTEST.EXE",
+          "size": 12159,
+          "sha256": "3e1debf1fe5e3d0dfa2cc87cfa17984eeefb87a53b00c87b1269c8dd11f8e97e"
+        },
+        "SLPTEST.SYS": {
+          "file": "SLPTEST.SYS",
+          "size": 12535,
+          "sha256": "99e69094d830c07ccdb838088574e1f53cab992dfe4aa840b37b6548d711ef2a"
+        },
+        "MKEY2.EXE": {
+          "file": "MKEY2.EXE",
+          "size": 12604,
+          "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549"
+        },
+        "MRESET.EXE": {
+          "file": "MRESET.EXE",
+          "size": 11814,
+          "sha256": "b18129df4bc5a10422aa6970be1403cb3836476bce06988f77874f47eb8214c6"
+        },
+        "RRESET.SYS": {
+          "file": "RRESET.SYS",
+          "size": 10308,
+          "sha256": "5cc526a1e7a80ab9b1c74e126c7dea8e00b7fe1a76ee11feb1e4907aa6c4971f"
+        },
+        "MIXNET.INF": {
+          "file": "MIXNET.INF",
+          "size": 8218,
+          "sha256": "49acf9c1e1277774cbcf76c06c885fc5d01099e65fd44966065bfd0deb867ee4"
+        }
+      },
+      "controller_device_power_pairs": 3,
+      "controller_system_irp_pairs": 3,
+      "unplug_during_d3": 1,
+      "retained_pdo": [
+        "0",
+        "1",
+        "8148ce70"
+      ],
+      "mixed_physical_resets": 3,
+      "windows_key_checks": 10,
+      "model_function_power_pairs": 12,
+      "model_stalled_removals": 4,
+      "model_port_resets": 4,
+      "model_carrier_cycles": 4,
+      "full_payload_network_replies": 108,
+      "limits": [
+        "Fictional mixed NIC/HID fixture is distinct from ordinary Realtek profiles.",
+        "Injected system-power IRPs do not establish actual platform ACPI S3."
+      ],
+      "evidence": {
+        "win2000-sleep-v3-offline-20261102/manifest.json": "0851fc30d7cf13824b920a69dcac97854fa8a42cf2396a1291a465c880cd2cae",
+        "win2000-sleep-v3-evidence-20261102/manifest.json": "9d5ee68ce508b7f65303f6b5fd576c89a5cc40854a9d43141415785f4159edb6",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-retirement-matrix.json": "88e33f6f4ff83d4a3809a9b6846baeb675ad17d9631e5490a8b9eb7a63c179a5",
+        "win2000-mixed-sleep-v3-cycles-20261102.json": "0bfb0275badbc9b706eb592640396735ed03e8994165d77445ce6264025876cf",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-sleep-v3-cycles-20261102-device1.json": "08844e9395b1455f6b43dad5c8409684462a0f313bd98a356a7393fadac4d3d8",
+        "win2000-mixed-sleep-v3-cycles-20261102-device1-key.json": "de4bb6243d810e1ae48258b69553c5ceb11fa43faa4822f159b6c96a5f40fb23",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-sleep-v3-cycles-20261102-device2.json": "3d92c64f05297d091d3a615a8f0faf3ce3c2bd05dd0a01bb53bd0db17a63ffc2",
+        "win2000-mixed-sleep-v3-cycles-20261102-device2-key.json": "3d2d37f5f3a4ecd058966672153e09e8a6899a500a1a61507e9f220af06130ff",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-sleep-v3-cycles-20261102-device3.json": "11f3bf1d3c1456300c6da0f5cbcbd8e1d22f15948ef36920e1a220956911a373",
+        "win2000-mixed-sleep-v3-cycles-20261102-device3-key.json": "987e4dde08ed20af567226336688d1d668188c1117e39db75cb09fe492de25e4",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-sleep-v3-cycles-20261102-system1.json": "4e58a306cede292bc8d90b46b8d4a940d74f1b5d372f264fad379a4f42b1c191",
+        "win2000-mixed-sleep-v3-cycles-20261102-system1-key.json": "0898bd132b57fe494710f40f437cc7ffad10dedde2a7104c4b484ba4a4e84c09",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-sleep-v3-cycles-20261102-system2.json": "722cbbb5cdf6f32d14b28b29f528c2b7f8c98aca672c6f4c98de7ab084e3edd3",
+        "win2000-mixed-sleep-v3-cycles-20261102-system2-key.json": "8004b7a5918eb51832e165aa88b6f042f084d7c392910d80b50767d96a877372",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-sleep-v3-cycles-20261102-system3.json": "e1e624ea47aa0aae63c3a5ba82ad68697a63b719c1fc40565becadeddc3bd9fc",
+        "win2000-mixed-sleep-v3-cycles-20261102-system3-key.json": "ff517c86a669a482840b9de7187b120e40125e9d07a5692a8c603be073c97216",
+        "win2000-mixed-sleep-v3-20261102-query.json": "8e731cde5750d5bea0c317f885a7119e3a21af333f294d767a0de1dd8765fe6f",
+        "win2000-mixed-sleep-v3-20261102-unplug-down.json": "ebe59a2d7d10f8ba18e0a49a13e89a42f3b41b12438d7cc8aefe2f09382fee07",
+        "win2000-mixed-sleep-v3-20261102-unplug-up.json": "af8aed2a9253063e80ff479fe8e3a0b5b5de7bd24b53b2c353555a0c073a0024",
+        "win2000-mixed-sleep-v3-20261102-unplug-host.json": "8ea97216e4cb869820b71ad41b18481e94a6d3924dc087919b59c84c899d52f7",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-baseline-20261102.json": "5bd6b7046860a215a75921c2dff159a5d395c5d3e988d6ac5efd3519f8301f7c",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-after-unplug-20261102.json": "df7767f548dcaeb38e8dbce95a6b8261c457ca0cbfafad3609ee9f44ad8b71aa",
+        "win2000-mixed-sleep-v3-after-unplug-key-20261102.json": "964202dea085a862a23b6c5b14b3913cc11d8db592a9dc211db294b6e17f3ea3",
+        "win2000-mixed-reset-v3-20261102.json": "4561e9df90b49ff1d2467663b9f3757ad8f704e4585ebda14ce7e7301c899f7c",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-reset-v3-20261102-c1-port-reset-cycles.json": "566b0ee5ba4f6ae22ca2f2b1547f15d547a5d20bcac9741b72d933a6a9ce52bb",
+        "win2000-mixed-reset-v3-20261102-c1-key.json": "35e814fcfec1f10f2bc4406a0f2052f8a64054617852cd124e153f670720f1dc",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-reset-v3-20261102-c2-port-reset-cycles.json": "d7a4ac1857a3aaf5ba80a3b3f66ba918033ce758c2f92f283a6fff2d9337368b",
+        "win2000-mixed-reset-v3-20261102-c2-key.json": "bed9df25b11e650193eb1b0a134a7a345c4f0313f9b3b2bbaa0ecd4d813de5e5",
+        "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-reset-v3-20261102-c3-port-reset-cycles.json": "c5a771fb9a413b27736b559bd150a6988930094c28fc0d9805896dafa13284d7",
+        "win2000-mixed-reset-v3-20261102-c3-key.json": "ca992da34683d6f846bc97aef3913537346813f8b526a016b29052375c8cdca0"
+      }
+    },
+    {
+      "os": "xp64",
+      "guest": "xp64-usbnet-mixed-sleep-v3-8127",
+      "result": "PASS_BOUNDED_QEMU_REGRESSION",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 539648,
+          "sha256": "44a78f6b6ac9e4ab6f82e07e0f1bfe5c9b51332857d095b4d271f49140c56763"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 613306,
+          "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+        },
+        "SLPDONE.TXT": {
+          "file": "SLPDONE.TXT",
+          "size": 2484,
+          "sha256": "8221ffc461a6c754ef685de92f0b76781017e58fc25a8472c737628d8d57e236"
+        },
+        "USBLOG.TXT": {
+          "file": "USBLOG.TXT",
+          "size": 3861,
+          "sha256": "e85dc8d01da908e620ab2d351904e1201bca0b63c09fa2197c7c2a1356566502"
+        },
+        "KEY.LOG": {
+          "file": "KEY.LOG",
+          "size": 2046,
+          "sha256": "9dc71c443fed627facfb4f737eca5b3a41974fdac25023d4067472dc3ae90e29"
+        },
+        "HCPOWER.EXE": {
+          "file": "HCPOWER.EXE",
+          "size": 11754,
+          "sha256": "5d41ac14ae793f0470039924d248b929472d35f79990742e48010289395c9b93"
+        },
+        "HCPOWER.SYS": {
+          "file": "HCPOWER.SYS",
+          "size": 11433,
+          "sha256": "217ebb498a307eb77ff6581b0d3c63002fa2a134876fcdeccf5769948ae1091f"
+        },
+        "SLPTEST.EXE": {
+          "file": "SLPTEST.EXE",
+          "size": 11931,
+          "sha256": "d549ed45ecfcdcabdc23fc5dcf54b2c356d7775e3c549a3002c8311057cb639b"
+        },
+        "SLPTEST.SYS": {
+          "file": "SLPTEST.SYS",
+          "size": 11187,
+          "sha256": "dc47f439966d814f932747b08a8599bc16e87c2f90e1209e76d21ffbbb36312e"
+        },
+        "MKEY2.EXE": {
+          "file": "MKEY2.EXE",
+          "size": 12604,
+          "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549"
+        },
+        "MRESET64.EXE": {
+          "file": "MRESET64.EXE",
+          "size": 11606,
+          "sha256": "d2bf5b8a247418fbfe4a33d5522e4cc0626748c36e257bbdf160411458b1b8d3"
+        },
+        "RRESET.SYS": {
+          "file": "RRESET.SYS",
+          "size": 11710,
+          "sha256": "811b1549e8205a5275d3a1e6343b51b2101b6b33b693fa501cff3df77a82bd90"
+        },
+        "MIXNET.INF": {
+          "file": "MIXNET.INF",
+          "size": 8218,
+          "sha256": "49acf9c1e1277774cbcf76c06c885fc5d01099e65fd44966065bfd0deb867ee4"
+        }
+      },
+      "controller_device_power_pairs": 3,
+      "controller_system_irp_pairs": 3,
+      "unplug_during_d3": 1,
+      "retained_pdo": [
+        "0",
+        "1",
+        "f4112d90"
+      ],
+      "mixed_physical_resets": 3,
+      "windows_key_checks": 10,
+      "model_function_power_pairs": 12,
+      "model_stalled_removals": 4,
+      "model_port_resets": 4,
+      "model_carrier_cycles": 4,
+      "full_payload_network_replies": 112,
+      "limits": [
+        "Fictional mixed NIC/HID fixture is distinct from ordinary Realtek profiles.",
+        "Injected system-power IRPs do not establish actual platform ACPI S3."
+      ],
+      "unsupported_hub_preflight_checks": 2,
+      "evidence": {
+        "xp64-sleep-v3-offline-20261102/manifest.json": "fa00d73b83a783e217deeb0190d74203d9e2974fd81a574959d0cdb7abc35ff3",
+        "xp64-sleep-v3-evidence-20261102/manifest.json": "c90019b6ce48fbe0292568b708ba953e3146b413024a5b08635c84707f3e484c",
+        "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-retirement-matrix.json": "cde5b3896e837ac7c29cb1639b637cb9e0715c64a2299e048c3242e78c92da61",
+        "xp64-mixed-sleep-v3-cycles-20261102.json": "554e26f0218551bbc5b6f99a71dc72c0da99b0523ddc9cb8f6a54c94a4e4b4e3",
+        "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-device1.json": "580d5c35be15d9189f8b073a1ce351d9fc500cd5060b88e601aeb90cfc33915c",
+        "xp64-mixed-sleep-v3-cycles-20261102-device1-key.json": "762dfef78446dd123e9c480627a56d1fac41b309f122bcc29ffe21fc21df0349",
+        "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-device2.json": "4cfdfdfc2815cbd3b20a8d6f1932444297cb9668c3fad762178ba92d66c65135",
+        "xp64-mixed-sleep-v3-cycles-20261102-device2-key.json": "7167eaec1cf43a3532466ae1c3d02e88c5346f91b60184dab47fc4611d1761de",
+        "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-device3.json": "9b8a3ee14be1ece711e1341f7f106723d3a4583605abf00f0272bbdee4da07d2",
+        "xp64-mixed-sleep-v3-cycles-20261102-device3-key.json": "405d2acce42eab9aba683780b6506301f78a9edd48f5549955b75149e8c6a8e3",
+        "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-system1.json": "bb9ea82418a0810d0c43cadbe2e4a455e8a74b1d653e54fddc282c7497df7927",
+        "xp64-mixed-sleep-v3-cycles-20261102-system1-key.json": "6663c455e70232a49f22450c21a60aef4d5401726a44179da7fc87638568125a",
+        "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-system2.json": "756bf9958c62de9208ed0f6da8b699d61d353e30df6d255ab5d29f7f64b58aa7",
+        "xp64-mixed-sleep-v3-cycles-20261102-system2-key.json": "6c8fc2c6fe92d10788701f67a6aa4dcae5060a6fb67f309cfb5e72d05c39af99",
+        "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-sleep-v3-cycles-20261102-system3.json": "b4d3a0eb3602307475c9f2ac11a7d6c3beb271cf191b1aaf2016b9d7f934858e",
+        "xp64-mixed-sleep-v3-cycles-20261102-system3-key.json": "5514ed4858e58ad07481e9733db664e0ebae8666e4107564b11bf8f2ac0f096b",
+        "xp64-mixed-sleep-v3-20261102-query.json": "eeb88c45455b792d65497684fffc713dce7e03f691b1a89dd60f3ead0084e714",
+        "xp64-mixed-sleep-v3-20261102-unplug-down.json": "b121755d65ad031d200658cecfb32c17a4f941506c6896139d368aa582865a21",
+        "xp64-mixed-sleep-v3-20261102-unplug-up.json": "a011f72c800b483763978bb795cb2d7784df09450051b901a7de6aacab5617e5",
+        "xp64-mixed-sleep-v3-20261102-unplug-host.json": "91734c272cb00a8331cfbd5cea51d32a99d9f436dde8ad2eeae07ce9544bb50b",
+        "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-baseline-20261102.json": "688520f32b87cdd95bce9dcd09db197b3faa443b47f66f9b08e69bb414b54805",
+        "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-after-unplug-20261102.json": "993d2b5c58dd59ad7b42b8c49844d5fa10a80e442adac3f31f14c6c8f26476b0",
+        "xp64-mixed-sleep-v3-after-unplug-key-20261102.json": "cc00b359637d877fac7f6b14bb343b24ea7ca906a4d462715347d02f899906e6",
+        "xp64-mixed-reset-v3-20261102.json": "c8a7ad7139eef67f642b9a0e898a18231da75cc79c387223442ef62a06c6df24",
+        "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-reset-v3-20261102-c1-port-reset-cycles.json": "8d2b056ccc5408b2cac5df1b36dca7da25b55d78ad1ed478f87bd2e0c0c9d9bb",
+        "xp64-mixed-reset-v3-20261102-c1-key.json": "f9e074cb09249944739ded942c2d4aeb5acfacd06bb29dc32c0d887db4d2e0f1",
+        "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-reset-v3-20261102-c2-port-reset-cycles.json": "463b6e04f89e57d87239ce9872f452093b3c48364872a0f4ed9513050e8ba091",
+        "xp64-mixed-reset-v3-20261102-c2-key.json": "769f571d77d9a291051ba360c5d771dba1afeb2cb791a616294304606af28edc",
+        "xp64-usbnet-mixed-sleep-v3-8127-xp64-mixed-reset-v3-20261102-c3-port-reset-cycles.json": "912938a17be41f7382bfce4215b4c57658a62d5d126b2c7441ac9bd85a5c2c79",
+        "xp64-mixed-reset-v3-20261102-c3-key.json": "2b7aab1649864ea71feec991f0db4a08be9734fd90ded3131391b1bc58a2a4a8",
+        "xp64-sleep-v3-hub-query-status-20261102.json": "1b9c79f6826864054e26b8f528ac30e9e4cf95ce04d69ff061059c2b880e3d17",
+        "xp64-sleep-v3-hub-down-status-20261102.json": "53a619731a91625f994e7bb9c86d92e02e877102ab9df89d13f699476d028e42",
+        "xp64-sleep-v3-after-hub-query-20261102.json": "c2f2eb2117c9940dc11c8c6b4a6b8e5a833289b5b4b97cddd473596d1711a0f1",
+        "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-hub-rejection-20261102.json": "b6ae2c5e46762da6b28b89bb5306042f29ff054fa9c909361fd9207ae12c1bbc"
+      }
+    }
+  ],
+  "scope": "Exact installed candidate after normal shutdown and stopped-disk readback. Windows 2000 AHCI; all other guests IDE.",
+  "limits": [
+    "USBNT 1.3 remains unreleased; product version is 1.2.",
+    "Only QEMU is available; physical silicon, analog PHY and real MCU execution are unverified.",
+    "Hub, unknown owner, retained generic-client state and active EHCI companion sleep are rejected before mutation.",
+    "The prior NT3.51 attachment-latency finding remains open."
+  ]
+}

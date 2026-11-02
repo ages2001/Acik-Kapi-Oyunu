@@ -1,0 +1,129 @@
+{
+  "utc": "2026-11-02T09:32:46.096068+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "os": "nt31",
+      "guest": "nt31-usbsetup-hidcap-rtl8117-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 411648,
+          "sha256": "92d6f836da50302b026ac16f1e02daba932dbebd3c233beab1a8eb4374b53d4c"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 538624,
+          "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+        }
+      },
+      "counts": {
+        "hotplug_cycles": 4,
+        "carrier_cycles": 4,
+        "full_payload_replies": 104
+      },
+      "evidence": {
+        "nt31-hidcap-offline-20261102/manifest.json": "c026fcf49b5ac8dcd078271700a54cae9eb8d43db14426f77c64302b5d06290f",
+        "nt31-hidcap-evidence-20261102/manifest.json": "a425699631e12b9ad53937a1cee3ab283ff61587a5c99f64e4331aeaa9356b87",
+        "nt31-usbsetup-hidcap-rtl8117-8127-hidcap-20261102-sibling-matrix.json": "682806d63c368c6415d28db91ba1781f29045b2d83e9013e308eb70b19d281ca"
+      }
+    },
+    {
+      "os": "nt4",
+      "guest": "nt4-ndis-dual-hidcap-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 411648,
+          "sha256": "92d6f836da50302b026ac16f1e02daba932dbebd3c233beab1a8eb4374b53d4c"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 540920,
+          "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+        }
+      },
+      "counts": {
+        "hotplug_cycles": 8,
+        "carrier_cycles": 8,
+        "full_payload_replies": 332
+      },
+      "evidence": {
+        "nt4-hidcap-offline-20261102/manifest.json": "ed17f7cc99a4688592d2b06cc3ad57fc6e0375dd7177674ced030b52d5e7bf1f",
+        "nt4-hidcap-evidence-20261102/manifest.json": "5b0bedb0cee8714839c901ba49b534bc91c77646bac9923128af896f08ff7630",
+        "nt4-ndis-dual-hidcap-8127-hidcap-20261102-sibling-matrix.json": "b72c3f016e37e1d5be11649940f854ba1227cae38a427d4454a8fba476de72d2"
+      }
+    },
+    {
+      "os": "win2000",
+      "guest": "win2000-standard-usbnet-hidcap-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 488448,
+          "sha256": "b5c2198476bf007a76dcf6dd8e7a9ffcf708dc0c5a8f68e5bd10b2090a602548"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 557016,
+          "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+        },
+        "NATIVE.LOG": {
+          "file": "NATIVE.LOG",
+          "size": 60317,
+          "sha256": "9ff5aac92204621de66c60ae7fe19034b33910df20b496749ad8fe4e7a6dcbdb"
+        }
+      },
+      "counts": {
+        "function_power_pairs": 12,
+        "stalled_removals": 4,
+        "port_resets": 4,
+        "carrier_cycles": 4,
+        "full_mtu_replies": 64
+      },
+      "evidence": {
+        "win2000-hidcap-offline-20261102/manifest.json": "008a21a62fae8d718e644ceb1a9d21b4f6baaa230abc1eb50e805625d9091170",
+        "win2000-hidcap-evidence-20261102/manifest.json": "d34fcd771fcad36c6dd05fae51f3267597d1528ddd2c2a67087a4694831095b2",
+        "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-retirement-matrix.json": "263e8b419c4a438762524d8509aa52100f5a01892420c7bc3f0952f46d751b43"
+      }
+    },
+    {
+      "os": "xp64",
+      "guest": "xp64-usbnet-hidcap-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 525824,
+          "sha256": "d3a7cd5d345b310f38396c40c25f84ade337e73be138cd2aa6c1fba25080833f"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 613306,
+          "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+        },
+        "NATIVE.LOG": {
+          "file": "NATIVE.LOG",
+          "size": 40197,
+          "sha256": "95adc5884a2067c71a3842a124fd44e25b02a7bb05a3c879d56f504e62eae341"
+        }
+      },
+      "counts": {
+        "function_power_pairs": 12,
+        "stalled_removals": 4,
+        "port_resets": 4,
+        "carrier_cycles": 4,
+        "full_mtu_replies": 64
+      },
+      "evidence": {
+        "xp64-hidcap-offline-20261102/manifest.json": "fd0ded490d0baa1a4c242686d664e16958bf7dbaaef5bb1ee71f3b3583c0ed8d",
+        "xp64-hidcap-evidence-20261102/manifest.json": "036920c596ee8d4569ebe8336095a7aa3714b0afb9d2ca13cb16fdd8b3a50aca",
+        "xp64-usbnet-hidcap-8127-hidcap-20261102-retirement-matrix.json": "28c08420cd49dd69971f62e9d4a47d0190aa2ce305ba5b92a4fca9568628951e"
+      }
+    }
+  ],
+  "scope": "Exact installed development binaries after the native HID capacity guard. Windows 2000 AHCI, all other guests IDE. Normal shutdown and stopped-disk readback. NT3.1 uses inbox receipt plus complete wire payload matching; NT4/NT5 use guest payload checks. The fifth native HID-interface boundary is a separate production-source host test. These network tests do not establish system sleep, physical silicon, or a USBNT 1.3 release."
+}

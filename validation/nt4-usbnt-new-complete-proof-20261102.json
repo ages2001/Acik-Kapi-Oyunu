@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "utc": "2026-11-02T07:40:56.171403+00:00",
+  "guest": "nt4-ndis-dual-usbnt-new-8127",
+  "drivers": {
+    "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540311,
+      "sha256": "d1703001357511d876fd293508ad2c7d761df33eca76a6493475e4cfb1e973e9"
+    },
+    "WINNT4/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 410112,
+      "sha256": "f3a7e6e09ffec491d62cec183dba1b6aeb56f1f15c7b6e4a3a9a43f03d836f37"
+    }
+  },
+  "usb_hotplug_cycles": 8,
+  "usb_cable_cycles": 8,
+  "full_payload_replies": 332,
+  "evidence": {
+    "validation/nt4-ndis-dual-usbnt-new-8127-usbnt-new-20261102-sibling-matrix.json": "ad40d7fe6c49790303314c15002f3518f05be632d5d8ff73ba844139027acab3",
+    "validation/nt4-usbnt-new-offline-20261102/manifest.json": "491e1b0dd3c2270338e42c4cc3e96e34a196eccf141cfcd57fbf940651a3c75c",
+    "validation/nt4-usbnt-new-evidence-20261102/manifest.json": "de196c34f9607a29bcd17815ea7d15fd2da61529115e3ffae7bfbf42a723dec0"
+  },
+  "scope": "NT4 IDE; latest USBNT legacy and NDIS3 candidates. Two USB network adapters plus RTL8127 PCIe. Four models in both USB positions; unaffected sibling traffic preserved; guest compares all 1472 payload bytes. Clean shutdown and exact readback. No physical-silicon or WDM controller-power claim."
+}

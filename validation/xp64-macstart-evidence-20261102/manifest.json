@@ -1,0 +1,136 @@
+{
+  "utc": "2026-11-02T01:45:11.390944+00:00",
+  "guest": "xp64-macstart-multi-8127",
+  "safeoff_screenshot": "xp64-macstart-poweroff-20261102.png",
+  "safeoff_sha256": "098ba26ede684aa190f6f409de15b1044e0a5fe15b0b2b754b0e8d4c74fc744f",
+  "files": {
+    "debug.log": {
+      "bytes": 7798,
+      "sha256": "ffa3404cf1be3c16a27032f98524b86a19bd0ebde9763d8701ec67f5cc304bb4"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 95,
+      "sha256": "28c8b46daf4b31edc331222d779ff1fbc3f320b382692555d6474fc78f8e59f9"
+    },
+    "launch.json": {
+      "bytes": 2575,
+      "sha256": "878af0e1a1e7d5b8312e9596910588419d7fb0df6bb4d8c2a339a27b1328109f"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "5ed9774d407c98873525c046ff23fd4e92f52a07585e44d5c40adfb9b05fb262"
+    },
+    "extra1.pcap": {
+      "bytes": 66825,
+      "sha256": "5e97fa24bce266586cc8fe25dc0b54dd3bc716e7575892076b89a0f240f08774"
+    },
+    "extra2.pcap": {
+      "bytes": 66447,
+      "sha256": "f1fc6887969237c0fba2fb7bb097033e6b67ed7ecdf83f4309d2064617f3bce8"
+    },
+    "extra3.pcap": {
+      "bytes": 71748,
+      "sha256": "7026e7408a03ed374c38324da713818ae44092566060a35dda2cf4807ca9948d"
+    },
+    "extra4.pcap": {
+      "bytes": 72537,
+      "sha256": "cfef7405cc421dbb227eb14bfb5514e6feb4ab4fe80fe5b6a5b27db2078afcde"
+    },
+    "extra5.pcap": {
+      "bytes": 69309,
+      "sha256": "e6dd204ed8dad74acc8981ffcceffa6712a11034c110c06c83fde1f8b9ab6c1c"
+    },
+    "pci.pcap": {
+      "bytes": 69318,
+      "sha256": "bc9d56899d846f0eb7d8a8fdfd6894d401c45704bd1d1301430de951a9c1d177"
+    }
+  },
+  "shutdown_evidence": "QMP ACPI shutdown, running=false; framebuffer may retain shutdown text",
+  "qmp_capture": {
+    "guest": "xp64-macstart-multi-8127",
+    "captured_utc": "2026-11-02T01:41:51.917087+00:00",
+    "qmp_status": {
+      "status": "shutdown",
+      "singlestep": false,
+      "running": false
+    },
+    "launch": {
+      "started_at": 1793583077.5969193,
+      "command": [
+        "/workspace/rltklant-tools/qemu-src/build/qemu-system-x86_64",
+        "-machine",
+        "q35",
+        "-cpu",
+        "qemu64",
+        "-m",
+        "512",
+        "-drive",
+        "file=/workspace/rltklant-vm/run/xp64-macstart-multi-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+        "-nic",
+        "none",
+        "-display",
+        "none",
+        "-vga",
+        "cirrus",
+        "-qmp",
+        "unix:/workspace/rltklant-vm/run/xp64-macstart-multi-8127/qmp.sock,server=on,wait=off",
+        "-no-reboot",
+        "-no-shutdown",
+        "-debugcon",
+        "file:/workspace/rltklant-vm/run/xp64-macstart-multi-8127/debug.log",
+        "-serial",
+        "file:/workspace/rltklant-vm/run/xp64-macstart-multi-8127/serial.log",
+        "-global",
+        "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+        "-global",
+        "q35-pcihost.pci-hole64-size=0",
+        "-no-hpet",
+        "-device",
+        "piix3-ide,id=legacyide",
+        "-device",
+        "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0,lcyls=652,lheads=255,lsecs=63",
+        "-netdev",
+        "user,id=pci0",
+        "-device",
+        "rtl8127,id=pcinic,netdev=pci0",
+        "-object",
+        "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/xp64-macstart-multi-8127/pci.pcap",
+        "-netdev",
+        "user,id=extra1,net=10.0.3.0/24",
+        "-device",
+        "rtl8169,id=extra1,netdev=extra1,mac=52:54:00:12:35:01",
+        "-object",
+        "filter-dump,id=dump1,netdev=extra1,file=/workspace/rltklant-vm/run/xp64-macstart-multi-8127/extra1.pcap",
+        "-netdev",
+        "user,id=extra2,net=10.0.4.0/24",
+        "-device",
+        "rtl8168,id=extra2,netdev=extra2,mac=52:54:00:12:35:02",
+        "-object",
+        "filter-dump,id=dump2,netdev=extra2,file=/workspace/rltklant-vm/run/xp64-macstart-multi-8127/extra2.pcap",
+        "-netdev",
+        "user,id=extra3,net=10.0.5.0/24",
+        "-device",
+        "rtl8125,id=extra3,netdev=extra3,mac=52:54:00:12:35:03",
+        "-object",
+        "filter-dump,id=dump3,netdev=extra3,file=/workspace/rltklant-vm/run/xp64-macstart-multi-8127/extra3.pcap",
+        "-netdev",
+        "user,id=extra4,net=10.0.6.0/24",
+        "-device",
+        "rtl8126,id=extra4,netdev=extra4,mac=52:54:00:12:35:04",
+        "-object",
+        "filter-dump,id=dump4,netdev=extra4,file=/workspace/rltklant-vm/run/xp64-macstart-multi-8127/extra4.pcap",
+        "-netdev",
+        "user,id=extra5,net=10.0.7.0/24",
+        "-device",
+        "rtl8127,id=extra5,netdev=extra5,mac=52:54:00:12:35:05",
+        "-object",
+        "filter-dump,id=dump5,netdev=extra5,file=/workspace/rltklant-vm/run/xp64-macstart-multi-8127/extra5.pcap"
+      ],
+      "qemu_sha256": "37a91463e5572e82283e7eb4994a49c5acde5b984b049dc9fd82e573780bb826"
+    }
+  }
+}

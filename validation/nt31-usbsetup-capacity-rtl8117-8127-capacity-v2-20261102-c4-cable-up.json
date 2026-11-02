@@ -1,0 +1,43 @@
+{
+  "guest": "nt31-usbsetup-capacity-rtl8117-8127",
+  "token": "capacity-v2-20261102-c4-cable-up",
+  "mask": 3,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T09:12:55.153567+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 142899,
+      "end_offset": 155139,
+      "capture_prefix_sha256": "f76b3712fb93d4fec9ffdde42f8e4193cdc43e0ffc16d35c38ea4d256f97c3ec",
+      "screenshot": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c4-cable-up-usb.png",
+      "ocr": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c4-cable-up-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "e184af53ed551862c4f123d1a98b887270d320894d4ea4072fac34f7b21ab283"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 206016,
+      "end_offset": 218256,
+      "capture_prefix_sha256": "32cddb793018d6cab6806fae3d9b8b423ff63a77be9b022f746c1b6a17d0d259",
+      "screenshot": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c4-cable-up-pci.png",
+      "ocr": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c4-cable-up-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "7f1e9a1a77aaa48a587247ecacaff741700bef8a217dabd0b4c9d08bbdadfb99"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T09:13:06.675092+00:00"
+}

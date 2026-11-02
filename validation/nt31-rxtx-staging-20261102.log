@@ -1,0 +1,28 @@
+Formatting '/workspace/rltklant-vm/run/nt31-usbsetup-rtl8139-rxtx-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=419010560 backing_file=/tmp/rltk-growing-fat-17lwxzoq/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+15/6394 = 0.23% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1310720
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt31-usbsetup-rtl8139-rxtx-8127.qcow2",
+  "sha256_before_boot": "77d3c21a339dcebfd3b0e5638a7cd792260154b42b1664179e9349b080d92fc8",
+  "files": [
+    {
+      "guest_path": "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys",
+      "size": 538112,
+      "sha256": "64facff9e68e18ef665ed0086e529feb67bd274da299bd53b0e9d324fd460449",
+      "old_size": 537600,
+      "old_sha256": "d23a13af7ee58381e37a409b7a51638b36b1e619db8f5bc2cb9f62a59d69fadc"
+    },
+    {
+      "guest_path": "RLTTEST/TCP31.EXE",
+      "source": "/workspace/rltklant-work/validation/nt31-tcp-fixture-20261102/TCP31.EXE",
+      "size": 12024,
+      "sha256": "e23a00ee62d2eea2ecf3f824e5ba15461664b1d9f8354685f046a6493307c5bd",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-01T23:06:43.329332+00:00",
+  "result": "PASS_REGISTRY_REMOVAL_WITH_OS_WARNINGS",
+  "scope": "Final adapter and shared service deletion verified after native cold boot; unrelated Startup item retained",
+  "removal": "nt31-v9-final-removal-coldboot-20261102-proof.json",
+  "pre_reboot_pending": "nt31-v9-last-removal-pending-reboot-20261102.json",
+  "event_evidence": "nt31-v9-removal-coldboot-events-20261102.json",
+  "linkage": {
+    "Tcpip": {
+      "OtherDependencies": [
+        "Tcpipsys"
+      ],
+      "Bind": [],
+      "Export": [],
+      "Route": []
+    },
+    "Nbt": {
+      "OtherDependencies": [
+        "Tcpip",
+        "Nbtsys"
+      ],
+      "OldBind": "\\Device\\Streams\\RLTKLANT01",
+      "Bind": [],
+      "Export": [],
+      "Route": []
+    },
+    "NetBT": null,
+    "Nbf": {
+      "Bind": [],
+      "Export": [],
+      "Route": []
+    }
+  },
+  "no_rltklant_event_or_debug_entry": true,
+  "limitations": [
+    "The zero-adapter NT3.1 system reports NetBEUI/TCP-IP NetBIOS/TDI dependent service startup errors; this is not an error-free OS boot claim",
+    "The installer preserves inbox protocol/service configuration instead of disabling unrelated networking services",
+    "The earlier immediate-service-absence assertion failed on DeleteFlag=1 and remains preserved"
+  ]
+}

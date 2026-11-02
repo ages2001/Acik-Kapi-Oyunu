@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-02T00:53:46.067325+00:00",
+  "result": "PASS",
+  "scope": "NT5 native PCI config IRPs and send bounds; six PCI adapters per OS; full device names, zero problem codes, 24 full-payload replies each; MAC subtree not yet Windows integrated.",
+  "reports": [
+    "win2000-standard-pciconfig-v2-multi-8127-native-pci-v2-20261102.json",
+    "xp64-pciconfig-multi-8127-native-pci-v1-20261102.json"
+  ],
+  "imports": "native-pci-current-imports-v2-20261102.json",
+  "fixtures": [
+    "native-pci-fixture-v2-20261102.json",
+    "native-pci-fixture-20261102.json"
+  ],
+  "stopped_evidence": [
+    "win2000-native-pci-evidence-20261102/manifest.json",
+    "xp64-native-pci-evidence-20261102/manifest.json"
+  ],
+  "preserved_failure": "win2000-pciconfig-v1-import-failure-20261102.png"
+}

@@ -1,0 +1,3 @@
+LIBRARY HAL.DLL
+EXPORTS
+KeStallExecutionProcessor

@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T08:39:35.852084+00:00",
+  "guest": "xp64-usbnet-hcpower-oldpdo-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 525312,
+      "sha256": "746574178357c8ba3a9b76da9bb9d68e9585355fcc86bb2682521bd02704e47c"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    },
+    "RLTTEST/HCTREE.TXT": {
+      "file": "HCTREE.TXT",
+      "size": 11382,
+      "sha256": "dc63a20e91328b3e3aa5860f0424c678a7a3d30185684ffe9972064bdf352cca"
+    }
+  }
+}

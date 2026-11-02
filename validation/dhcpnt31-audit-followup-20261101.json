@@ -1,0 +1,39 @@
+{
+  "utc": "2026-11-01T21:28:35.629131+00:00",
+  "original_audit": "dhcpnt31-protocol-audit-open-20261101.json",
+  "status": "PARTIAL",
+  "resolved_with_evidence": [
+    {
+      "finding": "Received-length bounds and DHCP reply identity",
+      "evidence": [
+        "dhcpnt31-packet-bounds-host-proof-20261101.json",
+        "dhcpnt31-bounds-guest-proof-20261101.json"
+      ]
+    },
+    {
+      "finding": "Explicit automatic opt-in and distinct configured-interface selection",
+      "evidence": [
+        "dhcpnt31-bind-host-proof-20261101.json",
+        "dhcpnt31-bind-guest-proof-20261101.json",
+        "nt31-v4-dhcp-final-registry-20261101.json"
+      ]
+    },
+    {
+      "finding": "Installing-user Program Manager automatic logon on the tested additional-adapter path",
+      "evidence": [
+        "nt31-v6-auto-logon-proof-20261101.json"
+      ]
+    }
+  ],
+  "remaining": [
+    "Unconfigured and overlapping multi-adapter networks",
+    "Lease expiry/renewal and live address changes",
+    "Clean first-driver, update and removal integration",
+    "Custom Startup groups, repeated install and removal behavior"
+  ],
+  "failed_candidates_preserved": [
+    "dhcpnt31-route-v1-guest-failure-20261101.json",
+    "dhcpnt31-select-guest-failure-20261101.json",
+    "nt31-v5-startup-install-failure-20261101.json"
+  ]
+}

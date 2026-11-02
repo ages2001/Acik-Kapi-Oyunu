@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/stage_fat_hardware.py", line 21, in <module>
+    assert Path(entry['filename']).resolve(strict=True).is_relative_to('/workspace'),'backing chain must be durable'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: backing chain must be durable

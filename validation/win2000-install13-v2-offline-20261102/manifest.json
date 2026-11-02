@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-02T18:34:35.822181+00:00",
+  "guest": "win2000-standard-usbnet-mixed-install13-v2-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 516096,
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b"
+    },
+    "WINNT/SYSTEM32/USBINST.EXE": {
+      "file": "USBINST.EXE",
+      "size": 45056,
+      "sha256": "102e16349209fd52ab2ca0ef4f92c72e46f763b437cacfe8ea8a0a348079f73e"
+    },
+    "WINNT/SYSTEM32/USBTREE.EXE": {
+      "file": "USBTREE.EXE",
+      "size": 57344,
+      "sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97"
+    },
+    "RLTTEST/INST13.LOG": {
+      "file": "INST13.LOG",
+      "size": 1286,
+      "sha256": "bff66cf7fdbda2047e14115373240c65ea16fbc389e5da271d4f89cbbcf8339d"
+    },
+    "RLTTEST/INST13.RC": {
+      "file": "INST13.RC",
+      "size": 4,
+      "sha256": "9aca8dfce962538fb8131d73f84cada05e4dc79f5a0d3612c511b1150f3e33e2"
+    }
+  }
+}

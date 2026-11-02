@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-01T22:55:01.747946+00:00",
+  "result": "PASS",
+  "raw": "/workspace/rltklant-vm/run/win2000-standard-probe.raw",
+  "raw_sha256": "6ef583ee45693b5598d1102d77a6fbf09bcb0d145c7c60e5cc53500dff6faba3",
+  "packed": "/workspace/rltklant-vm/run/win2000-standard-probe.packed.qcow2",
+  "packed_sha256": "a57a8d77de1a7f79f85ac82ba2fd68b2d3f1a9f611605247d9d53d8942f2064a",
+  "children": [
+    {
+      "image": "/workspace/rltklant-vm/run/win2000-standard-probe-8127.qcow2",
+      "before_sha256": "a427ab6da4622e837a5c6969df134be202b244e38299a70ca4a6ce18ddd25633",
+      "after_sha256": "99e59558b2424c78ec3c8e4ba4e084373c858a979525b001f5bae2c46f187f8c",
+      "logical_comparison": "identical"
+    }
+  ],
+  "scope": "Generated inactive raw checkpoint preserved losslessly in durable /workspace qcow2; every direct overlay compared before/after; no uploaded media changed"
+}

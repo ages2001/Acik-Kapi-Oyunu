@@ -1,0 +1,1 @@
+PASS: 80 actual NT3.1 PHY-start schedules across all C+ PCI IDs; register widths/aliases, delayed reset, timeout, removal, failed read and upload

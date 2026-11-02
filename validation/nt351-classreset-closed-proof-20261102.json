@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-02T12:49:39.400581+00:00",
+  "result": "PASS_RTL8139_WITH_OPEN_USB_ATTACHMENT_TIMEOUT",
+  "tcp_bytes_each_direction": 3145728,
+  "registered_mac_resets": 3,
+  "rx_watchdog_events": 0,
+  "installed_usbnt_sha256": "d65acc8f8d9eb3abe0c7e03cd09c26e50d6101957a95f6a128d91166ae3d8080",
+  "scope": "NT3.51 IDE: actual RTL8139 PCI-only TCP, closed-wire byte/checksum verification, normal shutdown and exact stopped SYS readback. USB hot-plug matrix is not passed: RTL8159 exceeded the unchanged 30-second bound in two runs, then attached. Earlier three USB model cycles preserve PCI traffic. No USB TCP/IP or physical-silicon certification.",
+  "evidence": {
+    "nt351-classreset-evidence-20261102/manifest.json": "4e34d939ddce2ce4b50448fbff356c0f73b7ae8ea0c64ba5bf20bd2d6815303d",
+    "nt351-classreset-offline-20261102/manifest.json": "fccde3366ebe2c1b6783f2b7f89d8f2f13601a81bbb22c897f776f4e8f173869",
+    "nt351-classreset-tcp-wire-proof-20261102.json": "1529bcd30f3d69e1fa85b71afd2ca0abe5d4a0b9995acd4cf4b69e24ed1a9a8d",
+    "nt351-classreset-registered-reset-20261102.json": "de4d2ea312a7388d2d658b75d062e3ef5342dfe286aa0554f9f84046d742b8c7",
+    "nt351-classreset-retry-timing-20261102.jsonl": "480980f46c55cd28fb5732386c6afb1e87f90ad36afd3a6dd1db7a9ccecd65f4",
+    "nt351-classreset-tcp-baseline-20261102.json": "1eed7e00ee4dbda6dc148edcaf55e71c812a684a0b6d3dcbec6f4efd010af211",
+    "nt351-classreset-tcp-baseline-screen-20261102.png": "46203b7780e04d00aed744a115edaa5745693e39d87f1c55f52cc4ad7df8b631",
+    "nt351-classreset-tcp-reset-20261102.json": "0384e2b86d7ef5ad5a0d88fd209d91b2a33471ea6b44398fd68e547cf4859abc",
+    "nt351-classreset-tcp-reset-screen-20261102.png": "f43eb81cf1adfdab595aa21a5f77a0d8361c5e2c2dd304e38765f4e16d3e2240",
+    "nt351-classreset-tcp-cable-20261102.json": "ff582436140d71daab7511c1f8f6166226b23c13b3777b9c08c53f54ab081342",
+    "nt351-classreset-tcp-cable-screen-20261102.png": "e7ddc2bc3674aa21bab553ce259ae7cf83ce7367554de32b8928a0d9ab0d65cc",
+    "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-sibling-matrix.json": "2032e5918f142e5970a8a0eaf4b4bf412fcb21a788598ff04ff2471979663c2c",
+    "nt351-usbsetup-rtl8139-classreset-8127-classreset-retry-pci-20261102-sibling-matrix.json": "d254523cc1a67144c77ed98f6600ab50acc975d504972842529ad6abbc1216e6"
+  }
+}

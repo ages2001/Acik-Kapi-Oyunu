@@ -1,0 +1,229 @@
+{
+  "utc": "2026-11-01T23:56:25.507527+00:00",
+  "scope": "Read-only offline copies after actual guest Network Setup; no registry edits",
+  "hive_sha256": {
+    "SYSTEM": "1e4c066c475941de615f0e97ea7c4231f5c8f8d938941eeea03ceec6cbcb5fe9",
+    "SOFTWARE": "596d1b5eeda2bda0419fc22906f2884b73c92dc8bac9a318105cfb8812437d97"
+  },
+  "network_provider_members": [
+    "LanmanWorkstation"
+  ],
+  "network_cards": {
+    "1": {
+      "ServiceName": "RLTKLANT1",
+      "Manufacturer": "Realtek",
+      "Title": "[1] Realtek PCI/PCIe or USB Ethernet Adapter",
+      "Description": "Realtek PCI/PCIe or USB Ethernet Adapter",
+      "ProductName": "RLTKLANT",
+      "InstallDate": 1793577201,
+      "parameters": {
+        "InterruptNumber": 10,
+        "BusType": 5,
+        "BusNumber": 0,
+        "MediaType": 1,
+        "IoBaseAddress": 768
+      },
+      "tcpip": {
+        "EnableDHCP": 1,
+        "UseZeroBroadcast": 0,
+        "LLInterface": "",
+        "IPAddress": [
+          "0.0.0.0"
+        ],
+        "SubnetMask": [
+          "255.0.0.0"
+        ],
+        "DefaultGateway": [],
+        "DhcpIPAddress": "0.0.0.0",
+        "DhcpSubnetMask": "255.0.0.0"
+      }
+    }
+  },
+  "services": {
+    "RLTKLANT": {
+      "values": {
+        "Type": 1,
+        "Start": 3,
+        "ErrorControl": 1,
+        "ImagePath": "\\SystemRoot\\System32\\drivers\\rltklant.sys",
+        "DisplayName": "Realtek RLTKLANT Adapter Driver",
+        "Group": "NDIS"
+      },
+      "linkage": {
+        "Bind": [
+          "\\Device\\RLTKLANT1"
+        ],
+        "Export": [
+          "\\Device\\RLTKLANT1"
+        ],
+        "Route": [
+          "\"RLTKLANT1\""
+        ]
+      }
+    },
+    "USBNT": {
+      "values": {
+        "Type": 1,
+        "Start": 0,
+        "ErrorControl": 1,
+        "Group": "SCSI miniport",
+        "ImagePath": "system32\\drivers\\usbnt.sys"
+      },
+      "linkage": null
+    },
+    "Tcpip": {
+      "values": {
+        "Type": 1,
+        "Start": 3,
+        "ErrorControl": 1,
+        "ImagePath": "\\SystemRoot\\System32\\drivers\\tcpip.sys",
+        "DisplayName": "TCP/IP Service",
+        "DependOnService": [],
+        "DependOnGroup": [
+          "NDIS"
+        ]
+      },
+      "linkage": {
+        "Bind": [
+          "\\Device\\RLTKLANT1"
+        ],
+        "Export": [
+          "\\Device\\Tcpip\\RLTKLANT1"
+        ],
+        "Route": [
+          "\"RLTKLANT\" \"RLTKLANT1\""
+        ]
+      }
+    },
+    "NetBT": {
+      "values": {
+        "Type": 1,
+        "Start": 3,
+        "ErrorControl": 1,
+        "ImagePath": "\\SystemRoot\\System32\\drivers\\netbt.sys",
+        "DisplayName": "WINS Client(TCP/IP)",
+        "Group": "TDI",
+        "DependOnService": [
+          "Tcpip"
+        ],
+        "DependOnGroup": [
+          "NDIS"
+        ]
+      },
+      "linkage": {
+        "OtherDependencies": [
+          "Tcpip"
+        ],
+        "Bind": [
+          "\\Device\\RLTKLANT1"
+        ],
+        "Export": [
+          "\\Device\\NetBT_RLTKLANT1"
+        ],
+        "Route": [
+          "\"RLTKLANT\" \"RLTKLANT1\""
+        ]
+      }
+    },
+    "Dhcp": {
+      "values": {
+        "Type": 32,
+        "Start": 2,
+        "ErrorControl": 1,
+        "ImagePath": "%SystemRoot%\\System32\\services.exe",
+        "DisplayName": "DHCP Client",
+        "Group": "TDI",
+        "DependOnService": [
+          "Tcpip",
+          "Afd",
+          "NetBT"
+        ],
+        "DependOnGroup": [],
+        "ObjectName": "LocalSystem"
+      },
+      "linkage": {}
+    },
+    "LmHosts": {
+      "values": {
+        "Type": 32,
+        "Start": 2,
+        "ErrorControl": 1,
+        "ImagePath": "%SystemRoot%\\System32\\services.exe",
+        "DisplayName": "TCP/IP NetBIOS Helper",
+        "DependOnService": [],
+        "DependOnGroup": [
+          "NetworkProvider"
+        ],
+        "ObjectName": "LocalSystem"
+      },
+      "linkage": {}
+    },
+    "LanmanWorkstation": {
+      "values": {
+        "Type": 32,
+        "Start": 2,
+        "ErrorControl": 1,
+        "ImagePath": "%SystemRoot%\\System32\\services.exe",
+        "DisplayName": "Workstation",
+        "Group": "NetworkProvider",
+        "ObjectName": "LocalSystem",
+        "DependOnService": [],
+        "DependOnGroup": [
+          "TDI"
+        ]
+      },
+      "linkage": {
+        "Bind": [
+          "\\Device\\NetBT_RLTKLANT1"
+        ],
+        "Export": [
+          "\\Device\\LanmanWorkstation\\NetBT_RLTKLANT1"
+        ],
+        "Route": [
+          "\"NetBT\" \"RLTKLANT\" \"RLTKLANT1\""
+        ]
+      }
+    },
+    "LanmanServer": {
+      "values": {
+        "Type": 32,
+        "Start": 2,
+        "ErrorControl": 1,
+        "ImagePath": "%SystemRoot%\\System32\\services.exe",
+        "DisplayName": "Server",
+        "ObjectName": "LocalSystem",
+        "DependOnService": [],
+        "DependOnGroup": [
+          "TDI"
+        ]
+      },
+      "linkage": {
+        "Bind": [
+          "\\Device\\NetBT_RLTKLANT1"
+        ],
+        "Export": [
+          "\\Device\\LanmanServer\\NetBT_RLTKLANT1"
+        ],
+        "Route": [
+          "\"NetBT\" \"RLTKLANT\" \"RLTKLANT1\""
+        ]
+      }
+    },
+    "Rdr": {
+      "values": {
+        "Type": 2,
+        "Start": 3,
+        "ErrorControl": 1,
+        "ImagePath": "\\SystemRoot\\System32\\drivers\\rdr.sys",
+        "DisplayName": "Rdr",
+        "Group": "Network"
+      },
+      "linkage": {}
+    }
+  },
+  "os_version": {
+    "CurrentVersion": "3.51",
+    "CurrentBuildNumber": "1057",
+    "CSDVersion": "Service Pack 5"
+  }
+}

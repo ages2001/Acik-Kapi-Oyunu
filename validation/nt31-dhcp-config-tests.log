@@ -1,0 +1,2 @@
+PASS: NT3.1 per-instance MAC publication, two adapter names, malformed length, registry open/write failure reporting
+PASS: NT3.1 global DNS path, disabled-DNS enablement, enabled-order preservation, ordered unique servers, empty/bounded list and registry failure rollback

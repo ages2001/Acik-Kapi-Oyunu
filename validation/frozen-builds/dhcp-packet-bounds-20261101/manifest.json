@@ -1,0 +1,126 @@
+{
+  "utc": "2026-11-01T20:52:13.872061+00:00",
+  "files": {
+    "test_dhcpnt31_packets.py": {
+      "bytes": 3798,
+      "sha256": "6e0bc5de5377400f0d3f3211144914150c202b4ed22f219e7667c7ae706b95cf"
+    },
+    "DHCPNT31.EXE": {
+      "bytes": 23965,
+      "sha256": "ead570e1303493c44a9cfa220c8b083061e7ded48bdbb3d5f18039d1db794ea9"
+    },
+    "dhcpnt31.c": {
+      "bytes": 27065,
+      "sha256": "23afb86ea3db26892fdbc3976690dcaad6cbff55e0938e261508d9ed735f918b"
+    }
+  },
+  "imports_equal_previous_guest_candidate": true,
+  "imports": [
+    [
+      "advapi32.dll",
+      "RegCloseKey"
+    ],
+    [
+      "advapi32.dll",
+      "RegEnumKeyExA"
+    ],
+    [
+      "advapi32.dll",
+      "RegEnumValueA"
+    ],
+    [
+      "advapi32.dll",
+      "RegOpenKeyExA"
+    ],
+    [
+      "advapi32.dll",
+      "RegQueryValueExA"
+    ],
+    [
+      "advapi32.dll",
+      "RegSetValueExA"
+    ],
+    [
+      "kernel32.dll",
+      "CloseHandle"
+    ],
+    [
+      "kernel32.dll",
+      "CreateFileA"
+    ],
+    [
+      "kernel32.dll",
+      "ExitProcess"
+    ],
+    [
+      "kernel32.dll",
+      "GetCommandLineA"
+    ],
+    [
+      "kernel32.dll",
+      "GetStdHandle"
+    ],
+    [
+      "kernel32.dll",
+      "GetTickCount"
+    ],
+    [
+      "kernel32.dll",
+      "ReadFile"
+    ],
+    [
+      "kernel32.dll",
+      "SetFilePointer"
+    ],
+    [
+      "kernel32.dll",
+      "WriteFile"
+    ],
+    [
+      "wsock32.dll",
+      "WSACleanup"
+    ],
+    [
+      "wsock32.dll",
+      "WSAStartup"
+    ],
+    [
+      "wsock32.dll",
+      "bind"
+    ],
+    [
+      "wsock32.dll",
+      "closesocket"
+    ],
+    [
+      "wsock32.dll",
+      "htonl"
+    ],
+    [
+      "wsock32.dll",
+      "htons"
+    ],
+    [
+      "wsock32.dll",
+      "ntohl"
+    ],
+    [
+      "wsock32.dll",
+      "recvfrom"
+    ],
+    [
+      "wsock32.dll",
+      "sendto"
+    ],
+    [
+      "wsock32.dll",
+      "setsockopt"
+    ],
+    [
+      "wsock32.dll",
+      "socket"
+    ]
+  ],
+  "subsystem": "3.10",
+  "scope": "Host packet-bounds regression PASS; actual guest DHCP and multi-interface behavior still require validation"
+}

@@ -1,0 +1,55 @@
+{
+  "utc": "2026-11-02T01:51:13.707675+00:00",
+  "result": "PASS",
+  "systems": {
+    "win2000": {
+      "driver_sha256": "7786b1a0d2427578d8586de7001755f3d3fe9527bd92294d0e3bae0dc7d47161",
+      "watchdog": "win2000-macstart-watchdog-six-20261102.json",
+      "watchdog_resets": 6,
+      "traffic": "win2000-standard-macstart-multi-8127-mac-start-after-pnp-20261102.json",
+      "full_payload_replies": 24,
+      "stopped_evidence": "win2000-macstart-evidence-20261102/manifest.json",
+      "offline": "win2000-macstart-offline-20261102/manifest.json",
+      "orderly_pnp_transitions": 36,
+      "protocol_reset_completions": 18,
+      "observed_phy_mac_preparations": 48
+    },
+    "xp64": {
+      "driver_sha256": "14e05b8ef3a3ad2238e484d43f3a4251b7a7cd1781a431f8eba2e223845a00f4",
+      "watchdog": "xp64-macstart-watchdog-six-20261102.json",
+      "watchdog_resets": 6,
+      "traffic": "xp64-macstart-multi-8127-mac-start-after-pnp-20261102.json",
+      "full_payload_replies": 24,
+      "stopped_evidence": "xp64-macstart-evidence-20261102/manifest.json",
+      "offline": "xp64-macstart-offline-20261102/manifest.json",
+      "orderly_pnp_transitions": 36,
+      "observed_phy_mac_preparations": 30
+    },
+    "nt4": {
+      "driver_sha256": "41a54b3668d23ff145f346b4872ccbeb84206b101e1b782abaca2891109b6e84",
+      "watchdog": "nt4-macstart-watchdog-20261102.json",
+      "watchdog_resets": 3,
+      "traffic": "nt4-ndis-macstart-8127-mac-start-after-reset-20261102.json",
+      "full_payload_replies": 4,
+      "stopped_evidence": "nt4-macstart-evidence-20261102/manifest.json",
+      "offline": "nt4-macstart-offline-20261102/manifest.json",
+      "observed_phy_mac_preparations": 4
+    },
+    "nt351": {
+      "driver_sha256": "41a54b3668d23ff145f346b4872ccbeb84206b101e1b782abaca2891109b6e84",
+      "watchdog": "nt351-macstart-watchdog-20261102.json",
+      "watchdog_resets": 3,
+      "traffic": "nt351-usbsetup-macstart-8127-mac-start-after-reset-20261102.json",
+      "full_payload_replies": 4,
+      "stopped_evidence": "nt351-macstart-evidence-20261102/manifest.json",
+      "offline": "nt351-macstart-offline-20261102/manifest.json",
+      "observed_phy_mac_preparations": 4
+    }
+  },
+  "scope": "Actual miniport PHY/MAC replay on startup and passive Windows reset; no claim of analog/MCU firmware execution or universal physical support",
+  "limits": [
+    "NT3.1 integration is separate and still pending guest verification.",
+    "Orderly PnP is not surprise removal.",
+    "RTL8117 and full platform power/DASH/SFP prerequisites remain open."
+  ]
+}

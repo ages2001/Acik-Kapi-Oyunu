@@ -1,0 +1,9 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-release13-v2-8127",
+  "utc": "2026-11-02T18:41:37.513598+00:00",
+  "operation": "up",
+  "expected": "00000000",
+  "result": "PASS",
+  "trace": "SLPTEST object=00000000\nSLPTEST D0=00000000\n",
+  "seconds": 0.0
+}

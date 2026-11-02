@@ -1,0 +1,97 @@
+{
+  "guest": "xp64-usbnet-mixed-release13-v2-8127",
+  "utc": "2026-11-02T18:52:13.278557+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-native-hotplug.json",
+        "sha256": "e84999b4cb9001f49f26b7e29edd98101b82ce3370167d5f71dc86c3316639a2"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-function-power.json",
+        "sha256": "9bbd5866b27b9652a9025ebe32c131d66e171c8076174e192c06071a09d15b92"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-port-reset-cycles.json",
+        "sha256": "2c3b8a044415a0612b85f4a3cebf842146d613a8119dd6cfc39deea68e66e022"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-native-cable.json",
+        "sha256": "d06afd577000e9ae96512789190943bec73656c7397fd7b7e08dead8eb13923d"
+      },
+      "seconds": 74.63
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-native-hotplug.json",
+        "sha256": "bd78b3459b3fbcc5b7d2945e462bbe0b61328d72ec068ea4326026303ab10bc0"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-function-power.json",
+        "sha256": "0a59c547650afeaf28b2aafca7f4623c9e986417993960e8a9eef2c58c2b6328"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-port-reset-cycles.json",
+        "sha256": "c77642618b6aff722133f898c102dafefc220392a49bc18d526dad124d5eddeb"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-native-cable.json",
+        "sha256": "d9d2399eb37a09c9457de7cdde7b18a011028fb9d94604bfe3f1e21fe14b3bb5"
+      },
+      "seconds": 77.14
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-native-hotplug.json",
+        "sha256": "46e4e9f4c88306960fe63e3b56ec8e3ce828c2cc6bb0c594a815a6d9b541d155"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-function-power.json",
+        "sha256": "dcfe5d6e27ac9bfc7025ebf68e3cb49231b8b67f4dd7757981241ac73d7de46e"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-port-reset-cycles.json",
+        "sha256": "fb9f049279594a406679980dac5a08e731d19b8e2d3918cdab9e16d4e3bcf46f"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-native-cable.json",
+        "sha256": "143a4ac4bfa8f3c2a10dbb7af11cee39a4f06c2f2c9612e14ae6da85c753e52d"
+      },
+      "seconds": 84.53
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-native-hotplug.json",
+        "sha256": "ac04962ebce07d0dda364ff1e5fcb21b73c896fc8fb32adf060888d581fdd67f"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-function-power.json",
+        "sha256": "10cd071e23c5ada94fadce604712204f11b7e8f938ef6c132ee10a2748b28caa"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-port-reset-cycles.json",
+        "sha256": "1d5d2438113dbc381fe6cee41bad8539da8ffe99a44b42e47ae30d97b29beb92"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-native-cable.json",
+        "sha256": "81e4468cecc285e0506b755f1e26f3c0147be83ca0c7c8fde6acaf9fdad3d89c"
+      },
+      "seconds": 101.87
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

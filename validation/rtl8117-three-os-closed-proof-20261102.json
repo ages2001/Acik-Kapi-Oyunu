@@ -1,0 +1,40 @@
+{
+  "result": "PASS",
+  "utc": "2026-11-02T06:53:46.372401+00:00",
+  "rows": [
+    {
+      "guest": "win2000-standard-rtl8117-v2-multi-8127",
+      "target": "ndis5",
+      "sha256": "721b685122d7bda772878fda152b760f37566083755ba106dbf02701440e9330",
+      "evidence": "validation/win2000-rtl8117-v2-evidence-20261102/manifest.json",
+      "offline": "validation/win2000-rtl8117-v2-offline-20261102/manifest.json",
+      "watchdog": "win2000-rtl8117-v2-watchdog-20261102.json",
+      "network": "validation/win2000-standard-rtl8117-v2-multi-8127-rtl8117-after-pnp-watchdog-20261102.json",
+      "pnp_transitions": 36,
+      "watchdog_cycles": 6
+    },
+    {
+      "guest": "xp64-management-rtl8117-v2-multi-8127",
+      "target": "ndis5x64",
+      "sha256": "d776ddf8189ff1aec1b95541ab1d24e707d7872dd3f17a458196e4c872babf36",
+      "evidence": "validation/xp64-rtl8117-v2-evidence-20261102/manifest.json",
+      "offline": "validation/xp64-rtl8117-v2-offline-20261102/manifest.json",
+      "watchdog": "xp64-rtl8117-v2-watchdog-20261102.json",
+      "network": "validation/xp64-management-rtl8117-v2-multi-8127-rtl8117-after-pnp-watchdog-20261102.json",
+      "pnp_transitions": 36,
+      "watchdog_cycles": 6
+    },
+    {
+      "guest": "nt4-ndis-rtl8117-v2-8127",
+      "target": "ndis3",
+      "sha256": "d1703001357511d876fd293508ad2c7d761df33eca76a6493475e4cfb1e973e9",
+      "evidence": "validation/nt4-rtl8117-v2-evidence-20261102/manifest.json",
+      "offline": "validation/nt4-rtl8117-v2-offline-20261102/manifest.json",
+      "watchdog": "nt4-rtl8117-v2-watchdog-20261102.json",
+      "network": "validation/nt4-ndis-rtl8117-v2-8127-rtl8117-after-watchdog-20261102.json",
+      "pnp_transitions": 0,
+      "watchdog_cycles": 3
+    }
+  ],
+  "scope": "Exact RTL8117 integration debug binaries. Windows 2000 AHCI; XP x64 and NT4 IDE. Orderly PnP cycles are not physical PCI surprise removal. QEMU only."
+}

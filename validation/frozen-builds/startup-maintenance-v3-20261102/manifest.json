@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-01T21:55:57.716891+00:00",
+  "files": {
+    "test_setup_startup_parser.py": {
+      "bytes": 3485,
+      "sha256": "29881d6c7bdc06787cc82aa557e768e644221dfdef2c31dd128e31456370aee9"
+    },
+    "rltsetup.c": {
+      "bytes": 14565,
+      "sha256": "9ee92988be9d48b44f31a240d5a8ed861da333ce9b5d85dbc3d0e4072810d20a"
+    },
+    "build-rltsetup.sh": {
+      "bytes": 627,
+      "sha256": "b06bf0ec8abb9ee862625ee9f70c4227cb4bbea60718f24c588c30f96eebff1e"
+    },
+    "RLTSETUP.DLL": {
+      "bytes": 19798,
+      "sha256": "86d20aaa0d03fe04b3568ecaa4d245b6a252d4c14b4f14126f354ef26279faed"
+    },
+    "test_setup_dde_reply.py": {
+      "bytes": 3273,
+      "sha256": "19776e4a8c8b6465d0bce4c0074874301efcb1f924fc0156c895771d6dd01d6a"
+    }
+  },
+  "scope": "Bounded DDE CF_TEXT with first-NUL semantics; actual startup maintenance retest pending"
+}

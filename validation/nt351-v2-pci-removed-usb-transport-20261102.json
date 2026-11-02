@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-01T23:39:05.286392+00:00",
+  "result": "REPORT_TRANSPORT_TIMEOUT",
+  "scope": "Host UDP report listener for a USB-only post-removal test",
+  "diagnosis": "LNET.EXE always sends its host report via 10.0.3.2. That PCI adapter was deliberately removed. The guest console reports PASS for four fully compared 1472-byte USB replies. Native shutdown/offline LNET.LOG readback will verify the unique token independently.",
+  "screenshot": "nt351-v2-removal-usb-receipt-20261102.png",
+  "driver_failure": false
+}

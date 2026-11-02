@@ -1,0 +1,24 @@
+Installing the USBNT tools
+  copied C:\WINNT\System32\usbeject.exe
+  copied C:\WINNT\System32\usbtree.exe
+  copied C:\WINNT\System32\usbmon.exe
+  copied C:\WINNT\System32\usbcam.exe
+  copied C:\WINNT\System32\usbinst.exe
+  copied C:\WINNT\System32\usbntcap.dll
+  usbntcap.dll registered as Video for Windows driver msvideo (cameras)
+Installing the USB driver (Windows 5.0 SP0, x86)
+  Windows' own drivers: UHCI / OHCI yes, EHCI no, cameras (usbvideo.sys) no
+  controllers: EHCI to USBNT (/ehci)
+  oem3.inf (USBNT) removed
+  usbnt.inf -> C:\WINNT\INF\oem3.inf
+  usbntkbd.inf -> C:\WINNT\INF\oem6.inf
+  usbntmou.inf -> C:\WINNT\INF\oem7.inf
+  IntelRouteToXhci = 1 (Intel chipsets: USB 2.0 ports to xHCI)
+  WindowsCamera = 0 (USB cameras on USBNT's controllers: USBNT's camera driver)
+  USBNT device bus: preserving the existing host-controller parent
+  EHCI USBNT USB 1.1 / 2.0 Host Controller (UHCI, OHCI, EHCI) (PCI\VEN_8086&DEV_24CD&SUBSYS_11001AF4&REV_10): usbnt.sys
+   USB 2.0 Root Hub (USBNT) (USBNT\ROOT_HUB&VID8086&PID24CD): usbnt.sys
+   USB Vendor Specific Device (RTL8153 USB 10/100/1000 Gigabit Ethernet) (USBNT\VID_0BDA&PID_8153&REV_3000): usbnt.sys
+Done. Restart Windows to finish.
+The disks of Windows' USB storage driver
+The PS/2 mouse (touch pads)

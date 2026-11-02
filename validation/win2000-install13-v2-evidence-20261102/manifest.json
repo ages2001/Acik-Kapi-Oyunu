@@ -1,0 +1,33 @@
+{
+  "utc": "2026-11-02T18:34:35.013046+00:00",
+  "guest": "win2000-standard-usbnet-mixed-install13-v2-8127",
+  "safeoff_screenshot": "win2000-install13-v2-safeoff-20261102.png",
+  "safeoff_sha256": "0a48d2055d8424eb171f92402d5bfab616993c504ac17896d3edf4a85261425d",
+  "files": {
+    "debug.log": {
+      "bytes": 152,
+      "sha256": "1524eb962a56448edc211ba9846b21dfebe0a190ccca76a51f9b011b92b08192"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 458,
+      "sha256": "d9908b83ca6b21111a7739cdc84ffa97b73eee5e8deee425b5c49751d4af5639"
+    },
+    "launch.json": {
+      "bytes": 1448,
+      "sha256": "13c4575646d20bb7c836e2fdc75d1dbdcf758fa2a04fbe7e865a53921de852d2"
+    },
+    "process-exit.json": {
+      "bytes": 51,
+      "sha256": "570b6a0f71cf00b4c99ef69fb4368d9b2790e842c0931351f7b151523e8dca1d"
+    },
+    "usb.pcap": {
+      "bytes": 32177,
+      "sha256": "c70e6e712658b10e746cd931f3d9f765ff37e553de05c625d2c3b14e58c1b07d"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

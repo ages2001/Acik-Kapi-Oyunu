@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T02:14:53.530993+00:00",
+  "guest": "nt31-usbsetup-macreset-v2-8127",
+  "files": {
+    "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 533504,
+      "sha256": "947fa86c7b7387ca87ca5b374e881b5112b4de70ba8553c63db32250b4fb6ad0"
+    },
+    "N31TEST/N31RESET.SYS": {
+      "file": "N31RESET.SYS",
+      "size": 5632,
+      "sha256": "d81bb14ddffb649ddb52a317590ad9c12883f0c4d80d2bb3300c124ec560c37e"
+    },
+    "N31TEST/N31RESET.EXE": {
+      "file": "N31RESET.EXE",
+      "size": 7828,
+      "sha256": "82b012793a677c8effee23948da10c06f0ac456f2db4a3893d403a1d13283877"
+    }
+  }
+}

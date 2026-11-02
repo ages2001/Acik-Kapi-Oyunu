@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-02T05:47:32.458531+00:00",
+  "result": "PASS",
+  "raw": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+  "raw_sha256": "597cc3932b6b7cc24f56b26c05d438101d0f78537e7a4385c3e528a1dac81455",
+  "packed": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.packed.qcow2",
+  "packed_sha256": "36d0079a77a15de19f1dcf8685d9eda04903ca712a8771f7be5b40eed55f4f9a",
+  "children": [
+    {
+      "image": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+      "before_sha256": "a138ea1e61edcc43735d8a81db0a48cf323430c76a5c3e12b53fa6544a5159fd",
+      "after_sha256": "104bbe62de4fc516636d5b1a40fc227270aee4168d01eb74e297251fc90dbb20",
+      "logical_comparison": "identical"
+    }
+  ],
+  "scope": "Generated inactive raw checkpoint preserved losslessly in durable /workspace qcow2; every direct overlay compared before/after; no uploaded media changed"
+}

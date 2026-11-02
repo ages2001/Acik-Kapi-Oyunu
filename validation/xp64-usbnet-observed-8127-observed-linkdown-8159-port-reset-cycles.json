@@ -1,0 +1,30 @@
+{
+  "guest": "xp64-usbnet-observed-8127",
+  "utc": "2026-11-01T18:53:22.723175+00:00",
+  "scope": "Actual guest internal USB RESET_PORT plus automatic driver recovery; no PnP disable/enable or guest restart; QEMU only",
+  "cycles": [
+    {
+      "guest": "xp64-usbnet-observed-8127",
+      "utc": "2026-11-01T18:53:22.713475+00:00",
+      "token": "observed-linkdown-8159-portreset01",
+      "report": "TOKEN observed-linkdown-8159-portreset01\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        58790
+      ],
+      "reset_trace": "RESETTEST object=00000000\nURB-RX failure NT/USBD C000009D C0007000 \nURB-RX failure NT/USBD C000000D 80000300 \nRESETTEST ioctl=00000000\n",
+      "readiness": {
+        "ready": true,
+        "requests": 4,
+        "matched_replies": 4,
+        "unmatched_requests": 0,
+        "first_reply_seconds": 4.29299460099719,
+        "four_reply_seconds": 6.7066810190008255,
+        "timeout_seconds": 60,
+        "scope": "End-to-end timing after helper completion and any requested cable restoration, including guest command dispatch and ping intervals; final guest probe required"
+      },
+      "cable_down_at_reset": true,
+      "elapsed_seconds": 20.35568943301041
+    }
+  ]
+}

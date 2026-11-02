@@ -1,0 +1,6 @@
+{
+  "source": "win2000-phy.raw",
+  "target": "ndis5",
+  "sha256": "90666efebc680dfd5dbe99bd22035aa626ed649d540fd93504b9e66910b3d298",
+  "debug_build": true
+}

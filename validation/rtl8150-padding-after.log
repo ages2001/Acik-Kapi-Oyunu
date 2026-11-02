@@ -1,0 +1,173 @@
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : 2000: UHCI -> in-box (not USBNT)
+ok  : 2000: OHCI -> in-box
+ok  : 2000: EHCI -> in-box
+ok  : 2000: xHCI (USB3) -> USBNT
+ok  : 2000: USB4 -> USBNT
+ok  : XP: EHCI -> in-box
+ok  : XP: xHCI (USB3) -> USBNT
+ok  : XP x64: xHCI (USB3) -> USBNT
+ok  : XP x64: EHCI -> in-box
+ok  : prog-if 0x30 -> xHCI
+ok  : prog-if 0x40 -> USB4
+ok  : prog-if 0x20 -> EHCI
+ok  : RTL8153 recognized
+ok  : RTL8154 (USB2.0 GbE) recognized
+ok  : RTL8157 recognized
+ok  : RTL8159 (USB 10G) recognized
+ok  : RTL8159 ceiling is 10G
+ok  : wrong vendor rejected
+ok  : legacy RTL8150 supported (own backend)
+ok  : RTL8150 marked USB 1.1
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : failed redetection clears stale silicon capabilities
+ok  : attach RTL8153 on NT4 succeeds
+ok  : NT4 route = USBNT
+ok  : MAC read back from IDR
+ok  : reg write is a control transfer
+ok  : bmRequestType = host-to-device vendor
+ok  : bRequest = SET_REGS
+ok  : wValue = aligned command-register DWORD
+ok  : wIndex = MCU_TYPE_PLA | byte-enable
+ok  : written byte reached the data stage
+ok  : read uses device-to-host vendor
+ok  : read returned register bytes
+ok  : TX on bulk-OUT
+ok  : TX length = desc + frame
+ok  : tx_desc opts1 low = frame len
+ok  : frame body copied after desc
+ok  : short USB transmit is not reported as successful
+ok  : short register read is rejected
+ok  : RX packet 1 parsed (len 20)
+ok  : RX next offset is 8-byte aligned (48)
+ok  : RX packet 2 parsed (len 14)
+ok  : RTL8150 recognized
+ok  : 8150 TX = frame length (no tx descriptor)
+ok  : 8150 TX copies raw frame
+ok  : 8150 short Ethernet frames are padded to ETH_ZLEN
+ok  : 8150 minimum-frame padding is initialized and bounded
+ok  : 8150 TX pads a 64-byte multiple
+ok  : 8150 RX strips 4-byte status
+ok  : 8150 RX is one frame per buffer (no coalescing)
+ok  : 8157 TX uses 16-byte descriptor
+ok  : 8157 TX length and signature match the wire format
+ok  : 8157 RX strips FCS and advances on a 16-byte boundary
+ok  : 8157 RX rejects truncated packet
+ok  : 8157 RX rejects overflowing offset
+ok  : 8150 stuck reset fails without enabling traffic
+ok  : 8153 stuck reset fails without enabling traffic
+ok  : 8150 attaches after reset clears
+ok  : 8150 detach clears running state
+ok  : 8150 detach uses the legacy stop register
+ok  : 8157 silicon behind PID 8156 selects v2 descriptors
+ok  : 8159 silicon selects v2 descriptors and 10G ceiling
+ok  : unknown silicon revision rejected before enabling traffic
+
+ALL TESTS PASSED (0 failures)
+
+ok  : A: port idle at load (no device yet)
+ok  : A: link down while idle
+ok  : A: later arrival attaches on NT4
+ok  : A: media connect reported
+ok  : A: link up after arrival
+ok  : B: present-at-boot arrival attaches on NT 3.51
+ok  : C: connect on first insert
+ok  : C: disconnect + re-armed on removal
+ok  : C: link down after removal
+ok  : C: re-insert attaches again
+ok  : C: arrival/removal counters correct
+ok  : D: send refused while idle
+ok  : D: send works once attached
+ok  : D: send refused after unplug
+ok  : E: 2000 EHCI NIC left to in-box stack (idle)
+ok  : E: 2000 xHCI (USB3) NIC attaches on USBNT
+ok  : F: non-Realtek arrival ignored
+ok  : attached without carrier does not fabricate media connect
+ok  : cable connect is detected independently of USB arrival
+ok  : stable carrier does not emit duplicate notifications
+ok  : failed PHY status read drops cached carrier
+ok  : all-ones PHY status is not link up
+ok  : physical removal disconnects established carrier once
+ok  : RTL8150 MSR bit1 is not carrier
+ok  : RTL8150 carrier is MSR bit2
+
+ALL HOT-PLUG TESTS PASSED (0 failures)
+PASS: 17 revision reset traces, preserved bits, all I/O failure boundaries, stuck reset, unknown revisions
+PASS: 17-revision PHY transport, vendor traces, page isolation, all I/O failure boundaries, timed busy completion, timeout and absent-device rejection
+PASS: independent USB/PLA banks, command side effects, first/middle/last byte enables and malformed transfers
+PASS: revision-specific PHY status, cable changes and reset preservation
+
+RLTKLANT driver  <->  QEMU usb-rtl8153 device core interop
+ok  : command register matches the documented r8152 address
+ok  : driver attaches over emulated RTL8153
+ok  : driver read station MAC from device
+ok  : starting traffic preserves all six station-address bytes
+ok  : bring-up enabled device TX+RX (CR written through to device)
+ok  : driver programmed the device receive-config register
+ok  : attached device with no cable reports link down
+ok  : driver reads modeled cable connect through vendor request
+ok  : driver reads cable removal without USB detachment
+ok  : driver TX submitted
+ok  : device received the exact 100-byte frame the driver sent
+ok  : driver RX poll ok
+ok  : driver parsed the exact 64-byte frame the device delivered
+ok  : revision reset attaches through separate USB/PLA banks
+ok  : 8156 BMU/ECM reset touches USB bank only
+ok  : revision reset attaches through separate USB/PLA banks
+ok  : 8156 BMU/ECM reset touches USB bank only
+ok  : revision reset attaches through separate USB/PLA banks
+ok  : revision reset attaches through separate USB/PLA banks
+
+QEMU INTEROP TESTS PASSED (0 failures)
+
+== NT 3.1: three different USB Ethernet adapters at once ==
+
+  adapter 1: Realtek RTL8152B USB 10/100 Fast Ethernet  route=USBNT  MAC=52:54:00:11:11:01  100 Mbit
+  adapter 2: Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet route=USBNT  MAC=52:54:00:11:11:02  1000 Mbit
+  adapter 3: Realtek RTL8156/8156B(G) USB 2.5G Ethernet route=USBNT  MAC=52:54:00:11:11:03  2500 Mbit
+
+  All three attach simultaneously with distinct MACs ->
+  DHCPNT31 gets one MAC per adapter:
+    DHCPNT31 52-54-00-11-11-01 52-54-00-11-11-02 52-54-00-11-11-03 /apply
+
+== same multi-adapter bring-up on every other OS (routing) ==
+
+  NT 3.1       -> 3/3 adapters up, route=USBNT
+  NT 3.50      -> 3/3 adapters up, route=USBNT
+  NT 3.51      -> 3/3 adapters up, route=USBNT
+  NT 4.0       -> 3/3 adapters up, route=USBNT
+  2000 EHCI    -> 3/3 adapters up, route=in-box USB
+  2000 xHCI    -> 3/3 adapters up, route=USBNT
+  XP EHCI      -> 3/3 adapters up, route=in-box USB
+  XP x64 xHCI  -> 3/3 adapters up, route=USBNT
+
+MULTI-ADAPTER USB TESTS PASSED (0 failures)
+
+RLTKLANT  <->  USBNT \Device\UsbNtDev  <->  usb-rtl8153 core
+
+ok  : attach over USBNT generic device interface
+ok  : MAC read through USBNT_DEV_IF.Control
+ok  : bring-up reached the device via the interface
+ok  : TX frame delivered to the device through USBNT_DEV_IF.Transfer
+ok  : RX frame received from the device through USBNT_DEV_IF.Transfer
+
+USBNT-DEV PATH TESTS PASSED (0 failures)

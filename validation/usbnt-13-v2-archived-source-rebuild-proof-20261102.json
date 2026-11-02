@@ -1,0 +1,74 @@
+{
+  "utc": "2026-11-02T18:32:22.050901+00:00",
+  "result": "PASS_EXACT_BINARIES_AND_OEM_PAYLOADS",
+  "files": [
+    {
+      "file": "legacy.sys",
+      "bytes": 434176,
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e"
+    },
+    {
+      "file": "i386.sys",
+      "bytes": 516096,
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b"
+    },
+    {
+      "file": "amd64.sys",
+      "bytes": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1"
+    },
+    {
+      "file": "tools/usbcam.exe",
+      "bytes": 61440,
+      "sha256": "551a9cb25d4b7e06607a4a56beada4358694cd04de013c2532af7de2c6f98251"
+    },
+    {
+      "file": "tools/usbntcap.dll",
+      "bytes": 53248,
+      "sha256": "75c8e1955520c58fb464ba158472cbb0b2f730b039e739cc8919a473c3ba33fd"
+    },
+    {
+      "file": "tools/usbmon.exe",
+      "bytes": 49152,
+      "sha256": "e9e4f94035fc5d5d431b1b1f7be05bd53034d51b7fabd0f252080f799f65213a"
+    },
+    {
+      "file": "tools/usbinst.exe",
+      "bytes": 45056,
+      "sha256": "102e16349209fd52ab2ca0ef4f92c72e46f763b437cacfe8ea8a0a348079f73e"
+    },
+    {
+      "file": "tools/usbtree.exe",
+      "bytes": 57344,
+      "sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97"
+    },
+    {
+      "file": "tools/wheeltst.exe",
+      "bytes": 24576,
+      "sha256": "1e94aef5306df6f95503a0c85ef3bd250bb84061defd60b0ee5d22fbeff74b9c"
+    },
+    {
+      "file": "tools/usbeject.exe",
+      "bytes": 28672,
+      "sha256": "8633a07d0a6fdf75b5865a82c5ef3f7818bfd101135fce0d53ebce3137077eb0"
+    },
+    {
+      "file": "tools/amd64/usbntcap.dll",
+      "bytes": 49152,
+      "sha256": "73d3f34cf0594b862d66c87a479ffa701de7414fd6d6b5ee80cb2f9c7bb4f3a3"
+    },
+    {
+      "file": "tools/amd64/usbinst.exe",
+      "bytes": 49152,
+      "sha256": "f1731981969f303170d7bcd8d6428ec249a76698a098b6becd88735854729ceb"
+    }
+  ],
+  "logs": {
+    "usbnt-13-v2-archive-legacy-build-20261102.log": "6413a71eff9e88d6668baf4b8e1af9665723abf49e7ae564b7553c0bb54baecb",
+    "usbnt-13-v2-archive-tools-build-20261102.log": "1f47ddda9d5dddf01dd5a83ab4e96993b528c71f07383ae23d4e0109ce5b011b",
+    "usbnt-13-v2-archive-wdm-build-20261102.log": "d9dc6b142ad2e2df14c8c25ea6c3741bfdd68d590225ce54688bd3e8c2174337",
+    "usbnt-13-v2-archive-oem-build-20261102.log": "71ff8850c30832f0720066fea3f7b91facd4497b186650546de8bc2eedcc6c96"
+  },
+  "archive_sha256": "01b4cd79e3b5b3ccd9793134008da29beb9351ba93be2da176bddf3d12ceefa3",
+  "scope": "All 12 distributed PE files and OEM payloads reproduce exactly from the independently extracted 310-file source archive. Runtime evidence is separate."
+}

@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T09:38:15.971909+00:00",
+  "guest": "nt351-usbsetup-rtl8139-hidcap-8127",
+  "files": {
+    "WINNT351/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 411648,
+      "sha256": "92d6f836da50302b026ac16f1e02daba932dbebd3c233beab1a8eb4374b53d4c"
+    },
+    "WINNT351/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    },
+    "RLTTEST/TCP35.LOG": {
+      "file": "TCP35.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    }
+  }
+}

@@ -1,0 +1,2 @@
+test: tuacrundown.c:46: main: Assertion `waiting&&!stopped' failed.
+USBNT/test/host/tuacrundown.sh: line 10: 278926 Aborted                 "$test_dir/test"

@@ -1,0 +1,140 @@
+{
+  "utc": "2026-11-02T06:02:43.267981+00:00",
+  "guest": "xp64-management-ringfix-multi-8127",
+  "safeoff_screenshot": "xp64-management-ringfix-shutdown-final-20261102.png",
+  "safeoff_sha256": "098ba26ede684aa190f6f409de15b1044e0a5fe15b0b2b754b0e8d4c74fc744f",
+  "files": {
+    "debug.log": {
+      "bytes": 10662,
+      "sha256": "8a0d99a9579e6da02b00909899388c513d9c40f32e874b20c75dfa04cf47269b"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 95,
+      "sha256": "28c8b46daf4b31edc331222d779ff1fbc3f320b382692555d6474fc78f8e59f9"
+    },
+    "launch.json": {
+      "bytes": 3036,
+      "sha256": "2d9431149e4fa8f149f436701b81928e3012ff0260723ceffe4d6a8709cfac8b"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "5fc971c3fc542192e19eb4e386159b34d9479b5c7d3d727f39385e90bba4c9e1"
+    },
+    "extra1.pcap": {
+      "bytes": 70181,
+      "sha256": "dcaa830bb098b2694817b7f1fb295d17a0b0290e8b91603676a16b86b5ff869c"
+    },
+    "extra2.pcap": {
+      "bytes": 74554,
+      "sha256": "1def75da03ce3fb9b1de45a846c621f24a0372e26f8795d1eef18c24dcacb3f2"
+    },
+    "extra3.pcap": {
+      "bytes": 74307,
+      "sha256": "83138d8f18e587962e6746ca30d6255129849f625d54dd46445d7fcaab1ced85"
+    },
+    "extra4.pcap": {
+      "bytes": 82205,
+      "sha256": "eee0abf878576a7385fd4b341d125d555cb3c98e1a8e2d954d0114a108621163"
+    },
+    "extra5.pcap": {
+      "bytes": 57540,
+      "sha256": "c0460293b5f2d1aef6dd7b591991abf02ac9a387616bee9f290d1b42f21274df"
+    },
+    "pci.pcap": {
+      "bytes": 69890,
+      "sha256": "c4a881e7639f842c91c5d181713e78438fb9891abea5a58c284cc0cbed11a066"
+    }
+  },
+  "shutdown_evidence": "QMP ACPI shutdown, running=false; framebuffer may retain shutdown text",
+  "qmp_capture": {
+    "guest": "xp64-management-ringfix-multi-8127",
+    "captured_utc": "2026-11-02T05:58:20.431498+00:00",
+    "qmp_status": {
+      "status": "shutdown",
+      "singlestep": false,
+      "running": false
+    },
+    "launch": {
+      "started_at": 1793597935.1069622,
+      "command": [
+        "/workspace/rltklant-tools/qemu-src/build/qemu-system-x86_64",
+        "-machine",
+        "q35",
+        "-cpu",
+        "qemu64",
+        "-m",
+        "512",
+        "-drive",
+        "file=/workspace/rltklant-vm/run/xp64-management-ringfix-multi-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+        "-nic",
+        "none",
+        "-display",
+        "none",
+        "-vga",
+        "cirrus",
+        "-qmp",
+        "unix:/workspace/rltklant-vm/run/xp64-management-ringfix-multi-8127/qmp.sock,server=on,wait=off",
+        "-no-reboot",
+        "-no-shutdown",
+        "-debugcon",
+        "file:/workspace/rltklant-vm/run/xp64-management-ringfix-multi-8127/debug.log",
+        "-serial",
+        "file:/workspace/rltklant-vm/run/xp64-management-ringfix-multi-8127/serial.log",
+        "-global",
+        "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+        "-global",
+        "q35-pcihost.pci-hole64-size=0",
+        "-no-hpet",
+        "-device",
+        "piix3-ide,id=legacyide",
+        "-device",
+        "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0,lcyls=652,lheads=255,lsecs=63",
+        "-netdev",
+        "user,id=pci0",
+        "-device",
+        "rtl8127,id=pcinic,netdev=pci0,chip-profile=8127bp,dash-enabled=on",
+        "-object",
+        "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/xp64-management-ringfix-multi-8127/pci.pcap",
+        "-netdev",
+        "user,id=extra1,net=10.0.3.0/24",
+        "-device",
+        "rtl8169,id=extra1,netdev=extra1,mac=52:54:00:12:35:01",
+        "-object",
+        "filter-dump,id=dump1,netdev=extra1,file=/workspace/rltklant-vm/run/xp64-management-ringfix-multi-8127/extra1.pcap",
+        "-netdev",
+        "user,id=extra2,net=10.0.4.0/24",
+        "-device",
+        "rtl8168,id=extra2,netdev=extra2,mac=52:54:00:12:35:02,chip-profile=8111ep,dash-enabled=on",
+        "-object",
+        "filter-dump,id=dump2,netdev=extra2,file=/workspace/rltklant-vm/run/xp64-management-ringfix-multi-8127/extra2.pcap",
+        "-netdev",
+        "user,id=extra3,net=10.0.5.0/24",
+        "-device",
+        "rtl8125,id=extra3,netdev=extra3,mac=52:54:00:12:35:03,chip-profile=8125bp,dash-enabled=on",
+        "-object",
+        "filter-dump,id=dump3,netdev=extra3,file=/workspace/rltklant-vm/run/xp64-management-ringfix-multi-8127/extra3.pcap",
+        "-netdev",
+        "user,id=extra4,net=10.0.6.0/24",
+        "-device",
+        "rtl8126,id=extra4,netdev=extra4,mac=52:54:00:12:35:04",
+        "-object",
+        "filter-dump,id=dump4,netdev=extra4,file=/workspace/rltklant-vm/run/xp64-management-ringfix-multi-8127/extra4.pcap",
+        "-netdev",
+        "user,id=extra5,net=10.0.7.0/24",
+        "-device",
+        "rtl8127,id=extra5,netdev=extra5,mac=52:54:00:12:35:05,chip-profile=8127bp,dash-enabled=on",
+        "-object",
+        "filter-dump,id=dump5,netdev=extra5,file=/workspace/rltklant-vm/run/xp64-management-ringfix-multi-8127/extra5.pcap",
+        "-drive",
+        "file=/workspace/rltklant-work/validation/rtl8139-fixed-native-fixture-20261102.iso,format=raw,if=none,id=fixture,media=cdrom,readonly=on",
+        "-device",
+        "ide-cd,drive=fixture,bus=legacyide.1"
+      ],
+      "qemu_sha256": "210e3148db1ab8679aa6151fa4ccfc046299dbc001aa727128d254d6603c7319"
+    }
+  }
+}

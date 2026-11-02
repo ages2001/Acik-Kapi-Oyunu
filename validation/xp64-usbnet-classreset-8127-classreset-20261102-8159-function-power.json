@@ -1,0 +1,12 @@
+{
+  "guest": "xp64-usbnet-classreset-8127",
+  "utc": "2026-11-02T12:36:14.176921+00:00",
+  "scope": "Test USBNT PDO D3/D0 worker IRPs and subsequent real NIC traffic.\n\nUPOWER targets only USBNT, directly at the PDO, and forces DISPATCH_LEVEL.\nThis is lower-device function-idle fault injection, not full NDIS/system sleep.\nThe helper does three D3/D0 pairs and restores D0 even after a failed D3.\n",
+  "result": "PASS",
+  "offset": 1387,
+  "power_trace": "POWERTEST object=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\n",
+  "power_cycles": 3,
+  "report": "xp64-usbnet-classreset-8127-classreset-20261102-8159-after-power.json",
+  "report_sha256": "c8c4463049947c4ba62023427fa13fd78d3aef31c5d82716145d22616b81eec4",
+  "screenshot": "xp64-usbnet-classreset-8127-classreset-20261102-8159-function-power-screen.png"
+}

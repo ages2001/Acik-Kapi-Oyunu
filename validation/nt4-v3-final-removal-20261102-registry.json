@@ -1,0 +1,167 @@
+{
+  "utc": "2026-11-01T23:57:38.226358+00:00",
+  "scope": "Read-only offline copies after actual guest Network Setup; no registry edits",
+  "hive_sha256": {
+    "SYSTEM": "00555d340b53d32a282750bcaa3ae5a2bcb5de5ab1544dda322053e32459a7bd",
+    "SOFTWARE": "014438ce76a0513ca45232b238e95d940470cbe4f77691796399aa760aa8f04c"
+  },
+  "network_provider_members": [
+    "LanmanWorkstation"
+  ],
+  "network_cards": {},
+  "services": {
+    "RLTKLANT": {
+      "values": {
+        "Type": 1,
+        "Start": 2,
+        "ErrorControl": 1,
+        "ImagePath": "\\SystemRoot\\System32\\drivers\\rltklant.sys",
+        "DisplayName": "Realtek RLTKLANT Adapter Driver",
+        "Group": "NDIS",
+        "DeleteFlag": 1
+      },
+      "linkage": {
+        "Bind": [
+          "\\Device\\RLTKLANT1",
+          "\\Device\\RLTKLANT2"
+        ],
+        "Export": [
+          "\\Device\\RLTKLANT1",
+          "\\Device\\RLTKLANT2"
+        ],
+        "Route": [
+          "\"RLTKLANT1\"",
+          "\"RLTKLANT2\""
+        ]
+      }
+    },
+    "USBNT": {
+      "values": {
+        "Type": 1,
+        "Start": 0,
+        "ErrorControl": 1,
+        "ImagePath": "System32\\drivers\\usbnt.sys",
+        "DisplayName": "USB host controller driver",
+        "Group": "SCSI miniport"
+      },
+      "linkage": null
+    },
+    "Tcpip": {
+      "values": {
+        "Type": 1,
+        "Start": 2,
+        "ErrorControl": 1,
+        "ImagePath": "\\SystemRoot\\System32\\drivers\\tcpip.sys",
+        "DisplayName": "TCP/IP Service",
+        "Group": "PNP_TDI"
+      },
+      "linkage": {
+        "Bind": [],
+        "Export": [],
+        "Route": []
+      }
+    },
+    "NetBT": {
+      "values": {
+        "Type": 1,
+        "Start": 2,
+        "ErrorControl": 1,
+        "ImagePath": "\\SystemRoot\\System32\\drivers\\netbt.sys",
+        "DisplayName": "WINS Client(TCP/IP)",
+        "Group": "PNP_TDI",
+        "DependOnService": [
+          "Tcpip"
+        ],
+        "DependOnGroup": []
+      },
+      "linkage": {
+        "OtherDependencies": [
+          "Tcpip"
+        ],
+        "Bind": [],
+        "Export": [],
+        "Route": []
+      }
+    },
+    "Dhcp": {
+      "values": {
+        "Type": 32,
+        "Start": 2,
+        "ErrorControl": 1,
+        "ImagePath": "%SystemRoot%\\System32\\services.exe",
+        "DisplayName": "DHCP Client",
+        "Group": "TDI",
+        "DependOnService": [
+          "Tcpip",
+          "Afd",
+          "NetBT"
+        ],
+        "DependOnGroup": [],
+        "ObjectName": "LocalSystem"
+      },
+      "linkage": {}
+    },
+    "LmHosts": {
+      "values": {
+        "Type": 32,
+        "Start": 2,
+        "ErrorControl": 1,
+        "ImagePath": "%SystemRoot%\\System32\\services.exe",
+        "DisplayName": "TCP/IP NetBIOS Helper",
+        "DependOnService": [],
+        "DependOnGroup": [
+          "NetworkProvider"
+        ],
+        "ObjectName": "LocalSystem"
+      },
+      "linkage": {}
+    },
+    "LanmanWorkstation": {
+      "values": {
+        "Type": 32,
+        "Start": 2,
+        "ErrorControl": 1,
+        "ImagePath": "%SystemRoot%\\System32\\services.exe",
+        "DisplayName": "Workstation",
+        "Group": "NetworkProvider",
+        "ObjectName": "LocalSystem"
+      },
+      "linkage": {
+        "Bind": [],
+        "Export": [],
+        "Route": []
+      }
+    },
+    "LanmanServer": {
+      "values": {
+        "Type": 32,
+        "Start": 2,
+        "ErrorControl": 1,
+        "ImagePath": "%SystemRoot%\\System32\\services.exe",
+        "DisplayName": "Server",
+        "ObjectName": "LocalSystem"
+      },
+      "linkage": {
+        "Bind": [],
+        "Export": [],
+        "Route": []
+      }
+    },
+    "Rdr": {
+      "values": {
+        "Type": 2,
+        "Start": 3,
+        "ErrorControl": 1,
+        "ImagePath": "\\SystemRoot\\System32\\drivers\\rdr.sys",
+        "DisplayName": "Rdr",
+        "Group": "Network"
+      },
+      "linkage": {}
+    }
+  },
+  "os_version": {
+    "CurrentVersion": "4.0",
+    "CurrentBuildNumber": "1381",
+    "CSDVersion": "Service Pack 1"
+  }
+}

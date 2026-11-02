@@ -1,0 +1,191 @@
+{
+  "before_max_record": 45,
+  "new_records": [
+    {
+      "offset": 6416,
+      "bytes": 144,
+      "record": 46,
+      "generated": 1793570311,
+      "generated_utc": "2026-11-01T21:58:31+00:00",
+      "written": 1793570311,
+      "event_id": 3221229787,
+      "code": 4315,
+      "type": 1,
+      "category": 0,
+      "source": "NetBT",
+      "computer": "NT4-PC",
+      "strings": [
+        ""
+      ],
+      "data": "000004000100540000000000db1000c000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "offset": 6560,
+      "bytes": 96,
+      "record": 47,
+      "generated": 1793570311,
+      "generated_utc": "2026-11-01T21:58:31+00:00",
+      "written": 1793570311,
+      "event_id": 2147489653,
+      "code": 6005,
+      "type": 4,
+      "category": 0,
+      "source": "EventLog",
+      "computer": "NT4-PC",
+      "strings": [],
+      "data": ""
+    },
+    {
+      "offset": 6656,
+      "bytes": 176,
+      "record": 48,
+      "generated": 1793570311,
+      "generated_utc": "2026-11-01T21:58:31+00:00",
+      "written": 1793570311,
+      "event_id": 2147490648,
+      "code": 7000,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "NT4-PC",
+      "strings": [
+        "WINS Client(TCP/IP)",
+        "%%31"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 6832,
+      "bytes": 200,
+      "record": 49,
+      "generated": 1793570311,
+      "generated_utc": "2026-11-01T21:58:31+00:00",
+      "written": 1793570311,
+      "event_id": 2147490649,
+      "code": 7001,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "NT4-PC",
+      "strings": [
+        "DHCP Client",
+        "WINS Client(TCP/IP)",
+        "%%31"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 7032,
+      "bytes": 100,
+      "record": 50,
+      "generated": 1793570311,
+      "generated_utc": "2026-11-01T21:58:31+00:00",
+      "written": 1793570311,
+      "event_id": 5728,
+      "code": 5728,
+      "type": 1,
+      "category": 0,
+      "source": "Workstation",
+      "computer": "NT4-PC",
+      "strings": [],
+      "data": ""
+    },
+    {
+      "offset": 7132,
+      "bytes": 196,
+      "record": 51,
+      "generated": 1793570311,
+      "generated_utc": "2026-11-01T21:58:31+00:00",
+      "written": 1793570311,
+      "event_id": 2147490649,
+      "code": 7001,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "NT4-PC",
+      "strings": [
+        "Computer Browser",
+        "Workstation",
+        "%%1066"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 7328,
+      "bytes": 160,
+      "record": 52,
+      "generated": 1793570311,
+      "generated_utc": "2026-11-01T21:58:31+00:00",
+      "written": 1793570311,
+      "event_id": 2147490672,
+      "code": 7024,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "NT4-PC",
+      "strings": [
+        "Workstation",
+        "5728"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 7488,
+      "bytes": 200,
+      "record": 53,
+      "generated": 1793570311,
+      "generated_utc": "2026-11-01T21:58:31+00:00",
+      "written": 1793570311,
+      "event_id": 2147490650,
+      "code": 7002,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "NT4-PC",
+      "strings": [
+        "TCP/IP NetBIOS Helper",
+        "NetworkProvider"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 7688,
+      "bytes": 184,
+      "record": 54,
+      "generated": 1793570311,
+      "generated_utc": "2026-11-01T21:58:31+00:00",
+      "written": 1793570311,
+      "event_id": 2147490649,
+      "code": 7001,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "NT4-PC",
+      "strings": [
+        "Messenger",
+        "Workstation",
+        "%%1066"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 7872,
+      "bytes": 148,
+      "record": 55,
+      "generated": 1793570311,
+      "generated_utc": "2026-11-01T21:58:31+00:00",
+      "written": 1793570311,
+      "event_id": 2147490671,
+      "code": 7023,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "NT4-PC",
+      "strings": [
+        "Server",
+        "%%31"
+      ],
+      "data": ""
+    }
+  ]
+}

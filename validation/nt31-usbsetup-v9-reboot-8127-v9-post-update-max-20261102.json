@@ -1,0 +1,11 @@
+{
+  "guest": "nt31-usbsetup-v9-reboot-8127",
+  "token": "v9-post-update-max-20261102",
+  "mask": 3,
+  "result": "FAIL",
+  "utc": "2026-11-01T22:30:35.631022+00:00",
+  "paths": [],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "error": "AssertionError('inbox ping receipt summary was not verified: _ cat) ME\\nG:\\\\ugers\\\\default ping on 4 -1 1472 10.0.2.2\\n\\nPinging host 10.0-2-3 <unnaned) : 10.0.2-3\\n\\n[GHP Echo Reply:TiL 255\\n\\n[GHP Echo Replu:TTL. 255\\n\\n[GHP Echo Replu:TTL. 255\\n\\nIGMP Echo Replu:TTL. 255\\n\\nHost 16.0.2-2 replied to all 4 of the 4 pings\\n\\nC:\\\\users\\\\default>\\n')",
+  "finished_utc": "2026-11-01T22:30:41.300690+00:00"
+}

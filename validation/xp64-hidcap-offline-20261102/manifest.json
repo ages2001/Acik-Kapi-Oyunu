@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T09:30:08.570868+00:00",
+  "guest": "xp64-usbnet-hidcap-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 525824,
+      "sha256": "d3a7cd5d345b310f38396c40c25f84ade337e73be138cd2aa6c1fba25080833f"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    },
+    "RLTTEST/NATIVE.LOG": {
+      "file": "NATIVE.LOG",
+      "size": 40197,
+      "sha256": "95adc5884a2067c71a3842a124fd44e25b02a7bb05a3c879d56f504e62eae341"
+    }
+  }
+}

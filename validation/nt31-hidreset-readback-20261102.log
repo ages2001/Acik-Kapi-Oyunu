@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T10:13:38.361202+00:00",
+  "guest": "nt31-usbsetup-hidreset-rtl8117-8127",
+  "files": {
+    "WINNT31/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 412672,
+      "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241"
+    },
+    "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+    }
+  }
+}

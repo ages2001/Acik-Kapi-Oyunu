@@ -1,0 +1,52 @@
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-baseline-usb.png
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-baseline-pci.png
+PASS NT3.1 inbox receipt and wire payload: 8
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c1-absent-pci.png
+PASS NT3.1 inbox receipt and wire payload: 4
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c1-reinsert-usb.png
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c1-reinsert-pci.png
+PASS NT3.1 inbox receipt and wire payload: 8
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c1-cable-down-pci.png
+PASS NT3.1 inbox receipt and wire payload: 4
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c1-cable-up-usb.png
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c1-cable-up-pci.png
+PASS NT3.1 inbox receipt and wire payload: 8
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c1-passed.png
+PASS cycle 1 usbnic 8153 : sibling traffic during removal/cable loss and all paths after recovery
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c2-absent-pci.png
+PASS NT3.1 inbox receipt and wire payload: 4
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c2-reinsert-usb.png
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c2-reinsert-pci.png
+PASS NT3.1 inbox receipt and wire payload: 8
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c2-cable-down-pci.png
+PASS NT3.1 inbox receipt and wire payload: 4
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c2-cable-up-usb.png
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c2-cable-up-pci.png
+PASS NT3.1 inbox receipt and wire payload: 8
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c2-passed.png
+PASS cycle 2 usbnic 8156 : sibling traffic during removal/cable loss and all paths after recovery
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c3-absent-pci.png
+PASS NT3.1 inbox receipt and wire payload: 4
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c3-reinsert-usb.png
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c3-reinsert-pci.png
+PASS NT3.1 inbox receipt and wire payload: 8
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c3-cable-down-pci.png
+PASS NT3.1 inbox receipt and wire payload: 4
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c3-cable-up-usb.png
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c3-cable-up-pci.png
+PASS NT3.1 inbox receipt and wire payload: 8
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c3-passed.png
+PASS cycle 3 usbnic 8157 : sibling traffic during removal/cable loss and all paths after recovery
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c4-absent-pci.png
+PASS NT3.1 inbox receipt and wire payload: 4
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c4-reinsert-usb.png
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c4-reinsert-pci.png
+PASS NT3.1 inbox receipt and wire payload: 8
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c4-cable-down-pci.png
+PASS NT3.1 inbox receipt and wire payload: 4
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c4-cable-up-usb.png
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c4-cable-up-pci.png
+PASS NT3.1 inbox receipt and wire payload: 8
+/workspace/rltklant-work/validation/nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-c4-passed.png
+PASS cycle 4 usbnic 8159 : sibling traffic during removal/cable loss and all paths after recovery
+PASS: 4 cycles; 104 inbox receipt / wire-payload replies

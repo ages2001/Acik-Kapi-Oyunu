@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-02T09:17:40.241707+00:00",
+  "result": "PASS",
+  "guest": "nt4-ndis-dual-capacity-8127",
+  "drivers": {
+    "USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 411648,
+      "sha256": "92b201af42e3ddc15a8fd46f88f0f28ffd337ae2ac0f04f74558f0abbd2bbcab"
+    },
+    "RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    }
+  },
+  "hotplug_cycles": 8,
+  "carrier_cycles": 8,
+  "full_payload_replies": 332,
+  "evidence": {
+    "nt4-capacity-offline-20261102/manifest.json": "7fec045655d9bed1474d83b3a94946ba2700a73f70381cf7c7c80286499f612a",
+    "nt4-capacity-evidence-20261102/manifest.json": "061b969adcbe933de3df09f6380c4cb7b86fe486c6601bdd8572345776190477",
+    "nt4-ndis-dual-capacity-8127-capacity-20261102-sibling-matrix.json": "bdd0f6bfb0c8f4dde467596fdf0aa8373e82c3f2f50cf42f9d909e94f296af53"
+  },
+  "scope": "Legacy persistent USBNT adapters in QEMU, two EHCI siblings plus native PCI/PCIe adapter recorded in the launch manifest; actual guest payload comparisons, not physical-silicon validation Clean shutdown and stopped-disk driver readback. Predates the later native HID capacity guard; do not transfer this exact-binary result to the HID candidate."
+}

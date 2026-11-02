@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "rows": [
+    {
+      "file": "USBNT/build/out/2kxp/i386/usbnt.sys",
+      "sha256": "c39d4b27157a266430e79aee71b34a284a10fe6a5efdf8cc4be72858ba5972c8",
+      "imports": 101
+    },
+    {
+      "file": "USBNT/build/out/2kxp/amd64/usbnt.sys",
+      "sha256": "dfed77a964f30d23fc6d7a247f9c95880edc1ba32a7134ace703c195f82a9d4d",
+      "imports": 90
+    },
+    {
+      "file": "validation/usbnt-power-probe-20261102/UPOWER.SYS",
+      "sha256": "54a41b06460817766b4817602dbce36f393f04857cf5501c4e523c3025353340",
+      "imports": 19
+    }
+  ]
+}

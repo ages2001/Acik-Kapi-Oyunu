@@ -1,0 +1,42 @@
+{
+  "guest": "nt31-usbsetup-phy-alias-8127",
+  "token": "phy-alias-v3-20261102-c3-reinsert",
+  "mask": 3,
+  "result": "PASS",
+  "utc": "2026-11-01T23:36:40.959660+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 217879,
+      "end_offset": 230119,
+      "capture_prefix_sha256": "1d4b1e086d016e2de02a4954c3dd03d2cc8902dc6d677ab9b26c641a4d500c07",
+      "screenshot": "nt31-usbsetup-phy-alias-8127-phy-alias-v3-20261102-c3-reinsert-usb.png",
+      "ocr": "nt31-usbsetup-phy-alias-8127-phy-alias-v3-20261102-c3-reinsert-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "bf32b741c4d5e57df756f8fc34bed645f9fc1f4d773b289063a31e26641f3d1d"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 340656,
+      "end_offset": 352896,
+      "capture_prefix_sha256": "f95769021ce43bb53f06d4c651949168d7c1ed6f494c6d381a77d8bcab3980b6",
+      "screenshot": "nt31-usbsetup-phy-alias-8127-phy-alias-v3-20261102-c3-reinsert-pci.png",
+      "ocr": "nt31-usbsetup-phy-alias-8127-phy-alias-v3-20261102-c3-reinsert-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "6da92ca38e46fcf7b4327e43726cd5b9d649e33592ee061938471440005d8ac4"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-01T23:36:52.463427+00:00"
+}

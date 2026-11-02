@@ -1,0 +1,88 @@
+{
+  "utc": "2026-11-02T08:18:02.316794+00:00",
+  "guest": "xp64-usbnet-hcpower-inittrace-8127",
+  "safeoff_screenshot": "xp64-hcpower-inittrace-safeoff-20261102.png",
+  "safeoff_sha256": "098ba26ede684aa190f6f409de15b1044e0a5fe15b0b2b754b0e8d4c74fc744f",
+  "files": {
+    "debug.log": {
+      "bytes": 1071,
+      "sha256": "471d3be4bbeba6cc133da82d9ba6cf4ca3440159fcf565b42aec927c2ea078ad"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 95,
+      "sha256": "28c8b46daf4b31edc331222d779ff1fbc3f320b382692555d6474fc78f8e59f9"
+    },
+    "launch.json": {
+      "bytes": 1414,
+      "sha256": "970b5afcd73ef2e238711fdc646bca7d7dca28de778fc49b77424f98a5e251e9"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "ef0023c5d42c2cc1d646fd3031692351ea55051467b8e92d28ca8f9919d5bfca"
+    },
+    "usb.pcap": {
+      "bytes": 44785,
+      "sha256": "d9e0fb46ba96bbff0f01a661b560402930c3e2214174e8e0f3ffc672c40862ca"
+    }
+  },
+  "shutdown_evidence": "QMP ACPI shutdown, running=false; framebuffer may retain shutdown text",
+  "qmp_capture": {
+    "guest": "xp64-usbnet-hcpower-inittrace-8127",
+    "captured_utc": "2026-11-02T08:17:33.857958+00:00",
+    "qmp_status": {
+      "status": "shutdown",
+      "singlestep": false,
+      "running": false
+    },
+    "launch": {
+      "started_at": 1793607244.7893894,
+      "command": [
+        "/workspace/rltklant-tools/qemu-src/build/qemu-system-x86_64",
+        "-machine",
+        "q35",
+        "-cpu",
+        "qemu64",
+        "-m",
+        "512",
+        "-drive",
+        "file=/workspace/rltklant-vm/run/xp64-usbnet-hcpower-inittrace-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+        "-nic",
+        "none",
+        "-display",
+        "none",
+        "-vga",
+        "cirrus",
+        "-qmp",
+        "unix:/workspace/rltklant-vm/run/xp64-usbnet-hcpower-inittrace-8127/qmp.sock,server=on,wait=off",
+        "-no-reboot",
+        "-no-shutdown",
+        "-debugcon",
+        "file:/workspace/rltklant-vm/run/xp64-usbnet-hcpower-inittrace-8127/debug.log",
+        "-serial",
+        "file:/workspace/rltklant-vm/run/xp64-usbnet-hcpower-inittrace-8127/serial.log",
+        "-device",
+        "usb-ehci,id=ehci",
+        "-netdev",
+        "user,id=n0",
+        "-device",
+        "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+        "-object",
+        "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/xp64-usbnet-hcpower-inittrace-8127/usb.pcap",
+        "-global",
+        "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+        "-global",
+        "q35-pcihost.pci-hole64-size=0",
+        "-no-hpet",
+        "-device",
+        "piix3-ide,id=legacyide",
+        "-device",
+        "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0,lcyls=652,lheads=255,lsecs=63"
+      ],
+      "qemu_sha256": "98a60959afb8ebdc57e2695f5e85f3aa4ff0210f4c2e074a083d8ffefb5a2a27"
+    }
+  }
+}

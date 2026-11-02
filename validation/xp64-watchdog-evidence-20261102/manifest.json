@@ -1,0 +1,136 @@
+{
+  "utc": "2026-11-02T01:30:40.441638+00:00",
+  "guest": "xp64-watchdog-multi-8127",
+  "safeoff_screenshot": "xp64-watchdog-poweroff-20261102.png",
+  "safeoff_sha256": "098ba26ede684aa190f6f409de15b1044e0a5fe15b0b2b754b0e8d4c74fc744f",
+  "files": {
+    "debug.log": {
+      "bytes": 2167,
+      "sha256": "ad18ac45093a0d827489d4a501c42b62b1c785fd5782ca2e6b1ab3447e71c4a0"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 95,
+      "sha256": "28c8b46daf4b31edc331222d779ff1fbc3f320b382692555d6474fc78f8e59f9"
+    },
+    "launch.json": {
+      "bytes": 2575,
+      "sha256": "133295c8b19cbc84aae9c9781fe209bd00adf2e41d84f22a64bd55e1e02c163f"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "e31c201608dc8a2835239b686406e9822ecd77d9c7b5921904933b46fe4ab219"
+    },
+    "extra1.pcap": {
+      "bytes": 33545,
+      "sha256": "a6e5551ed740bc70af7cd1855e376497e73462dd91f59381ca33e815abb6601e"
+    },
+    "extra2.pcap": {
+      "bytes": 30415,
+      "sha256": "363af4bb5113162d2312802162ca73df1c5ed98ceeea718eb75cf98715436d5e"
+    },
+    "extra3.pcap": {
+      "bytes": 32233,
+      "sha256": "49435bdec6405b91a27f16c2140560468ea668acfcb05c451969b83abd607a6a"
+    },
+    "extra4.pcap": {
+      "bytes": 34491,
+      "sha256": "47a8b416fc1a8664c8cf7e75919a5f50edbf977bf40cc8741a97fa876339f0aa"
+    },
+    "extra5.pcap": {
+      "bytes": 34428,
+      "sha256": "151ab55f87cfa131ea3f34445583f5372da874d048f735e0234e5864b3372547"
+    },
+    "pci.pcap": {
+      "bytes": 34433,
+      "sha256": "5c69de8a915f39a9985bd0c26bbb01dd69d50d988f64586bb8b69316a303f157"
+    }
+  },
+  "shutdown_evidence": "QMP ACPI shutdown, running=false; framebuffer may retain shutdown text",
+  "qmp_capture": {
+    "guest": "xp64-watchdog-multi-8127",
+    "captured_utc": "2026-11-02T01:30:07.240666+00:00",
+    "qmp_status": {
+      "status": "shutdown",
+      "singlestep": false,
+      "running": false
+    },
+    "launch": {
+      "started_at": 1793582642.2498634,
+      "command": [
+        "/workspace/rltklant-tools/qemu-src/build/qemu-system-x86_64",
+        "-machine",
+        "q35",
+        "-cpu",
+        "qemu64",
+        "-m",
+        "512",
+        "-drive",
+        "file=/workspace/rltklant-vm/run/xp64-watchdog-multi-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+        "-nic",
+        "none",
+        "-display",
+        "none",
+        "-vga",
+        "cirrus",
+        "-qmp",
+        "unix:/workspace/rltklant-vm/run/xp64-watchdog-multi-8127/qmp.sock,server=on,wait=off",
+        "-no-reboot",
+        "-no-shutdown",
+        "-debugcon",
+        "file:/workspace/rltklant-vm/run/xp64-watchdog-multi-8127/debug.log",
+        "-serial",
+        "file:/workspace/rltklant-vm/run/xp64-watchdog-multi-8127/serial.log",
+        "-global",
+        "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+        "-global",
+        "q35-pcihost.pci-hole64-size=0",
+        "-no-hpet",
+        "-device",
+        "piix3-ide,id=legacyide",
+        "-device",
+        "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0,lcyls=652,lheads=255,lsecs=63",
+        "-netdev",
+        "user,id=pci0",
+        "-device",
+        "rtl8127,id=pcinic,netdev=pci0",
+        "-object",
+        "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/xp64-watchdog-multi-8127/pci.pcap",
+        "-netdev",
+        "user,id=extra1,net=10.0.3.0/24",
+        "-device",
+        "rtl8169,id=extra1,netdev=extra1,mac=52:54:00:12:35:01",
+        "-object",
+        "filter-dump,id=dump1,netdev=extra1,file=/workspace/rltklant-vm/run/xp64-watchdog-multi-8127/extra1.pcap",
+        "-netdev",
+        "user,id=extra2,net=10.0.4.0/24",
+        "-device",
+        "rtl8168,id=extra2,netdev=extra2,mac=52:54:00:12:35:02",
+        "-object",
+        "filter-dump,id=dump2,netdev=extra2,file=/workspace/rltklant-vm/run/xp64-watchdog-multi-8127/extra2.pcap",
+        "-netdev",
+        "user,id=extra3,net=10.0.5.0/24",
+        "-device",
+        "rtl8125,id=extra3,netdev=extra3,mac=52:54:00:12:35:03",
+        "-object",
+        "filter-dump,id=dump3,netdev=extra3,file=/workspace/rltklant-vm/run/xp64-watchdog-multi-8127/extra3.pcap",
+        "-netdev",
+        "user,id=extra4,net=10.0.6.0/24",
+        "-device",
+        "rtl8126,id=extra4,netdev=extra4,mac=52:54:00:12:35:04",
+        "-object",
+        "filter-dump,id=dump4,netdev=extra4,file=/workspace/rltklant-vm/run/xp64-watchdog-multi-8127/extra4.pcap",
+        "-netdev",
+        "user,id=extra5,net=10.0.7.0/24",
+        "-device",
+        "rtl8127,id=extra5,netdev=extra5,mac=52:54:00:12:35:05",
+        "-object",
+        "filter-dump,id=dump5,netdev=extra5,file=/workspace/rltklant-vm/run/xp64-watchdog-multi-8127/extra5.pcap"
+      ],
+      "qemu_sha256": "37a91463e5572e82283e7eb4994a49c5acde5b984b049dc9fd82e573780bb826"
+    }
+  }
+}

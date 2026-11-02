@@ -1,0 +1,7 @@
+FAIL: synchronous caller returned while callback still owns event/transfer (mode 0)
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/USBNT/test/host/tsyncrundown.py", line 119, in <module>
+    subprocess.run([str(p/'test')],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/usbnt-sync-rundown-x24h_e4x/test']' returned non-zero exit status 1.

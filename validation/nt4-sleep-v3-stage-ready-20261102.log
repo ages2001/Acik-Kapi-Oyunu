@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/nt4-ndis-dual-sleep-v3-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-dhjpa_ca/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+14/6384 = 0.22% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1245184
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt4-ndis-dual-sleep-v3-8127.qcow2",
+  "sha256_before_boot": "2bdb1f266353b7f08393fbe293716782a803d155875d3cb2dde752de8128ce5d",
+  "files": [
+    {
+      "guest_path": "WINNT4/SYSTEM32/DRIVERS/USBNT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-controller-sleep-v3-20261102/legacy.sys",
+      "size": 419328,
+      "sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6",
+      "old_size": 418304,
+      "old_sha256": "3c5f00721bfcbedb1876ae40ee6288d905bde1339ccef7e2a5ef3f1a8b5f21b4"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

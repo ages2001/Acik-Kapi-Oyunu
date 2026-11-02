@@ -1,0 +1,1 @@
+PASS: native URB 200 inline/error/timeout/stop schedules, submission barrier, competing request rejection and complete-before-free ownership

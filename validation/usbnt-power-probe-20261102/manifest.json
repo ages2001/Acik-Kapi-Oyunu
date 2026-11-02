@@ -1,0 +1,75 @@
+{
+  "utc": "2026-11-02T06:52:40.177541+00:00",
+  "scope": "Build an explicit USBNT-only PDO power test, separate from RESET_PORT.\n\nThe helper sends D3/D0 at DISPATCH_LEVEL while retaining the PDO file object.\nIt tests USBNT function queue rundown, not NDIS system sleep or port suspend.\n",
+  "commands": [
+    [
+      "i686-w64-mingw32-gcc",
+      "-O2",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-mno-stack-arg-probe",
+      "-mno-sse",
+      "-mno-mmx",
+      "-D_X86_",
+      "-fno-asynchronous-unwind-tables",
+      "-nostdlib",
+      "-I/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk",
+      "-Wl,--subsystem,native",
+      "-Wl,--entry,_DriverEntry@8",
+      "-Wl,--image-base,0x10000",
+      "-Wl,--no-insert-timestamp",
+      "-o",
+      "/workspace/rltklant-work/validation/usbnt-power-probe-20261102/UPOWER.SYS",
+      "/workspace/rltklant-work/validation/usbnt-power-probe-20261102/upower_driver.c",
+      "-lntoskrnl",
+      "-lhal"
+    ],
+    [
+      "/workspace/rltklant-tools/venv/bin/python3",
+      "/workspace/rltklant-work/USBNT/build/fixpe5.py",
+      "/workspace/rltklant-work/validation/usbnt-power-probe-20261102/UPOWER.SYS",
+      "i386"
+    ],
+    [
+      "i686-w64-mingw32-gcc",
+      "-O2",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-mno-stack-arg-probe",
+      "-mno-sse",
+      "-mno-mmx",
+      "-D_X86_",
+      "-fno-asynchronous-unwind-tables",
+      "-nostdlib",
+      "-Wl,--entry,_Entry",
+      "-Wl,--subsystem,console:5.0",
+      "-Wl,--no-insert-timestamp",
+      "-o",
+      "/workspace/rltklant-work/validation/usbnt-power-probe-20261102/UPOWER.EXE",
+      "/workspace/rltklant-work/validation/usbnt-power-probe-20261102/upower_probe.c",
+      "-lkernel32",
+      "-ladvapi32",
+      "-lsetupapi"
+    ]
+  ],
+  "files": {
+    "UPOWER.EXE": {
+      "bytes": 11761,
+      "sha256": "483c04e8da5e16c2f05227986df4895e2189c1c76e54ab45a66e6aceeff26dab"
+    },
+    "UPOWER.SYS": {
+      "bytes": 12558,
+      "sha256": "54a41b06460817766b4817602dbce36f393f04857cf5501c4e523c3025353340"
+    },
+    "upower_driver.c": {
+      "bytes": 5495,
+      "sha256": "e5a202746dc9eeca37e1c6475bc036c4e01b196f41ece14f95f6b02b4987e274"
+    },
+    "upower_probe.c": {
+      "bytes": 2454,
+      "sha256": "dc0a6516d893867ab7fd6cd9abbbbbb5c9d61e04cb58ce5b8f6aafeceae64559"
+    }
+  }
+}

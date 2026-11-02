@@ -1,0 +1,345 @@
+{
+  "guest": "xp64-usbnet-hcpower-pdoidentity-8127",
+  "utc": "2026-11-02T08:31:07.018418+00:00",
+  "scope": "Observe every USBNT controller recovery before starting another transition.\n\nRequires the --single HCPOWER fixture. Each pair receives its own actual\nSetupAPI/name/problem-code and four full-MTU ICMP checks. Stops on the first\ninitialization failure, so a later successful transition cannot mask it.\nThese are injected controller IRPs, not whole-machine ACPI sleep. Children\ncurrently re-enumerate; success is explicitly limited to that recovery path.\n",
+  "result": "LIMITED_PASS",
+  "cycles": [
+    {
+      "mode": "device",
+      "cycle": 1,
+      "offset": 152,
+      "result": "PASS",
+      "observed": [
+        {
+          "seconds": 6.958,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 6.959,
+          "line": "HCPTEST D3=00000000"
+        },
+        {
+          "seconds": 7.46,
+          "line": "HCPTEST D0=00000000"
+        },
+        {
+          "seconds": 9.667,
+          "line": ""
+        },
+        {
+          "seconds": 9.667,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 9.667,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 9.667,
+          "line": ""
+        },
+        {
+          "seconds": 9.667,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 11.273,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 11.273,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 11.273,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\n",
+      "report": "xp64-usbnet-hcpower-pdoidentity-8127-pdoidentity-20261102-device-1.json",
+      "report_sha256": "e4024252bc7cc3c4d4db295b9be5b15fb2a80b533a69244ad1b2d33b7917c9e1",
+      "seconds": 22.547
+    },
+    {
+      "mode": "device",
+      "cycle": 2,
+      "offset": 368,
+      "result": "PASS",
+      "observed": [
+        {
+          "seconds": 6.964,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 6.964,
+          "line": "HCPTEST D3=00000000"
+        },
+        {
+          "seconds": 7.365,
+          "line": "HCPTEST D0=00000000"
+        },
+        {
+          "seconds": 9.571,
+          "line": ""
+        },
+        {
+          "seconds": 9.571,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 9.571,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 9.571,
+          "line": ""
+        },
+        {
+          "seconds": 9.571,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 11.077,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 11.077,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 11.077,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\n",
+      "report": "xp64-usbnet-hcpower-pdoidentity-8127-pdoidentity-20261102-device-2.json",
+      "report_sha256": "5821d49259d5b8113bee97e60bb633b0c2b0aecbb4da471a1c17459bb1b5ac5a",
+      "seconds": 22.345
+    },
+    {
+      "mode": "device",
+      "cycle": 3,
+      "offset": 584,
+      "result": "PASS",
+      "observed": [
+        {
+          "seconds": 6.96,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 6.96,
+          "line": "HCPTEST D3=00000000"
+        },
+        {
+          "seconds": 7.361,
+          "line": "HCPTEST D0=00000000"
+        },
+        {
+          "seconds": 9.769,
+          "line": ""
+        },
+        {
+          "seconds": 9.769,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 9.769,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 9.769,
+          "line": ""
+        },
+        {
+          "seconds": 9.769,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 11.273,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 11.273,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 11.273,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\n",
+      "report": "xp64-usbnet-hcpower-pdoidentity-8127-pdoidentity-20261102-device-3.json",
+      "report_sha256": "a0f5909d8bdaa9624087b2ee8c2efde40e0c33eb3c023adafdf7fb913732ecb0",
+      "seconds": 22.561
+    },
+    {
+      "mode": "system",
+      "cycle": 1,
+      "offset": 800,
+      "result": "PASS",
+      "observed": [
+        {
+          "seconds": 7.313,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 7.313,
+          "line": "HCPTEST S3=00000000"
+        },
+        {
+          "seconds": 7.714,
+          "line": "HCPTEST S0=00000000"
+        },
+        {
+          "seconds": 9.92,
+          "line": ""
+        },
+        {
+          "seconds": 9.92,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 9.92,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 9.92,
+          "line": ""
+        },
+        {
+          "seconds": 9.92,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 11.425,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 11.425,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 11.425,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\n",
+      "report": "xp64-usbnet-hcpower-pdoidentity-8127-pdoidentity-20261102-system-1.json",
+      "report_sha256": "420ca20dcc53aa3c796958424afed7502caa3378b7962055e8c3db91ed51f1ce",
+      "seconds": 22.681
+    },
+    {
+      "mode": "system",
+      "cycle": 2,
+      "offset": 1016,
+      "result": "PASS",
+      "observed": [
+        {
+          "seconds": 7.321,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 7.321,
+          "line": "HCPTEST S3=00000000"
+        },
+        {
+          "seconds": 7.723,
+          "line": "HCPTEST S0=00000000"
+        },
+        {
+          "seconds": 10.029,
+          "line": ""
+        },
+        {
+          "seconds": 10.029,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 10.029,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 10.029,
+          "line": ""
+        },
+        {
+          "seconds": 10.029,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 11.533,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 11.533,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 11.533,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\n",
+      "report": "xp64-usbnet-hcpower-pdoidentity-8127-pdoidentity-20261102-system-2.json",
+      "report_sha256": "6285881737f7230211c2567cac35b45153613589d4f004b47954a95528452420",
+      "seconds": 22.853
+    },
+    {
+      "mode": "system",
+      "cycle": 3,
+      "offset": 1232,
+      "result": "PASS",
+      "observed": [
+        {
+          "seconds": 7.388,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 7.388,
+          "line": "HCPTEST S3=00000000"
+        },
+        {
+          "seconds": 7.889,
+          "line": "HCPTEST S0=00000000"
+        },
+        {
+          "seconds": 10.197,
+          "line": ""
+        },
+        {
+          "seconds": 10.197,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 10.197,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 10.197,
+          "line": ""
+        },
+        {
+          "seconds": 10.197,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 11.702,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 11.702,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 11.702,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\n",
+      "report": "xp64-usbnet-hcpower-pdoidentity-8127-pdoidentity-20261102-system-3.json",
+      "report_sha256": "51cdacd70af00a87a2cb1a30d058e119c07776813ccb67294af4e412073afee9",
+      "seconds": 23.075
+    }
+  ],
+  "screenshot": "xp64-usbnet-hcpower-pdoidentity-8127-pdoidentity-20261102-power-each-screen.png"
+}

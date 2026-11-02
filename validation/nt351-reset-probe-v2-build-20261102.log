@@ -1,0 +1,2 @@
+flat image: size=6144 FileChar=0x838e checksum=0x00006879
+PASS all diagnostic imports exist in actual NT3.51 binaries

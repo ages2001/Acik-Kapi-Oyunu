@@ -1,0 +1,16 @@
+_ cat) ME
+G:\ugers\default ping on 4 -1 1472 10.0.2.2
+
+Pinging host 10.0-2-3 <unnaned) : 10.0.2-3
+
+[GHP Echo Reply:TiL 255
+
+[GHP Echo Replu:TTL. 255
+
+[GHP Echo Replu:TTL. 255
+
+IGMP Echo Replu:TTL. 255
+
+Host 16.0.2-2 replied to all 4 of the 4 pings
+
+C:\usere\default>_

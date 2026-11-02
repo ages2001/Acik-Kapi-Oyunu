@@ -1,0 +1,29 @@
+{
+  "utc": "2026-11-01T21:07:03.040846+00:00",
+  "result": "FAIL",
+  "scope": "Actual logon after v4 NCPA enabled the DHCP option and registered HKLM Run",
+  "observations": [
+    "Run value is present in the synchronized installed SOFTWARE hive",
+    "After logon, the success log still contains exactly the two pre-existing lines",
+    "No DHCP port 67/68 packets occur on either network before the later explicit manual probe",
+    "Manual execution subsequently completes DISCOVER/OFFER/REQUEST/ACK, demonstrating that the client and server can communicate"
+  ],
+  "before_log": "nt31-v4-installed-offline-20261101/DHCPNT31.LOG",
+  "after_log_screenshot": "nt31-v4-logon-dhcp-log-20261101.png",
+  "capture_offsets": "dhcpnt31-bounds-guest-start-20261101.json",
+  "capture_files": {
+    "usb.pcap": {
+      "file": "nt31-dhcp-bounds-usb.pcap",
+      "start_offset": 169900,
+      "bytes": 171740,
+      "sha256": "12f3c1218d5a90edaccde99b5b7283624f8661c429273f93cca1544611960e4d"
+    },
+    "pci.pcap": {
+      "file": "nt31-dhcp-bounds-pci.pcap",
+      "start_offset": 241033,
+      "bytes": 241033,
+      "sha256": "dbe5ccc9c36f8b2e5a2a85d7017f7cdef14b805b1b6ad9452769e74fefb62b0f"
+    }
+  },
+  "followup": "Use the actual NT3.1 Program Manager startup mechanism, verify per-user installation and actual execution; correct /auto selection and interface behavior before claiming multi-adapter logon renewal"
+}

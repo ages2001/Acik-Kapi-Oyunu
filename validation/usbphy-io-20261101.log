@@ -1,0 +1,19 @@
+PASS PHY USB control v1 package00: 798 low-level transfers
+PASS PHY USB control v2 package00: 323 low-level transfers
+PASS PHY USB control v3 package00: 196 low-level transfers
+PASS PHY USB control v4 package00: 519 low-level transfers
+PASS PHY USB control v5 package00: 447 low-level transfers
+PASS PHY USB control v6 package00: 374 low-level transfers
+PASS PHY USB control v7 package00: 30 low-level transfers
+PASS PHY USB control v8 package00: 93 low-level transfers
+PASS PHY USB control v9 package00: 557 low-level transfers
+PASS PHY USB control v10 package00: 1835 low-level transfers
+PASS PHY USB control v11 package00: 2029 low-level transfers
+PASS PHY USB control v12 package00: 5634 low-level transfers
+PASS PHY USB control v13 package00: 1678 low-level transfers
+PASS PHY USB control v14 package00: 337 low-level transfers
+PASS PHY USB control v15 package00: 1670 low-level transfers
+PASS PHY USB control v16 package00: 3827 low-level transfers
+PASS PHY USB control v17 package18: 7167 low-level transfers
+PASS PHY USB control v17 package1e: 7046 low-level transfers
+PASS: 8940 sampled inner-control failure/cancel schedules; all17 revisions and both RTL8159 packages

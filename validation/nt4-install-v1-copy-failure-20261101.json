@@ -1,0 +1,9 @@
+{
+  "result": "FAIL",
+  "scope": "Installer completed OS networking and adapter2 creation, but System32/RLTUSB.EXE is absent. Do not count this as complete package installation.",
+  "cause": "OldVersionExisted bypasses Install-Option including utility copy list.",
+  "fixture": "nt4-ndis-setup-local-8127",
+  "registry_proof": "nt4-installed-registry-20261101.json",
+  "preserved_driver_sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615",
+  "fix": "Dedicated Install-Utility on additional adapter install; fresh and Update paths retain existing copy lists."
+}

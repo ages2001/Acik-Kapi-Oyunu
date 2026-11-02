@@ -1,0 +1,183 @@
+PASS: pinned USB PHY extraction
+PASS vendor PHY v1 package00 options0: 785 callback boundaries
+PASS vendor PHY v1 package00 options1: 785 callback boundaries
+PASS vendor PHY v1 package00 options2: 785 callback boundaries
+PASS vendor PHY v1 package00 options3: 785 callback boundaries
+PASS vendor PHY v2 package00 options0: 311 callback boundaries
+PASS vendor PHY v2 package00 options1: 311 callback boundaries
+PASS vendor PHY v2 package00 options2: 311 callback boundaries
+PASS vendor PHY v2 package00 options3: 311 callback boundaries
+PASS vendor PHY v3 package00 options0: 138 callback boundaries
+PASS vendor PHY v3 package00 options1: 143 callback boundaries
+PASS vendor PHY v3 package00 options2: 138 callback boundaries
+PASS vendor PHY v3 package00 options3: 143 callback boundaries
+PASS vendor PHY v4 package00 options0: 465 callback boundaries
+PASS vendor PHY v4 package00 options1: 470 callback boundaries
+PASS vendor PHY v4 package00 options2: 465 callback boundaries
+PASS vendor PHY v4 package00 options3: 470 callback boundaries
+PASS vendor PHY v5 package00 options0: 393 callback boundaries
+PASS vendor PHY v5 package00 options1: 398 callback boundaries
+PASS vendor PHY v5 package00 options2: 393 callback boundaries
+PASS vendor PHY v5 package00 options3: 398 callback boundaries
+PASS vendor PHY v6 package00 options0: 320 callback boundaries
+PASS vendor PHY v6 package00 options1: 325 callback boundaries
+PASS vendor PHY v6 package00 options2: 320 callback boundaries
+PASS vendor PHY v6 package00 options3: 325 callback boundaries
+PASS vendor PHY v7 package00 options0: 16 callback boundaries
+PASS vendor PHY v7 package00 options1: 16 callback boundaries
+PASS vendor PHY v7 package00 options2: 16 callback boundaries
+PASS vendor PHY v7 package00 options3: 16 callback boundaries
+PASS vendor PHY v8 package00 options0: 56 callback boundaries
+PASS vendor PHY v8 package00 options1: 61 callback boundaries
+PASS vendor PHY v8 package00 options2: 56 callback boundaries
+PASS vendor PHY v8 package00 options3: 61 callback boundaries
+PASS vendor PHY v9 package00 options0: 522 callback boundaries
+PASS vendor PHY v9 package00 options1: 527 callback boundaries
+PASS vendor PHY v9 package00 options2: 522 callback boundaries
+PASS vendor PHY v9 package00 options3: 527 callback boundaries
+PASS vendor PHY v10 package00 options0: 925 callback boundaries
+PASS vendor PHY v10 package00 options1: 931 callback boundaries
+PASS vendor PHY v10 package00 options2: 925 callback boundaries
+PASS vendor PHY v10 package00 options3: 931 callback boundaries
+PASS vendor PHY v11 package00 options0: 1309 callback boundaries
+PASS vendor PHY v11 package00 options1: 1315 callback boundaries
+PASS vendor PHY v11 package00 options2: 1309 callback boundaries
+PASS vendor PHY v11 package00 options3: 1315 callback boundaries
+PASS vendor PHY v12 package00 options0: 2947 callback boundaries
+PASS vendor PHY v12 package00 options1: 2949 callback boundaries
+PASS vendor PHY v12 package00 options2: 2947 callback boundaries
+PASS vendor PHY v12 package00 options3: 2949 callback boundaries
+PASS vendor PHY v13 package00 options0: 1602 callback boundaries
+PASS vendor PHY v13 package00 options1: 1604 callback boundaries
+PASS vendor PHY v13 package00 options2: 1602 callback boundaries
+PASS vendor PHY v13 package00 options3: 1604 callback boundaries
+PASS vendor PHY v14 package00 options0: 302 callback boundaries
+PASS vendor PHY v14 package00 options1: 307 callback boundaries
+PASS vendor PHY v14 package00 options2: 302 callback boundaries
+PASS vendor PHY v14 package00 options3: 307 callback boundaries
+PASS vendor PHY v15 package00 options0: 1598 callback boundaries
+PASS vendor PHY v15 package00 options1: 1600 callback boundaries
+PASS vendor PHY v15 package00 options2: 1598 callback boundaries
+PASS vendor PHY v15 package00 options3: 1600 callback boundaries
+PASS vendor PHY v16 package00 options0: 2978 callback boundaries
+PASS vendor PHY v16 package00 options1: 2982 callback boundaries
+PASS vendor PHY v16 package00 options2: 2978 callback boundaries
+PASS vendor PHY v16 package00 options3: 2982 callback boundaries
+PASS vendor PHY v17 package18 options0: 5738 callback boundaries
+PASS vendor PHY v17 package18 options1: 5742 callback boundaries
+PASS vendor PHY v17 package18 options2: 5738 callback boundaries
+PASS vendor PHY v17 package18 options3: 5742 callback boundaries
+PASS vendor PHY v17 package1a options0: 5738 callback boundaries
+PASS vendor PHY v17 package1a options1: 5742 callback boundaries
+PASS vendor PHY v17 package1a options2: 5738 callback boundaries
+PASS vendor PHY v17 package1a options3: 5742 callback boundaries
+PASS vendor PHY v17 package1c options0: 5617 callback boundaries
+PASS vendor PHY v17 package1c options1: 5621 callback boundaries
+PASS vendor PHY v17 package1c options2: 5617 callback boundaries
+PASS vendor PHY v17 package1c options3: 5621 callback boundaries
+PASS vendor PHY v17 package1e options0: 5617 callback boundaries
+PASS vendor PHY v17 package1e options1: 5621 callback boundaries
+PASS vendor PHY v17 package1e options2: 5617 callback boundaries
+PASS vendor PHY v17 package1e options3: 5621 callback boundaries
+PASS: 52044 failure/cancel schedules; revision/package dispatch, EEE/green variants, invalid/status/budget checks
+PASS MAC prepare v1 package00 USBspeed2: 36 boundaries
+PASS MAC prepare v1 package00 USBspeed3: 36 boundaries
+PASS MAC prepare v1 package00 USBspeed5: 36 boundaries
+PASS MAC prepare v1 package00 USBspeed6: 36 boundaries
+PASS MAC prepare v2 package00 USBspeed2: 34 boundaries
+PASS MAC prepare v2 package00 USBspeed3: 34 boundaries
+PASS MAC prepare v2 package00 USBspeed5: 34 boundaries
+PASS MAC prepare v2 package00 USBspeed6: 34 boundaries
+PASS MAC prepare v3 package00 USBspeed2: 48 boundaries
+PASS MAC prepare v3 package00 USBspeed3: 48 boundaries
+PASS MAC prepare v3 package00 USBspeed5: 48 boundaries
+PASS MAC prepare v3 package00 USBspeed6: 48 boundaries
+PASS MAC prepare v4 package00 USBspeed2: 54 boundaries
+PASS MAC prepare v4 package00 USBspeed3: 54 boundaries
+PASS MAC prepare v4 package00 USBspeed5: 54 boundaries
+PASS MAC prepare v4 package00 USBspeed6: 54 boundaries
+PASS MAC prepare v5 package00 USBspeed2: 55 boundaries
+PASS MAC prepare v5 package00 USBspeed3: 55 boundaries
+PASS MAC prepare v5 package00 USBspeed5: 55 boundaries
+PASS MAC prepare v5 package00 USBspeed6: 55 boundaries
+PASS MAC prepare v6 package00 USBspeed2: 59 boundaries
+PASS MAC prepare v6 package00 USBspeed3: 59 boundaries
+PASS MAC prepare v6 package00 USBspeed5: 59 boundaries
+PASS MAC prepare v6 package00 USBspeed6: 59 boundaries
+PASS MAC prepare v7 package00 USBspeed2: 34 boundaries
+PASS MAC prepare v7 package00 USBspeed3: 34 boundaries
+PASS MAC prepare v7 package00 USBspeed5: 34 boundaries
+PASS MAC prepare v7 package00 USBspeed6: 34 boundaries
+PASS MAC prepare v8 package00 USBspeed2: 59 boundaries
+PASS MAC prepare v8 package00 USBspeed3: 59 boundaries
+PASS MAC prepare v8 package00 USBspeed5: 59 boundaries
+PASS MAC prepare v8 package00 USBspeed6: 59 boundaries
+PASS MAC prepare v9 package00 USBspeed2: 60 boundaries
+PASS MAC prepare v9 package00 USBspeed3: 60 boundaries
+PASS MAC prepare v9 package00 USBspeed5: 60 boundaries
+PASS MAC prepare v9 package00 USBspeed6: 60 boundaries
+PASS MAC prepare v10 package00 USBspeed2: 66 boundaries
+PASS MAC prepare v10 package00 USBspeed3: 66 boundaries
+PASS MAC prepare v10 package00 USBspeed5: 68 boundaries
+PASS MAC prepare v10 package00 USBspeed6: 68 boundaries
+PASS MAC prepare v11 package00 USBspeed2: 66 boundaries
+PASS MAC prepare v11 package00 USBspeed3: 66 boundaries
+PASS MAC prepare v11 package00 USBspeed5: 68 boundaries
+PASS MAC prepare v11 package00 USBspeed6: 68 boundaries
+PASS MAC prepare v12 package00 USBspeed2: 80 boundaries
+PASS MAC prepare v12 package00 USBspeed3: 80 boundaries
+PASS MAC prepare v12 package00 USBspeed5: 82 boundaries
+PASS MAC prepare v12 package00 USBspeed6: 82 boundaries
+PASS MAC prepare v13 package00 USBspeed2: 83 boundaries
+PASS MAC prepare v13 package00 USBspeed3: 83 boundaries
+PASS MAC prepare v13 package00 USBspeed5: 85 boundaries
+PASS MAC prepare v13 package00 USBspeed6: 85 boundaries
+PASS MAC prepare v14 package00 USBspeed2: 63 boundaries
+PASS MAC prepare v14 package00 USBspeed3: 63 boundaries
+PASS MAC prepare v14 package00 USBspeed5: 63 boundaries
+PASS MAC prepare v14 package00 USBspeed6: 63 boundaries
+PASS MAC prepare v15 package00 USBspeed2: 83 boundaries
+PASS MAC prepare v15 package00 USBspeed3: 83 boundaries
+PASS MAC prepare v15 package00 USBspeed5: 85 boundaries
+PASS MAC prepare v15 package00 USBspeed6: 85 boundaries
+PASS MAC prepare v16 package00 USBspeed2: 93 boundaries
+PASS MAC prepare v16 package00 USBspeed3: 93 boundaries
+PASS MAC prepare v16 package00 USBspeed5: 93 boundaries
+PASS MAC prepare v16 package00 USBspeed6: 93 boundaries
+PASS MAC prepare v17 package18 USBspeed2: 97 boundaries
+PASS MAC prepare v17 package18 USBspeed3: 97 boundaries
+PASS MAC prepare v17 package18 USBspeed5: 97 boundaries
+PASS MAC prepare v17 package18 USBspeed6: 97 boundaries
+PASS MAC prepare v17 package1a USBspeed2: 97 boundaries
+PASS MAC prepare v17 package1a USBspeed3: 97 boundaries
+PASS MAC prepare v17 package1a USBspeed5: 97 boundaries
+PASS MAC prepare v17 package1a USBspeed6: 97 boundaries
+PASS MAC prepare v17 package1c USBspeed2: 99 boundaries
+PASS MAC prepare v17 package1c USBspeed3: 99 boundaries
+PASS MAC prepare v17 package1c USBspeed5: 99 boundaries
+PASS MAC prepare v17 package1c USBspeed6: 99 boundaries
+PASS MAC prepare v17 package1e USBspeed2: 99 boundaries
+PASS MAC prepare v17 package1e USBspeed3: 99 boundaries
+PASS MAC prepare v17 package1e USBspeed5: 99 boundaries
+PASS MAC prepare v17 package1e USBspeed6: 99 boundaries
+PASS: 2730 MAC preparation failure/cancel schedules; autoload timeout/all-ones and USB speed guards
+PASS complete hardware sequence v1 pkg00: prepare865 enable11 boundaries
+PASS complete hardware sequence v2 pkg00: prepare389 enable11 boundaries
+PASS complete hardware sequence v3 pkg00: prepare253 enable18 boundaries
+PASS complete hardware sequence v4 pkg00: prepare586 enable18 boundaries
+PASS complete hardware sequence v5 pkg00: prepare517 enable18 boundaries
+PASS complete hardware sequence v6 pkg00: prepare448 enable18 boundaries
+PASS complete hardware sequence v7 pkg00: prepare94 enable11 boundaries
+PASS complete hardware sequence v8 pkg00: prepare178 enable20 boundaries
+PASS complete hardware sequence v9 pkg00: prepare645 enable20 boundaries
+PASS complete hardware sequence v10 pkg00: prepare1069 enable31 boundaries
+PASS complete hardware sequence v11 pkg00: prepare1453 enable31 boundaries
+PASS complete hardware sequence v12 pkg00: prepare3093 enable31 boundaries
+PASS complete hardware sequence v13 pkg00: prepare1751 enable31 boundaries
+PASS complete hardware sequence v14 pkg00: prepare431 enable25 boundaries
+PASS complete hardware sequence v15 pkg00: prepare1745 enable31 boundaries
+PASS complete hardware sequence v16 pkg00: prepare3182 enable28 boundaries
+PASS complete hardware sequence v17 pkg18: prepare5946 enable27 boundaries
+PASS complete hardware sequence v17 pkg1e: prepare5827 enable27 boundaries
+PASS: 5900 combined preparation/enable failure-cancel schedules; invalidation after failure and MAC stopped-before-enable
+PASS: USB PHY configuration compiles freestanding x86/x64 without imports

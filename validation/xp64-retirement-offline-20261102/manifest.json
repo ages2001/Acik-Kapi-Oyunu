@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-02T09:00:54.497360+00:00",
+  "guest": "xp64-usbnet-retirement-8127",
+  "files": {
+    "WINDOWS/system32/drivers/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 525824,
+      "sha256": "413582844bb4a3c538e6d57f252b44c9674a06edead28a7977588c8c8fbd8a43"
+    },
+    "WINDOWS/system32/drivers/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    },
+    "RLTTEST/HPOWER.LOG": {
+      "file": "HPOWER.LOG",
+      "size": 94,
+      "sha256": "e73965f84780d1955542378021a80d41331e327ed105ac1c0b2ce38d046e05a1"
+    },
+    "RLTTEST/POWER.LOG": {
+      "file": "POWER.LOG",
+      "size": 81,
+      "sha256": "256bcfe004621a3c20d3e8caa7debe41c3ac466e7e51860fa1cd6ee8ed182318"
+    },
+    "RLTTEST/NATIVE.LOG": {
+      "file": "NATIVE.LOG",
+      "size": 36497,
+      "sha256": "337bdc0534052d79bc0bbb34db02899c3e856167f8ad75f7bddcd37b88ba9abf"
+    }
+  }
+}

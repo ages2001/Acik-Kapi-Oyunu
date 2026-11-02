@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-01T17:03:33.114761+00:00",
+  "source_sha256": "4092e8eda1f3113bcce2b3f40d56e0aecf8741e2193d66d6cd50bc57b98f06cd",
+  "production_stop_test": "1572 partial/full allocation schedules: delayed reset, timeout, absent bus, live TX/RX bits, later recovery. ASan/UBSan passed.",
+  "production_start_test": "Both NT3.1 and miniport ring-before-enable production initializer tests passed.",
+  "scope": "Host tests only; guest PCI halt/reset checks pending; unresponsive DMA memory is retained rather than freed unsafely."
+}

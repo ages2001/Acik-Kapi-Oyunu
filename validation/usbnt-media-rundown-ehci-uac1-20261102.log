@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/USBNT/test/qharn.py", line 44, in _connect
+    s.connect(path)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/USBNT/test/tuac.py", line 30, in <module>
+    h = Harness(args, log="/tmp/usbt/uac_%s.log" % tag)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/rltklant-work/USBNT/test/qharn.py", line 34, in __init__
+    self.qmp = self._connect(self.qmp_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/rltklant-work/USBNT/test/qharn.py", line 48, in _connect
+    raise RuntimeError("qemu exited: %s" % open(self.qlog_path).read())
+RuntimeError: qemu exited: qemu-system-i386: -chardev socket,id=ser,path=/tmp/usbq2n1vj0wa/ser,server=on,wait=on: info: QEMU waiting for connection on: disconnected:unix:/tmp/usbq2n1vj0wa/ser,server=on
+uac: voice 48000 Hz
+uac: uac1 full speed, capture 1, feedback 1 (0 ppm), rates 7
+uac: stats out_alt=0 rate=48000 pkts=0 frames=0 pkt=65535..0 bad=0 overrun=0 underrun=0 fifo=0 fb=0 in_alt=0 in_pkts=0 in_frames=0
+qemu-system-i386: -device usb-uac,id=ua,bus=hc.0,uac=1,hs=on,debug=1,audiodev=snd: Warning: speed mismatch trying to attach usb device "QEMU USB Audio Class test devic" (full speed) to bus "hc.0", port "1" (high speed)
+

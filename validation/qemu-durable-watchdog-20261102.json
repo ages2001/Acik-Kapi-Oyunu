@@ -1,0 +1,17 @@
+{
+  "binaries": {
+    "qemu-system-i386": {
+      "previous_sha256": "efb4a87c7f37bdf16a5a19295bc5cac2d30cdbd1ba4211536c327f6cf8b7a555",
+      "sha256": "2b9c9d92e23a997e9a863edd90edf9d1613b6588b38c752e7070f646c277df2a"
+    },
+    "qemu-system-x86_64": {
+      "previous_sha256": "0b28dba57820fa3ff74e9ad29d259ae46895c66c4b9a23e65c2305e2731c39b3",
+      "sha256": "37a91463e5572e82283e7eb4994a49c5acde5b984b049dc9fd82e573780bb826"
+    }
+  },
+  "tests": [
+    "pcie-tx-stall-i386-20261102.log",
+    "pcie-tx-stall-x64-20261102.log",
+    "pcie-watchdog-model-regression-20261102.log"
+  ]
+}

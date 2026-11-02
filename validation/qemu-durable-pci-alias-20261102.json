@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-01T23:36:04.762934+00:00",
+  "scope": "New tested alias-capable runtime copies; prior executables retained as hardlinks for earlier proof hashes",
+  "files": {
+    "qemu-system-i386": {
+      "before": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a",
+      "current": "d651fe629799661c2fda009bf67cc2ab52cb6e49499cac92604b38ceb854162f"
+    },
+    "qemu-system-x86_64": {
+      "before": "ce3a860c3b664dc5ee6e625b970ae87c9a29ffec789a3515005da7404968d9e5",
+      "current": "207b16c3ce1959f07704336cb2cf6e5845f461800c50888d2b6ed06ab045f3df"
+    }
+  }
+}

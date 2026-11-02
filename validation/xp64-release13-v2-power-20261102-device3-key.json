@@ -1,0 +1,46 @@
+{
+  "guest": "xp64-usbnet-mixed-release13-v2-8127",
+  "token": "xp64-release13-v2-power-20261102-device3-key",
+  "utc": "2026-11-02T18:45:24.371690+00:00",
+  "result": "PASS_GUEST_CONSOLE_EVENTS",
+  "scope": "Wait for the guest console observer before injecting composite HID input.",
+  "messages": [
+    {
+      "stage": "READY",
+      "text": "MKEY2 READY c:\\rlttest\\mkey2.exe xp64-release13-v2-power-20261102-device3-key",
+      "peer": [
+        "127.0.0.1",
+        52751
+      ],
+      "monotonic": 159601.677339438
+    },
+    {
+      "stage": "KEY_DOWN",
+      "text": "MKEY2 KEY_DOWN c:\\rlttest\\mkey2.exe xp64-release13-v2-power-20261102-device3-key",
+      "peer": [
+        "127.0.0.1",
+        52751
+      ],
+      "monotonic": 159601.714583253
+    },
+    {
+      "stage": "KEY_UP",
+      "text": "MKEY2 KEY_UP c:\\rlttest\\mkey2.exe xp64-release13-v2-power-20261102-device3-key",
+      "peer": [
+        "127.0.0.1",
+        52751
+      ],
+      "monotonic": 159601.768524516
+    },
+    {
+      "stage": "PASS",
+      "text": "MKEY2 PASS c:\\rlttest\\mkey2.exe xp64-release13-v2-power-20261102-device3-key",
+      "peer": [
+        "127.0.0.1",
+        52751
+      ],
+      "monotonic": 159601.770821397
+    }
+  ],
+  "observer_sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549"
+}

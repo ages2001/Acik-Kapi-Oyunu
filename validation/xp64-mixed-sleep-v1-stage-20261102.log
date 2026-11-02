@@ -1,0 +1,60 @@
+Formatting '/workspace/rltklant-vm/run/xp64-usbnet-mixed-sleep-v1-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=5368709120 backing_file=/tmp/rltk-growing-fat-07918s75/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+29/81920 = 0.04% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 2293760
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/xp64-usbnet-mixed-sleep-v1-8127.qcow2",
+  "sha256_before_boot": "d2c5a2ed8f5e8d503100815b59541474827c18dcce7f8135130c1a2084a5d538",
+  "files": [
+    {
+      "guest_path": "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-controller-sleep-v1-20261102/amd64.sys",
+      "size": 539648,
+      "sha256": "20b6ea186a86740e3aea741cfc3790b93ce66b39e80baf2f3a6fc2402faa2dca",
+      "old_size": 534016,
+      "old_sha256": "090105c3b37098b10dd326fa64a979903e8232cf4a2c033dad2a5d06e10d01d4"
+    },
+    {
+      "guest_path": "RLTTEST/HCPOWER.EXE",
+      "source": "/workspace/rltklant-work/validation/usbnt-hc-power-single-amd64-20261102/HCPOWER.EXE",
+      "size": 11754,
+      "sha256": "5d41ac14ae793f0470039924d248b929472d35f79990742e48010289395c9b93",
+      "old_size": 11754,
+      "old_sha256": "5d41ac14ae793f0470039924d248b929472d35f79990742e48010289395c9b93"
+    },
+    {
+      "guest_path": "RLTTEST/HCPOWER.SYS",
+      "source": "/workspace/rltklant-work/validation/usbnt-hc-power-single-amd64-20261102/HCPOWER.SYS",
+      "size": 11433,
+      "sha256": "217ebb498a307eb77ff6581b0d3c63002fa2a134876fcdeccf5769948ae1091f",
+      "old_size": 11433,
+      "old_sha256": "217ebb498a307eb77ff6581b0d3c63002fa2a134876fcdeccf5769948ae1091f"
+    },
+    {
+      "guest_path": "RLTTEST/DEVPROBE.EXE",
+      "source": "/workspace/rltklant-work/validation/devprobe64.exe",
+      "size": 13003,
+      "sha256": "307ccc6638fbd3fc0326d18a5148c19fac879a8329ff12c7d27939a8eeff3f06",
+      "old_size": 13003,
+      "old_sha256": "307ccc6638fbd3fc0326d18a5148c19fac879a8329ff12c7d27939a8eeff3f06"
+    },
+    {
+      "guest_path": "RLTTEST/MKEY2.EXE",
+      "source": "/workspace/rltklant-work/validation/ftp-fixture/MKEY2.EXE",
+      "size": 12604,
+      "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTTEST/USBLOG.EXE",
+      "source": "/workspace/rltklant-work/validation/USBLOG.EXE",
+      "size": 6845,
+      "sha256": "df2690acd4b575dac7d2cb94a9a271a976fbf8d422fe5bb5fb288fdef0f235e7",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

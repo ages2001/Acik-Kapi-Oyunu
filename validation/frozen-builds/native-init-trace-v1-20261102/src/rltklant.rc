@@ -1,0 +1,31 @@
+/* rltklant.rc - version resource for RLTKLANT.SYS */
+#include <winver.h>
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION    1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK  0x3fL
+ FILEFLAGS      0x0L
+ FILEOS         VOS_NT
+ FILETYPE       VFT_DRV
+ FILESUBTYPE    VFT2_DRV_NETWORK
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName",      "ages2001"
+            VALUE "FileDescription",  "RLTKLANT Realtek LAN Family NDIS Miniport"
+            VALUE "FileVersion",      "1.0.0.0"
+            VALUE "InternalName",     "rltklant.sys"
+            VALUE "LegalCopyright",   "Copyright (C) 2026 ages2001."
+            VALUE "OriginalFilename", "rltklant.sys"
+            VALUE "ProductName",      "RLTKLANT"
+            VALUE "ProductVersion",   "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END

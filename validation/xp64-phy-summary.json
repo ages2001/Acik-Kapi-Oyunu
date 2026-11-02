@@ -1,0 +1,18 @@
+{
+  "guest": "xp64-phy-multi-8127",
+  "storage": "IDE",
+  "ndis_problem_zero": 6,
+  "unique_device_instances": [
+    "PCI\\VEN_10EC&DEV_8125&SUBSYS_11001AF4&REV_10\\3&11583659&0&30",
+    "PCI\\VEN_10EC&DEV_8126&SUBSYS_11001AF4&REV_10\\3&11583659&0&38",
+    "PCI\\VEN_10EC&DEV_8127&SUBSYS_11001AF4&REV_10\\3&11583659&0&18",
+    "PCI\\VEN_10EC&DEV_8127&SUBSYS_11001AF4&REV_10\\3&11583659&0&40",
+    "PCI\\VEN_10EC&DEV_8168&SUBSYS_11001AF4&REV_10\\3&11583659&0&28",
+    "PCI\\VEN_10EC&DEV_8169&SUBSYS_11001AF4&REV_10\\3&11583659&0&20"
+  ],
+  "ping_replies": 24,
+  "ping_sent": 24,
+  "clean_qmp_shutdown": true,
+  "driver_sha256": "8df0c846750944842fcf25ec0dcb8adab0316a32125b80df60c30b51262fa0c7",
+  "limit": "PCI PHY-error binary; predates USB carrier/PHY transport changes"
+}

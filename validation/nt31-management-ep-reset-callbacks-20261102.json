@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-02T05:22:25.838296+00:00",
+  "result": "PASS",
+  "guest": "nt31-usbsetup-management-ep-v2-8127",
+  "model": "rtl8168,chip-profile=8111ep,dash-enabled=on",
+  "counts": {
+    "N31TEST reset-return=00000103": 3,
+    "N31TEST reset-complete=00000000": 3,
+    "N31TEST status=40010004": 3,
+    "N31TEST status=40010005": 3
+  },
+  "debug_sha256": "30be46875f756478df547b2851e1021f6351f20f6d51f743bafb46a3ff9408fd",
+  "scope": "Three pending/successful bound full-MAC reset callbacks with source-ordered hardware/DASH and PHY/MAC replay. Not an exported NdisReset test."
+}

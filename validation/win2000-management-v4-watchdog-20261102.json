@@ -1,0 +1,49 @@
+{
+  "guest": "win2000-standard-management-v4-multi-8127",
+  "utc": "2026-11-02T05:29:03.444896+00:00",
+  "result": "PASS",
+  "cycles": [
+    {
+      "cycle": 1,
+      "device": "pcinic",
+      "elapsed_seconds": 9.43,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra1",
+      "elapsed_seconds": 9.408,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra2",
+      "elapsed_seconds": 8.928,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra3",
+      "elapsed_seconds": 9.461,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra4",
+      "elapsed_seconds": 9.926,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra5",
+      "elapsed_seconds": 9.941,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    }
+  ]
+}

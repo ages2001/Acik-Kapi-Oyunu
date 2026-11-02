@@ -1,0 +1,8 @@
+{
+  "scope": "Unsigned candidate fixture; final catalogue is not supplied for these development binaries. Test guest only.",
+  "files": {
+    "netrtlk.inf": "1f09e506d10e7618e67fd7ec8152e7d0cec785038af0706d651499cf9921d0c8",
+    "amd64/rltklant.sys": "7f1ae5b1e112be68d092881c79f1ab5ad6a7dbc11936719fbaf49b486cf990e7",
+    "i386/rltklant.sys": "428f94ea70e445a6ae974359d47fed8176e5cb50a13be3a1f124cb2a013a4cf6"
+  }
+}

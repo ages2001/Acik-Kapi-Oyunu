@@ -1,0 +1,46 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-sleep-v3-8127",
+  "token": "win2000-mixed-sleep-v3-cycles-20261102-system2-key",
+  "utc": "2026-11-02T15:59:44.118938+00:00",
+  "result": "PASS_GUEST_CONSOLE_EVENTS",
+  "scope": "Wait for the guest console observer before injecting composite HID input.",
+  "messages": [
+    {
+      "stage": "READY",
+      "text": "MKEY2 READY c:\\rlttest\\mkey2.exe win2000-mixed-sleep-v3-cycles-20261102-system2-key",
+      "peer": [
+        "127.0.0.1",
+        39304
+      ],
+      "monotonic": 149662.106057151
+    },
+    {
+      "stage": "KEY_DOWN",
+      "text": "MKEY2 KEY_DOWN c:\\rlttest\\mkey2.exe win2000-mixed-sleep-v3-cycles-20261102-system2-key",
+      "peer": [
+        "127.0.0.1",
+        39304
+      ],
+      "monotonic": 149662.145172827
+    },
+    {
+      "stage": "KEY_UP",
+      "text": "MKEY2 KEY_UP c:\\rlttest\\mkey2.exe win2000-mixed-sleep-v3-cycles-20261102-system2-key",
+      "peer": [
+        "127.0.0.1",
+        39304
+      ],
+      "monotonic": 149662.190153223
+    },
+    {
+      "stage": "PASS",
+      "text": "MKEY2 PASS c:\\rlttest\\mkey2.exe win2000-mixed-sleep-v3-cycles-20261102-system2-key",
+      "peer": [
+        "127.0.0.1",
+        39304
+      ],
+      "monotonic": 149662.190305403
+    }
+  ],
+  "observer_sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549"
+}

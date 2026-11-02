@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-02T01:31:34.824743+00:00",
+  "guest": "win2000-standard-watchdog-multi-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 521017,
+      "sha256": "9fbd52dd59bb43d5486543944782939b13ff309f9366e8d01a9c629907cd51db"
+    }
+  }
+}

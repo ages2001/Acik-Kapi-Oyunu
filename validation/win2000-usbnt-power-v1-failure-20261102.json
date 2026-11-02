@@ -1,0 +1,10 @@
+{
+  "result": "FAIL_NETWORK_AFTER_POWER",
+  "guest": "win2000-standard-usbnet-power-v1-ehci-8127",
+  "successful_d3_d0_cycles": 3,
+  "icmp_replies": 0,
+  "evidence": "win2000-usbnt-power-v1-failed-evidence-20261102/manifest.json",
+  "screenshot": "win2000-usbnt-power-v1-after-report-check-20261102.png",
+  "collector": "native_report.py timed out receiving UDP because the tested adapter had no working network; guest screen reports ICMP_REPLIES 0 and FAIL",
+  "diagnosis": "Cancelled RX caused a pipe reset during D3. Failed reset was not remembered; RxFault held carrier down while the RX owner waited for a packet. Retry fix is not credited until guest retest."
+}

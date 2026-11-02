@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/nt4-ndis-dual-hidreset-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-q71jps3g/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+13/6384 = 0.20% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1179648
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt4-ndis-dual-hidreset-8127.qcow2",
+  "sha256_before_boot": "4e78bafd53082facfa28cb7c4608be95269e687d0afd96d2e5ec871100c0ef6f",
+  "files": [
+    {
+      "guest_path": "WINNT4/system32/drivers/usbnt.sys",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-hid-reset-v1-20261102/legacy.sys",
+      "size": 412672,
+      "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241",
+      "old_size": 411648,
+      "old_sha256": "92d6f836da50302b026ac16f1e02daba932dbebd3c233beab1a8eb4374b53d4c"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

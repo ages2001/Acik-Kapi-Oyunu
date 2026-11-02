@@ -1,0 +1,11 @@
+{
+  "guest": "nt351-usbsetup-rtl8139-hidcap-8127",
+  "token": "hidcap-pci-20261102-c4-absent",
+  "mask": 2,
+  "utc": "2026-11-02T09:35:39.329343+00:00",
+  "peer": [
+    "127.0.0.1",
+    54629
+  ],
+  "report": "TOKEN hidcap-pci-20261102-c4-absent\r\nMASK 2\r\nPATH 10.0.3.2 REPLIES 4 PAYLOAD 1472\r\nTOTAL 4 EXPECTED 4\r\nPASS\r\n"
+}

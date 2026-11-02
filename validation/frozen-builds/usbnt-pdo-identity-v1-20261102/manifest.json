@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-02T08:27:09.332626+00:00",
+  "scope": "Unreleased: full-table HCD replacement plus delayed same-instance PDO admission; guest validation pending",
+  "files": {
+    "i386": {
+      "size": 487936,
+      "sha256": "eac71c75682d394545022e687da3b005b174f19ad2b9678a526153bbe6f9d14c"
+    },
+    "amd64": {
+      "size": 525824,
+      "sha256": "9c1ae86042934bfaad8f5444d87d0de0505bd0e4a052a97ac23d38d6c5bce479"
+    }
+  }
+}

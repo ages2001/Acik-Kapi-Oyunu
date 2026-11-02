@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-01T23:25:45.266770+00:00",
+  "result": "PASS_HOST_AND_GUEST",
+  "problem": "Pre-PHY reset masked legacy 16-bit IMR for supported 3000/5000/0e10 PCI aliases, unlike the relocated 32-bit register used by the DMA path",
+  "change": "Reuse cp_is25 in the production pre-PHY initializer",
+  "schedules": 80,
+  "scope": "All 16 C+ PCI ID entries, success/delayed reset, stuck reset, removed device, absent TxConfig and failed PHY upload",
+  "candidate": "frozen-builds/nt31-phy-start-alias-20261102/manifest.json",
+  "evidence": {
+    "nt31-phy-start-alias-reproduction-20261102.log": "d377b8315e0d0d8f2e50e29d1c24f8556b84bc378e96f1dd4a8a65694e4e2e6e",
+    "nt31-phy-start-alias-fixed-20261102.log": "3ed5d23519e1382f930900fb29bb4f0837a36b12eded48ba348cbb4f8f8be981",
+    "nt31-phy-start-alias-build-20261102.log": "e545687063761e1de4638b23cf42196bb29700fb37a10e6dad78f5d2b95ee518"
+  },
+  "limits": [
+    "Register/protocol models do not establish full MAC prerequisites or physical silicon behavior"
+  ],
+  "guest_regression": "nt31-usbsetup-phy-alias-8127-phy-alias-v2-20261102-sibling-matrix.json",
+  "guest_regression_captures": "nt31-phy-alias-v2-pcaps-20261102/manifest.json",
+  "qemu_alias_contract": "qemu-pci-alias-model-20261102.json",
+  "qemu_alias_phy": "qemu-firmware-transport-results-pci-alias-20261102.json",
+  "bounded_ocr_regression": "nt31-usbsetup-phy-alias-8127-phy-alias-v3-20261102-sibling-matrix.json",
+  "final_evidence": "nt31-phy-alias-final-evidence-20261102/manifest.json",
+  "alias_guest_proof": "nt31-pci-alias-complete-proof-20261102.json"
+}

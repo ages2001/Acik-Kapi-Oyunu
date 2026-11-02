@@ -1,0 +1,84 @@
+{
+  "utc": "2026-11-01T17:31:34.885254+00:00",
+  "files": [
+    {
+      "file": "ndisnt31.sys",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys",
+      "size": 504832,
+      "sha256": "cd4b80c56509cc48f2986d38d1d1d1f8dbc5dd0afb6e9d5c1fc5442106e48f51"
+    },
+    {
+      "file": "ndis3.sys",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis3/rltklant.sys",
+      "size": 498321,
+      "sha256": "118a262b58f5f628c17c76ea717cba528714d113fcad9b039ea3022fb3073831"
+    },
+    {
+      "file": "ndis5.sys",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis5/rltklant.sys",
+      "size": 512069,
+      "sha256": "89f4f95de3dc3d25b45136ff97509c9c72cc2681923a520266292607daef08e2"
+    },
+    {
+      "file": "ndis5x64.sys",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis5x64/rltklant.sys",
+      "size": 565752,
+      "sha256": "5c15d2bf09b4432c6dd6ec092e544e14715886d35f82989130e214ad85d56202"
+    },
+    {
+      "file": "usbnt-i386.sys",
+      "source": "/workspace/rltklant-work/USBNT/build/out/2kxp/i386/usbnt.sys",
+      "size": 482816,
+      "sha256": "6024aba42e9748f8653d9a32f29c8ec6242547439715d587f4e928ebf7882d4b"
+    },
+    {
+      "file": "usbnt-amd64.sys",
+      "source": "/workspace/rltklant-work/USBNT/build/out/2kxp/amd64/usbnt.sys",
+      "size": 520704,
+      "sha256": "8eb75365824c7253201c3a94d9b39dd98d692e939f3f6d1854208fabc590ca5f"
+    }
+  ],
+  "sources": [
+    {
+      "file": "RLTKLANT/src/backend_cplus.c",
+      "sha256": "4092e8eda1f3113bcce2b3f40d56e0aecf8741e2193d66d6cd50bc57b98f06cd"
+    },
+    {
+      "file": "RLTKLANT/src/backend_8139.c",
+      "sha256": "ce9857a4e8bdd5db480ac4f90e31d3c5b82da3a792175f23d3018510e0e65d2b"
+    },
+    {
+      "file": "RLTKLANT/src/drvnt31.c",
+      "sha256": "0f5b60e3841266b01c7d55dfca27c3de9d5c92f3c102795bd1d4e25e69d05acf"
+    },
+    {
+      "file": "RLTKLANT/src/nt31poll.h",
+      "sha256": "ef061f6bccd7620548c7c3d9c691334739876065614da98e4376e444f19fb01b"
+    },
+    {
+      "file": "RLTKLANT/src/ndisnt31.h",
+      "sha256": "75f046e7d70c120b4dc0be7b79c61cf7d38f0beb4b354107644610ec07a88a8b"
+    },
+    {
+      "file": "RLTKLANT/build/build-nt31.sh",
+      "sha256": "c6abc60f71827a97e2e096229e35435c737ed133d596732817710c088f37be5c"
+    },
+    {
+      "file": "USBNT/src/usbcore.c",
+      "sha256": "1b095341dc91c424e970da48c02dd271aadc9b6f4643fbea94075e13d184cb59"
+    },
+    {
+      "file": "USBNT/src/usbhub.c",
+      "sha256": "c9fa8748e17acab38b42f62f043e65c9f0f299a5ec639570f182b0c1ed3fb3ff"
+    },
+    {
+      "file": "USBNT/src/usbdi.c",
+      "sha256": "09ccdd92d12296c3375ccae434b16d3aacf9ecbdb94f632b857c44f70d01c714"
+    },
+    {
+      "file": "USBNT/src/usbnt.h",
+      "sha256": "4013f164fe92c7d8af7e36cffe5b225d90cc31f6678680331d3ac0d690d52148"
+    }
+  ],
+  "scope": "Development candidate; see dated guest evidence; not a final release or physical silicon certification"
+}

@@ -1,0 +1,17 @@
+{
+  "result": "FAIL",
+  "guest": "nt351-usbsetup-rtl8139-proof-8127",
+  "utc": "2026-11-02T05:32:57.370761+00:00",
+  "files": {
+    "usb.pcap": "e6583841f99ef45bb0126072d16ddb1500c0307fbe4e1a9934b7b4ccfacff72e",
+    "debug.log": "e86779d095e693a94bcf2b922a4b8e359b7c2ecca7452b572ad2e6124e304f0a",
+    "pci.pcap": "06fddf238db94e5562725d01821f15b7728e1a48d5cd504cd9eaf9eeb5abeb72",
+    "launch.json": "57698df071e93eb145b7d1f5f7c4aad12695106b2c9e9781727433b022217b2b",
+    "process-exit.json": "5fd269e94007756bfbd283e17b4c3ce8a33155bd4b5975c61ec4b32c5e4c2e25",
+    "serial.log": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44",
+    "qemu.log": "257b5189924d9997b96b52eba7b27b89b88b89be47194b09f826aa94656018f0"
+  },
+  "normal_shutdown": false,
+  "screenshot": "nt351-rtl8139-tcp-result-20261102.png",
+  "diagnosis": "STOP 0xA in NT kernel after R39Receive -> R39Init -> R39FreeDma -> NdisMFreeSharedMemory at DISPATCH_LEVEL. RCR incorrectly selected 64 KiB while only 32 KiB plus slack was allocated. Host TCP timed out. Reset callback success is not overall adapter success."
+}

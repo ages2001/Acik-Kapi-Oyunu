@@ -1,0 +1,97 @@
+{
+  "guest": "win2000-standard-usbnet-retirement-8127",
+  "utc": "2026-11-02T08:48:35.311232+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8153-native-hotplug.json",
+        "sha256": "7c5b1740b675079a0a5c0aa03db2fcdc30e8187a1ce2f55b1fa5583d1b8a9007"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8153-function-power.json",
+        "sha256": "4afc03ebceafc5fc0294cec725a72086e6cbd61d43597dad2c204b9d829bdb3d"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8153-port-reset-cycles.json",
+        "sha256": "63a8edcc843c70fac2ae2ddc87326d6a69121f37c196000c550b0088d37db67b"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8153-native-cable.json",
+        "sha256": "d6883b5b617c7022e963f3bb7f5bd14805d290385426d79b7e7e2da66b72090d"
+      },
+      "seconds": 76.57
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8156-native-hotplug.json",
+        "sha256": "7e2d1ca128f244839946639dc5ba65d900342f6e60678db585c06884df18d943"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8156-function-power.json",
+        "sha256": "da75630e1487bc40ddea4a7725cdc6836264cf367a71efa792432124817f4bba"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8156-port-reset-cycles.json",
+        "sha256": "e5430e27629a65c9de4d393556a1fbed3c467660ede2fd768dd0f93d52d9d620"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8156-native-cable.json",
+        "sha256": "01fa0473a5882303747fe4bfb3fa8296086bd7123c5120eb2d325dc7eecbbb02"
+      },
+      "seconds": 79.43
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8157-native-hotplug.json",
+        "sha256": "9cab8e905fa68cac14d4e6c7d0f52427e02ba25462e231425a94abf36c1b377f"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8157-function-power.json",
+        "sha256": "6d4859603a1e7cc1709a77816e97fd4c13cc73367107dcacd47e716e4a6a1c51"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8157-port-reset-cycles.json",
+        "sha256": "9f5f289dca159ac95b0cf31d13d43b67b5a777273a2d0c22d40f054dbfc3bc95"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8157-native-cable.json",
+        "sha256": "593023e696b1474c94d55b1933de19db5a54d337070599d04f2cd8424b8ac860"
+      },
+      "seconds": 91.03
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8159-native-hotplug.json",
+        "sha256": "24d81ceec5bad366df6b3f2e543607729738b87e7c12fa53ddeacc1dae6882b1"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8159-function-power.json",
+        "sha256": "d10fa6c89e16c51d6d787a786b32a27a37006fb1779f36d72239d60f06dcc43a"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8159-port-reset-cycles.json",
+        "sha256": "5eb4d995bd603458c794eee41e37ffed26f2167c318be4588938e590965d6fbf"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8159-native-cable.json",
+        "sha256": "1ce188bc234c4513b6b422f744c8b4beec09507542bf416d70fe72ef745ec357"
+      },
+      "seconds": 121.85
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

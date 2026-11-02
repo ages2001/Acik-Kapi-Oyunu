@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-02T09:14:15.759153+00:00",
+  "result": "PASS",
+  "kernel_sha256": "2d99796696b89de97f01ed8df9f9dc8d57f505efdc74b618011359f619284c84",
+  "rows": [
+    {
+      "controller": "qemu-xhci",
+      "result": "PASS",
+      "log": "usbnt-hid-capacity-hotplug-v2-qemu-xhci-20261102.log",
+      "sha256": "da22bb58dec0bb6b0edc9588c6c1a62bcfefa6e6d5f34420d337d24dfcc97dcb"
+    },
+    {
+      "controller": "usb-ehci",
+      "result": "PASS",
+      "log": "usbnt-hid-capacity-hotplug-v2-usb-ehci-20261102.log",
+      "sha256": "7d7012ba05346ab0e9ecfd14498f0eac07f157e57247232627d652950e55665d"
+    },
+    {
+      "controller": "piix3-usb-uhci",
+      "result": "PASS",
+      "log": "usbnt-hid-capacity-hotplug-v2-piix3-usb-uhci-20261102.log",
+      "sha256": "2cf81ead46117f0e4159b699e7e5e639bad4d680d36e90b5f4855910c1afa013"
+    },
+    {
+      "controller": "pci-ohci",
+      "result": "PASS",
+      "log": "usbnt-hid-capacity-hotplug-v2-pci-ohci-20261102.log",
+      "sha256": "4fe1837dd16146e6a5c532f615feaf0c1a296de40a2de713f52dd82c1ff16f5f"
+    }
+  ],
+  "scope": "Production native-class core: storage data retained, removed disk rejected, keyboard continuity, populated hub removal and root disk preservation. Five-interface limit is covered separately by the production-source host harness. First attempts failed before QEMU startup because qemu-img was absent from PATH; preserved."
+}

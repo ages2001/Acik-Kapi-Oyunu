@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-02T08:13:51.705946+00:00",
+  "guest": "win2000-standard-usbnet-hcpower-release-8127",
+  "result": "LIMITED_PASS",
+  "initialization_failures": [],
+  "power_irp_pairs": 6,
+  "final_network_replies": 4,
+  "collector": "win2000-standard-usbnet-hcpower-release-8127-hcd-release-20261102-controller-power.json",
+  "evidence": "win2000-hcd-release-evidence-20261102/manifest.json",
+  "offline_readback": "win2000-hcd-release-offline-20261102/manifest.json",
+  "limitations": "Controller stop removes/re-enumerates children. Final traffic does not establish traffic after each cycle. No physical ACPI S3 or identity-preserving suspend claim."
+}

@@ -1,0 +1,36 @@
+Formatting '/workspace/rltklant-vm/run/xp64-macstart-multi-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=5368709120 backing_file=/tmp/rltk-growing-fat-btuvhof0/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+26/81920 = 0.03% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 2031616
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/xp64-macstart-multi-8127.qcow2",
+  "sha256_before_boot": "34a9ae13955645a974204f2110f617fbdfa2b7621b3c2a91d1e28d73b4756b19",
+  "files": [
+    {
+      "guest_path": "windows/system32/drivers/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/mac-integrated-fixture-v1-20261102/FW64.SYS",
+      "size": 606482,
+      "sha256": "14e05b8ef3a3ad2238e484d43f3a4251b7a7cd1781a431f8eba2e223845a00f4",
+      "old_size": 576223,
+      "old_sha256": "23121df2ace22d0a070d76fd6b40d942f77b07e2bbd611dd91ee8b1ad74456e0"
+    },
+    {
+      "guest_path": "rlttest/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/mac-integrated-fixture-v1-20261102/FW64.SYS",
+      "size": 606482,
+      "sha256": "14e05b8ef3a3ad2238e484d43f3a4251b7a7cd1781a431f8eba2e223845a00f4",
+      "old_size": 576223,
+      "old_sha256": "23121df2ace22d0a070d76fd6b40d942f77b07e2bbd611dd91ee8b1ad74456e0"
+    },
+    {
+      "guest_path": "rlttest/PCNEW.EXE",
+      "source": "/workspace/rltklant-work/validation/mac-integrated-fixture-v1-20261102/PC64.EXE",
+      "size": 17123,
+      "sha256": "bfcc350c620d137ba1ad615e442636e5ab9f6c8e032e13e15d95bad0a7843d39",
+      "old_size": 17123,
+      "old_sha256": "62db968e750f42cc50d4c0b11eb6b7ba528c3602fbd6e5bc19de29a4de4ca948"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

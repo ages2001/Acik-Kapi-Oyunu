@@ -1,0 +1,2 @@
+Formatting '/workspace/rltklant-vm/run/xp64-phy-multi-8127.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=5368709120 backing_file=/workspace/rltklant-vm/run/xp64-phy-multi-8127.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+Guest running: xp64-phy-multi-8127, PID 61415

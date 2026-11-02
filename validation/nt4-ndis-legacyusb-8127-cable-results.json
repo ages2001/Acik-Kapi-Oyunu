@@ -1,0 +1,70 @@
+{
+  "scope": "Guest USB control transport and PHY status only; no USB NDIS networking",
+  "results": [
+    {
+      "model": "usb-rtl8150",
+      "cycle": 1,
+      "carrier": false,
+      "guest_trace": "UNT-LINK id=00000001 up=00000000 status=00000000"
+    },
+    {
+      "model": "usb-rtl8150",
+      "cycle": 1,
+      "carrier": true,
+      "guest_trace": "UNT-LINK id=00000001 up=00000001 status=00000000"
+    },
+    {
+      "model": "usb-rtl8150",
+      "cycle": 2,
+      "carrier": false,
+      "guest_trace": "UNT-LINK id=00000001 up=00000000 status=00000000"
+    },
+    {
+      "model": "usb-rtl8150",
+      "cycle": 2,
+      "carrier": true,
+      "guest_trace": "UNT-LINK id=00000001 up=00000001 status=00000000"
+    },
+    {
+      "model": "usb-rtl8150",
+      "cycle": 3,
+      "carrier": false,
+      "guest_trace": "UNT-LINK id=00000001 up=00000000 status=00000000"
+    },
+    {
+      "model": "usb-rtl8150",
+      "cycle": 3,
+      "carrier": true,
+      "guest_trace": "UNT-LINK id=00000001 up=00000001 status=00000000"
+    },
+    {
+      "model": "usb-rtl8150",
+      "cycle": 4,
+      "carrier": false,
+      "guest_trace": "UNT-LINK id=00000001 up=00000000 status=00000000"
+    },
+    {
+      "model": "usb-rtl8150",
+      "cycle": 4,
+      "carrier": true,
+      "guest_trace": "UNT-LINK id=00000001 up=00000001 status=00000000"
+    },
+    {
+      "model": "usb-rtl8150",
+      "cycle": 5,
+      "carrier": false,
+      "guest_trace": "UNT-LINK id=00000001 up=00000000 status=00000000"
+    },
+    {
+      "model": "usb-rtl8150",
+      "cycle": 5,
+      "carrier": true,
+      "guest_trace": "UNT-LINK id=00000001 up=00000001 status=00000000"
+    }
+  ],
+  "qmp": {
+    "status": "running",
+    "singlestep": false,
+    "running": true
+  }
+}

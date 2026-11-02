@@ -1,0 +1,408 @@
+{
+  "guest": "nt4-ndis-dual-release13-8127",
+  "started_utc": "2026-11-02T17:49:24.291956+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "cycle": 1,
+      "device": "usbnic",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c1-absent.json",
+          "sha256": "84270ebd9a6b22fc477a8d066ae161377ae64f28eb5e3ca3a9fa94abf2503f03",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c1-reinsert.json",
+          "sha256": "ac10e93cf41a150a9a9f5be7653e5c10028f78650931263bdfc7a91f695d2037",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c1-cable-down.json",
+          "sha256": "5618962be12c65f315427fe578e80f51b9d7d0294ebd8f1b1acd1668c4b312d9",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c1-cable-up.json",
+          "sha256": "17d703884244482cd5efa7324b189a8b37cdad803a4e846b4f14ed605378b801",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000001 up=00000000 status=C0000001\nUNT-DOWN id=00000001\n",
+      "reinsert_trace": "UNT-UP id=00000003 pid=00008153 status=00000000\nUNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-release13-8127-release13-20261102-c1-passed.png",
+        "sha256": "74cb858532f5e3c22ae1cef41f33c0ca8dd8c3fa73da6201bd52cd89368aa0e7"
+      }
+    },
+    {
+      "cycle": 2,
+      "device": "usbnic",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c2-absent.json",
+          "sha256": "f5213a11cd4815ae41b8fafa59c112126c40d5d0929a06e6208978bd4877fecd",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c2-reinsert.json",
+          "sha256": "8e006839cdec41be2143d4fbbfecd725ea777f352cc635b3ef642076391f61ec",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c2-cable-down.json",
+          "sha256": "f8887654539b212bb9eb9678f2726270975a5cc20123689a31253d375e70daab",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c2-cable-up.json",
+          "sha256": "fc9f7ee517aaf196d27122d1d6e496330f7590fffd079ffecbd5da9b5877d944",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-DOWN id=00000003\n",
+      "reinsert_trace": "UNT-UP id=00000004 pid=00008156 status=00000000\nUNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-release13-8127-release13-20261102-c2-passed.png",
+        "sha256": "74cb858532f5e3c22ae1cef41f33c0ca8dd8c3fa73da6201bd52cd89368aa0e7"
+      }
+    },
+    {
+      "cycle": 3,
+      "device": "usbnic",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c3-absent.json",
+          "sha256": "e17bb45ea8b6c40be43f978aa8a50b303bcb141e93cb18860a772db4c3b35714",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c3-reinsert.json",
+          "sha256": "7d2497735ba041b174ceac2996577d40b17852d3faabde66cdec8165dddfce04",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c3-cable-down.json",
+          "sha256": "3166c2a8b082d3c679da675c6033dff8344f26b1510e3027f717fc24e1147a63",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c3-cable-up.json",
+          "sha256": "3e844bb63b2240e04edd2d36edc1ef0f203a36f414bab32ee98d783842db45c7",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000004 up=00000000 status=C0000001\nUNT-DOWN id=00000004\n",
+      "reinsert_trace": "UNT-UP id=00000005 pid=00008157 status=00000000\nUNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-release13-8127-release13-20261102-c3-passed.png",
+        "sha256": "65738c7e10a66430add8ccde48d799f6573be1cde37ed3f08791b55651ee2416"
+      }
+    },
+    {
+      "cycle": 4,
+      "device": "usbnic",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c4-absent.json",
+          "sha256": "9d004ed41db59213edc48e93983cb67739987c0c3e2a644bd14137d61c977b3f",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c4-reinsert.json",
+          "sha256": "07c526d467255dbf711375dc1ed43d937d00e1a24c5eb1a8b155c8271f16cd63",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c4-cable-down.json",
+          "sha256": "8de8e585d61c6880eac87d94a1e840f3d5791f86dd1b5e38e973786be0419787",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c4-cable-up.json",
+          "sha256": "8cd3c1d05657bbe3e5c8071c9c578e17c5f6d9c0fb023431326f9321bf708083",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-DOWN id=00000005\n",
+      "reinsert_trace": "UNT-UP id=00000006 pid=00008159 status=00000000\nUNT-LINK id=00000006 up=00000000 status=00000000\nUNT-LINK id=00000006 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000006 up=00000000 status=00000000\nUNT-LINK id=00000006 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-release13-8127-release13-20261102-c4-passed.png",
+        "sha256": "96715ef3cf4a2e9cc1a894a8dbd381505b164e5640c91ad0b2a2c44d400e557d"
+      }
+    },
+    {
+      "cycle": 5,
+      "device": "usbnic2",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c5-absent.json",
+          "sha256": "12991fc1456ddd1a5e00f1d56329a122ddfafcba3816dde65ac2cae2e4897ed2",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c5-reinsert.json",
+          "sha256": "a92216b5f5902e2dcf6fcfefd365825525cb538902d471d1e9dfd6412d9677f8",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c5-cable-down.json",
+          "sha256": "87fa14ac32db63a82e018213d0d1efcd1dd0eef5b7b53d13b60510d670fbfd88",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c5-cable-up.json",
+          "sha256": "f656b3b1f35d3421e353b840420230ac46a9528f3a54dab60c0f2a9b06a52fed",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000002 up=00000000 status=C0000001\nUNT-DOWN id=00000002\n",
+      "reinsert_trace": "UNT-UP id=00000007 pid=00008159 status=00000000\nUNT-LINK id=00000007 up=00000000 status=00000000\nUNT-LINK id=00000007 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000007 up=00000000 status=00000000\nUNT-LINK id=00000007 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-release13-8127-release13-20261102-c5-passed.png",
+        "sha256": "b9d30f739d07afa1ff7bb245c10127c4bf2fcd47e5306dc4b927deba11f3b103"
+      }
+    },
+    {
+      "cycle": 6,
+      "device": "usbnic2",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c6-absent.json",
+          "sha256": "49df4102631860b26c56260f9c416a13d221d966c1f1060d52f7ca34ed59e79f",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c6-reinsert.json",
+          "sha256": "2268ff0a4eaa30a243b4a90ac52cc1e6069efa5756436b840d23d293995261ba",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c6-cable-down.json",
+          "sha256": "3ad91ce412507f6b7349b4e33f6658dea809bc1b9829382673e00aa2aa682430",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c6-cable-up.json",
+          "sha256": "84611b5e999704fd2cc6932c64af89cc944a360b1d8d0fd82e349f0f243e5924",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000007 up=00000000 status=C0000001\nUNT-DOWN id=00000007\n",
+      "reinsert_trace": "UNT-UP id=00000008 pid=00008157 status=00000000\nUNT-LINK id=00000008 up=00000000 status=00000000\nUNT-LINK id=00000008 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000008 up=00000000 status=00000000\nUNT-LINK id=00000008 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-release13-8127-release13-20261102-c6-passed.png",
+        "sha256": "5e9329e04b872d419945bed4878e4963e72165d4dd558dfc12b5ddce771cea80"
+      }
+    },
+    {
+      "cycle": 7,
+      "device": "usbnic2",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c7-absent.json",
+          "sha256": "39e70a1561de8afb42271e261c9cdacd01f09513574c134d759a740dc90747c3",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c7-reinsert.json",
+          "sha256": "434664efed9b8ae58827ff398c3633e15eb9c1481ce65f221e8a0f997c8b6f92",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c7-cable-down.json",
+          "sha256": "cb9a9a1ccf7487014ad1b0bc53ee4745559ae5fcf609af8795a57e500bc000f7",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c7-cable-up.json",
+          "sha256": "15f25db26b8467faec65bdab7e4a552e40ea33c86ba7ea420f484fbaa8fac8c3",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000008 up=00000000 status=C0000001\nUNT-DOWN id=00000008\n",
+      "reinsert_trace": "UNT-UP id=00000009 pid=00008156 status=00000000\nUNT-LINK id=00000009 up=00000000 status=00000000\nUNT-LINK id=00000009 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000009 up=00000000 status=00000000\nUNT-LINK id=00000009 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-release13-8127-release13-20261102-c7-passed.png",
+        "sha256": "75b04e24a4040a1f23c7aec1ec6ee1c7ad6b8710e17f8679fc7e15bddd98b61d"
+      }
+    },
+    {
+      "cycle": 8,
+      "device": "usbnic2",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c8-absent.json",
+          "sha256": "762ed6ac8f0efa0bc455d8cc7dcd6d0921cd5d0e95e1ade9ebffffa9128114ab",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c8-reinsert.json",
+          "sha256": "a3b0da1b650c03fe82a8e60308f2d83d3c26f62593c886e35a89d2bd3fcda90f",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c8-cable-down.json",
+          "sha256": "e3793358253889d11e63ce7eba17c63feb44f39318b39a90670e65aa823781e5",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-release13-8127-release13-20261102-c8-cable-up.json",
+          "sha256": "015f3bd192e55da3b73c4ce82e5996c661eb92ffa0843148b0f01e879d11a249",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000009 up=00000000 status=C0000001\nUNT-DOWN id=00000009\n",
+      "reinsert_trace": "UNT-UP id=0000000A pid=00008153 status=00000000\nUNT-LINK id=0000000A up=00000000 status=00000000\nUNT-LINK id=0000000A up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=0000000A up=00000000 status=00000000\nUNT-LINK id=0000000A up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-release13-8127-release13-20261102-c8-passed.png",
+        "sha256": "75b04e24a4040a1f23c7aec1ec6ee1c7ad6b8710e17f8679fc7e15bddd98b61d"
+      }
+    }
+  ],
+  "scope": "Legacy persistent USBNT adapters in QEMU, two EHCI siblings plus native PCI/PCIe adapter recorded in the launch manifest; actual guest payload comparisons, not physical-silicon validation",
+  "tools_sha256": {
+    "legacy_network_probe.c": "4b02046a9015753235bf06f90fe27ce612c2f492afc991dbc16997ba910194e9",
+    "LNET.EXE": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b",
+    "legacy_network_report.py": "0efc3ba390915115448fc267ef516167d2c5dfaa3d138ed8a7ef58d00c7c2bf2",
+    "legacy_sibling_cycles.py": "07f5ed93b85e35cbe54635b620bf3fd3fbca44d6e4bdfd9aace690aa33ec9673"
+  },
+  "launch": {
+    "started_at": 1793641549.0845945,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/nt4-ndis-dual-release13-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/nt4-ndis-dual-release13-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/nt4-ndis-dual-release13-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/nt4-ndis-dual-release13-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt4-ndis-dual-release13-8127/usb.pcap",
+      "-netdev",
+      "user,id=n1,net=10.0.4.0/24",
+      "-device",
+      "usb-rtl8156,id=usbnic2,bus=ehci.0,netdev=n1,mac=52:54:00:ab:cd:ee",
+      "-object",
+      "filter-dump,id=f1,netdev=n1,file=/workspace/rltklant-vm/run/nt4-ndis-dual-release13-8127/usb2.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0",
+      "-netdev",
+      "user,id=pci0,net=10.0.3.0/24",
+      "-device",
+      "rtl8127,id=pcinic,netdev=pci0",
+      "-object",
+      "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/nt4-ndis-dual-release13-8127/pci.pcap"
+    ],
+    "qemu_sha256": "7343cf9bdc4401e3be74c01fc8cd429d34291e16ae4c410bbdc0bf69df28693d"
+  },
+  "baseline": {
+    "file": "nt4-ndis-dual-release13-8127-release13-20261102-baseline.json",
+    "sha256": "495a5fcbfde23e8a87127f29e03bfd7c194e55b453140f30e7f85f0bb59a8b2a",
+    "mask": 7,
+    "full_payload_replies": 12
+  },
+  "qmp_status": {
+    "status": "running",
+    "singlestep": false,
+    "running": true
+  },
+  "full_payload_replies": 332,
+  "pcaps": {
+    "usb.pcap": {
+      "bytes": 334037,
+      "sha256": "902f479d30ae4a7bbd308197eaaad4dc7e33c10c18f5ef7d901426973a70ff3d"
+    },
+    "usb2.pcap": {
+      "bytes": 333786,
+      "sha256": "f2771221be137f1d69cbe38c875f887287f636925427a229b5c1b02736278756"
+    },
+    "pci.pcap": {
+      "bytes": 446957,
+      "sha256": "958600c4b71796d3d711b6f5e5d5b7cb80384fb6a2408948f5cb0ff103e32008"
+    }
+  },
+  "finished_utc": "2026-11-02T17:55:59.751742+00:00"
+}

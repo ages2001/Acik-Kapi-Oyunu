@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-01T20:36:15.810314+00:00",
+  "result": "FAIL",
+  "scope": "Actual NT3.1 additional-adapter installation, existing older component",
+  "observations": [
+    "RLTUSB runs from System32 and lists both instances",
+    "System32 DHCPNT31.EXE remains 21758 bytes although package contains the current 24KB client",
+    "PDKOPTIONS displays three extra blank checkboxes"
+  ],
+  "screenshots": [
+    "nt31-installed-dhcp-file-20261101.png",
+    "nt31-add-result1-20261101.png"
+  ],
+  "package_manifest": "legacy-setup-nt31-20261101/manifest.json",
+  "followup": "Copy DHCPNT31 in Install-Utility and replace PDKOPTIONS with native Yes/No. Retest v3 on a new child of the original fixture."
+}

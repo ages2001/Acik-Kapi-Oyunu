@@ -1,0 +1,1 @@
+qemu-system-x86_64: -no-hpet: warning: -no-hpet is deprecated, use '-machine hpet=off' instead

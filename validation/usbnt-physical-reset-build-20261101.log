@@ -1,0 +1,106 @@
+out/2kxp/i386/usbnt.sys: 482816 bytes, 101 imports, all present in Windows 2000
+out/2kxp/amd64/usbnt.sys: 520704 bytes, 90 imports, all present in Windows XP x64
+INF files in /workspace/rltklant-work/USBNT/build/out/2kxp - 247 device ids
+TXTSETUP.OEM in /workspace/rltklant-work/USBNT/build/out/oem - NT, 2KXP, XP64
+out/2kxp:
+total 64
+drwx------ 4 agent agent  4096 Oct 28 07:09 .
+drwx------ 4 agent agent  4096 Oct 29 21:11 ..
+drwx------ 2 agent agent  4096 Nov  1 17:24 amd64
+drwx------ 2 agent agent  4096 Nov  1 17:23 i386
+-rw------- 1 agent agent 39630 Nov  1 17:24 usbnt.inf
+-rw------- 1 agent agent   999 Nov  1 17:24 usbntkbd.inf
+-rw------- 1 agent agent   987 Nov  1 17:24 usbntmou.inf
+
+out/2kxp/amd64:
+total 1404
+drwx------ 2 agent agent   4096 Nov  1 17:24 .
+drwx------ 4 agent agent   4096 Oct 28 07:09 ..
+-rw------- 1 agent agent   2854 Nov  1 17:23 acpi.o
+-rw------- 1 agent agent  42134 Nov  1 17:23 aml.o
+-rwx------ 1 agent agent  47104 Nov  1 17:24 captest.exe
+-rw------- 1 agent agent   1665 Nov  1 17:23 dmapool.o
+-rw------- 1 agent agent  17960 Nov  1 17:23 gpio.o
+-rw------- 1 agent agent  13856 Nov  1 17:23 hcehci.o
+-rw------- 1 agent agent  10625 Nov  1 17:23 hcohci.o
+-rw------- 1 agent agent  10274 Nov  1 17:23 hcuhci.o
+-rw------- 1 agent agent  19880 Nov  1 17:23 hcxhci.o
+-rw------- 1 agent agent   9187 Nov  1 17:23 hidparse.o
+-rw------- 1 agent agent  28361 Nov  1 17:23 i2chid.o
+-rw------- 1 agent agent   2102 Nov  1 17:24 ntaudio.o
+-rw------- 1 agent agent   7899 Nov  1 17:24 ntcli.o
+-rw------- 1 agent agent  19911 Nov  1 17:24 ntinput.o
+-rw------- 1 agent agent  16600 Nov  1 17:24 ntos.o
+-rw------- 1 agent agent   8898 Nov  1 17:24 ntscsi.o
+-rw------- 1 agent agent  14675 Nov  1 17:24 nvmehp.o
+-rw------- 1 agent agent  22666 Nov  1 17:24 ps2pad.o
+-rw------- 1 agent agent   6985 Nov  1 17:24 ptp.o
+-rw------- 1 agent agent  42326 Nov  1 17:23 rtsxpci.o
+-rw------- 1 agent agent  17010 Nov  1 17:23 rtsxusb.o
+-rw------- 1 agent agent   9667 Nov  1 17:23 sdcard.o
+-rw------- 1 agent agent   6879 Nov  1 17:23 sdhci.o
+-rw------- 1 agent agent  22682 Nov  1 17:24 smbtp.o
+-rw------- 1 agent agent   8410 Nov  1 17:24 smbtpdec.o
+-rw------- 1 agent agent  11057 Nov  1 17:24 smbus.o
+-rw------- 1 agent agent  47913 Nov  1 17:24 tbt.o
+-rw------- 1 agent agent  28284 Nov  1 17:23 usbaudio.o
+-rw------- 1 agent agent  45272 Nov  1 17:23 usbcore.o
+-rw------- 1 agent agent  41931 Nov  1 17:24 usbdi.o
+-rw------- 1 agent agent  12015 Nov  1 17:23 usbhid.o
+-rw------- 1 agent agent   6912 Nov  1 17:23 usbhub.o
+-rwx------ 1 agent agent  37888 Nov  1 17:24 usbinst.exe
+-rw------- 1 agent agent  40354 Nov  1 17:23 usbmsc.o
+-rwx------ 1 agent agent 520704 Nov  1 17:24 usbnt.sys
+-rwx------ 1 agent agent  31232 Nov  1 17:24 usbntcap.dll
+-rw------- 1 agent agent   3688 Nov  1 17:23 usbutil.o
+-rw------- 1 agent agent  14949 Nov  1 17:23 usbvideo.o
+-rw------- 1 agent agent  30414 Nov  1 17:24 wdmbus.o
+-rw------- 1 agent agent   7671 Nov  1 17:24 wdmflt.o
+-rw------- 1 agent agent  19939 Nov  1 17:24 wdmmain.o
+-rw------- 1 agent agent   9369 Nov  1 17:24 wdmps2.o
+-rw------- 1 agent agent  27992 Nov  1 17:24 wdmtree.o
+
+out/2kxp/i386:
+total 1188
+drwx------ 2 agent agent   4096 Nov  1 17:23 .
+drwx------ 4 agent agent   4096 Oct 28 07:09 ..
+-rw------- 1 agent agent   2489 Nov  1 17:23 acpi.o
+-rw------- 1 agent agent  43267 Nov  1 17:23 aml.o
+-rw------- 1 agent agent   1442 Nov  1 17:23 dmapool.o
+-rw------- 1 agent agent  15860 Nov  1 17:23 gpio.o
+-rw------- 1 agent agent  12408 Nov  1 17:23 hcehci.o
+-rw------- 1 agent agent   9433 Nov  1 17:23 hcohci.o
+-rw------- 1 agent agent   9204 Nov  1 17:23 hcuhci.o
+-rw------- 1 agent agent  17413 Nov  1 17:23 hcxhci.o
+-rw------- 1 agent agent   8406 Nov  1 17:23 hidparse.o
+-rw------- 1 agent agent  26537 Nov  1 17:23 i2chid.o
+-rw------- 1 agent agent   1755 Nov  1 17:23 ntaudio.o
+-rw------- 1 agent agent   7017 Nov  1 17:23 ntcli.o
+-rw------- 1 agent agent  18763 Nov  1 17:23 ntinput.o
+-rw------- 1 agent agent  15006 Nov  1 17:23 ntos.o
+-rw------- 1 agent agent   7956 Nov  1 17:23 ntscsi.o
+-rw------- 1 agent agent  14047 Nov  1 17:23 nvmehp.o
+-rw------- 1 agent agent  20373 Nov  1 17:23 ps2pad.o
+-rw------- 1 agent agent   6808 Nov  1 17:23 ptp.o
+-rw------- 1 agent agent  35975 Nov  1 17:23 rtsxpci.o
+-rw------- 1 agent agent  13079 Nov  1 17:23 rtsxusb.o
+-rw------- 1 agent agent   8606 Nov  1 17:23 sdcard.o
+-rw------- 1 agent agent   6193 Nov  1 17:23 sdhci.o
+-rw------- 1 agent agent  20484 Nov  1 17:23 smbtp.o
+-rw------- 1 agent agent   6740 Nov  1 17:23 smbtpdec.o
+-rw------- 1 agent agent  10072 Nov  1 17:23 smbus.o
+-rw------- 1 agent agent  42836 Nov  1 17:23 tbt.o
+-rw------- 1 agent agent  26268 Nov  1 17:23 usbaudio.o
+-rw------- 1 agent agent  40491 Nov  1 17:23 usbcore.o
+-rw------- 1 agent agent  37832 Nov  1 17:23 usbdi.o
+-rw------- 1 agent agent  11576 Nov  1 17:23 usbhid.o
+-rw------- 1 agent agent   5601 Nov  1 17:23 usbhub.o
+-rw------- 1 agent agent  35310 Nov  1 17:23 usbmsc.o
+-rwx------ 1 agent agent 482816 Nov  1 17:23 usbnt.sys
+-rw------- 1 agent agent   3035 Nov  1 17:23 usbutil.o
+-rw------- 1 agent agent  13538 Nov  1 17:23 usbvideo.o
+-rw------- 1 agent agent  27965 Nov  1 17:23 wdmbus.o
+-rw------- 1 agent agent   6848 Nov  1 17:23 wdmflt.o
+-rw------- 1 agent agent  18528 Nov  1 17:23 wdmmain.o
+-rw------- 1 agent agent   9071 Nov  1 17:23 wdmps2.o
+-rw------- 1 agent agent  24844 Nov  1 17:23 wdmtree.o

@@ -1,0 +1,28 @@
+Formatting '/workspace/rltklant-vm/run/nt351-usbsetup-oldcompare-rtl8139-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-zo587uz8/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+13/6384 = 0.20% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1179648
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt351-usbsetup-oldcompare-rtl8139-8127.qcow2",
+  "sha256_before_boot": "0abd4a1381b26ca856293c8245e2fe68bb57b273b05588249107136c8a65c348",
+  "files": [
+    {
+      "guest_path": "WINNT351/SYSTEM32/DRIVERS/USBNT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-hid-reset-v1-20261102/legacy.sys",
+      "size": 412672,
+      "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241",
+      "old_size": 418304,
+      "old_sha256": "d65acc8f8d9eb3abe0c7e03cd09c26e50d6101957a95f6a128d91166ae3d8080"
+    },
+    {
+      "guest_path": "RLTTEST/USBLOG.EXE",
+      "source": "/workspace/rltklant-work/validation/USBLOG.EXE",
+      "size": 6845,
+      "sha256": "df2690acd4b575dac7d2cb94a9a271a976fbf8d422fe5bb5fb288fdef0f235e7",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

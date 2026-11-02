@@ -1,0 +1,11 @@
+PASS: live USB client cycle 1 usb-rtl8157 UNT-DOWN id=00000001 | UNT-UP id=00000002 pid=00008157 status=00000000
+PASS: live USB client cycle 2 usb-rtl8153 UNT-DOWN id=00000002 | UNT-UP id=00000003 pid=00008153 status=00000000
+PASS: live USB client cycle 3 usb-rtl8157 UNT-DOWN id=00000003 | UNT-UP id=00000004 pid=00008157 status=00000000
+PASS: live USB client cycle 4 usb-rtl8153 UNT-DOWN id=00000004 | UNT-UP id=00000005 pid=00008153 status=00000000
+PASS: live USB client cycle 5 usb-rtl8157 UNT-DOWN id=00000005 | UNT-UP id=00000006 pid=00008157 status=00000000
+PASS: live USB client cycle 6 usb-rtl8153 UNT-DOWN id=00000006 | UNT-UP id=00000007 pid=00008153 status=00000000
+PASS: live USB client cycle 7 usb-rtl8157 UNT-DOWN id=00000007 | UNT-UP id=00000008 pid=00008157 status=00000000
+PASS: live USB client cycle 8 usb-rtl8153 UNT-DOWN id=00000008 | UNT-UP id=00000009 pid=00008153 status=00000000
+PASS: live USB client cycle 9 usb-rtl8157 UNT-DOWN id=00000009 | UNT-UP id=0000000A pid=00008157 status=00000000
+PASS: live USB client cycle 10 usb-rtl8153 UNT-DOWN id=0000000A | UNT-UP id=0000000B pid=00008153 status=00000000
+QEMU status: {'status': 'running', 'singlestep': False, 'running': True} — screenshot and traffic need separate checks

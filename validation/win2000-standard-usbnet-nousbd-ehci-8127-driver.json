@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-30T06:15:38.314400+00:00",
+  "parent": "win2000-standard-usbnet-stall-ehci-8127.qcow2",
+  "files": [
+    {
+      "name": "rltklant.sys",
+      "size": 276525,
+      "sha256": "d5f100af6d6dae6a73a86213a8aba1e2aff83eb486fb285d5087a6b854be2ffb"
+    },
+    {
+      "name": "usbnt.sys",
+      "size": 480768,
+      "sha256": "4fc09eea6e29262810be29a2312a433e357c8341afdf2f3cdc6ed4bf70a464e0"
+    }
+  ],
+  "scope": "Clean-shutdown parent; offline full readback before first child boot"
+}

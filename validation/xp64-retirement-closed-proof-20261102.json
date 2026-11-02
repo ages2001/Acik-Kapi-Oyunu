@@ -1,0 +1,32 @@
+{
+  "result": "PASS_FUNCTION_MATRIX_LIMITED_CONTROLLER_POWER",
+  "guest": "xp64-usbnet-retirement-8127",
+  "drivers": {
+    "USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 525824,
+      "sha256": "413582844bb4a3c538e6d57f252b44c9674a06edead28a7977588c8c8fbd8a43"
+    },
+    "RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    }
+  },
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "matrix_full_mtu_replies": 64,
+  "individually_observed_controller_pairs": 6,
+  "controller_full_mtu_replies": 24,
+  "initialization_failures": 0,
+  "evidence": {
+    "xp64-retirement-offline-20261102/manifest.json": "597f4165d43e3c754e22369de141ac7e1e76e32aac36ea33030b1675111fd1c1",
+    "xp64-retirement-evidence-20261102/manifest.json": "98e2d8c54bb8a7e85e20d3532798de73def6bc96a87266767fa165908f5a6168",
+    "xp64-usbnet-retirement-8127-retirement-20261102-retirement-matrix.json": "e85f8c4f8554470e36ac32ff1c38fb74f0ce49802202b26892500c59d12f18c4",
+    "xp64-usbnet-retirement-8127-retirement-v2-20261102-power-each.json": "19b9a6e5d8320515aeeedc1b19f1968460252d789f96e12fd3a2604dd3877e69"
+  },
+  "scope": "Exact USBNT deferred-retirement candidate, clean shutdown and stopped-disk readback. Four emulated Realtek USB models. Controller IRPs remove/re-enumerate children; not identity-preserving sleep, actual machine ACPI S3, or physical-silicon certification. Prior collector failures and historical first-cycle Code 31 remain preserved.",
+  "utc": "2026-11-02T09:02:23.189351+00:00"
+}

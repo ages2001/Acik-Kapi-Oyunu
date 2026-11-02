@@ -1,0 +1,17 @@
+{
+  "driver_sha256": "a20b14a3d46da56251421b713d8800c019e4eaf7f7cb40aab02682a865cc0828",
+  "successful_pnp_operations": 120,
+  "working_devnodes": 6,
+  "ping": {
+    "multi-ping": {
+      "replies": 24,
+      "timeouts": 0
+    },
+    "after-ping": {
+      "replies": 24,
+      "timeouts": 0
+    }
+  },
+  "disk_controller": "AHCI",
+  "guest": "win2000-standard-multi-8127"
+}

@@ -1,0 +1,174 @@
+{
+  "utc": "2026-11-01T18:39:12.423730+00:00",
+  "guest": "nt31-image-recovery-slot-8127",
+  "payload": 1472,
+  "matched_replies": 4,
+  "pcap_sha256": "bed4af2ff77a177793794351ec6716999e6a88969daa4e0322e2e182c1a2dad4",
+  "fixture": {
+    "utc": "2026-11-01T18:31:01.821173+00:00",
+    "parent": "/workspace/rltklant-vm/run/nt31-package-guard-slot-8127.qcow2",
+    "parent_chain": [
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 3145728,
+              "filename": "/workspace/rltklant-vm/run/nt31-package-guard-slot-8127.qcow2",
+              "format": "file",
+              "actual-size": 3084288,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 419010560,
+        "filename": "/workspace/rltklant-vm/run/nt31-package-guard-slot-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 3084288,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/nt31-firmware-mmio-slot-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/nt31-firmware-mmio-slot-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 2883584,
+              "filename": "/workspace/rltklant-vm/run/nt31-firmware-mmio-slot-8127.qcow2",
+              "format": "file",
+              "actual-size": 2826240,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "raw",
+        "virtual-size": 419010560,
+        "filename": "/workspace/rltklant-vm/run/nt31-firmware-mmio-slot-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 2826240,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/nt31-firmware-mmio-slot-8127.raw",
+        "backing-filename": "/workspace/rltklant-vm/run/nt31-firmware-mmio-slot-8127.raw",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 419010560,
+              "filename": "/workspace/rltklant-vm/run/nt31-firmware-mmio-slot-8127.raw",
+              "format": "file",
+              "actual-size": 83632128,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "virtual-size": 419010560,
+        "filename": "/workspace/rltklant-vm/run/nt31-firmware-mmio-slot-8127.raw",
+        "format": "raw",
+        "actual-size": 83632128,
+        "dirty-flag": false
+      }
+    ],
+    "image": "/workspace/rltklant-vm/run/nt31-image-recovery-slot-8127.qcow2",
+    "sha256_before_boot": "bd02e779f5cdb9b1a3f3e1ddfb5d3890cb66e33bf65139920ff79437c64e10df",
+    "files": [
+      {
+        "guest_path": "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+        "source": "/workspace/rltklant-work/validation/frozen-builds/port-recovery-20261101/ndisnt31.sys",
+        "size": 506368,
+        "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca",
+        "old_size": 237056,
+        "old_sha256": "d716ee3cb2cc7ecf592e4addf395641caad8c644fbdc3df2a6058ee3032fb44a"
+      }
+    ],
+    "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+  },
+  "launch": {
+    "started_at": 1793557887.2786615,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/nt31-image-recovery-slot-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/nt31-image-recovery-slot-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/nt31-image-recovery-slot-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/nt31-image-recovery-slot-8127/serial.log",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=on",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0",
+      "-device",
+      "pcie-root-port,id=hotport,bus=pcie.0,addr=4,chassis=1,slot=1",
+      "-netdev",
+      "user,id=pci0",
+      "-device",
+      "rtl8127,id=pcinic,netdev=pci0,bus=hotport,addr=0",
+      "-object",
+      "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/nt31-image-recovery-slot-8127/pci.pcap",
+      "-global",
+      "rtl8169.io-bar=off"
+    ],
+    "qemu_sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a"
+  },
+  "scope": "Native QEMU RTL8127 PCIe profile, MMIO-only, IDE; guest screenshot confirms four replies; no physical silicon or line-rate claim"
+}

@@ -1,0 +1,234 @@
+{
+  "guest": "nt31-usbnet-unbound-fixed-8127",
+  "utc": "2026-11-01T18:15:42.114749+00:00",
+  "scope": "Actual NT3.1 unbound service unload/reload and resident image reclamation; no TCP/IP binding or traffic claim",
+  "cycles": [
+    {
+      "cycle": 1,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE5B8000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE381E44 err=0x00000000 mac=0xFE6EBDA8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 2,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE375E44 err=0x00000000 mac=0xFE6B3228\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 3,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE378E44 err=0x00000000 mac=0xFE6B53E8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 4,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE37BE44 err=0x00000000 mac=0xFE6F9268\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 5,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE37EE44 err=0x00000000 mac=0xFE6B3148\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 6,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE381E44 err=0x00000000 mac=0xFE6F95E8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 7,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE375E44 err=0x00000000 mac=0xFE6F9268\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 8,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE378E44 err=0x00000000 mac=0xFE6B9AC8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 9,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE37BE44 err=0x00000000 mac=0xFE6C7DA8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 10,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE37EE44 err=0x00000000 mac=0xFE6B53C8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    }
+  ],
+  "fixture": {
+    "utc": "2026-11-01T18:01:46.283126+00:00",
+    "parent": "/workspace/rltklant-vm/run/nt31-usbnet-image-rundown-8127.qcow2",
+    "parent_chain": [
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 3473408,
+              "filename": "/workspace/rltklant-vm/run/nt31-usbnet-image-rundown-8127.qcow2",
+              "format": "file",
+              "actual-size": 3416064,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 419010560,
+        "filename": "/workspace/rltklant-vm/run/nt31-usbnet-image-rundown-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 3416064,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/nt31-usbnet-dma-unload-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/nt31-usbnet-dma-unload-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 3473408,
+              "filename": "/workspace/rltklant-vm/run/nt31-usbnet-dma-unload-8127.qcow2",
+              "format": "file",
+              "actual-size": 3416064,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 419010560,
+        "filename": "/workspace/rltklant-vm/run/nt31-usbnet-dma-unload-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 3416064,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/nt31-usbnet-hwfixed-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/nt31-usbnet-hwfixed-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 52887552,
+              "filename": "/workspace/rltklant-vm/run/nt31-usbnet-hwfixed-8127.qcow2",
+              "format": "file",
+              "actual-size": 52768768,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "virtual-size": 419010560,
+        "filename": "/workspace/rltklant-vm/run/nt31-usbnet-hwfixed-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 52768768,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zstd",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "dirty-flag": false
+      }
+    ],
+    "image": "/workspace/rltklant-vm/run/nt31-usbnet-unbound-fixed-8127.qcow2",
+    "sha256_before_boot": "cb5bafa8b29560759024f7bf53d2fe1ad3ba5c2a072bef9f45586d4d6698944f",
+    "files": [
+      {
+        "guest_path": "WINNT31/system32/config/system",
+        "source": "/workspace/rltklant-work/validation/nt31-unbound-system-fixed-20261101",
+        "size": 643072,
+        "sha256": "c8a0dc49e1deac9ead498c37bc1d35b678891a60f52bdcd8d1a64004492a78de",
+        "old_size": 643072,
+        "old_sha256": "a613be0dd4fb281a99c608a0fb53f0d1bcf855d4e53101a814021c2a4c698972"
+      }
+    ],
+    "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+  },
+  "launch": {
+    "started_at": 1793556141.3482575,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/nt31-usbnet-unbound-fixed-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/nt31-usbnet-unbound-fixed-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/nt31-usbnet-unbound-fixed-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/nt31-usbnet-unbound-fixed-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt31-usbnet-unbound-fixed-8127/usb.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0"
+    ],
+    "qemu_sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a"
+  },
+  "trace_sha256": "ca5406d41d7603f7070a1f4812151472b8fc2aec9437d8a5e4691208e8494d47"
+}

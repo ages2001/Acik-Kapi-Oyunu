@@ -1,0 +1,210 @@
+{
+  "verified_utc": "2026-10-29T17:53:59.356928+00:00",
+  "scope": "QEMU native PCI models; matched guest echo traffic and host replies, separate screenshots corroborate guest receipt",
+  "results": [
+    {
+      "guest": "nt4-ndis-irq-slot-8127",
+      "netdev": "pci",
+      "requests": 4,
+      "replies": 4,
+      "matched": 4,
+      "pcap_sha256": "30e9edc4215ec972cfb99e78a6802763a64c00a4cea4b89f1c00f74a22f1f53d",
+      "driver": {
+        "source": "nt4-carrier.raw",
+        "target": "ndis3",
+        "sha256": "0465486a6a240d539a98ad16eb894ee86be98f6be668eb4db822eabd71e93f44",
+        "debug_build": true
+      },
+      "storage": "IDE"
+    },
+    {
+      "guest": "nt351-irq-slot-8127",
+      "netdev": "pci",
+      "requests": 4,
+      "replies": 4,
+      "matched": 4,
+      "pcap_sha256": "b2c66f8a61472e519361a71037c140886387f4c0e1d78ed278be4a9495b356a2",
+      "driver": {
+        "source": "nt351-current.raw",
+        "target": "ndis3",
+        "sha256": "0465486a6a240d539a98ad16eb894ee86be98f6be668eb4db822eabd71e93f44",
+        "debug_build": true
+      },
+      "storage": "IDE"
+    },
+    {
+      "guest": "win2000-standard-irq-multi-8127",
+      "netdev": "pci",
+      "requests": 4,
+      "replies": 4,
+      "matched": 4,
+      "pcap_sha256": "b3a630338967be4f1cb59d12d437776567ea78b102838b17ee57e99ce8d08f1f",
+      "driver": {
+        "source": "win2000-phy.raw",
+        "target": "ndis5",
+        "sha256": "90666efebc680dfd5dbe99bd22035aa626ed649d540fd93504b9e66910b3d298",
+        "debug_build": true
+      },
+      "storage": "AHCI"
+    },
+    {
+      "guest": "win2000-standard-irq-multi-8127",
+      "netdev": "extra1",
+      "requests": 8,
+      "replies": 8,
+      "matched": 8,
+      "pcap_sha256": "3dcb61c4b0301af2564151df956e4ba03aa32d77d0931b42f51e03a13b310af4",
+      "driver": {
+        "source": "win2000-phy.raw",
+        "target": "ndis5",
+        "sha256": "90666efebc680dfd5dbe99bd22035aa626ed649d540fd93504b9e66910b3d298",
+        "debug_build": true
+      },
+      "storage": "AHCI"
+    },
+    {
+      "guest": "win2000-standard-irq-multi-8127",
+      "netdev": "extra2",
+      "requests": 8,
+      "replies": 8,
+      "matched": 8,
+      "pcap_sha256": "8feef1677a01c2e9f58fcff8ce37e4e9a94c289c998b0184c6727d0a72a3c3d7",
+      "driver": {
+        "source": "win2000-phy.raw",
+        "target": "ndis5",
+        "sha256": "90666efebc680dfd5dbe99bd22035aa626ed649d540fd93504b9e66910b3d298",
+        "debug_build": true
+      },
+      "storage": "AHCI"
+    },
+    {
+      "guest": "win2000-standard-irq-multi-8127",
+      "netdev": "extra3",
+      "requests": 4,
+      "replies": 4,
+      "matched": 4,
+      "pcap_sha256": "218b1838ec3e34e10af0d6c55dd2e7b8188354d7bc408cac805f9c8c499bc9a3",
+      "driver": {
+        "source": "win2000-phy.raw",
+        "target": "ndis5",
+        "sha256": "90666efebc680dfd5dbe99bd22035aa626ed649d540fd93504b9e66910b3d298",
+        "debug_build": true
+      },
+      "storage": "AHCI"
+    },
+    {
+      "guest": "win2000-standard-irq-multi-8127",
+      "netdev": "extra4",
+      "requests": 8,
+      "replies": 8,
+      "matched": 8,
+      "pcap_sha256": "2be553fb0664535f18fad1f14acfe1daae9c710d09519a9464b0a10fc2634605",
+      "driver": {
+        "source": "win2000-phy.raw",
+        "target": "ndis5",
+        "sha256": "90666efebc680dfd5dbe99bd22035aa626ed649d540fd93504b9e66910b3d298",
+        "debug_build": true
+      },
+      "storage": "AHCI"
+    },
+    {
+      "guest": "win2000-standard-irq-multi-8127",
+      "netdev": "extra5",
+      "requests": 16,
+      "replies": 8,
+      "matched": 8,
+      "pcap_sha256": "e7223773849fc5a197ffd146f78d92d6fe0d1336d75b6ed1f9148532eac6f996",
+      "driver": {
+        "source": "win2000-phy.raw",
+        "target": "ndis5",
+        "sha256": "90666efebc680dfd5dbe99bd22035aa626ed649d540fd93504b9e66910b3d298",
+        "debug_build": true
+      },
+      "storage": "AHCI"
+    },
+    {
+      "guest": "xp64-irq-multi-8127",
+      "netdev": "pci",
+      "requests": 4,
+      "replies": 4,
+      "matched": 4,
+      "pcap_sha256": "bdc83b76885b6df6093d21db3ab58f16794419ff3fd3b0c5218fc48f4e622b07",
+      "driver": {
+        "source": "xp64-phy-multi-8127.qcow2",
+        "target": "ndis5x64",
+        "sha256": "f96ec58eac90b6d5958df41e9bba7d6282db247db362f962cb5b556d94073738"
+      },
+      "storage": "IDE"
+    },
+    {
+      "guest": "xp64-irq-multi-8127",
+      "netdev": "extra1",
+      "requests": 4,
+      "replies": 4,
+      "matched": 4,
+      "pcap_sha256": "c94eb78f8cbdbcf8cda7d851a3485317d77262af95d80046a2288808186ae80b",
+      "driver": {
+        "source": "xp64-phy-multi-8127.qcow2",
+        "target": "ndis5x64",
+        "sha256": "f96ec58eac90b6d5958df41e9bba7d6282db247db362f962cb5b556d94073738"
+      },
+      "storage": "IDE"
+    },
+    {
+      "guest": "xp64-irq-multi-8127",
+      "netdev": "extra2",
+      "requests": 4,
+      "replies": 4,
+      "matched": 4,
+      "pcap_sha256": "ae819436a90f1d5a5250c9a613c583c45393071a8877dd5e4830b782c8855a06",
+      "driver": {
+        "source": "xp64-phy-multi-8127.qcow2",
+        "target": "ndis5x64",
+        "sha256": "f96ec58eac90b6d5958df41e9bba7d6282db247db362f962cb5b556d94073738"
+      },
+      "storage": "IDE"
+    },
+    {
+      "guest": "xp64-irq-multi-8127",
+      "netdev": "extra3",
+      "requests": 4,
+      "replies": 4,
+      "matched": 4,
+      "pcap_sha256": "93755e4f8875a5ba5fd4902a2f8b36374f9e0d1cf1861804ea8dee4cd5f0fc1f",
+      "driver": {
+        "source": "xp64-phy-multi-8127.qcow2",
+        "target": "ndis5x64",
+        "sha256": "f96ec58eac90b6d5958df41e9bba7d6282db247db362f962cb5b556d94073738"
+      },
+      "storage": "IDE"
+    },
+    {
+      "guest": "xp64-irq-multi-8127",
+      "netdev": "extra4",
+      "requests": 4,
+      "replies": 4,
+      "matched": 4,
+      "pcap_sha256": "a783987fa4bb67bfcc1acd6f9f89331ef594d826bd3b4d9c2648b1d35b705733",
+      "driver": {
+        "source": "xp64-phy-multi-8127.qcow2",
+        "target": "ndis5x64",
+        "sha256": "f96ec58eac90b6d5958df41e9bba7d6282db247db362f962cb5b556d94073738"
+      },
+      "storage": "IDE"
+    },
+    {
+      "guest": "xp64-irq-multi-8127",
+      "netdev": "extra5",
+      "requests": 4,
+      "replies": 4,
+      "matched": 4,
+      "pcap_sha256": "3c9a16c0d247a6b73ec0c2f7889776732370749e1deef2a9c0b0d5f34381f243",
+      "driver": {
+        "source": "xp64-phy-multi-8127.qcow2",
+        "target": "ndis5x64",
+        "sha256": "f96ec58eac90b6d5958df41e9bba7d6282db247db362f962cb5b556d94073738"
+      },
+      "storage": "IDE"
+    }
+  ]
+}

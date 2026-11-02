@@ -1,0 +1,29 @@
+{
+  "utc": "2026-11-01T23:06:07.705696+00:00",
+  "guest": "nt31-usbsetup-v9-removed-boot-8127",
+  "result": "PASS",
+  "checks": {
+    "pci_card_removed": true,
+    "pci_parameters_removed": true,
+    "owned_startup_removed": true,
+    "unrelated_startup_preserved": true,
+    "usb_parameters_removed": true,
+    "usb_card_removed": true,
+    "shared_service_removed": true,
+    "shared_product_removed": true
+  },
+  "scope": "Actual NCPA removal, completed native TCP/IP bindings and normal shutdown readback",
+  "expected_remaining": "none",
+  "usb_parameters": null,
+  "pci_parameters": null,
+  "shared_service": null,
+  "shared_product": null,
+  "hives": {
+    "SYSTEM": "89462c71a235a2071b7d5c80d08442c05efcc876caa7dd3a15ef73e52f818b92",
+    "SOFTWARE": "3d61ce06f66212fc18e34869d2fce5eec9e1c81eecedba216caa87e28963e6b4",
+    "TEST_000": "bf72135a3b6c6d09579351c11c1c9e41fae03e7cfa0d520bbbc005a595512993"
+  },
+  "limitations": [
+    "Cold boot and surviving adapter traffic require separate evidence"
+  ]
+}

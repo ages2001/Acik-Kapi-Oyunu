@@ -1,0 +1,25 @@
+In file included from /tmp/rltk-nt31-rx-0my03j_v/test.c:6:
+/workspace/rltklant-work/RLTKLANT/src/rltkhw.h:229:14: error: unknown type name ‘ULONG’
+  229 |     volatile ULONG opts1; /* DMA ownership/status must be read each time */
+      |              ^~~~~
+/workspace/rltklant-work/RLTKLANT/src/rltkhw.h:230:5: error: unknown type name ‘ULONG’
+  230 |     ULONG   opts2;      /* vlan / checksum                              */
+      |     ^~~~~
+/workspace/rltklant-work/RLTKLANT/src/rltkhw.h:231:5: error: unknown type name ‘ULONG’
+  231 |     ULONG   addr_lo;    /* buffer physical address low                  */
+      |     ^~~~~
+/workspace/rltklant-work/RLTKLANT/src/rltkhw.h:232:5: error: unknown type name ‘ULONG’
+  232 |     ULONG   addr_hi;    /* buffer physical address high (64-bit DMA)    */
+      |     ^~~~~
+/tmp/rltk-nt31-rx-0my03j_v/test.c:16:13: error: redefinition of ‘RtlDmaBarrier’
+   16 | static void RtlDmaBarrier(void){}
+      |             ^~~~~~~~~~~~~
+/workspace/rltklant-work/RLTKLANT/src/rltkhw.h:240:22: note: previous definition of ‘RtlDmaBarrier’ with type ‘void(void)’
+  240 | static __inline void RtlDmaBarrier(void)
+      |                      ^~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_nt31_8139_ring.py", line 61, in <module>
+    subprocess.run(['gcc','-std=c99','-Wall','-Wextra','-Werror','-Wno-misleading-indentation','-fsanitize=address,undefined','-I',str(src),str(p),'-o',str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['gcc', '-std=c99', '-Wall', '-Wextra', '-Werror', '-Wno-misleading-indentation', '-fsanitize=address,undefined', '-I', '/workspace/rltklant-work/RLTKLANT/src', '/tmp/rltk-nt31-rx-0my03j_v/test.c', '-o', '/tmp/rltk-nt31-rx-0my03j_v/test']' returned non-zero exit status 1.

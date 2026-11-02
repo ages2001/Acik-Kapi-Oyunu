@@ -1,0 +1,39 @@
+{
+  "utc": "2026-11-01T23:05:09.084357+00:00",
+  "result": "PASS",
+  "checks": {
+    "DB_items_preserved": true,
+    "DC_items_preserved": true,
+    "exact_expected_refusal": true,
+    "batch_pass": true,
+    "old_owned_preserved": true,
+    "user_item_preserved": true,
+    "conflicting_user_item_preserved": true,
+    "exact_helper": true
+  },
+  "groups": {
+    "Startup": {
+      "owned_titles": 1,
+      "dhcp_commands": 1,
+      "notepad_commands": 1,
+      "user_titles": 1
+    },
+    "ConflictBoot": {
+      "owned_titles": 1,
+      "dhcp_commands": 0,
+      "notepad_commands": 1,
+      "user_titles": 0
+    }
+  },
+  "scope": "Actual NT3.1 helper refuses a same-title user command in the selected custom Startup group before deleting any owned or user items; before/after DDE item rows and offline personal groups agree",
+  "hive_sha256": {
+    "SYSTEM": "6cc1bab04562fef27377150a6d559f822a47acbf25383fe4c1bd677d22f321fe",
+    "SOFTWARE": "058ad8d1617431c85764d731e614d1bf06a94537ea85e4a0e1ea7c3d88305287",
+    "TEST_000": "ae6d83a11a39be29295df7cd925383517f98336ee10becb7c7e50428656a7a8e"
+  },
+  "fixture_note": "First batch failed before SyncStartup because the validation probe treated the redirection-adjacent space as part of the DDE group name. CFTEST2 omits that space; both scripts/results preserved.",
+  "limits": [
+    "Direct setup-helper invocation; installer failure propagation is a separate path",
+    "No claim about other users personal groups"
+  ]
+}

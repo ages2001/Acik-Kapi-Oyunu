@@ -1,0 +1,34 @@
+{
+  "usb.pcap": {
+    "bytes": 43272,
+    "sha256": "7b1936e9e9c7c4b56bd5191999973e434a12df315e1446fa942ba59cda9189c0"
+  },
+  "debug.log": {
+    "bytes": 334,
+    "sha256": "4211850d1ae29c5426e3d7bb8c6bd216989566acf15edc9aa69a32d1097817ef"
+  },
+  "pci.pcap": {
+    "bytes": 150,
+    "sha256": "6ef12a82eac168842cfb392eccb4d46f61eb458cbcc77534bbab644e409bad12"
+  },
+  "LNET.EXE": {
+    "bytes": 11159,
+    "sha256": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b"
+  },
+  "launch.json": {
+    "bytes": 1552,
+    "sha256": "0befd94e1f83a3899bcee1a301c6c15a5776f2c9ee55213647b0108e65051c1f"
+  },
+  "process-exit.json": {
+    "bytes": 52,
+    "sha256": "6b5223ba32e225ca6bb7d81afbdcadfb84595c4173c802797e1c438703e44793"
+  },
+  "serial.log": {
+    "bytes": 12,
+    "sha256": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44"
+  },
+  "LNET.LOG": {
+    "bytes": 4747,
+    "sha256": "7a328c14ecf210da237b97d3d8132a5d61de1e749ebf2c03c6d20a8b4106d1e7"
+  }
+}

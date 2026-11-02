@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T18:26:06.948538+00:00",
+  "guest": "win2000-standard-usbnet-mixed-release13-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 516096,
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b"
+    },
+    "RLTTEST/NATIVE.LOG": {
+      "file": "NATIVE.LOG",
+      "size": 78253,
+      "sha256": "70bfe0f325eb99098a256868d811adc78621a5ac811dd6805e3bdc93e52177c3"
+    }
+  }
+}

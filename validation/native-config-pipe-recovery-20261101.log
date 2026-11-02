@@ -1,0 +1,1 @@
+PASS: production SELECT_CONFIGURATION variable pipe bounds, zero initialization, descriptor metadata and allocation failures

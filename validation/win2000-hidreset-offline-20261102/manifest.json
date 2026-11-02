@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T10:12:05.817267+00:00",
+  "guest": "win2000-standard-usbnet-hidreset-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 488960,
+      "sha256": "3c9ae36eaeac2a3ff1c5e317ff8369560d57846c74f1a213f945971bf2518456"
+    },
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+    },
+    "RLTTEST/NATIVE.LOG": {
+      "file": "NATIVE.LOG",
+      "size": 64049,
+      "sha256": "6189a074187327faa367aa3fd34c56885c6a30a793ccec895bb735f72b9ffe3f"
+    }
+  }
+}

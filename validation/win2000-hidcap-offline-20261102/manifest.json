@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T09:30:09.366082+00:00",
+  "guest": "win2000-standard-usbnet-hidcap-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 488448,
+      "sha256": "b5c2198476bf007a76dcf6dd8e7a9ffcf708dc0c5a8f68e5bd10b2090a602548"
+    },
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+    },
+    "RLTTEST/NATIVE.LOG": {
+      "file": "NATIVE.LOG",
+      "size": 60317,
+      "sha256": "9ff5aac92204621de66c60ae7fe19034b33910df20b496749ad8fe4e7a6dcbdb"
+    }
+  }
+}

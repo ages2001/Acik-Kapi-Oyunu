@@ -1,0 +1,41 @@
+{
+  "utc": "2026-11-02T09:32:44.589465+00:00",
+  "guest": "nt4-ndis-dual-hidcap-8127",
+  "safeoff_screenshot": "nt4-hidcap-safeoff-20261102.png",
+  "safeoff_sha256": "c39edcc99ca4ad5a1273cea7f786278b2fd939d7e52b01bce0a898c436054fe4",
+  "files": {
+    "debug.log": {
+      "bytes": 3471,
+      "sha256": "5eb150345c14322e8d008321b79846749981ff142b8ae5aab30f291077d98f83"
+    },
+    "serial.log": {
+      "bytes": 3523,
+      "sha256": "20c0f96656011e33303bc4709c18bb35a3dde461264360eccc9dab595450752a"
+    },
+    "qemu.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "launch.json": {
+      "bytes": 1754,
+      "sha256": "9823d97f342145495153d35e726a2a4b98af63e68a0c1e1d60cff01fea9c5ffd"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "a9f45282681ad3bb506bdcb79c654240fabc981746d8f76dd7c56d17fc270b6b"
+    },
+    "pci.pcap": {
+      "bytes": 450390,
+      "sha256": "dfa15d4861c5f7aa02bff1ba6ba839f3580572c6e8f0949677272bbb0b4a25af"
+    },
+    "usb.pcap": {
+      "bytes": 337801,
+      "sha256": "2b800e0ff63e9ab9af3f5ea3898be19085426969af8364cc4e2b106df8767df8"
+    },
+    "usb2.pcap": {
+      "bytes": 337100,
+      "sha256": "56bb1b38b2de3b855b57dc527bcf5bf2b462f68aa5a9c2ecfd51d0e14573921c"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

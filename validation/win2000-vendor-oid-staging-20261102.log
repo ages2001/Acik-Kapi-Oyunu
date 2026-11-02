@@ -1,0 +1,36 @@
+Formatting '/workspace/rltklant-vm/run/win2000-standard-vendor-oid-multi-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=1747006464 backing_file=/tmp/rltk-growing-fat-pqvhk8ei/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+15/26658 = 0.06% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1310720
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/win2000-standard-vendor-oid-multi-8127.qcow2",
+  "sha256_before_boot": "fc11db6dad37b6812f6286bcb8ed80b53a63d5f5018a05d768c49a1de94ddf36",
+  "files": [
+    {
+      "guest_path": "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis5/rltklant.sys",
+      "size": 549641,
+      "sha256": "7c8f9db458130b8c75c8a3e61cba91773e5dd58ea7953c0a28e02cc96587d3d5",
+      "old_size": 549641,
+      "old_sha256": "7786b1a0d2427578d8586de7001755f3d3fe9527bd92294d0e3bae0dc7d47161"
+    },
+    {
+      "guest_path": "RLTTEST/PCRT.SYS",
+      "source": "/workspace/rltklant-work/validation/pci-reset-oid-probe-v2-20261102/PCRT32.SYS",
+      "size": 14793,
+      "sha256": "671758f48c7bf286597db08ff471ce2540fcd252c27a6174439d0885c3862d07",
+      "old_size": 14055,
+      "old_sha256": "b19e02881addef3238222ba220423b4687d840b48c1014c9f078f81916227527"
+    },
+    {
+      "guest_path": "RLTTEST/VOID.EXE",
+      "source": "/workspace/rltklant-work/validation/pci-reset-oid-probe-v2-20261102/VOID32.EXE",
+      "size": 13341,
+      "sha256": "dd862d5bd0a37a3d8a100d47c0b5c55a337d187f94716382d00537c7da378342",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

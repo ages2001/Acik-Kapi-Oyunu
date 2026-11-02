@@ -1,0 +1,12 @@
+PASS USB control binding /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-2.fw v4: 469 actual control boundaries
+PASS USB control binding /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-3.fw v5: 394 actual control boundaries
+PASS USB control binding /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-4.fw v6: 311 actual control boundaries
+PASS USB control binding /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153b-2.fw v9: 450 actual control boundaries
+PASS USB control binding /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153c-1.fw v14: 182 actual control boundaries
+PASS USB control binding /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156a-2.fw v11: 1838 actual control boundaries
+PASS USB control binding /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156b-2.fw v13: 1435 actual control boundaries
+PASS USB control binding /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156b-2.fw v15: 1435 actual control boundaries
+PASS USB control binding /workspace/rltklant-work/RLTKLANT/firmware/usb-vendor/rtl8157-vendor-0014.fw v16: 2547 actual control boundaries
+PASS USB control binding /workspace/rltklant-work/RLTKLANT/firmware/usb-vendor/rtl8159-vendor-0022.fw v17: 4439 actual control boundaries
+PASS: 27000 per-control failure/cancel schedules; exact MAC payload bytes, PHY paging and stopped-device guards
+PASS: firmware control binding cross-compiles for x86/x64

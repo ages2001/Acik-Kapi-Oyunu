@@ -1,0 +1,62 @@
+{
+  "utc": "2026-11-02T00:19:15.062983+00:00",
+  "confirmed_failures": [
+    {
+      "proof": "nt31-reconfigure-v6-proof-20261102.json",
+      "issues": [
+        "Configure changes BusType from PCI 5 to 1",
+        "Repeated DHCP Yes adds a duplicate Startup item"
+      ]
+    },
+    {
+      "proof": "nt31-update-v8b-failure-20261102.json",
+      "issues": [
+        "Update copied DLL but did not replace old INF registrations; subsequent Configure still ran v6"
+      ]
+    }
+  ],
+  "current_changes": [
+    "NT3.1 Configure writes only EnableDHCP; new instances use PCI BusType 5",
+    "NT3.5/4 Configure preserves existing backend/resources",
+    "Upgrade keeps version metadata DWORD typed",
+    "New NT3.1 setup extension checks exact owned Startup commands and preserves unrelated items",
+    "Counted CF_TEXT reader accepts native NT3.1 non-NUL-terminated replies",
+    "Explicit personal CreateGroup flag, HKCU personal-group filtering, and activation before same-name DDE request"
+  ],
+  "pending": [
+    "Remaining PCI revision, DHCP lease policy, USB sharing/power and release matrix work"
+  ],
+  "source_files": [
+    "RLTKLANT/tools/rltsetup.c",
+    "RLTKLANT/bin/NT31/OEMSETUP.INF",
+    "RLTKLANT/bin/NT35x-4/OEMSETUP.INF"
+  ],
+  "candidate": "frozen-builds/startup-maintenance-v6-20261102",
+  "verified": [
+    "Direct v4 helper custom personal Startup migration and repeat, with stopped-user-hive readback: nt31-startup-maintenance-v4-proof-20261102.json",
+    "v4 imports all resolve in supplied NT3.1 DLLs",
+    "v6 same-module double SyncStartup passes in NT3.1; v4 control reproduces second-call failure",
+    "nt31-update-v9-20261102-proof.json: actual Update plus both Configure paths; resources/selection preserved, all INF registrations and exact copies verified, owned/unrelated Startup items correct",
+    "nt31-v9-update-coldboot-proof-20261102.json: fresh boot, one automatic PCI DHCP exchange, zero disabled USB DHCP packets, 8 receipt/wire-payload replies",
+    "nt31-v9-disable-proof-20261102.json: only EnableDHCP changes; owned item removed and unrelated item preserved",
+    "nt31-v9-disabled-coldboot-proof-20261102.json: disabled cold boot, 60-second DHCP absence, unrelated Startup preserved",
+    "nt31-v9-pci-removal-20261102-proof.json: actual enabled PCI removal, USB parameters/shared service preserved, owned Startup removed",
+    "nt31-v9-pci-removed-usb-proof-20261102.json: cold boot USB survives PCI removal; four full payloads and visually reviewed inbox receipt, separate OCR failure preserved",
+    "nt351-update-v2-complete-proof-20261102.json: update/configure/cold boot and four-model reinsert/carrier, 104 recovery replies",
+    "nt4-v3-update-20261102-proof.json: all three instance Parameters preserved, four exact package files, every card/shared InfName refreshed, network providers preserved",
+    "nt4-v3-update-complete-proof-20261102.json: cold boot and dual-USB matrix, 332 checked recovery replies",
+    "nt31-v9-final-removal-complete-20261102.json: shared service removed after restart; separately diagnosed zero-adapter inbox protocol warnings",
+    "nt31-v9-conflict-proof-20261102.json: same-title user-command conflict refused without group changes",
+    "nt31-v9-custom-complete-proof-20261102.json: custom Startup migration/repeat, automatic cold-logon DORA and stopped-hive preservation",
+    "legacy-package-reproduction-20261102.json: generated media match frozen tested packages byte for byte",
+    "nt31-v9-firstinstall-complete-proof-20261102.json: first-driver-path Add Adapter, exact files/registrations and cold boot, four full-payload PCI replies",
+    "nt351-v2-pci-removal-complete-proof-20261102.json: surviving USB traffic verified from unique offline guest receipt",
+    "nt351-v2-final-removal-complete-proof-20261102.json: last adapter, product and shared service deletion after cold boot; zero-adapter inbox OS warnings separately recorded",
+    "nt4-v3-third-removal-complete-proof-20261102.json: third USB removal, survivors preserved and 8 cold-boot USB/PCI replies",
+    "nt351-v2-firstinstall-complete-proof-20261102.json: Add Adapter, exact files/registrations, cold boot DHCP and four full payloads, observed safe-off",
+    "nt4-v3-final-removal-complete-proof-20261102.json: final shared service deletion after cold boot; zero-adapter inbox warnings preserved",
+    "nt4-v3-firstinstall-complete-proof-20261102.json: native first install, exact installed files/registrations, DHCP cold boot, four full payloads and observed safe-off"
+  ],
+  "in_progress": "PCI MAC startup/resource/lifecycle integration and remaining release work",
+  "candidate_note": "v6 adds persistent INF registration with fault-tested rollback; v9 package guest validation ongoing"
+}

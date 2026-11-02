@@ -1,0 +1,60 @@
+Formatting '/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-ehci-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=1747006464 backing_file=/tmp/rltk-growing-fat-z_ktxoi2/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+43/26658 = 0.16% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 3145728
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-ehci-8127.qcow2",
+  "sha256_before_boot": "a4282125305555edadb7cb7dadfa461aafadcfd637a28488b6e0fb330f32275c",
+  "files": [
+    {
+      "guest_path": "WINNT/system32/drivers/USBNT.SYS",
+      "source": "/workspace/rltklant-work/USBNT/build/out/2kxp/i386/usbnt.sys",
+      "size": 482816,
+      "sha256": "6024aba42e9748f8653d9a32f29c8ec6242547439715d587f4e928ebf7882d4b",
+      "old_size": 480768,
+      "old_sha256": "4fc09eea6e29262810be29a2312a433e357c8341afdf2f3cdc6ed4bf70a464e0"
+    },
+    {
+      "guest_path": "WINNT/system32/drivers/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis5/rltklant.sys",
+      "size": 512069,
+      "sha256": "89f4f95de3dc3d25b45136ff97509c9c72cc2681923a520266292607daef08e2",
+      "old_size": 514732,
+      "old_sha256": "b5df28381087e2c942d5269425309e845728a658b6d8d7abafe558df4167e430"
+    },
+    {
+      "guest_path": "rlttest/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis5/rltklant.sys",
+      "size": 512069,
+      "sha256": "89f4f95de3dc3d25b45136ff97509c9c72cc2681923a520266292607daef08e2",
+      "old_size": 514732,
+      "old_sha256": "b5df28381087e2c942d5269425309e845728a658b6d8d7abafe558df4167e430"
+    },
+    {
+      "guest_path": "rlttest/i386/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis5/rltklant.sys",
+      "size": 512069,
+      "sha256": "89f4f95de3dc3d25b45136ff97509c9c72cc2681923a520266292607daef08e2",
+      "old_size": 514732,
+      "old_sha256": "b5df28381087e2c942d5269425309e845728a658b6d8d7abafe558df4167e430"
+    },
+    {
+      "guest_path": "rlttest/rreset.sys",
+      "source": "/workspace/rltklant-work/validation/rreset.sys",
+      "size": 9737,
+      "sha256": "450d0b741355e5dcec8aec0cf8e8519b97f10d71359e1c03278e835fab652b11",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "rlttest/rreset.exe",
+      "source": "/workspace/rltklant-work/validation/rreset.exe",
+      "size": 11785,
+      "sha256": "1695e9f6bc8e3b6e50548bb4c6da663c8cc25278d0447491dc040627f76ae071",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

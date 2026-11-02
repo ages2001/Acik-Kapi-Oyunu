@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-02T00:04:39.024816+00:00",
+  "result": "PASS",
+  "scope": "NT3.51 native first-driver-path Add Adapter, exact installed files/registrations, cold boot DHCP and guest payload comparison, observed normal safe-off",
+  "installation": "nt351-v2-firstinstall-20261102-proof.json",
+  "traffic": "nt351-usbsetup-v2-firstboot-check-8127-first-driver-check-20261102.json",
+  "full_payload_replies": 4,
+  "evidence": "nt351-v2-firstinstall-final-evidence-20261102/manifest.json",
+  "dhcp": "nt351-v2-firstinstall-final-evidence-20261102/dhcp.json",
+  "limits": [
+    "Existing OS/protocol configuration and OEM cache retained; not pristine OS installation.",
+    "Earlier firstboot traffic passed, but safe-off was not observed before QMP quit; that separate incomplete shutdown observation is retained.",
+    "Inbox DHCP uses distinct DISCOVER/OFFER and REQUEST/ACK transaction IDs; the earlier one-ID assertion was overstrict and is preserved separately."
+  ]
+}

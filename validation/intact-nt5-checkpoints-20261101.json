@@ -1,0 +1,165 @@
+[
+  {
+    "name": "win2000-standard-probe-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-probe-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-probe.raw"
+    ]
+  },
+  {
+    "name": "win2000-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-driver.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-firmware-multi-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-firmware-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-phy.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-firmware-nousbd-multi-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-firmware-nousbd-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-firmware-check-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-firmware-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-phy.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-irq-multi-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-irq-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-irq-multi-8127.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-ndis51-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-ndis51-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-ndis51.raw"
+    ]
+  },
+  {
+    "name": "xp64.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/xp64.qcow2",
+      "/workspace/rltklant-vm/run/xp64.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-usbnet-stall-ehci-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-inf-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-inf-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-inf.raw"
+    ]
+  },
+  {
+    "name": "xp64-irq-multi-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-multi-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-multi.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-usbnet-stall-legacyusb-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-legacyusb-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-trace-legacyusb-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-trace-legacyusb-8127.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-firmware-check-multi-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-firmware-check-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-firmware-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-phy.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-phy-multi-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-phy-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-phy.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-usbnet-native2-legacyusb-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-native2-legacyusb-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-native2-legacyusb-8127.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard.raw"
+    ]
+  },
+  {
+    "name": "win2000.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000.qcow2",
+      "/workspace/rltklant-vm/run/win2000.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-usbnet-trace-legacyusb-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-trace-legacyusb-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-trace-legacyusb-8127.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-usbnet-native-legacyusb-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-legacyusb-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-legacyusb-8127.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-firmware-loaded-multi-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-firmware-loaded-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-firmware-check-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-firmware-multi-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-phy.raw"
+    ]
+  },
+  {
+    "name": "win2000-standard-usbnet-native-ehci-8127.qcow2",
+    "chain": [
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+      "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw"
+    ]
+  }
+]

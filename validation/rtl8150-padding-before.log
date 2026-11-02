@@ -1,0 +1,85 @@
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : 2000: UHCI -> in-box (not USBNT)
+ok  : 2000: OHCI -> in-box
+ok  : 2000: EHCI -> in-box
+ok  : 2000: xHCI (USB3) -> USBNT
+ok  : 2000: USB4 -> USBNT
+ok  : XP: EHCI -> in-box
+ok  : XP: xHCI (USB3) -> USBNT
+ok  : XP x64: xHCI (USB3) -> USBNT
+ok  : XP x64: EHCI -> in-box
+ok  : prog-if 0x30 -> xHCI
+ok  : prog-if 0x40 -> USB4
+ok  : prog-if 0x20 -> EHCI
+ok  : RTL8153 recognized
+ok  : RTL8154 (USB2.0 GbE) recognized
+ok  : RTL8157 recognized
+ok  : RTL8159 (USB 10G) recognized
+ok  : RTL8159 ceiling is 10G
+ok  : wrong vendor rejected
+ok  : legacy RTL8150 supported (own backend)
+ok  : RTL8150 marked USB 1.1
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : silicon signature selects the source-verified media ceiling
+ok  : failed redetection clears stale silicon capabilities
+ok  : attach RTL8153 on NT4 succeeds
+ok  : NT4 route = USBNT
+ok  : MAC read back from IDR
+ok  : reg write is a control transfer
+ok  : bmRequestType = host-to-device vendor
+ok  : bRequest = SET_REGS
+ok  : wValue = aligned command-register DWORD
+ok  : wIndex = MCU_TYPE_PLA | byte-enable
+ok  : written byte reached the data stage
+ok  : read uses device-to-host vendor
+ok  : read returned register bytes
+ok  : TX on bulk-OUT
+ok  : TX length = desc + frame
+ok  : tx_desc opts1 low = frame len
+ok  : frame body copied after desc
+ok  : short USB transmit is not reported as successful
+ok  : short register read is rejected
+ok  : RX packet 1 parsed (len 20)
+ok  : RX next offset is 8-byte aligned (48)
+ok  : RX packet 2 parsed (len 14)
+ok  : RTL8150 recognized
+ok  : 8150 TX = frame length (no tx descriptor)
+ok  : 8150 TX copies raw frame
+FAIL: 8150 short Ethernet frames are padded to ETH_ZLEN
+FAIL: 8150 minimum-frame padding is initialized and bounded
+ok  : 8150 TX pads a 64-byte multiple
+ok  : 8150 RX strips 4-byte status
+ok  : 8150 RX is one frame per buffer (no coalescing)
+ok  : 8157 TX uses 16-byte descriptor
+ok  : 8157 TX length and signature match the wire format
+ok  : 8157 RX strips FCS and advances on a 16-byte boundary
+ok  : 8157 RX rejects truncated packet
+ok  : 8157 RX rejects overflowing offset
+ok  : 8150 stuck reset fails without enabling traffic
+ok  : 8153 stuck reset fails without enabling traffic
+ok  : 8150 attaches after reset clears
+ok  : 8150 detach clears running state
+ok  : 8150 detach uses the legacy stop register
+ok  : 8157 silicon behind PID 8156 selects v2 descriptors
+ok  : 8159 silicon selects v2 descriptors and 10G ceiling
+ok  : unknown silicon revision rejected before enabling traffic
+
+TEST FAILED (2 failures)

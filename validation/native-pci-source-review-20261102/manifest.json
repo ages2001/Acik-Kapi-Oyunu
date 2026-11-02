@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/MicrosoftDocs/windows-driver-docs",
+  "branch": "staging",
+  "path": "windows-driver-docs-pr/kernel/",
+  "files": [
+    {
+      "file": "irp-mn-read-config.md",
+      "sha256": "43b0b46436c3c6f3d78149e08fc9611a28cbd19c6b54437a854f7835551a0b66"
+    },
+    {
+      "file": "irp-mn-write-config.md",
+      "sha256": "dc8b4aaa405d3f015afaae89e74970a7eca9698141fb3f0e44ca8c0ced8256ab"
+    }
+  ],
+  "finding": "On success IoStatus.Information is the number of bytes read/written. Pending completion retains ownership; I/O must run below DISPATCH_LEVEL."
+}

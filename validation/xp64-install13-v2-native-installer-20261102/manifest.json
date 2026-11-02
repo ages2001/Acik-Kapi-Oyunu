@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-02T18:41:08.938389+00:00",
+  "guest": "xp64-usbnet-mixed-install13-v2-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/USBINS~1.EXE": {
+      "file": "USBINS~1.EXE",
+      "size": 49152,
+      "sha256": "f1731981969f303170d7bcd8d6428ec249a76698a098b6becd88735854729ceb"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-01T22:48:29.611312+00:00",
+  "result": "PASS",
+  "scope": "NT3.51 actual update/configure, cold boot, initial traffic and four USB models with reinsert/carrier interruption, PCI traffic preserved",
+  "install": "nt351-update-v2-proof-20261102.json",
+  "coldboot_traffic": "nt351-usbsetup-update-v2-reboot-8127-update-v2-20261102.json",
+  "recovery": "nt351-usbsetup-update-v2-reboot-8127-updated-v2-20261102-sibling-matrix.json",
+  "recovery_sha256": "6352e4a760ca1cf6ac8da1cb40e9e995cd67cc4b6146db8d3eb300886f6c01e1",
+  "models": [
+    "usb-rtl8153",
+    "usb-rtl8156",
+    "usb-rtl8157",
+    "usb-rtl8159"
+  ],
+  "recovery_replies": 104,
+  "initial_replies": 8,
+  "limits": [
+    "QEMU protocol model evidence, not PHY MCU execution or physical-silicon certification",
+    "No NT3.50 claim"
+  ]
+}

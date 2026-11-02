@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T10:15:10.419474+00:00",
+  "guest": "nt4-ndis-dual-hidreset-8127",
+  "files": {
+    "WINNT4/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 412672,
+      "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241"
+    },
+    "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-01T22:18:26.179428+00:00",
+  "result": "PASS",
+  "candidate": "frozen-builds/startup-maintenance-v6-20261102/manifest.json",
+  "scope": "Actual NT3.1: two SyncStartup exports in one DLL load both return Success; the v4 control fails on its second call",
+  "screenshot": "nt31-startup-helper-v6-same-module-20261102.png",
+  "control": "nt31-startup-maintenance-v4-same-module-failure-20261102.json",
+  "limits": [
+    "Does not yet prove NCPA persistent-INF registration or removal"
+  ]
+}

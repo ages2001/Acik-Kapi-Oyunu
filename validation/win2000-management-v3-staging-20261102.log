@@ -1,0 +1,9 @@
+Error reading FAT
+Cannot initialize '::'
+::/: Success
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/stage_fat_hardware.py", line 50, in <module>
+    subprocess.run(['mcopy','-s','-i',device,str(source_tree),'::/'],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['mcopy', '-s', '-i', '/tmp/rltk-growing-fat-055nbf0i/copy.raw@@32256', '/workspace/rltklant-work/validation/pci-management-install-v1-20261102/RMGMT', '::/']' returned non-zero exit status 1.

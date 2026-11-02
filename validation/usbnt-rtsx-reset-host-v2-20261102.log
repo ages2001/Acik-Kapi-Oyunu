@@ -1,0 +1,1 @@
+PASS: 2800 reset/failure/retry schedules; 256-opcode stopped-state admission; no hardware polling after failure; stable target/identity; absent card and removal

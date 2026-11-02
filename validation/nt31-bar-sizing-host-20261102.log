@@ -1,0 +1,1 @@
+PASS: NT3.1 PCI multifunction/claims/class/W1C, MMIO-only and preferred mapping, map failure/fallback, unmap and 64-bit BAR guards

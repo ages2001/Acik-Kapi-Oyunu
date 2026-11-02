@@ -1,0 +1,29 @@
+{
+  "utc": "2026-11-01T20:00:25.131537+00:00",
+  "guest": "nt4-ndis-setup-upgrade-8127",
+  "rows": [
+    {
+      "netdev": "usb",
+      "target": "10.0.2.2",
+      "payload": 1472,
+      "requests": 4,
+      "matched_replies": 4,
+      "pcap_sha256_at_check": "510c75a3fb58d733f7a0f3c8a94dd2be62581fceebc758118fd3417e36e051ee",
+      "pcap_prefix_bytes": 36751
+    },
+    {
+      "netdev": "pci",
+      "target": "10.0.3.2",
+      "payload": 1472,
+      "requests": 4,
+      "matched_replies": 4,
+      "pcap_sha256_at_check": "a32e8b2dc3379cdc0178b842889eafb14b79694d137a5ee7102812f06f12baed",
+      "pcap_prefix_bytes": 43363
+    }
+  ],
+  "scope": "Exact full-MTU request/reply match in separate USB and PCI capture paths; guest screenshots separately corroborate received replies. No physical-device claim.",
+  "guest_screenshots": {
+    "nt4-installed-usb-ping-20261101.png": "e22d81b997a5454e48baa969e2ee9b38bc4a9d5ed20f2c6e033f64a48727ca7e",
+    "nt4-installed-dual-network-ping-20261101.png": "bd942ac96e36618b7a0fc06fe9c5d6d3ac8578fa931595eecba794e69024bb22"
+  }
+}

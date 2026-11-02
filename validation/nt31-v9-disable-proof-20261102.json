@@ -1,0 +1,30 @@
+{
+  "utc": "2026-11-01T22:35:44.187185+00:00",
+  "result": "PASS",
+  "scope": "Actual NT3.1 NCPA Configure PCI DHCP No, normal binding completion and shutdown. Only EnableDHCP changed; no DHCP-enabled adapters remain.",
+  "parameter_changes": {
+    "RLTKLANT01": {},
+    "RLTKLANT02": {
+      "EnableDHCP": [
+        1,
+        0
+      ]
+    }
+  },
+  "startup_counts": {
+    "owned_title": 0,
+    "owned_command": 0,
+    "unrelated_title": 1,
+    "unrelated_command": 1
+  },
+  "hive_sha256": {
+    "SYSTEM": "da5d995935ce9cf94192500bf93195bcf52e624e1df32d5286c747f85a549f72",
+    "SOFTWARE": "9c8d0804f3033ed63e92a94a8ad1cf1791914707858d3f424ea90f4cb695683a",
+    "TEST_000": "5bef388b2d05a1b7eed729a78624e13c956e5355549eb185675009a431254cb0"
+  },
+  "screenshot": "nt31-v9-disable-safe-off-20261102.png",
+  "limits": [
+    "Separate cold boot needed to prove no automatic DHCP execution",
+    "Adapter removal is a separate path"
+  ]
+}

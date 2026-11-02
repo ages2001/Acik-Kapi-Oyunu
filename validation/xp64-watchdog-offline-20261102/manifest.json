@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-02T01:30:42.328061+00:00",
+  "guest": "xp64-watchdog-multi-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 576223,
+      "sha256": "23121df2ace22d0a070d76fd6b40d942f77b07e2bbd611dd91ee8b1ad74456e0"
+    }
+  }
+}

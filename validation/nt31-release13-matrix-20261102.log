@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/legacy_network_report.py", line 17, in <module>
+    data, peer = receiver.recvfrom(4096)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/legacy_sibling_cycles.py", line 79, in <module>
+    result['baseline'] = probe(tag + '-baseline', all_paths); save()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/rltklant-work/validation/legacy_sibling_cycles.py", line 72, in probe
+    subprocess.run([sys.executable, str(here / helper), guest, token, str(mask)], check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/workspace/rltklant-tools/venv/bin/python3', '/workspace/rltklant-work/validation/legacy_network_report.py', 'nt31-usbsetup-release13-rtl8117-8127', 'release13-20261102-baseline', '3']' returned non-zero exit status 1.

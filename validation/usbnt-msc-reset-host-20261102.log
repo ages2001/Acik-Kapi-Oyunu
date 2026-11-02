@@ -1,0 +1,1 @@
+RESULT msc-reset PASS: 500 BOT/CBI/CBI-interrupt/UAS-HS/UAS-SS fixtures; every alternate/endpoint/stream restore failure and retry; stable slots/IU buffers; queued request failure; identity rejection; removal after failed reset

@@ -1,0 +1,26 @@
+{
+  "upstream_commit": "11aa0b1ff115b86160c4d37e7c37e6a6b13b77ea",
+  "status": " M hw/i2c/meson.build\n M hw/net/meson.build\n M hw/net/rtl8139.c\n M hw/usb/dev-hid.c\n M hw/usb/dev-hub.c\n M hw/usb/hcd-ehci.c\n M hw/usb/meson.build\n?? build\n?? hw/i2c/dw_i2c_pci.c\n?? hw/i2c/i2c_hid_dev.c\n?? hw/net/rtl8169.c\n?? hw/usb/dev-rtl8153.c\n?? hw/usb/dev-rtsx-usb.c\n?? hw/usb/dev-uac.c\n?? hw/usb/dev-uvc.c\n?? hw/usb/rtl8150-core.h\n?? hw/usb/rtl8153-hid-test.h\n?? hw/usb/rtl815x-core.h\n?? hw/usb/rtl815x-fwchecks.h\n?? hw/usb/rtl815x-transfer.h\n?? hw/usb/rtsx-engine.h\n?? hw/usb/rtsx-pci.c\n?? hw/usb/usb4-nhi.c\n",
+  "submodule_status": "-90c488d5f4a407342247b9ea869df1c2d9c8e266 roms/QemuMacDrivers\n-3a259df2449fc4a4e43ab5f33f0b2c66484b4bc3 roms/SLOF\n-edc6681206c1a8791981a2f911d2fb8b3d2f5768 roms/edk2\n-4bd064de239dab2426b31c9789a1f4d78087dc63 roms/ipxe\n-af97fd7af5e7c18f591a7b987291d3db4ffb28b5 roms/openbios\n-057eb10b6d523540012e6947d5c9f63e95244e94 roms/opensbi\n-8ca302e86d685fa05b16e2b208888243da319941 roms/qboot\n-99d9b4dcf27d7fbcbadab71bdc88ef6531baf6bf roms/qemu-palcode\n-a6ed6b701f0a57db0569ab98b0661c12a6ec3ff8 roms/seabios\n-e4eac85880e8677f96d8b9e94de9f2eec9c0751f roms/seabios-hppa\n-24a7eb35966d93455520bc2debdd7954314b638b roms/skiboot\n-840658b093976390e9537724f802281c9c8439f5 roms/u-boot\n-60b3916f33e617a815973c5a6df77055b2e3a588 roms/u-boot-sam460ex\n-0c37a43527f0ee2b9584e7fb2fdc805e902635ac roms/vbootrom\n-77c800186f34b21be7660750577cc5582a914deb tests/lcitool/libvirt-ci\n",
+  "source_submodule_directories": [
+    "roms/QemuMacDrivers",
+    "roms/SLOF",
+    "roms/edk2",
+    "roms/ipxe",
+    "roms/openbios",
+    "roms/opensbi",
+    "roms/qboot",
+    "roms/qemu-palcode",
+    "roms/seabios",
+    "roms/seabios-hppa",
+    "roms/skiboot",
+    "roms/u-boot",
+    "roms/u-boot-sam460ex",
+    "roms/vbootrom",
+    "subprojects/libvduse/linux-headers/linux",
+    "subprojects/libvduse/standard-headers/linux",
+    "subprojects/libvhost-user/standard-headers/linux",
+    "tests/lcitool/libvirt-ci"
+  ],
+  "runtime": "qemu-runtime/*.xz are the exact fixture executables; use -L qemu-source/pc-bios after extraction. Host shared libraries and compiler dependencies are external prerequisites."
+}

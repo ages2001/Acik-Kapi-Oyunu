@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-01T21:10:56.652076+00:00",
+  "guest": "nt31-usbsetup-ncpa-v4-reboot-8127",
+  "pcap_offsets": {
+    "usb.pcap": 178104,
+    "pci.pcap": 242567
+  },
+  "candidate": "frozen-builds/dhcp-interface-route-20261101/manifest.json",
+  "command": "C:\\RLTTEST\\DHCPRTE.EXE /auto /apply",
+  "expected_enabled_service": "RLTKLANT02",
+  "expected_skipped_service": "RLTKLANT01",
+  "expected_network": "10.0.3.0/24",
+  "scope": "Distinct already-configured subnets; overlapping/unconfigured multiple networks deliberately rejected"
+}

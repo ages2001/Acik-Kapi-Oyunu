@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/torvalds/linux",
+  "commit": "65ba8f34ec886ec72b2c07ddc8cf3d815c32869d",
+  "path": "drivers/net/ethernet/realtek/r8169_phy_config.c",
+  "sha256": "11a8ef375261e3aa3575ac641ea413f3c951d2cbf3b716bfd241b2c9ef78819c",
+  "license": "GPL-2.0-only",
+  "changes": [
+    "Replace Linux includes with the local serialized, bounded and error-tracking PHY transport. Register sequences remain unchanged.",
+    "Use explicit MAC version suffix values for the local dispatch ABI."
+  ],
+  "scope": "PHY initialization sequences only. Does not provide the separate MAC initialization, power/lifecycle, or physical validation."
+}

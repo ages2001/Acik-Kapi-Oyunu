@@ -1,0 +1,1 @@
+PASS: 27 clear/reset fault combinations, control-before-DATA0 ordering, no false success or halt clearing, abort and invalid handles

@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-01T23:45:17.027821+00:00",
+  "result": "PASS",
+  "scope": "NT3.1 cold boot and full-MTU traffic on three constrained RTL8125A PCI alias model profiles",
+  "aliases": {
+    "3000": {
+      "report": "nt31-usbsetup-alias3000-8127-pci-alias-20261102.json",
+      "final_evidence": "nt31-pci-alias-final-evidence-20261102/3000/manifest.json",
+      "safe_shutdown": "nt31-alias3000-safeoff-20261102.png"
+    },
+    "5000": {
+      "report": "nt31-usbsetup-alias5000-8127-pci-alias-20261102.json",
+      "final_evidence": "nt31-pci-alias-final-evidence-20261102/5000/manifest.json",
+      "safe_shutdown": "nt31-alias5000-safeoff-20261102.png"
+    },
+    "0e10": {
+      "report": "nt31-usbsetup-alias0e10-8127-pci-alias-20261102.json",
+      "final_evidence": "nt31-pci-alias-final-evidence-20261102/0e10/manifest.json",
+      "safe_shutdown": "nt31-alias0e10-safeoff-20261102.png"
+    }
+  },
+  "full_payload_replies": 12,
+  "limits": [
+    "All aliases use the same modeled RTL8125A XID 0x609 register contract; this does not establish independent physical revision behavior.",
+    "Inbox ping confirms guest receipt; the host compares all 1472 ICMP payload bytes."
+  ]
+}

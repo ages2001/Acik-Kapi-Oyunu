@@ -1,0 +1,7 @@
+test: /tmp/usbnt-select-config-bdlgg54a/test.c:106: main: Assertion `j.St==STATUS_INVALID_PARAMETER&&u->UrbHeader.Status==USBD_STATUS_INAVLID_CONFIGURATION_DESCRIPTOR' failed.
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/USBNT/test/host/tselectconfig.py", line 79, in <module>
+    subprocess.run([str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/usbnt-select-config-bdlgg54a/test']' died with <Signals.SIGABRT: 6>.

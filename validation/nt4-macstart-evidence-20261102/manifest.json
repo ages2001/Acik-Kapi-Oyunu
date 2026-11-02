@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-02T01:45:09.782880+00:00",
+  "guest": "nt4-ndis-macstart-8127",
+  "safeoff_screenshot": "nt4-macstart-safeoff-20261102.png",
+  "safeoff_sha256": "c39edcc99ca4ad5a1273cea7f786278b2fd939d7e52b01bce0a898c436054fe4",
+  "files": {
+    "debug.log": {
+      "bytes": 833,
+      "sha256": "b8b5917b263f9aa71b9f22792e5e31cf06d6caa65a970b8717286ad630fec817"
+    },
+    "serial.log": {
+      "bytes": 1571,
+      "sha256": "475fe34f020a3c3d53d79d4f36d13f5547438c9577ecaa5e8ca085d190862481"
+    },
+    "qemu.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "launch.json": {
+      "bytes": 1481,
+      "sha256": "ad29fc85c505fa5c28c74eeeda1992a1277f2de350840b0fec929a86f452ed87"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "1f9e88ca9fad48cd52b221677260abc6a89484725f2592e369062e4a0bb2a01d"
+    },
+    "pci.pcap": {
+      "bytes": 45268,
+      "sha256": "29a175d1fec332e7bf2b35e01932cca8cbd04bc0704a0a66ec9b8c9d91b1a97e"
+    },
+    "usb.pcap": {
+      "bytes": 150,
+      "sha256": "825355077e5e9fc483e1d50a5769aecb592ad432992caa0dff6602460cac560c"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

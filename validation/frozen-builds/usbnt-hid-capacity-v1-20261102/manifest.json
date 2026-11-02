@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-02T09:13:34.118339+00:00",
+  "scope": "Unreleased HID composite-capacity fix on top of controller, PDO-identity and deferred-retirement candidate; Windows installed-binary checks pending.",
+  "files": {
+    "legacy": {
+      "size": 411648,
+      "sha256": "92d6f836da50302b026ac16f1e02daba932dbebd3c233beab1a8eb4374b53d4c"
+    },
+    "i386": {
+      "size": 488448,
+      "sha256": "b5c2198476bf007a76dcf6dd8e7a9ffcf708dc0c5a8f68e5bd10b2090a602548"
+    },
+    "amd64": {
+      "size": 525824,
+      "sha256": "d3a7cd5d345b310f38396c40c25f84ade337e73be138cd2aa6c1fba25080833f"
+    },
+    "harness": {
+      "size": 1727944,
+      "sha256": "2d99796696b89de97f01ed8df9f9dc8d57f505efdc74b618011359f619284c84"
+    }
+  }
+}

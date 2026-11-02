@@ -1,0 +1,27 @@
+{
+  "guest": "nt31-usbsetup-management-ep-v2-8127",
+  "token": "management-ep-hotplug-20261102-c4-cable-down",
+  "mask": 2,
+  "result": "PASS",
+  "utc": "2026-11-02T05:15:47.501876+00:00",
+  "paths": [
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 206016,
+      "end_offset": 218256,
+      "capture_prefix_sha256": "7dc581576d180ddd1a735b6921379eea3d4935a03c298e86b9eb5f619af8fe56",
+      "screenshot": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c4-cable-down-pci.png",
+      "ocr": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c4-cable-down-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "2a012455c57365d6f5d69c7754b3545fdfd2b95052a8be6e558f37613a8cc316"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 4,
+  "finished_utc": "2026-11-02T05:15:53.267241+00:00"
+}

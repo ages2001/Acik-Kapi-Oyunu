@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-01T21:24:29.825940+00:00",
+  "candidate": "frozen-builds/dhcp-interface-bind-20261101/manifest.json",
+  "result": "PASS",
+  "winsock_reference_sha256": "84ca98754d5b3a289aa6d002b45d68ed7794afdb95622366be9b1836712e433a",
+  "winsock_imports": [
+    "WSACleanup",
+    "WSAStartup",
+    "bind",
+    "closesocket",
+    "htonl",
+    "htons",
+    "inet_addr",
+    "ntohl",
+    "recvfrom",
+    "select",
+    "sendto",
+    "setsockopt",
+    "socket"
+  ],
+  "host_regressions": [
+    "production packet truncation/identity/TLV bounds and 65536 fuzz datagrams (ASan/UBSan)",
+    "selected local IPv4 source, overlap/unconfigured rejection, automatic opt-in, select timeout/receive behavior (ASan/UBSan)",
+    "per-instance MAC publication and DNS registry configuration failure schedules (ASan/UBSan)"
+  ],
+  "limitations": "Extracted production helper tests do not substitute for actual guest exchange; see separate guest proof."
+}

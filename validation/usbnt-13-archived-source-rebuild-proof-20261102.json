@@ -1,0 +1,74 @@
+{
+  "utc": "2026-11-02T18:03:11.618462+00:00",
+  "result": "PASS_EXACT_BINARIES_AND_OEM_PAYLOADS",
+  "scope": "310 archived working-source files independently extracted and rebuilt. All 12 distributed PE files and OEM payload files match the frozen candidate byte for byte; FAT image timestamps are not asserted identical. No compiler/linker warnings or errors.",
+  "files": [
+    {
+      "file": "legacy.sys",
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e",
+      "size": 434176
+    },
+    {
+      "file": "i386.sys",
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b",
+      "size": 516096
+    },
+    {
+      "file": "amd64.sys",
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1",
+      "size": 565248
+    },
+    {
+      "file": "tools/usbcam.exe",
+      "sha256": "551a9cb25d4b7e06607a4a56beada4358694cd04de013c2532af7de2c6f98251",
+      "size": 61440
+    },
+    {
+      "file": "tools/usbntcap.dll",
+      "sha256": "75c8e1955520c58fb464ba158472cbb0b2f730b039e739cc8919a473c3ba33fd",
+      "size": 53248
+    },
+    {
+      "file": "tools/usbmon.exe",
+      "sha256": "e9e4f94035fc5d5d431b1b1f7be05bd53034d51b7fabd0f252080f799f65213a",
+      "size": 49152
+    },
+    {
+      "file": "tools/usbinst.exe",
+      "sha256": "94574174a470c4221ad032ef436a2f51fe549faa7d5e37db8869f3e6b6db1c84",
+      "size": 45056
+    },
+    {
+      "file": "tools/usbtree.exe",
+      "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a",
+      "size": 57344
+    },
+    {
+      "file": "tools/wheeltst.exe",
+      "sha256": "1e94aef5306df6f95503a0c85ef3bd250bb84061defd60b0ee5d22fbeff74b9c",
+      "size": 24576
+    },
+    {
+      "file": "tools/usbeject.exe",
+      "sha256": "8633a07d0a6fdf75b5865a82c5ef3f7818bfd101135fce0d53ebce3137077eb0",
+      "size": 28672
+    },
+    {
+      "file": "tools/amd64/usbinst.exe",
+      "sha256": "3ed814bdca51a86545b26bed7545f4158059fe1a125ff741f5ccfa247a4cc0ba",
+      "size": 49152
+    },
+    {
+      "file": "tools/amd64/usbntcap.dll",
+      "sha256": "73d3f34cf0594b862d66c87a479ffa701de7414fd6d6b5ee80cb2f9c7bb4f3a3",
+      "size": 49152
+    }
+  ],
+  "logs": {
+    "usbnt-13-archive-legacy-build-20261102.log": "6413a71eff9e88d6668baf4b8e1af9665723abf49e7ae564b7553c0bb54baecb",
+    "usbnt-13-archive-tools-build-20261102.log": "1f47ddda9d5dddf01dd5a83ab4e96993b528c71f07383ae23d4e0109ce5b011b",
+    "usbnt-13-archive-wdm-build-20261102.log": "7dc7a74218c045bb64b2c5de1b2ee729ec5e006995c5b1e4999884b2df14f17a",
+    "usbnt-13-archive-oem-build-20261102.log": "2e8e5ff607cd2c651eb236585bcea0ef4671eedb6c15bf59c14730d36cff8dc5"
+  },
+  "archive_sha256": "68d2fbcc95289f675e1d0d5b45599113116b66e44e8a500ecab61efc30af3ccc"
+}

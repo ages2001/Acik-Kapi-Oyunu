@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-30T05:28:40.418718+00:00",
+  "driver": {
+    "guest": "nt31-firmware-slot-8127",
+    "utc": "2026-10-30T05:06:38.610678+00:00",
+    "source": "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys",
+    "size": 230912,
+    "sha256": "0643b4cbc540cd76d3fe08160f3284beb66058b4d836f8860bec2ca558350711",
+    "previous_checkpoint": "nt31-ownership-slot-8127.raw",
+    "scope": "IDE/native PCIe RTL8127; passive initial PHY/firmware upload. MCU instruction execution/physical calibration not modeled."
+  },
+  "scope": "QEMU PCIe RTL8127 / IDE: full-MTU ICMP payload/ID/sequence matching. HTTP 200 corroborated separately by guest screenshot. Initial firmware upload; no MCU execution/physical calibration.",
+  "matched": 4,
+  "pcap_sha256": "754132047dbc7c77de2fbd4ee86166a3a4f901f08de111b9775b5c823b197417"
+}

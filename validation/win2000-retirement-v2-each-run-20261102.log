@@ -1,0 +1,68 @@
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-device-1-notice0.png
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-device-1-notice1.png
+Dismissed 1 confirmed unsafe-removal notices
+TOKEN retirement-v2-20261102-device-1
+DEVICE USB\VID_0BDA&PID_8153\0001-0000:00:03.0-1
+NAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472
+PASS
+
+PASS device 1: actual initialization and four full-MTU replies
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-device-2-notice0.png
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-device-2-notice1.png
+Dismissed 1 confirmed unsafe-removal notices
+TOKEN retirement-v2-20261102-device-2
+DEVICE USB\VID_0BDA&PID_8153\0001-0000:00:03.0-1
+NAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472
+PASS
+
+PASS device 2: actual initialization and four full-MTU replies
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-device-3-notice0.png
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-device-3-notice1.png
+Dismissed 1 confirmed unsafe-removal notices
+TOKEN retirement-v2-20261102-device-3
+DEVICE USB\VID_0BDA&PID_8153\0001-0000:00:03.0-1
+NAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472
+PASS
+
+PASS device 3: actual initialization and four full-MTU replies
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-system-1-notice0.png
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-system-1-notice1.png
+Dismissed 1 confirmed unsafe-removal notices
+TOKEN retirement-v2-20261102-system-1
+DEVICE USB\VID_0BDA&PID_8153\0001-0000:00:03.0-1
+NAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472
+PASS
+
+PASS system 1: actual initialization and four full-MTU replies
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-system-2-notice0.png
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-system-2-notice1.png
+Dismissed 1 confirmed unsafe-removal notices
+TOKEN retirement-v2-20261102-system-2
+DEVICE USB\VID_0BDA&PID_8153\0001-0000:00:03.0-1
+NAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472
+PASS
+
+PASS system 2: actual initialization and four full-MTU replies
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-system-3-notice0.png
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-system-3-notice1.png
+Dismissed 1 confirmed unsafe-removal notices
+TOKEN retirement-v2-20261102-system-3
+DEVICE USB\VID_0BDA&PID_8153\0001-0000:00:03.0-1
+NAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472
+PASS
+
+PASS system 3: actual initialization and four full-MTU replies
+/workspace/rltklant-work/validation/win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-power-each-screen.png
+LIMITED_PASS: six individually observed re-enumerations; not identity-preserving sleep

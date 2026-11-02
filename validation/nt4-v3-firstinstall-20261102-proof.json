@@ -1,0 +1,52 @@
+{
+  "utc": "2026-11-02T00:14:01.035684+00:00",
+  "result": "PASS",
+  "guest": "nt4-ndis-v3-firstinstall-8127",
+  "package": "legacy-setup-nt35-v2-20261102",
+  "preconditions": "nt4-v3-firstinstall-20261102-preconditions/manifest.json",
+  "checks": {
+    "one_adapter": true,
+    "shared_service_present": true,
+    "shared_product_present": true,
+    "all_files_exact": true,
+    "private_inf_registered": true,
+    "pci_bus_type": true,
+    "dhcp_enabled": true,
+    "providers_preserved": true
+  },
+  "exact_copies": {
+    "RLTSETUP.DLL": true,
+    "RLTKNT35.INF": true,
+    "RLTUSB.EXE": true,
+    "RLTKLANT.SYS": true
+  },
+  "registrations": {
+    "1": {
+      "InfName": "RLTKNT35.INF",
+      "type": "rltklant rltklantAdapter",
+      "bindform": "\"RLTKLANT1\" yes yes container",
+      "class": [
+        "rltklantAdapter basic"
+      ],
+      "InfOption": "RLTKLANT"
+    },
+    "software": {
+      "InfName": "RLTKNT35.INF",
+      "type": "rltklantSys ndisDriver rltklantDriver",
+      "use": "driver",
+      "bindform": "\"rltklantSys\" yes no container",
+      "class": [
+        "rltklantDriver basic"
+      ],
+      "bindable": [
+        "rltklantDriver rltklantAdapter non exclusive 100"
+      ],
+      "InfOption": "RLTKLANT"
+    }
+  },
+  "registry": "nt4-v3-firstinstall-20261102-registry.json",
+  "scope": "Actual native Add Adapter from absent registrations/files, DHCP Yes, completed native binding and normal shutdown; cold boot/traffic separate",
+  "limits": [
+    "Existing OS/protocol configuration and OEM cache retained; not a pristine OS installation"
+  ]
+}

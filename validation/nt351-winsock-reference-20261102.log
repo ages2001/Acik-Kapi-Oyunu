@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-02T05:19:22.799866+00:00",
+  "guest": "nt351-usbsetup-macstart-8127",
+  "files": {
+    "WINNT351/SYSTEM32/WSOCK32.DLL": {
+      "file": "WSOCK32.DLL",
+      "size": 101184,
+      "sha256": "b61f596e8f8047c0b96f472da6c15c80231e17c93e30d1cdcf6a7f632331d23f"
+    }
+  }
+}

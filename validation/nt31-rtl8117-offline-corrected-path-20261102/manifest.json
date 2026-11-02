@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-02T06:57:30.391181+00:00",
+  "guest": "nt31-usbsetup-rtl8117-8127",
+  "files": {
+    "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 538112,
+      "sha256": "3e6e3d0e406850e579692e89c08cc8e6d3ac6c06620f8cfaac3a87d42f5254e2"
+    },
+    "RLTTEST/TCP31.EXE": {
+      "file": "TCP31.EXE",
+      "size": 12024,
+      "sha256": "e23a00ee62d2eea2ecf3f824e5ba15461664b1d9f8354685f046a6493307c5bd"
+    },
+    "RLTTEST/R7BASE.LOG": {
+      "file": "R7BASE.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    },
+    "RLTTEST/R7RESET.LOG": {
+      "file": "R7RESET.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    }
+  }
+}

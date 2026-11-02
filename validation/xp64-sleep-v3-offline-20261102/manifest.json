@@ -1,0 +1,71 @@
+{
+  "utc": "2026-11-02T16:27:55.781550+00:00",
+  "guest": "xp64-usbnet-mixed-sleep-v3-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 539648,
+      "sha256": "44a78f6b6ac9e4ab6f82e07e0f1bfe5c9b51332857d095b4d271f49140c56763"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    },
+    "RLTTEST/SLPDONE.TXT": {
+      "file": "SLPDONE.TXT",
+      "size": 2484,
+      "sha256": "8221ffc461a6c754ef685de92f0b76781017e58fc25a8472c737628d8d57e236"
+    },
+    "RLTTEST/USBLOG.TXT": {
+      "file": "USBLOG.TXT",
+      "size": 3861,
+      "sha256": "e85dc8d01da908e620ab2d351904e1201bca0b63c09fa2197c7c2a1356566502"
+    },
+    "MIXTEST/KEY.LOG": {
+      "file": "KEY.LOG",
+      "size": 2046,
+      "sha256": "9dc71c443fed627facfb4f737eca5b3a41974fdac25023d4067472dc3ae90e29"
+    },
+    "RLTTEST/HCPOWER.EXE": {
+      "file": "HCPOWER.EXE",
+      "size": 11754,
+      "sha256": "5d41ac14ae793f0470039924d248b929472d35f79990742e48010289395c9b93"
+    },
+    "RLTTEST/HCPOWER.SYS": {
+      "file": "HCPOWER.SYS",
+      "size": 11433,
+      "sha256": "217ebb498a307eb77ff6581b0d3c63002fa2a134876fcdeccf5769948ae1091f"
+    },
+    "RLTTEST/SLPTEST.EXE": {
+      "file": "SLPTEST.EXE",
+      "size": 11931,
+      "sha256": "d549ed45ecfcdcabdc23fc5dcf54b2c356d7775e3c549a3002c8311057cb639b"
+    },
+    "RLTTEST/SLPTEST.SYS": {
+      "file": "SLPTEST.SYS",
+      "size": 11187,
+      "sha256": "dc47f439966d814f932747b08a8599bc16e87c2f90e1209e76d21ffbbb36312e"
+    },
+    "RLTTEST/MKEY2.EXE": {
+      "file": "MKEY2.EXE",
+      "size": 12604,
+      "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549"
+    },
+    "RLTTEST/MRESET64.EXE": {
+      "file": "MRESET64.EXE",
+      "size": 11606,
+      "sha256": "d2bf5b8a247418fbfe4a33d5522e4cc0626748c36e257bbdf160411458b1b8d3"
+    },
+    "RLTTEST/RRESET.SYS": {
+      "file": "RRESET.SYS",
+      "size": 11710,
+      "sha256": "811b1549e8205a5275d3a1e6343b51b2101b6b33b693fa501cff3df77a82bd90"
+    },
+    "MIXTEST/MIXNET.INF": {
+      "file": "MIXNET.INF",
+      "size": 8218,
+      "sha256": "49acf9c1e1277774cbcf76c06c885fc5d01099e65fd44966065bfd0deb867ee4"
+    }
+  }
+}

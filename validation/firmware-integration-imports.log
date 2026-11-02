@@ -1,0 +1,4 @@
+PASS: ndisnt31 48 actual guest imports
+PASS: ndis3 55 actual guest imports
+PASS: ndis5 73 actual guest imports
+PASS: ndis5x64 66 actual guest imports

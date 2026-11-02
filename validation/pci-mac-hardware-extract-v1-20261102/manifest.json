@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-02T02:29:40.818599+00:00",
+  "result": "PASS_STANDALONE_TRANSPORT",
+  "sources": {
+    "validation/test_macseq.c": "0a842a7f9fad9d85c6c60124330509b364f1107a2dc09df360fc6c9817e5851f",
+    "validation/run_macseq_checks.py": "9cdce1db55c7f34502abaa61f528f17fb56dc431bd4599119cc9bf96a98f66ea",
+    "RLTKLANT/build/make-pci-mac.py": "e1f43bce2ea9b501e8e3d6db294b4c5bcaf5c346b89d8864220667c16dee867c",
+    "RLTKLANT/src/macseq.c": "588a6216a65eea0b0418308cadfa463f1279e924f668ea25f8d9212dc0116db5",
+    "RLTKLANT/src/macseq.h": "6dbadd84dd86fc00757858d9cc999b32e905ea5b8931746814861467dc2c53b6",
+    "RLTKLANT/src/fwbus.c": "3f1f87bc12452bfec14c313fd0738a930353287b80950662d716f38810a61862",
+    "RLTKLANT/src/fwbus.h": "3d1876f28e16997c227bd7fb498c92e9620a876725f8adfadec3f303e2cfbfa2",
+    "RLTKLANT/src/fwvm.c": "41178fb02bee5c44a81435c3d99ad44858e439bd19b63f9662d3867123032bae",
+    "RLTKLANT/src/fwvm.h": "418bccf06da8091f2317a2f46fa99f659bfd5d4cc6cfd82a3b3afa184f054e11",
+    "RLTKLANT/src/fwimages.c": "26a040b9588912755bfe9205cbdf2b78a4b88011588261d8047c7ac1c3b4e588",
+    "RLTKLANT/src/fwimages.h": "4ee99b60611e76f946337f2dc807dc29bd6ec5e32cc27d120cce313efe3e53d4",
+    "RLTKLANT/third_party/r8169/r8169_main.c": "cb918734e19369d22fd0e65657c0183518f0ba59b57745a74f6a5bbcf56f37cc",
+    "RLTKLANT/third_party/r8169/mac-sequences.inc": "3873fcdfc0f2577e3982b92acf58943541cb91a761a4941fd02b2a9d0c92ba89",
+    "RLTKLANT/third_party/r8169/mac-constants.h": "ef5ededd2a6010dba5c66140e9d335c6c4e35ba5cbdde956bbaf2c481179c39f",
+    "RLTKLANT/third_party/r8169/MAC-PROVENANCE.json": "a2ae0cd11b18c3ce43b46769e29079dca33fafb4f9ac519785f53575be26140f",
+    "RLTKLANT/third_party/r8169/versions.h": "7a1a38b66a8b7bd61e46408028317e1550db4bf699dbf620e7dedf1e7cbd5b0f"
+  },
+  "limits": [
+    "Not integrated into Windows drivers.",
+    "Synthetic register readiness does not execute PHY/MCU firmware or validate silicon.",
+    "Full MAC power/startup, resource mapping and lifecycle ordering remain separate."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "utc": "2026-11-01T23:49:24.488055+00:00",
+  "guest": "nt351-usbsetup-v2-removed-boot-8127",
+  "result": "PASS",
+  "scope": "Native NCPA removal and normal-shutdown registry readback",
+  "checks": {
+    "remaining_instances": true,
+    "remaining_parameters": true,
+    "removed_instance_services_absent": true,
+    "network_providers_preserved": true,
+    "shared_product_removed": true,
+    "shared_service_removed": true
+  },
+  "remaining": [],
+  "removed": {
+    "2": "RLTKLANT2",
+    "1": "RLTKLANT1"
+  },
+  "shared_service": null,
+  "shared_product": null,
+  "registry": "nt351-v2-final-removal-coldboot-20261102-registry.json",
+  "files": {
+    "SYSTEM": "8f175018834b17f84397cc80a7f1339892c595385ed948cb1a7c6d4cfd6efb91",
+    "SOFTWARE": "3fc936c690fd5449820e7f6c36e08c005637fe9674fa4abc3b57fa7f801c5932"
+  },
+  "limits": [
+    "Cold boot and surviving-adapter traffic require separate evidence"
+  ]
+}

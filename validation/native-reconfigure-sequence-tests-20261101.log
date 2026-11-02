@@ -1,0 +1,1 @@
+PASS: 1100 production pipe reconfiguration schedules; identity/allocation/submit/shape/handle/stop failures never publish partial handles; carrier gated; no old frame replay

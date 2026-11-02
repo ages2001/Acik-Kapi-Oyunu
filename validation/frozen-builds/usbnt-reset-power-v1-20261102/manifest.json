@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-02T06:52:55.406652+00:00",
+  "files": {
+    "legacy.sys": {
+      "bytes": 410112,
+      "sha256": "f3a7e6e09ffec491d62cec183dba1b6aeb56f1f15c7b6e4a3a9a43f03d836f37"
+    },
+    "wdm32.sys": {
+      "bytes": 483840,
+      "sha256": "c39d4b27157a266430e79aee71b34a284a10fe6a5efdf8cc4be72858ba5972c8"
+    },
+    "wdm64.sys": {
+      "bytes": 521728,
+      "sha256": "dfed77a964f30d23fc6d7a247f9c95880edc1ba32a7134ace703c195f82a9d4d"
+    }
+  },
+  "release": false,
+  "version": "1.2 development candidate; 1.3 not released"
+}

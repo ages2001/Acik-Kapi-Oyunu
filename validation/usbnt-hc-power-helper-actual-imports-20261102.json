@@ -1,0 +1,6 @@
+{
+  "result": "PASS",
+  "file": "validation/usbnt-hc-power-probe-20261102/HCPOWER.SYS",
+  "sha256": "0fd1c980f8159a145ea5a40943209d4f76740ab5ca5d4e037394b65f462b9eba",
+  "imports": 20
+}

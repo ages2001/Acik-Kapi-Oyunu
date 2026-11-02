@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/nt4-ndis-rtl8117-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-s_32eha2/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+11/6384 = 0.17% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1048576
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt4-ndis-rtl8117-8127.qcow2",
+  "sha256_before_boot": "0eeefb2e8dd4cf417476ad84b130aff784c6e0657afbcf79db37110e9ea523bb",
+  "files": [
+    {
+      "guest_path": "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis3/rltklant.sys",
+      "size": 536987,
+      "sha256": "2098d2589193b297588d3aedd23c1e4bbf9b7383a5a1d91dc26bdfdfed37a9d8",
+      "old_size": 540269,
+      "old_sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

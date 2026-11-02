@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-02T06:25:57.775665+00:00",
+  "files": [
+    {
+      "target": "ndis5",
+      "name": "FW32.SYS",
+      "size": 552502,
+      "size_of_image": 569344,
+      "sha256": "9fa61a20a1f37215a5eac4a72906fc65764ce95eb4860a3c1b1e1be6a39e9b3a",
+      "crc32": "0xf2b4dfcf"
+    },
+    {
+      "target": "ndis5x64",
+      "name": "FW64.SYS",
+      "size": 608832,
+      "size_of_image": 634880,
+      "sha256": "87d35fc7d739a1399b19ed76834e090a9ac09fc3a863b2e12ac7dc73bf2d8667",
+      "crc32": "0x21a04417"
+    }
+  ],
+  "iso_sha256": "fba2950182bc1536be439fdd0c7faed6bd55e83cb2c8a174bbe0d3d2a7a1ffb7"
+}

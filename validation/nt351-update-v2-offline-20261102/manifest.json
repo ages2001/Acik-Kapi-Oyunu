@@ -1,0 +1,32 @@
+{
+  "SYSTEM": {
+    "guest_path": "WINNT351/SYSTEM32/CONFIG/SYSTEM",
+    "sha256": "50eaf3d4821fbae1109a22efeb571f0d1bc37e26c443fec7713363ca869acc74",
+    "size": 577536
+  },
+  "SOFTWARE": {
+    "guest_path": "WINNT351/SYSTEM32/CONFIG/SOFTWARE",
+    "sha256": "44cb358c5c8be3b1623bf1b40bc99ac3237073cbae53b285ec007dc10f98d0b9",
+    "size": 208896
+  },
+  "RLTSETUP.DLL": {
+    "guest_path": "WINNT351/SYSTEM32/RLTSETUP.DLL",
+    "sha256": "04bbf1bf056e8b735db20a324c2e6912b2001ad6a78f8cd523d28086ad965fa2",
+    "size": 22451
+  },
+  "RLTKNT35.INF": {
+    "guest_path": "WINNT351/SYSTEM32/RLTKNT35.INF",
+    "sha256": "2fd78779d686641ab8907416fffedc9b1ddbe725854b6cb2daefa470a0921330",
+    "size": 23995
+  },
+  "RLTUSB.EXE": {
+    "guest_path": "WINNT351/SYSTEM32/RLTUSB.EXE",
+    "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+    "size": 12974
+  },
+  "RLTKLANT.SYS": {
+    "guest_path": "WINNT351/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+    "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615",
+    "size": 503183
+  }
+}

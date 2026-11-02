@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-01T21:05:21.599123+00:00",
+  "guest": "nt31-usbsetup-ncpa-v4-reboot-8127",
+  "pcap_offsets": {
+    "usb.pcap": 169900,
+    "pci.pcap": 241033
+  },
+  "candidate": "frozen-builds/dhcp-packet-bounds-20261101/manifest.json",
+  "command": "C:\\RLTTEST\\DHCPSAFE.EXE 52-54-00-ab-cd-ef /apply",
+  "scope": "Explicit first-adapter single-path exchange; not /auto or interface isolation"
+}

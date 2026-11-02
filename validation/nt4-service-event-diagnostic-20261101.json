@@ -1,0 +1,219 @@
+[
+  {
+    "record": 1,
+    "utc": "2026-10-28T05:28:51+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  },
+  {
+    "record": 2,
+    "utc": "2026-10-28T06:12:11+00:00",
+    "event_id": 7002,
+    "type": 1,
+    "source": "Service Control Manager",
+    "strings": [
+      "TCP/IP NetBIOS Helper",
+      "NetworkProvider"
+    ]
+  },
+  {
+    "record": 3,
+    "utc": "2026-10-28T06:12:11+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  },
+  {
+    "record": 4,
+    "utc": "2026-10-28T06:31:04+00:00",
+    "event_id": 7002,
+    "type": 1,
+    "source": "Service Control Manager",
+    "strings": [
+      "TCP/IP NetBIOS Helper",
+      "NetworkProvider"
+    ]
+  },
+  {
+    "record": 5,
+    "utc": "2026-10-28T06:31:04+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  },
+  {
+    "record": 6,
+    "utc": "2026-10-28T06:42:16+00:00",
+    "event_id": 7002,
+    "type": 1,
+    "source": "Service Control Manager",
+    "strings": [
+      "TCP/IP NetBIOS Helper",
+      "NetworkProvider"
+    ]
+  },
+  {
+    "record": 7,
+    "utc": "2026-10-28T06:42:16+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  },
+  {
+    "record": 8,
+    "utc": "2026-10-28T09:25:53+00:00",
+    "event_id": 7002,
+    "type": 1,
+    "source": "Service Control Manager",
+    "strings": [
+      "TCP/IP NetBIOS Helper",
+      "NetworkProvider"
+    ]
+  },
+  {
+    "record": 9,
+    "utc": "2026-10-28T09:25:53+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  },
+  {
+    "record": 10,
+    "utc": "2026-10-28T10:04:56+00:00",
+    "event_id": 7002,
+    "type": 1,
+    "source": "Service Control Manager",
+    "strings": [
+      "TCP/IP NetBIOS Helper",
+      "NetworkProvider"
+    ]
+  },
+  {
+    "record": 11,
+    "utc": "2026-10-28T10:04:56+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  },
+  {
+    "record": 12,
+    "utc": "2026-10-28T10:16:01+00:00",
+    "event_id": 7002,
+    "type": 1,
+    "source": "Service Control Manager",
+    "strings": [
+      "TCP/IP NetBIOS Helper",
+      "NetworkProvider"
+    ]
+  },
+  {
+    "record": 13,
+    "utc": "2026-10-28T10:16:01+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  },
+  {
+    "record": 14,
+    "utc": "2026-10-28T10:31:38+00:00",
+    "event_id": 7002,
+    "type": 1,
+    "source": "Service Control Manager",
+    "strings": [
+      "TCP/IP NetBIOS Helper",
+      "NetworkProvider"
+    ]
+  },
+  {
+    "record": 15,
+    "utc": "2026-10-28T10:31:38+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  },
+  {
+    "record": 16,
+    "utc": "2026-10-29T15:41:45+00:00",
+    "event_id": 7002,
+    "type": 1,
+    "source": "Service Control Manager",
+    "strings": [
+      "TCP/IP NetBIOS Helper",
+      "NetworkProvider"
+    ]
+  },
+  {
+    "record": 17,
+    "utc": "2026-10-29T15:41:45+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  },
+  {
+    "record": 18,
+    "utc": "2026-11-01T14:39:26+00:00",
+    "event_id": 7002,
+    "type": 1,
+    "source": "Service Control Manager",
+    "strings": [
+      "TCP/IP NetBIOS Helper",
+      "NetworkProvider"
+    ]
+  },
+  {
+    "record": 19,
+    "utc": "2026-11-01T14:39:25+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  },
+  {
+    "record": 20,
+    "utc": "2026-11-01T16:21:07+00:00",
+    "event_id": 7002,
+    "type": 1,
+    "source": "Service Control Manager",
+    "strings": [
+      "TCP/IP NetBIOS Helper",
+      "NetworkProvider"
+    ]
+  },
+  {
+    "record": 21,
+    "utc": "2026-11-01T16:21:06+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  },
+  {
+    "record": 22,
+    "utc": "2026-11-01T17:05:59+00:00",
+    "event_id": 7002,
+    "type": 1,
+    "source": "Service Control Manager",
+    "strings": [
+      "TCP/IP NetBIOS Helper",
+      "NetworkProvider"
+    ]
+  },
+  {
+    "record": 23,
+    "utc": "2026-11-01T17:05:58+00:00",
+    "event_id": 6005,
+    "type": 4,
+    "source": "EventLog",
+    "strings": []
+  }
+]

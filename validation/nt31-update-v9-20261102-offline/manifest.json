@@ -1,0 +1,38 @@
+{
+  "SYSTEM": {
+    "bytes": 655360,
+    "sha256": "267d3dcb4ae91549a9c239196a69cf45e33eeadc8d9fc8a7bffd413cc6cb5ca3"
+  },
+  "DHCPNT31.EXE": {
+    "bytes": 25911,
+    "sha256": "fd646d2021137fc60358b02a07fd5c76fc8326d43295fdb071053ce59f8326f3"
+  },
+  "RLTUSB.EXE": {
+    "bytes": 12974,
+    "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+  },
+  "RLTKNT31.INF": {
+    "bytes": 26457,
+    "sha256": "d11ec821127069c1778cd5dac7eff7d247d63da9b4e4f01652b44c669c7127e1"
+  },
+  "SOFTWARE": {
+    "bytes": 319488,
+    "sha256": "4b547863de01ae4ff493ba4049be8592c98b74c5f44d4e9b2d26f1a9e576ce89"
+  },
+  "WINDOWS.TXT": {
+    "bytes": 3543,
+    "sha256": "8584ccabd120b2efea3eb2a39cad5a5df3ecab253ba0ee00d84e93a8c1451ff1"
+  },
+  "RLTKLANT.SYS": {
+    "bytes": 506368,
+    "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca"
+  },
+  "RLTSETUP.DLL": {
+    "bytes": 22451,
+    "sha256": "35094bec3a1cbb5d6e4f27b78a0706b038b9ceded88156eb6628ba03bd884f8d"
+  },
+  "TEST_000": {
+    "bytes": 98304,
+    "sha256": "a0b1383eba41f66739b4a1a7f070fcf607578c3562f8c57c162d15a695130db2"
+  }
+}

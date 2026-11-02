@@ -1,0 +1,9 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-sleep-v1-8127",
+  "utc": "2026-11-02T15:10:56.579436+00:00",
+  "operation": "query",
+  "expected": "00000000",
+  "result": "PASS",
+  "trace": "SLPTEST object=00000000\nSLPTEST Q3=00000000\n",
+  "seconds": 0.0
+}

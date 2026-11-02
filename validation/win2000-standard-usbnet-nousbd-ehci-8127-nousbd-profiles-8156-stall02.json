@@ -1,0 +1,10 @@
+{
+  "guest": "win2000-standard-usbnet-nousbd-ehci-8127",
+  "utc": "2026-10-30T06:31:11.134278+00:00",
+  "token": "nousbd-profiles-8156-stall02",
+  "report": "TOKEN nousbd-profiles-8156-stall02\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:03.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+  "peer": [
+    "127.0.0.1",
+    60183
+  ]
+}

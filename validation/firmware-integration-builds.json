@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-30T05:06:41.266609+00:00",
+  "builds": [
+    {
+      "target": "ndis3",
+      "size": 263900,
+      "sha256": "97b24feeee7affbb5c27d67ed8998217f1c26bdc143f1b1672ec2aa10088c568"
+    },
+    {
+      "target": "ndis5",
+      "size": 276842,
+      "sha256": "038a7bf721965cf834d1375d535edc6bac08106339a2747b7cad034103560d0f"
+    },
+    {
+      "target": "ndis5x64",
+      "size": 284785,
+      "sha256": "a9a8ec2a836e6731e84fca11e6e9d3327973300ae0ca9d87c4b099122bd21206"
+    },
+    {
+      "target": "ndisnt31",
+      "size": 230912,
+      "sha256": "0643b4cbc540cd76d3fe08160f3284beb66058b4d836f8860bec2ca558350711"
+    }
+  ]
+}

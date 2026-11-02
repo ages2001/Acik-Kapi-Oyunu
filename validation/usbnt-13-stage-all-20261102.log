@@ -1,0 +1,5 @@
+STAGED nt31-usbsetup-release13-rtl8117-8127 exact versioned driver boot
+STAGED nt4-ndis-dual-release13-8127 exact versioned driver boot
+STAGED nt351-usbsetup-install13-rtl8139-8127 installer upgrade
+STAGED win2000-standard-usbnet-mixed-install13-8127 installer upgrade
+STAGED xp64-usbnet-mixed-install13-8127 installer upgrade

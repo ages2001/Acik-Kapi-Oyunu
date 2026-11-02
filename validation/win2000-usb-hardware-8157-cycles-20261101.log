@@ -1,0 +1,29 @@
+{}
+{}
+TOKEN hardware-8157-native01
+DEVICE USB\VID_0BDA&PID_8157\0007-0000:00:03.0-1
+NAME Realtek RTL8157 USB 5G Ethernet (rev 1030)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 0 PAYLOAD 1472
+FAIL
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_report.py", line 13, in <module>
+    assert text.endswith('PASS\r\n'),text
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: TOKEN hardware-8157-native01
+DEVICE USB\VID_0BDA&PID_8157\0007-0000:00:03.0-1
+NAME Realtek RTL8157 USB 5G Ethernet (rev 1030)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 0 PAYLOAD 1472
+FAIL
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_usb_cycles.py", line 28, in <module>
+    call('native_report.py',name,token,exe)
+  File "/workspace/rltklant-work/validation/native_usb_cycles.py", line 13, in call
+    def call(script,*args):subprocess.run([sys.executable,str(here/script),*args],check=True)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '/workspace/rltklant-work/validation/native_report.py', 'win2000-standard-usbnet-hardware-ehci-8127', 'hardware-8157-native01', 'nprobe5.exe']' returned non-zero exit status 1.

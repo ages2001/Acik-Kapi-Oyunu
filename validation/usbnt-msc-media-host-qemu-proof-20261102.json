@@ -1,0 +1,187 @@
+{
+  "utc": "2026-11-02T11:27:54.794339+00:00",
+  "result": "PASS_WITH_OPEN_RELEASE_WORK",
+  "current_snapshot": "frozen-builds/usbnt-media-rundown-v2-20261102",
+  "msc_qemu_snapshot": "frozen-builds/usbnt-msc-reset-v3-20261102",
+  "rows": [
+    {
+      "file": "usbnt-msc-rundown-host-v3-20261102.log",
+      "sha256": "3ec006caf9007e6b2a764bde1a2a1be50bb4a21a9b9f70ef401cce2d87c2015c",
+      "result": "PASS",
+      "scope": "production MSC host lifetime"
+    },
+    {
+      "file": "usbnt-msc-reset-host-v3-20261102.log",
+      "sha256": "a014c0a3022a43461080f02b03fa738e7ccd17699d08001aa93ccb2dcc746d90",
+      "result": "PASS",
+      "scope": "production MSC host restore/fault/retry"
+    },
+    {
+      "file": "usbnt-msc-reset-orchestration-20261102.log",
+      "sha256": "326630267a31dbe8f2a626c6703c0dfb4a6b9f1fd56b03338b2295c65318f43f",
+      "result": "PASS",
+      "scope": "production Windows/HID/MSC shared reset orchestration"
+    },
+    {
+      "file": "usbnt-msc-reset-v3-qemu-xhci-bot-20261102.log",
+      "sha256": "5dc5a5a1843a5a5900b416ce34ccc72612473665f1429e17ef60561dd426921d",
+      "result": "PASS",
+      "scope": "native QEMU: five physical port resets, retained data and slots, removal, keyboard sibling"
+    },
+    {
+      "file": "usbnt-msc-reset-v3-usb-ehci-bot-20261102.log",
+      "sha256": "c34180597e8658b89476e1a8cc03d74be9f1cf2a34f43d9ccd4d341ad527ce4d",
+      "result": "PASS",
+      "scope": "native QEMU: five physical port resets, retained data and slots, removal, keyboard sibling"
+    },
+    {
+      "file": "usbnt-msc-reset-v3-piix3-usb-uhci-bot-20261102.log",
+      "sha256": "f4a9b3785121f2b0fd103b46a182f20fc05ef83b9d4f6224b95cd3c96f78dfaa",
+      "result": "PASS",
+      "scope": "native QEMU: five physical port resets, retained data and slots, removal, keyboard sibling"
+    },
+    {
+      "file": "usbnt-msc-reset-v3-pci-ohci-bot-20261102.log",
+      "sha256": "9d4451e6ae6d2a5605fbd56926afe8898abf34e63273d786a8503ab991bcb7c9",
+      "result": "PASS",
+      "scope": "native QEMU: five physical port resets, retained data and slots, removal, keyboard sibling"
+    },
+    {
+      "file": "usbnt-msc-reset-v3-qemu-xhci-uas-20261102.log",
+      "sha256": "6c60583cdcf54d6b29caa78410f0d23b82bb12648dac67822303eb3e1b0a578c",
+      "result": "PASS",
+      "scope": "native QEMU: five physical port resets, retained data and slots, removal, keyboard sibling"
+    },
+    {
+      "file": "usbnt-msc-reset-v3-usb-ehci-uas-20261102.log",
+      "sha256": "c6acb32bc213577d1e7320a5eeec5bb778c6bea3d6c28aef59b93ee9fd094deb",
+      "result": "PASS",
+      "scope": "native QEMU: five physical port resets, retained data and slots, removal, keyboard sibling"
+    },
+    {
+      "file": "usbnt-uvc-rundown-host-20261102.log",
+      "sha256": "d90e66fdfaa57b53fa84c37357c68e1b346d88ad6f95414ea07e6d768ef87008",
+      "result": "PASS",
+      "scope": "production UVC host lifetime"
+    },
+    {
+      "file": "usbnt-uac-rundown-host-v3-20261102.log",
+      "sha256": "2cc6dbcecd84827ab54147910b6300bad2f8d259c41d0f3a3ce2016af1510670",
+      "result": "PASS",
+      "scope": "production audio/MIDI host lifetime and removal-notification ordering"
+    },
+    {
+      "file": "usbnt-select-config-host-20261102.log",
+      "sha256": "1a9c8f68ed97ee78b3f482e6585bde2a5acdef5cf586446c5687f2ffcf557bc9",
+      "result": "PASS",
+      "scope": "production configuration preflight"
+    },
+    {
+      "file": "usbnt-uvc-rundown-before-20261102.log",
+      "sha256": "962e5706058e36e66bdc7caeeb9013b90613ed1539187a3e6c8cd7feabdf8c23",
+      "result": "EXPECTED_FAILURE",
+      "scope": "old-source regression"
+    },
+    {
+      "file": "usbnt-uac-rundown-before-20261102.log",
+      "sha256": "8aec412b97802f704695d71e60920582af9a8e1136ea26654d28265a96665bce",
+      "result": "EXPECTED_FAILURE",
+      "scope": "old-source regression"
+    },
+    {
+      "file": "usbnt-msc-rundown-before-20261102.log",
+      "sha256": "b68551f4a905df927851ca4c25652ca8b18b62e6bb9c9b8c1557cbc3d97a73d7",
+      "result": "EXPECTED_FAILURE",
+      "scope": "old-source regression"
+    },
+    {
+      "file": "usbnt-select-config-before-20261102.log",
+      "sha256": "20244b238ef54ef4c23fd3c8318b665506b04cf8d97c835d93b3435be2927c0d",
+      "result": "EXPECTED_FAILURE",
+      "scope": "old-source regression"
+    },
+    {
+      "file": "usbnt-media-rundown-v2-xhci-uac2-20261102.log",
+      "sha256": "36724d77d18ae9f50bb2f7f0c6c0b811f21faf857321d383533bf6da1cd83daa",
+      "result": "PASS",
+      "scope": "native QEMU streaming, stop and hot unplug/reinsert"
+    },
+    {
+      "file": "usbnt-media-rundown-v2-ehci-tt-uac1-20261102.log",
+      "sha256": "fa835840026b9d89ee60c8117dd243f1427a7e6185c25d6b80aa783ab5fe8b43",
+      "result": "PASS",
+      "scope": "native QEMU streaming, stop and hot unplug/reinsert"
+    },
+    {
+      "file": "usbnt-media-rundown-v2-uhci-uac1-20261102.log",
+      "sha256": "0b81069b09f1217ed18c7ad421f703f325b08f2cee6bba8b59cf5b2605660bfd",
+      "result": "PASS",
+      "scope": "native QEMU streaming, stop and hot unplug/reinsert"
+    },
+    {
+      "file": "usbnt-media-rundown-v2-ohci-uac1-20261102.log",
+      "sha256": "3bc395b413e5b8ccd45abf4ae4eab3893c5fd003ea14ee13bedcd4e4e1fe9931",
+      "result": "PASS",
+      "scope": "native QEMU streaming, stop and hot unplug/reinsert"
+    },
+    {
+      "file": "usbnt-media-rundown-v2-xhci-uvc-iso-20261102.log",
+      "sha256": "ff52d4256fdf2dfe1292c1392a8401c19953efa5664db8cfd6a051e763ac61a3",
+      "result": "PASS",
+      "scope": "native QEMU streaming, stop and hot unplug/reinsert"
+    },
+    {
+      "file": "usbnt-media-rundown-v2-ehci-uvc-bulk-20261102.log",
+      "sha256": "21dd004f017b76c79393afbf66a54dc588e51c67e04d41b9e855e16fcbba3409",
+      "result": "PASS",
+      "scope": "native QEMU streaming, stop and hot unplug/reinsert"
+    },
+    {
+      "file": "usbnt-media-rundown-v2-uhci-uvc-20261102.log",
+      "sha256": "95c3f5f592a2a55c7ec7f5fe61f20f42949e525834b60ff6a057e1c1d7a78b5c",
+      "result": "PASS",
+      "scope": "native QEMU streaming, stop and hot unplug/reinsert"
+    },
+    {
+      "file": "usbnt-media-rundown-v2-ohci-uvc-20261102.log",
+      "sha256": "d1257194ab8b91afb120e4e2cc2fcf4826b1b1563859cdb3a1062ffd6b1941d2",
+      "result": "PASS",
+      "scope": "native QEMU streaming, stop and hot unplug/reinsert"
+    }
+  ],
+  "test_inputs": {
+    "USBNT/harness/main.c": "abeef58069ecac23fe87b75d2e62641d456fd84c8e9e451b0d4b3832c3d2fb6f",
+    "USBNT/test/host/tuacrundown.sh": "25deacd01d7211a01f6971a0603cb86d3b5b8c0cc4c72300ccc16d6b23d0fcb5",
+    "USBNT/test/host/thidparse.c": "1412a403cfcaf7c6069cd0df91d81b078c2361393b5021ecb08a4c9b1aab4641",
+    "USBNT/test/host/thidreset.sh": "a31ce11b39546ab74f498eec8a3bc55273d2562bc0d25041e202794923c1d903",
+    "USBNT/test/host/tuvcrundown.sh": "0acf5d817c925f47ba501d63230aaf59171491d97e88c8f9d923afc07210142f",
+    "USBNT/test/host/taml.c": "32ac0458880b1ef11184a7e226fedaf6d6a88146d295b7ef18ea6227d68cb20a",
+    "USBNT/test/host/tmscrundown.sh": "db1fe95aa0cf92f56e7973bf374a35988cd07cc0b88e9d8a828743afa2234ff6",
+    "USBNT/test/host/thidreset.c": "9a83e6c5379aa220afb55b3f2fbe0de9b3dbf336101121dac96c2dec9d29ca1d",
+    "USBNT/test/host/tuacrundown.c": "be4ba5864e519dff2485c86ba479d395fdd2d03aef1816025b69213309925823",
+    "USBNT/test/host/tps2pad.c": "9d64ac3ffd319c584214ef1e209f6fb4ac45893b37b07a37939a65ab0a5d48f0",
+    "USBNT/test/host/tmscreset.c": "c7f1bf6a7fb5cdf1f75321daeb8afd638071117ee246ff45c31e3a9046c7941d",
+    "USBNT/test/host/tsmbtp.c": "73325bd083085ded1153ff2ddccf8de76e42511254c0f1719ce5ac15c85973b2",
+    "USBNT/test/host/thidcapacity.c": "65fecbc2919176a325884218cb40040b222597e221da0475796e2917e1a0cc04",
+    "USBNT/test/host/thidrundown.sh": "c05513658bb61fdfd2fba43ca41c6a89418ff9c4f337ed4756f7dc991844cd46",
+    "USBNT/test/host/tfsdetect.c": "ff221a0ce5edb23109834471dd337c7bffd06f65e2bdb508a00a833a10694e38",
+    "USBNT/test/host/tmscreset.sh": "be96f7a4073a08dec45363b4878dda0e174ad57a35d1dc8ea810307fb84c9926",
+    "USBNT/test/host/tmscrundown.c": "15df43f0f53d73e5c6c72b7c9b8263971a7e1bfab8a8caba628ad7025c99437b",
+    "USBNT/test/host/thidcapacity.sh": "93540fe0ea86f17ee38f1b03dc6e0445073402dc240518b5214a7877974bfefe",
+    "USBNT/test/host/tuvcrundown.c": "e4640b2b34ed0cc1c605fed5aaa8a98f5686d8fd3be1121231a69c6dac3346df",
+    "USBNT/test/host/tselectconfig.py": "5d8fad66abfe7491aaa516107fc273e0d386a8cd5b120119afabb101983f7da3",
+    "USBNT/test/host/thidrundown.c": "d6efc52d20cb61156d4d7bf833e88704b4248e50b3f0c35409ec1d9e1a761ab6",
+    "USBNT/test/tmscreset.py": "99910709b6bfe68f2fb9f367cbcf3780a802da47cb16c8845147c84f0c8c6d8a",
+    "USBNT/test/tuac.py": "d02c4ccd981bef652542b5c32122d7d39b6a3ffcc30a2f288a7c571c682a261c",
+    "USBNT/test/tuvc.py": "6fe6edc1449368520f31e57bd585885d2fff370d35b32be1ac07ef2b9e950c80",
+    "validation/test_usbdi_port_reset.py": "ff0e4dcafc39419c27f0d69c15efb24d005c593fa5d284da9b213fa7df759fa6"
+  },
+  "limits": [
+    "Host tests compile production C but mock NT/HCD ABI. ASan/UBSan are enabled.",
+    "QEMU native harness runs portable class drivers, not installed Windows binaries.",
+    "No exact installed Windows regression is claimed for the MSC/media snapshots. Earlier five-OS HID proofs apply only to their recorded hashes.",
+    "UAS tested on xHCI and EHCI; no UAS full-speed claim. UAC1 uses a high-speed hub translator on EHCI. The incompatible direct-EHCI UAC1 attempt is preserved.",
+    "Audio/video/card-reader shared physical reset and identity-preserving parent-controller sleep remain gated/open.",
+    "QEMU does not establish physical PHY, firmware MCU execution, or silicon correctness. USBNT 1.3 is unreleased."
+  ]
+}

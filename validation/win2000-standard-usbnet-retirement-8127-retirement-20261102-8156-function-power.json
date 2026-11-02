@@ -1,0 +1,12 @@
+{
+  "guest": "win2000-standard-usbnet-retirement-8127",
+  "utc": "2026-11-02T08:50:14.086408+00:00",
+  "scope": "Test USBNT PDO D3/D0 worker IRPs and subsequent real NIC traffic.\n\nUPOWER targets only USBNT, directly at the PDO, and forces DISPATCH_LEVEL.\nThis is lower-device function-idle fault injection, not full NDIS/system sleep.\nThe helper does three D3/D0 pairs and restores D0 even after a failed D3.\n",
+  "result": "PASS",
+  "offset": 2609,
+  "power_trace": "POWERTEST object=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\n",
+  "power_cycles": 3,
+  "report": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8156-after-power.json",
+  "report_sha256": "a5ce556ab125bf0e852a61e5ffe96bd9326f99578daf09c6935f8c17b78db380",
+  "screenshot": "win2000-standard-usbnet-retirement-8127-retirement-20261102-8156-function-power-screen.png"
+}

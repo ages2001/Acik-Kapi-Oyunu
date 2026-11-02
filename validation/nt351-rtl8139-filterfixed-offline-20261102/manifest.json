@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-02T06:13:49.949775+00:00",
+  "guest": "nt351-usbsetup-rtl8139-filterfixed-8127",
+  "files": {
+    "WINNT351/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540269,
+      "sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0"
+    },
+    "RLTTEST/TCPBASE.LOG": {
+      "file": "TCPBASE.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    },
+    "RLTTEST/TCPRESET.LOG": {
+      "file": "TCPRESET.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    },
+    "RLTTEST/TCPCABLE.LOG": {
+      "file": "TCPCABLE.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    },
+    "RLTTEST/TCP35.EXE": {
+      "file": "TCP35.EXE",
+      "size": 11466,
+      "sha256": "987dd6118fab5b8b1f3f455add33fc99078b6ce4715f35d0ac4a13c1dce8e37f"
+    }
+  }
+}

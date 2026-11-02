@@ -1,0 +1,30 @@
+{
+  "utc": "2026-11-02T11:51:57.643771+00:00",
+  "result": "PASS_WITH_OPEN_RELEASE_WORK",
+  "snapshot": "frozen-builds/usbnt-uvc-reset-v1-20261102",
+  "production_host_cases": {
+    "rundown": 4000,
+    "restore_fault_retry": 2400
+  },
+  "qemu_physical_resets": 20,
+  "evidence": {
+    "usbnt-uvc-reset-host-20261102.log": "964b70d9dda16742a004afa2aa57dc1f67324482d94a5b3f734016ecf5021329",
+    "usbnt-uvc-reset-rundown-host-v2-20261102.log": "21937df7201b27f32b6f41fc04f233e977863b0771487314e7fb8e16d828d9d5",
+    "usbnt-uvc-reset-orchestration-20261102.log": "6cec2a217f7ccc2d447e380ddc86fb18fd1a80780a81a9ef787905c9d1278973",
+    "usbnt-uvc-reset-xhci-20261102.log": "efffaa0867dcb420bbcc5725a7928d71e3446293437b0fb9d05a31fc789e443d",
+    "usbnt-uvc-reset-ehci-bulk-20261102.log": "7ebedd8b4af84b14ff02fe289c4d8cf4671bd1411d6e23b8d5e5d6ccd147148b",
+    "usbnt-uvc-reset-uhci-20261102.log": "31c286965652d5ebbe2c15dd7ef188b45ad50aebe2c8e53012e865b748a6ee6e",
+    "usbnt-uvc-reset-ohci-20261102.log": "59f50502531fb5baae395091f2a8d8dde61bae9fa68ab4b5389ccbaa33d948be"
+  },
+  "tests": {
+    "USBNT/test/host/tuvcrundown.c": "a1f836a46f4e8f192c9bad848c7f1c19a8dd03fbca019ee0ee950f7086ce710c",
+    "USBNT/test/host/tuvcreset.py": "731ff746e2c375d1ea9682c31d2a880882be9d79aa7a97a3cfe868ba4d31d208",
+    "USBNT/test/tuvcreset.py": "2d60e98f14a06b67a9ee79aab3c504dcc1c928085a812af1e11d3d961f6c71d4",
+    "validation/test_usbdi_port_reset.py": "136bf09e6ef8e7df09269ec89c48864d861d9f1a6fa957014c4d237edd16c56f"
+  },
+  "scope": "Native QEMU on UHCI/OHCI/EHCI/xHCI: preserved camera ID, advancing frame sequence, control replay, MJPEG frames, keyboard sibling, removal. Host mocks cover failed control/stream restoration, retry, reader/callback rundown, unrelated camera and shared Windows-function failure propagation.",
+  "limits": [
+    "No installed-Windows or physical-hardware result is claimed for this later snapshot.",
+    "Audio shared reset, identity-preserving parent sleep, mixed-owner guest fixtures, exact Windows regressions and versioned release media remain open. USBNT 1.3 is unreleased."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "guest": "nt31-dma-slot-8127",
+  "utc": "2026-10-29T20:59:20.483177+00:00",
+  "matched_full_mtu_echo_pairs": 4,
+  "payload": 1472,
+  "pcap_sha256": "18f2de20cf4fb827f9d768705b9132173c02288c43f5cc3db53868ba5f4e9176",
+  "guest_receipt_screenshot": "nt31-dma-full-mtu-result.png",
+  "http_screenshot": "nt31-dma-public-http.png",
+  "http": "Guest HTTP 200 / 1358 bytes through authorized proxy",
+  "driver": {
+    "guest": "nt31-dma-slot-8127",
+    "source": "RLTKLANT/build/ndisnt31/rltklant.sys",
+    "size": 51200,
+    "sha256": "cff298c0999329153a38803971ee967ef191ebd40f5fa20d9e463e42e990ee25",
+    "previous_guest_shutdown_evidence": "nt31-pci-shutdown-safe.png",
+    "changes": "C+ descriptor ring addresses committed before DMA; current NT3.1 common USB source",
+    "firmware_runtime": "Not integrated"
+  }
+}

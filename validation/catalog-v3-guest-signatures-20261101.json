@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-01T19:41:01.939769+00:00",
+  "scope": "Read-only CryptCATOpen / CryptQueryObject / CryptMsgControl signature / certificate self-signature checks. No trust-store changes. File membership is a separate pending test.",
+  "old_result": {
+    "CryptCATOpen": "ERROR_INVALID_DATA (0x0000000D)",
+    "CryptQueryObject": "CRYPT_E_NO_MATCH (0x80092009)"
+  },
+  "fixed_result": {
+    "catalog_members": 3,
+    "certificate_signature_oid": "1.2.840.113549.1.1.5",
+    "message_signature": "PASS",
+    "self_signature": "PASS"
+  },
+  "catalog_sha256": "f0013ee6aa42baa7a1dba5a0e6694b2b94b7540f52fb75e89e70c731def7882c",
+  "generator_sha256": "de90cf0ffce302b1e29b698f5987c0c192cd61c706f9bc5e6a60989da59ac43e",
+  "screenshots": {
+    "win2000-catalog-v3-20261101.png": "2a667f94fe0e6b98e30ecc7f64022832ccbf666f86702097c3168f3bd498cbb9",
+    "xp64-catalog-v3-results-20261101.png": "fae9e94586b077a0b3564267a49d69e6c8dc9cf3df0eb8c743d9151966082ae2"
+  }
+}

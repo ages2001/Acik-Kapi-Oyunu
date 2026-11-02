@@ -1,0 +1,252 @@
+  harness: start
+  usbnt: found UHCI at 00:02.0 (8086:7020) irq 10 io 0000c000
+  usbnt: uhci: 2 ports at io c000
+  usbnt: acpi: 5 tables (RSDT at 0ffe1c17)
+  usbnt: aml: 337 named objects from the ACPI tables
+  usbnt: device 0: 46f4:0101 class 00, full speed, UHCI port 1 depth 0, addr 1
+  usbnt: device 0: QEMU QEMU UAC Test Device
+  usbnt: audio 0: out alt 1: 2 ch 16/16 bit async, 3 rate(s) 44100..96000, feedback
+  usbnt: audio 0: out alt 2: 2 ch 24/24 bit async, 3 rate(s) 44100..96000, feedback
+  usbnt: audio 0: playback path: 1 feature unit(s), volume unit 2 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: in alt 1: 2 ch 16/16 bit async, 3 rate(s) 44100..96000
+  usbnt: audio 0: in alt 2: 1 ch 16/16 bit async, 3 rate(s) 44100..96000
+  usbnt: audio 0: capture path: 1 feature unit(s), volume unit 5 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: USB Audio 1.0 "QEMU UAC Test Device", playback, capture, MIDI out
+  harness: client arrival notification 0
+  usbnt: device 1: 0409:55aa class 09, full speed, UHCI port 2 depth 0, addr 2
+  usbnt: device 1: QEMU QEMU USB Hub
+  usbnt: device 1: hub with 8 ports
+  harness: client arrival notification 1
+  usbnt: device 2: 0627:0001 class 00, full speed, UHCI port 2 hub port 1, addr 3
+  usbnt: device 2: QEMU QEMU USB Keyboard
+  usbnt: device 2: keyboard
+  harness: client arrival notification 2
+  AUDIO ARRIVE id=101 uac=1 speed=0 play=1 rec=1 fmts=2/2 vol=1/1 midi=1 inputs=1 name=QEMU UAC Test Device
+  harness: ready
+  AUDIO id=101 uac=1 play=1 rec=1 vol=1/1 volrange=-15360..1536 midi=1 inputs=1
+    FMT dir=0 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=0 alt=2 ch=2 sub=3 bits=24 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=1 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+    FMT dir=1 alt=2 ch=1 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+ok   arrival
+ok   both directions
+ok   uac version
+ok   formats listed
+  usbnt: audio 0: playback opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s), feedback
+  AOPEN r=0 rate=48000 ch=2 sub=2 bits=16 alt=1 type=0 lat=48
+ok   open playback 48000/16
+  ASTART r=0
+ok   start playback 48000
+  ASTAT pkts=3024 frames=145152 late=0 err=0 fb=3145728 fbn=2992 run=1 cap=0 hz=0 peak=0
+  uac: stats out_alt=1 rate=48000 pkts=2990 frames=143520 pkt=48..48 bad=0 overrun=0 underrun=238 fifo=384 fb=2961 in_alt=0 in_pkts=0 in_frames=0
+ok   packets flowing 48000 (2990)
+ok   no malformed packets 48000
+ok   no errors 48000 (0)
+    frames/packet 48.00
+ok   device rate 48000
+  ASTOP ok
+  ACLOSE ok
+  usbnt: audio 0: playback opened: alt 2, 44100 Hz, 2 ch, 24 bit, 6 x 8 packets every 8 uframe(s), feedback
+  AOPEN r=0 rate=44100 ch=2 sub=3 bits=24 alt=2 type=0 lat=48
+ok   open playback 44100/24
+  ASTART r=0
+ok   start playback 44100
+  ASTAT pkts=3032 frames=133711 late=0 err=0 fb=2890136 fbn=2952 run=1 cap=0 hz=0 peak=0
+  uac: stats out_alt=2 rate=44100 pkts=6019 frames=277250 pkt=44..45 bad=0 overrun=0 underrun=474 fifo=1764 fb=5917 in_alt=0 in_pkts=0 in_frames=0
+ok   packets flowing 44100 (2990)
+ok   no malformed packets 44100
+ok   no errors 44100 (0)
+    frames/packet 44.10
+ok   device rate 44100
+  ASTOP ok
+  ACLOSE ok
+  usbnt: audio 0: playback opened: alt 1, 96000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s), feedback
+  AOPEN r=0 rate=96000 ch=2 sub=2 bits=16 alt=1 type=0 lat=48
+ok   open playback 96000/16
+  ASTART r=0
+ok   start playback 96000
+  ASTAT pkts=3024 frames=290304 late=0 err=0 fb=6291456 fbn=2984 run=1 cap=0 hz=0 peak=0
+  uac: stats out_alt=1 rate=96000 pkts=9054 frames=566327 pkt=96..96 bad=0 overrun=0 underrun=722 fifo=1152 fb=8916 in_alt=0 in_pkts=0 in_frames=0
+ok   packets flowing 96000 (2991)
+ok   no malformed packets 96000
+ok   no errors 96000 (0)
+    frames/packet 96.00
+ok   device rate 96000
+  ASTOP ok
+  ACLOSE ok
+ok   rate request
+  ASTAT pkts=3024 frames=290304 late=0 err=0 fb=6291456 fbn=2984 run=0 cap=0 hz=0 peak=0
+  usbnt: audio 0: playback opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s), feedback
+  AOPEN r=0 rate=48000 ch=2 sub=2 bits=16 alt=1 type=0 lat=48
+  ASTART r=0
+  ASTAT pkts=1992 frames=95616 late=0 err=0 fb=3145728 fbn=1976 run=1 cap=0 hz=0 peak=0
+ok   feedback received
+  ASTOP ok
+  ACLOSE ok
+  usbnt: audio 0: capture opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s)
+  AOPEN r=0 rate=48000 ch=2 sub=2 bits=16 alt=1 type=0 lat=48
+ok   open capture
+  ASTART r=0
+  ASTAT pkts=2008 frames=96384 late=0 err=0 fb=0 fbn=0 run=1 cap=96384 hz=999 peak=16384
+ok   captured frames
+ok   capture frequency 999
+ok   capture level
+  ASTOP ok
+  ACLOSE ok
+  usbnt: audio 0: playback opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s), feedback
+  AOPEN r=0 rate=48000 ch=2 sub=2 bits=16 alt=1 type=0 lat=48
+  usbnt: audio 0: capture opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s)
+  AOPEN r=0 rate=48000 ch=2 sub=2 bits=16 alt=1 type=0 lat=48
+  ASTART r=0
+  ASTART r=0
+  ASTAT pkts=2008 frames=96384 late=0 err=0 fb=0 fbn=0 run=1 cap=96384 hz=1000 peak=16384
+ok   duplex playback
+ok   duplex capture
+  AVOL r=0
+ok   hardware volume
+ok   midi interface
+  AMIDI r=0 n=15
+    midi events: ['09 90 3c 64', '09 90 3c 00', '08 80 3c 40', '04 f0 7e 7f', '07 06 01 f7', '0f fe 00 00']
+ok   midi events
+  usbnt: audio 0: playback path: 1 feature unit(s), volume unit 2 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: playback opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s), feedback
+  usbnt: audio 0: capture path: 1 feature unit(s), volume unit 5 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: capture opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s)
+  ARESET index=0 result=0
+ok   physical reset 0
+  AUDIO id=101 uac=1 play=1 rec=1 vol=1/1 volrange=-15360..1536 midi=1 inputs=1
+    FMT dir=0 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=0 alt=2 ch=2 sub=3 bits=24 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=1 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+    FMT dir=1 alt=2 ch=1 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+ok   same audio ID
+  ASTAT pkts=2032 frames=97536 late=0 err=0 fb=3145728 fbn=1984 run=1 cap=0 hz=0 peak=0
+  ASTAT pkts=2024 frames=97152 late=0 err=0 fb=0 fbn=0 run=1 cap=242688 hz=1000 peak=16384
+ok   playback and feedback resumed
+ok   capture tone resumed
+  AMIDI r=0 n=6
+ok   MIDI endpoint resumed
+  KEY 2a down
+  KEY 30 down
+  KEY 30 up
+  KEY 2a up
+ok   keyboard sibling
+  usbnt: audio 0: playback path: 1 feature unit(s), volume unit 2 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: playback opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s), feedback
+  usbnt: audio 0: capture path: 1 feature unit(s), volume unit 5 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: capture opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s)
+  ARESET index=0 result=0
+ok   physical reset 1
+  AUDIO id=101 uac=1 play=1 rec=1 vol=1/1 volrange=-15360..1536 midi=1 inputs=1
+    FMT dir=0 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=0 alt=2 ch=2 sub=3 bits=24 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=1 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+    FMT dir=1 alt=2 ch=1 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+ok   same audio ID
+  ASTAT pkts=1992 frames=95616 late=0 err=0 fb=3145728 fbn=1960 run=1 cap=0 hz=0 peak=0
+  ASTAT pkts=2000 frames=96000 late=0 err=0 fb=0 fbn=0 run=1 cap=375168 hz=1000 peak=16384
+ok   playback and feedback resumed
+ok   capture tone resumed
+  AMIDI r=0 n=6
+ok   MIDI endpoint resumed
+  KEY 2a down
+  KEY 30 down
+  KEY 30 up
+  KEY 2a up
+ok   keyboard sibling
+  usbnt: audio 0: playback path: 1 feature unit(s), volume unit 2 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: playback opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s), feedback
+  usbnt: audio 0: capture path: 1 feature unit(s), volume unit 5 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: capture opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s)
+  ARESET index=0 result=0
+ok   physical reset 2
+  AUDIO id=101 uac=1 play=1 rec=1 vol=1/1 volrange=-15360..1536 midi=1 inputs=1
+    FMT dir=0 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=0 alt=2 ch=2 sub=3 bits=24 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=1 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+    FMT dir=1 alt=2 ch=1 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+ok   same audio ID
+  ASTAT pkts=2000 frames=96000 late=0 err=0 fb=3145728 fbn=1984 run=1 cap=0 hz=0 peak=0
+  ASTAT pkts=2000 frames=96000 late=0 err=0 fb=0 fbn=0 run=1 cap=506880 hz=1000 peak=16384
+ok   playback and feedback resumed
+ok   capture tone resumed
+  AMIDI r=0 n=6
+ok   MIDI endpoint resumed
+  KEY 2a down
+  KEY 30 down
+  KEY 30 up
+  KEY 2a up
+ok   keyboard sibling
+  usbnt: audio 0: playback path: 1 feature unit(s), volume unit 2 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: playback opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s), feedback
+  usbnt: audio 0: capture path: 1 feature unit(s), volume unit 5 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: capture opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s)
+  ARESET index=0 result=0
+ok   physical reset 3
+  AUDIO id=101 uac=1 play=1 rec=1 vol=1/1 volrange=-15360..1536 midi=1 inputs=1
+    FMT dir=0 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=0 alt=2 ch=2 sub=3 bits=24 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=1 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+    FMT dir=1 alt=2 ch=1 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+ok   same audio ID
+  ASTAT pkts=2016 frames=96768 late=0 err=0 fb=3145728 fbn=1992 run=1 cap=0 hz=0 peak=0
+  ASTAT pkts=2016 frames=96768 late=0 err=0 fb=0 fbn=0 run=1 cap=640128 hz=1000 peak=16384
+ok   playback and feedback resumed
+ok   capture tone resumed
+  AMIDI r=0 n=6
+ok   MIDI endpoint resumed
+  KEY 2a down
+  KEY 30 down
+  KEY 30 up
+  KEY 2a up
+ok   keyboard sibling
+  usbnt: audio 0: playback path: 1 feature unit(s), volume unit 2 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: playback opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s), feedback
+  usbnt: audio 0: capture path: 1 feature unit(s), volume unit 5 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: capture opened: alt 1, 48000 Hz, 2 ch, 16 bit, 6 x 8 packets every 8 uframe(s)
+  ARESET index=0 result=0
+ok   physical reset 4
+  AUDIO id=101 uac=1 play=1 rec=1 vol=1/1 volrange=-15360..1536 midi=1 inputs=1
+    FMT dir=0 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=0 alt=2 ch=2 sub=3 bits=24 type=0 sync=1 fb=1 rates=3 44100 48000 96000
+    FMT dir=1 alt=1 ch=2 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+    FMT dir=1 alt=2 ch=1 sub=2 bits=16 type=0 sync=1 fb=0 rates=3 44100 48000 96000
+ok   same audio ID
+  ASTAT pkts=1992 frames=95616 late=0 err=0 fb=3145728 fbn=1920 run=1 cap=0 hz=0 peak=0
+  ASTAT pkts=1992 frames=95616 late=0 err=0 fb=0 fbn=0 run=1 cap=771840 hz=1000 peak=16384
+ok   playback and feedback resumed
+ok   capture tone resumed
+  AMIDI r=0 n=6
+ok   MIDI endpoint resumed
+  KEY 2a down
+  KEY 30 down
+  KEY 30 up
+  KEY 2a up
+ok   keyboard sibling
+ok   volume request replayed on every reset
+  usbnt: device 0: removed
+  AUDIO GONE id=101
+  harness: client removal notification 0
+ok   removal
+  HC 0 UHCI running ports=2
+    port 2 status 0023 dev 1
+  DEV 1 0409:55aa speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=1 msc=0 hid=0
+  DEV 2 0627:0001 speed=0 hc=0 root=2 depth=1 port=1 addr=3 hub=0 msc=0 hid=1
+  SLOT 0 present=0 type=0
+  SLOT 1 present=0 type=0
+  SLOT 2 present=0 type=0
+  SLOT 3 present=0 type=0
+  KBDS 1 MICE 0
+  usbnt: device 0: 46f4:0101 class 00, full speed, UHCI port 2 hub port 2, addr 1
+  usbnt: device 0: QEMU QEMU UAC Test Device
+  usbnt: audio 0: out alt 1: 2 ch 16/16 bit async, 3 rate(s) 44100..96000, feedback
+  usbnt: audio 0: out alt 2: 2 ch 24/24 bit async, 3 rate(s) 44100..96000, feedback
+  usbnt: audio 0: playback path: 1 feature unit(s), volume unit 2 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: in alt 1: 2 ch 16/16 bit async, 3 rate(s) 44100..96000
+  usbnt: audio 0: in alt 2: 1 ch 16/16 bit async, 3 rate(s) 44100..96000
+  usbnt: audio 0: capture path: 1 feature unit(s), volume unit 5 (-15360..1536/256 dB), 0 selector(s)
+  usbnt: audio 0: USB Audio 1.0 "QEMU UAC Test Device", playback, capture, MIDI out
+  harness: client arrival notification 0
+  AUDIO ARRIVE id=201 uac=1 speed=0 play=1 rec=1 fmts=2/2 vol=1/1 midi=1 inputs=1 name=QEMU UAC Test Device
+ok   re-arrival
+RESULT audio-reset uhci_uac1 PASS

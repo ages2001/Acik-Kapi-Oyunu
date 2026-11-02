@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T05:44:41.860930+00:00",
+  "guest": "nt351-usbsetup-rtl8139-cold-8127",
+  "files": {
+    "WINNT351/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540269,
+      "sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0"
+    },
+    "RLTTEST/TCP35.LOG": {
+      "file": "TCP35.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    }
+  }
+}

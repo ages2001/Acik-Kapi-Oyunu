@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-01T22:09:34.199830+00:00",
+  "files": {
+    "PMTEST4.EXE": {
+      "bytes": 13304,
+      "sha256": "cf8d3c71aa2cbb52e8ae0100b38b62928a6fd2ad701766d44bd4da395be1cefe"
+    },
+    "rltsetup.c": {
+      "bytes": 15724,
+      "sha256": "427b9c7dfa1cddd7e3057f736202bbb4a237a40451d32ea84266b04b86c89196"
+    },
+    "progman_probe.c": {
+      "bytes": 3477,
+      "sha256": "b4c4ef12e4801e50f497c543e0c7415d47678a5bb018c983d51353065c53fd63"
+    },
+    "build-rltsetup.sh": {
+      "bytes": 627,
+      "sha256": "b06bf0ec8abb9ee862625ee9f70c4227cb4bbea60718f24c588c30f96eebff1e"
+    },
+    "RLTSETUP.DLL": {
+      "bytes": 19798,
+      "sha256": "6298adcee9d0b0a57d2d61a9e174f870bb7513c395bb6ac2ec9d14e15fe03f75"
+    }
+  },
+  "scope": "Reset DDE instance before each exported call; same-module repeated invocation pending"
+}

@@ -1,0 +1,25 @@
+{
+  "utc": "2026-11-01T23:12:55.195785+00:00",
+  "result": "PASS",
+  "checks": {
+    "shared_service_absent": true,
+    "shared_product_absent": true,
+    "adapter01_absent": true,
+    "adapter02_absent": true,
+    "all_driver_files_absent": true
+  },
+  "files_absent": {
+    "RLTSETUP.DLL": true,
+    "RLTKNT31.INF": true,
+    "RLTUSB.EXE": true,
+    "DHCPNT31.EXE": true,
+    "DRIVERS/RLTKLANT.SYS": true
+  },
+  "scope": "New first-driver-path fixture after native uninstall/cold boot and deletion of five installed package files; existing OS/protocol setup and old OEM cache retained",
+  "parent": "nt31-usbsetup-v9-reinstall-8127",
+  "hives": {
+    "SYSTEM": "eed8f9f34cae02d0fd242ac71938b01a8ee6cacee116a2274f375771597ad1cd",
+    "SOFTWARE": "0f4b15190c086b50052de9d34afdaebae4d806d6c1e5ddf5afcdfae07125722b",
+    "TEST_000": "a9cf591a7c7a50e5e1ec0609bf5ba0f8e7801f0567a9199379fa9f079f7d5042"
+  }
+}

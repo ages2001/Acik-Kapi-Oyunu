@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-02T13:37:50.173071+00:00",
+  "result": "PASS_FIXTURE_SMOKE_ONLY",
+  "physical_hid_resets": 5,
+  "observed_key_transitions": 20,
+  "files": {
+    "RLTKLANT/qemu/hw-usb/dev-rtl8153.c": "07b30ccd5242e02660168d35fd303db24def6cbdd213e5aaf52038d1c8cda240",
+    "RLTKLANT/qemu/hw-usb/rtl8153-hid-test.h": "667a827fde8011a6eaada6c12c226ea6cdec47402a60535ba752b65e522b2153",
+    "USBNT/test/tmixedfixture.py": "ffdea74ac8c32717fabe9e23f7b2ad4a5ca8b1339d3677a6e0cd35c9a78fd402",
+    "validation/usbnt-mixed-fixture-native-20261102.log": "31c4bfa0e2c42702074c0b50029f471538201aa98aff4c9bfa44df3f93b1aeb1",
+    "validation/qemu-mixed-fixture-build-v2-20261102.log": "e3adb0eabc69c116ee0a2a66b78347a93ce52c993f1d0ea444ab1e2dc77f5985"
+  },
+  "qemu": {
+    "i386": "4df3bf31e128e26cda8765a9f9f78ebd9582210cfc255c24cfcc7bd0cc74e51c",
+    "x86_64": "79ab8c5005d12958d2b95dbb6738e5395472841d33173398e554d5b85b1364c2"
+  },
+  "limits": [
+    "Fictional composite test fixture, not a physical Realtek profile.",
+    "Windows mixed-owner reset is not exercised by this native test.",
+    "Migration and nonzero HID idle retransmission are outside fixture scope."
+  ]
+}

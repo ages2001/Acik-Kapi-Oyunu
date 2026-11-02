@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-01T20:20:58.708066+00:00",
+  "scope": "Current additional-adapter installer candidate; actual OS setup is pending.",
+  "files": {
+    "DISK1": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "DHCPNT31.EXE": {
+      "size": 23899,
+      "sha256": "166782ced1eff2d9a8c4363aa5ff17293e221d1fbf0e1409f1998eb28612f030"
+    },
+    "RLTUSB.EXE": {
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    "OEMSETUP.INF": {
+      "size": 25092,
+      "sha256": "e0813fba6c21e06cb45157e61c6c9db1a183bc0eeb529d9c4e148bfb12cb2ff5"
+    },
+    "RLTKLANT.SYS": {
+      "size": 506368,
+      "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca"
+    }
+  }
+}

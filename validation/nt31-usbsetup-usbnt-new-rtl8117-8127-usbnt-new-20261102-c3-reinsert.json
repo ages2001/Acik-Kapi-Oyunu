@@ -1,0 +1,43 @@
+{
+  "guest": "nt31-usbsetup-usbnt-new-rtl8117-8127",
+  "token": "usbnt-new-20261102-c3-reinsert",
+  "mask": 3,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T07:34:09.075217+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 94785,
+      "end_offset": 107025,
+      "capture_prefix_sha256": "96400628209d0e91ca2e003a430d9a7b228edfcca71e7823b2c56c510a7d2eaf",
+      "screenshot": "nt31-usbsetup-usbnt-new-rtl8117-8127-usbnt-new-20261102-c3-reinsert-usb.png",
+      "ocr": "nt31-usbsetup-usbnt-new-rtl8117-8127-usbnt-new-20261102-c3-reinsert-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "e184af53ed551862c4f123d1a98b887270d320894d4ea4072fac34f7b21ab283"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 132373,
+      "end_offset": 144613,
+      "capture_prefix_sha256": "4bf86b0312a1314018fb06e19482f098e7f833c1a0dfad7555e928d061dd49b7",
+      "screenshot": "nt31-usbsetup-usbnt-new-rtl8117-8127-usbnt-new-20261102-c3-reinsert-pci.png",
+      "ocr": "nt31-usbsetup-usbnt-new-rtl8117-8127-usbnt-new-20261102-c3-reinsert-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "7f1e9a1a77aaa48a587247ecacaff741700bef8a217dabd0b4c9d08bbdadfb99"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T07:34:20.600136+00:00"
+}

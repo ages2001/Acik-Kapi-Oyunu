@@ -1,0 +1,6 @@
+/workspace/rltklant-work/validation/xp64-usbnet-hcpower-singletrace-8127-singletrace-20261102-power-each-screen.png
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_controller_power_each.py", line 51, in <module>
+    assert time.monotonic()-start<60, 'Recovery timeout; no successful adapter initialization'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Recovery timeout; no successful adapter initialization

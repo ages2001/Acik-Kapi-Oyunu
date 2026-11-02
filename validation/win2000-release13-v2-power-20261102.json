@@ -1,0 +1,99 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-release13-v2-8127",
+  "utc": "2026-11-02T18:36:06.336730+00:00",
+  "scope": "Injected controller D3/D0 and system-power IRPs with mixed NIC/HID owners.\n\nNo ACPI machine sleep is asserted. Same PDO/gen confirmation requires the\nstopped guest USBLOG.TXT, beyond the live network/input evidence recorded here.\n",
+  "result": "PASS_LIVE_PENDING_STOPPED_PDO_READBACK",
+  "rows": [
+    {
+      "mode": "device",
+      "cycle": 1,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-device1.json",
+        "sha256": "4179e7812805c6b69e64ca32d3019cb60579721534138480008695092c55c19f"
+      },
+      "keyboard": {
+        "file": "win2000-release13-v2-power-20261102-device1-key.json",
+        "sha256": "e77cde392ade18362271d5d1dd15ffe1824e671575fbcc6a7212013b91a67de5"
+      },
+      "seconds": 30.851
+    },
+    {
+      "mode": "device",
+      "cycle": 2,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-device2.json",
+        "sha256": "04756b9703c66c441f4a74ad580cb696977363f1269503dc24dba4d7f7826579"
+      },
+      "keyboard": {
+        "file": "win2000-release13-v2-power-20261102-device2-key.json",
+        "sha256": "fb8ded8ff8bcb38284c9c24daf62aba40fadd2528a856ac41f03bee246fc8d16"
+      },
+      "seconds": 30.934
+    },
+    {
+      "mode": "device",
+      "cycle": 3,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-device3.json",
+        "sha256": "3ebd92f76fe61413b2827c459c07b3b4f388b3ff5abaf72a10541571cea6828a"
+      },
+      "keyboard": {
+        "file": "win2000-release13-v2-power-20261102-device3-key.json",
+        "sha256": "77c7df341455df35befaf8499dd798cc5e79163bb3351c2195a24baecac47fbd"
+      },
+      "seconds": 30.684
+    },
+    {
+      "mode": "system",
+      "cycle": 1,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-system1.json",
+        "sha256": "9ca2e3787901c801bd97b40e9aeb1ae175fd6a57bf811497c5e040a68b653260"
+      },
+      "keyboard": {
+        "file": "win2000-release13-v2-power-20261102-system1-key.json",
+        "sha256": "ee94d44e08e3d507a08af3329a13245e91aaebe39cc0b7c90763ed1b9786b6b1"
+      },
+      "seconds": 31.217
+    },
+    {
+      "mode": "system",
+      "cycle": 2,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-system2.json",
+        "sha256": "15c56d15b5b3f226f4f7a3b3f83ea2e3bcc174e87819a2989b6b469c67220f29"
+      },
+      "keyboard": {
+        "file": "win2000-release13-v2-power-20261102-system2-key.json",
+        "sha256": "be9118fb13423d5e4fe2fa28c1bbf0fdd62973addbdfdedac77fcef7d18279d0"
+      },
+      "seconds": 31.16
+    },
+    {
+      "mode": "system",
+      "cycle": 3,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-system3.json",
+        "sha256": "7615bbef7374f1dc3c74dd343828eb7618f936adb4893e1b8cdc64070b42a5ba"
+      },
+      "keyboard": {
+        "file": "win2000-release13-v2-power-20261102-system3-key.json",
+        "sha256": "321f42bedb3ffe4acb622a65285182bee027e1bf774bf317563a2cd249d81b1f"
+      },
+      "seconds": 30.907
+    }
+  ],
+  "network_instance": "DEVICE USB\\VID_0BDA&PID_8153&MI_00\\3&227AC3A4&0&0&01&01&0&00"
+}

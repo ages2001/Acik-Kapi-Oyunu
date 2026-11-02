@@ -1,0 +1,48 @@
+{
+  "utc": "2026-11-02T19:20:32.318129+00:00",
+  "result": "PASS_WINDOWS_CATALOG_SIGNATURES_AND_MEMBERS",
+  "catalog_sha256": "839853d80c5ce6ff7fb1339876dbee8e881dc7839944bb46764a01e772b5bb8a",
+  "certificate_sha256": "ee86b1983fdeb5bbbc53b206c3e3b8c2573bfee8b9ddd7d2568f913dd93142c7",
+  "generator_sha256": "5bb4d88fc4a4685fd3c040bb65ee19d889d742deba54ca307f2cc39807ea871d",
+  "member_hashes": {
+    "netrtlk.inf": "36f875295425919d48ea0e9e4dceaf7bc8e0f3d8",
+    "i386/RLTKLANT.SYS": "ebea58223b8de97704edcc35b2436d2f8405867a",
+    "amd64/RLTKLANT.SYS": "749ec2753867665892a237405310790fb9113033"
+  },
+  "input_sha256": {
+    "netrtlk.inf": "1f09e506d10e7618e67fd7ec8152e7d0cec785038af0706d651499cf9921d0c8",
+    "i386/RLTKLANT.SYS": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5",
+    "amd64/RLTKLANT.SYS": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+  },
+  "media_manifest_sha256": "c5dd8c18b29cc71ce7ccae4171814ad36569c4c8be29863b6f0c3848b70c2fd6",
+  "iso_sha256": "b2c2d4e06ce66b787ed3cdc75736f60f3069cb4340fc0e2e2fce732579eb1d22",
+  "rows": [
+    {
+      "os": "win2000",
+      "guest": "win2000-standard-usbnet-mixed-catsort13-8127",
+      "result": "PASS",
+      "offline": "win2000-catsort13-offline-20261102",
+      "evidence": "win2000-catsort13-evidence-20261102",
+      "log_sha256": "7285fd26d3ab7bab9da5bc37a1f69fdce1cdc1d23f9402ace086f440b71e863c",
+      "rc_sha256": "9aca8dfce962538fb8131d73f84cada05e4dc79f5a0d3612c511b1150f3e33e2",
+      "screenshot": "win2000-catalog13-sorted-result-20261102.png",
+      "screenshot_sha256": "cc4279d623a89b43203cb6b09292ea1ee51e50434c2aa2a775156e6658835ddc",
+      "negative_old_catalog_log_sha256": "ceddcc17b13fea4ac1b1b4886cd876bdb3d0f2cea7d9725c3b3ea89a4d8ffe84"
+    },
+    {
+      "os": "xp64",
+      "guest": "xp64-usbnet-mixed-catalog13-8127",
+      "result": "PASS",
+      "offline": "xp64-catalog13-offline-20261102",
+      "evidence": "xp64-catalog13-evidence-20261102",
+      "log_sha256": "7285fd26d3ab7bab9da5bc37a1f69fdce1cdc1d23f9402ace086f440b71e863c",
+      "rc_sha256": "9aca8dfce962538fb8131d73f84cada05e4dc79f5a0d3612c511b1150f3e33e2",
+      "screenshot": "xp64-catalog13-sorted-result-20261102.png",
+      "screenshot_sha256": "39bf590ad6226a829d55ec365b9c5d5cdc561d9d700e18d9b531fcbb7844eb33",
+      "negative_old_catalog_log_sha256": "ceddcc17b13fea4ac1b1b4886cd876bdb3d0f2cea7d9725c3b3ea89a4d8ffe84"
+    }
+  ],
+  "scope": "Exact current inputs, Windows 2000/XP x64 CryptoAPI signatures and membership, altered-INF rejection; no trust-store changes, WHQL or publisher-trust claim.",
+  "retained_failure": "Unsorted CTL over the same input hashes: both guests return one membership failure for DRV64.SYS. Sorting encoded tags fixes both; old generator fails the permutation regression.",
+  "xp_media_note": "Launch JSON records the initial signature-only CD. QMP blockdev-change-medium device=fixture then mounted membership and sorted read-only ISOs in that order. Original and corrected guest logs are distinct; the Windows 2000 corrected child booted directly from the sorted ISO."
+}

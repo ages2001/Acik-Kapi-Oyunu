@@ -1,0 +1,14 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-v1-8127",
+  "utc": "2026-11-02T13:50:35.110467+00:00",
+  "scope": "Windows network owner plus native HID on one fictional USB device.\n\nOwns the guest's QMP and console. Final PASS requires stopped-disk KEY.LOG\nreadback; QMP delivery alone is insufficient proof of Windows input events.\n",
+  "result": "FAIL",
+  "rows": [
+    {
+      "cycle": 1,
+      "result": "RUNNING"
+    }
+  ],
+  "error": "CalledProcessError(1, ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '/workspace/rltklant-work/validation/native_port_reset_cycles.py', 'win2000-standard-usbnet-mixed-v1-8127', 'win2000-mixed-v1-reset-20261102-c1', '1'])",
+  "finished_utc": "2026-11-02T13:51:05.178795+00:00"
+}

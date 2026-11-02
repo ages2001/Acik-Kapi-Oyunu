@@ -1,0 +1,22 @@
+{
+  "guest": "win2000-standard-usbnet-hidreset-8127",
+  "model": "usb-rtl8153",
+  "rx_stall_injected_before_each_remove": true,
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-hidreset-8127",
+      "utc": "2026-11-02T10:03:06.621080+00:00",
+      "token": "hidreset-20261102-8153-native01",
+      "report": "TOKEN hidreset-20261102-8153-native01\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:03.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        58151
+      ],
+      "network_readiness": {
+        "wait_seconds": 6.621454899010132,
+        "evidence": "fresh assigned-source ARP"
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+
+RLTK DriverEntry
+
+RLTK RtlInitialize
+GR slot=0xFFFFFFFF
+  scan 0x00000000=0x12378086
+  scan 0x00000001=0x70008086
+  scan 0x00000002=0x11111234
+  scan 0x00000003=0x813910EC
+GR found slot=0x00000003
+  BAR io=0x0000C000 len=0x00000100
+  BAR mem=0xFEBD1000 len=0x00000100
+  irq=0x0000000B
+GetResources st=0x00000000
+res port=0x0000C000 mem=0x00000100 irq=0x0000000B
+backend=0x00000001 did=0x00008139
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RegisterMiniport st=0x00000000

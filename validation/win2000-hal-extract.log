@@ -1,0 +1,23 @@
+
+7-Zip 25.01 (x64) : Copyright (c) 1999-2025 Igor Pavlov : 2025-08-03
+ 64-bit locale=C.UTF-8 Threads:5 OPEN_MAX:16384, ASM
+
+Scanning the drive for archives:
+1 file, 52336747 bytes (50 MiB)
+
+Extracting archive: /workspace/rltklant-vm/install/win2000-driver.cab
+--
+Path = /workspace/rltklant-vm/install/win2000-driver.cab
+Type = Cab
+Physical Size = 52336747
+Method = LZX:21
+Blocks = 45
+Volumes = 1
+Volume Index = 0
+ID = 65349
+
+Everything is Ok
+
+Files: 11
+Size:       3641653
+Compressed: 52336747

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_report.py", line 10, in <module>
+    data,peer=s.recvfrom(16384);s.close();text=data.decode('ascii');print(text,flush=True)
+              ^^^^^^^^^^^^^^^^^
+TimeoutError: timed out

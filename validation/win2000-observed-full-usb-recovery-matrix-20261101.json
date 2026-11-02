@@ -1,0 +1,555 @@
+{
+  "utc": "2026-11-01T18:57:19.431652+00:00",
+  "guest": "win2000-standard-usbnet-observed-ehci-8127",
+  "storage": "AHCI",
+  "cycles": 32,
+  "full_mtu_replies": 128,
+  "rows": [
+    {
+      "model": "8153",
+      "kind": "reinsert",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8153-native-hotplug.json",
+      "sha256": "f1f63c3292e4af11d20b57028b3bdbe915250f05482c8ba956b5057a93fa6306",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8153",
+      "kind": "carrier",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8153-native-cable.json",
+      "sha256": "042a72185d4b1d53f1ce0534cc0b85c8f8fe7914f12d8233c056fdc7cc8b7d83",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8153",
+      "kind": "stalled removal",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-stall-8153-native-hotplug.json",
+      "sha256": "f546df56a08ef5dce02888aca6e41b12709879a600040d1e31b77d307c48eec9",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8153",
+      "kind": "physical port reset",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8153-port-reset-cycles.json",
+      "sha256": "f05ceedb1dc1ee517c8e21b3688451e06b784a7e38eeafce760985d791a27d63",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8156",
+      "kind": "reinsert",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8156-native-hotplug.json",
+      "sha256": "8396a10af424a381f0f56e579c6c8f83784410c1764c4295073a5440725a16b9",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8156",
+      "kind": "carrier",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8156-native-cable.json",
+      "sha256": "79ec894ec22a31283544a3b4b2046ed912a4bd2423e938a3289e6ff193f7787e",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8156",
+      "kind": "stalled removal",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-stall-8156-native-hotplug.json",
+      "sha256": "260bd43766cfce6400b96a529dd672680fd0d656d30cc6a14472f1137146c673",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8156",
+      "kind": "physical port reset",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8156-port-reset-cycles.json",
+      "sha256": "e4121a5b747b39f035d7c210bd9a02f8f498cd7f894decd9d9dc6fc67f7f348d",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8157",
+      "kind": "reinsert",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8157-native-hotplug.json",
+      "sha256": "0f5b2b6c996b759f689e520a799ebe4ee58e2912f052cd41c3eddacd5d63e292",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8157",
+      "kind": "carrier",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8157-native-cable.json",
+      "sha256": "7a56fa701ce63ce86026d40bdb831983d6a492a8624c7cc21422b344f881fc68",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8157",
+      "kind": "stalled removal",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-stall-8157-native-hotplug.json",
+      "sha256": "787d3cff2ce2973ba767136cb59c22dba2513f644e3cab512935bfc6cd8e863a",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8157",
+      "kind": "physical port reset",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8157-port-reset-cycles.json",
+      "sha256": "78f1f0107a441d1d6aab6de9391cee9142d68750f5c3fafc50955fe4081c1333",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8159",
+      "kind": "reinsert",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8159-native-hotplug.json",
+      "sha256": "c8ccd1e3369baf72f4c6eac4c367bfee42a551f6f4b4adf9a26e58756ada30d7",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8159",
+      "kind": "carrier",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8159-native-cable.json",
+      "sha256": "26ad4a193298a936748fc3189ecdeae35c944b361624eafe26ec78b9f4296301",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8159",
+      "kind": "stalled removal",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-stall-8159-native-hotplug.json",
+      "sha256": "6f7336b47f49c77166253271300d94ec62a8fecb83722aafb2fea3aad0b65420",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8159",
+      "kind": "physical port reset",
+      "file": "win2000-standard-usbnet-observed-ehci-8127-observed-8159-port-reset-cycles.json",
+      "sha256": "3b348e55b6e7b3a47c2990152136bf26bf0f2e874c644839553de5c4dd7c8141",
+      "cycles": 2,
+      "replies": 8
+    }
+  ],
+  "fixture": {
+    "utc": "2026-11-01T18:40:59.305788+00:00",
+    "parent": "/workspace/rltklant-vm/run/win2000-standard-usbnet-piperecover-ehci-8127.qcow2",
+    "parent_chain": [
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 10420224,
+              "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-piperecover-ehci-8127.qcow2",
+              "format": "file",
+              "actual-size": 10362880,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 1747006464,
+        "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-piperecover-ehci-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 10362880,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portrecover-ehci-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portrecover-ehci-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 10682368,
+              "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portrecover-ehci-8127.qcow2",
+              "format": "file",
+              "actual-size": 10625024,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 1747006464,
+        "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portrecover-ehci-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 10625024,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-public-ehci-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-public-ehci-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 9043968,
+              "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-public-ehci-8127.qcow2",
+              "format": "file",
+              "actual-size": 8986624,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 1747006464,
+        "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-public-ehci-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 8986624,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-ehci-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-ehci-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 11206656,
+              "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-ehci-8127.qcow2",
+              "format": "file",
+              "actual-size": 11145216,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 1747006464,
+        "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-ehci-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 11145216,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 337510400,
+              "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127.qcow2",
+              "format": "file",
+              "actual-size": 336662528,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 1747006464,
+        "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 336662528,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zstd",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 10944512,
+              "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+              "format": "file",
+              "actual-size": 10887168,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 1747006464,
+        "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 10887168,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 11730944,
+              "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+              "format": "file",
+              "actual-size": 11669504,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 1747006464,
+        "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 11669504,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 11599872,
+              "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+              "format": "file",
+              "actual-size": 11542528,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "raw",
+        "virtual-size": 1747006464,
+        "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 11542528,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+        "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 1747006464,
+              "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+              "format": "file",
+              "actual-size": 684900352,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "virtual-size": 1747006464,
+        "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+        "format": "raw",
+        "actual-size": 684900352,
+        "dirty-flag": false
+      }
+    ],
+    "image": "/workspace/rltklant-vm/run/win2000-standard-usbnet-observed-ehci-8127.qcow2",
+    "sha256_before_boot": "5e45f18731f071ba8b5c4a4bc24de456af4772d68d3da73e1a0c5934145b2001",
+    "files": [
+      {
+        "guest_path": "WINNT/system32/drivers/RLTKLANT.SYS",
+        "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5.sys",
+        "size": 514013,
+        "sha256": "0f5c866ace9ce0b9929448aa961044cc9164068b94539f774c7fa6f0f4388ef4",
+        "old_size": 513928,
+        "old_sha256": "3c0af22af498405163e395473ac764023c0068ca94b8e7501f1e596c3f8d2f9e"
+      },
+      {
+        "guest_path": "rlttest/RLTKLANT.SYS",
+        "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5.sys",
+        "size": 514013,
+        "sha256": "0f5c866ace9ce0b9929448aa961044cc9164068b94539f774c7fa6f0f4388ef4",
+        "old_size": 513928,
+        "old_sha256": "3c0af22af498405163e395473ac764023c0068ca94b8e7501f1e596c3f8d2f9e"
+      },
+      {
+        "guest_path": "rlttest/i386/RLTKLANT.SYS",
+        "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5.sys",
+        "size": 514013,
+        "sha256": "0f5c866ace9ce0b9929448aa961044cc9164068b94539f774c7fa6f0f4388ef4",
+        "old_size": 513928,
+        "old_sha256": "3c0af22af498405163e395473ac764023c0068ca94b8e7501f1e596c3f8d2f9e"
+      }
+    ],
+    "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+  },
+  "launch": {
+    "started_at": 1793558517.5173626,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/win2000-standard-usbnet-observed-ehci-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/win2000-standard-usbnet-observed-ehci-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-device",
+      "ich9-ahci,id=ahci",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=ahci.0,bootindex=0",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/win2000-standard-usbnet-observed-ehci-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/win2000-standard-usbnet-observed-ehci-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/win2000-standard-usbnet-observed-ehci-8127/usb.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-global",
+      "q35-pcihost.pci-hole64-size=0",
+      "-no-hpet"
+    ],
+    "qemu_sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a"
+  },
+  "scope": "Four native USB protocol models; actual guest names/problem codes and payload-checked ICMP; exact staged binary, no physical silicon or line-rate certification"
+}

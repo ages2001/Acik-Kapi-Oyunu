@@ -1,0 +1,47 @@
+{
+  "guest": "xp64-usbnet-mixed-release13-v2-8127",
+  "utc": "2026-11-02T18:47:36.909963+00:00",
+  "result": "PASS_LIVE_PENDING_STOPPED_READBACK",
+  "scope": "Observe actual shared-device resets, network payloads and Windows HID events.",
+  "rows": [
+    {
+      "cycle": 1,
+      "result": "PASS_LIVE_PENDING_READBACK",
+      "physical_resets": 1,
+      "network": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-reset-20261102-c1-port-reset-cycles.json",
+        "sha256": "a8f5294a8fcb62eb4228ce125cf7c924252c611565ab536df67fa624ea91352f"
+      },
+      "keyboard": {
+        "file": "xp64-release13-v2-reset-20261102-c1-key.json",
+        "sha256": "06f26636f930c721dd4e005c1f2dbdcb0435e0f26163639bca7e402b89dae0b2"
+      }
+    },
+    {
+      "cycle": 2,
+      "result": "PASS_LIVE_PENDING_READBACK",
+      "physical_resets": 1,
+      "network": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-reset-20261102-c2-port-reset-cycles.json",
+        "sha256": "cf8243c8a407f0dd8f88cf141c8f9dc4d12d91bf68d6d9f732a9c1a848a651e3"
+      },
+      "keyboard": {
+        "file": "xp64-release13-v2-reset-20261102-c2-key.json",
+        "sha256": "bd6a8e4a350017f3b2d0dd2428186b01c361b4c9254820807e2e125e2f0048ae"
+      }
+    },
+    {
+      "cycle": 3,
+      "result": "PASS_LIVE_PENDING_READBACK",
+      "physical_resets": 1,
+      "network": {
+        "file": "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-reset-20261102-c3-port-reset-cycles.json",
+        "sha256": "345ec529167e406c633d2efd6bce293bab40fb0c5a6d42b22255604e6bd7f348"
+      },
+      "keyboard": {
+        "file": "xp64-release13-v2-reset-20261102-c3-key.json",
+        "sha256": "c3cb8d67ad389d11b2b2c37362fa1ff275fe394610e3aa4dd6d8e6bdc5d37f8a"
+      }
+    }
+  ]
+}

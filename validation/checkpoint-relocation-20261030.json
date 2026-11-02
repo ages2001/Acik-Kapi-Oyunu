@@ -1,0 +1,8 @@
+{
+  "utc": "2026-10-30T06:23:25.276458+00:00",
+  "path": "/workspace/rltklant-vm/run/win2000-standard-filter-8127.raw",
+  "storage": "/tmp/rltklant-checkpoints/win2000-standard-filter-8127.raw",
+  "sha256": "333f71f2fb457da26dc8312db3b01226d308b2e8b136b2e8ebd6ba79ca9b651f",
+  "bytes": 1747006464,
+  "scope": "Inactive generated raw test checkpoint; byte-exact copy, original path preserved by symlink. Preserve /tmp storage in snapshots."
+}

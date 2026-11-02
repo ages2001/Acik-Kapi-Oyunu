@@ -1,0 +1,24 @@
+{
+  "result": "WINDOWS_2000_REPARENTING_REGRESSION_XP_CONTROL_PASSES",
+  "windows2000": {
+    "baseline_instance": "USB\\VID_0BDA&PID_8153&MI_00\\3&227AC3A4&0&0&01&01&0&00",
+    "post_upgrade_instance": "USB\\VID_0BDA&PID_8153&MI_00\\1&2B53A856&0&0&01&01&0&00",
+    "problem_code": 1,
+    "icmp_replies": 0,
+    "evidence": "win2000-release13-v1-failure-evidence-20261102/manifest.json",
+    "readback": "win2000-release13-v1-failure-readback-20261102/manifest.json",
+    "note": "A diagnostic NIC rebind was opened after the failure, then its signature dialog was declined. No repaired result is claimed."
+  },
+  "xp64": {
+    "same_before_and_after_instance": true,
+    "problem_code": 0,
+    "icmp_replies": 4,
+    "screen": "xp64-release13-rootbus-v1-probe-20261102.png",
+    "evidence": "xp64-release13-v1-control-evidence-20261102/manifest.json",
+    "readback": "xp64-release13-v1-control-offline-20261102/manifest.json"
+  },
+  "harness_events": [
+    "The first W2K failure readback requested USBLOG.TXT in WINNT, where it does not exist. Its incomplete directory is retained; a separate complete SYS/NATIVE.LOG readback succeeds.",
+    "The initial legacy closure script expected PASS for TCP host reports, whose documented result is PASS_HOST_PAYLOAD. The corrected closure also checks per-direction totals and closed capture hashes."
+  ]
+}

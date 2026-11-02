@@ -1,0 +1,210 @@
+{
+  "utc": "2026-11-02T18:29:17.684055+00:00",
+  "result": "PASS_BOUNDED_LEGACY_REGRESSION",
+  "rows": [
+    {
+      "guest": "nt31-usbsetup-release13-rtl8117-8127",
+      "result": "PASS_EXACT_DRIVER_READBACK_AND_RUNTIME",
+      "full_payload_replies": 104,
+      "cycles": 4,
+      "scope": "NT3.1 persistent USBNT plus native PCI/PCIe adapter recorded in the launch manifest in QEMU; inbox ping receipt summaries plus complete 1472-byte wire payload matching during USB interruption/recovery. Not a custom guest-side payload comparator or physical-silicon validation.",
+      "files": {
+        "WINNT31/SYSTEM32/DRIVERS/USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 434176,
+          "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e"
+        },
+        "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 538624,
+          "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+        },
+        "USBNT13/USBTREE.EXE": {
+          "file": "USBTREE.EXE",
+          "size": 57344,
+          "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a"
+        }
+      }
+    },
+    {
+      "guest": "nt4-ndis-dual-release13-8127",
+      "result": "PASS_EXACT_DRIVER_READBACK_AND_RUNTIME",
+      "full_payload_replies": 332,
+      "cycles": 8,
+      "scope": "Legacy persistent USBNT adapters in QEMU, two EHCI siblings plus native PCI/PCIe adapter recorded in the launch manifest; actual guest payload comparisons, not physical-silicon validation",
+      "files": {
+        "WINNT4/SYSTEM32/DRIVERS/USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 434176,
+          "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e"
+        },
+        "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 540920,
+          "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+        },
+        "USBNT13/USBTREE.EXE": {
+          "file": "USBTREE.EXE",
+          "size": 57344,
+          "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a"
+        }
+      }
+    },
+    {
+      "guest": "nt351-usbsetup-release13-rtl8139-8127",
+      "result": "PASS_EXACT_DRIVER_READBACK_AND_RUNTIME",
+      "full_payload_replies": 68,
+      "cycles": 4,
+      "scope": "PCI-only network binding: verify full-MTU PCI traffic during USBNT generic-client attachment/removal and USB carrier changes. USB attachment/firmware status comes from driver traces; no USB TCP/IP traffic is claimed. QEMU only.",
+      "files": {
+        "WINNT351/SYSTEM32/DRIVERS/USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 434176,
+          "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e"
+        },
+        "WINNT351/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 540920,
+          "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+        },
+        "WINNT351/SYSTEM32/USBTREE.EXE": {
+          "file": "USBTREE.EXE",
+          "size": 57344,
+          "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a"
+        },
+        "RLTTEST/TCP35.LOG": {
+          "file": "TCP35.LOG",
+          "size": 620,
+          "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+        }
+      }
+    },
+    {
+      "guest": "nt351-usbsetup-release13-usb-8127",
+      "result": "PASS_EXACT_DRIVER_READBACK_AND_RUNTIME",
+      "full_payload_replies": 104,
+      "cycles": 4,
+      "scope": "Legacy persistent USBNT adapter plus native PCI/PCIe adapter recorded in the launch manifest in QEMU; actual guest payload comparisons and PCI preservation during USB interruption, not physical-silicon validation",
+      "files": {
+        "WINNT351/SYSTEM32/DRIVERS/USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 434176,
+          "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e"
+        },
+        "WINNT351/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 540920,
+          "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+        }
+      }
+    }
+  ],
+  "references": {
+    "nt31-release13-offline-20261102/manifest.json": "6df20822a0a70ad7bfa26f18a065865bebbcdfc04289563ccd8ff885d4df1c20",
+    "nt31-release13-evidence-20261102/manifest.json": "cf08030784a77a0199896543422a107b2bb174ca0945f658219c02db36ab0282",
+    "nt31-release13-evidence-20261102/process-exit.json": "ae726c7f7179c59f154b1ca29692f1d45a9440f023a2fb90966b647f8ea3e75d",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-sibling-matrix.json": "140c110b2006fadc717b0c11192a7ce57a143a7b5865985ae62dfb746f124f5e",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c1-absent.json": "9ba8a53fcb790492fc193b6cd9392c3cff8c53891d925add6e3a9b28c2e7b1d1",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c1-reinsert.json": "a0a2ff1cf30229c501f28c662327d5927936a46581b7303a0c9984f971b36509",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c1-cable-down.json": "96587c4d50ab71d5e4d4ddf899ec6842e3c197fa6644b789b31591ab7b2b3a04",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c1-cable-up.json": "5f3eec91fde7167334440eba2b2b51e07dd28f90bbc0725d174dee3a7e5a3612",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c2-absent.json": "0f2476f64528edf2576d9b84070e71de5d602643b425e25a182e20127fd0fa2e",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c2-reinsert.json": "1a8f80fbfd61edc1a7779b37c5a1a6b0dbefcbb2217ecdecfa1224545fb0e0c3",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c2-cable-down.json": "690e6eb008affda5603e10dea93cc23915362c7e249a786237c3b75816e750f8",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c2-cable-up.json": "cc4573559b272707be8130c104776c47049db80b70975b72fee7493749af74e0",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c3-absent.json": "6bde0e374b2e6c0407e5113498032a04a5abd6239daa76e5fe1db5822b41cb27",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c3-reinsert.json": "d2af1cdbeeb6e543c1d358dd3fcb4ad49f3eab96687c17d421ada39d06d820d3",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c3-cable-down.json": "9528f917b81a037e6428565ef0613994a19b7daf22f803ba7aae19e5f28bb60a",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c3-cable-up.json": "c1cd675e2ed770c6e5bc0513c21cb769d7e1ad72380328d5444ef0a8a6bca802",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c4-absent.json": "007037d8ce3160e49c1701073e411d3b220f0264172897d6066c8d06f27f2323",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c4-reinsert.json": "64f36cc9768abb3008e00d3c3d4eccdcba1cce7f3ca03efe14eea2e211f41f3c",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c4-cable-down.json": "cff63f3b656181e4124da85f6a1f91de22981f7495d294addeb7e7c8e9957e39",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-c4-cable-up.json": "ffb100675e91a136e6c0560d180e7b4d41661caaa1f8d1b6b50ea9096c9df19c",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-baseline.json": "d53c9b646b52c54a97c2a75ad506e15d252780c21c75ee6594e36c7c5d7cd5ec",
+    "nt4-release13-offline-20261102/manifest.json": "4dce14956ad50ef4898e0e13a274388185256c3aac2ab0e0c79a92779e5aecbf",
+    "nt4-release13-evidence-20261102/manifest.json": "b051c6ce75f877b21774c222e076c52b83e35697d554874e12605288974ec67b",
+    "nt4-release13-evidence-20261102/process-exit.json": "6b837a02bc04c18eca542a3e4137cb8b3bf800bf3f0b199ed634e59fcca18a9a",
+    "nt4-ndis-dual-release13-8127-release13-20261102-sibling-matrix.json": "d20d7624c9c739ed3865514dfe7586899c58a2fc6b2650bee05ae79fcd7f001c",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c1-absent.json": "84270ebd9a6b22fc477a8d066ae161377ae64f28eb5e3ca3a9fa94abf2503f03",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c1-reinsert.json": "ac10e93cf41a150a9a9f5be7653e5c10028f78650931263bdfc7a91f695d2037",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c1-cable-down.json": "5618962be12c65f315427fe578e80f51b9d7d0294ebd8f1b1acd1668c4b312d9",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c1-cable-up.json": "17d703884244482cd5efa7324b189a8b37cdad803a4e846b4f14ed605378b801",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c2-absent.json": "f5213a11cd4815ae41b8fafa59c112126c40d5d0929a06e6208978bd4877fecd",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c2-reinsert.json": "8e006839cdec41be2143d4fbbfecd725ea777f352cc635b3ef642076391f61ec",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c2-cable-down.json": "f8887654539b212bb9eb9678f2726270975a5cc20123689a31253d375e70daab",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c2-cable-up.json": "fc9f7ee517aaf196d27122d1d6e496330f7590fffd079ffecbd5da9b5877d944",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c3-absent.json": "e17bb45ea8b6c40be43f978aa8a50b303bcb141e93cb18860a772db4c3b35714",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c3-reinsert.json": "7d2497735ba041b174ceac2996577d40b17852d3faabde66cdec8165dddfce04",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c3-cable-down.json": "3166c2a8b082d3c679da675c6033dff8344f26b1510e3027f717fc24e1147a63",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c3-cable-up.json": "3e844bb63b2240e04edd2d36edc1ef0f203a36f414bab32ee98d783842db45c7",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c4-absent.json": "9d004ed41db59213edc48e93983cb67739987c0c3e2a644bd14137d61c977b3f",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c4-reinsert.json": "07c526d467255dbf711375dc1ed43d937d00e1a24c5eb1a8b155c8271f16cd63",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c4-cable-down.json": "8de8e585d61c6880eac87d94a1e840f3d5791f86dd1b5e38e973786be0419787",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c4-cable-up.json": "8cd3c1d05657bbe3e5c8071c9c578e17c5f6d9c0fb023431326f9321bf708083",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c5-absent.json": "12991fc1456ddd1a5e00f1d56329a122ddfafcba3816dde65ac2cae2e4897ed2",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c5-reinsert.json": "a92216b5f5902e2dcf6fcfefd365825525cb538902d471d1e9dfd6412d9677f8",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c5-cable-down.json": "87fa14ac32db63a82e018213d0d1efcd1dd0eef5b7b53d13b60510d670fbfd88",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c5-cable-up.json": "f656b3b1f35d3421e353b840420230ac46a9528f3a54dab60c0f2a9b06a52fed",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c6-absent.json": "49df4102631860b26c56260f9c416a13d221d966c1f1060d52f7ca34ed59e79f",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c6-reinsert.json": "2268ff0a4eaa30a243b4a90ac52cc1e6069efa5756436b840d23d293995261ba",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c6-cable-down.json": "3ad91ce412507f6b7349b4e33f6658dea809bc1b9829382673e00aa2aa682430",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c6-cable-up.json": "84611b5e999704fd2cc6932c64af89cc944a360b1d8d0fd82e349f0f243e5924",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c7-absent.json": "39e70a1561de8afb42271e261c9cdacd01f09513574c134d759a740dc90747c3",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c7-reinsert.json": "434664efed9b8ae58827ff398c3633e15eb9c1481ce65f221e8a0f997c8b6f92",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c7-cable-down.json": "cb9a9a1ccf7487014ad1b0bc53ee4745559ae5fcf609af8795a57e500bc000f7",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c7-cable-up.json": "15f25db26b8467faec65bdab7e4a552e40ea33c86ba7ea420f484fbaa8fac8c3",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c8-absent.json": "762ed6ac8f0efa0bc455d8cc7dcd6d0921cd5d0e95e1ade9ebffffa9128114ab",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c8-reinsert.json": "a3b0da1b650c03fe82a8e60308f2d83d3c26f62593c886e35a89d2bd3fcda90f",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c8-cable-down.json": "e3793358253889d11e63ce7eba17c63feb44f39318b39a90670e65aa823781e5",
+    "nt4-ndis-dual-release13-8127-release13-20261102-c8-cable-up.json": "015f3bd192e55da3b73c4ce82e5996c661eb92ffa0843148b0f01e879d11a249",
+    "nt4-ndis-dual-release13-8127-release13-20261102-baseline.json": "495a5fcbfde23e8a87127f29e03bfd7c194e55b453140f30e7f85f0bb59a8b2a",
+    "nt351-release13-offline-20261102/manifest.json": "4e181e8ecdd2b14aa96230c2295702c8fefed94c07a01f4eeb1f6097b293fcf2",
+    "nt351-release13-evidence-20261102/manifest.json": "047a539583a8e2484aa181cf7122fd39b8e057c375eacdad5bc8eb3a59208cba",
+    "nt351-release13-evidence-20261102/process-exit.json": "540d6482193b565675ad25b4f14945160ee396b5f2040c1fb4cc52f59258fac8",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-sibling-matrix.json": "a2a6db5086f9c7593879ebc7ec73b599974dabf0c5869778f2e0530ce543f551",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c1-absent.json": "50d68b611b6eb7c8919d7c043c5f8916bc8db4755cad2aba3aa7b48e9af0233e",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c1-reinsert.json": "12d1d365391238ebfcd57c3a55c14353ea4392b7b3331ff0334140a65a6078ba",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c1-cable-down.json": "944a286007e0c6c87e5fc8640d715c9ba6a5232ef742c5c385fb65a66f3e792f",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c1-cable-up.json": "0ef65ed299d3d2a35bd41ff6e6e45a49b8d5cdf195f505bdb55d55d5398c7cef",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c2-absent.json": "44ed0d13a2dc974a61169ac64e922f771ab62e876a197d3f28aedb0466a6b13c",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c2-reinsert.json": "0b70b82737938583fbc24ad5778575200ca974efb7d31d28ec3f4ca8ab5bb3ca",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c2-cable-down.json": "367c58e809098ab0b6700f2c006b159022a435e1f49cce8cdfabb9eb68ddb39f",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c2-cable-up.json": "268aca25f218f5468a69ef57f620207a15356282a00c2f38268366dc1151fb65",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c3-absent.json": "5e2c9ee9678a7265143f681f240e2f631acd6f708d05d0e8a5af9d0e93002090",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c3-reinsert.json": "77937cdfe147c387ba8ec13416b0860462e12b44d341268da84475f0a069dfee",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c3-cable-down.json": "281a5bebdc14be79ed0d512d370102bc3c1951e356c2c1b345e99393ed1ddd39",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c3-cable-up.json": "8cc6258a90625c2ca553c40a24e72cab4859942954a34585f1631ea9a5e50036",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c4-absent.json": "d01eb52efcc61ecb1439e89c10d51c41a3119db7e05e618adffea7a50482262a",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c4-reinsert.json": "35147b99398a0c3eb8b714aa556e96c70ac04ed7a4133655c22a01fbfabf85e4",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c4-cable-down.json": "29bef0956f306b6eea1307900b92cd6ebb596553ed290fb127014a067973b6d0",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-c4-cable-up.json": "4b411e286f5c28ff6e28af9cc39b0ce328b1fb9c013740f2024a9a2815d4a9df",
+    "nt351-usbsetup-release13-rtl8139-8127-release13-20261102-baseline.json": "3467929b3b35420f23fc6b40cc59d526f695472d0fbaaa184ac8554169508e49",
+    "nt351-release13-usb-offline-20261102/manifest.json": "a7be7443197c70f1bcf7038b86342b8ae74531075d65ed0548e4b6144fba734b",
+    "nt351-release13-usb-evidence-20261102/manifest.json": "f4715817ddc408aabb519e4eb61bde8e482df3994b52d33e5b31fbfa8186163b",
+    "nt351-release13-usb-evidence-20261102/process-exit.json": "5d1bf0b06d26461e033eff879fbbf390680d4342f7a98e1b8142aaba918a4a4f",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-sibling-matrix.json": "532f3ed44bd807bab062ca9b70fa3d3c998f9c95bc3019bfc93928ad22f49dd4",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c1-absent.json": "db5d932cab82725b4a539915fe478de919d5ca7125d5054bf329b86252daf492",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c1-reinsert.json": "c13540a4f631309b6ff8b32321510f630e5910f1b16fe95b5870e2568119ac97",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c1-cable-down.json": "7a21c2fc442faa06bbe4339fb08f3a22cb48dd834806426dd7377e14d28c8c5e",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c1-cable-up.json": "ff846961f921227fa183d07196be3610e81a4b0be2eb4627241289c267ae230d",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c2-absent.json": "a60ab78f21f8e15099a0defe4fb96eb113c977bc03579009eb2017f88d182853",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c2-reinsert.json": "eb44d93fa52d497913c2c47f11fef72646cf7abac76efae1b5d0660a5c81a7ce",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c2-cable-down.json": "af4a95883db8bbddcc662b53e50c2820783010878d09d453a67ada89c43debf4",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c2-cable-up.json": "6ed68399b468316ce83184ed5d590ec3505de4de7aeaf27e87de80d0828f84d7",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c3-absent.json": "a93b1cbefc422412b98f749087004a72e02d4386f0800272afa5443f1353af72",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c3-reinsert.json": "c5b95402bd0f90725e79a9a54b6ca4ebff705c92575d96f01fd5323456bec060",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c3-cable-down.json": "98d2020fc32c5bdb38418570cefb42f6e88b3be14e13ff22cc328e04a87720b0",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c3-cable-up.json": "a35577d21a85ca73040f408c02a95f4b023f83f0cba9e873a8f4fea6c31445ca",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c4-absent.json": "dc9e5deb8f7805554dd4fa3f8cc96bea29904ee665e6957d312ee1727ac8d13b",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c4-reinsert.json": "21270a4ed59d532a094210614d893836aa4ebfb37a62c447a23236aa1fd49546",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c4-cable-down.json": "5235cad703bb2257799d719952dd8691c5615a5dbf18613cc3f5689dea42909f",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c4-cable-up.json": "bb30d52dcd9cc8681aa41f3bed65081e505268a734604d3032aa1061641e654c",
+    "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-baseline.json": "21d9617de5e4265ae2cb07217094eb979597f07b96737a77a21172c6579b73dc",
+    "nt351-release13-tcp-wire-proof-20261102.json": "70cd586d01a25f16f892174a71b791fb8bdc7459c50268970a21dd164982c768",
+    "nt351-release13-20261102-registered-reset.json": "4c97ee6a99a5aadd24a3caf7e99f0898bc042d3dc843c1b4a58e8000f870712c",
+    "nt351-release13-20261102-tcp-baseline.json": "7a1fa1e01bb1c7e44402ea6b0db93eba3587d956d58cd045bfd09569600bc774",
+    "nt351-release13-20261102-tcp-reset.json": "385cbbff6a6f837f3e5d2c762ca7f32d8d8b5daa06db76a9e5a26e603b4fbb11",
+    "nt351-release13-20261102-tcp-cable.json": "d12e1e317096417d5184c04a3cd3eec05832ffd46ae4d20be2e280c8a437c55a"
+  },
+  "scope": "Exact 1.3 legacy SYS on NT3.1, NT4 and two NT3.51 fixtures. RTL8139 TCP stream proof is separate from the USB+RTL8127 fixture. No physical hardware, universal OS/model coverage, or v2 tool runtime is claimed."
+}

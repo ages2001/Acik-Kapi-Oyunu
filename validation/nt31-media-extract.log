@@ -1,0 +1,28 @@
+
+7-Zip 25.01 (x64) : Copyright (c) 1999-2025 Igor Pavlov : 2025-08-03
+ 64-bit locale=C.UTF-8 Threads:5 OPEN_MAX:16384, ASM
+
+Scanning the drive for archives:
+1 file, 158769152 bytes (152 MiB)
+
+Extracting archive: /workspace/rltklant-vm/base/nt31-new/NT31CD.iso
+--
+Path = /workspace/rltklant-vm/base/nt31-new/NT31CD.iso
+Type = Iso
+Physical Size = 158769152
+Comment = 
+{
+Volume: WINDOWS_NT
+VolumeSet: WINDOWS_NT
+Publisher: MICROSOFT CORPORATION
+Preparer: MICROSOFT CORPORATION, ONE MICROSOFT WAY, REDMOND WA 98052, (206) 882-8080
+VolumeSpaceSize: 158308352
+VolumeSetSize: 1
+VolumeSequenceNumber: 1
+}
+
+Everything is Ok
+
+Files: 1183
+Size:       30893968
+Compressed: 158769152

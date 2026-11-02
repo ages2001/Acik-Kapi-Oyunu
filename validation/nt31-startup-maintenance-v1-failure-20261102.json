@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-01T21:52:54.425009+00:00",
+  "result": "FAIL",
+  "candidate": "frozen-builds/startup-maintenance-v1-20261102/manifest.json",
+  "screenshot": "nt31-startup-helper-first-sync-20261102.png",
+  "error": "Program Manager CF_TEXT reply rejected as incomplete; no mutation attempted",
+  "next": "Use actual byte count and append a private terminator; retain rejection of hidden data after embedded NUL"
+}

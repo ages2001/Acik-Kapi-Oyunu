@@ -1,0 +1,25 @@
+{
+  "utc": "2026-11-01T19:17:53.138878+00:00",
+  "files": [
+    {
+      "name": "DISK1",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "OEMSETUP.INF",
+      "size": 21583,
+      "sha256": "af5778612871656596f1513f28613842d6a9861bbf38e485b24a50a217d455a5"
+    },
+    {
+      "name": "RLTKLANT.SYS",
+      "size": 503183,
+      "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615"
+    },
+    {
+      "name": "RLTUSB.EXE",
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    }
+  ]
+}

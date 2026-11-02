@@ -1,0 +1,20 @@
+{
+  "sources": [
+    {
+      "file": "ndis-reference-1.md",
+      "sha256": "b333c721945f4280f039e2972f591d31de87dd1fd01200932c7cbadebd42145b"
+    },
+    {
+      "file": "ndis-reference-2.md",
+      "sha256": "40ac0ba9d0d578a91ad65fb1ee2b0b37bcc6f0f33d7d5b7fdee3cd06fe2a0d7e"
+    }
+  ],
+  "repository": "https://github.com/MicrosoftDocs/windows-driver-docs-ddi",
+  "branch": "staging",
+  "files": [
+    "wdk-ddi-src/content/ndis/nc-ndis-miniport_reset.md",
+    "wdk-ddi-src/content/ndis/nf-ndis-ndismresetcomplete.md"
+  ],
+  "scope": "Modern ResetEx documentation plus explicit pre-NDIS6 completion IRQL requirement; not a substitute for legacy concurrency validation.",
+  "finding": "Before NDIS 6, NdisMResetComplete requires DISPATCH_LEVEL; the passive worker must not call it directly at PASSIVE_LEVEL. Never hold a spin lock during completion."
+}

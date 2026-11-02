@@ -1,0 +1,23 @@
+{
+  "utc": "2026-11-02T08:00:31.637541+00:00",
+  "scope": "Build a test-only USBNT EHCI FDO D3/D0 and S3/S0 IRP injector.\n\nThe S pairs test system-to-device IRP mapping, not actual ACPI machine sleep.\nOnly the single QEMU Intel 24CD EHCI controller is selected. The kernel helper\nrequires the attached FDO's driver to be USBNT and retains it across calls.\n",
+  "arch": "amd64",
+  "files": {
+    "hcpower_probe.c": {
+      "size": 2471,
+      "sha256": "7c0e0b95ea541436054afc94f7d40121a958fa6076c2a12b56eb510bd194a49f"
+    },
+    "hcpower_driver.c": {
+      "size": 5895,
+      "sha256": "9093b41ad989cd55530b00942d691467a13c79ace162c80bb25d8dbff4698a90"
+    },
+    "HCPOWER.SYS": {
+      "size": 11433,
+      "sha256": "f96ada00e0f5f065455a15b686aa68a7c0058bbb1dbc63b4d09318daaa03f1c2"
+    },
+    "HCPOWER.EXE": {
+      "size": 11554,
+      "sha256": "fa188bdd9b0700dda1274f44575b1834d36d5198036fda799f97d2fb7cf7d820"
+    }
+  }
+}

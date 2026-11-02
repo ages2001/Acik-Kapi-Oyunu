@@ -1,0 +1,11 @@
+{
+  "guest": "nt4-ndis-dual-usb-8127",
+  "token": "dual-20261101-c4-absent",
+  "mask": 6,
+  "utc": "2026-11-01T20:21:09.275815+00:00",
+  "peer": [
+    "127.0.0.1",
+    51524
+  ],
+  "report": "TOKEN dual-20261101-c4-absent\r\nMASK 6\r\nPATH 10.0.3.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.4.2 REPLIES 4 PAYLOAD 1472\r\nTOTAL 8 EXPECTED 8\r\nPASS\r\n"
+}

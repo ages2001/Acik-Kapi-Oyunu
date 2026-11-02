@@ -1,0 +1,1 @@
+PASS: native RESET_PIPE ABI request, original TX failure preserved, no ambiguous frame resend, no bulk reset for control stalls

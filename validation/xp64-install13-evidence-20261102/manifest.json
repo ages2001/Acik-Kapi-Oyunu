@@ -1,0 +1,88 @@
+{
+  "utc": "2026-11-02T18:09:10.949109+00:00",
+  "guest": "xp64-usbnet-mixed-install13-8127",
+  "safeoff_screenshot": "xp64-install13-safeoff-20261102.png",
+  "safeoff_sha256": "098ba26ede684aa190f6f409de15b1044e0a5fe15b0b2b754b0e8d4c74fc744f",
+  "files": {
+    "debug.log": {
+      "bytes": 152,
+      "sha256": "1524eb962a56448edc211ba9846b21dfebe0a190ccca76a51f9b011b92b08192"
+    },
+    "serial.log": {
+      "bytes": 2272,
+      "sha256": "d5b16af11e8479f77dcb2341cba9b3ff96749276339fbf5665903a3f575e0379"
+    },
+    "qemu.log": {
+      "bytes": 570,
+      "sha256": "58d8a49580bc5f0419748ae2f73b3292ba2710b83c363612d3b45a2cd288952c"
+    },
+    "launch.json": {
+      "bytes": 1413,
+      "sha256": "669695364a192d2fa61952e48696d0403bd53c5bf213ef559ec734fd691d609e"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "e78f5da89941184de3df91eec0aae17bb70b432424fc5b8089792d491ebffd0f"
+    },
+    "usb.pcap": {
+      "bytes": 9176,
+      "sha256": "05d9a97684443685a2dbd009847f820172bb5ddf919a3a86958b2b1d666a3770"
+    }
+  },
+  "shutdown_evidence": "QMP ACPI shutdown, running=false; framebuffer may retain shutdown text",
+  "qmp_capture": {
+    "guest": "xp64-usbnet-mixed-install13-8127",
+    "captured_utc": "2026-11-02T18:07:55.864854+00:00",
+    "qmp_status": {
+      "status": "shutdown",
+      "singlestep": false,
+      "running": false
+    },
+    "launch": {
+      "started_at": 1793641549.2376008,
+      "command": [
+        "/workspace/rltklant-tools/qemu-src/build/qemu-system-x86_64",
+        "-machine",
+        "q35",
+        "-cpu",
+        "qemu64",
+        "-m",
+        "512",
+        "-drive",
+        "file=/workspace/rltklant-vm/run/xp64-usbnet-mixed-install13-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+        "-nic",
+        "none",
+        "-display",
+        "none",
+        "-vga",
+        "cirrus",
+        "-qmp",
+        "unix:/workspace/rltklant-vm/run/xp64-usbnet-mixed-install13-8127/qmp.sock,server=on,wait=off",
+        "-no-reboot",
+        "-no-shutdown",
+        "-debugcon",
+        "file:/workspace/rltklant-vm/run/xp64-usbnet-mixed-install13-8127/debug.log",
+        "-serial",
+        "file:/workspace/rltklant-vm/run/xp64-usbnet-mixed-install13-8127/serial.log",
+        "-device",
+        "usb-ehci,id=ehci",
+        "-netdev",
+        "user,id=n0",
+        "-device",
+        "usb-rtl8153-hid-test,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+        "-object",
+        "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/xp64-usbnet-mixed-install13-8127/usb.pcap",
+        "-global",
+        "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+        "-global",
+        "q35-pcihost.pci-hole64-size=0",
+        "-no-hpet",
+        "-device",
+        "piix3-ide,id=legacyide",
+        "-device",
+        "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0,lcyls=652,lheads=255,lsecs=63"
+      ],
+      "qemu_sha256": "15d34be16178c8ecbd2f148d9da285baed5cf88aef94780c48c8445de04ff87d"
+    }
+  }
+}

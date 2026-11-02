@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-01T22:31:49.706342+00:00",
+  "files": {
+    "test_setup_registration.py": {
+      "bytes": 4686,
+      "sha256": "1efcf6bbe65924894607528f112fb490ce96651528474d48894b3c1d1482bfd2"
+    },
+    "rltsetup.c": {
+      "bytes": 19349,
+      "sha256": "154db5007c1bf678262bfb52496f64a03ecbc0e7f5e1bc35f0e5a584739337f5"
+    },
+    "build-rltsetup.sh": {
+      "bytes": 871,
+      "sha256": "d6eca8f3391f6098dfef7689dd617df824caff21a62ccb0f25247d0bcc146aaa"
+    },
+    "RLTSETUP.DLL": {
+      "bytes": 22451,
+      "sha256": "04bbf1bf056e8b735db20a324c2e6912b2001ad6a78f8cd523d28086ad965fa2"
+    }
+  },
+  "scope": "NT3.5/4 registration helper variant selecting RLTKNT35.INF; guest tests pending"
+}

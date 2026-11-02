@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-01T21:20:17.706464+00:00",
+  "guest": "nt31-usbsetup-ncpa-v4-reboot-8127",
+  "pcap_offsets": {
+    "usb.pcap": 279431,
+    "pci.pcap": 246803
+  },
+  "candidate": "frozen-builds/dhcp-interface-bind-20261101/manifest.json",
+  "command": "C:\\RLTTEST\\DHCPBND.EXE /auto /apply",
+  "expected_enabled_service": "RLTKLANT02",
+  "expected_skipped_service": "RLTKLANT01"
+}

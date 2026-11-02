@@ -1,0 +1,97 @@
+{
+  "guest": "xp64-usbnet-syncrun-8127",
+  "utc": "2026-11-02T13:39:11.550897+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8153-native-hotplug.json",
+        "sha256": "7c7dadeb6d21d89180dc46ee7756f1c1ba52418564e7e7be844a6f330d7e39a0"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8153-function-power.json",
+        "sha256": "e049d24de99a75033c5aeb2adfe2ed3e72735862f2529853f30335e7b0194ea6"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8153-port-reset-cycles.json",
+        "sha256": "05158f6223ccc16af842e9c8a63f70c2e816dfbf79820c124037b825d7142dfd"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8153-native-cable.json",
+        "sha256": "2d2b28cc4fa5c74806f65334a647e1c5128153e1313bacbcaa6296e2eaec5149"
+      },
+      "seconds": 70.74
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8156-native-hotplug.json",
+        "sha256": "f94b1012ae38554697c923e27968fcde966c48ea8aaea5193f98bdb1de66e663"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8156-function-power.json",
+        "sha256": "7c859b296203cc2368abae764abde28e0b96005de4d32ab042afac30f227b3b5"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8156-port-reset-cycles.json",
+        "sha256": "e6dab1ae553747d7a7de0fbe50c5d1ee1a6afab7837652b32090849f8b8bd8d1"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8156-native-cable.json",
+        "sha256": "4b3c768482ec360695c26c31b992f0e619b385b35abafb5599bbc114206f2538"
+      },
+      "seconds": 80.79
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8157-native-hotplug.json",
+        "sha256": "45aa72eac86f41e446e160b497a937b5bbf534ee409fd539a081d865ac15172e"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8157-function-power.json",
+        "sha256": "1fd098c26b8c73a1ec97ce909178d36106c9282bfc1ed05157724933bf0a7f76"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8157-port-reset-cycles.json",
+        "sha256": "94e5d7939cd1d315b32c0d44859977f16326ffb521653458710332d775744fe0"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8157-native-cable.json",
+        "sha256": "dd2a8a793772d6076f91dbef415ee3b282bdf3ec7f24c6b40e4e9e629ff9f9a9"
+      },
+      "seconds": 90.15
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8159-native-hotplug.json",
+        "sha256": "4b19723635f52785b3dde2dd7a56b3414dc1659f3e41d67e2beec1445754780b"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8159-function-power.json",
+        "sha256": "980a7034dde18d00f88ffba34899aef9e3da1dea27c620b92dc7b0405a3d6301"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8159-port-reset-cycles.json",
+        "sha256": "42260df1dc563f96db5ebf16cbe3daa826cee57c127a35cbfb8e16096993aed6"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-syncrun-8127-syncrun-20261102-8159-native-cable.json",
+        "sha256": "ee016e0245f849462b4e6464c6ff2240720bd5583eec8b6ef8a5a9c249cfbe15"
+      },
+      "seconds": 110.69
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

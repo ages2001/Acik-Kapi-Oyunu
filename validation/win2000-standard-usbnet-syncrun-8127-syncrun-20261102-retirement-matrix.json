@@ -1,0 +1,97 @@
+{
+  "guest": "win2000-standard-usbnet-syncrun-8127",
+  "utc": "2026-11-02T13:38:38.643458+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8153-native-hotplug.json",
+        "sha256": "2beb038f2ea4f06c005790e5b5e0dac073158ac5819081b6a7c8fd9c8d7bd27f"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8153-function-power.json",
+        "sha256": "21789fd1651cb0779851d431643d49311ebf869b5ef142a2b62c74d8c4e1c365"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8153-port-reset-cycles.json",
+        "sha256": "443a052000b6ce7691ab3e6fa070cefa2930e9a1f8e485dec209a9838b972258"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8153-native-cable.json",
+        "sha256": "46accd140c6011143f775006400c7bc0604255a017841da511807259fa73988a"
+      },
+      "seconds": 74.58
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8156-native-hotplug.json",
+        "sha256": "37115727bba14f7d8c94bcf6bb94b24a3c9bc3a556d62e78973d8f9c4be724bc"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8156-function-power.json",
+        "sha256": "3026d69ce037ffee9cf2f182370a245108d114f4d782fc620433867eb459a933"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8156-port-reset-cycles.json",
+        "sha256": "04563999cdb0e2f32d7de14a3628bac227bf4dbf7b387b6e564c05ad28a1e90a"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8156-native-cable.json",
+        "sha256": "4269a9cc8c1ab6717fb1b4059295de2829f1b1e70930d4d2c06feba3abe5f8b9"
+      },
+      "seconds": 77.52
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8157-native-hotplug.json",
+        "sha256": "3bf3668230db225e819d405d42016840f64bf6bc7e5b5e8f81a7fd5f2995c89f"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8157-function-power.json",
+        "sha256": "6196afb802f343f7b2a41c5d27874442d042e0f3407e31e5531a061af2102770"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8157-port-reset-cycles.json",
+        "sha256": "b672a11556f36f51315bd5836831a21b95602bc728769609fd08ed686852296b"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8157-native-cable.json",
+        "sha256": "a2cae0b5fdfbfef066d51ca651b6bd5dcf09c6b66a8078b675b4739a3d365bc3"
+      },
+      "seconds": 98.23
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8159-native-hotplug.json",
+        "sha256": "c62057ce24a5122cb9235fc1c2b47054857ca9b7b2abe49eb0d3a332469d8d24"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8159-function-power.json",
+        "sha256": "25ac5c3cb5bac7218a4776732b3181636bf071d26af9e28b02d39c87d4771978"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8159-port-reset-cycles.json",
+        "sha256": "6a77eeb91de828929eb220a9a27658860f539c9b71c6b4504795f830f9b54ad9"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-8159-native-cable.json",
+        "sha256": "6635952277986d830bad0e9bfac34462b5c706eef8c9b99ca66d03e83edc6e7c"
+      },
+      "seconds": 126.7
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

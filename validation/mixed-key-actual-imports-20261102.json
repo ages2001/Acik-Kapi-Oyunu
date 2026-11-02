@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "exe_sha256": "e446d0c6977d4ac402334487304782bcccba1441478bc90dcbdf07ea7d040031",
+  "reference": "WINNT/SYSTEM32/KERNEL32.DLL from stopped classreset guest",
+  "kernel_sha256": "5ac18c98492dce3a5312b29d2cc0acfd615c8dfcac1df73790010414ac358f9f",
+  "imports": [
+    "CloseHandle",
+    "CreateFileA",
+    "ExitProcess",
+    "FlushConsoleInputBuffer",
+    "GetCommandLineA",
+    "GetConsoleMode",
+    "GetStdHandle",
+    "GetTickCount",
+    "ReadConsoleInputA",
+    "SetConsoleMode",
+    "SetFilePointer",
+    "WaitForSingleObject",
+    "WriteFile",
+    "lstrlenA"
+  ]
+}

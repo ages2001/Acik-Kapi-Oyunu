@@ -1,0 +1,7 @@
+QEMU 8.2.2 monitor - type 'help' for more information
+(qemu) i[K[Din[K[D[Dinf[K[D[D[Dinfo[K[D[D[D[Dinfo [K[D[D[D[D[Dinfo u[K[D[D[D[D[D[Dinfo us[K[D[D[D[D[D[D[Dinfo usb[K
+  Device 1.0, Port 1, Speed 480 Mb/s, Product Realtek RTL8153 USB Gigabit Eth
+(qemu) i[K[Din[K[D[Dinf[K[D[D[Dinfo[K[D[D[D[Dinfo [K[D[D[D[D[Dinfo n[K[D[D[D[D[D[Dinfo ne[K[D[D[D[D[D[D[Dinfo net[K[D[D[D[D[D[D[D[Dinfo netw[K[D[D[D[D[D[D[D[D[Dinfo netwo[K[D[D[D[D[D[D[D[D[D[Dinfo networ[K[D[D[D[D[D[D[D[D[D[D[Dinfo network[K
+usb-rtl8153.0: index=0,type=nic,model=usb-rtl8153,macaddr=52:54:00:aa:bb:cc
+ \ n0: index=0,type=user,net=10.0.2.0,restrict=off
+(qemu) q[K[Dqu[K[D[Dqui[K[D[D[Dquit[K

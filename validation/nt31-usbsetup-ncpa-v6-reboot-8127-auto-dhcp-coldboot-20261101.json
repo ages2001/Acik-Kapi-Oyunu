@@ -1,0 +1,38 @@
+{
+  "guest": "nt31-usbsetup-ncpa-v6-reboot-8127",
+  "token": "auto-dhcp-coldboot-20261101",
+  "mask": 3,
+  "result": "PASS",
+  "utc": "2026-11-01T21:33:05.306127+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "start_offset": 34868,
+      "end_offset": 47108,
+      "capture_prefix_sha256": "2f7802edd2d82ba32879cdece846c34bd5458398a1d8c5deacccc8c314c476a3",
+      "screenshot": "nt31-usbsetup-ncpa-v6-reboot-8127-auto-dhcp-coldboot-20261101-usb.png",
+      "ocr": "nt31-usbsetup-ncpa-v6-reboot-8127-auto-dhcp-coldboot-20261101-usb.ocr.txt",
+      "screenshot_sha256": "d44e503b3479f3f50334c1087cb6e0b30a0e9fba4f7787fd7a4adf3374769349"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "start_offset": 9285,
+      "end_offset": 21681,
+      "capture_prefix_sha256": "0f254299dc56daed06923f0798f83d3584bb8fe9fc9f4eb30ede3526e5a9a4fd",
+      "screenshot": "nt31-usbsetup-ncpa-v6-reboot-8127-auto-dhcp-coldboot-20261101-pci.png",
+      "ocr": "nt31-usbsetup-ncpa-v6-reboot-8127-auto-dhcp-coldboot-20261101-pci.ocr.txt",
+      "screenshot_sha256": "d706d29cf077a3c186ab6f3b9024762f2afe71c6cafa7dcbf01e3e24ddbcdbd3"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-01T21:33:16.755767+00:00"
+}

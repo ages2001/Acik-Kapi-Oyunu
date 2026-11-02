@@ -1,0 +1,2 @@
+test: tmscrundown.c:80: release_after_wait: Assertion `waiting&&!stopped&&blocks==4' failed.
+USBNT/test/host/tmscrundown.sh: line 10: 250635 Aborted                 "$test_dir/test"

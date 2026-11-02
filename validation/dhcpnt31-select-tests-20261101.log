@@ -1,0 +1,1 @@
+PASS: distinct subnet destinations, overlap/unconfigured/invalid rejection, per-adapter opt-in and bounded select/receive behavior

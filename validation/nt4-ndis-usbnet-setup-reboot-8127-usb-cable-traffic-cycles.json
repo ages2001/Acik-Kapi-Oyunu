@@ -1,0 +1,40 @@
+{
+  "guest": "nt4-ndis-usbnet-setup-reboot-8127",
+  "verified_utc": "2026-11-01T19:18:00.049484+00:00",
+  "results": [
+    {
+      "cycle": 1,
+      "model": "usb-rtl8153",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    },
+    {
+      "cycle": 2,
+      "model": "usb-rtl8156",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    },
+    {
+      "cycle": 3,
+      "model": "usb-rtl8157",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    },
+    {
+      "cycle": 4,
+      "model": "usb-rtl8159",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    }
+  ],
+  "pcap_sha256": "804cdae6d105a1b259856f4eaf4e9c1ac50ed8c40abbd343b5947195372b01d8",
+  "scope": "Persistent USBNT miniport on emulated hardware; not native USB PDO/PnP or physical-device certification"
+}

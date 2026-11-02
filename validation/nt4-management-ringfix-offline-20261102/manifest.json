@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-02T06:04:42.912029+00:00",
+  "guest": "nt4-ndis-management-ringfix-8127",
+  "files": {
+    "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540269,
+      "sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0"
+    }
+  }
+}

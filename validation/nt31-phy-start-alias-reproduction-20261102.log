@@ -1,0 +1,7 @@
+test: /tmp/tmpgfbmckdg/test.c:24: mask: Assertion `value==0&&width==expected_width' failed.
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_nt31_phy_start.py", line 91, in <module>
+    subprocess.run([str(binary)], check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/tmpgfbmckdg/test']' died with <Signals.SIGABRT: 6>.

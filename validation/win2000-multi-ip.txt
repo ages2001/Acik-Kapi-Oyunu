@@ -1,0 +1,44 @@
+
+Windows 2000 IP Configuration
+
+Ethernet adapter Local Area Connection 6:
+
+	Connection-specific DNS Suffix  . : 
+	IP Address. . . . . . . . . . . . : 10.0.7.15
+	Subnet Mask . . . . . . . . . . . : 255.255.255.0
+	Default Gateway . . . . . . . . . : 10.0.7.2
+
+Ethernet adapter Local Area Connection 5:
+
+	Connection-specific DNS Suffix  . : 
+	IP Address. . . . . . . . . . . . : 10.0.6.15
+	Subnet Mask . . . . . . . . . . . : 255.255.255.0
+	Default Gateway . . . . . . . . . : 10.0.6.2
+
+Ethernet adapter Local Area Connection 4:
+
+	Connection-specific DNS Suffix  . : 
+	IP Address. . . . . . . . . . . . : 10.0.5.15
+	Subnet Mask . . . . . . . . . . . : 255.255.255.0
+	Default Gateway . . . . . . . . . : 10.0.5.2
+
+Ethernet adapter Local Area Connection 3:
+
+	Connection-specific DNS Suffix  . : 
+	IP Address. . . . . . . . . . . . : 10.0.4.15
+	Subnet Mask . . . . . . . . . . . : 255.255.255.0
+	Default Gateway . . . . . . . . . : 10.0.4.2
+
+Ethernet adapter Local Area Connection 2:
+
+	Connection-specific DNS Suffix  . : 
+	IP Address. . . . . . . . . . . . : 10.0.3.15
+	Subnet Mask . . . . . . . . . . . : 255.255.255.0
+	Default Gateway . . . . . . . . . : 10.0.3.2
+
+Ethernet adapter Local Area Connection:
+
+	Connection-specific DNS Suffix  . : 
+	IP Address. . . . . . . . . . . . : 10.0.2.15
+	Subnet Mask . . . . . . . . . . . : 255.255.255.0
+	Default Gateway . . . . . . . . . : 10.0.2.2

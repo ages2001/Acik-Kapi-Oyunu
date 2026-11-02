@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-01T18:23:29.986547+00:00",
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "checks": [
+    {
+      "test": "test_native_reconfigure.py",
+      "sha256": "29af9774b52d45d2dcf1c2117e50c05e1811712bcdb82dfab74451d6e99194cb",
+      "result": "1100 identity/allocation/submit/shape/handle/stop fault schedules passed"
+    },
+    {
+      "test": "test_native_rx_queue.py",
+      "sha256": "47e669a127d42812b3891847e1523ecc1ea6f01f075463661236ec2eeb4dae61",
+      "result": "20000 concurrent RX buffers, 8726 copied intact; 1000 carrier epochs; reconfiguration gate passed"
+    },
+    {
+      "test": "test_native_rx_recovery.py",
+      "sha256": "053f3f87d23cd8b4a13ae91a275f08347dcc525188316e07615b47e5efcb718a",
+      "result": "16 cancelled/stalled/failure/stop schedules passed"
+    }
+  ]
+}

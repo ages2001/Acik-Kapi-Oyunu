@@ -1,0 +1,7 @@
+{
+  "original": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+  "retained": "/tmp/rltklant-retained-raw-20261102/xp64-irq-multi-8127.raw",
+  "bytes": 5368709120,
+  "sha256": "01b91c6aa611085deaee3e9981cbd28953fdf8a5e80802c509ab40292557214a",
+  "scope": "Inactive generated raw retained byte-for-byte in temporary storage with original-path symlink. Do not use as a durable parent for new fixtures."
+}

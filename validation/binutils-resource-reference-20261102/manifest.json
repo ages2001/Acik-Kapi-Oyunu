@@ -1,0 +1,13 @@
+{
+  "source": "https://github.com/RTEMS/sourceware-mirror-binutils-gdb",
+  "references": {
+    "section.c": "binutils-2_44/bfd/section.c",
+    "compress.c": "binutils-2_44/bfd/compress.c",
+    "peXXigen.c": "binutils-2_44-branch/bfd/peXXigen.c"
+  },
+  "files": {
+    "peXXigen.c": "a0e1f579538924c317d498aad27a9cb2aee1e62361ef2fe50cb50102a39dccf6",
+    "compress.c": "00db7a392ea6e630bb80c40eb249c0076a382f88104ea3838ec9c1cd6425516f",
+    "section.c": "fe7288422b12d4503afce61830259b363f43a1291779db4478a7d44eb5249da5"
+  }
+}

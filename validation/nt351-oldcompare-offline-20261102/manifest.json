@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T13:18:22.591718+00:00",
+  "guest": "nt351-usbsetup-oldcompare-rtl8139-8127",
+  "files": {
+    "WINNT351/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 412672,
+      "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241"
+    },
+    "WINNT351/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    },
+    "RLTTEST/USBLOG.TXT": {
+      "file": "USBLOG.TXT",
+      "size": 1784,
+      "sha256": "26a54915215e124e5974b49f2b2ffee52c8a83ba403143f624746e8268a6097f"
+    }
+  }
+}

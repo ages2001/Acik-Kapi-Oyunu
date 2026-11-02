@@ -1,0 +1,129 @@
+In file included from /tmp/rltk-abi-pkyuo875/test.c:4:
+/tmp/rltk-abi-pkyuo875/ndiskit.h:299:1: error: return type defaults to ‘int’ [-Wimplicit-int]
+  299 | __declspec(dllimport) VOID STDC EthFilterDprIndicateReceive(PVOID, NDIS_HANDLE, PCHAR, PVOID, UINT, PVOID, UINT, UINT);
+      | ^~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h: In function ‘__declspec’:
+/tmp/rltk-abi-pkyuo875/ndiskit.h:300:1: error: expected declaration specifiers before ‘__declspec’
+  300 | __declspec(dllimport) VOID STDC EthFilterDprIndicateReceiveComplete(PVOID);
+      | ^~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:313:14: error: storage class specified for parameter ‘memcpy’
+  313 | extern void *memcpy(void *, const void *, __SIZE_TYPE__);
+      |              ^~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:314:14: error: storage class specified for parameter ‘memset’
+  314 | extern void *memset(void *, int, __SIZE_TYPE__);
+      |              ^~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:315:14: error: storage class specified for parameter ‘memcmp’
+  315 | extern int   memcmp(const void *, const void *, __SIZE_TYPE__);
+      |              ^~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:321:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  321 | {
+      | ^
+/tmp/rltk-abi-pkyuo875/ndiskit.h:327:47: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  327 | static __inline VOID RtlFree(PVOID p, UINT n) { NdisFreeMemory(p, n, 0); }
+      |                                               ^
+/tmp/rltk-abi-pkyuo875/ndiskit.h:338:3: error: storage class specified for parameter ‘DEVICE_OBJECT’
+  338 | } DEVICE_OBJECT, *PDEVICE_OBJECT;
+      |   ^~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:338:19: error: storage class specified for parameter ‘PDEVICE_OBJECT’
+  338 | } DEVICE_OBJECT, *PDEVICE_OBJECT;
+      |                   ^~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:339:29: error: storage class specified for parameter ‘FILE_OBJECT’
+  339 | typedef struct _FILE_OBJECT FILE_OBJECT, *PFILE_OBJECT;
+      |                             ^~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:339:43: error: storage class specified for parameter ‘PFILE_OBJECT’
+  339 | typedef struct _FILE_OBJECT FILE_OBJECT, *PFILE_OBJECT;
+      |                                           ^~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:344:64: error: expected declaration specifiers or ‘...’ before ‘PFILE_OBJECT’
+  344 | NTSTATUS STDC IoGetDeviceObjectPointer(PUNICODE_STRING, ULONG, PFILE_OBJECT *, PDEVICE_OBJECT *);
+      |                                                                ^~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:344:80: error: expected declaration specifiers or ‘...’ before ‘PDEVICE_OBJECT’
+  344 | NTSTATUS STDC IoGetDeviceObjectPointer(PUNICODE_STRING, ULONG, PFILE_OBJECT *, PDEVICE_OBJECT *);
+      |                                                                                ^~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/test.c:5:1: error: expected declaration specifiers before ‘__asm__’
+    5 | __asm__(".globl ObfDereferenceObject\n"
+      | ^~~~~~~
+/tmp/rltk-abi-pkyuo875/test.c:15:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+   15 | {
+      | ^
+/tmp/rltk-abi-pkyuo875/ndiskit.h:299:1: error: type of ‘dllimport’ defaults to ‘int’ [-Wimplicit-int]
+  299 | __declspec(dllimport) VOID STDC EthFilterDprIndicateReceive(PVOID, NDIS_HANDLE, PCHAR, PVOID, UINT, PVOID, UINT, UINT);
+      | ^~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:353:32: error: declaration for parameter ‘ObfDereferenceObject’ but no such parameter
+  353 | VOID __attribute__((fastcall)) ObfDereferenceObject(PVOID);
+      |                                ^~~~~~~~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:339:43: error: declaration for parameter ‘PFILE_OBJECT’ but no such parameter
+  339 | typedef struct _FILE_OBJECT FILE_OBJECT, *PFILE_OBJECT;
+      |                                           ^~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:339:29: error: parameter ‘FILE_OBJECT’ has incomplete type
+  339 | typedef struct _FILE_OBJECT FILE_OBJECT, *PFILE_OBJECT;
+      |                             ^~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:339:29: error: declaration for parameter ‘FILE_OBJECT’ but no such parameter
+/tmp/rltk-abi-pkyuo875/ndiskit.h:338:19: error: declaration for parameter ‘PDEVICE_OBJECT’ but no such parameter
+  338 | } DEVICE_OBJECT, *PDEVICE_OBJECT;
+      |                   ^~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:338:3: error: declaration for parameter ‘DEVICE_OBJECT’ but no such parameter
+  338 | } DEVICE_OBJECT, *PDEVICE_OBJECT;
+      |   ^~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:315:14: error: declaration for parameter ‘memcmp’ but no such parameter
+  315 | extern int   memcmp(const void *, const void *, __SIZE_TYPE__);
+      |              ^~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:314:14: error: declaration for parameter ‘memset’ but no such parameter
+  314 | extern void *memset(void *, int, __SIZE_TYPE__);
+      |              ^~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:313:14: error: declaration for parameter ‘memcpy’ but no such parameter
+  313 | extern void *memcpy(void *, const void *, __SIZE_TYPE__);
+      |              ^~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:310:14: error: declaration for parameter ‘MmIsAddressValid’ but no such parameter
+  310 | BOOLEAN STDC MmIsAddressValid(PVOID);                   /* NTOSKRNL */
+      |              ^~~~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:309:14: error: declaration for parameter ‘KeStallExecutionProcessor’ but no such parameter
+  309 | VOID    STDC KeStallExecutionProcessor(ULONG);          /* HAL */
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:299:33: error: declaration for parameter ‘EthFilterDprIndicateReceive’ but no such parameter
+  299 | __declspec(dllimport) VOID STDC EthFilterDprIndicateReceive(PVOID, NDIS_HANDLE, PCHAR, PVOID, UINT, PVOID, UINT, UINT);
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/test.c:27: error: expected ‘{’ at end of input
+/tmp/rltk-abi-pkyuo875/ndiskit.h:299:1: error: unused parameter ‘dllimport’ [-Werror=unused-parameter]
+  299 | __declspec(dllimport) VOID STDC EthFilterDprIndicateReceive(PVOID, NDIS_HANDLE, PCHAR, PVOID, UINT, PVOID, UINT, UINT);
+      | ^~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:353:32: error: unused parameter ‘ObfDereferenceObject’ [-Werror=unused-parameter]
+  353 | VOID __attribute__((fastcall)) ObfDereferenceObject(PVOID);
+      |                                ^~~~~~~~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:339:43: error: unused parameter ‘PFILE_OBJECT’ [-Werror=unused-parameter]
+  339 | typedef struct _FILE_OBJECT FILE_OBJECT, *PFILE_OBJECT;
+      |                                           ^~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:339:29: error: unused parameter ‘FILE_OBJECT’ [-Werror=unused-parameter]
+  339 | typedef struct _FILE_OBJECT FILE_OBJECT, *PFILE_OBJECT;
+      |                             ^~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:338:19: error: unused parameter ‘PDEVICE_OBJECT’ [-Werror=unused-parameter]
+  338 | } DEVICE_OBJECT, *PDEVICE_OBJECT;
+      |                   ^~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:338:3: error: unused parameter ‘DEVICE_OBJECT’ [-Werror=unused-parameter]
+  338 | } DEVICE_OBJECT, *PDEVICE_OBJECT;
+      |   ^~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:315:14: error: unused parameter ‘memcmp’ [-Werror=unused-parameter]
+  315 | extern int   memcmp(const void *, const void *, __SIZE_TYPE__);
+      |              ^~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:314:14: error: unused parameter ‘memset’ [-Werror=unused-parameter]
+  314 | extern void *memset(void *, int, __SIZE_TYPE__);
+      |              ^~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:313:14: error: unused parameter ‘memcpy’ [-Werror=unused-parameter]
+  313 | extern void *memcpy(void *, const void *, __SIZE_TYPE__);
+      |              ^~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:310:14: error: unused parameter ‘MmIsAddressValid’ [-Werror=unused-parameter]
+  310 | BOOLEAN STDC MmIsAddressValid(PVOID);                   /* NTOSKRNL */
+      |              ^~~~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:309:14: error: unused parameter ‘KeStallExecutionProcessor’ [-Werror=unused-parameter]
+  309 | VOID    STDC KeStallExecutionProcessor(ULONG);          /* HAL */
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/ndiskit.h:299:33: error: unused parameter ‘EthFilterDprIndicateReceive’ [-Werror=unused-parameter]
+  299 | __declspec(dllimport) VOID STDC EthFilterDprIndicateReceive(PVOID, NDIS_HANDLE, PCHAR, PVOID, UINT, PVOID, UINT, UINT);
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rltk-abi-pkyuo875/test.c:27: error: control reaches end of non-void function [-Werror=return-type]
+cc1: all warnings being treated as errors
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_object_dereference_abi.py", line 47, in <module>
+    subprocess.run(['gcc','-m32','-O2','-ffreestanding','-fno-builtin',
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['gcc', '-m32', '-O2', '-ffreestanding', '-fno-builtin', '-fno-stack-protector', '-fno-pie', '-no-pie', '-nostdlib', '-Wall', '-Wextra', '-Werror', '/tmp/rltk-abi-pkyuo875/test.c', '-o', '/tmp/rltk-abi-pkyuo875/production']' returned non-zero exit status 1.

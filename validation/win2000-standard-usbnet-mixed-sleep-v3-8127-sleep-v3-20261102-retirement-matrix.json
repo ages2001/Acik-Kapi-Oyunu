@@ -1,0 +1,97 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-sleep-v3-8127",
+  "utc": "2026-11-02T16:08:50.022539+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8153-native-hotplug.json",
+        "sha256": "1b7b4393568675eadea456d4994672923f5a60b34bd218bc318d74243e472db0"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8153-function-power.json",
+        "sha256": "0806979999d4f559996dc323fb27e5f6f83bbce8af5aa92256a334d887907016"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8153-port-reset-cycles.json",
+        "sha256": "766920a66381790ab09d301508caf24d7251f70282afb935dd364d0d1705b77f"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8153-native-cable.json",
+        "sha256": "f24c7ba5b3d290916860b8aa0c1bf0c317bbf2768db8827b4616de5a16a4e607"
+      },
+      "seconds": 69.67
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8156-native-hotplug.json",
+        "sha256": "46066b0a7605426e605c179d4cff4533c97fb05b360233964752f429f88e0d13"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8156-function-power.json",
+        "sha256": "b010d606ed87a8dd5eb0828eaaa2eca11f9f3f96c2d6a9b2ebde19410ef06635"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8156-port-reset-cycles.json",
+        "sha256": "96f147aa1e3e50a03babe2eb2f98426f9b539c4ebaa56c80a5ec4bf6c18a0f8b"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8156-native-cable.json",
+        "sha256": "18455b9eea18ca03ccd6c640890285e81513220db10a227b90b524f2e7a120c7"
+      },
+      "seconds": 83.98
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8157-native-hotplug.json",
+        "sha256": "8d964a82895eef8796a846395e0eba5fe5662b35b655bc179591aa0f88b0aa1d"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8157-function-power.json",
+        "sha256": "9e7657492c2c6c961aeec7dcb2a37796e27acc6103f293b91a6ccd68ef1cf6fe"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8157-port-reset-cycles.json",
+        "sha256": "9d1a00e76166f7eb6e010f6726da7b6a27638cca06666a1bb9145aebd88939ac"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8157-native-cable.json",
+        "sha256": "537fd988dca5907f920dcb098118d41f44ed698b67eb079ef17281fbbcc95fa8"
+      },
+      "seconds": 96.99
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8159-native-hotplug.json",
+        "sha256": "2157afef9d8669acc6c1a76d9a884384f6aab774320c676cdc4956104b172a68"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8159-function-power.json",
+        "sha256": "bf34c5671a62f8ad177d59beb58a156d8b933741f6e76cc9d9bea10f5f197f44"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8159-port-reset-cycles.json",
+        "sha256": "5c933e15488317d8da703b0704cb44f620b9a8d3cdb1914f63a61b0c870c14eb"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8159-native-cable.json",
+        "sha256": "89622d97206d2f3b7dc3e879718a63752a0e6f702a97ef8b9faede5ad4bb70a6"
+      },
+      "seconds": 128.16
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

@@ -1,0 +1,110 @@
+{
+  "utc": "2026-11-02T15:47:30.389248+00:00",
+  "result": "PASS_HOST_AND_NATIVE_HOTPLUG",
+  "snapshot": "frozen-builds/usbnt-controller-sleep-v3-20261102",
+  "files": {
+    "legacy": {
+      "size": 419328,
+      "sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6"
+    },
+    "i386": {
+      "size": 499712,
+      "sha256": "073c5544dc34b42b4ef25af79c24475457c24f7c966981866952a2f3c3fc3963"
+    },
+    "amd64": {
+      "size": 539648,
+      "sha256": "44a78f6b6ac9e4ab6f82e07e0f1bfe5c9b51332857d095b4d271f49140c56763"
+    },
+    "harness": {
+      "size": 1768100,
+      "sha256": "35ce053c30866f8f59a4d925d3cdaa323fc6e35ae288f21b55e79f07d22b29f1"
+    }
+  },
+  "qemu_sha256": "7343cf9bdc4401e3be74c01fc8cd429d34291e16ae4c410bbdc0bf69df28693d",
+  "evidence": {
+    "usbnt-controller-sleep-power-host-v2-20261102.log": "1886926c521b9739691128f4fe8fdcd145e5d60375ae328809b145ef51551e16",
+    "usbnt-controller-sleep-host-v5-20261102.log": "9a37206b8e69e403b3b44a8b794da7348453bae62022a06d219fade6f0ba589e",
+    "usbnt-controller-sleep-identity-host-v2-20261102.log": "36d365a9b92dd42689f046c1dd51286b836a970c00f9e8c353ac1cab99b6e29f",
+    "usbnt-controller-sleep-cli-host-v1-20261102.log": "fc4a8fe37629743b98dbb4c4b4777e6da890c8ef22482021758420f8d273736c",
+    "usbnt-controller-sleep-port-reset-host-20261102.log": "c73bb3a94b25bcd5c075174296db7f7a00fd93850df18ca285edb8f4754e7a16",
+    "usbnt-controller-sleep-function-power-host-v2-20261102.log": "7e27b0690f28518e06ecf9e478430bca44c4fdd456989a3348ef0b453ee8aa08",
+    "usbnt-controller-sleep-companion-after-20261102.log": "984e293c7a640b926fd7151d733ae3c94103c7503ff32120815353f2435aab41",
+    "usbnt-controller-sleep-poll-final-20261102.log": "5cc4803f96fff69ce22bf34b9f5afc1e5830d88f16acccc6241a1c0abe69a245",
+    "usbnt-controller-publication-after-20261102.log": "09cb53a3810e853072793b501773ce1b112ea3f6a2342a0ebbd45f6332efe213",
+    "usbnt-controller-snapshot-final-20261102.log": "8f9d5b6d9b98195ee42bb9dce4abdf4d00996f831b7cec2527361471a697070d",
+    "usbnt-controller-sleep-v3-xhci-hotplug-20261102.log": "da22bb58dec0bb6b0edc9588c6c1a62bcfefa6e6d5f34420d337d24dfcc97dcb",
+    "usbnt-controller-sleep-v3-ehci-hotplug-20261102.log": "7d7012ba05346ab0e9ecfd14498f0eac07f157e57247232627d652950e55665d",
+    "usbnt-controller-sleep-v3-uhci-hotplug-20261102.log": "2cf81ead46117f0e4159b699e7e5e639bad4d680d36e90b5f4855910c1afa013",
+    "usbnt-controller-sleep-v3-ohci-hotplug-20261102.log": "4fe1837dd16146e6a5c532f615feaf0c1a296de40a2de713f52dd82c1ff16f5f",
+    "usbnt-controller-sleep-companion-before-20261102.log": "5858bbc4e4486835f0ad4a291c499b91e0a69838dad35a3efe38f2e5b25e5766",
+    "usbnt-controller-sleep-poll-before-20261102.log": "41dcd66062991c398d7df16adf19f4ee53c4973bde7599200c72428e01716f8d",
+    "usbnt-controller-publication-before-20261102.log": "8881e07bee40bce804a12b368f007a0521ef0fb6671bd7327e5aa29e57854d69",
+    "usbnt-controller-snapshot-before-20261102.log": "bdbd9b316690bc99a0a6c53de62115559e7c08533f7bd24295d62841427a514a",
+    "usbnt-controller-sleep-v3-actual-imports-20261102.json": "1803feaa1db967fba03100c69beb10c3ec691ec6bffc21ac2bfca7225783dfd2",
+    "frozen-builds/usbnt-controller-sleep-v3-20261102/manifest.json": "da5129ee6e859402f77bd46dcd51c4957a465642ad4e0edf190d59537feaaf8f"
+  },
+  "test_source_archive": {
+    "validation/test_usbnt_controller_power.py": {
+      "file": "proof-sources/controller-sleep-v3-20261102/validation/test_usbnt_controller_power.py",
+      "sha256": "fb9152e0b454cb5d87ce9d3c3ca4b04c65e5ce9a0fb9be4ecad16d5a54a79c42"
+    },
+    "validation/test_usbnt_sleep_identity.py": {
+      "file": "proof-sources/controller-sleep-v3-20261102/validation/test_usbnt_sleep_identity.py",
+      "sha256": "437c145ed4e3506be9e95f9360bbcbf9bef13d5f14e00359a86bf92d33b1c8c3"
+    },
+    "validation/test_usbnt_sleep_companion.py": {
+      "file": "proof-sources/controller-sleep-v3-20261102/validation/test_usbnt_sleep_companion.py",
+      "sha256": "5d3c60f22e56e8623cae5247c6453fd4ebab4629d64c8a4235e1e494585daf45"
+    },
+    "validation/test_usbnt_sleep_poll_rundown.py": {
+      "file": "proof-sources/controller-sleep-v3-20261102/validation/test_usbnt_sleep_poll_rundown.py",
+      "sha256": "ad6d877a7e7500758f26524087266987766dc231dd09511fa0e392564442eacf"
+    },
+    "validation/test_usbnt_hc_publication.py": {
+      "file": "proof-sources/controller-sleep-v3-20261102/validation/test_usbnt_hc_publication.py",
+      "sha256": "16bf82caed9b57fb1cb2c79309638fda2bab2347c07d995f49b30e7d30bdff14"
+    },
+    "validation/test_usbnt_hc_snapshot.py": {
+      "file": "proof-sources/controller-sleep-v3-20261102/validation/test_usbnt_hc_snapshot.py",
+      "sha256": "65128731ae4bb5839153108aba753afc9380c0c43abf2ec42abb0b04d447669c"
+    },
+    "validation/test_usbdi_function_power.py": {
+      "file": "proof-sources/controller-sleep-v3-20261102/validation/test_usbdi_function_power.py",
+      "sha256": "1ef25661e64b34913dbae5fb8d02367a6e7ef104f9b37df2abe7480d71be5af7"
+    },
+    "validation/test_usbdi_port_reset.py": {
+      "file": "proof-sources/controller-sleep-v3-20261102/validation/test_usbdi_port_reset.py",
+      "sha256": "87586f459b26efbc127ee5a88d1f541bb4b83b5d34905868124d473ce9e4859e"
+    },
+    "validation/ntcli/test_lifetime.c": {
+      "file": "proof-sources/controller-sleep-v3-20261102/validation/ntcli/test_lifetime.c",
+      "sha256": "a438b5804581e31c0d55979bd01947c3266940094e940e017958ad6a45cf11bc"
+    },
+    "validation/ntcli/ntcli_test_shim.h": {
+      "file": "proof-sources/controller-sleep-v3-20261102/validation/ntcli/ntcli_test_shim.h",
+      "sha256": "e12d35c9f6a43dd94ba3e0d9c6ee783ce428b277a738b46bf4fcd8a5d7b5e5a6"
+    },
+    "USBNT/test/host/tcontrollersleep.c": {
+      "file": "proof-sources/controller-sleep-v3-20261102/USBNT/test/host/tcontrollersleep.c",
+      "sha256": "c8a2f586c0074fa6d9d749da3023e739f1b087fbe4f175be24246bb589f05ebb"
+    },
+    "USBNT/test/host/tcontrollersleep.sh": {
+      "file": "proof-sources/controller-sleep-v3-20261102/USBNT/test/host/tcontrollersleep.sh",
+      "sha256": "f07f5fbb5050fcabe4b341094bc89ec790dd70d87100c41e170ae97c67529a04"
+    },
+    "USBNT/test/thotplug.py": {
+      "file": "proof-sources/controller-sleep-v3-20261102/USBNT/test/thotplug.py",
+      "sha256": "344191359a57edc4c3011897be8410b0acd24f39907e93fdc65b59f46cbb8eba"
+    },
+    "USBNT/test/qharn.py": {
+      "file": "proof-sources/controller-sleep-v3-20261102/USBNT/test/qharn.py",
+      "sha256": "586822e091118682a96316f8873302639ec9b3e6a96bb980221acd6650866f29"
+    }
+  },
+  "scope": "Actual production power and lifetime host checks plus native storage/HID hot-plug on all four HCDs. Native runs verify retained data, removed-disk rejection and sibling continuity after populated-hub removal; they do not exercise the WDM controller sleep path.",
+  "limits": [
+    "Exact installed Windows power/regression evidence for v3 is pending.",
+    "Hubs, unknown native owners, generic clients retaining state and active EHCI companions reject D3 before hardware mutation.",
+    "No full-machine ACPI S3, electrical PHY, silicon or universal native-class sleep compatibility is certified."
+  ]
+}

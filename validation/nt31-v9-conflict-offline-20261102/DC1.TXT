@@ -1,0 +1,2 @@
+"ConflictBoot",ConflictBoot,1,1
+"RLTKLANT DHCP","notepad.exe",,,21,0,0,0,0

@@ -1,0 +1,474 @@
+[Identification]
+    OptionType = NetAdapter
+[PlatformsSupported]
+    ISA
+    EISA
+    MCA
+    "Jazz-Internal Bus"
+[LanguagesSupported]
+    ENG
+[Options]
+    PCIMACISA
+    PCIMAC/4
+[FileConstants]
+UtilityInf      = "UTILITY.INF"
+ParamInf        = "NCPARAM.INF"
+subroutineinf   = "SUBROUTN.INF"
+SoftwareType    = "driver"
+Exit_Code       = 0
+DIGIHANDLE = 0
+NetEventDLL     = "%SystemRoot%\System32\netevent.dll"
+IoLogMsgDLL     = "%SystemRoot%\System32\IoLogMsg.dll"
+Manufacturer    = "DigiBoard"
+ProductMajorVersion     = "1"
+ProductMinorVersion     = "0"
+ProductVersion  = $(ProductMajorVersion)"."$(ProductMinorVersion)
+ProductSoftwareName     = "Pcimac"
+ProductSoftwareTitle    = "DigiBoard ISDN Adapter Driver"
+ProductSoftwareImagePath = "\SystemRoot\System32\drivers\pcimac.sys"
+NetRuleSoftwareType     = "pcimacSys ndisDriver pcimacDriver"
+NetRuleSoftwareUse      = $(SoftwareType)
+NetRuleSoftwareBindForm = """PcimacSys"" yes no container"
+NetRuleSoftwareClass    = {"pcimacDriver basic"}
+NetRuleSoftwareBindable = {"pcimacDriver pcimacAdapter non exclusive 100"}
+ProductHardwareName     = "Pcimac"
+ProductHardwareTitle    = "DigiBoard ISDN Adapter"
+NetRuleHardwareType     = "pcimac pcimacAdapter"
+NetRuleHardwareBindForm = " yes yes container"
+NetRuleHardwareClass    = {"pcimacAdapter basic"}
+ProductKeyName  = $(!NTN_SoftwareBase)"\"$(Manufacturer)"\"$(ProductSoftwareName)"\CurrentVersion"
+ParamKeyName    = $(!NTN_ServiceBase)"\"$(ProductHardwareName)"\Parameters"
+[GeneralConstants]
+!DebugOutputControl = 1
+from      = ""
+to        = ""
+ExitCodeOk     = 0
+ExitCodeCancel = 1
+ExitCodeFatal  = 2
+KeyNull         = ""
+MAXIMUM_ALLOWED   = 33554432
+RegistryErrorIndex = NO_ERROR
+KeyProduct      = ""
+KeyParameters   = ""
+TRUE            = 1
+FALSE           = 0
+NoTitle            = 0
+ExitState   = "Active"
+OldVersionExisted = $(FALSE)
+DriverPath      = $(!STF_NTPATH)\drivers
+[date]
+    Now = {} ? $(!LIBHANDLE) GetSystemDate
+[Identify]
+    read-syms Identification
+    set Status     = STATUS_SUCCESSFUL
+    set Identifier = $(OptionType)
+    set Media      = #("Source Media Descriptions", 1, 1)
+    Return $(Status) $(Identifier) $(Media)
+[ReturnOptions]
+    set Status        = STATUS_FAILED
+    set OptionList     = {}
+    set OptionTextList = {}
+    set LanguageList = ^(LanguagesSupported, 1)
+    Ifcontains(i) $($0) in $(LanguageList)
+        ifstr(i) $($1) == ""
+                        goto returnoptions
+        endif
+        set PlatformList = ^(PlatformsSupported, 1)
+        Ifcontains(i) $($1) in $(PlatformList)
+                        goto returnoptions
+        else
+                        set Status = STATUS_NOTSUPPORTED
+                        goto finish_ReturnOptions
+        endif
+    else
+                set Status = STATUS_NOLANGUAGE
+                goto finish_ReturnOptions
+    endif
+returnoptions = +
+    set OptionList     = ^(Options, 1)
+    set OptionTextList = ^(OptionsText$($0), 1)
+    set Status         = STATUS_SUCCESSFUL
+finish_ReturnOptions = +
+    Return $(Status) $(OptionList) $(OptionTextList)
+[InstallOption]
+    set Status   = STATUS_FAILED
+    set Option   = $($1)
+    set SrcDir   = $($2)
+    set AddCopy  = $($3)
+    set DoCopy   = $($4)
+    set DoConfig = $($5)
+    set LanguageList = ^(LanguagesSupported, 1)
+    Ifcontains(i) $($0) NOT-IN $(LanguageList)
+        Return STATUS_NOLANGUAGE
+    endif
+    set-subst LF = "\n"
+    read-syms GeneralConstants
+    read-syms FileConstants
+    ifstr(i) $(!NTN_Origination) == "NCPA"
+        set Continue = "OK"
+    endif
+    read-syms FileConstants$(!STF_LANGUAGE)
+    detect date
+    set-title  $(FunctionTitle)
+    set to   = Begin
+    set from = Begin
+    set CommonStatus = STATUS_SUCCESSFUL
+    EndWait
+Begin = +
+    set Result = {}
+    Set ActivateDetection = FALSE
+    Shell $(UtilityInf), GetBusTypeNum
+    set BusTypeNum = $($R1)
+    Ifstr(i) $(!NTN_InstallMode) == deinstall
+        set StartLabel = removeadapter
+    else-Ifstr(i) $(!NTN_InstallMode) == Update
+        set StartLabel = UpgradeSoftware
+    else-Ifstr(i) $(!NTN_InstallMode) == bind
+        set StartLabel = bindingadapter
+    else-Ifstr(i) $(!NTN_InstallMode) == configure
+        set StartLabel = configureadapter
+        Ifstr(i) $(ProductKeyName) == $(!NTN_RegBase)
+            Debug-Output "Cannot configure the PCIMAC driver software."
+            Shell $(UtilityInf),RegistryErrorString,CANNOT_CONFIGURE_SOFTWARE
+            ifint $($ShellCode) != $(!SHELL_CODE_OK)
+                Debug-Output "ShellCode error: cannot get an error string."
+                goto ShellCodeError
+            endif
+            set Error = $($R0)
+            set from = end
+            set to = end
+            goto nonfatalinfo
+        endif
+    else
+        set ActivateDetection = TRUE
+        set StartLabel = installadapter
+        set OEM_ABANDON_OPTIONS = {}
+        set OEM_ABANDON_SOFTWARE = FALSE
+        set OEM_ABANDON_ON = TRUE
+    endif
+    Debug-Output "OEMNADDI.INF: =================================================="
+    Debug-Output "OEMNADDI.INF: STF_CWDDIR is: "$(!STF_CWDDIR)
+    Debug-Output "OEMNADDI.INF: STF_LANGUAGE is: "$(!STF_LANGUAGE)
+    Debug-Output "OEMNADDI.INF: Option is: "$(Option)
+    Debug-Output "OEMNADDI.INF: SrcDir is: "$(SrcDir)
+    Debug-Output "OEMNADDI.INF: !STF_NCDETECT  is: "$(!STF_NCDETECT)
+    Debug-Output "OEMNADDI.INF: !STF_NCOPTION  is: "$(!STF_NCOPTION)
+    Debug-Output "OEMNADDI.INF: !STF_NCDETCARD is: "$(!STF_NCDETCARD)
+    Debug-Output "OEMNADDI.INF: !STF_NCDETINFO is: "$(!STF_NCDETINFO)
+    Debug-Output "OEMNADDI.INF: BusTypeNum is: "$(BusTypeNum)
+    Debug-Output "OEMNADDI.INF: =================================================="
+    Set DetectedCard = FALSE
+    Ifstr(i) $(ActivateDetection) != TRUE
+        Goto $(StartLabel)
+    Endif
+installadapter = +
+    OpenRegKey $(!REG_H_LOCAL) "" $(ProductKeyName) $(MAXIMUM_ALLOWED) KeyProduct
+	Debug-Output "OEMNADDI.INF: KeyProduct "$(KeyProduct)
+    Ifstr $(KeyProduct) != $(KeyNull)
+        CloseRegKey $(KeyProduct)
+        ifstr(i) !(NTN_RegBase) == $(ProductKeyName)
+           Shell $(UtilityInf), VerExistedDlg, $(ProductSoftwareTitle),+
+               $(ProductVersion)
+           ifint $($ShellCode) != $(!SHELL_CODE_OK)
+               Debug-Output "ShellCode error: cannot get an error string."
+               goto ShellCodeError
+           endif
+           goto end
+        else
+           Shell $(UtilityInf), CardExistedDlg
+           ifint $($ShellCode) != $(!SHELL_CODE_OK)
+               Debug-Output "ShellCode error: cannot get an error string."
+               goto ShellCodeError
+           endif
+           ifstr(i) $($R1) != "OK"
+               goto end
+           endif
+           set OldVersionExisted = $(TRUE)
+        endif
+    endif
+	goto adapteroptions
+configureadapter = +
+		Debug-Output "OEMNADDI.INF: Configure Adapter"
+adapteroptions = +
+    StartWait
+    ifint $(OldVersionExisted) == $(FALSE)
+        ifstr(i) $(!NTN_InstallMode) == "install"
+           Ifstr(i) $(DoCopy) == "YES"
+              Shell $(UtilityInf), DoAskSource, $(!STF_CWDDIR), $(SrcDir) YES
+              Ifint $($ShellCode) != $(!SHELL_CODE_OK)
+                  Goto ShellCodeError
+              Else-Ifstr(i) $($R0) == STATUS_FAILED
+                  Shell $(UtilityInf) RegistryErrorString "ASK_SOURCE_FAIL"
+                  ifint $($ShellCode) != $(!SHELL_CODE_OK)
+                      goto ShellCodeError
+                  endif
+                  set Error = $($R0)
+                  Goto fatal
+              Else-Ifstr(i) $($R0) == STATUS_USERCANCEL
+                  Goto successful
+              Endif
+              Set SrcDir = $($R1)
+           Endif
+           install "Install-Option"
+           ifstr(i) $(STF_INSTALL_OUTCOME) != STF_SUCCESS
+              Shell $(UtilityInf) RegistryErrorString "UNABLE_COPY_FILE"
+              ifint $($ShellCode) != $(!SHELL_CODE_OK)
+                  goto ShellCodeError
+              endif
+              set Error = $($R0)
+              goto fatal
+           endif
+        endif
+	endif
+	Debug-Output "OEMNADDI.INF: RegBase "$(!NTN_RegBase)
+	LoadLibrary "x" $(!STF_CWDDIR)setupdll.dll !LIBHANDLE
+	Debug-Output "OEMNADDI.INF: LIBHANDLE is "$(!LIBHANDLE)
+	LoadLibrary "x" $(!STF_CWDDIR)digiinst.dll DIGIHANDLE
+	Debug-Output "OEMNADDI.INF: DIGIHANDLE is "$(DIGIHANDLE)
+	LibraryProcedure Result, $(DIGIHANDLE), DigiEntry, $(!STF_HWND) $(Option) $(!NTN_InstallMode) $(!NTN_RegBase) $(BusTypeNum)
+	Debug-Output "OEMNADDI.INF: Dialog Result is "$(Result)
+    Ifstr(i) $(Result) == Success
+    	goto successful
+    else-Ifstr(i) $(Result) == Cancel
+		goto cancel
+    else-Ifstr(i) $(Result) == Error
+		goto fatal
+bindingadapter =+
+    set Error = "Binding: Sorry, not yet implemented."
+    goto fatal
+removeadapter = +
+		Debug-Output "OEMNADDI.INF: RegBase "$(!NTN_RegBase)
+		LoadLibrary "x" $(!STF_CWDDIR)setupdll.dll !LIBHANDLE
+		Debug-Output "OEMNADDI.INF: LIBHANDLE is "$(!LIBHANDLE)
+		LoadLibrary "x" $(!STF_CWDDIR)digiinst.dll DIGIHANDLE
+		Debug-Output "OEMNADDI.INF: DIGIHANDLE is "$(DIGIHANDLE)
+		LibraryProcedure Result, $(DIGIHANDLE), DigiEntry, $(!STF_HWND) $(Option) $(!NTN_InstallMode) $(!NTN_RegBase) $(BusTypeNum)
+		goto end
+UpgradeSoftware = +
+    ifstr(i) $(ProductKeyName) == $(!NTN_RegBase)
+        OpenRegKey $(!REG_H_LOCAL) "" $(ProductKeyName) $(MAXIMUM_ALLOWED) KeyProduct
+        Ifstr $(KeyProduct) != $(KeyNull)
+            GetRegValue $(KeyProduct),"MajorVersion", VersionInfo
+            set Version = *($(VersionInfo), 4)
+            Split-String $(!NTN_Infname), "\", FilenameList
+            QueryListSize ListSize $(FilenameList)
+            set !UG_Filename = *($(FilenameList), $(ListSize))
+            install "Install-Update"
+            ifstr(i) $(STF_INSTALL_OUTCOME) != STF_SUCCESS
+                goto fatal
+            endif
+            SetRegValue $(KeyProduct) {MajorVersion,$(NoTitle),$(!REG_VT_SZ),$(ProductMajorVersion)}
+            SetRegValue $(KeyProduct) {MinorVersion,$(NoTitle),$(!REG_VT_SZ),$(ProductMinorVersion)}
+            ifint $(Version) != $(ProductVersion)
+            endif
+            CloseRegKey $(KeyProduct)
+        else
+            goto fatalregistry
+        endif
+    else
+        OpenRegKey $(!REG_H_LOCAL) "" $(!NTN_RegBase) +
+              $(MAXIMUM_ALLOWED) NetworkCardKey
+        Ifstr(i) $(NetworkCardKey) != $(KeyNull)
+            GetRegValue $(NetworkCardKey),"ServiceName", ServiceNameInfo
+            set ServiceName = *($(ServiceNameInfo), 4)
+            OpenRegKey $(NetworkCardKey) "" "NetRules" +
+                $(MAXIMUM_ALLOWED) NetRuleKey
+            Ifstr(i) $(NetRuleKey) != $(KeyNull)
+            else
+                goto fatalregistry
+            endif
+            CloseRegKey $(NetRules)
+            CloseRegKey $(NetworkCardKey)
+        else
+            goto fatalregistry
+        endif
+        OpenRegKey $(!REG_H_LOCAL) "" +
+              $(!NTN_ServiceBase)"\"$(ServiceName) +
+              $(MAXIMUM_ALLOWED) ServiceKey
+        Ifstr(i) $(ServiceKey) != $(KeyNull)
+            CloseRegKey $(ServiceKey)
+        else
+            goto fatalregistry
+        endif
+    endif
+    goto end
+successful = +
+    set CommonStatus = STATUS_SUCCESSFUL
+    goto end
+warning = +
+    Shell $(subroutineinf) SetupMessage, $(!STF_LANGUAGE), "WARNING", $(Error)
+    ifint $($ShellCode) != $(!SHELL_CODE_OK)
+        goto ShellCodeError
+    endif
+    ifstr(i) $($R1) == "OK"
+        goto $(to)
+    else-ifstr(i) $($R1) == "CANCEL"
+        goto $(from)
+    else
+        goto "end"
+    endif
+nonfatalinfo = +
+    Set Severity = STATUS
+    Set CommonStatus = STATUS_USERCANCEL
+    goto nonfatalmsg
+nonfatal = +
+    Set Severity = NONFATAL
+    goto nonfatalmsg
+nonfatalmsg = +
+    ifstr(i) $(Error) == ""
+        Set Severity = NONFATAL
+        Shell $(UtilityInf) RegistryErrorString "SETUP_FAIL"
+        ifint $($ShellCode) != $(!SHELL_CODE_OK)
+            goto ShellCodeError
+        endif
+        set Error = $($R0)
+    endif
+    Shell $(subroutineinf) SetupMessage, $(!STF_LANGUAGE), $(Severity), $(Error)
+    ifint $($ShellCode) != $(!SHELL_CODE_OK)
+        goto ShellCodeError
+    endif
+    ifstr(i) $($R1) == "OK"
+        goto $(from)
+    else
+        goto "end"
+    endif
+fatalregistry = +
+    Shell $(UtilityInf) RegistryErrorString $(RegistryErrorIndex)
+    ifint $($ShellCode) != $(!SHELL_CODE_OK)
+        goto ShellCodeError
+    endif
+    set Error = $($R0)
+    goto fatal
+fataldetect = +
+    Shell $(UtilityInf),RegistryErrorString,CANNOT_DETECT
+    ifint $($ShellCode) != $(!SHELL_CODE_OK)
+        Debug-Output "ShellCode error: cannot get an error string."
+        goto ShellCodeError
+    endif
+    set Error = $($R0)
+    Goto fatal
+fatal = +
+    ifstr(i) $(Error) == ""
+        Shell $(UtilityInf) RegistryErrorString "SETUP_FAIL"
+        ifint $($ShellCode) != $(!SHELL_CODE_OK)
+            goto ShellCodeError
+        endif
+        set Error = $($R0)
+    endif
+    Shell $(subroutineinf) SetupMessage, $(!STF_LANGUAGE), "FATAL", $(Error)
+    ifint $($ShellCode) != $(!SHELL_CODE_OK)
+        goto ShellCodeError
+    endif
+    goto setfailed
+ShellCodeError = +
+    set DlgType      = "MessageBox"
+    set STF_MB_TITLE = "Error: "$(FunctionTitle)
+    set STF_MB_TEXT  = "Shell Code Error"
+    set STF_MB_TYPE  = 1
+    set STF_MB_ICON  = 3
+    set STF_MB_DEF   = 1
+    ui start "Error Message"
+    goto setfailed
+setfailed = +
+    set CommonStatus = STATUS_FAILED
+    ifstr(i) $(OEM_ABANDON_ON) == TRUE
+        set OEM_ABANDON_ON = FALSE
+        goto end
+    endif
+    goto end
+cancel = +
+	set CommonStatus = STATUS_USERCANCEL
+	goto term
+end = +
+    goto term
+term = +
+    Return $(CommonStatus)
+	exit
+[DebugConfiguration]
+    Set InfName = "OEMNADDI.INF"
+    Debug-Output $(InfName)" **CONFIGURATION STATE: "$($0)
+    return
+[Install-Option]
+    set STF_VITAL = ""
+    ifstr(i) $(AddCopy) == "YES"
+        AddSectionFilesToCopyList Files-$(Option) $(SrcDir) $(!STF_WINDOWSSYSPATH)\drivers
+		AddSectionFilesToCopyList Files-Dll $(SrcDir) $(!STF_WINDOWSSYSPATH)
+    endif
+    ifstr(i) $(DoCopy) == "YES"
+       set !STF_NCPA_FLUSH_COPYLIST = TRUE
+       CopyFilesInCopyList
+    endif
+    Exit
+[Install-Update]
+   set STF_VITAL        = ""
+   set STF_OVERWRITE    = "VERIFYSOURCEOLDER"
+   AddSectionFilesToCopyList Files-$(Option) $(SrcDir) $(!STF_WINDOWSSYSPATH)\drivers
+   AddSectionFilesToCopyList Files-Dll $(SrcDir) $(!STF_WINDOWSSYSPATH)
+   set !STF_NCPA_FLUSH_COPYLIST = TRUE
+   CopyFilesInCopyList
+   exit
+[Source Media Descriptions]
+    1	= "Windows NT Setup Disk #1"   , TAGFILE = disk1
+    2	= "Windows NT Setup Disk #2"   , TAGFILE = disk2
+    3	= "Windows NT Setup Disk #3"   , TAGFILE = disk3
+    4	= "Windows NT Setup Disk #4"   , TAGFILE = disk4
+    5	= "Windows NT Setup Disk #5"   , TAGFILE = disk5
+    6	= "Windows NT Setup Disk #6"   , TAGFILE = disk6
+    7	= "Windows NT Setup Disk #7"   , TAGFILE = disk7
+    8	= "Windows NT Setup Disk #8"   , TAGFILE = disk8
+    9	= "Windows NT Setup Disk #9"   , TAGFILE = disk9
+    10	= "Windows NT Setup Disk #10"  , TAGFILE = disk10
+    11	= "Windows NT Setup Disk #11"  , TAGFILE = disk11
+    12	= "Windows NT Setup Disk #12"  , TAGFILE = disk12
+    13	= "Windows NT Setup Disk #13"  , TAGFILE = disk13
+    14	= "Windows NT Setup Disk #14"  , TAGFILE = disk14
+    15	= "Windows NT Setup Disk #15"  , TAGFILE = disk15
+    16	= "Windows NT Setup Disk #16"  , TAGFILE = disk16
+    17	= "Windows NT Setup Disk #17"  , TAGFILE = disk17
+    18	= "Windows NT Setup Disk #18"  , TAGFILE = disk18
+    19	= "Windows NT Setup Disk #19"  , TAGFILE = disk19
+    20	= "Windows NT Setup Disk #20"  , TAGFILE = disk20
+    21	= "Windows NT Setup Disk #21"  , TAGFILE = disk21
+    22	= "Windows NT Setup Disk #22"  , TAGFILE = disk22
+    23	= "Windows NT Setup Disk #23"  , TAGFILE = disk23
+    24	= "Windows NT Setup Disk #24"  , TAGFILE = disk24
+    25	= "Windows NT Setup Disk #25"  , TAGFILE = disk25
+    26	= "Windows NT Setup Disk #26"  , TAGFILE = disk26
+    27	= "Windows NT Setup Disk #27"  , TAGFILE = disk27
+    28	= "Windows NT Setup Disk #28"  , TAGFILE = disk28
+    29	= "Windows NT Setup Disk #29"  , TAGFILE = disk29
+[ProductType]
+STF_PRODUCT  = Winnt
+STF_PLATFORM = I386
+[Files-Inf]
+2,	oemsetup.inf,	 SIZE=1000,	RENAME=$(!UG_Filename)
+[Files-Dll]
+21,DIGIINST.DLL , SIZE=36864
+21,ISDN.DLL , SIZE=36864
+22,ISDNHELP.HLP , SIZE=12288
+[Files-PCIMAC/4]
+20,IDP_XFS.BIN , SIZE=65536
+18,PCIMAC.SYS , SIZE=95744
+[Files-PCIMACISA]
+20,IDP_XFS.BIN , SIZE=65536
+18,PCIMAC.SYS , SIZE=95744
+[Files-PCIMACMC]
+20,IDP_XFS.BIN , SIZE=65536
+18,PCIMAC.SYS , SIZE=95744
+[OptionsTextENG]
+    PCIMACISA     = "DigiBoard PCIMAC - ISA Adapter"
+    PCIMAC/4      = "DigiBoard PCIMAC/4 Adapter"
+[FileConstantsENG]
+ProCaption   = "Windows NT Setup"
+ProCancel    = "Cancel"
+ProCancelMsg = "Windows NT Networking is not correctly installed.  "+
+               "Are you sure you want to cancel copying files?"
+ProCancelCap = "Network Setup Message"
+ProText1     = "Copying:"
+ProText2     = "To:"
+FunctionTitle   = "DigiBoard ISDN Adapter Card Setup"
+ProductSoftwareDescription      = "DigiBoard ISDN Adapter Driver"
+ProductHardwarePCIMACDescription        = "DigiBoard ISDN Adapter"
+
+
+

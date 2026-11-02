@@ -1,0 +1,1 @@
+PASS: NT3.1 USB MAC 1501 split-buffer lengths, padding, malformed/oversize/resource failure, reset and RX indication; PCI dispatch retained

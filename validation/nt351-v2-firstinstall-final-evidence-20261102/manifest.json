@@ -1,0 +1,36 @@
+{
+  "utc": "2026-11-02T00:04:15.677258+00:00",
+  "guest": "nt351-usbsetup-v2-firstboot-check-8127",
+  "safeoff_screenshot": "nt351-v2-firstboot-check-shutdown2-20261102.png",
+  "safeoff_sha256": "472573237d71270cbfd537c07eca38f762c3ccb719282f8577bbbff4ef6da89d",
+  "files": {
+    "debug.log": {
+      "bytes": 729,
+      "sha256": "f0d14a2cb75cf1a87ca03c3f7f0bea59ec49929c8a0a398a097afd2a2e85dcfd"
+    },
+    "serial.log": {
+      "bytes": 12,
+      "sha256": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44"
+    },
+    "qemu.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "launch.json": {
+      "bytes": 1577,
+      "sha256": "8fbd3335cb828f97bd541314f53ce44eff2a9bbb46ee2d720a0c070a70c332e4"
+    },
+    "process-exit.json": {
+      "bytes": 51,
+      "sha256": "ec92448bf08f773589e156afd361644283ea7ae54c63c3d3e2d661e2f470c489"
+    },
+    "usb.pcap": {
+      "bytes": 24,
+      "sha256": "653932defd05743054207942b60e946cfd591200e6ab808d058e382a8999d9fc"
+    },
+    "pci.pcap": {
+      "bytes": 43795,
+      "sha256": "ad38b2bf35840565fea6087a0b4b8d8381dcd1aa6b9861c0d08672dbcd65a67d"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+usbnt-hid-capacity-test: validation/test_usbnt_hid_capacity.c:77: main: Assertion `attach(&dev[0], 4) == USB_ERR_NOMEM' failed.

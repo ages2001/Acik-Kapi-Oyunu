@@ -1,0 +1,5 @@
+PASS: rtl8169,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8168,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8125,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8126,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8127,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset

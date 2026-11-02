@@ -1,0 +1,1 @@
+PASS: 2400 multi-camera control/stream restore fault and retry schedules; stable IDs/sequences; stopped-state admission; unrelated camera preserved

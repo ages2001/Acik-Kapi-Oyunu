@@ -1,0 +1,75 @@
+{
+  "result": "PASS",
+  "utc": "2026-11-02T07:18:54.035740+00:00",
+  "guest": "win2000-standard-usbnet-power-v2-ehci-8127",
+  "drivers": {
+    "USBNT.SYS": "c39d4b27157a266430e79aee71b34a284a10fe6a5efdf8cc4be72858ba5972c8",
+    "RLTKLANT.SYS": "69d92dc9dc2567ab814ae39744977338444a7f3bcf06a4cb207d1dcc1bc50418"
+  },
+  "rows": [
+    {
+      "model": "8153",
+      "power_cycles": 3,
+      "hotplug_cycles": 1,
+      "port_reset_cycles": 1,
+      "cable_cycles": 1,
+      "final_probe_replies": 16,
+      "evidence": {
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8153-20261102-native-hotplug.json": "46163b7e4002dcdba6f9c72326dca186d256070fd6804d4ec4aae8b57dd9663d",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8153-20261102-function-power.json": "a5bc4fee5f99c43583f0821d942a62571c59955eb075a21ef1dc03925a166eae",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8153-20261102-port-reset-cycles.json": "baa9e3a0a1dd9ccae4af550ed3edfb1dddae78f09746c61af16de3c8fda7259c",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8153-20261102-native-cable.json": "5401f26be20634400a90c850d902d9b5a4680b1c724c4cdb023034557b1b0f3b"
+      }
+    },
+    {
+      "model": "8156",
+      "power_cycles": 3,
+      "hotplug_cycles": 1,
+      "port_reset_cycles": 1,
+      "cable_cycles": 1,
+      "final_probe_replies": 16,
+      "evidence": {
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8156-20261102-native-hotplug.json": "34c699f2a31c6c25e67a0026040a69af402cdca70ecbeb7146b1e8432c204621",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8156-20261102-function-power.json": "23e78cd452fc71d60609aa74c28a035451609aa951e97f1befeab62f371ce052",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8156-20261102-port-reset-cycles.json": "12b4139ef4f922e5479eec1cf8efe848a99b708e2679909b1e9334decfa806b3",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8156-20261102-native-cable.json": "2db5c24b703e57845c0b43c299fe29fd9c717e77d089505db548a3143a6bae14"
+      }
+    },
+    {
+      "model": "8157",
+      "power_cycles": 3,
+      "hotplug_cycles": 1,
+      "port_reset_cycles": 1,
+      "cable_cycles": 1,
+      "final_probe_replies": 16,
+      "evidence": {
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8157-20261102-native-hotplug.json": "5c838ad1594556cb3b8e30a01d56d1fc59850c3bfaa890c90aa86caa6f52c158",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8157-20261102-function-power.json": "76acd8e75021e6add616e1ec40242aeb64296b711a04cf7bf34ba5596cfdffe6",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8157-20261102-port-reset-cycles.json": "ad8f8e58a07b82189e60cc5a0c7af697e35efc52002241459861b093ea10ea89",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8157-20261102-native-cable.json": "3dd078de3e964533c736799f7fe64aaf76b6986d872303e571b54f53d184ae24"
+      }
+    },
+    {
+      "model": "8159",
+      "power_cycles": 3,
+      "hotplug_cycles": 1,
+      "port_reset_cycles": 1,
+      "cable_cycles": 1,
+      "final_probe_replies": 16,
+      "evidence": {
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8159-20261102-native-hotplug.json": "62515ca76e1537f851fa77b4d81422948309887de1b9c3c1b39f4d0e4b2bf5ba",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8159-20261102-function-power.json": "452c258c8228e9357c472634a383572fe4fba5eb661652b3ca22d15429270b05",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8159-20261102-port-reset-cycles.json": "7ee844771820039adb94d2a125753b4d1c907fe06aaa06948bc103045846c929",
+        "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8159-20261102-native-cable.json": "ae570b96cc7f1c4b9fcae596e40a440b5c885a76162ddac04fd2042d25e0aa6b"
+      }
+    }
+  ],
+  "power_cycles": 12,
+  "hotplug_cycles": 4,
+  "port_reset_cycles": 4,
+  "cable_cycles": 4,
+  "final_probe_replies": 64,
+  "offline": "validation/win2000-usbnt-power-v2-offline-20261102/manifest.json",
+  "evidence": "validation/win2000-usbnt-power-v2-evidence-20261102/manifest.json",
+  "scope": "Windows 2000 AHCI, USBNT EHCI, direct USBNT PDO D3/D0 IRPs forced to DISPATCH_LEVEL, real RESET_PORT and guest traffic. Earlier first RTL8153 three-pair pass/baseline additional, excluded from matrix totals. Not whole-system sleep/resume or physical silicon validation."
+}

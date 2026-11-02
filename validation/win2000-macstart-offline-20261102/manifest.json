@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T01:50:52.462467+00:00",
+  "guest": "win2000-standard-macstart-multi-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 549641,
+      "sha256": "7786b1a0d2427578d8586de7001755f3d3fe9527bd92294d0e3bae0dc7d47161"
+    },
+    "RLTTEST/MRST.LOG": {
+      "file": "MRST.LOG",
+      "size": 881,
+      "sha256": "2dbff44e0902ff798bf84b25f38c1d1c7dafdf6fea33dcada91bd3ea1245ee0e"
+    },
+    "RLTTEST/MPNP.LOG": {
+      "file": "MPNP.LOG",
+      "size": 2145,
+      "sha256": "f5b247c1c2b9f810ee33014b4f77c7c308eb55ab7df8a923c069414215c6bb1a"
+    }
+  }
+}

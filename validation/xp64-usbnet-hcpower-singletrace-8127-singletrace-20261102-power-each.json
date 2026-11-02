@@ -1,0 +1,31 @@
+{
+  "guest": "xp64-usbnet-hcpower-singletrace-8127",
+  "utc": "2026-11-02T08:20:22.971943+00:00",
+  "scope": "Observe every USBNT controller recovery before starting another transition.\n\nRequires the --single HCPOWER fixture. Each pair receives its own actual\nSetupAPI/name/problem-code and four full-MTU ICMP checks. Stops on the first\ninitialization failure, so a later successful transition cannot mask it.\nThese are injected controller IRPs, not whole-machine ACPI sleep. Children\ncurrently re-enumerate; success is explicitly limited to that recovery path.\n",
+  "result": "FAIL",
+  "cycles": [
+    {
+      "mode": "device",
+      "cycle": 1,
+      "offset": 152,
+      "result": "FAIL",
+      "observed": [
+        {
+          "seconds": 6.973,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 6.973,
+          "line": "HCPTEST D3=00000000"
+        },
+        {
+          "seconds": 7.475,
+          "line": "HCPTEST D0=00000000"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n"
+    }
+  ],
+  "error": "AssertionError('Recovery timeout; no successful adapter initialization')",
+  "screenshot": "xp64-usbnet-hcpower-singletrace-8127-singletrace-20261102-power-each-screen.png"
+}

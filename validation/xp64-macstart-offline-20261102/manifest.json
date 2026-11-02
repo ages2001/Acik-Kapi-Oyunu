@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T01:45:13.570578+00:00",
+  "guest": "xp64-macstart-multi-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 606482,
+      "sha256": "14e05b8ef3a3ad2238e484d43f3a4251b7a7cd1781a431f8eba2e223845a00f4"
+    },
+    "RLTTEST/MPNP.LOG": {
+      "file": "MPNP.LOG",
+      "size": 2151,
+      "sha256": "c130cefe1e1cd77bae3ac66fbc2d1ffa7f27368687ba12bfc24020bbf7d02d38"
+    }
+  }
+}

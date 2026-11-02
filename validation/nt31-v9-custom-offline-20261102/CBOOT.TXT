@@ -1,0 +1,2 @@
+"RltBoot",RltBoot,1,1
+"RLTKLANT DHCP","C:\winnt31\system32\DHCPNT31.EXE /auto /apply",C:\winnt31\system32,C:\winnt31\system32\DHCPNT31.EXE,21,0,6,0,0

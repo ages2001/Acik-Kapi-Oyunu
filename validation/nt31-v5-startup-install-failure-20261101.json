@@ -1,0 +1,9 @@
+{
+  "utc": "2026-11-01T21:25:06.640555+00:00",
+  "result": "FAIL",
+  "guest": "nt31-usbsetup-ncpa-v5-8127",
+  "package": "legacy-setup-nt31-v5-20261101/manifest.json",
+  "screenshot": "nt31-v5-after-yes-20261101.png",
+  "failure": "RemoveProgManItem reports a noncritical error when RLTKLANT DHCP does not exist. Ignore was selected only to inspect the remaining installation; this is not an unattended installation pass.",
+  "next_candidate": "v6 removes unconditional removal; first creation and repeated creation need actual validation"
+}

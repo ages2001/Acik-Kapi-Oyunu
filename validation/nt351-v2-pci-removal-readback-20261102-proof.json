@@ -1,0 +1,46 @@
+{
+  "utc": "2026-11-01T23:33:27.881153+00:00",
+  "guest": "nt351-usbsetup-v2-remove-8127",
+  "result": "PASS",
+  "scope": "Native NCPA removal and normal-shutdown registry readback",
+  "checks": {
+    "remaining_instances": true,
+    "remaining_parameters": true,
+    "removed_instance_services_absent": true,
+    "network_providers_preserved": true,
+    "shared_service_preserved": true,
+    "shared_product_preserved": true
+  },
+  "remaining": [
+    "1"
+  ],
+  "removed": {
+    "2": "RLTKLANT2"
+  },
+  "shared_service": {
+    "Type": 1,
+    "Start": 3,
+    "ErrorControl": 1,
+    "ImagePath": "\\SystemRoot\\System32\\drivers\\rltklant.sys",
+    "DisplayName": "Realtek RLTKLANT Adapter Driver",
+    "Group": "NDIS"
+  },
+  "shared_product": {
+    "ServiceName": "RLTKLANT",
+    "RefCount": 1,
+    "SoftwareType": "driver",
+    "MajorVersion": 3,
+    "MinorVersion": 1,
+    "Title": "Realtek RLTKLANT Adapter Driver",
+    "Description": "Realtek RLTKLANT Adapter Driver",
+    "InstallDate": 1793183770
+  },
+  "registry": "nt351-v2-pci-removal-readback-20261102-registry.json",
+  "files": {
+    "SYSTEM": "29cf41d6bc2183dc04ee4b0b096490aee487064bdd8f9e5c920c42f20a8270c4",
+    "SOFTWARE": "2334c725a894ddf491f172db4f53e9eafbb277185c6dfeed0b90d277d8abd875"
+  },
+  "limits": [
+    "Cold boot and surviving-adapter traffic require separate evidence"
+  ]
+}

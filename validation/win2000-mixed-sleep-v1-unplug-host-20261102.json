@@ -1,0 +1,26 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-sleep-v1-8127",
+  "utc": "2026-11-02T15:12:53.260525+00:00",
+  "down_receipt_sha256": "fd05d77d34e493c24006c9e25e4da6abf71dbed425a1e8533d4b5f0b50d7a620",
+  "device_del": {},
+  "qom_children_after": [
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "debugcon",
+      "type": "child<isa-debugcon>"
+    },
+    {
+      "name": "ahci",
+      "type": "child<ich9-ahci>"
+    },
+    {
+      "name": "ehci",
+      "type": "child<usb-ehci>"
+    }
+  ],
+  "result": "HOST_DEVICE_REMOVED_WHILE_CONTROLLER_D3",
+  "scope": "Guest D0/removal/reinsert proof still pending."
+}

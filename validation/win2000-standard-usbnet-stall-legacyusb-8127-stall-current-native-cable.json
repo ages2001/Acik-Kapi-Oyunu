@@ -1,0 +1,48 @@
+{
+  "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+  "model": "usb-rtl8150",
+  "rx_stall_injected_before_each_remove": false,
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-30T04:29:23.476715+00:00",
+      "token": "stall-current-cable01",
+      "report": "TOKEN stall-current-cable01\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        46115
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-30T04:29:37.892621+00:00",
+      "token": "stall-current-cable02",
+      "report": "TOKEN stall-current-cable02\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        45555
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-30T04:29:52.204574+00:00",
+      "token": "stall-current-cable03",
+      "report": "TOKEN stall-current-cable03\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        34026
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-30T04:30:07.360184+00:00",
+      "token": "stall-current-cable04",
+      "report": "TOKEN stall-current-cable04\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        35231
+      ]
+    }
+  ]
+}

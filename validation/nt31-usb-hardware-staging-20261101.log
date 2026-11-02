@@ -1,0 +1,26 @@
+No errors were found on the image.
+1690/6394 = 26.43% allocated, 100.00% fragmented, 100.00% compressed clusters
+Image end offset: 50266112
+{
+  "image": "/workspace/rltklant-vm/run/nt31-usbnet-hardware-8127.qcow2",
+  "sha256_before_boot": "97eb38732f1a15cf2b4b139c2b32df874e4538f1044d941e5327b5d2f34c9fad",
+  "files": [
+    {
+      "guest_path": "WINNT31/system32/drivers/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys",
+      "size": 503296,
+      "sha256": "4c440f6fefa7fefac95861ae1994b61d6cedf7236dc06b2630a2c812644e9b77",
+      "old_size": 49152,
+      "old_sha256": "178e4281cc1e13b0cdbd1243a9fabff62029dbba464606e5ab4655ab813fb41e"
+    },
+    {
+      "guest_path": "WINNT31/system32/drivers/USBNT.SYS",
+      "source": "/workspace/rltklant-work/USBNT/bin/usbnt.sys",
+      "size": 397312,
+      "sha256": "5585558123304ae273cdc2c01ac82918293dbf62cb5ac1e489b9914db766af38",
+      "old_size": 409088,
+      "old_sha256": "17a795252baf5f7d632e140a831639bb1808475b30aaacf2aa26049928770c48"
+    }
+  ],
+  "scope": "New flattened image; parent unmodified; mtools allocated FAT clusters; full driver readback verified; no temporary backing dependency."
+}

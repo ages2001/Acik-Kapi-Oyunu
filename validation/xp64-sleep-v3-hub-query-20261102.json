@@ -1,0 +1,9 @@
+{
+  "guest": "xp64-usbnet-mixed-sleep-v3-8127",
+  "utc": "2026-11-02T16:21:44.881687+00:00",
+  "operation": "query",
+  "expected": "C000009E",
+  "result": "FAIL",
+  "trace": "SLPTEST object=00000000\nSLPTEST Q3=80000011\n",
+  "error": "AssertionError(['SLPTEST Q3=80000011'])"
+}

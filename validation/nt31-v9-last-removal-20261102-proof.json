@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-01T22:58:05.829232+00:00",
+  "guest": "nt31-usbsetup-v9-remove-last-8127",
+  "result": "FAIL",
+  "checks": {
+    "pci_card_removed": true,
+    "pci_parameters_removed": true,
+    "owned_startup_removed": true,
+    "unrelated_startup_preserved": true,
+    "usb_parameters_removed": true,
+    "usb_card_removed": true,
+    "shared_service_removed": false,
+    "shared_product_removed": true
+  },
+  "scope": "Actual NCPA removal, completed native TCP/IP bindings and normal shutdown readback",
+  "expected_remaining": "none",
+  "usb_parameters": null,
+  "pci_parameters": null,
+  "shared_service": {
+    "Type": 1,
+    "Start": 3,
+    "ErrorControl": 1,
+    "ImagePath": "\\SystemRoot\\System32\\drivers\\rltklant.sys",
+    "DisplayName": "Realtek RLTKLANT Adapter Driver",
+    "Group": "NDIS",
+    "DeleteFlag": 1
+  },
+  "shared_product": null,
+  "hives": {
+    "SYSTEM": "6d0d9443fc76da30af289eb63661b1a1430289d4c32fad62e534f74cf057a284",
+    "SOFTWARE": "0e2c52094f3016b9e5fd664513e76c35ca961be7848d035002a581f57fda1db9",
+    "TEST_000": "2b79e62d6872064dd060b442f8b4453f7d14fdac37e91a1c2e49526b51376fb1"
+  },
+  "limitations": [
+    "Cold boot and surviving adapter traffic require separate evidence"
+  ]
+}

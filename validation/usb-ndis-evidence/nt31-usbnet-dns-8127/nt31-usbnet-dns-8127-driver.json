@@ -1,0 +1,7 @@
+{
+  "source": "nt31-usbnet-bind-8127.qcow2",
+  "files": {
+    "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys": "c2e9a8c767d49209d298e2b576abea39c0a76d91c8cdb3c360ac0b266678baf7",
+    "/workspace/rltklant-work/RLTKLANT/DHCPNT31/bin/DHCPNT31.EXE": "716243cb3c8c143f746f285422a81faf3a2f4caaf56ae679a9d9218d5b7b8ce9"
+  }
+}

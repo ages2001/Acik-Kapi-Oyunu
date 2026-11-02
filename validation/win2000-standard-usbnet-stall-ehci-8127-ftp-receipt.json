@@ -1,0 +1,9 @@
+{
+  "guest": "win2000-standard-usbnet-stall-ehci-8127",
+  "file": "fw32.sys",
+  "sha256": "d5f100af6d6dae6a73a86213a8aba1e2aff83eb486fb285d5087a6b854be2ffb",
+  "bytes": 276525,
+  "time": 1793340068.0866585,
+  "utc": "2026-10-30T06:01:08.086668+00:00",
+  "scope": "Server buffered bytes; guest byte count and ftp prompt still require visual verification"
+}

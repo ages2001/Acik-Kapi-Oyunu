@@ -1,0 +1,107 @@
+{
+  "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+  "model": "usb-rtl8150",
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-29T21:19:47.376284+00:00",
+      "token": "stall-build-native01",
+      "report": "TOKEN stall-build-native01\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        49021
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-29T21:20:03.427040+00:00",
+      "token": "stall-build-native02",
+      "report": "TOKEN stall-build-native02\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        55922
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-29T21:20:19.581201+00:00",
+      "token": "stall-build-native03",
+      "report": "TOKEN stall-build-native03\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        41723
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-29T21:20:35.699066+00:00",
+      "token": "stall-build-native04",
+      "report": "TOKEN stall-build-native04\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        53483
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-29T21:20:51.787246+00:00",
+      "token": "stall-build-native05",
+      "report": "TOKEN stall-build-native05\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        48952
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-29T21:21:07.948203+00:00",
+      "token": "stall-build-native06",
+      "report": "TOKEN stall-build-native06\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        42185
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-29T21:21:23.981734+00:00",
+      "token": "stall-build-native07",
+      "report": "TOKEN stall-build-native07\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        34337
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-29T21:21:41.017740+00:00",
+      "token": "stall-build-native08",
+      "report": "TOKEN stall-build-native08\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        51131
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-29T21:22:01.631785+00:00",
+      "token": "stall-build-native09",
+      "report": "TOKEN stall-build-native09\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        53887
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+      "utc": "2026-10-29T21:22:22.269596+00:00",
+      "token": "stall-build-native10",
+      "report": "TOKEN stall-build-native10\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        51186
+      ]
+    }
+  ]
+}

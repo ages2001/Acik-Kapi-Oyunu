@@ -1,0 +1,39 @@
+{
+  "verified_utc": "2026-10-28T13:26:19.958922+00:00",
+  "matching": "Count ID/sequence/payload occurrences, because NT3.1 ping reuses its echo ID/sequence",
+  "results": [
+    {
+      "guest": "nt31-cleanup-slot-8127",
+      "driver_sha256": "9b1f0183086a60f8292c43214f3cfc0bf15cc6763c41c5fee2becac35811d47e",
+      "pcap_sha256": "8929d797b1cbd70e6e85781b502fbc7b897c593716ba37e8745b206c0aac3515",
+      "request_packets": 4,
+      "reply_packets": 4,
+      "matched_echo_packets": 4,
+      "storage": "IDE",
+      "nic": "native RTL8127 PCIe model",
+      "scope": "Emulated PCI traffic; does not certify USB NDIS or physical hardware"
+    },
+    {
+      "guest": "nt351-current-slot-8127",
+      "driver_sha256": "0cccc0d2eb9493cbaa8f858cc62fcbe18f8c83f96ef11d1f006e71bc28c5e382",
+      "pcap_sha256": "9d77520d5fc5bf8cc7f5d43804ef93f2aaf38a709bb88c56b36635417580d962",
+      "request_packets": 4,
+      "reply_packets": 4,
+      "matched_echo_packets": 4,
+      "storage": "IDE",
+      "nic": "native RTL8127 PCIe model",
+      "scope": "Emulated PCI traffic; does not certify USB NDIS or physical hardware"
+    },
+    {
+      "guest": "nt4-ndis-legacyusb-8127",
+      "driver_sha256": "0cccc0d2eb9493cbaa8f858cc62fcbe18f8c83f96ef11d1f006e71bc28c5e382",
+      "pcap_sha256": "d67ef06b47a5ff743a576253e43916607f6807f5426ba3db5aae4cfa6219a73e",
+      "request_packets": 4,
+      "reply_packets": 4,
+      "matched_echo_packets": 4,
+      "storage": "IDE",
+      "nic": "native RTL8127 PCIe model",
+      "scope": "Emulated PCI traffic; does not certify USB NDIS or physical hardware"
+    }
+  ]
+}

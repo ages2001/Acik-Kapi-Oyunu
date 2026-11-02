@@ -1,0 +1,10 @@
+{
+  "guest": "nt31-ownership-retry-slot-8127",
+  "utc": "2026-10-30T04:19:02.663990+00:00",
+  "source": "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys",
+  "size": 51712,
+  "sha256": "62304d3c2180fd145c4609eabac6ee63bb92641b1a59a1aa27d966787f1f2fb2",
+  "previous_checkpoint": "nt31-dma-slot-8127",
+  "scope": "IDE/native PCIe RTL8127, C+ ownership/backpressure and compiler ordering; no firmware upload",
+  "retry_reason": "First QEMU process exited with code 0 before traffic verification; no OOM kill recorded. Reason unresolved; retain original logs."
+}

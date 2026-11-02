@@ -1,0 +1,397 @@
+{
+  "reference_commit": "65ba8f34ec886ec72b2c07ddc8cf3d815c32869d",
+  "reference_sha256": "cb918734e19369d22fd0e65657c0183518f0ba59b57745a74f6a5bbcf56f37cc",
+  "scope": "Primary XID catalogue facts; extended XIDs and PHY startup support are separate. No firmware means no payload is prescribed by this reference, not full initialization support.",
+  "chips": [
+    {
+      "mask": 1999,
+      "xid": 1737,
+      "mac_version": 80,
+      "name": "RTL8127A",
+      "firmware": "rtl_nic/rtl8127a-1.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1610,
+      "mac_version": 70,
+      "name": "RTL8126A",
+      "firmware": "rtl_nic/rtl8126a-3.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1609,
+      "mac_version": 70,
+      "name": "RTL8126A",
+      "firmware": "rtl_nic/rtl8126a-2.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1665,
+      "mac_version": 66,
+      "name": "RTL8125BP",
+      "firmware": "rtl_nic/rtl8125bp-2.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1800,
+      "mac_version": 65,
+      "name": "RTL8125CP",
+      "firmware": "rtl_nic/rtl8125cp-1.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1675,
+      "mac_version": 64,
+      "name": "RTL9151A",
+      "firmware": "rtl_nic/rtl9151a-1.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1674,
+      "mac_version": 64,
+      "name": "RTL8125K",
+      "firmware": "rtl_nic/rtl8125k-1.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1673,
+      "mac_version": 64,
+      "name": "RTL8125D",
+      "firmware": "rtl_nic/rtl8125d-2.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1672,
+      "mac_version": 64,
+      "name": "RTL8125D",
+      "firmware": "rtl_nic/rtl8125d-1.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1601,
+      "mac_version": 63,
+      "name": "RTL8125B",
+      "firmware": "rtl_nic/rtl8125b-2.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1545,
+      "mac_version": 61,
+      "name": "RTL8125A",
+      "firmware": "rtl_nic/rtl8125a-3.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1355,
+      "mac_version": 52,
+      "name": "RTL8168fp/RTL8117",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 1354,
+      "mac_version": 52,
+      "name": "RTL8168fp/RTL8117",
+      "firmware": "rtl_nic/rtl8168fp-3.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1282,
+      "mac_version": 51,
+      "name": "RTL8168ep/8111ep",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 1345,
+      "mac_version": 46,
+      "name": "RTL8168h/8111h",
+      "firmware": "rtl_nic/rtl8168h-2.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1728,
+      "mac_version": 46,
+      "name": "RTL8168M",
+      "firmware": "rtl_nic/rtl8168h-2.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1480,
+      "mac_version": 44,
+      "name": "RTL8411b",
+      "firmware": "rtl_nic/rtl8411-2.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1289,
+      "mac_version": 42,
+      "name": "RTL8168gu/8111gu",
+      "firmware": "rtl_nic/rtl8168g-3.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1216,
+      "mac_version": 40,
+      "name": "RTL8168g/8111g",
+      "firmware": "rtl_nic/rtl8168g-2.fw"
+    },
+    {
+      "mask": 1992,
+      "xid": 1160,
+      "mac_version": 38,
+      "name": "RTL8411",
+      "firmware": "rtl_nic/rtl8411-1.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1153,
+      "mac_version": 36,
+      "name": "RTL8168f/8111f",
+      "firmware": "rtl_nic/rtl8168f-2.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1152,
+      "mac_version": 35,
+      "name": "RTL8168f/8111f",
+      "firmware": "rtl_nic/rtl8168f-1.fw"
+    },
+    {
+      "mask": 1992,
+      "xid": 712,
+      "mac_version": 34,
+      "name": "RTL8168evl/8111evl",
+      "firmware": "rtl_nic/rtl8168e-3.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 705,
+      "mac_version": 32,
+      "name": "RTL8168e/8111e",
+      "firmware": "rtl_nic/rtl8168e-1.fw"
+    },
+    {
+      "mask": 1992,
+      "xid": 704,
+      "mac_version": 33,
+      "name": "RTL8168e/8111e",
+      "firmware": "rtl_nic/rtl8168e-2.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 641,
+      "mac_version": 25,
+      "name": "RTL8168d/8111d",
+      "firmware": "rtl_nic/rtl8168d-1.fw"
+    },
+    {
+      "mask": 1992,
+      "xid": 640,
+      "mac_version": 26,
+      "name": "RTL8168d/8111d",
+      "firmware": "rtl_nic/rtl8168d-2.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 650,
+      "mac_version": 28,
+      "name": "RTL8168dp/8111dp",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 651,
+      "mac_version": 31,
+      "name": "RTL8168dp/8111dp",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 969,
+      "mac_version": 23,
+      "name": "RTL8168cp/8111cp",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 968,
+      "mac_version": 18,
+      "name": "RTL8168cp/8111cp",
+      "firmware": null
+    },
+    {
+      "mask": 1992,
+      "xid": 968,
+      "mac_version": 24,
+      "name": "RTL8168cp/8111cp",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 960,
+      "mac_version": 19,
+      "name": "RTL8168c/8111c",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 962,
+      "mac_version": 20,
+      "name": "RTL8168c/8111c",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 963,
+      "mac_version": 21,
+      "name": "RTL8168c/8111c",
+      "firmware": null
+    },
+    {
+      "mask": 1992,
+      "xid": 960,
+      "mac_version": 22,
+      "name": "RTL8168c/8111c",
+      "firmware": null
+    },
+    {
+      "mask": 1992,
+      "xid": 896,
+      "mac_version": 17,
+      "name": "RTL8168b/8111b",
+      "firmware": null
+    },
+    {
+      "mask": 1992,
+      "xid": 1096,
+      "mac_version": 39,
+      "name": "RTL8106e",
+      "firmware": "rtl_nic/rtl8106e-1.fw"
+    },
+    {
+      "mask": 1992,
+      "xid": 1088,
+      "mac_version": 37,
+      "name": "RTL8402",
+      "firmware": "rtl_nic/rtl8402-1.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 1033,
+      "mac_version": 29,
+      "name": "RTL8105e",
+      "firmware": "rtl_nic/rtl8105e-1.fw"
+    },
+    {
+      "mask": 1992,
+      "xid": 1032,
+      "mac_version": 30,
+      "name": "RTL8105e",
+      "firmware": "rtl_nic/rtl8105e-1.fw"
+    },
+    {
+      "mask": 1999,
+      "xid": 841,
+      "mac_version": 8,
+      "name": "RTL8102e",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 585,
+      "mac_version": 8,
+      "name": "RTL8102e",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 840,
+      "mac_version": 7,
+      "name": "RTL8102e",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 584,
+      "mac_version": 7,
+      "name": "RTL8102e",
+      "firmware": null
+    },
+    {
+      "mask": 1999,
+      "xid": 576,
+      "mac_version": 14,
+      "name": "RTL8401",
+      "firmware": null
+    },
+    {
+      "mask": 1992,
+      "xid": 840,
+      "mac_version": 9,
+      "name": "RTL8102e/RTL8103e",
+      "firmware": null
+    },
+    {
+      "mask": 1992,
+      "xid": 584,
+      "mac_version": 9,
+      "name": "RTL8102e/RTL8103e",
+      "firmware": null
+    },
+    {
+      "mask": 1992,
+      "xid": 832,
+      "mac_version": 10,
+      "name": "RTL8101e/RTL8100e",
+      "firmware": null
+    },
+    {
+      "mask": 4040,
+      "xid": 2432,
+      "mac_version": 6,
+      "name": "RTL8169sc/8110sc",
+      "firmware": null
+    },
+    {
+      "mask": 4040,
+      "xid": 384,
+      "mac_version": 5,
+      "name": "RTL8169sc/8110sc",
+      "firmware": null
+    },
+    {
+      "mask": 4040,
+      "xid": 256,
+      "mac_version": 4,
+      "name": "RTL8169sb/8110sb",
+      "firmware": null
+    },
+    {
+      "mask": 4040,
+      "xid": 64,
+      "mac_version": 3,
+      "name": "RTL8110s",
+      "firmware": null
+    },
+    {
+      "mask": 4040,
+      "xid": 8,
+      "mac_version": 2,
+      "name": "RTL8169s",
+      "firmware": null
+    }
+  ],
+  "fast_ethernet_overrides": [
+    {
+      "mac_version": 42,
+      "replacement_version": 43,
+      "firmware": "rtl_nic/rtl8106e-2.fw"
+    },
+    {
+      "mac_version": 46,
+      "replacement_version": 48,
+      "firmware": "rtl_nic/rtl8107e-2.fw"
+    }
+  ]
+}

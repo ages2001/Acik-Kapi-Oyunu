@@ -1,0 +1,97 @@
+{
+  "guest": "xp64-usbnet-mixed-sleep-v3-8127",
+  "utc": "2026-11-02T16:14:02.460973+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8153-native-hotplug.json",
+        "sha256": "ae001dbd22d60ce08c8eb62a0a19b54114a103f962b09ca0a6ad85a9bc8c3eba"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8153-function-power.json",
+        "sha256": "8d8921c34bbebf0fde7518a736493dffc470e166cbb6c4675980c8ad896a1bfa"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8153-port-reset-cycles.json",
+        "sha256": "cbf81474f1bd221d788f1d7747cc32f25b377f1b51fed3199cd04d9ca6cafb7b"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8153-native-cable.json",
+        "sha256": "d72297bcc3592fb41dedf53425f995f64c4d2e1cac419df111a0e4b718933833"
+      },
+      "seconds": 74.67
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8156-native-hotplug.json",
+        "sha256": "c8d792084ab63b3dee040a1a4129a054d63cf3822efb0db88a1182246f2669f9"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8156-function-power.json",
+        "sha256": "e8612c51b91b8ef33b38a6c21704d4cc100c9261d1fb6f2ea5faecea6125302a"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8156-port-reset-cycles.json",
+        "sha256": "d533dfa0b7737609cec13e3c30b6830756d6e931bee08ddefaa42c39238bbf2e"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8156-native-cable.json",
+        "sha256": "c67b9f26e0a9e1192c3143eda579b6d20be047e3c97f747d324e3a9eab9f3710"
+      },
+      "seconds": 77.29
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8157-native-hotplug.json",
+        "sha256": "824cbfb15917fd899356bc36a06e3a0d9f3204275ed21b0cd0fccaab163150ac"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8157-function-power.json",
+        "sha256": "b955f55319e9f93d13874385084b5456edda9290b848066abbd513269ef1dab9"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8157-port-reset-cycles.json",
+        "sha256": "31d3fa05f2d8b416738c7f3ca6968412aecf29bb955b5ed7bd5df42cb404221f"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8157-native-cable.json",
+        "sha256": "259471c7244e3c71d0f94a19e5671a3916f1de8c9c4f110e4a90c8d894f7c54c"
+      },
+      "seconds": 82.25
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8159-native-hotplug.json",
+        "sha256": "142787ffe10352f42f80763600635a8ece4bd88bc0e9aeaa31e93f11bfc03e87"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8159-function-power.json",
+        "sha256": "3b1acef145256b70bd626c2b60d4cbbe2d58212f5c1bcc99a371fd08c7b0f172"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8159-port-reset-cycles.json",
+        "sha256": "b8543395be85eecc18232791cf0f66a676d448fb4d4188edf76d0502a78aac4a"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-mixed-sleep-v3-8127-sleep-v3-20261102-8159-native-cable.json",
+        "sha256": "73b1d760c7146062e4e4006758b88c9be73ec21168d99974ca81955cd93ea034"
+      },
+      "seconds": 97.88
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

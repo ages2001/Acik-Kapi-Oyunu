@@ -1,0 +1,53 @@
+{
+  "utc": "2026-11-02T01:50:51.778331+00:00",
+  "guest": "win2000-standard-macstart-multi-8127",
+  "safeoff_screenshot": "win2000-macstart-safeoff-v2-20261102.png",
+  "safeoff_sha256": "0a48d2055d8424eb171f92402d5bfab616993c504ac17896d3edf4a85261425d",
+  "files": {
+    "debug.log": {
+      "bytes": 8176,
+      "sha256": "bdaad159cfcb7e6a3bf6eef1b2dd5d1e1aa58d022c99018217fb05e15be26e45"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 93,
+      "sha256": "362d0a13fc98dfbb9371656472334e527e9f9c53e2e37afa7065d84457a28076"
+    },
+    "launch.json": {
+      "bytes": 2692,
+      "sha256": "b616d8e1ed90c24467437985ec7be95f052b06e575fa93193df314481ab0108b"
+    },
+    "process-exit.json": {
+      "bytes": 51,
+      "sha256": "507cd80989463be53aedb3b5d9390786ed5fe107711f69daade99e94ebc59c57"
+    },
+    "extra1.pcap": {
+      "bytes": 74816,
+      "sha256": "afb2a95aa41b74d547c03840cc1ecb7c95d31efd58ee4d864e33481aceab567e"
+    },
+    "extra2.pcap": {
+      "bytes": 73325,
+      "sha256": "6c4f292d7a1ba82a41e3e2d77ba734600016658489e1b721df466c26ff934b68"
+    },
+    "extra3.pcap": {
+      "bytes": 75857,
+      "sha256": "a5dbf9f4a673fc0627f78e1c2942bee6ecb7a4b6a849d53ee7ebfd8023425c81"
+    },
+    "extra4.pcap": {
+      "bytes": 74208,
+      "sha256": "978d983d745a57e1c6e479b0bb6c80445c195a8e580d0d6f3eaf4649c6eac164"
+    },
+    "extra5.pcap": {
+      "bytes": 81037,
+      "sha256": "fee9f4749ae2c8ff65cf246f47e2327173bd245f4db788b669e045091a788c37"
+    },
+    "pci.pcap": {
+      "bytes": 77296,
+      "sha256": "04096dfe57cdc3e1e3cabac9a0ca6e72d8cdb0be5241b87d98ffe16608ca3822"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

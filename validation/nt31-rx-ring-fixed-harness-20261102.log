@@ -1,0 +1,1 @@
+PASS: NT3.1 10000 exact payloads/242 ring wraps; five malformed headers, out-of-range offset and incomplete DMA; bounded 64-frame DPC; no untrusted pointer advance

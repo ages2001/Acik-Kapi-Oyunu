@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T05:35:52.119880+00:00",
+  "guest": "win2000-standard-management-v4-multi-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 555784,
+      "sha256": "428f94ea70e445a6ae974359d47fed8176e5cb50a13be3a1f124cb2a013a4cf6"
+    },
+    "RLTTEST/GPNP.LOG": {
+      "file": "GPNP.LOG",
+      "size": 2145,
+      "sha256": "7adb25580da6d5ee0d4ed26ea4be0231eac1ce0f7425e3bdf1402e70ce19008c"
+    },
+    "RLTTEST/PCNEW.EXE": {
+      "file": "PCNEW.EXE",
+      "size": 16319,
+      "sha256": "f9f0841ff5ff62a26ccfa4b46299fb92394dcd02fd9ca0d17a400c376f32d589"
+    }
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "guest": "nt351-usbsetup-release13-usb-8127",
+  "started_utc": "2026-11-02T18:12:46.126379+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "cycle": 1,
+      "device": "usbnic",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c1-absent.json",
+          "sha256": "db5d932cab82725b4a539915fe478de919d5ca7125d5054bf329b86252daf492",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c1-reinsert.json",
+          "sha256": "c13540a4f631309b6ff8b32321510f630e5910f1b16fe95b5870e2568119ac97",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c1-cable-down.json",
+          "sha256": "7a21c2fc442faa06bbe4339fb08f3a22cb48dd834806426dd7377e14d28c8c5e",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c1-cable-up.json",
+          "sha256": "ff846961f921227fa183d07196be3610e81a4b0be2eb4627241289c267ae230d",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-DOWN id=00000001\n",
+      "reinsert_trace": "UNT-UP id=00000002 pid=00008153 status=00000000\nUNT-LINK id=00000002 up=00000000 status=00000000\nUNT-LINK id=00000002 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000002 up=00000000 status=00000000\nUNT-LINK id=00000002 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c1-passed.png",
+        "sha256": "4a0f1a7c24793be87c45798ae2443967301751dea97c84292df6757db7f89e90"
+      }
+    },
+    {
+      "cycle": 2,
+      "device": "usbnic",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c2-absent.json",
+          "sha256": "a60ab78f21f8e15099a0defe4fb96eb113c977bc03579009eb2017f88d182853",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c2-reinsert.json",
+          "sha256": "eb44d93fa52d497913c2c47f11fef72646cf7abac76efae1b5d0660a5c81a7ce",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c2-cable-down.json",
+          "sha256": "af4a95883db8bbddcc662b53e50c2820783010878d09d453a67ada89c43debf4",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c2-cable-up.json",
+          "sha256": "6ed68399b468316ce83184ed5d590ec3505de4de7aeaf27e87de80d0828f84d7",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000002 up=00000000 status=C0000001\nUNT-DOWN id=00000002\n",
+      "reinsert_trace": "UNT-UP id=00000003 pid=00008156 status=00000000\nUNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c2-passed.png",
+        "sha256": "7122a351148e361254f688cb4a02a69dbb80c728049b25c92b83a4ded3ab9e2d"
+      }
+    },
+    {
+      "cycle": 3,
+      "device": "usbnic",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c3-absent.json",
+          "sha256": "a93b1cbefc422412b98f749087004a72e02d4386f0800272afa5443f1353af72",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c3-reinsert.json",
+          "sha256": "c5b95402bd0f90725e79a9a54b6ca4ebff705c92575d96f01fd5323456bec060",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c3-cable-down.json",
+          "sha256": "98d2020fc32c5bdb38418570cefb42f6e88b3be14e13ff22cc328e04a87720b0",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c3-cable-up.json",
+          "sha256": "a35577d21a85ca73040f408c02a95f4b023f83f0cba9e873a8f4fea6c31445ca",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000003 up=00000000 status=C0000001\nUNT-DOWN id=00000003\n",
+      "reinsert_trace": "UNT-UP id=00000004 pid=00008157 status=00000000\nUNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c3-passed.png",
+        "sha256": "919254a7a2f788dc79d51e1203e3348155f0281497c7cf114348da1d5c75ebaa"
+      }
+    },
+    {
+      "cycle": 4,
+      "device": "usbnic",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c4-absent.json",
+          "sha256": "dc9e5deb8f7805554dd4fa3f8cc96bea29904ee665e6957d312ee1727ac8d13b",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c4-reinsert.json",
+          "sha256": "21270a4ed59d532a094210614d893836aa4ebfb37a62c447a23236aa1fd49546",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c4-cable-down.json",
+          "sha256": "5235cad703bb2257799d719952dd8691c5615a5dbf18613cc3f5689dea42909f",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c4-cable-up.json",
+          "sha256": "bb30d52dcd9cc8681aa41f3bed65081e505268a734604d3032aa1061641e654c",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000004 up=00000000 status=C0000001\nUNT-DOWN id=00000004\n",
+      "reinsert_trace": "UNT-UP id=00000005 pid=00008159 status=00000000\nUNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-c4-passed.png",
+        "sha256": "059e7155488d1eccc1145803076a3dbecd360fff64c1c98e9234c2e6772ba2e6"
+      }
+    }
+  ],
+  "scope": "Legacy persistent USBNT adapter plus native PCI/PCIe adapter recorded in the launch manifest in QEMU; actual guest payload comparisons and PCI preservation during USB interruption, not physical-silicon validation",
+  "tools_sha256": {
+    "legacy_network_probe.c": "4b02046a9015753235bf06f90fe27ce612c2f492afc991dbc16997ba910194e9",
+    "LNET.EXE": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b",
+    "legacy_network_report.py": "0efc3ba390915115448fc267ef516167d2c5dfaa3d138ed8a7ef58d00c7c2bf2",
+    "legacy_sibling_cycles.py": "07f5ed93b85e35cbe54635b620bf3fd3fbca44d6e4bdfd9aace690aa33ec9673"
+  },
+  "launch": {
+    "started_at": 1793642824.7979517,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/nt351-usbsetup-release13-usb-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/nt351-usbsetup-release13-usb-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/nt351-usbsetup-release13-usb-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/nt351-usbsetup-release13-usb-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt351-usbsetup-release13-usb-8127/usb.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0",
+      "-netdev",
+      "user,id=pci0,net=10.0.3.0/24",
+      "-device",
+      "rtl8127,id=pcinic,netdev=pci0",
+      "-object",
+      "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/nt351-usbsetup-release13-usb-8127/pci.pcap"
+    ],
+    "qemu_sha256": "7343cf9bdc4401e3be74c01fc8cd429d34291e16ae4c410bbdc0bf69df28693d"
+  },
+  "baseline": {
+    "file": "nt351-usbsetup-release13-usb-8127-release13-usb-20261102-baseline.json",
+    "sha256": "21d9617de5e4265ae2cb07217094eb979597f07b96737a77a21172c6579b73dc",
+    "mask": 3,
+    "full_payload_replies": 8
+  },
+  "qmp_status": {
+    "status": "running",
+    "singlestep": false,
+    "running": true
+  },
+  "full_payload_replies": 104,
+  "pcaps": {
+    "usb.pcap": {
+      "bytes": 136762,
+      "sha256": "1c378d371f17d8547699895c164b2e79abb4f8828851a883af5b8ece738acfb0"
+    },
+    "pci.pcap": {
+      "bytes": 241111,
+      "sha256": "e6e6b4ae9d096534351f85b452c6ec5a96534bb3479b19d83b757f83ca2b1c71"
+    }
+  },
+  "finished_utc": "2026-11-02T18:15:36.381000+00:00"
+}

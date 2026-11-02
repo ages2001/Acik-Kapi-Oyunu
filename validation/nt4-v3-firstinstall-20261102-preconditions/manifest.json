@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-02T00:00:30.715930+00:00",
+  "result": "PASS",
+  "checks": {
+    "shared_service_absent": true,
+    "shared_product_absent": true,
+    "no_owned_cards": true
+  },
+  "installed_files_absent": {
+    "RLTSETUP.DLL": true,
+    "RLTKNT35.INF": true,
+    "RLTUSB.EXE": true,
+    "DRIVERS/RLTKLANT.SYS": true
+  },
+  "package": "legacy-setup-nt35-v2-20261102",
+  "source_directory": "RLTNEW3",
+  "source_files": {
+    "OEMSETUP.INF": "2fd78779d686641ab8907416fffedc9b1ddbe725854b6cb2daefa470a0921330",
+    "RLTKLANT.SYS": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615",
+    "RLTSETUP.DLL": "04bbf1bf056e8b735db20a324c2e6912b2001ad6a78f8cd523d28086ad965fa2",
+    "RLTUSB.EXE": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+    "DISK1": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "parent": "nt4-ndis-v3-removed-boot-8127",
+  "guest": "nt4-ndis-v3-firstinstall-8127",
+  "image_sha256_before_boot": "0582e581d3e08cb92f160cff3772bbb989349b31944c1b2d6d103bfa47588fb3",
+  "scope": "No RLTKLANT registrations or installed package files before native Add Adapter; existing OS/protocol configuration and OEM cache retained; not a pristine OS installation."
+}

@@ -1,0 +1,61 @@
+usbnt: USB driver 1.2 for Windows NT 3.1-4.0, build Nov  2 2026
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 10 mem febd1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: acpi: 6 tables (RSDT at 07fe215d)
+usbnt: aml: 238 named objects from the ACPI tables
+usbnt: smbus: Intel SMBus 2930 at 00:1f.3, I/O 0700, host config 01, block buffer
+usbnt: SCSI port 1 created, 4 slot(s)
+usbnt: keyboard port 0, pointer port 0
+usbnt: ps2: left to i8042prt
+usbnt: timer resolution: left to usbmon
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device
+usbnt: smbus: PS/2 mouse in ACPI: PNP0F13
+usbnt: initialization complete
+usbnt: slot 0: placeholder done (partition table read), 8 partition devices
+usbnt: slot 1: placeholder done (partition table read), 8 partition devices
+usbnt: slot 2: placeholder done (partition table read), 8 partition devices
+usbnt: slot 3: placeholder done (partition table read), 8 partition devices
+usbnt: pointer class driver connected
+usbnt: keyboard class driver connected
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8159 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8159 USB 10G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8159 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8159 USB 10G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8159 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8159 USB 10G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 2 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8156 class 00, high speed, EHCI port 3 depth 0, addr 1
+usbnt: device 0: Realtek RTL8156 USB 2.5G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8157 class 00, high speed, EHCI port 4 depth 0, addr 1
+usbnt: device 0: Realtek RTL8157 USB 5G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8159 class 00, high speed, EHCI port 5 depth 0, addr 1
+usbnt: device 0: Realtek RTL8159 USB 10G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8159 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8159 USB 10G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8159 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8159 USB 10G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8159 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8159 USB 10G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device

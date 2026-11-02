@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T07:37:26.035361+00:00",
+  "guest": "nt31-usbsetup-usbnt-new-rtl8117-8127",
+  "files": {
+    "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 538112,
+      "sha256": "3e6e3d0e406850e579692e89c08cc8e6d3ac6c06620f8cfaac3a87d42f5254e2"
+    },
+    "WINNT31/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 410112,
+      "sha256": "f3a7e6e09ffec491d62cec183dba1b6aeb56f1f15c7b6e4a3a9a43f03d836f37"
+    }
+  }
+}

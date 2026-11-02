@@ -1,0 +1,100 @@
+{
+  "utc": "2026-11-02T15:23:43.973325+00:00",
+  "guest": "win2000-standard-usbnet-mixed-sleep-v1-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 499712,
+      "sha256": "2659ab101c5c4c323be5aef64e122e1d1f647642f89bf64cdf8bece7c3f0a44e"
+    },
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+    },
+    "RLTTEST/USBLOG.TXT": {
+      "file": "USBLOG.TXT",
+      "size": 2400,
+      "sha256": "0c817059e35580b71bdaeac29bb5b7a54837d1aebcb82796cf608124e88aa0d5"
+    },
+    "RLTTEST/USBLOG.EXE": {
+      "file": "USBLOG.EXE",
+      "size": 6845,
+      "sha256": "df2690acd4b575dac7d2cb94a9a271a976fbf8d422fe5bb5fb288fdef0f235e7"
+    },
+    "RLTTEST/SLPTEST.EXE": {
+      "file": "SLPTEST.EXE",
+      "size": 12159,
+      "sha256": "3e1debf1fe5e3d0dfa2cc87cfa17984eeefb87a53b00c87b1269c8dd11f8e97e"
+    },
+    "RLTTEST/SLPTEST.SYS": {
+      "file": "SLPTEST.SYS",
+      "size": 12535,
+      "sha256": "99e69094d830c07ccdb838088574e1f53cab992dfe4aa840b37b6548d711ef2a"
+    },
+    "RLTTEST/HCPOWER.EXE": {
+      "file": "HCPOWER.EXE",
+      "size": 11967,
+      "sha256": "3b3568c3427a83d849365a93449466f65b97fe2da4b9dca0c96a936efa058a78"
+    },
+    "RLTTEST/HCPOWER.SYS": {
+      "file": "HCPOWER.SYS",
+      "size": 12790,
+      "sha256": "189c3d10544e2e2957669401dea507f1e666dfcb9f61bf428d278eab18bd2817"
+    },
+    "RLTTEST/MKEY2.EXE": {
+      "file": "MKEY2.EXE",
+      "size": 12604,
+      "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549"
+    },
+    "MIXTEST/KEY.LOG": {
+      "file": "KEY.LOG",
+      "size": 2535,
+      "sha256": "b0147759cbcfacf8d78037c43d3444e2653a94b1f9e315fe1ee6cb3972c228d4"
+    }
+  },
+  "usbnt_snapshot": "usbnt-controller-sleep-v1-20261102",
+  "result": "PASS_BOUNDED_CONTROLLER_SLEEP",
+  "device_power_pairs": 3,
+  "system_irp_pairs": 3,
+  "query_power_checks": 1,
+  "unplug_while_d3": 1,
+  "retained_pdo": [
+    "0",
+    "1",
+    "8148c230"
+  ],
+  "windows_key_checks": 7,
+  "scope": "Actual W2K AHCI, native USBNT HID and Windows network MI_00: six controller power cycles retain the same generation/PDO and input/network function. A seventh D3 with real emulated device removal generates exactly one legitimate PnP removal on D0; reattachment restores both functions.",
+  "full_payload_network_replies": 32,
+  "network_instance": "DEVICE USB\\VID_0BDA&PID_8153&MI_00\\3&227AC3A4&0&0&01&01&0&00",
+  "evidence": {
+    "win2000-standard-usbnet-mixed-sleep-v1-8127-sleep-v1-baseline-20261102.json": "3be97c694a817012ab0f623cedad07d3f6c093f95dbec2b6243c9b6883e535c0",
+    "win2000-mixed-sleep-v1-offline-20261102/manifest.json": "45a5836adc9b561a3f2061061f36d777ef05e177f1edba8d7eed344d29c19459",
+    "win2000-mixed-sleep-v1-evidence-20261102/manifest.json": "33c0f617d1253a7c7fd1a1f1a552f61c592697119604e6342497ece269cd4917",
+    "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-device1.json": "630f416ca66a4ae6b7bbc1f5251011122630d2a02f48db180a0b8063ada3ec71",
+    "win2000-mixed-sleep-v1-cycles-20261102-device1-key.json": "752dced98d4dd268075e2953ac24d888e3768b3d072de4caee72adf588cbc2b3",
+    "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-device2.json": "13b9a2bc13329a95d09ec125521b436dbc5c0b482d1ee9945733c0e2cdc51fcc",
+    "win2000-mixed-sleep-v1-cycles-20261102-device2-key.json": "1ddf433b6ad8a32032d6bcc1fc80796ff3122c74708b63580fd1572844d9873a",
+    "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-device3.json": "1b5ae5aa06245d021708e3d6b87890afd7b5cb34a602e498c358ad1a7891c6ee",
+    "win2000-mixed-sleep-v1-cycles-20261102-device3-key.json": "9200638e1ec1eea6d207fee6d8d3f6fdf18dcdf02e13d469300c109cada50d33",
+    "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-system1.json": "ebacd54c53d2fe3a7dba40b44007a4a2132a166a642cd7000c3877293da4f737",
+    "win2000-mixed-sleep-v1-cycles-20261102-system1-key.json": "9a16aaeba038a432fb06cb1eb47354596c8c44694d77fedfe6af725b821b8265",
+    "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-system2.json": "bce9bcbd1d9cea69506ad08105d703d8357bad6bec21840a78b604f422b7a595",
+    "win2000-mixed-sleep-v1-cycles-20261102-system2-key.json": "71e32d7401259e692683da25ee2930c658775c59e4998d9cbcf1655423c4abad",
+    "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-system3.json": "182b251763fba1a355aa424485aeaccaab14cf975edb28334ba009842cda9ef8",
+    "win2000-mixed-sleep-v1-cycles-20261102-system3-key.json": "1032a6efff17061e5f3194b29c15c27368f8d9ffd094d78aa1f924f70a4b530e",
+    "win2000-mixed-sleep-v1-query-20261102.json": "086ccfd3152085545a9bfd8a48a2432352b0450ac6479f053acb8b713a32cd42",
+    "win2000-mixed-sleep-v1-unplug-down-20261102.json": "fd05d77d34e493c24006c9e25e4da6abf71dbed425a1e8533d4b5f0b50d7a620",
+    "win2000-mixed-sleep-v1-unplug-up-20261102.json": "0593d59d2bc6afc8c32d0e18fb899ca72f7f4adfdf35048f83fd0c0feda903f3",
+    "win2000-mixed-sleep-v1-unplug-host-20261102.json": "a1ad73cd01a30efcb72c02397922855e077f3ecb62a4abc91e9ff0837e813d68",
+    "win2000-standard-usbnet-mixed-sleep-v1-8127-sleep-v1-after-unplug-20261102.json": "66258187b2295866683fa2455476e0f9261b6fd5677b33ec71ecf5dd4ce2e4c3",
+    "win2000-mixed-sleep-v1-after-unplug-key-20261102.json": "c2fa51280503089e35b1f7ada6fca902f688db6a36cfa81ae1607c92dc9f1958",
+    "win2000-mixed-sleep-v1-cycles-20261102.json": "3455fe210ec0d4e8fa60681359f0151d92c49b7d6d8277dec4d8d85c142da49e"
+  },
+  "limits": [
+    "v1 development binary, not the later v2 companion-removal fix.",
+    "Fictional composite fixture, not a physical Realtek profile.",
+    "No full-machine ACPI S3 or universal hub/native-owner compatibility is claimed."
+  ]
+}

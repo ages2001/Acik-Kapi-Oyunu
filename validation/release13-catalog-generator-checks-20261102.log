@@ -1,0 +1,1 @@
+PASS: Windows 2000/XP hash oracles, PE checksum/EOF/content mutations, malformed and unsupported input rejection, CTL encoding, certificate and message signatures

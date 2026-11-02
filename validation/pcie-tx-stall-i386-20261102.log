@@ -1,0 +1,5 @@
+PASS: rtl8169 3 faults, 30 blocked doorbells, reset clears fault, TX resumes
+PASS: rtl8168 3 faults, 30 blocked doorbells, reset clears fault, TX resumes
+PASS: rtl8125 3 faults, 30 blocked doorbells, reset clears fault, TX resumes
+PASS: rtl8126 3 faults, 30 blocked doorbells, reset clears fault, TX resumes
+PASS: rtl8127 3 faults, 30 blocked doorbells, reset clears fault, TX resumes

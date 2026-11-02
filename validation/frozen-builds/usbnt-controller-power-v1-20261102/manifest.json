@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-02T07:35:10.812331+00:00",
+  "result": "PASS",
+  "scope": "Development controller-power candidate; not a release. Host cases pass; guest controller-power coverage pending.",
+  "results": [
+    {
+      "arch": "i386",
+      "bytes": 485888,
+      "sha256": "4cd3475f4faf6c4629fdd858c2184a607de88c34ed4a340d78a78e33ee08f6bb",
+      "imports": 106,
+      "references": {
+        "hal.dll": "ad863d1b51d6d1f67c1b8150a097d4ee26aa2ae13e14c6121bbdb1e634df1501",
+        "ntoskrnl.exe": "a89254608f243574e99210afc103d0e3f272d91a1277f8e4599e47343a042769"
+      }
+    },
+    {
+      "arch": "amd64",
+      "bytes": 523776,
+      "sha256": "f95eb466faddc41bf2f23361c5a85480a8c5dd070fc7faf9bdc781861fdc19ae",
+      "imports": 95,
+      "references": {
+        "hal.dll": "e942f223a8c630ef6919c9d95b9a847fd8f54a58ccd863d01befaeffcb303cc4",
+        "ntoskrnl.exe": "6e2f369fd7dc0bfff03edc778f51353bb06be4f060b6374ada415a9ae119dc99"
+      }
+    }
+  ]
+}

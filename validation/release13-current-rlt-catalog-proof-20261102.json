@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-02T18:46:14.976485+00:00",
+  "result": "PASS_HOST_EXACT_MEMBERS_AND_SIGNATURES",
+  "files": {
+    "netrtlk.inf": "1f09e506d10e7618e67fd7ec8152e7d0cec785038af0706d651499cf9921d0c8",
+    "i386/RLTKLANT.SYS": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5",
+    "amd64/RLTKLANT.SYS": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8",
+    "rltklant.cat": "92c3d80f498fc1b57a7c118c5822a5c55931937c180080f622eae01d36b93dd2",
+    "rltklant.cer": "a717c8d8abaa2162711851d4919f5bd2e00bd545bf3e1ded047cf0cdc977dc9d",
+    "makecat.py": "45b0c23a1dcd436fa04c413b007b2a84d281261aa75d03710813b5360a073f18"
+  },
+  "member_hashes": {
+    "netrtlk.inf": "36f875295425919d48ea0e9e4dceaf7bc8e0f3d8",
+    "i386/RLTKLANT.SYS": "ebea58223b8de97704edcc35b2436d2f8405867a",
+    "amd64/RLTKLANT.SYS": "749ec2753867665892a237405310790fb9113033"
+  },
+  "scope": "New catalog over exact final candidate inputs. Host verifies typed CTL, all three member hashes and certificate/message signatures using the generator previously compared to Windows 2000/XP hash oracles. This new catalog has not been imported or independently checked by guest CryptoAPI. Self-signed test certificate; no publisher trust or WHQL claim."
+}

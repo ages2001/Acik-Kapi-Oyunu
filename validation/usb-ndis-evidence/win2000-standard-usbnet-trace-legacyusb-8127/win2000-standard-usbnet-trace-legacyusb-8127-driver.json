@@ -1,0 +1,5 @@
+{
+  "source": "win2000-standard-usbnet-native2-legacyusb-8127.qcow2",
+  "sha256": "9b1b07173635d3d3707ae8b9427ecbd90f6a1b5704acdab7c231d45845fb87fc",
+  "diagnostic": "RTL_USB_TRACE; RX timeout still 20 ms"
+}

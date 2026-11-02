@@ -1,0 +1,9 @@
+{
+  "utc": "2026-11-01T20:44:04.416655+00:00",
+  "result": "FAIL",
+  "scope": "NT3.1 v3 installer; native Yes/No prompt renders correctly but selecting Yes launches Dr Watson",
+  "screenshot": "nt31-v3-added-20261101.png",
+  "candidate_cause": "ui pop 1 retained from Check dialog; stock synchronous MessageBox callers do not pop a UI frame",
+  "fix": "Remove the unmatched UI pop; actual v4 retest required",
+  "source_sha256": "8b39bfb1f7cdd72388836be68470af763728fcf6c10bd61f3376591ccd5e4221"
+}

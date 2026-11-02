@@ -1,0 +1,5 @@
+RUN c:\rlttest\mkey2.exe xp64-mixed-sleep-v1-baseline-key-20261102
+READY: waiting for composite HID B down/up
+KEY B DOWN SCAN 30
+KEY B UP SCAN 30
+PASS WINDOWS COMPOSITE HID INPUT

@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-01T22:17:55.950385+00:00",
+  "result": "FAIL",
+  "candidate": "frozen-builds/startup-maintenance-v4-20261102/manifest.json",
+  "scope": "Two SyncStartup exports without unloading the DLL; first succeeds, second returns cannot initialize Program Manager client",
+  "screenshot": "nt31-startup-helper-v4-same-module-20261102.png",
+  "fix": "Reset instance to zero before DdeInitialize; frozen v6 test in progress"
+}

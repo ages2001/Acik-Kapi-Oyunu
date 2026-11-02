@@ -1,0 +1,97 @@
+{
+  "guest": "xp64-usbnet-hidcap-8127",
+  "utc": "2026-11-02T09:21:52.503356+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8153-native-hotplug.json",
+        "sha256": "a4c50036b15ea59975d63a614ec18b7470169dd33fab83af2b1e950aa7f29645"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8153-function-power.json",
+        "sha256": "25ef57efbce90e64d07d7ceccb525c0903c22f57f4e4d26741cc1c846e2f62a2"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8153-port-reset-cycles.json",
+        "sha256": "13394703836d25a2ddec8ef783c331d3f3eb6c0b494396703223fff6e214bb03"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8153-native-cable.json",
+        "sha256": "f1535ce3d538e0136849bfda42cada839b9db6b7dfc81ea0007a9c91c13abc1a"
+      },
+      "seconds": 74.75
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8156-native-hotplug.json",
+        "sha256": "ad4d8f866568631e1accf22988bca491c0217b39fe20a2a6bb7c2584c9e996e3"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8156-function-power.json",
+        "sha256": "c6bb077a71d53e102dbdbcacf20177bf196052e4d781bef1d95ea2150027cff2"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8156-port-reset-cycles.json",
+        "sha256": "15700ee7088d58c5ebbed873b2253c42c9273c2d4731e73db4879da1d2c26984"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8156-native-cable.json",
+        "sha256": "b8922b72026552b090626353ab7e5848b9471dc1d85efab76599648a8efde45c"
+      },
+      "seconds": 74.95
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8157-native-hotplug.json",
+        "sha256": "5188db091f08fa3e73471bb3f103ed0822e8f6b97e6717868d909c0c278ef86a"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8157-function-power.json",
+        "sha256": "ab5672f34c2534af7684fe045951124d67fb1549181b042fdb315b631045aed2"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8157-port-reset-cycles.json",
+        "sha256": "b67cd440e91f1c9f6739de21251e88cc66463913a0ef7ccebb2bf5999899387b"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8157-native-cable.json",
+        "sha256": "d0e1c6f2f7803706268c80770e85ddf4447909725ce286e413a52462ae299279"
+      },
+      "seconds": 91.54
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8159-native-hotplug.json",
+        "sha256": "88d433ff2f90c594bf00a7ed3c0909bad956b9f0c35d92f517ede046f93f1686"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8159-function-power.json",
+        "sha256": "42378e7a64da79479aa4ef7b59a6dddcfbb6e4190df7caf25e00f6552fba6eb2"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8159-port-reset-cycles.json",
+        "sha256": "c59b78be95ecb3c26626dc0c6f12d26dc0c10ad2b2f7563a9f8ba8a25ccb343f"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-hidcap-8127-hidcap-20261102-8159-native-cable.json",
+        "sha256": "aeb791d963a793d351c7f1ef2e38a1fa42d0c7efbaeb7bbb2ca05b65ea5a04ac"
+      },
+      "seconds": 107.95
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

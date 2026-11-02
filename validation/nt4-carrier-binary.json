@@ -1,0 +1,12 @@
+{
+  "driver_sha256": "75e7785f2cfac07a58899634111b02e6fe5958637919687998e4ee0d6c374eaa",
+  "cable_transitions": 40,
+  "usb_detach_reinsert_cycles": 20,
+  "models": [
+    "RTL8153",
+    "RTL8156",
+    "RTL8157",
+    "RTL8159"
+  ],
+  "scope": "USB control transport and diagnostic carrier only; no NDIS USB traffic"
+}

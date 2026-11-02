@@ -1,0 +1,19 @@
+{
+  "scope": "Retained test failures and topology differences, not silently counted as passes",
+  "events": [
+    {
+      "guest": "win2000-standard-usbnet-mixed-release13-v2-8127",
+      "event": "Unsafe Removal notice consumed the beginning of a probe command; no matching UDP report arrived. Screenshot shows only the token entered as a command.",
+      "log": "win2000-release13-v2-after-unplug-20261102.log",
+      "screen": "win2000-release13-v2-notice-recovery-20261102.png"
+    },
+    {
+      "guest": "win2000-standard-usbnet-mixed-release13-v2-8127",
+      "event": "QEMU device_add without port selected port 2. The fictional mixed NIC obtained a different instance ending in 02&02 and Windows 2000 requested its first binding (problem 1, zero replies). This is not a same-port recovery pass. Removing this instance and explicitly using port 1 restored the previously installed instance and network/input without reinstalling a NIC.",
+      "log": "win2000-release13-v2-after-unplug-retry-20261102.log",
+      "screen": "win2000-release13-v2-after-unplug-retry-inspect-20261102.png",
+      "recovery": "win2000-release13-v2-port1-recovery-20261102.log"
+    }
+  ],
+  "harness_change": "mixed_key_observer.py now holds a global flock around its UDP receiver so concurrent independent guests cannot bind the same port or consume each other's reports."
+}

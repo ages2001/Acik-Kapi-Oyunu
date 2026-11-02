@@ -1,0 +1,12 @@
+Verified 33 payload hashes; 54 primary silicon rows
+PASS: pinned USB PHY extraction
+== built /workspace/rltklant-work/RLTKLANT/build/ndis5x64/rltklant.sys ==
+AddressOfEntryPoint	0000000000001100
+MajorSubsystemVersion	5
+MinorSubsystemVersion	2
+Subsystem		00000001	(NT native)
+	DLL Name: HAL.DLL
+	DLL Name: NDIS.SYS
+	DLL Name: ntoskrnl.exe
+	DLL Name: ntoskrnl.exe
+-rwx------ 1 agent agent 568624 Nov  1 18:24 rltklant.sys

@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-02T02:06:46.366341+00:00",
+  "guest": "nt31-usbsetup-macreset-8127",
+  "result": "FAIL - no reset attempted",
+  "reason": "Diagnostic expected miniport OID_GEN_VENDOR_ID 0xE04C, but NT3.1 reports 0xEC10. Vendor guard rejected reset; open/query/close/deregister succeeded. Test v5 matches frozen NT3.1 value. OID consistency/correctness needs separate source fix.",
+  "trace": "N31TEST register=00000000\nOPN arrsz=0x00000001\nopen ok\nN31TEST open=00000000\nN31TEST query=00000000\nN31TEST vendor=0000EC10\nN31TEST close=00000000\nN31TEST completions=00000000\nN31TEST starts=00000000\nN31TEST ends=00000000\nN31TEST result=00000001\nN31TEST deregister=00000000\n",
+  "debug_sha256": "e79c1e1f6d12679bc7e6b63c3f62391b2f46812936718262dc8974c82406d71c"
+}

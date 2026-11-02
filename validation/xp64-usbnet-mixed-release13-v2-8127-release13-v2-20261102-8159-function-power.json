@@ -1,0 +1,12 @@
+{
+  "guest": "xp64-usbnet-mixed-release13-v2-8127",
+  "utc": "2026-11-02T18:56:40.450590+00:00",
+  "scope": "Test USBNT PDO D3/D0 worker IRPs and subsequent real NIC traffic.\n\nUPOWER targets only USBNT, directly at the PDO, and forces DISPATCH_LEVEL.\nThis is lower-device function-idle fault injection, not full NDIS/system sleep.\nThe helper does three D3/D0 pairs and restores D0 even after a failed D3.\n",
+  "result": "PASS",
+  "offset": 2208,
+  "power_trace": "POWERTEST object=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\n",
+  "power_cycles": 3,
+  "report": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-after-power.json",
+  "report_sha256": "f5e789ff75f65b16b42a3cddf1214fcf3f594dffd3c9c404e9b1f1134ce8ea5a",
+  "screenshot": "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-function-power-screen.png"
+}

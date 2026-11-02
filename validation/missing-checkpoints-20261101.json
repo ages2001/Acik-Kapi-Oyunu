@@ -1,0 +1,66 @@
+{
+  "utc": "2026-11-01T15:40:22.457496+00:00",
+  "broken_links": [
+    {
+      "path": "/workspace/rltklant-vm/run/win2000-standard-filter-8127.raw",
+      "target": "/tmp/rltklant-checkpoints/win2000-standard-filter-8127.raw"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-filter-fixed-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-filter-fixed-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-filter-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-filter-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-inf-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-inf-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-usbnet-native-8127.raw",
+      "target": "/tmp/rltklant-checkpoints/xp64-usbnet-native-8127.raw"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-multi-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-multi-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-fixed-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-fixed-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-debug-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-debug-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-slot-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-slot-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-ndis51-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-ndis51-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-probe-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-probe-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-name-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-name-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-shutdown-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-shutdown-8127.qcow2"
+    },
+    {
+      "path": "/workspace/rltklant-vm/run/xp64-phy-multi-8127.qcow2",
+      "target": "/tmp/rltklant-checkpoints/xp64-phy-multi-8127.qcow2"
+    }
+  ],
+  "scope": "Read-only restart audit; missing generated checkpoints were not recreated or attributed old hashes."
+}

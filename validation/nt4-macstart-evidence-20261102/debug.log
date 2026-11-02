@@ -1,0 +1,39 @@
+
+RLTK DriverEntry
+
+RLTK RtlInitialize
+GR slot=0xFFFFFFFF
+GR found bus=0x00000000 slot=0x00000004
+  BAR io=0x0000C000 len=0x00000100
+  BAR mem=0xFEBF0000 len=0x00008000
+  irq=0x0000000A
+GetResources st=0x00000000
+res port=0x0000C000 mem=0x00008000 irq=0x0000000A
+backend=0x00000002 did=0x00008127
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RegisterMiniport st=0x00000000
+UNT: deferred USB worker registered
+RXF
+  filt FOUND
+UNT-UP id=00000001 pid=00008153 status=00000000
+UNT-LINK id=00000001 up=00000000 status=00000000
+UNT-LINK id=00000001 up=00000001 status=00000000
+RXF
+RXF
+RXF
+RXF
+RXF
+PCI TX watchdog reset
+PCI PHY/MAC prepared
+PCI TX watchdog reset
+PCI PHY/MAC prepared
+PCI TX watchdog reset
+PCI PHY/MAC prepared

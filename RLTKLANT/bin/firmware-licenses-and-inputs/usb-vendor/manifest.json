@@ -1,0 +1,38 @@
+{
+  "repository": "https://github.com/bb-qq/r8152",
+  "commit": "477a723a41c3340bd7d701f657711c334d0c42bd",
+  "source": "../../third_party/r8152/vendor-r8152.c",
+  "source_sha256": "87397a44617a38ed21720cfd4b50f2dbaea263291f94915a18442ca846f7e7ca",
+  "license": "GPL-2.0-only",
+  "license_path": "../../third_party/r8152/COPYING",
+  "license_sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+  "scope": "Generated container wrappers around unchanged vendor arrays. Distinct from linux-firmware; register transport tests do not execute the PHY MCU.",
+  "files": [
+    {
+      "path": "rtl8157-vendor-0014.fw",
+      "size": 9976,
+      "sha256": "bb218fe49681f5ab7ec463bb973da934e4eca64c2be499b588f6f76e237e2e7a",
+      "linux_version_suffixes": [
+        16
+      ],
+      "vendor_array": "ram16",
+      "code_version": 20,
+      "payload_size": 9888,
+      "payload_sha256": "1bdc6c38bb4a67efa44fcd022a6bb724d560ffe59ba60d5d8e55880e516dc934",
+      "source_line": 18320
+    },
+    {
+      "path": "rtl8159-vendor-0022.fw",
+      "size": 17464,
+      "sha256": "29f9e86aa6b5b058ad0a6c425253c152fd448129b60e5eeafb11a6e78f943f87",
+      "linux_version_suffixes": [
+        17
+      ],
+      "vendor_array": "ram17",
+      "code_version": 34,
+      "payload_size": 17376,
+      "payload_sha256": "9aeee62363c91022e0e8c1910053a37d92391d338a67a45c2cd717db42de7beb",
+      "source_line": 20813
+    }
+  ]
+}

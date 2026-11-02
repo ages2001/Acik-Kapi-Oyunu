@@ -1,0 +1,51 @@
+{
+  "utc": "2026-11-02T13:21:32.674688+00:00",
+  "result": "PASS_COMPARISON_WITH_ORIGINAL_LATENCY_FAILURE_OPEN",
+  "rows": [
+    {
+      "file": "nt351-oldcompare-attach-20261102.json",
+      "seconds": [
+        3.3352991020074114,
+        2.828121509985067,
+        3.0280595590011217
+      ],
+      "sha256": "4dc87c728ba6ea7d8f0f9616d238439f050010b6433b05e309a01e716cba04c4"
+    },
+    {
+      "file": "nt351-newcompare-attach-20261102.json",
+      "seconds": [
+        3.683406720025232,
+        3.73019134401693,
+        3.730538097996032
+      ],
+      "sha256": "049a89bac71d93c588a5eeb4f37689f3e46d859d29580d4ab476e32c5807d754"
+    },
+    {
+      "file": "nt351-newcompare-aftertcp-attach-20261102.json",
+      "seconds": [
+        4.551412419998087,
+        3.4844181810040027,
+        3.6805902080086526
+      ],
+      "sha256": "9a1cd88aa881071704b70baef7859130559ad732c8fbed22b4833f662f232170"
+    }
+  ],
+  "evidence": {
+    "nt351-oldcompare-attach-20261102.json": "4dc87c728ba6ea7d8f0f9616d238439f050010b6433b05e309a01e716cba04c4",
+    "nt351-newcompare-attach-20261102.json": "049a89bac71d93c588a5eeb4f37689f3e46d859d29580d4ab476e32c5807d754",
+    "nt351-newcompare-aftertcp-attach-20261102.json": "9a1cd88aa881071704b70baef7859130559ad732c8fbed22b4833f662f232170",
+    "nt351-oldcompare-evidence-20261102/manifest.json": "d88a8ff1dd91adf0278e05e0edf8d5ffb16f4774ca6b629e2e07a06865273612",
+    "nt351-oldcompare-offline-20261102/manifest.json": "87048900781314ee25d9f6908821df18a954f51e0bd596baded5ce405afa343f",
+    "nt351-newcompare-evidence-20261102/manifest.json": "9f0480a1f2600f4cee760c8cc638d31923f131bdc5cce16bb05ee587e9d1fe39",
+    "nt351-newcompare-offline-20261102/manifest.json": "acae0e07ce26916857d615c68df3ec229c18655b21a3a79ea8c50c0c23b0ef86",
+    "nt351-newcompare-tcp-wire-20261102.json": "16796469b7b77ac11a9791508f22b118b2bd02f6f134e6f546505627bf8e840a",
+    "nt351-usbsetup-newcompare-rtl8139-8127-compare-cold-20261102-sibling-matrix.json": "2e5adfda964eb130e44d1edbc6000871569a420fd0ad56bbca5ec3a945c577e7"
+  },
+  "scope": "Stopped guests with exact driver readback. Nine RTL8159 attachment measurements; new comparison also passes four-model PCI-preservation matrix, three registered NDIS resets and 1 MiB TCP each direction with closed PCAP byte/checksum verification.",
+  "limits": [
+    "The original two attachment timeouts are unexplained and retained.",
+    "Cold or post-TCP comparison passes do not prove a timing fix.",
+    "These comparisons precede the synchronous-rundown change.",
+    "No USB TCP/IP is bound in this NT3.51 fixture; RTL8139 is the network route."
+  ]
+}

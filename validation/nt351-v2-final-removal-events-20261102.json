@@ -1,0 +1,207 @@
+{
+  "before_max_record": 31,
+  "new_records": [
+    {
+      "offset": 3696,
+      "bytes": 96,
+      "record": 32,
+      "generated": 1793576851,
+      "generated_utc": "2026-11-01T23:47:31+00:00",
+      "written": 1793576851,
+      "event_id": 2147489653,
+      "code": 6005,
+      "type": 4,
+      "category": 0,
+      "source": "EventLog",
+      "computer": "TEST-PC",
+      "strings": [],
+      "data": ""
+    },
+    {
+      "offset": 3792,
+      "bytes": 144,
+      "record": 33,
+      "generated": 1793576852,
+      "generated_utc": "2026-11-01T23:47:32+00:00",
+      "written": 1793576852,
+      "event_id": 3221229787,
+      "code": 4315,
+      "type": 1,
+      "category": 0,
+      "source": "NetBT",
+      "computer": "TEST-PC",
+      "strings": [
+        ""
+      ],
+      "data": "000004000100540000000000db1000c000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "offset": 3936,
+      "bytes": 176,
+      "record": 34,
+      "generated": 1793576852,
+      "generated_utc": "2026-11-01T23:47:32+00:00",
+      "written": 1793576852,
+      "event_id": 2147490648,
+      "code": 7000,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "WINS Client(TCP/IP)",
+        "%%31"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 4112,
+      "bytes": 200,
+      "record": 35,
+      "generated": 1793576852,
+      "generated_utc": "2026-11-01T23:47:32+00:00",
+      "written": 1793576852,
+      "event_id": 2147490649,
+      "code": 7001,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "DHCP Client",
+        "WINS Client(TCP/IP)",
+        "%%31"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 4312,
+      "bytes": 92,
+      "record": 36,
+      "generated": 1793576852,
+      "generated_utc": "2026-11-01T23:47:32+00:00",
+      "written": 1793576852,
+      "event_id": 3221227975,
+      "code": 2503,
+      "type": 1,
+      "category": 0,
+      "source": "Server",
+      "computer": "TEST-PC",
+      "strings": [],
+      "data": ""
+    },
+    {
+      "offset": 4404,
+      "bytes": 104,
+      "record": 37,
+      "generated": 1793576852,
+      "generated_utc": "2026-11-01T23:47:32+00:00",
+      "written": 1793576852,
+      "event_id": 5728,
+      "code": 5728,
+      "type": 1,
+      "category": 0,
+      "source": "Workstation",
+      "computer": "TEST-PC",
+      "strings": [],
+      "data": ""
+    },
+    {
+      "offset": 4508,
+      "bytes": 184,
+      "record": 38,
+      "generated": 1793576852,
+      "generated_utc": "2026-11-01T23:47:32+00:00",
+      "written": 1793576852,
+      "event_id": 2147490649,
+      "code": 7001,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "Computer Browser",
+        "Server",
+        "%%87"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 4692,
+      "bytes": 160,
+      "record": 39,
+      "generated": 1793576852,
+      "generated_utc": "2026-11-01T23:47:32+00:00",
+      "written": 1793576852,
+      "event_id": 2147490672,
+      "code": 7024,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "Workstation",
+        "5728"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 4852,
+      "bytes": 204,
+      "record": 40,
+      "generated": 1793576852,
+      "generated_utc": "2026-11-01T23:47:32+00:00",
+      "written": 1793576852,
+      "event_id": 2147490650,
+      "code": 7002,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "TCP/IP NetBIOS Helper",
+        "NetworkProvider"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 5056,
+      "bytes": 184,
+      "record": 41,
+      "generated": 1793576852,
+      "generated_utc": "2026-11-01T23:47:32+00:00",
+      "written": 1793576852,
+      "event_id": 2147490649,
+      "code": 7001,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "Messenger",
+        "Workstation",
+        "%%1066"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 5240,
+      "bytes": 152,
+      "record": 42,
+      "generated": 1793576852,
+      "generated_utc": "2026-11-01T23:47:32+00:00",
+      "written": 1793576852,
+      "event_id": 2147490671,
+      "code": 7023,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "Server",
+        "%%87"
+      ],
+      "data": ""
+    }
+  ]
+}

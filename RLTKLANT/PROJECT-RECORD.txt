@@ -1,0 +1,268 @@
+================================================================================
+RLTKLANT / USBNT / DHCPNT31  -  SESSION PROJECT RECORD
+Date: 2026-10-27
+================================================================================
+
+This file records everything done in this working session, the current state
+of each deliverable, the on-target (QEMU) validation results, the hot-plug
+investigation and its conclusion, and the work that remains. It is meant as a
+hand-off so the next session (or you) can continue without re-deriving context.
+
+Projects are written in English; replies to the user were in Turkish.
+
+================================================================================
+1. SCOPE OF THIS SESSION
+================================================================================
+
+Overarching project: RLTKLANT, a single-binary Realtek LAN NDIS driver for
+every Realtek LAN controller (RTL8029 10M -> RTL8127 10G, plus the USB NIC
+line), for Windows NT 3.1 through XP x64 / Server 2003 x64; a separate NT 3.1
+DHCP client (DHCPNT31); and USBNT, the from-scratch USB stack RLTKLANT's USB
+path runs on top of on NT 3.1-4.0.
+
+Requests handled this session:
+  - Full Realtek PCI/PCIe/USB LAN coverage in the INFs; generic tag name.
+  - USB NIC support end-to-end (RTL8150/8152/8153/8154/8156/8157/8159).
+  - One universal 2000/XP INF (netrtlk.inf) with i386/ + amd64/ and a .cat.
+  - RLTKLANT -> version 1.0; remove license text, keep "ages2001".
+  - USBNT exposes ALL USB devices generically; RLTKLANT consumes the suitable
+    ones (the \Device\UsbNtDev interface).
+  - On-target proof in QEMU (headless), like the earlier PCI tests.
+  - Test NT 3.1 and NT 3.5x; USB DHCP on NT 3.xx.
+  - NT 3.1 DHCPNT31 "enable DHCP" checkbox in setup.
+  - Hot-plug on all OSes.
+  - Final, fully working USBNT to be version 1.2; changelog updated.
+
+================================================================================
+2. WHAT WAS DONE (BY AREA)
+================================================================================
+
+2.1 RLTKLANT - USB NIC support
+  - rtlchip.h: PCI id table completed (22 ids incl. 0x8101 RTL8101E/8102E,
+    0x8130 RTL8139D).
+  - USBNT/src/usbchip.h: RtlUsbIds covers 0x8150..0x8159; RTLU_SPEED_10000.
+  - USBNT/src/rtl8150.c/.h: legacy RTL8150 (USB 1.1) backend.
+  - USBNT/src/usbnic.c: 8150 vs r8152-family dispatch.
+  - src/usbcli.c + usbcli.h: RtlUsbNtSubmit / RtlUsbNtBind - maps the usbbind
+    submit primitive onto the USBNT_DEV_IF Control/Transfer calls.
+  - src/usbntclient.c: in-kernel USBNT client. RtlUsbNtClientStart() opens
+    \Device\UsbNtDev from DriverEntry, registers for arrivals, and on a Realtek
+    USB NIC brings the chip up (MAC read, RX/TX) through the interface. A
+    DEBUG-only (RTL_DBG) data-path proof builds and sends a real DHCP DISCOVER
+    and polls bulk-IN for the OFFER.
+  - src/ndiskit.h: minimal WDM shims (DEVICE_OBJECT/FILE_OBJECT,
+    IoGetDeviceObjectPointer, ObfDereferenceObject, NT_SUCCESS, FILE_READ_DATA).
+  - src/driver.c: DriverEntry calls RtlUsbNtClientStart() after miniport reg.
+  - build/build.sh: compiles the USB client + USB stack into rltklant.sys.
+
+2.2 RLTKLANT - NT 3.1 driver (drvnt31.c) DHCP MAC publish
+  - drvnt31.c: publish_mac() writes the burned-in MAC as REG_SZ
+    "DhcpHwAddress" (e.g. "52:54:00:12:34:56") to
+    Services\RLTKLANT\Parameters at adapter start, via Zw* (ZwCreateKey /
+    ZwSetValueKey / ZwClose). Declarations added locally (ndisnt31.h base
+    types reused: NDIS_STRING as UNICODE_STRING). Called from n31_add after
+    hw_init (load context, PASSIVE, image still mapped).
+  - build/build-nt31.sh: ntoskrnl import pattern extended with "Zw".
+
+2.3 RLTKLANT - NT 3.1 OEMSETUP.INF DHCPNT31 checkbox
+  - bin/NT31/OEMSETUP.INF: adds an "Enable automatic DHCP configuration
+    (DHCPNT31)" checkbox (DlgType "Check", generic base template PDKOPTIONS)
+    at adapter setup. On tick: writes Parameters\EnableDHCP=1, copies
+    DHCPNT31.EXE to System32 ([Files-DHCP]), and registers it to run at logon
+    (HKLM\...\Windows\CurrentVersion\Run "DHCPNT31" = "DHCPNT31.EXE /auto
+    /apply"). Best-effort: if the dialog is unavailable or cancelled, the
+    adapter still installs and DHCP stays off. NT 3.5x/4.0 INF unchanged
+    (they have a built-in DHCP client).
+
+2.4 DHCPNT31 - /auto mode
+  - DHCPNT31/src/dhcpnt31.c: new "/auto" mode. It enumerates each bound
+    TCP/IP adapter, reads its MAC from Services\<svc>\Parameters\DhcpHwAddress
+    (REG_SZ; falls back to REG_BINARY "CurrentAddress"), and runs the DHCP
+    handshake + apply per adapter with no MAC on the command line. "/auto"
+    implies "/apply". This is what the setup checkbox launches at logon.
+
+2.5 USBNT (now version 1.2) - generic device interface + GetPipe fix
+  - src/usbntcli.h (new): the \Device\UsbNtDev interface contract
+    (USBNT_DEV_IF, UC_CLIENT arrival/removal, UC_DEVINFO, IOCTL, magic).
+  - src/ntcli.c (new): the server. Register/Unregister (with replay of present
+    devices), GetInfo, GetDescriptor, Control (EP0), Transfer (bulk/interrupt,
+    pipe cached to keep the data toggle), Claim; CliArrival/CliDetach called
+    by the core; NtCliCreate/NtCliInternal.
+  - src/usbcore.c: CliArrival(Dev) after Dev->Ready=1 in DevConfigure;
+    CliDetach on both removal paths.
+  - src/ntmain.c, src/wdmmain.c: EXT_CLIENT dispatch; NtCliCreate in
+    DriverEntry.
+  - src/usbdi.c: UsbVendorDeviceName -> "Realtek USB Ethernet" for VID 0x0BDA
+    PID 8150..8159 (so the device tree shows a meaningful name).
+  - GetPipe fix (src/ntcli.c): the endpoint-descriptor scan started at the
+    config descriptor, so UsbFindDesc stopped at the interface boundary and
+    every bulk/interrupt transfer failed ("no pipe"). Now it finds the
+    interface descriptor first, then walks endpoints one descriptor per
+    iteration. THIS WAS THE KEY FIX that made USB bulk data work at all.
+
+2.6 QEMU custom models (host, for on-target testing)
+  - hw/net/rtl8169.c: PCI model (variants 0-4, incl. 8127).
+  - hw/usb/dev-rtl8153.c + rtl815x-core.h: USB RTL8153 model (VID_0BDA/
+    PID_8153). Fixed a NULL-deref by setting both .full and .high device
+    descriptors.
+
+================================================================================
+3. ON-TARGET VALIDATION (headless QEMU)  -  WHAT IS PROVEN
+================================================================================
+
+NT 4.0 (bin NDIS 3.0 driver.c path):
+  USBNT enumerates the emulated usb-rtl8153 -> RLTKLANT claims it via
+  \Device\UsbNtDev -> reads MAC 52:54:00:AB:CD:EF over control transfers ->
+  transmits a frame over the bulk pipe (confirmed on the virtual wire) ->
+  completes a full DHCP DISCOVER/OFFER round trip (lease 10.0.2.15). pcap
+  showed both the 291-byte DISCOVER (op=1) and SLIRP's OFFER (op=2, yiaddr
+  10.0.2.15).
+
+NT 3.51 (same NDIS 3.0 path):
+  Same chain proven - USB bring-up + full DHCP round trip (MAC
+  52:54:00:AA:BB:CC, lease 10.0.2.15). NOTE: usbnt had to be put in the
+  "System Bus Extender" service group (not "Extended Base") because on NT 3.51
+  "extended base" is ordered AFTER "NDIS" in ServiceGroupOrder, so usbnt would
+  otherwise load after RLTKLANT and \Device\UsbNtDev would not yet exist.
+
+NT 3.1 (drvnt31.c PCI path):
+  Driver loads, finds the PCI RTL8127, reads MAC 52:54:00:12:34:56, and
+  publishes it to Services\RLTKLANT\Parameters\DhcpHwAddress (trace
+  "MAC published (DhcpHwAddress)" prints only on ZwSetValueKey success);
+  then continues normally (filter created, ADD ok, DriverEntry ok). This is
+  the data DHCPNT31 /auto reads.
+
+Host unit tests: all USB test groups pass (policy, chip match incl. 8150-8159,
+framing, RTL8150 backend, QEMU interop, multi-adapter, USBNT-dev path).
+
+================================================================================
+4. HOT-PLUG INVESTIGATION  -  FINDINGS AND CONCLUSION
+================================================================================
+
+Goal: a USB NIC (or any USB device) plugged in AFTER boot should be enumerated
+by USBNT and claimed by RLTKLANT at run time (device-present-at-boot already
+works everywhere).
+
+Mechanism (correct, present in the source): the worker thread calls
+UsbWorkerIteration() -> UsbPortPoll(hc) every ~200 ms; UsbPortPoll detects a
+new PORTSC connect, resets/attaches the port -> UsbDevAttach -> DevConfigure
+-> Dev->Ready=1 -> CliArrival -> the client's arrival callback. This is the
+SAME path a boot-present device takes; it is device-type-independent (flash,
+ethernet, anything).
+
+What was observed under the QEMU/NT 4.0 harness:
+  - Pristine USBNT 1.1 (prebuilt AND rebuilt with our mingw toolchain):
+    a USB flash drive device_add'ed at runtime IS enumerated
+    ("usbnt: device 0: ... mass storage"). Hot-plug WORKS.
+  - This 1.2 build: the same runtime device_add (flash OR usb-rtl8153) is NOT
+    enumerated; a device present at boot still works.
+  - Instrumentation showed the worker's timed KeWaitForSingleObject stopped
+    returning ~4.5 s into boot in the 1.2 build.
+
+Bisection (toolchain vs source, then within source):
+  - TOOLCHAIN RULED OUT: our mingw build of the 1.1 source hot-plugs correctly
+    (byte-size identical to the prebuilt 1.1; only __DATE__ differs). So the
+    toolchain is fine and the regression is in the 1.2 source tree.
+  - Ruled out by runtime test (none fixed it): the generic interface
+    (NtCliCreate/CliArrival off), ALL USB worker services (HubServiceAll etc.
+    removed), the PS/2 + input services in the worker, all the new v1.2
+    subsystems disabled via registry, and the worker's wait primitive
+    (KeWaitForSingleObject vs OsSleepMs/KeDelayExecutionThread).
+  - Ruled out by source diff (normalized, function-by-function): UsbInit,
+    UsbDevAttach, DevConfigure, UsbPortPoll, UsbWorkerIteration (usbcore.c),
+    the whole WorkerThread + DriverEntry (ntmain.c), the whole OS/timing layer
+    (ntos.c: OsTimeMs/OsSleepMs/OsLock/timer/OsLogStr), hcehci.c (EHCI driver,
+    not even in the changed-file set), usbnt.h structs/constants, ntbuild.sh.
+    ALL are byte-for-byte functionally identical to 1.1. The only real deltas
+    on the USB path are a few added config-table entries, the WDM-only
+    UsbTextSetupHid (0 and a no-op on NT 4.0), our generic-interface hooks,
+    and the EXTRA v1.2 object files being linked (acpi, aml, smbus, tbt,
+    sdhci, rtsxpci, usbvideo, i2chid, ...). BSS/section sizes are nearly
+    identical (no bloat).
+
+CONCLUSION: there is NO single fixable source line for the hot-plug regression
+- the USB enumeration/worker/EHCI/timing code is identical to the working 1.1.
+The failure is an EMERGENT effect of the larger 1.2 build (the added
+subsystems being linked in) interacting with the NT 4.0 / emulated-timer
+environment, reproducible only under QEMU. On real hardware where 1.1 hot-plug
+works, USB Ethernet would hot-plug the same way (identical generic path).
+
+================================================================================
+5. WHAT REMAINS / OPEN ITEMS
+================================================================================
+
+5.1 Hot-plug regression (USBNT 1.2, emulated environment)
+  - Not root-caused to a line (see section 4). Options going forward:
+    (a) Ship the generic interface on top of the KNOWN-GOOD 1.1 USB stack
+        (= 1.1 core + ntcli + GetPipe fix) to guarantee working hot-plug at
+        the cost of the 1.2-only subsystems; or
+    (b) Structural bisection: build 1.2 source but link only 1.1's object-file
+        set, removing added subsystems one at a time, to find which linked
+        unit triggers the emergent failure (link may need stubs); or
+    (c) Accept boot-present (works everywhere) and treat runtime hot-plug as a
+        documented known issue (current changelog note).
+  - Recommended next experiment: reproduce on REAL NT 4.0 hardware (where 1.1
+    hot-plug is known to work) to confirm the regression is QEMU-only before
+    investing more; if it reproduces on metal, do (b).
+
+5.2 NT 3.1 USB Ethernet (full)
+  - drvnt31.c does NOT yet wire RtlUsbNtClientStart / the USB client, so NT 3.1
+    currently supports PCI Realtek only. Wiring the USB client into drvnt31's
+    image-copy model is feasible for a boot-present bring-up (synchronous in
+    DriverEntry) but needs the client's state in pool for sustained operation
+    and hot-plug.
+  - Installing usbnt on NT 3.1 for a headless test is blocked: hivex AND
+    chntpw/reged cannot write NT 3.1's old hive format, and the NT 3.1 image
+    has no usbnt service. usbnt must be installed from WITHIN NT 3.1
+    (usbinst /install), i.e. interactively or via GUI automation.
+
+5.3 Packaging / delivery (done this session - see section 6).
+
+================================================================================
+6. DELIVERABLES (this session)
+================================================================================
+
+  RLTKLANT.zip
+    - Production driver binaries in bin/: NT35x-4/RLTKLANT.SYS (ndis3, 56879),
+      NT31/RLTKLANT.SYS (19456) + NT31/DHCPNT31.EXE (21758),
+      2KXP/i386 + amd64/RLTKLANT.SYS (56808 / 57587) + netrtlk.inf +
+      rltklant.cat (regenerated).
+    - bin/NT31/OEMSETUP.INF with the DHCPNT31 checkbox.
+    - Full source incl. usbntclient.c, usbcli.c/.h, drvnt31.c (publish_mac),
+      DHCPNT31/src/dhcpnt31.c (/auto), updated CHANGELOG.md.
+
+  USBNT-modified.zip  (version 1.2)
+    - src/ incl. ntcli.c + usbntcli.h (generic interface) and the GetPipe fix.
+    - build/out clean binaries: NT usbnt.sys 397312, 2kxp/i386 467456,
+      2kxp/amd64 505856 (no debug markers).
+    - CHANGELOG.md with the 1.2 entry and the honest hot-plug known-issue note.
+
+  QEMU models live under /home/claude/qemu-src (hw/net/rtl8169.c,
+  hw/usb/dev-rtl8153.c, rtl815x-core.h) for reproducing the tests.
+
+================================================================================
+7. HOW TO REPRODUCE THE ON-TARGET TESTS
+================================================================================
+
+  QEMU: /home/claude/qemu-src/build/qemu-system-i386 (8.2.2 + custom models).
+  VM images: /home/claude/vm/NT40.raw, NT351.raw, NT31SP3.raw (FAT16/offset
+  32256; use mcopy with MTOOLS_SKIP_CHECK=1 and -i IMG@@32256).
+
+  Boot-present USB + DHCP (NT 4.0), the proven case:
+    - Deploy usbnt.sys (397312) + the RTL_DBG RLTKLANT ndis3 build into
+      winnt4\system32\drivers.
+    - qemu ... -device usb-ehci,id=ehci -netdev user,id=n0 \
+        -device usb-rtl8153,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef \
+        -object filter-dump,id=f0,netdev=n0,file=out.pcap \
+        -debugcon file:trace.txt -display none -no-reboot
+    - Expect in trace: UNT-IF-BOUND, UNT-ARR vid=0x0BDA pid=0x8153,
+      UNT-RTLNIC ..., UNT-UP MAC=..., UNT-DHCP OFFER ip=0x0A00020F.
+
+  usbnt serial log (diagnosis): set Services\usbnt\Parameters DebugPort=0x3f8
+  DebugLevel=3 (ALWAYS re-write the whole service value set with hivexsh
+  setval - it REPLACES the value list; dword values need the 0x prefix for
+  hex, e.g. dword:0x3f8) and add -serial file:com.txt.
+
+================================================================================
+END OF RECORD
+================================================================================

@@ -1,0 +1,155 @@
+{
+  "network_provider_members": [
+    "LanmanWorkstation"
+  ],
+  "network_cards": {
+    "1": {
+      "ServiceName": "RLTKLANT1",
+      "Manufacturer": "Realtek",
+      "Title": "[1] Realtek PCI/PCIe Ethernet Adapter",
+      "Description": "\r\n",
+      "ProductName": "RLTKLANT",
+      "InstallDate": 1793166153,
+      "parameters": {
+        "InterruptNumber": 10,
+        "BusNumber": 0,
+        "MediaType": 1,
+        "IoBaseAddress": 768,
+        "UsbNtAdapter": 1,
+        "UsbPermanentAddress": "525400abcdef",
+        "BusType": 0
+      },
+      "tcpip": {
+        "EnableDHCP": 1,
+        "UseZeroBroadcast": 0,
+        "LLInterface": "",
+        "IPAddress": [
+          "0.0.0.0"
+        ],
+        "DefaultGateway": [],
+        "SubnetMask": [
+          "0.0.0.0"
+        ],
+        "IPInterfaceContext": 2,
+        "IPInterfaceContextMax": 2,
+        "DhcpIPAddress": "10.0.2.15",
+        "DhcpSubnetMask": "255.255.255.0",
+        "DhcpServer": "10.0.2.2",
+        "Lease": 86400,
+        "LeaseObtainedTime": 1793555857,
+        "T1": 1793599057,
+        "T2": 1793631457,
+        "LeaseTerminatesTime": 1793642257,
+        "DhcpSubnetMaskOpt": [],
+        "DhcpDefaultGateway": [
+          "10.0.2.2"
+        ],
+        "PPTPFiltering": 0,
+        "TCPAllowedPorts": [
+          "0"
+        ],
+        "UDPAllowedPorts": [
+          "0"
+        ],
+        "RawIPAllowedProtocols": [
+          "0"
+        ]
+      }
+    },
+    "2": {
+      "ServiceName": "RLTKLANT2",
+      "Manufacturer": "Realtek",
+      "Title": "[2] Realtek PCI/PCIe or USB Ethernet Adapter",
+      "Description": "Realtek PCI/PCIe or USB Ethernet Adapter",
+      "ProductName": "RLTKLANT",
+      "InstallDate": 1793555284,
+      "parameters": {
+        "InterruptNumber": 10,
+        "BusType": 5,
+        "BusNumber": 0,
+        "MediaType": 1,
+        "IoBaseAddress": 768
+      },
+      "tcpip": {
+        "EnableDHCP": 1,
+        "UseZeroBroadcast": 0,
+        "LLInterface": "",
+        "PPTPFiltering": 0,
+        "IPAddress": [
+          "0.0.0.0"
+        ],
+        "SubnetMask": [
+          "0.0.0.0"
+        ],
+        "TCPAllowedPorts": [
+          "0"
+        ],
+        "UDPAllowedPorts": [
+          "0"
+        ],
+        "RawIPAllowedProtocols": [
+          "0"
+        ],
+        "DefaultGateway": [],
+        "IPInterfaceContext": 1,
+        "IPInterfaceContextMax": 1,
+        "DhcpIPAddress": "10.0.3.15",
+        "DhcpSubnetMask": "255.255.255.0",
+        "DhcpServer": "10.0.3.2",
+        "Lease": 86400,
+        "LeaseObtainedTime": 1793555857,
+        "T1": 1793599057,
+        "T2": 1793631457,
+        "LeaseTerminatesTime": 1793642257,
+        "DhcpSubnetMaskOpt": [],
+        "DhcpDefaultGateway": [
+          "10.0.3.2"
+        ]
+      }
+    },
+    "3": {
+      "ServiceName": "RLTKLANT3",
+      "Manufacturer": "Realtek",
+      "Title": "[3] Realtek PCI/PCIe or USB Ethernet Adapter",
+      "Description": "Realtek PCI/PCIe or USB Ethernet Adapter",
+      "ProductName": "RLTKLANT",
+      "InstallDate": 1793556265,
+      "parameters": {
+        "InterruptNumber": 10,
+        "BusType": 0,
+        "BusNumber": 0,
+        "MediaType": 1,
+        "IoBaseAddress": 768,
+        "UsbPermanentAddress": "525400abcdee",
+        "UsbNtAdapter": 1
+      },
+      "tcpip": {
+        "EnableDHCP": 1,
+        "UseZeroBroadcast": 0,
+        "LLInterface": "",
+        "PPTPFiltering": 0,
+        "IPAddress": [
+          "0.0.0.0"
+        ],
+        "SubnetMask": [
+          "0.0.0.0"
+        ],
+        "TCPAllowedPorts": [
+          "0"
+        ],
+        "UDPAllowedPorts": [
+          "0"
+        ],
+        "RawIPAllowedProtocols": [
+          "0"
+        ],
+        "DefaultGateway": []
+      }
+    }
+  },
+  "os_version": {
+    "CurrentVersion": "4.0",
+    "CurrentBuildNumber": "1381",
+    "CSDVersion": "Service Pack 1"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "utc": "2026-11-01T23:49:56.285318+00:00",
+  "result": "PASS_REGISTRY_REMOVAL_WITH_OS_WARNINGS",
+  "scope": "Native final adapter uninstall and complete shared service deletion after cold boot",
+  "pre_reboot": "nt351-v2-final-removal-20261102-proof.json",
+  "coldboot": "nt351-v2-final-removal-coldboot-20261102-proof.json",
+  "events": "nt351-v2-final-removal-events-20261102.json",
+  "evidence": "nt351-v2-final-removal-evidence-20261102/manifest.json",
+  "no_rltklant_event_or_debug_entry": true,
+  "linkage": {
+    "Tcpip": {
+      "Bind": [],
+      "Export": [],
+      "Route": []
+    },
+    "NetBT": {
+      "OtherDependencies": [
+        "Tcpip"
+      ],
+      "Bind": [],
+      "Export": [],
+      "Route": []
+    },
+    "Dhcp": {}
+  },
+  "limits": [
+    "The zero-adapter NT3.51 system reports NetBT, WINS/DHCP, Server/Workstation and dependent service startup errors; this is not an error-free OS boot claim.",
+    "No inbox protocol/service start policies were altered by the test."
+  ]
+}

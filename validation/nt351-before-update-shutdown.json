@@ -1,0 +1,10 @@
+{
+  "guest": "nt351-slot-8127",
+  "captured_utc": "2026-10-28T13:09:08.555310+00:00",
+  "qmp_status": {
+    "status": "running",
+    "singlestep": false,
+    "running": true
+  },
+  "launch": null
+}

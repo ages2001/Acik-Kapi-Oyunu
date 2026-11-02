@@ -1,0 +1,34 @@
+{
+  "usb.pcap": {
+    "bytes": 24,
+    "sha256": "653932defd05743054207942b60e946cfd591200e6ab808d058e382a8999d9fc"
+  },
+  "debug.log": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "pci.pcap": {
+    "bytes": 24,
+    "sha256": "653932defd05743054207942b60e946cfd591200e6ab808d058e382a8999d9fc"
+  },
+  "after-SYSEVENT.EVT": {
+    "bytes": 65536,
+    "sha256": "442275734f0aa28689c40521a9d3c2455fd43fb83ee5d05f949c19331269366c"
+  },
+  "launch.json": {
+    "bytes": 1559,
+    "sha256": "5f7605ef41dd404f2273431e08d9342cc8415892650b5eb69bf3eb5539011bf3"
+  },
+  "process-exit.json": {
+    "bytes": 52,
+    "sha256": "b906f53c9758266965bb74706c625c473d4d8166a72c1dbb5a329d129358ab78"
+  },
+  "serial.log": {
+    "bytes": 12,
+    "sha256": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44"
+  },
+  "before-SYSEVENT.EVT": {
+    "bytes": 65536,
+    "sha256": "eb0760e31b14884c4d3ea511eb4af3678a5aa86d826c9707699cf3c5b500a5ae"
+  }
+}

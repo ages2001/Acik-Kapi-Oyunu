@@ -1,0 +1,25 @@
+{
+  "scope": "Test-only helper binaries staged in the dated Windows 2000/XP fixtures; not installable production NIC drivers",
+  "files": [
+    {
+      "file": "rreset.sys",
+      "size": 10308,
+      "sha256": "5cc526a1e7a80ab9b1c74e126c7dea8e00b7fe1a76ee11feb1e4907aa6c4971f"
+    },
+    {
+      "file": "rreset.exe",
+      "size": 11785,
+      "sha256": "1695e9f6bc8e3b6e50548bb4c6da663c8cc25278d0447491dc040627f76ae071"
+    },
+    {
+      "file": "rreset64.sys",
+      "size": 11710,
+      "sha256": "811b1549e8205a5275d3a1e6343b51b2101b6b33b693fa501cff3df77a82bd90"
+    },
+    {
+      "file": "rreset64.exe",
+      "size": 11578,
+      "sha256": "09ac5bae21fb0199cedbd05c5fccad931d0ae173f12a2bb90ca140a394225e43"
+    }
+  ]
+}

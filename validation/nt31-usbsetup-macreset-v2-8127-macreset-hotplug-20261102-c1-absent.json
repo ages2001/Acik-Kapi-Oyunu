@@ -1,0 +1,27 @@
+{
+  "guest": "nt31-usbsetup-macreset-v2-8127",
+  "token": "macreset-hotplug-20261102-c1-absent",
+  "mask": 2,
+  "result": "PASS",
+  "utc": "2026-11-02T02:09:40.289684+00:00",
+  "paths": [
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 34124,
+      "end_offset": 46364,
+      "capture_prefix_sha256": "93beae45fadfd32717366b943b5bbfb4391bb737c76a397688706407a4ac96b0",
+      "screenshot": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c1-absent-pci.png",
+      "ocr": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c1-absent-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "405a9e9235d31411bddfa8144b60c200cbe2984b7f5a747e6b3f49f4aec0df13"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 4,
+  "finished_utc": "2026-11-02T02:09:46.019877+00:00"
+}

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_report.py", line 10, in <module>
+    data,peer=s.recvfrom(16384);s.close();text=data.decode('ascii');print(text,flush=True)
+              ^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+/workspace/rltklant-work/validation/win2000-standard-usbnet-hcpower-v1-8127-hcpower-v1-20261102-controller-power-screen.png
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_controller_power_cycles.py", line 49, in <module>
+    call('native_report.py',token,'nprobe64.exe' if guest.startswith('xp64') else 'nprobe5.exe')
+  File "/workspace/rltklant-work/validation/native_controller_power_cycles.py", line 29, in call
+    subprocess.run([sys.executable,str(v/script),guest,*args],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/workspace/rltklant-tools/venv/bin/python3', '/workspace/rltklant-work/validation/native_report.py', 'win2000-standard-usbnet-hcpower-v1-8127', 'hcpower-v1-20261102-after-power', 'nprobe5.exe']' returned non-zero exit status 1.

@@ -1,0 +1,46 @@
+{
+  "guest": "xp64-usbnet-mixed-release13-v2-8127",
+  "token": "xp64-release13-v2-port1-recovery-key-20261102",
+  "utc": "2026-11-02T18:51:56.331068+00:00",
+  "result": "PASS_GUEST_CONSOLE_EVENTS",
+  "scope": "Wait for the guest console observer before injecting composite HID input.",
+  "messages": [
+    {
+      "stage": "READY",
+      "text": "MKEY2 READY c:\\rlttest\\mkey2.exe xp64-release13-v2-port1-recovery-key-20261102",
+      "peer": [
+        "127.0.0.1",
+        46293
+      ],
+      "monotonic": 159993.752256747
+    },
+    {
+      "stage": "KEY_DOWN",
+      "text": "MKEY2 KEY_DOWN c:\\rlttest\\mkey2.exe xp64-release13-v2-port1-recovery-key-20261102",
+      "peer": [
+        "127.0.0.1",
+        46293
+      ],
+      "monotonic": 159993.80341863
+    },
+    {
+      "stage": "KEY_UP",
+      "text": "MKEY2 KEY_UP c:\\rlttest\\mkey2.exe xp64-release13-v2-port1-recovery-key-20261102",
+      "peer": [
+        "127.0.0.1",
+        46293
+      ],
+      "monotonic": 159993.866137596
+    },
+    {
+      "stage": "PASS",
+      "text": "MKEY2 PASS c:\\rlttest\\mkey2.exe xp64-release13-v2-port1-recovery-key-20261102",
+      "peer": [
+        "127.0.0.1",
+        46293
+      ],
+      "monotonic": 159993.868430441
+    }
+  ],
+  "observer_sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549"
+}

@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-01T22:02:25.137501+00:00",
+  "files": {
+    "test_setup_startup_parser.py": {
+      "bytes": 3485,
+      "sha256": "29881d6c7bdc06787cc82aa557e768e644221dfdef2c31dd128e31456370aee9"
+    },
+    "rltsetup.c": {
+      "bytes": 15617,
+      "sha256": "901df4581ec1ab468ce5172dccc6311fb6efe867efcda21eafd9574382b254ae"
+    },
+    "build-rltsetup.sh": {
+      "bytes": 627,
+      "sha256": "b06bf0ec8abb9ee862625ee9f70c4227cb4bbea60718f24c588c30f96eebff1e"
+    },
+    "RLTSETUP.DLL": {
+      "bytes": 19798,
+      "sha256": "be74e8439963db196502b8e99928329a6610e3020fd2788fcdcea75a43873193"
+    },
+    "test_setup_dde_reply.py": {
+      "bytes": 3273,
+      "sha256": "19776e4a8c8b6465d0bce4c0074874301efcb1f924fc0156c895771d6dd01d6a"
+    }
+  },
+  "scope": "Personal-group selection and same-name common group disambiguation; guest validation pending"
+}

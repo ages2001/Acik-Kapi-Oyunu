@@ -1,0 +1,9 @@
+{
+  "guest": "win2000-standard-usbnet-native-ehci-8127",
+  "file": "stall32.sys",
+  "sha256": "dac82c3edf56876ba30a416b88baaeaad75c079765a1499da788c75970f76877",
+  "bytes": 91798,
+  "time": 1793308949.1419952,
+  "utc": "2026-10-29T21:22:29.142004+00:00",
+  "scope": "Server buffered bytes; guest byte count and ftp prompt still require visual verification"
+}

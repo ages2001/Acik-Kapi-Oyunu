@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-02T14:57:36.724436+00:00",
+  "scope": "XP x64 fictional composite fixture; production RLTKLANT binary unchanged",
+  "files": {
+    "README.TXT": {
+      "size": 205,
+      "sha256": "0a8166ebcae5449fb32f703b89dcf66961f330667fdccf1b091c030c900bf907"
+    },
+    "MIXNET.INF": {
+      "size": 8218,
+      "sha256": "49acf9c1e1277774cbcf76c06c885fc5d01099e65fd44966065bfd0deb867ee4"
+    },
+    "amd64/RLTKLANT.SYS": {
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    }
+  }
+}

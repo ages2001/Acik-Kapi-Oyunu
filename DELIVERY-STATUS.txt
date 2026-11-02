@@ -1,0 +1,159 @@
+RLTKLANT / USBNT 1.3 - DELIVERY STATUS AND HANDOFF
+Date: 2026-11-02
+Status: QEMU-validated development candidate, with open implementation work.
+
+This is the requested latest-source/binary handoff. It is not a declaration
+that every originally requested device, OS, firmware or power scenario works.
+All project documentation is English. The current request is to finish the
+in-progress validation/package and supply this inventory plus USBNT 1.3.
+
+1. REQUESTED WORK
+
+- Read the RLTKLANT handoff and supplied materials; prepare a reusable cloud
+  build/test environment and QEMU, including missing Realtek device models.
+- Support the Realtek LAN families across NT 3.1/3.5x/4, Windows 2000 and XP;
+  compare implementation with Linux/vendor register, PHY and firmware sources.
+- Exercise actual PCIe 10G modeling rather than substituting an RTL8139 model.
+- Verify network installation, TCP/IP, hot-plug, cancellation, reset, cable
+  changes and recovery, especially on NT3.x/NT4. Verify RTL8139 on NT3.51.
+- Use AHCI for Windows 2000 and IDE for the other supplied Windows fixtures.
+- Show specific device names on NT5 and later; provide progress/screenshots.
+- Supply USBNT 1.3 with an English changelog, current bin/src/setup files,
+  custom QEMU source, test evidence and a single combined delivery ZIP.
+- Intended final goal: complete physical-device behavior and all OS/device
+  combinations. Only QEMU was available; the final goal remains incomplete.
+
+2. COMPLETED IMPLEMENTATION AND PACKAGING
+
+The detailed history, source audit and per-build proofs are in validation/.
+This list summarizes changes; it does not extend any proof beyond its hashes.
+
+- Local build environment, cross-compilers, QEMU and isolated guest overlays
+  were prepared. Original uploads and VM backing chains were preserved.
+- Custom PCI/PCIe Realtek family and USB network models support the documented
+  register/packet contracts and injected faults. RTL8127 uses its PCIe model;
+  RTL8139 tests use the actual RTL8139 model. The model is not actual silicon.
+- PCI initial-start/passive-reset PHY/MAC preparation, bounded waits,
+  cancellation, management ownership and firmware sequencing were integrated
+  for the documented profiles. RTL8117 has separate MAC/management handling.
+- USB generic-client and native NT5 networking paths, attachment lifetime,
+  transfer cancellation, port-reset recovery, function power and shared-owner
+  reset handling were implemented and tested within the recorded boundaries.
+- RTL8139 receive-ring/DPC recovery and QEMU filtering issues were corrected;
+  NT3.51 TCP and reset/carrier evidence is preserved, including earlier failures.
+- Native legacy Setup helpers and NT3.1 maintenance/configuration utilities
+  were added; generated installation packages carry correct copy-list sizes.
+- NT5 model-specific names, native network state and problem codes were
+  checked through Windows APIs for the tested profiles.
+- USBNT now has consistent 1.3.0.0 resources and generated INF/archive versions.
+  Legacy, NT5 x86 and x64 drivers, tools and three OEM disks were rebuilt.
+- USBNT fixes include generic-client handle lifetime, shared physical reset,
+  native class rundown/recovery, deferred power transitions, retained root
+  device identity, polling/table lifetime and transfer completion ownership.
+  Unsupported topologies are rejected; that is not support for those cases.
+- The USBNT 1.3 v2 installer preserves a healthy existing controller parent
+  during an upgrade. This fixes the reproduced Windows 2000 binding loss
+  caused by creating a new root bus. XP's older installer control already
+  passed and is not described as having the same reproduced failure.
+- USBTree reports "No built-in driver" for external clients. Its new resources
+  and tree/icons were exercised on NT3.51, Windows 2000 and XP x64.
+- All 12 distributed USBNT PE files and OEM payloads reproduce byte for byte
+  from the independently extracted archived source. The old linker resource
+  diagnostic is resolved by valid file alignment; prior evidence is retained.
+- Current RLTKLANT NT5 files have a new self-signed test catalog. The final
+  Windows membership check exposed a hash-dependent CTL ordering defect;
+  the generator now sorts encoded member identifiers. Original failures,
+  corrected guest checks and old-fail/new-pass regression checks are retained.
+  A test certificate does not provide publisher trust or WHQL certification.
+- The delivery carries current sources, exact frozen runtime binaries,
+  installation payloads, English changelogs, evidence and reproducible scripts.
+  Every combined ZIP entry is checked by size/SHA-256 after ZIP readback.
+
+3. CURRENT EXACT-1.3 GUEST RESULTS
+
+NT3.1 (IDE): four USB model cycles and PCI preservation; 104 complete-payload
+ICMP replies validated against guest receipts and packet captures.
+
+NT4 (IDE): eight cycles with two USB siblings and PCI; 332 guest-checked replies.
+
+NT3.51 (IDE), actual RTL8139: three TCP phases total 3 MiB each direction
+(baseline, registered-MAC reset, cable interruption), three registered resets
+and 68 PCI replies during four USB attachment/carrier cycles. This particular
+fixture has a PCI-only network binding. A separate USB+RTL8127 fixture passes
+four model cycles and 104 replies. The updated USBTree has separate runtime
+evidence and eight additional USB/PCI replies.
+
+Windows 2000 (AHCI) and XP x64 (IDE), each: actual 1.3 v2 installer upgrade,
+unchanged device instance after upgrade, six retained-PDO controller power
+pairs, three shared NIC/HID resets, removal while power-down is pending,
+same-port recovery, ten Windows-observed key checks, and 108 payload replies.
+Each four-model matrix covers RTL8153/8156/8157/8159 with twelve function-power
+pairs, four removals during stalled receive, four port resets and four cable
+cycles. These tests use injected IRPs and the documented synthetic fixtures.
+
+Current catalog: Windows 2000 and XP x64 verify catalog decoding, message and
+certificate signatures, all three file memberships and rejection of a modified
+INF. See the final guest-proof JSON for exact catalog/input hashes. Earlier
+signature-only and unsorted-member failures are preserved separately.
+
+All current guest evidence is frozen after normal shutdown and process exit;
+installed driver bytes/logs were read from stopped disks. Full proof files:
+  validation/usbnt-13-legacy-closed-proof-20261102.json
+  validation/usbnt-13-nt5-upgrade-closed-proof-20261102.json
+  validation/usbnt-13-v2-archived-source-rebuild-proof-20261102.json
+  validation/usbnt-13-tree-v2-runtime-proof-20261102.json
+  validation/release13-current-rlt-catalog-guest-proof-20261102.json
+
+4. REMAINING IMPLEMENTATION / VERIFICATION
+
+- Physical PHY calibration, electrical behavior, silicon revisions, firmware
+  MCU execution, real SuperSpeed and 5G/10G throughput: not validated by QEMU.
+- Extended PCI secondary-XID handling, including RTL9151AS: not implemented.
+- SFP/SerDes reset/link/management paths: gated, not implemented as copper.
+- Complete PCI power-loss/restoration across every family/platform: open.
+- USBNT controller sleep with hubs, unknown native owners, retained generic
+  state and active EHCI companions: rejected before mutation, not supported.
+- Full-machine ACPI S3 and every native class/controller combination: open.
+- Earlier NT3.51 RTL8159 attachment latency and XP first-cycle Code31 findings:
+  later tests pass, but deterministic causal fixes are not established.
+- NT3.50, XP x86, all service packs and all Realtek revisions: no full matrix.
+  Source entries and PCI ID aliases are not independent hardware validation.
+- NT3.1 DHCP lease renewal/live address replacement: not implemented; the
+  current utility saves the configuration for the next restart.
+- General Internet access: local ICMP/TCP and separate historical proxy HTTP
+  evidence exist; arbitrary direct DNS, modern TLS and browser use are not
+  verified for every OS. "TCP/IP works" is not a browser compatibility claim.
+- Windows 2000 mixed fixture on a new physical port can require first binding.
+  The accidental port-2 trial remains a failure; same-port recovery passes.
+- Full fresh installation of every final combined legacy RLTKLANT package and
+  fresh OS text-mode installation from every USBNT OEM disk: not completed.
+  Payload readback and installed-Windows upgrade tests have narrower scope.
+
+See validation/REMAINING-WORK.md and SOURCE-AUDIT.md for closure requirements.
+These are software/test gaps in addition to the lack of physical hardware.
+
+5. FILE LAYOUT / NEXT WORK
+
+USBNT-1.3.zip: standalone USBNT 1.3 candidate source/build/bin/OEM/changelog.
+USBNT/ and RLTKLANT/: current source trees with current generated bin layouts.
+distribution/: exact candidate installation sets and per-file manifests.
+tested-drivers/: exact runtime driver bytes, separated by target.
+validation/: complete retained test history, scripts, logs and screenshots.
+qemu-source/ and qemu-runtime/: custom source and compressed exact executables.
+README-FIRST.txt: reproduction instructions and external-input boundaries.
+MANIFEST.json: combined archive's entry sizes and SHA-256 hashes.
+
+Historical frozen snapshots, old installer reference material and failed tests
+are intentionally retained and labeled. Their versions are not the current
+runtime. Follow the current distribution manifests and closed-proof files.
+
+Original Windows media/VHDs, VM backing chains, host dependency/toolchain
+packages, extracted Windows reference DLLs and registry hives are external
+inputs, retained in the workspace but not redistributed in this handoff ZIP.
+The archive is not a self-contained Windows appliance. Paths in historical
+reproduction scripts refer to the documented /workspace environment.
+
+Continue from the pinned source references and the explicit remaining-work
+matrix. Preserve old-fail/new-pass evidence, use child disks, check exact
+installed bytes after shutdown, and do not upgrade a QEMU pass into a physical
+hardware or universal-support claim.

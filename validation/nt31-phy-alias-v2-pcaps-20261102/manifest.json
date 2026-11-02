@@ -1,0 +1,10 @@
+{
+  "usb.pcap": {
+    "bytes": 156553,
+    "sha256": "7a3f3b172996646387b71f99e2671bd2a4e3743ac935dd1e3c3e991060e35b80"
+  },
+  "pci.pcap": {
+    "bytes": 218130,
+    "sha256": "d2ed04ce045992e2db50081ab44f6deff64b857a13f9b73d1dba3c32bef2558f"
+  }
+}

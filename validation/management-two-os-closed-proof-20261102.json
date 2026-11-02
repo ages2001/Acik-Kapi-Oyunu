@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T05:38:01.880434+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "guest": "nt31-usbsetup-management-ep-v2-8127",
+      "target": "ndisnt31",
+      "sha256": "d23a13af7ee58381e37a409b7a51638b36b1e619db8f5bc2cb9f62a59d69fadc",
+      "offline": "nt31-management-ep-offline-20261102/manifest.json",
+      "evidence": "nt31-management-ep-complete-evidence-20261102/manifest.json"
+    },
+    {
+      "guest": "win2000-standard-management-v4-multi-8127",
+      "target": "ndis5",
+      "sha256": "428f94ea70e445a6ae974359d47fed8176e5cb50a13be3a1f124cb2a013a4cf6",
+      "offline": "win2000-management-v4-offline-20261102/manifest.json",
+      "evidence": "win2000-management-v4-complete-evidence-20261102/manifest.json"
+    }
+  ],
+  "scope": "Exact management candidate builds only. NT3.1: three reset callbacks, four USB model cycles, 104 replies. Windows 2000 AHCI: six full names, 36 orderly PnP transitions, six watchdog resets, 24 replies before and after. New RTL8139 ring-fix binaries require separate guest proof."
+}

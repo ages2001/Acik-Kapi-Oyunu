@@ -1,0 +1,29 @@
+/tmp/usbnt-rtsx-reset-zr9940dy/test.c: In function ‘Usable’:
+/tmp/usbnt-rtsx-reset-zr9940dy/test.c:83:25: error: ‘SENSE_NOT_READY’ undeclared (first use in this function)
+   83 |         BlkSense(Sense, SENSE_NOT_READY, 0x3A, 0x00);
+      |                         ^~~~~~~~~~~~~~~
+/tmp/usbnt-rtsx-reset-zr9940dy/test.c:83:25: note: each undeclared identifier is reported only once for each function it appears in
+/tmp/usbnt-rtsx-reset-zr9940dy/test.c: In function ‘SdScsi’:
+/tmp/usbnt-rtsx-reset-zr9940dy/test.c:109:25: error: ‘SENSE_NOT_READY’ undeclared (first use in this function)
+  109 |         BlkSense(Sense, SENSE_NOT_READY, 0x04, 0x02);
+      |                         ^~~~~~~~~~~~~~~
+/tmp/usbnt-rtsx-reset-zr9940dy/test.c:158:47: error: ‘SENSE_ILLEGAL_REQUEST’ undeclared (first use in this function)
+  158 |         if (Get32(Cdb + 2)) { BlkSense(Sense, SENSE_ILLEGAL_REQUEST, 0x21, 0); return BLK_FAILED; }
+      |                                               ^~~~~~~~~~~~~~~~~~~~~
+/tmp/usbnt-rtsx-reset-zr9940dy/test.c:174:29: error: ‘SENSE_DATA_PROTECT’ undeclared (first use in this function)
+  174 |             BlkSense(Sense, SENSE_DATA_PROTECT, 0x27, 0);
+      |                             ^~~~~~~~~~~~~~~~~~
+/tmp/usbnt-rtsx-reset-zr9940dy/test.c:190:29: error: ‘SENSE_MEDIUM_ERROR’ undeclared (first use in this function)
+  190 |             BlkSense(Sense, SENSE_MEDIUM_ERROR, write ? 0x0C : 0x11, 0);
+      |                             ^~~~~~~~~~~~~~~~~~
+In file included from /tmp/usbnt-rtsx-reset-zr9940dy/test.c:2:
+/tmp/usbnt-rtsx-reset-zr9940dy/test.c: In function ‘blocked’:
+/tmp/usbnt-rtsx-reset-zr9940dy/test.c:330:353: error: ‘SENSE_NOT_READY’ undeclared (first use in this function)
+  330 | static void blocked(SD_CARD*c){UCHAR cdb[16]={0},sense[18],data[512];ULONG done;unsigned op;for(op=0;op<256;op++){cdb[0]=(UCHAR)op;done=99;memset(sense,0,sizeof(sense));if(op==0x12){assert(SdScsi(c,cdb,16,0,sizeof(data),data,&done,sense)==BLK_OK);continue;}assert(SdScsi(c,cdb,16,0,sizeof(data),data,&done,sense)==BLK_FAILED);assert(done==0&&sense[0]==SENSE_NOT_READY&&sense[1]==4&&sense[2]==2);}assert(!rw_calls);{unsigned before=step;SdPoll(c);assert(step==before);}}
+      |                                                                                                                                                                                                                                                                                                                                                                 ^~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/USBNT/test/host/trtsxreset.py", line 66, in <module>
+    subprocess.run(['gcc','-std=c11','-O1','-g','-DUSB_HARNESS=1','-fsanitize=address,undefined','-I'+str(src),str(c),'-o',str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['gcc', '-std=c11', '-O1', '-g', '-DUSB_HARNESS=1', '-fsanitize=address,undefined', '-I/workspace/rltklant-work/USBNT/src', '/tmp/usbnt-rtsx-reset-zr9940dy/test.c', '-o', '/tmp/usbnt-rtsx-reset-zr9940dy/test']' returned non-zero exit status 1.

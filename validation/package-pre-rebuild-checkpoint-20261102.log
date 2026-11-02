@@ -1,0 +1,8 @@
+{
+  "archive": "/workspace/rltklant-work/artifacts/RLTKLANT-QEMU-validated-checkpoint-20261102.zip",
+  "bytes": 226523916,
+  "sha256": "9b7960821d5e08ed41908665a2d81014dede930d79d8b106d98ed7c488fa18a9",
+  "files": 24080,
+  "result": "PASS_FULL_ZIP_HASH_READBACK",
+  "status": "DEVELOPMENT_CHECKPOINT_NOT_FINAL_RELEASE"
+}

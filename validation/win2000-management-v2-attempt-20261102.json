@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-02T05:13:16.786263+00:00",
+  "result": "FAIL_FIXTURE_AND_INCOMPLETE_DEVICE_INSTALLATION",
+  "guest": "win2000-standard-management-v2-multi-8127",
+  "observed": [
+    "UDP report timed out; console report retained",
+    "PCNEW expected old module SizeOfImage 573440, actual current module 577536",
+    "Four devices have full runtime names/problem zero; two changed RTL8127 revision-04 devnodes remain problem code 1",
+    "Prior interrupted installation did not persist fully; the test is not counted as a pass"
+  ],
+  "screenshot": "win2000-management-v2-report-timeout-20261102.png",
+  "next": "Normal shutdown, stage a probe compiled against this exact build plus immutable current INF/SYS tree; complete guest installation and re-test"
+}

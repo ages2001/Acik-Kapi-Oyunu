@@ -1,0 +1,57 @@
+{
+  "guest": "xp64-usbnet-native-8127",
+  "model": "usb-rtl8159",
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T20:41:00.911756+00:00",
+      "token": "reset-8159-native01",
+      "report": "TOKEN reset-8159-native01\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        40150
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T20:41:16.059136+00:00",
+      "token": "reset-8159-native02",
+      "report": "TOKEN reset-8159-native02\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        50521
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T20:41:31.577315+00:00",
+      "token": "reset-8159-native03",
+      "report": "TOKEN reset-8159-native03\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        41670
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T20:41:47.563667+00:00",
+      "token": "reset-8159-native04",
+      "report": "TOKEN reset-8159-native04\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        56370
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T20:42:03.649970+00:00",
+      "token": "reset-8159-native05",
+      "report": "TOKEN reset-8159-native05\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        36841
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+In file included from ../../src/usbaudio.h:13,
+                 from ../../src/usbaudio.c:15,
+                 from tuacrundown.c:11:
+../../src/usbnt.h:30:22: error: expected declaration specifiers or ‘...’ before ‘(’ token
+   30 | #define GET16(p)    ((USHORT)(((const UCHAR *)(p))[0] | (((const UCHAR *)(p))[1] << 8)))
+      |                      ^
+../../src/usbnt.h:31:29: note: in expansion of macro ‘GET16’
+   31 | #define GET32(p)    ((ULONG)GET16(p) | ((ULONG)GET16((const UCHAR *)(p) + 2) << 16))
+      |                             ^~~~~
+tuacrundown.c:31:7: note: in expansion of macro ‘GET32’
+   31 | ULONG GET32(const void*p){const UCHAR*b=p;return b[0]|((ULONG)b[1]<<8)|((ULONG)b[2]<<16)|((ULONG)b[3]<<24);}
+      |       ^~~~~
+../../src/usbnt.h:31:38: error: expected ‘)’ before ‘|’ token
+   31 | #define GET32(p)    ((ULONG)GET16(p) | ((ULONG)GET16((const UCHAR *)(p) + 2) << 16))
+      |                                      ^
+tuacrundown.c:31:7: note: in expansion of macro ‘GET32’
+   31 | ULONG GET32(const void*p){const UCHAR*b=p;return b[0]|((ULONG)b[1]<<8)|((ULONG)b[2]<<16)|((ULONG)b[3]<<24);}
+      |       ^~~~~
+tuacrundown.c: In function ‘setup’:
+tuacrundown.c:44:512: error: assignment to ‘void (*)(void *, UCHAR *, ULONG)’ {aka ‘void (*)(void *, unsigned char *, long unsigned int)’} from incompatible pointer type ‘void (*)(void *, void *, ULONG)’ {aka ‘void (*)(void *, void *, long unsigned int)’} [-Wincompatible-pointer-types]
+   44 | static void setup(void){UA_XFER*x;memset(&dev,0,sizeof(dev));memset(UaDevs,0,sizeof(UaDevs));entered=released=waiting=stopped=submit_calls=0;audio_dev=OsAlloc(sizeof(*audio_dev));UaDevs[0]=audio_dev;dev.Audio=audio_dev;audio_dev->Dev=&dev;audio_dev->Id=1;stream=&audio_dev->S[0];stream->U=audio_dev;stream->Open=stream->Running=1;stream->Pipe.Opened=1;stream->Alt=&audio_dev->Alts[0][0];stream->NX=stream->NXAlloc=1;stream->FrameBytes=2;stream->MaxFrames=1;stream->Slots=8;stream->Current=65536;stream->Ops.Fill=fill;x=&stream->Xf[0];x->S=stream;x->Size=64;x->Buf=OsAlloc(64);x->NPkt=1;x->Pkt=OsAlloc(sizeof(*x->Pkt));pending=&x->X;pending->Context=x;pending->Status=USB_ERR_ABORTED;pending->Complete=XferDone;pending->Pipe=&stream->Pipe;if(mode<2){stream->Pending=1;x->Busy=1;}if(mode>=6){UA_MIDI*m=OsAlloc(sizeof(*m));audio_dev->Midi=m;m->Buf=OsAlloc(512);m->Opened=m->Pipe.Opened=1;m->Head=1;m->Ring[0]=0x007F3C09;m->Pipe.MaxPacket=64;pending=&m->X;pending->Context=audio_dev;pending->Status=USB_ERR_ABORTED;pending->Complete=MidiDone;pending->Pipe=&m->Pipe;if(mode<8)m->Busy=1;}}
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^

@@ -1,0 +1,408 @@
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C000 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008127
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C100 mem=0x00001000 irq=0x0000000B
+backend=0x00000002 did=0x00008169
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C200 mem=0x00001000 irq=0x0000000B
+backend=0x00000002 did=0x00008168
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C300 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008125
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C400 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008126
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C500 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008127
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+  filt FOUND
+RXF
+  filt FOUND
+RXF
+  filt FOUND
+RXF
+  filt FOUND
+RXF
+  filt FOUND
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C300 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008125
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C400 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008126
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C000 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008127
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C500 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008127
+RXF
+  filt FOUND
+RXF
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+  filt FOUND
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C200 mem=0x00001000 irq=0x0000000B
+backend=0x00000002 did=0x00008168
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C100 mem=0x00001000 irq=0x0000000B
+backend=0x00000002 did=0x00008169
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+  filt FOUND
+  filt FOUND
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C300 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008125
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C400 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008126
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C000 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008127
+RXF
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C500 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008127
+RXF
+  filt FOUND
+RXF
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C200 mem=0x00001000 irq=0x0000000B
+backend=0x00000002 did=0x00008168
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+  filt FOUND
+  filt FOUND
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C100 mem=0x00001000 irq=0x0000000B
+backend=0x00000002 did=0x00008169
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+  filt FOUND
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C300 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008125
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C400 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008126
+RXF
+  filt FOUND
+RXF
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C000 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008127
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C500 mem=0x00008000 irq=0x0000000B
+backend=0x00000002 did=0x00008127
+RXF
+  filt FOUND
+RXF
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+  filt FOUND
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C200 mem=0x00001000 irq=0x0000000B
+backend=0x00000002 did=0x00008168
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+
+RLTK RtlInitialize
+GetResources st=0x00000000
+res port=0x0000C100 mem=0x00001000 irq=0x0000000B
+backend=0x00000002 did=0x00008169
+PCI PHY/MAC prepared
+Ops->Init ok
+RegisterInterrupt st=0x00000000
+pre-EnableInts
+post-EnableInts
+post-LinkState
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+  filt FOUND
+  filt FOUND
+PCI TX watchdog reset
+PCI PHY/MAC prepared
+PCI TX watchdog reset
+PCI PHY/MAC prepared
+PCI TX watchdog reset
+PCI PHY/MAC prepared
+PCI TX watchdog reset
+PCI PHY/MAC prepared
+PCI TX watchdog reset
+PCI PHY/MAC prepared
+PCI TX watchdog reset
+PCI PHY/MAC prepared

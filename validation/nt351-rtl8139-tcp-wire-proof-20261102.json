@@ -1,0 +1,62 @@
+{
+  "result": "PASS",
+  "scope": "Reassemble the closed RTL8139 TCP captures and compare every stream byte.",
+  "captures": [
+    {
+      "capture": "nt351-rtl8139-fixed-evidence-20261102/pci.pcap",
+      "sha256": "e7f87fa6203b0f09feba89d61f0af6c84cfa8c67bd7080efa21daae876cc9305",
+      "connections": [
+        {
+          "client_port": 1025,
+          "tx": {
+            "stream_bytes": 1048584,
+            "sha256": "9d96c061d8a986c44c99ab66665fb4125e8729f25157a75c48a2fc7fbc7a8e11"
+          },
+          "rx": {
+            "stream_bytes": 1048584,
+            "sha256": "849c026515717608c4c08f9de2e85bc5f949f797323c111fc68323d28b3aedae"
+          }
+        },
+        {
+          "client_port": 1026,
+          "tx": {
+            "stream_bytes": 1048584,
+            "sha256": "9d96c061d8a986c44c99ab66665fb4125e8729f25157a75c48a2fc7fbc7a8e11"
+          },
+          "rx": {
+            "stream_bytes": 1048584,
+            "sha256": "849c026515717608c4c08f9de2e85bc5f949f797323c111fc68323d28b3aedae"
+          }
+        },
+        {
+          "client_port": 1027,
+          "tx": {
+            "stream_bytes": 1048584,
+            "sha256": "9d96c061d8a986c44c99ab66665fb4125e8729f25157a75c48a2fc7fbc7a8e11"
+          },
+          "rx": {
+            "stream_bytes": 1048584,
+            "sha256": "849c026515717608c4c08f9de2e85bc5f949f797323c111fc68323d28b3aedae"
+          }
+        }
+      ]
+    },
+    {
+      "capture": "nt351-rtl8139-cold-evidence-20261102/pci.pcap",
+      "sha256": "6f6db5849c3c53d35ae470358c7c41a71b157effddef518e36a544dbcc0a032e",
+      "connections": [
+        {
+          "client_port": 1025,
+          "tx": {
+            "stream_bytes": 1048584,
+            "sha256": "9d96c061d8a986c44c99ab66665fb4125e8729f25157a75c48a2fc7fbc7a8e11"
+          },
+          "rx": {
+            "stream_bytes": 1048584,
+            "sha256": "849c026515717608c4c08f9de2e85bc5f949f797323c111fc68323d28b3aedae"
+          }
+        }
+      ]
+    }
+  ]
+}

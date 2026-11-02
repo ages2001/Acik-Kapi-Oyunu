@@ -1,0 +1,6 @@
+{
+  "before_sha256": "c58e4a2cca140b91eda185db2235ccad6b44da1e7c20aa1162584831e72488d9",
+  "after_sha256": "702aa18106e1879124c0678700a7936d93f8fd956f3fcc2d71441310ece1e919",
+  "linux_reference_sha256": "0bfee561b410dcf248a954d951ba92707a4b1ff6cfcf28a89f5abe5d5f16d9a1",
+  "scope": "Linux 8139too __set_rx_mode updates RxConfig while running, preserving cur_rx. Independent QTest on original QEMU reproduces loss of producer/consumer positions. Only geometry change should reset positions."
+}

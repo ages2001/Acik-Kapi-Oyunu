@@ -1,0 +1,97 @@
+TOKEN classreset-retry-pci-20261102-baseline
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+TOKEN classreset-retry-pci-20261102-c1-absent
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+TOKEN classreset-retry-pci-20261102-c1-reinsert
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+TOKEN classreset-retry-pci-20261102-c1-cable-down
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+TOKEN classreset-retry-pci-20261102-c1-cable-up
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+/workspace/rltklant-work/validation/nt351-usbsetup-rtl8139-classreset-8127-classreset-retry-pci-20261102-c1-passed.png
+PASS cycle 1 usbnic 8153 : sibling traffic during removal/cable loss and all paths after recovery
+TOKEN classreset-retry-pci-20261102-c2-absent
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+TOKEN classreset-retry-pci-20261102-c2-reinsert
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+TOKEN classreset-retry-pci-20261102-c2-cable-down
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+TOKEN classreset-retry-pci-20261102-c2-cable-up
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+/workspace/rltklant-work/validation/nt351-usbsetup-rtl8139-classreset-8127-classreset-retry-pci-20261102-c2-passed.png
+PASS cycle 2 usbnic 8156 : sibling traffic during removal/cable loss and all paths after recovery
+TOKEN classreset-retry-pci-20261102-c3-absent
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+TOKEN classreset-retry-pci-20261102-c3-reinsert
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+TOKEN classreset-retry-pci-20261102-c3-cable-down
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+TOKEN classreset-retry-pci-20261102-c3-cable-up
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+/workspace/rltklant-work/validation/nt351-usbsetup-rtl8139-classreset-8127-classreset-retry-pci-20261102-c3-passed.png
+PASS cycle 3 usbnic 8157 : sibling traffic during removal/cable loss and all paths after recovery
+TOKEN classreset-retry-pci-20261102-c4-absent
+MASK 2
+PATH 10.0.3.2 REPLIES 4 PAYLOAD 1472
+TOTAL 4 EXPECTED 4
+PASS
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/legacy_sibling_cycles.py", line 97, in <module>
+    wait('pid=0000' + model + ' status=00000000', start)
+  File "/workspace/rltklant-work/validation/legacy_sibling_cycles.py", line 68, in wait
+    raise AssertionError('Timed out waiting for ' + marker + '\n' + text)
+AssertionError: Timed out waiting for pid=00008159 status=00000000
+

@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-02T06:44:45.016524+00:00",
+  "guest": "nt4-ndis-rtl8117-v2-8127",
+  "files": {
+    "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540311,
+      "sha256": "d1703001357511d876fd293508ad2c7d761df33eca76a6493475e4cfb1e973e9"
+    }
+  }
+}

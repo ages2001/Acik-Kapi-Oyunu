@@ -1,0 +1,9 @@
+/workspace/rltklant-work/RLTKLANT/src/drvnt31.c: In function ‘cplus_init’:
+/workspace/rltklant-work/RLTKLANT/src/drvnt31.c:399:5: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+  399 |     for(i=0;i<6;i++) dbgh(a->Mac[i]); dbg("\n");
+      |     ^~~
+/workspace/rltklant-work/RLTKLANT/src/drvnt31.c:399:39: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+  399 |     for(i=0;i<6;i++) dbgh(a->Mac[i]); dbg("\n");
+      |                                       ^~~
+flat image: size=19456 FileChar=0x838e checksum=0x0000f07a
+built /workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys

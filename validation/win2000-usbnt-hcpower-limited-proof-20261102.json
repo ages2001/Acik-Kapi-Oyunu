@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T07:48:15.338723+00:00",
+  "result": "LIMITED_PASS",
+  "guest": "win2000-standard-usbnet-hcpower-v1-8127",
+  "controller_device_power_pairs": 3,
+  "system_to_device_irp_pairs": 3,
+  "post_notification_full_payload_replies": 4,
+  "original_automated_run": "FAIL: modal unsafe-removal notices consumed probe input; original timeout retained",
+  "notices": "One manually confirmed notice plus three OCR-confirmed notices dismissed; initial probe also sent Enter to a notice. Do not claim a warning-free power cycle.",
+  "scope": "Actual EHCI controller power IRPs with successful child re-enumeration and later network recovery. Not identity-preserving suspend/resume, whole-machine ACPI S3, or native storage power validation.",
+  "evidence": {
+    "validation/win2000-standard-usbnet-hcpower-v1-8127-hcpower-v1-after-notices-20261102.json": "7ac32ba3a880fa6fbf0d3f0203fda8f1c4c10ff75067fe78fa43edb19333a100",
+    "validation/win2000-usbnt-hcpower-offline-20261102/manifest.json": "65a6f24424c6ee5523fb6328c4ade6095e1d5b9fff1fed079d6db0bf57887b62",
+    "validation/win2000-usbnt-hcpower-evidence-20261102/manifest.json": "67fab078b0dd6e204d952787b067809b24fb8ad644f37e036274632080be2583"
+  }
+}

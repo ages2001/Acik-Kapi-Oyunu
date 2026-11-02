@@ -1,0 +1,25 @@
+{
+  "guest": "nt31-usbsetup-ncpa-v4-reboot-8127",
+  "token": "setup-20261101-c4-absent",
+  "mask": 2,
+  "result": "PASS",
+  "utc": "2026-11-01T21:03:47.119693+00:00",
+  "paths": [
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "start_offset": 192073,
+      "end_offset": 204313,
+      "capture_prefix_sha256": "eb59bfa29e941d1e17a757989f6d6cc2ac56782387b725b236b9c764f14598aa",
+      "screenshot": "nt31-usbsetup-ncpa-v4-reboot-8127-setup-20261101-c4-absent-pci.png",
+      "ocr": "nt31-usbsetup-ncpa-v4-reboot-8127-setup-20261101-c4-absent-pci.ocr.txt",
+      "screenshot_sha256": "f4ce85966fd2592759709d33270904d24dec982f206c097d50f227efeb30ade4"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 4,
+  "finished_utc": "2026-11-01T21:03:52.854175+00:00"
+}

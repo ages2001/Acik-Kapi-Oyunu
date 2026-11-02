@@ -1,0 +1,11 @@
+{
+  "guest": "nt31-usbsetup-v9-remove-last-8127",
+  "token": "pci-removed-usb-20261102",
+  "mask": 1,
+  "result": "FAIL",
+  "utc": "2026-11-01T22:49:44.757872+00:00",
+  "paths": [],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "error": "AssertionError('inbox ping receipt summary was not verified: [=] ema RE\\nlo\\\\usere\\\\default>ping <n 4 -1 1472 10.0,2.2\\n\\nPinging host 10-0:2-2 Cunnaned> : 10.0-3-2\\n\\nCHP Echo Reply:TiL 255\\n\\nicHP Echo Reply:TTL 255\\n\\nicHP Echo Reply:TTL 255\\n\\nicHP Echo Reply:TTL. 255\\n\\nlHost 10-0.2-2 weplied to all 4 of the 4 pings\\n\\nJc:\\\\userre\\\\defaule>\\n')",
+  "finished_utc": "2026-11-01T22:49:50.467249+00:00"
+}

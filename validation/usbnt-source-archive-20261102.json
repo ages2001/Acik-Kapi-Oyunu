@@ -1,0 +1,6 @@
+{
+  "result": "PASS",
+  "files": 277,
+  "archive_sha256": "0e8d2a18f53de2036dccd10740c2285f079fb68aea2bae4135f66b2ae9ed4b76",
+  "scope": "Current edited source readback, reproducibility, manifest hashes, build output exclusion, existing archive preservation; no release archive created."
+}

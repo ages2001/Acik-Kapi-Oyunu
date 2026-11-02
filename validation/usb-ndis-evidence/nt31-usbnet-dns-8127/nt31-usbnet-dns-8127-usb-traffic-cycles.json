@@ -1,0 +1,168 @@
+{
+  "guest": "nt31-usbnet-dns-8127",
+  "verified_utc": "2026-10-29T19:31:02.462282+00:00",
+  "results": [
+    {
+      "cycle": 1,
+      "model": "usb-rtl8153",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 40
+    },
+    {
+      "cycle": 2,
+      "model": "usb-rtl8156",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 41
+    },
+    {
+      "cycle": 3,
+      "model": "usb-rtl8157",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 42
+    },
+    {
+      "cycle": 4,
+      "model": "usb-rtl8159",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 43
+    },
+    {
+      "cycle": 5,
+      "model": "usb-rtl8153",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 44
+    },
+    {
+      "cycle": 6,
+      "model": "usb-rtl8156",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 45
+    },
+    {
+      "cycle": 7,
+      "model": "usb-rtl8157",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 46
+    },
+    {
+      "cycle": 8,
+      "model": "usb-rtl8159",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 47
+    },
+    {
+      "cycle": 9,
+      "model": "usb-rtl8153",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 48
+    },
+    {
+      "cycle": 10,
+      "model": "usb-rtl8156",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 49
+    },
+    {
+      "cycle": 11,
+      "model": "usb-rtl8157",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 50
+    },
+    {
+      "cycle": 12,
+      "model": "usb-rtl8159",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 51
+    },
+    {
+      "cycle": 13,
+      "model": "usb-rtl8153",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 52
+    },
+    {
+      "cycle": 14,
+      "model": "usb-rtl8156",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 53
+    },
+    {
+      "cycle": 15,
+      "model": "usb-rtl8157",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 54
+    },
+    {
+      "cycle": 16,
+      "model": "usb-rtl8159",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 55
+    },
+    {
+      "cycle": 17,
+      "model": "usb-rtl8153",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 56
+    },
+    {
+      "cycle": 18,
+      "model": "usb-rtl8156",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 57
+    },
+    {
+      "cycle": 19,
+      "model": "usb-rtl8157",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 58
+    },
+    {
+      "cycle": 20,
+      "model": "usb-rtl8159",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": false,
+      "payload": 59
+    }
+  ],
+  "pcap_sha256": "a1ddd76e06e7e99cd9798dfc9bed74dde17faf53e87431064d14d0fad3c9a684",
+  "scope": "Persistent USBNT miniport on emulated hardware; not native USB PDO/PnP or physical-device certification"
+}

@@ -1,0 +1,75 @@
+{
+  "scope": "Execute the production PHY/firmware transport through actual QEMU MMIO.\n\nThis validates register transport and bounded failure, not uploaded MCU\ninstruction execution, analog calibration, or a Windows guest driver build.\n",
+  "utc": "2026-11-02T00:22:29.330800+00:00",
+  "qemu_sha256": "efb4a87c7f37bdf16a5a19295bc5cac2d30cdbd1ba4211536c327f6cf8b7a555",
+  "results": [
+    {
+      "model": "rtl8169",
+      "xid": "0x180",
+      "firmware_applied": false,
+      "commands": 0,
+      "delay_ms": 0,
+      "operations": 37,
+      "reads": 37,
+      "writes": 37,
+      "timeout_then_fresh_transaction": "PASS",
+      "timeout_transaction_io": 6,
+      "mmio_only": true
+    },
+    {
+      "model": "rtl8168",
+      "xid": "0x380",
+      "firmware_applied": false,
+      "commands": 0,
+      "delay_ms": 0,
+      "operations": 6,
+      "reads": 6,
+      "writes": 6,
+      "timeout_then_fresh_transaction": "PASS",
+      "timeout_transaction_io": 6,
+      "mmio_only": true
+    },
+    {
+      "model": "rtl8125",
+      "xid": "0x609",
+      "firmware_applied": true,
+      "commands": 1431,
+      "delay_ms": 103,
+      "operations": 178,
+      "reads": 1000,
+      "writes": 1000,
+      "timeout_then_fresh_transaction": "PASS",
+      "timeout_transaction_io": 8,
+      "mmio_only": true,
+      "sfp_package_copper_rejection": "PASS"
+    },
+    {
+      "model": "rtl8126",
+      "xid": "0x649",
+      "firmware_applied": true,
+      "commands": 9654,
+      "delay_ms": 403,
+      "operations": 28,
+      "reads": 7610,
+      "writes": 7610,
+      "timeout_then_fresh_transaction": "PASS",
+      "timeout_transaction_io": 44,
+      "mmio_only": true,
+      "sfp_package_copper_rejection": "PASS"
+    },
+    {
+      "model": "rtl8127",
+      "xid": "0x6c9",
+      "firmware_applied": true,
+      "commands": 4748,
+      "delay_ms": 403,
+      "operations": 562,
+      "reads": 3035,
+      "writes": 3035,
+      "timeout_then_fresh_transaction": "PASS",
+      "timeout_transaction_io": 706,
+      "mmio_only": true,
+      "sfp_package_copper_rejection": "PASS"
+    }
+  ]
+}

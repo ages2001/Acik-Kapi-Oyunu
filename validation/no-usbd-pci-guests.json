@@ -1,0 +1,56 @@
+{
+  "utc": "2026-10-30T06:11:31.197641+00:00",
+  "scope": "Guest module size plus frozen offline fixture SHA and fresh firmware traces, all six names/problem0 and 24 full-MTU ICMP replies per OS; QEMU only",
+  "results": [
+    {
+      "guest": "win2000-standard-firmware-nousbd-multi-8127",
+      "fixture": {
+        "utc": "2026-10-30T05:55:45.593426+00:00",
+        "parent": "/workspace/rltklant-vm/run/win2000-standard-firmware-check-multi-8127.qcow2",
+        "overlay": "/workspace/rltklant-vm/run/win2000-standard-firmware-nousbd-multi-8127.qcow2",
+        "guest_path": "WINNT/system32/drivers/rltklant.sys",
+        "old_sha256": "038a7bf721965cf834d1375d535edc6bac08106339a2747b7cad034103560d0f",
+        "sha256": "d5f100af6d6dae6a73a86213a8aba1e2aff83eb486fb285d5087a6b854be2ffb",
+        "size": 276525,
+        "scope": "Offline replacement in a fresh child; FAT allocation unchanged; full readback verified"
+      },
+      "probe": {
+        "guest": "win2000-standard-firmware-nousbd-multi-8127",
+        "token": "nousbd",
+        "utc": "2026-10-30T05:58:55.735897+00:00",
+        "peer": [
+          "127.0.0.1",
+          56423
+        ],
+        "report": "TOKEN nousbd\r\nMODULE \\SystemRoot\\System32\\DRIVERS\\rltklant.sys IMAGE_SIZE 278528 EXPECTED 278528\r\nDEVICE PCI\\VEN_10EC&DEV_8125&SUBSYS_11001AF4&REV_10\\2&EBB567F&0&78\r\nNAME Realtek RTL8125A 2.5GbE Controller\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nDEVICE PCI\\VEN_10EC&DEV_8126&SUBSYS_11001AF4&REV_10\\2&EBB567F&0&98\r\nNAME Realtek RTL8126A 5GbE Controller\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nDEVICE PCI\\VEN_10EC&DEV_8127&SUBSYS_11001AF4&REV_10\\2&EBB567F&0&18\r\nNAME Realtek RTL8127A 10GbE Controller\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nDEVICE PCI\\VEN_10EC&DEV_8127&SUBSYS_11001AF4&REV_10\\2&EBB567F&0&B8\r\nNAME Realtek RTL8127A 10GbE Controller\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nDEVICE PCI\\VEN_10EC&DEV_8168&SUBSYS_11001AF4&REV_10\\2&EBB567F&0&58\r\nNAME Realtek RTL8168b/8111b PCIe Gigabit Ethernet\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nDEVICE PCI\\VEN_10EC&DEV_8169&SUBSYS_11001AF4&REV_10\\2&EBB567F&0&38\r\nNAME Realtek RTL8169sc/8110sc Gigabit Ethernet\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nPATH 10.0.2.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.3.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.4.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.5.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.6.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.7.2 REPLIES 4 PAYLOAD 1472\r\nPCI_DEVICES 6 PROBLEMS 0 ICMP_REPLIES 24\r\nPASS\r\n"
+      },
+      "debug_sha256": "04396efde7e2beac0c663a9b5f16f3a397e4ca86bdbbcad15c4a0fb9308c2b0f",
+      "qemu": "58c0739abf4018f21af190ae5659a0e5f499f868a9436bca4f8dbe01fd33c155"
+    },
+    {
+      "guest": "xp64-firmware-nousbd-multi-8127",
+      "fixture": {
+        "utc": "2026-10-30T05:56:01.977867+00:00",
+        "parent": "/workspace/rltklant-vm/run/xp64-firmware-check-multi-8127.qcow2",
+        "overlay": "/workspace/rltklant-vm/run/xp64-firmware-nousbd-multi-8127.qcow2",
+        "guest_path": "WINDOWS/system32/drivers/rltklant.sys",
+        "old_sha256": "a9a8ec2a836e6731e84fca11e6e9d3327973300ae0ca9d87c4b099122bd21206",
+        "sha256": "4f1d1092f8c18b5d505cbe01720249dc64d4522185371b635c925a400fa4a472",
+        "size": 283451,
+        "scope": "Offline replacement in a fresh child; FAT allocation unchanged; full readback verified"
+      },
+      "probe": {
+        "guest": "xp64-firmware-nousbd-multi-8127",
+        "token": "nousbd",
+        "utc": "2026-10-30T05:59:16.036935+00:00",
+        "peer": [
+          "127.0.0.1",
+          59923
+        ],
+        "report": "TOKEN nousbd\r\nMODULE \\SystemRoot\\system32\\DRIVERS\\rltklant.sys IMAGE_SIZE 286720 EXPECTED 286720\r\nDEVICE PCI\\VEN_10EC&DEV_8125&SUBSYS_11001AF4&REV_10\\3&11583659&0&30\r\nNAME Realtek RTL8125A 2.5GbE Controller\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nDEVICE PCI\\VEN_10EC&DEV_8126&SUBSYS_11001AF4&REV_10\\3&11583659&0&38\r\nNAME Realtek RTL8126A 5GbE Controller\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nDEVICE PCI\\VEN_10EC&DEV_8127&SUBSYS_11001AF4&REV_10\\3&11583659&0&18\r\nNAME Realtek RTL8127A 10GbE Controller\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nDEVICE PCI\\VEN_10EC&DEV_8127&SUBSYS_11001AF4&REV_10\\3&11583659&0&40\r\nNAME Realtek RTL8127A 10GbE Controller\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nDEVICE PCI\\VEN_10EC&DEV_8168&SUBSYS_11001AF4&REV_10\\3&11583659&0&28\r\nNAME Realtek RTL8168b/8111b PCIe Gigabit Ethernet\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nDEVICE PCI\\VEN_10EC&DEV_8169&SUBSYS_11001AF4&REV_10\\3&11583659&0&20\r\nNAME Realtek RTL8169sc/8110sc Gigabit Ethernet\r\nPROBLEM 0 STATUS 25174026 CM 0\r\nPATH 10.0.2.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.3.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.4.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.5.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.6.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.7.2 REPLIES 4 PAYLOAD 1472\r\nPCI_DEVICES 6 PROBLEMS 0 ICMP_REPLIES 24\r\nPASS\r\n"
+      },
+      "debug_sha256": "d1511af74f7dd20bc55a31b63100857b2dcc0f371671108a9f9477226971f6a5",
+      "qemu": "481d17989aec0574dec3afe20e92c617613b902242edb1fad00c3ec05a75a9b8"
+    }
+  ]
+}

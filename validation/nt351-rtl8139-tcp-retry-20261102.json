@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-02T05:26:40.460535+00:00",
+  "guest": "nt351-usbsetup-rtl8139-proof-8127",
+  "result": "FAIL",
+  "scope": "Loopback-only bidirectional TCP fixture; compare every byte, retain failures.",
+  "rounds": [
+    {
+      "round": 1,
+      "rx_bytes": 65536,
+      "rx_sha256": "bacc5287b7d1402bf9be9c1d5b518996becd42909cec3fb9185034bbf938825a",
+      "tx_bytes": 65536,
+      "tx_sha256": "f779dbe3aeaa609beb32212579f3aea441f244621d13c977cb8b52d7ec3016d9"
+    },
+    {
+      "round": 2,
+      "rx_bytes": 65536,
+      "rx_sha256": "d83d3c02421ee991dcbe953555efad80ecd5d8dccb88cf4c8b2e6cb4c57d8afc",
+      "tx_bytes": 65536,
+      "tx_sha256": "4b048c1b657fbc61d2c35870eed20b1a0690a13a0ce9a74b76bb15c5c59fc0ed"
+    }
+  ],
+  "sources": {
+    "tcp_stream_fixture.py": "c6d6cb61cdcff90eac82ef2d58cfdb6b16b73c5f44a00c5160dfccc7d61222cd",
+    "guest_tcp35.c": "f2ee3e9277a2b26a86178d6895bcbaf62ba7437dad4aa65bfddaffbf07d7336d"
+  },
+  "error": "TimeoutError('timed out')"
+}

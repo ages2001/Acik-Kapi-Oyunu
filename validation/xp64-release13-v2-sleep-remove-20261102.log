@@ -1,0 +1,7 @@
+/workspace/rltklant-work/validation/xp64-release13-v2-sleep-remove-20261102-query-screen.png
+SLPTEST Q3=00000000
+/workspace/rltklant-work/validation/xp64-release13-v2-sleep-remove-20261102-unplug-down-screen.png
+SLPTEST D3=00000000
+/workspace/rltklant-work/validation/xp64-release13-v2-sleep-remove-20261102-unplug-up-screen.png
+SLPTEST D0=00000000
+PASS D3 removal and D0 completion; inspect the captured guest UI

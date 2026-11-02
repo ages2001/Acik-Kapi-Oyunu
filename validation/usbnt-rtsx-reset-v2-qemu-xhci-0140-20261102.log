@@ -1,0 +1,174 @@
+harness: start
+usbnt: found xHCI at 00:02.0 (1b36:000d) irq 10 mem febfc000
+usbnt: xhci: 8 ports, 64 slots, ctx 32, scratch 0, version 100
+usbnt: acpi: 5 tables (RSDT at 0ffe1c17)
+usbnt: aml: 337 named objects from the ACPI tables
+usbnt: device 0: 0409:55aa class 09, full speed, xHCI port 5 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB Hub
+usbnt: device 0: hub with 8 ports
+harness: client arrival notification 0
+usbnt: device 1: 0bda:0140 class 00, high speed, xHCI port 6 depth 0, addr 2
+usbnt: device 1: Generic USB2.0-CRW
+usbnt: device 1: Realtek RTS5179 card reader (QFN24 package)
+usbnt: Realtek RTS5179: SDSC card QEMU!, 64 MB, 4-bit, high speed
+usbnt: Realtek RTS5179: block device 240
+usbnt: msc 240 lun 0: slot 0, type 0, 'SD/MMC   Realtek RTS5179 '
+harness: client arrival notification 1
+usbnt: device 2: 0627:0001 class 00, full speed, xHCI port 5 hub port 2, addr 3
+usbnt: device 2: QEMU QEMU USB Keyboard
+usbnt: device 2: keyboard
+harness: client arrival notification 2
+harness: ready
+HC 0 xHCI running ports=8
+  port 5 status 0023 dev 0
+  port 6 status 0223 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=5 depth=0 port=5 addr=1 hub=1 msc=0 hid=0
+DEV 1 0bda:0140 speed=2 hc=0 root=6 depth=0 port=6 addr=2 hub=0 msc=0 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=5 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+WRITE srb=01 scsi=00 xfer=32768
+CYCLE 0
+WRITE srb=01 scsi=00 xfer=65536
+usbnt: Realtek RTS5179: SDSC card QEMU!, 64 MB, 4-bit, high speed
+usbnt: slot 0: medium changed (Realtek RTS5179)
+CRWRESET index=1 result=0
+HC 0 xHCI running ports=8
+  port 5 status 0023 dev 0
+  port 6 status 0223 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=5 depth=0 port=5 addr=1 hub=1 msc=0 hid=0
+DEV 1 0bda:0140 speed=2 hc=0 root=6 depth=0 port=6 addr=2 hub=0 msc=0 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=5 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+READ srb=01 scsi=00 xfer=65536
+VERIFY bad=0
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+CYCLE 1
+WRITE srb=01 scsi=00 xfer=65536
+usbnt: Realtek RTS5179: SDSC card QEMU!, 64 MB, 4-bit, high speed
+usbnt: slot 0: medium changed (Realtek RTS5179)
+CRWRESET index=1 result=0
+HC 0 xHCI running ports=8
+  port 5 status 0023 dev 0
+  port 6 status 0223 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=5 depth=0 port=5 addr=1 hub=1 msc=0 hid=0
+DEV 1 0bda:0140 speed=2 hc=0 root=6 depth=0 port=6 addr=2 hub=0 msc=0 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=5 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+READ srb=01 scsi=00 xfer=65536
+VERIFY bad=0
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+CYCLE 2
+WRITE srb=01 scsi=00 xfer=65536
+usbnt: Realtek RTS5179: SDSC card QEMU!, 64 MB, 4-bit, high speed
+usbnt: slot 0: medium changed (Realtek RTS5179)
+CRWRESET index=1 result=0
+HC 0 xHCI running ports=8
+  port 5 status 0023 dev 0
+  port 6 status 0223 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=5 depth=0 port=5 addr=1 hub=1 msc=0 hid=0
+DEV 1 0bda:0140 speed=2 hc=0 root=6 depth=0 port=6 addr=2 hub=0 msc=0 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=5 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+READ srb=01 scsi=00 xfer=65536
+VERIFY bad=0
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+CYCLE 3
+WRITE srb=01 scsi=00 xfer=65536
+usbnt: Realtek RTS5179: SDSC card QEMU!, 64 MB, 4-bit, high speed
+usbnt: slot 0: medium changed (Realtek RTS5179)
+CRWRESET index=1 result=0
+HC 0 xHCI running ports=8
+  port 5 status 0023 dev 0
+  port 6 status 0223 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=5 depth=0 port=5 addr=1 hub=1 msc=0 hid=0
+DEV 1 0bda:0140 speed=2 hc=0 root=6 depth=0 port=6 addr=2 hub=0 msc=0 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=5 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+READ srb=01 scsi=00 xfer=65536
+VERIFY bad=0
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+CYCLE 4
+WRITE srb=01 scsi=00 xfer=65536
+usbnt: Realtek RTS5179: SDSC card QEMU!, 64 MB, 4-bit, high speed
+usbnt: slot 0: medium changed (Realtek RTS5179)
+CRWRESET index=1 result=0
+HC 0 xHCI running ports=8
+  port 5 status 0023 dev 0
+  port 6 status 0223 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=5 depth=0 port=5 addr=1 hub=1 msc=0 hid=0
+DEV 1 0bda:0140 speed=2 hc=0 root=6 depth=0 port=6 addr=2 hub=0 msc=0 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=5 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+READ srb=01 scsi=00 xfer=65536
+VERIFY bad=0
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+usbnt: device 1: removed
+harness: client removal notification 1
+usbnt: slot 0: Realtek RTS5179 removed
+TUR srb=84 scsi=02 xfer=0 sense=2/3a/00
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+RESULT rtsx-reset qemu-xhci 0x0140 PASS: five physical resets; stable slots/identity; retained SD data; removal and keyboard continuity

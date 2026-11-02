@@ -1,0 +1,245 @@
+{
+  "guest": "nt31-usbsetup-macreset-v2-8127",
+  "started_utc": "2026-11-02T02:09:23.645244+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "cycle": 1,
+      "device": "usbnic",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c1-absent.json",
+          "sha256": "863dbb5d054d6208d52d7abeed7e0f315e8c9351cce9716d751aed017d8ecd1b",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c1-reinsert.json",
+          "sha256": "2b3d76e436de1c08ce0f3551286c45d290f11732cf3104a973985725f94e8695",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c1-cable-down.json",
+          "sha256": "a2c3ca193e7fd20db0c205f6d3ab4d67bd5691d8e444bf0b53723f8882ef51f7",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c1-cable-up.json",
+          "sha256": "69ac50795f7e527300b9e56878a9aed1a463c7647e18bd5678750389d63bb4c9",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000001 up=00000000 status=C0000001\nUNT-DOWN id=00000001\n",
+      "reinsert_trace": "UNT-UP id=00000002 pid=00008153 status=00000000\nUNT-LINK id=00000002 up=00000000 status=00000000\nUNT-LINK id=00000002 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000002 up=00000000 status=00000000\nUNT-LINK id=00000002 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c1-passed.png",
+        "sha256": "405a9e9235d31411bddfa8144b60c200cbe2984b7f5a747e6b3f49f4aec0df13"
+      }
+    },
+    {
+      "cycle": 2,
+      "device": "usbnic",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c2-absent.json",
+          "sha256": "2baad64c6c224965baefd0db870e89082daa4e3cbfd95ca4324160c21dba8303",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c2-reinsert.json",
+          "sha256": "060d6bff2138de1c121bf2b4efdec86415caa0857b06e2ed1db6da3ef0ed45b0",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c2-cable-down.json",
+          "sha256": "8228e8894245df6d27a33ee524eb1b9469fb069408e028fbf784dcd9cacf1167",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c2-cable-up.json",
+          "sha256": "cc78d04c6aabbaf996555f68204541c8a9a92598c523856efac19cfe420753b7",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000002 up=00000000 status=C0000001\nUNT-DOWN id=00000002\n",
+      "reinsert_trace": "UNT-UP id=00000003 pid=00008156 status=00000000\nUNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c2-passed.png",
+        "sha256": "405a9e9235d31411bddfa8144b60c200cbe2984b7f5a747e6b3f49f4aec0df13"
+      }
+    },
+    {
+      "cycle": 3,
+      "device": "usbnic",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c3-absent.json",
+          "sha256": "5baec6e11c3fdebb3a99ff964696aeb2fb1cc8987f075d7f7401bfdd4d474f80",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c3-reinsert.json",
+          "sha256": "11ea4801a23d774cde481d34a89f2e4489bfd971853ec08bc7d1843e59c84370",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c3-cable-down.json",
+          "sha256": "127097e07e9c0abb6b6f771f56dd0e940f8c19d7b33dcbfd02d572c03b28ac95",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c3-cable-up.json",
+          "sha256": "4b797bada121c788307cc184772e403c6864d61820e29037f54edbcc42f349a7",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000003 up=00000000 status=C0000001\nUNT-DOWN id=00000003\n",
+      "reinsert_trace": "UNT-UP id=00000004 pid=00008157 status=00000000\nUNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c3-passed.png",
+        "sha256": "405a9e9235d31411bddfa8144b60c200cbe2984b7f5a747e6b3f49f4aec0df13"
+      }
+    },
+    {
+      "cycle": 4,
+      "device": "usbnic",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c4-absent.json",
+          "sha256": "ac2adabd4002b3d53d7ed5c768fb2dd5a94ce6759762f8ed86d013fdd0843742",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c4-reinsert.json",
+          "sha256": "12c31037e69396aef5361a187aef08a8d951c72094720f614695f2d013a1d4e3",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c4-cable-down.json",
+          "sha256": "5adc8135d8a0895c462eba31da01068d67dc67fb7fc246afaa379bdb21af1ae4",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c4-cable-up.json",
+          "sha256": "6ad4cf77d86f4014661b91f15530b80627094da3abcbe9cb5973a0716453fd7a",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000004 up=00000000 status=C0000001\nUNT-DOWN id=00000004\n",
+      "reinsert_trace": "UNT-UP id=00000005 pid=00008159 status=00000000\nUNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c4-passed.png",
+        "sha256": "405a9e9235d31411bddfa8144b60c200cbe2984b7f5a747e6b3f49f4aec0df13"
+      }
+    }
+  ],
+  "scope": "NT3.1 persistent USBNT plus native RTL8127 PCIe in QEMU; inbox ping receipt summaries plus complete 1472-byte wire payload matching during USB interruption/recovery. Not a custom guest-side payload comparator or physical-silicon validation.",
+  "tools_sha256": {
+    "legacy_network_probe.c": "4b02046a9015753235bf06f90fe27ce612c2f492afc991dbc16997ba910194e9",
+    "LNET.EXE": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b",
+    "legacy_network_report.py": "0efc3ba390915115448fc267ef516167d2c5dfaa3d138ed8a7ef58d00c7c2bf2",
+    "legacy_sibling_cycles.py": "b441bf3dcd9690c7ebacd1888d6a0ce61e2442e7dcaea9d34383748beaac3def",
+    "nt31_network_report.py": "bc3fd8f15781499d2ffc2f45d4bc59372f47dbc3a1d9760cb2ee4ff08cb2da49"
+  },
+  "launch": {
+    "started_at": 1793585186.7399933,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/nt31-usbsetup-macreset-v2-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/nt31-usbsetup-macreset-v2-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/nt31-usbsetup-macreset-v2-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/nt31-usbsetup-macreset-v2-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt31-usbsetup-macreset-v2-8127/usb.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0",
+      "-netdev",
+      "user,id=pci0,net=10.0.3.0/24",
+      "-device",
+      "rtl8127,id=pcinic,netdev=pci0",
+      "-object",
+      "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/nt31-usbsetup-macreset-v2-8127/pci.pcap",
+      "-global",
+      "rtl8169.io-bar=off"
+    ],
+    "qemu_sha256": "2b9c9d92e23a997e9a863edd90edf9d1613b6588b38c752e7070f646c277df2a"
+  },
+  "baseline": {
+    "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-baseline.json",
+    "sha256": "2ac5362312e18f4edbc4ae461855f50589bcf9739fbc7c99443dd1b2adfa64d1",
+    "mask": 3,
+    "full_payload_replies": 8
+  },
+  "qmp_status": {
+    "status": "running",
+    "singlestep": false,
+    "running": true
+  },
+  "full_payload_replies": 104,
+  "pcaps": {
+    "usb.pcap": {
+      "bytes": 156782,
+      "sha256": "0524815fe7f8e04ca6adef1b8395376097fa21c83f1fd6c4835c4fe79c8f0e46"
+    },
+    "pci.pcap": {
+      "bytes": 230293,
+      "sha256": "abc8997d75168378113f62d67ef0ac47f5e470390d03a9c050433336ab432af4"
+    }
+  },
+  "finished_utc": "2026-11-02T02:12:35.232989+00:00"
+}

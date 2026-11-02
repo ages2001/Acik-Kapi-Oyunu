@@ -1,0 +1,43 @@
+{
+  "guest": "nt31-usbsetup-hidcap-rtl8117-8127",
+  "token": "hidcap-20261102-c4-cable-up",
+  "mask": 3,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T09:27:26.765882+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 129759,
+      "end_offset": 141999,
+      "capture_prefix_sha256": "530bd63dab06ceb4d3275d41158cdb9191c35a7bf44f374227e60cc4b1a1ce0e",
+      "screenshot": "nt31-usbsetup-hidcap-rtl8117-8127-hidcap-20261102-c4-cable-up-usb.png",
+      "ocr": "nt31-usbsetup-hidcap-rtl8117-8127-hidcap-20261102-c4-cable-up-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "e184af53ed551862c4f123d1a98b887270d320894d4ea4072fac34f7b21ab283"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 206016,
+      "end_offset": 218256,
+      "capture_prefix_sha256": "dde8bb4047297b13060df51c82a52dbfc82c79af3b480f5b2416a210078c3462",
+      "screenshot": "nt31-usbsetup-hidcap-rtl8117-8127-hidcap-20261102-c4-cable-up-pci.png",
+      "ocr": "nt31-usbsetup-hidcap-rtl8117-8127-hidcap-20261102-c4-cable-up-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "7f1e9a1a77aaa48a587247ecacaff741700bef8a217dabd0b4c9d08bbdadfb99"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T09:27:38.271465+00:00"
+}

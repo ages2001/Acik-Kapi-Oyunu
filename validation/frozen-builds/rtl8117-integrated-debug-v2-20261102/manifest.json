@@ -1,0 +1,18 @@
+{
+  "ndis3": {
+    "bytes": 540311,
+    "sha256": "d1703001357511d876fd293508ad2c7d761df33eca76a6493475e4cfb1e973e9"
+  },
+  "ndis5": {
+    "bytes": 555826,
+    "sha256": "721b685122d7bda772878fda152b760f37566083755ba106dbf02701440e9330"
+  },
+  "ndis5x64": {
+    "bytes": 612120,
+    "sha256": "d776ddf8189ff1aec1b95541ab1d24e707d7872dd3f17a458196e4c872babf36"
+  },
+  "ndisnt31": {
+    "bytes": 538112,
+    "sha256": "3e6e3d0e406850e579692e89c08cc8e6d3ac6c06620f8cfaac3a87d42f5254e2"
+  }
+}

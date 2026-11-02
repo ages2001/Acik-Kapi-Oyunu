@@ -1,0 +1,7 @@
+test: /tmp/tmpk2w0u70w/test.c:58: open_pipe: Assertion `configuration&&alts==2&&!p->Resource&&!p->Toggle&&!p->Halted&&!p->IsoNext' failed.
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_usbdi_port_reset.py", line 99, in <module>
+    subprocess.run([str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/tmpk2w0u70w/test']' died with <Signals.SIGABRT: 6>.

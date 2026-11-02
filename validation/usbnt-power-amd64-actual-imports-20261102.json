@@ -1,0 +1,6 @@
+{
+  "result": "PASS",
+  "file": "validation/usbnt-power-probe-amd64-fixed-20261102/UPOWER.SYS",
+  "sha256": "95924777530247f6583d28189e60d6035b2200ee5e2def58d9b1b5097c7735eb",
+  "actual_guest_imports": 16
+}

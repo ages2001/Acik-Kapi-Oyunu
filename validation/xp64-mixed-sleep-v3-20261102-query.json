@@ -1,0 +1,9 @@
+{
+  "guest": "xp64-usbnet-mixed-sleep-v3-8127",
+  "utc": "2026-11-02T16:04:33.653591+00:00",
+  "operation": "query",
+  "expected": "00000000",
+  "result": "PASS",
+  "trace": "SLPTEST object=00000000\nSLPTEST Q3=00000000\n",
+  "seconds": 0.0
+}

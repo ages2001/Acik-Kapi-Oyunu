@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T12:31:29.901969+00:00",
+  "guest": "nt31-usbsetup-classreset-rtl8117-8127",
+  "files": {
+    "WINNT31/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 418304,
+      "sha256": "d65acc8f8d9eb3abe0c7e03cd09c26e50d6101957a95f6a128d91166ae3d8080"
+    },
+    "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+    }
+  }
+}

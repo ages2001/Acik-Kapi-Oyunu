@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-02T13:47:54.773053+00:00",
+  "scope": "Exact QEMU binaries for fictional mixed-owner test fixture. Losslessly compressed; extract into /tmp when needed. Existing frozen ordinary-profile binaries remain unchanged.",
+  "files": {
+    "i386": {
+      "archive": "/workspace/rltklant-tools/qemu-bin/mixed-fixture-v2-20261102/qemu-system-i386.xz",
+      "size": 76418432,
+      "sha256": "7343cf9bdc4401e3be74c01fc8cd429d34291e16ae4c410bbdc0bf69df28693d",
+      "archive_sha256": "4ae8d6d07b25a369fea60de9d3d59f8117033e00817c9985913be9fa2438a174"
+    },
+    "x86_64": {
+      "archive": "/workspace/rltklant-tools/qemu-bin/mixed-fixture-v2-20261102/qemu-system-x86_64.xz",
+      "size": 76622056,
+      "sha256": "15d34be16178c8ecbd2f148d9da285baed5cf88aef94780c48c8445de04ff87d",
+      "archive_sha256": "cadf72bba3eb59d3610e9490d2e24ac53cd1de66d7faf5823af9dad04a2416ed"
+    }
+  }
+}

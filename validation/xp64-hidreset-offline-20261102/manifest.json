@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T10:12:10.432473+00:00",
+  "guest": "xp64-usbnet-hidreset-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 526848,
+      "sha256": "434f5b30b3d7a754ee58ca845f92f70ea5ded77e73c3c0f81ca22eb9b6d568eb"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    },
+    "RLTTEST/NATIVE.LOG": {
+      "file": "NATIVE.LOG",
+      "size": 43929,
+      "sha256": "026f198648341db7e04d37f69fb8480f7d53c472f771fcda4049d2667c4364e9"
+    }
+  }
+}

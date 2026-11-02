@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-01T17:58:44.061045+00:00",
+  "builds": [
+    {
+      "target": "ndisnt31",
+      "size": 506368,
+      "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca"
+    },
+    {
+      "target": "ndis3",
+      "size": 499419,
+      "sha256": "c7b2e52520a32181b51dffa916c4c3531d1081a3ad966f4f5c9a22eb2106cf9c"
+    },
+    {
+      "target": "ndis5",
+      "size": 512655,
+      "sha256": "15ebd1357fe5818bd6e954b93bc0e25accd4ab642d326b5c601f7e24f3924682"
+    },
+    {
+      "target": "ndis5x64",
+      "size": 566848,
+      "sha256": "5da5c975e08f75551f6f78c90b86e498853502ab9be6ba6cd26918f5383efaea"
+    }
+  ],
+  "scope": "Automatic lost-MAC recovery plus cancelled receive pipe recovery; guest checks pending"
+}

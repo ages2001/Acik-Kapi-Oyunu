@@ -1,0 +1,43 @@
+{
+  "guest": "nt31-usbsetup-capacity-rtl8117-8127",
+  "token": "capacity-v2-20261102-c3-cable-up",
+  "mask": 3,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T09:12:04.307383+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 118419,
+      "end_offset": 130659,
+      "capture_prefix_sha256": "3021ceb42f0fcb91d536088729f61e581c33c994374f44f9e8d9e2dc6e6e3e2a",
+      "screenshot": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c3-cable-up-usb.png",
+      "ocr": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c3-cable-up-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "45e160a31c602f77720d2a59eae2bbc4c79ffabb740968c5c03103855fa21a82"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 157056,
+      "end_offset": 169296,
+      "capture_prefix_sha256": "0560f45164b26e30807d3e821d966be3083930af41584eeb7affaacc9316de6b",
+      "screenshot": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c3-cable-up-pci.png",
+      "ocr": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c3-cable-up-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "c7e6d8753cf42edd40c6a1c6b086905af062b6444e6acd0fcde15f17314b1489"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T09:12:16.010311+00:00"
+}

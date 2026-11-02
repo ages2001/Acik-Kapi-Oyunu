@@ -1,0 +1,50 @@
+{
+  "utc": "2026-11-02T02:15:45.650916+00:00",
+  "result": "PASS",
+  "guest": "nt31-usbsetup-macreset-v2-8127",
+  "scope": "NT3.1 full-MAC passive PHY/MAC reset and four-model USB hot-plug with surviving PCIe traffic; exact installed candidate and diagnostic files read after observed safe-off",
+  "driver": {
+    "file": "RLTKLANT.SYS",
+    "size": 533504,
+    "sha256": "947fa86c7b7387ca87ca5b374e881b5112b4de70ba8553c63db32250b4fb6ad0"
+  },
+  "reset_completions": 3,
+  "reset_start_end_pairs": 3,
+  "post_reset_full_payload_replies": 8,
+  "hotplug_full_payload_replies": 104,
+  "models": [
+    "usb-rtl8153",
+    "usb-rtl8156",
+    "usb-rtl8157",
+    "usb-rtl8159"
+  ],
+  "evidence": {
+    "reset": {
+      "file": "nt31-macreset-callbacks-20261102.json",
+      "sha256": "ad54f96b8007597b0b1a32e71af415ef78fe22e3b90acbee111978a10fc120b3"
+    },
+    "traffic": {
+      "file": "nt31-usbsetup-macreset-v2-8127-mac-reset-after-20261102.json",
+      "sha256": "c28bba7237d5c4bdb31bba2698b076d462f3adbd35c4191156ed21f471b1e339"
+    },
+    "hotplug": {
+      "file": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-sibling-matrix.json",
+      "sha256": "8965ac58f949cf09e70ef225e2114e653ee38c0655bd197baa1f51306e73a831"
+    },
+    "stopped": {
+      "file": "nt31-macreset-v2-evidence-20261102/manifest.json",
+      "sha256": "fee4bcbafda364068b3e7ecb7257dc6431c2e5c8011f6f587c3494a60b3e6747"
+    },
+    "offline": {
+      "file": "nt31-macreset-v2-offline-20261102/manifest.json",
+      "sha256": "7f5267a1d21663d6f522942f546ec5c8ab3eb88ea4071f719687185b7754576a"
+    }
+  },
+  "limits": [
+    "Full-MAC callback dispatch through registered NT3.1 binding, not an exported NdisReset test",
+    "No NT3.1 descriptor watchdog or PCIe surprise-removal claim",
+    "Test diagnostic stays loaded until reboot and is excluded from releases",
+    "Frozen candidate predates the subsequent vendor-OID correction",
+    "QEMU register/protocol behavior only; no physical PHY MCU/analog validation"
+  ]
+}

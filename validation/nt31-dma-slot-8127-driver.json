@@ -1,0 +1,9 @@
+{
+  "guest": "nt31-dma-slot-8127",
+  "source": "RLTKLANT/build/ndisnt31/rltklant.sys",
+  "size": 51200,
+  "sha256": "cff298c0999329153a38803971ee967ef191ebd40f5fa20d9e463e42e990ee25",
+  "previous_guest_shutdown_evidence": "nt31-pci-shutdown-safe.png",
+  "changes": "C+ descriptor ring addresses committed before DMA; current NT3.1 common USB source",
+  "firmware_runtime": "Not integrated"
+}

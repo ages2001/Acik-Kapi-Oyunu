@@ -1,0 +1,38 @@
+{
+  "utc": "2026-11-01T23:57:38.228811+00:00",
+  "guest": "nt4-ndis-v3-remove-boot-8127",
+  "result": "PASS_PENDING_REBOOT",
+  "scope": "Native NCPA removal and normal-shutdown registry readback",
+  "checks": {
+    "remaining_instances": true,
+    "remaining_parameters": true,
+    "removed_instance_services_absent": true,
+    "network_providers_preserved": true,
+    "shared_product_removed": true,
+    "shared_service_marked": true
+  },
+  "remaining": [],
+  "removed": {
+    "3": "RLTKLANT3",
+    "1": "RLTKLANT1",
+    "2": "RLTKLANT2"
+  },
+  "shared_service": {
+    "Type": 1,
+    "Start": 2,
+    "ErrorControl": 1,
+    "ImagePath": "\\SystemRoot\\System32\\drivers\\rltklant.sys",
+    "DisplayName": "Realtek RLTKLANT Adapter Driver",
+    "Group": "NDIS",
+    "DeleteFlag": 1
+  },
+  "shared_product": null,
+  "registry": "nt4-v3-final-removal-20261102-registry.json",
+  "files": {
+    "SYSTEM": "00555d340b53d32a282750bcaa3ae5a2bcb5de5ab1544dda322053e32459a7bd",
+    "SOFTWARE": "014438ce76a0513ca45232b238e95d940470cbe4f77691796399aa760aa8f04c"
+  },
+  "limits": [
+    "Cold boot and surviving-adapter traffic require separate evidence"
+  ]
+}

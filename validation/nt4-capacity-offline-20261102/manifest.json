@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T09:15:27.421547+00:00",
+  "guest": "nt4-ndis-dual-capacity-8127",
+  "files": {
+    "WINNT4/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 411648,
+      "sha256": "92b201af42e3ddc15a8fd46f88f0f28ffd337ae2ac0f04f74558f0abbd2bbcab"
+    },
+    "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "utc": "2026-11-02T15:01:48.444858+00:00",
+  "scope": "Build test-only query/down/up controller IRPs for unplug-during-D3 tests.\n\nDefault operation is QUERY_POWER. Explicit /down and /up issue SET_POWER at\nDISPATCH_LEVEL to the one USBNT Intel 24CD EHCI FDO. No ACPI sleep is claimed.\n",
+  "arch": "amd64",
+  "commands": [
+    [
+      "x86_64-w64-mingw32-gcc",
+      "-O2",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-mno-stack-arg-probe",
+      "-mno-sse",
+      "-mno-mmx",
+      "-fno-asynchronous-unwind-tables",
+      "-nostdlib",
+      "-D_AMD64_",
+      "-D_WIN64",
+      "-mno-red-zone",
+      "-msoft-float",
+      "-mno-sse2",
+      "-I/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk",
+      "-Wl,--subsystem,native",
+      "-Wl,--entry,DriverEntry",
+      "-Wl,--image-base,0x10000",
+      "-Wl,--no-insert-timestamp",
+      "-o",
+      "/workspace/rltklant-work/validation/usbnt-sleep-probe-amd64-20261102/SLPTEST.SYS",
+      "/workspace/rltklant-work/validation/usbnt-sleep-probe-amd64-20261102/slptest_driver.c",
+      "-lntoskrnl",
+      "-lhal"
+    ],
+    [
+      "/workspace/rltklant-tools/venv/bin/python3",
+      "/workspace/rltklant-work/USBNT/build/fixpe5.py",
+      "/workspace/rltklant-work/validation/usbnt-sleep-probe-amd64-20261102/SLPTEST.SYS",
+      "amd64"
+    ],
+    [
+      "x86_64-w64-mingw32-gcc",
+      "-O2",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-mno-stack-arg-probe",
+      "-fno-asynchronous-unwind-tables",
+      "-nostdlib",
+      "-D_AMD64_",
+      "-D_WIN64",
+      "-Wl,--entry,Entry",
+      "-Wl,--subsystem,console:5.2",
+      "-Wl,--no-insert-timestamp",
+      "-o",
+      "/workspace/rltklant-work/validation/usbnt-sleep-probe-amd64-20261102/SLPTEST.EXE",
+      "/workspace/rltklant-work/validation/usbnt-sleep-probe-amd64-20261102/slptest_probe.c",
+      "-lkernel32",
+      "-ladvapi32",
+      "-lsetupapi"
+    ]
+  ],
+  "files": {
+    "SLPTEST.EXE": {
+      "size": 11931,
+      "sha256": "d549ed45ecfcdcabdc23fc5dcf54b2c356d7775e3c549a3002c8311057cb639b"
+    },
+    "slptest_probe.c": {
+      "size": 2661,
+      "sha256": "320a0aa37518944622dd699d5df9803b21155311867284fe3f17527af6ea28ca"
+    },
+    "SLPTEST.SYS": {
+      "size": 11187,
+      "sha256": "dc47f439966d814f932747b08a8599bc16e87c2f90e1209e76d21ffbbb36312e"
+    },
+    "slptest_driver.c": {
+      "size": 5752,
+      "sha256": "97363fa009d61860dba0dca9b59a8a2af0fe38e7b7b1d12d47c2a23da794331f"
+    }
+  }
+}

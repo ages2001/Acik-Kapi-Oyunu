@@ -1,0 +1,80 @@
+{
+  "utc": "2026-11-02T08:17:03.418528+00:00",
+  "scope": "Build a test-only USBNT EHCI FDO D3/D0 and S3/S0 IRP injector.\n\nThe S pairs test system-to-device IRP mapping, not actual ACPI machine sleep.\nOnly the single QEMU Intel 24CD EHCI controller is selected. The kernel helper\nrequires the attached FDO's driver to be USBNT and retains it across calls.\n",
+  "single_pair": true,
+  "arch": "amd64",
+  "commands": [
+    [
+      "x86_64-w64-mingw32-gcc",
+      "-O2",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-mno-stack-arg-probe",
+      "-mno-sse",
+      "-mno-mmx",
+      "-fno-asynchronous-unwind-tables",
+      "-nostdlib",
+      "-D_AMD64_",
+      "-D_WIN64",
+      "-mno-red-zone",
+      "-msoft-float",
+      "-mno-sse2",
+      "-I/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk",
+      "-Wl,--subsystem,native",
+      "-Wl,--entry,DriverEntry",
+      "-Wl,--image-base,0x10000",
+      "-Wl,--no-insert-timestamp",
+      "-o",
+      "/workspace/rltklant-work/validation/usbnt-hc-power-single-amd64-20261102/HCPOWER.SYS",
+      "/workspace/rltklant-work/validation/usbnt-hc-power-single-amd64-20261102/hcpower_driver.c",
+      "-lntoskrnl",
+      "-lhal"
+    ],
+    [
+      "/workspace/rltklant-tools/venv/bin/python3",
+      "/workspace/rltklant-work/USBNT/build/fixpe5.py",
+      "/workspace/rltklant-work/validation/usbnt-hc-power-single-amd64-20261102/HCPOWER.SYS",
+      "amd64"
+    ],
+    [
+      "x86_64-w64-mingw32-gcc",
+      "-O2",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-mno-stack-arg-probe",
+      "-fno-asynchronous-unwind-tables",
+      "-nostdlib",
+      "-D_AMD64_",
+      "-D_WIN64",
+      "-Wl,--entry,Entry",
+      "-Wl,--subsystem,console:5.2",
+      "-Wl,--no-insert-timestamp",
+      "-o",
+      "/workspace/rltklant-work/validation/usbnt-hc-power-single-amd64-20261102/HCPOWER.EXE",
+      "/workspace/rltklant-work/validation/usbnt-hc-power-single-amd64-20261102/hcpower_probe.c",
+      "-lkernel32",
+      "-ladvapi32",
+      "-lsetupapi"
+    ]
+  ],
+  "files": {
+    "hcpower_probe.c": {
+      "size": 2641,
+      "sha256": "a4d725f1c5720341c6ac2e757859b150e4c7b4e124457955272d453d33761166"
+    },
+    "hcpower_driver.c": {
+      "size": 6084,
+      "sha256": "71bf52b218cf403745abc6ad9aecb2c7b466fc59f3dfc7869add534383a7d2f8"
+    },
+    "HCPOWER.SYS": {
+      "size": 11433,
+      "sha256": "217ebb498a307eb77ff6581b0d3c63002fa2a134876fcdeccf5769948ae1091f"
+    },
+    "HCPOWER.EXE": {
+      "size": 11754,
+      "sha256": "5d41ac14ae793f0470039924d248b929472d35f79990742e48010289395c9b93"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+Formatting '/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-proof-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-m_ub3tz4/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+13/6384 = 0.20% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1179648
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-proof-8127.qcow2",
+  "sha256_before_boot": "0d0b2ad818baf934a579c290743903029e1d4acc8ee9ecda5e1320819afd192c",
+  "files": [
+    {
+      "guest_path": "WINNT351/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis3/rltklant.sys",
+      "size": 540269,
+      "sha256": "0762311272d5f3eab8004747b78c9efbf7d0cf20353b0e1bb77df1677429fffe",
+      "old_size": 534638,
+      "old_sha256": "41a54b3668d23ff145f346b4872ccbeb84206b101e1b782abaca2891109b6e84"
+    },
+    {
+      "guest_path": "N35TEST/N35RESET.SYS",
+      "source": "/workspace/rltklant-work/validation/nt351-reset-probe-v1-20261102/N35RESET.SYS",
+      "size": 6144,
+      "sha256": "9728f886b929fa6652a59092b11506af6cd021421dfac41f86d740cf7ee651b5",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "N35TEST/N35RESET.EXE",
+      "source": "/workspace/rltklant-work/validation/nt351-reset-probe-v1-20261102/N35RESET.EXE",
+      "size": 7829,
+      "sha256": "708bc91e211120523d88033cc01cada091c928e98b3a72b5bb994b4fa985b986",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

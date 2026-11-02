@@ -1,0 +1,207 @@
+{
+  "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+  "model": "usb-rtl8150",
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:25:46.882704+00:00",
+      "token": "async-8150-native01",
+      "report": "TOKEN async-8150-native01\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        37437
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:26:08.165227+00:00",
+      "token": "async-8150-native02",
+      "report": "TOKEN async-8150-native02\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        40372
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:26:29.338179+00:00",
+      "token": "async-8150-native03",
+      "report": "TOKEN async-8150-native03\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        43877
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:26:50.522168+00:00",
+      "token": "async-8150-native04",
+      "report": "TOKEN async-8150-native04\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        38112
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:27:06.566220+00:00",
+      "token": "async-8150-native05",
+      "report": "TOKEN async-8150-native05\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        52729
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:27:22.501921+00:00",
+      "token": "async-8150-native06",
+      "report": "TOKEN async-8150-native06\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        40227
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:27:38.443554+00:00",
+      "token": "async-8150-native07",
+      "report": "TOKEN async-8150-native07\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        37958
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:27:54.363788+00:00",
+      "token": "async-8150-native08",
+      "report": "TOKEN async-8150-native08\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        37688
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:28:10.232334+00:00",
+      "token": "async-8150-native09",
+      "report": "TOKEN async-8150-native09\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        48065
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:28:26.117159+00:00",
+      "token": "async-8150-native10",
+      "report": "TOKEN async-8150-native10\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        43588
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:29:22.313053+00:00",
+      "token": "async-8150-native11",
+      "report": "TOKEN async-8150-native11\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        48272
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:29:44.734248+00:00",
+      "token": "async-8150-native12",
+      "report": "TOKEN async-8150-native12\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        33830
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:30:05.786182+00:00",
+      "token": "async-8150-native13",
+      "report": "TOKEN async-8150-native13\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        34604
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:30:26.935262+00:00",
+      "token": "async-8150-native14",
+      "report": "TOKEN async-8150-native14\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        56949
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:30:48.057254+00:00",
+      "token": "async-8150-native15",
+      "report": "TOKEN async-8150-native15\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        39265
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:31:09.198690+00:00",
+      "token": "async-8150-native16",
+      "report": "TOKEN async-8150-native16\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        46912
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:31:25.082134+00:00",
+      "token": "async-8150-native17",
+      "report": "TOKEN async-8150-native17\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        39500
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:31:41.028561+00:00",
+      "token": "async-8150-native18",
+      "report": "TOKEN async-8150-native18\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        37240
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:31:57.006338+00:00",
+      "token": "async-8150-native19",
+      "report": "TOKEN async-8150-native19\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        42713
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:32:12.912906+00:00",
+      "token": "async-8150-native20",
+      "report": "TOKEN async-8150-native20\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        53647
+      ]
+    }
+  ]
+}

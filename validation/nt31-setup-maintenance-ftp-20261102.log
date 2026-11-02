@@ -1,0 +1,25 @@
+[I 2026-11-01 21:47:51] concurrency model: async
+[I 2026-11-01 21:47:51] masquerade (NAT) address: None
+[I 2026-11-01 21:47:51] passive ports: None
+[I 2026-11-01 21:47:51] >>> starting FTP server on 127.0.0.1:2125, pid=77309 <<<
+[I 2026-11-01 21:48:11] 127.0.0.1:42940-[] FTP session opened (connect)
+[I 2026-11-01 21:49:07] 127.0.0.1:42940-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-01 21:49:32] 127.0.0.1:42940-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/PMTEST2.EXE completed=1 bytes=12746 seconds=0.064
+[I 2026-11-01 21:49:38] 127.0.0.1:42940-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/RLTSETUP.DLL completed=1 bytes=18344 seconds=0.073
+[I 2026-11-01 21:49:40] 127.0.0.1:42940-[anonymous] FTP session closed (disconnect).
+[I 2026-11-01 21:50:40] 127.0.0.1:41232-[] FTP session opened (connect)
+[I 2026-11-01 21:51:20] 127.0.0.1:41232-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-01 21:51:29] 127.0.0.1:41232-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/RLTSET2.DLL completed=1 bytes=19798 seconds=0.074
+[I 2026-11-01 21:51:30] 127.0.0.1:41232-[anonymous] FTP session closed (disconnect).
+[I 2026-11-01 21:53:02] 127.0.0.1:59178-[] FTP session opened (connect)
+[I 2026-11-01 21:53:55] 127.0.0.1:59178-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-01 21:54:03] 127.0.0.1:59178-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/RLTSET3.DLL completed=1 bytes=19798 seconds=0.071
+[I 2026-11-01 21:54:05] 127.0.0.1:59178-[anonymous] FTP session closed (disconnect).
+[I 2026-11-01 21:55:40] 127.0.0.1:44112-[] FTP session opened (connect)
+[I 2026-11-01 21:55:44] 127.0.0.1:44112-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-01 21:55:52] 127.0.0.1:44112-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/RLTSET4.DLL completed=1 bytes=19798 seconds=0.071
+[I 2026-11-01 21:55:54] 127.0.0.1:44112-[anonymous] FTP session closed (disconnect).
+[I 2026-11-01 22:02:41] 127.0.0.1:46308-[] FTP session opened (connect)
+[I 2026-11-01 22:02:44] 127.0.0.1:46308-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-01 22:02:52] 127.0.0.1:46308-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/RLTSET5.DLL completed=1 bytes=19798 seconds=0.074
+[I 2026-11-01 22:02:54] 127.0.0.1:46308-[anonymous] FTP session closed (disconnect).

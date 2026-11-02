@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-02T05:45:25.397909+00:00",
+  "result": "PASS",
+  "raw": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+  "raw_sha256": "01b91c6aa611085deaee3e9981cbd28953fdf8a5e80802c509ab40292557214a",
+  "packed": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.packed.qcow2",
+  "packed_sha256": "d58aab95c3bca2e907ede6874b56a38358de708dd6e4418d5ced92ca16c41d9e",
+  "children": [
+    {
+      "image": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+      "before_sha256": "80809c685fd86d0a3b029ffaf0b537d2ce342db4ab6b6f551436a9c2ec5e095d",
+      "after_sha256": "4d72854078e54192799afe0c24e1f72bbd63046939efb0189ed950fcc99144c4",
+      "logical_comparison": "identical"
+    }
+  ],
+  "scope": "Generated inactive raw checkpoint preserved losslessly in durable /workspace qcow2; every direct overlay compared before/after; no uploaded media changed"
+}

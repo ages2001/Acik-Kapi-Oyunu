@@ -1,0 +1,48 @@
+{
+  "guest": "win2000-standard-usbnet-stall-ehci-8127",
+  "model": "usb-rtl8156",
+  "rx_stall_injected_before_each_remove": false,
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-stall-ehci-8127",
+      "utc": "2026-10-30T04:30:00.162050+00:00",
+      "token": "stall-8156-cable01",
+      "report": "TOKEN stall-8156-cable01\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:03.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        60840
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-ehci-8127",
+      "utc": "2026-10-30T04:30:20.997071+00:00",
+      "token": "stall-8156-cable02",
+      "report": "TOKEN stall-8156-cable02\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:03.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        44830
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-ehci-8127",
+      "utc": "2026-10-30T04:30:34.986991+00:00",
+      "token": "stall-8156-cable03",
+      "report": "TOKEN stall-8156-cable03\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:03.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        51686
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-stall-ehci-8127",
+      "utc": "2026-10-30T04:30:49.001682+00:00",
+      "token": "stall-8156-cable04",
+      "report": "TOKEN stall-8156-cable04\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:03.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        58795
+      ]
+    }
+  ]
+}

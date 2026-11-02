@@ -1,0 +1,16 @@
+[I 2026-11-01 21:10:08] concurrency model: async
+[I 2026-11-01 21:10:08] masquerade (NAT) address: None
+[I 2026-11-01 21:10:08] passive ports: None
+[I 2026-11-01 21:10:08] >>> starting FTP server on 127.0.0.1:2124, pid=74129 <<<
+[I 2026-11-01 21:10:18] 127.0.0.1:37636-[] FTP session opened (connect)
+[I 2026-11-01 21:10:57] 127.0.0.1:37636-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-01 21:11:06] 127.0.0.1:37636-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/DHCPRTE.EXE completed=1 bytes=25688 seconds=0.069
+[I 2026-11-01 21:11:36] 127.0.0.1:37636-[anonymous] FTP session closed (disconnect).
+[I 2026-11-01 21:13:39] 127.0.0.1:36536-[] FTP session opened (connect)
+[I 2026-11-01 21:14:10] 127.0.0.1:36536-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-01 21:14:19] 127.0.0.1:36536-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/DHCPSEL.EXE completed=1 bytes=25911 seconds=0.072
+[I 2026-11-01 21:15:20] 127.0.0.1:36536-[anonymous] FTP session closed (disconnect).
+[I 2026-11-01 21:16:41] 127.0.0.1:43766-[] FTP session opened (connect)
+[I 2026-11-01 21:19:42] 127.0.0.1:43766-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-01 21:20:05] 127.0.0.1:43766-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/DHCPBND.EXE completed=1 bytes=25911 seconds=0.073
+[I 2026-11-01 21:20:07] 127.0.0.1:43766-[anonymous] FTP session closed (disconnect).

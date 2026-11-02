@@ -1,0 +1,102 @@
+{
+  "utc": "2026-11-01T18:59:12.407730+00:00",
+  "rows": [
+    {
+      "guest": "xp64-usbnet-observed-8127",
+      "base_file": "xp64-observed-full-usb-recovery-matrix-20261101.json",
+      "base_sha256": "2646b76cd9e47f8a5a613c342018fbb2e8699d1add48e9250197ed4addd0d518",
+      "extra": [
+        {
+          "file": "xp64-usbnet-observed-8127-observed-linkdown-8153-port-reset-cycles.json",
+          "sha256": "10cbeeb660e34a883e87b02f69fc93689537e5df33fcea8dceeee95b312baef5",
+          "model": "8153",
+          "cycles": 1,
+          "replies": 4
+        },
+        {
+          "file": "xp64-usbnet-observed-8127-observed-linkdown-8156-port-reset-cycles.json",
+          "sha256": "6157dfb27db9b5869c646e57cf69880938fdf3fafc41ce95c717967277136bb3",
+          "model": "8156",
+          "cycles": 1,
+          "replies": 4
+        },
+        {
+          "file": "xp64-usbnet-observed-8127-observed-linkdown-8157-port-reset-cycles.json",
+          "sha256": "62b3dc5098c854961f9a232973124688646d2418842e16eff18fe4c57da81a19",
+          "model": "8157",
+          "cycles": 1,
+          "replies": 4
+        },
+        {
+          "file": "xp64-usbnet-observed-8127-observed-linkdown-8159-port-reset-cycles.json",
+          "sha256": "5f1f6479f415e474adddbf0e94a3cc55bb224ea5c92c6df752bc21761d553374",
+          "model": "8159",
+          "cycles": 1,
+          "replies": 4
+        }
+      ],
+      "cycles": 36,
+      "final_guest_replies": 144,
+      "reset_readiness_cases": 12,
+      "reset_readiness_unmatched_requests": 0,
+      "first_reply_seconds_range": [
+        4.282757573993877,
+        4.317600934999064
+      ],
+      "four_reply_seconds_range": [
+        6.691355909992126,
+        6.727085910999449
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-observed-ehci-8127",
+      "base_file": "win2000-observed-full-usb-recovery-matrix-20261101.json",
+      "base_sha256": "10b0dd733312df618215f9ce45654063449f3acb96f084c8c08d64c7820a43f1",
+      "extra": [
+        {
+          "file": "win2000-standard-usbnet-observed-ehci-8127-observed-linkdown-8153-port-reset-cycles.json",
+          "sha256": "61ffa77190d4375391710a9c8516fe24f25371fa981e316b5d910393efe8f65a",
+          "model": "8153",
+          "cycles": 1,
+          "replies": 4
+        },
+        {
+          "file": "win2000-standard-usbnet-observed-ehci-8127-observed-linkdown-8156-port-reset-cycles.json",
+          "sha256": "09e7c6014f383e5c31571cf1f32faacee4819e178ba3a17e5ab866b0d14f7c7c",
+          "model": "8156",
+          "cycles": 1,
+          "replies": 4
+        },
+        {
+          "file": "win2000-standard-usbnet-observed-ehci-8127-observed-linkdown-8157-port-reset-cycles.json",
+          "sha256": "cd047fb49b05541ee07d34f38fd651ebdddb0e207ccd3c3b28acc73430888ede",
+          "model": "8157",
+          "cycles": 1,
+          "replies": 4
+        },
+        {
+          "file": "win2000-standard-usbnet-observed-ehci-8127-observed-linkdown-8159-port-reset-cycles.json",
+          "sha256": "6956331eeb667bc0c8f86938c37afc4561c2b65f96c7cfa30e6f2d9d86144140",
+          "model": "8159",
+          "cycles": 1,
+          "replies": 4
+        }
+      ],
+      "cycles": 36,
+      "final_guest_replies": 144,
+      "reset_readiness_cases": 12,
+      "reset_readiness_unmatched_requests": 0,
+      "first_reply_seconds_range": [
+        4.290194936009357,
+        34.81641795599717
+      ],
+      "four_reply_seconds_range": [
+        6.700243940009386,
+        37.832777046001866
+      ]
+    }
+  ],
+  "total_cycles": 72,
+  "total_final_guest_replies": 288,
+  "scope": "Exact observed-reset frozen binaries; four USB2 protocol models on two OSes; timings include guest command dispatch and ping intervals; no physical silicon proof"
+}

@@ -1,0 +1,14 @@
+TOKEN release13-v2-port1-recovery-20261102
+DEVICE USB\VID_0BDA&PID_8153&MI_00\1&2B53A856&0&0&01&01&0&00
+NAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)
+PROBLEM 0 STATUS 25190410 CM 0
+USB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472
+PASS
+
+MKEY2 READY c:\rlttest\mkey2.exe xp64-release13-v2-port1-recovery-key-20261102
+{}
+MKEY2 KEY_DOWN c:\rlttest\mkey2.exe xp64-release13-v2-port1-recovery-key-20261102
+{}
+MKEY2 KEY_UP c:\rlttest\mkey2.exe xp64-release13-v2-port1-recovery-key-20261102
+MKEY2 PASS c:\rlttest\mkey2.exe xp64-release13-v2-port1-recovery-key-20261102
+/workspace/rltklant-work/validation/xp64-release13-v2-port1-recovery-key-20261102-screen.png

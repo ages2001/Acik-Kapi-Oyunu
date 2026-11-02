@@ -1,0 +1,21 @@
+{
+  "scope": "RTL_DBG initialization diagnostics, no behavior changes from native power-retry candidate",
+  "files": {
+    "ndis3": {
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    },
+    "ndis5": {
+      "size": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+    },
+    "ndis5x64": {
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    },
+    "ndisnt31": {
+      "size": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+    }
+  }
+}

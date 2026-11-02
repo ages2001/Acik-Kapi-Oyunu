@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "utc": "2026-11-02T07:18:33.184368+00:00",
+  "guest": "nt351-usbsetup-rtl8139-current-8127",
+  "drivers": {
+    "RLTKLANT.SYS": "d1703001357511d876fd293508ad2c7d761df33eca76a6493475e4cfb1e973e9",
+    "USBNT.SYS": "f3a7e6e09ffec491d62cec183dba1b6aeb56f1f15c7b6e4a3a9a43f03d836f37"
+  },
+  "tcp_bytes_each_direction": 3145728,
+  "registered_mac_resets": 3,
+  "rx_watchdog_events": 0,
+  "usb_generic_attachment_cycles": 4,
+  "pci_full_payload_replies_during_usb_cycles": 68,
+  "offline": "validation/nt351-rtl8139-current-offline-20261102/manifest.json",
+  "evidence": "validation/nt351-rtl8139-current-evidence-20261102/manifest.json",
+  "wire": "nt351-rtl8139-current-tcp-wire-proof-20261102.json",
+  "matrix": "nt351-usbsetup-rtl8139-current-8127-current-pci-preservation-20261102-sibling-matrix.json",
+  "scope": "Actual RTL8139 on NT3.51 IDE, latest NDIS3 plus USBNT legacy candidate. TCP baseline, after three MAC resets, after PCI cable loss/reconnect, and PCI preservation during four USB attach/carrier cycles. Only PCI has a network binding; initial invalid dual-network baseline FAIL is retained. No USB TCP/IP or physical silicon claim."
+}

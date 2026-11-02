@@ -1,0 +1,10 @@
+{
+  "guest": "xp64-native-multi-8127",
+  "captured_utc": "2026-10-28T12:30:03.993663+00:00",
+  "qmp_status": {
+    "status": "shutdown",
+    "singlestep": false,
+    "running": false
+  },
+  "launch": null
+}

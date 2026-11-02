@@ -1,0 +1,86 @@
+{
+  "exe_sha256": "987dd6118fab5b8b1f3f455add33fc99078b6ce4715f35d0ac4a13c1dce8e37f",
+  "source_sha256": "f2ee3e9277a2b26a86178d6895bcbaf62ba7437dad4aa65bfddaffbf07d7336d",
+  "actual_nt351_imports": [
+    [
+      "KERNEL32.dll",
+      "CloseHandle"
+    ],
+    [
+      "KERNEL32.dll",
+      "CreateFileA"
+    ],
+    [
+      "KERNEL32.dll",
+      "ExitProcess"
+    ],
+    [
+      "KERNEL32.dll",
+      "GetStdHandle"
+    ],
+    [
+      "KERNEL32.dll",
+      "WriteFile"
+    ],
+    [
+      "KERNEL32.dll",
+      "lstrlenA"
+    ],
+    [
+      "WSOCK32.DLL",
+      "WSACleanup"
+    ],
+    [
+      "WSOCK32.DLL",
+      "WSAGetLastError"
+    ],
+    [
+      "WSOCK32.DLL",
+      "WSAStartup"
+    ],
+    [
+      "WSOCK32.DLL",
+      "bind"
+    ],
+    [
+      "WSOCK32.DLL",
+      "closesocket"
+    ],
+    [
+      "WSOCK32.DLL",
+      "connect"
+    ],
+    [
+      "WSOCK32.DLL",
+      "getsockname"
+    ],
+    [
+      "WSOCK32.DLL",
+      "htons"
+    ],
+    [
+      "WSOCK32.DLL",
+      "inet_addr"
+    ],
+    [
+      "WSOCK32.DLL",
+      "recv"
+    ],
+    [
+      "WSOCK32.DLL",
+      "select"
+    ],
+    [
+      "WSOCK32.DLL",
+      "send"
+    ],
+    [
+      "WSOCK32.DLL",
+      "socket"
+    ]
+  ],
+  "refs": {
+    "validation/nt351-protocol-references-20261102/KERNEL32.DLL": "d4379506d34b8bbcc6eb08dc44b8a2ecd712c5593a0b5bb5d1cb38e11adf5314",
+    "validation/nt351-winsock-reference-20261102/WSOCK32.DLL": "b61f596e8f8047c0b96f472da6c15c80231e17c93e30d1cdcf6a7f632331d23f"
+  }
+}

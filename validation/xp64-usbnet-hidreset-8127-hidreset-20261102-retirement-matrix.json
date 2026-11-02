@@ -1,0 +1,97 @@
+{
+  "guest": "xp64-usbnet-hidreset-8127",
+  "utc": "2026-11-02T10:03:42.906659+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8153-native-hotplug.json",
+        "sha256": "234fbdf08b41f68d796bfc9d03586026932beab18e4a95c60984ac8ee9671f82"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8153-function-power.json",
+        "sha256": "f7488b6f081029eaa02aa9337b3f2a8682507a2ca6ebf739c3b4e1ae9eae0770"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8153-port-reset-cycles.json",
+        "sha256": "f4d0339f546f41962652053f7b5c1f3c6028054b84c70165faddd420627957a5"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8153-native-cable.json",
+        "sha256": "cae75aca6d2db9faaa01e8dfc00141f8181ca420e4fde66c63420baf21467619"
+      },
+      "seconds": 71.11
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8156-native-hotplug.json",
+        "sha256": "b2e9adf4dac5c002b893d0615fa7e2208110fa537a6f7b95327d4328c32442bd"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8156-function-power.json",
+        "sha256": "1ba5febe1ff1a847e3835deb6d5ddbb8afb5623992ee8f9cb963bcd9e10ac5ef"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8156-port-reset-cycles.json",
+        "sha256": "403aa796baca34268109b11903e0dbbb40c467a2a4bf7f5e9d6f881f2de0084e"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8156-native-cable.json",
+        "sha256": "44e60cf9ef24ee4acc531e9a0b763758c75bf747b6d929c4dd280da9559d6539"
+      },
+      "seconds": 81.39
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8157-native-hotplug.json",
+        "sha256": "fd605f1e75d88699bf7181fa3b1a13d2d75c4e1d4779918102a04fbcd627b092"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8157-function-power.json",
+        "sha256": "8a8ca814bc839e6f4e0908aeae377e040e606a7a9f8dde78491a3980f26b012c"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8157-port-reset-cycles.json",
+        "sha256": "e077e6f05d37199eda77d2d249fc2c611691e85047e4cad9ac740970a144ecca"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8157-native-cable.json",
+        "sha256": "9f9f187f61576a0944f738cff4fe470eeb5c3b04b1017d601068bdfe6bb95710"
+      },
+      "seconds": 98.2
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8159-native-hotplug.json",
+        "sha256": "79b0ced30ac1c4127eb83db11c709f7096ad73540e34d2a4bd33039802f87f5b"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8159-function-power.json",
+        "sha256": "51938026e4c8455ccbb2c90968247809286498b8510c6046f50b8e2c4f929bd8"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8159-port-reset-cycles.json",
+        "sha256": "91ff8326c2737c12ece50ebaecac12b1798cfadaa2b7bea5978f6b8675670eaa"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-hidreset-8127-hidreset-20261102-8159-native-cable.json",
+        "sha256": "440f9d7ccfc2187fa1b47f799f1307e1ff0150daf40564c4ff6c811d454fe49a"
+      },
+      "seconds": 96.15
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

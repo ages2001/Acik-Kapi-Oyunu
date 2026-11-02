@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-02T09:01:02.422781+00:00",
+  "guest": "nt351-usbsetup-rtl8139-finalcheck-8127",
+  "files": {
+    "WINNT351/system32/drivers/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 411648,
+      "sha256": "92b201af42e3ddc15a8fd46f88f0f28ffd337ae2ac0f04f74558f0abbd2bbcab"
+    },
+    "WINNT351/system32/drivers/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    },
+    "RLTTEST/TCPBASE.LOG": {
+      "file": "TCPBASE.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    },
+    "RLTTEST/TCPRST.LOG": {
+      "file": "TCPRST.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    },
+    "RLTTEST/TCPCABLE.LOG": {
+      "file": "TCPCABLE.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    }
+  }
+}

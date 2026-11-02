@@ -1,0 +1,18 @@
+{
+  "result": "PASS_SAME_LOADED_SECTIONS_AND_RESOURCES",
+  "sections": [
+    ".text",
+    ".rdata",
+    ".bss",
+    ".idata",
+    ".rsrc",
+    ".reloc"
+  ],
+  "resource_leaves": 5,
+  "files": {
+    "base-ready.log": "4829a462665bea623b1c885c0bdbb1fbc8f682c89c9033cc1fdb7aeb7539fca0",
+    "filealign-ready.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "base.exe": "bde6a075d5db8348ac20ece57c1022964fc6a631bba1de02d40fd1b694b1c1a9",
+    "filealign.exe": "fea1d48df200e0c617e969bb2288dfbde0e27b79d3491b05b6c8b28aa64f3748"
+  }
+}

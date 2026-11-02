@@ -1,0 +1,51 @@
+{
+  "utc": "2026-11-01T23:11:59.018387+00:00",
+  "result": "PASS",
+  "scope": "Actual current-helper custom Startup migration and two SyncStartup calls in one loaded module, preserving unrelated items and same-title different command in another group",
+  "checks": {
+    "double_success": true,
+    "batch_pass": true,
+    "custom_setting": true,
+    "one_owned_new_group": true,
+    "old_owned_removed": true,
+    "unrelated_preserved": true,
+    "other_group_user_command_preserved": true,
+    "exact_helper": true
+  },
+  "groups": {
+    "Startup": {
+      "dhcp_titles": 0,
+      "dhcp_commands": 0,
+      "notepad_commands": 1,
+      "user_titles": 1
+    },
+    "ConflictBoot": {
+      "dhcp_titles": 1,
+      "dhcp_commands": 0,
+      "notepad_commands": 1,
+      "user_titles": 0
+    },
+    "RltBoot": {
+      "dhcp_titles": 1,
+      "dhcp_commands": 1,
+      "notepad_commands": 0,
+      "user_titles": 0
+    }
+  },
+  "setting": "RltBoot",
+  "files": {
+    "SYSTEM": "4f79ef41354f63664e0bf012e8a2c6e2b6fb6061a6c239061fa4de2bc4f5d028",
+    "CREPEAT.TXT": "42c17b53377221e87dde379cf5ef78a501d854b0bac40397dc4fe3dbf11f09f2",
+    "CUSTOM.TXT": "40db05e6ad620e56fd613981af0185583a413232bf7d76aa592dd9016cb27848",
+    "CCONF.TXT": "ccf354f04ef52579bb64228bdf8ffccd176da56e7969991fc31904e04258a40d",
+    "SOFTWARE": "66bc509e9c2f8a15ed1325e9f8b668868b39f446f13c9a954d032b8727e620ed",
+    "CUSTOM.BAT": "286bf2da0276f1369154fd13ec95c444ad1ca6261d912f1fc3beb04a788ffd80",
+    "RLTSETUP.DLL": "35094bec3a1cbb5d6e4f27b78a0706b038b9ceded88156eb6628ba03bd884f8d",
+    "CBOOT.TXT": "dbd0e660615432178e3e3e9e928334fca9f9a200c9ee9cac4079c89810418780",
+    "TEST_000": "0f8fcd3fd58d09772904733f062d869137b2105c26444a090f4c84cefbfcc892",
+    "CSTART.TXT": "a56deae833c778000d3625043f05eb3fa1e731491748f27735caba4f4edfa580"
+  },
+  "limits": [
+    "Automatic execution of the custom group on a cold logon is a separate check"
+  ]
+}

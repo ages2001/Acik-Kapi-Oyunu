@@ -1,0 +1,36 @@
+Formatting '/workspace/rltklant-vm/run/nt31-usbsetup-vendor-oid-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=419010560 backing_file=/tmp/rltk-growing-fat-3ljfqat6/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+16/6394 = 0.25% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1376256
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt31-usbsetup-vendor-oid-8127.qcow2",
+  "sha256_before_boot": "6d0c528878e8f8cc34b37fa88ea65c32e978eb8a00363581c75473c25d1acf97",
+  "files": [
+    {
+      "guest_path": "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys",
+      "size": 533504,
+      "sha256": "18b4c96ccc727ebc9bb7e1d617f70b83a5390080bf2a17191404d6270728efff",
+      "old_size": 506880,
+      "old_sha256": "7454a1f16047e37fba1682fff7aaa8d6d82683228109e63b8be7181b871643a1"
+    },
+    {
+      "guest_path": "N31TEST/N31RESET.SYS",
+      "source": "/workspace/rltklant-work/validation/nt31-reset-probe-v6-20261102/N31RESET.SYS",
+      "size": 6144,
+      "sha256": "618dc162548343df7aecfcdab76cc1964920cc16d09e920527b89b2a72915fe4",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "N31TEST/N31RESET.EXE",
+      "source": "/workspace/rltklant-work/validation/nt31-reset-probe-v6-20261102/N31RESET.EXE",
+      "size": 7828,
+      "sha256": "f419a466e5e8bbf69f9bc285ee53ffb22f7a14401d4321214c96a1170d68af46",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

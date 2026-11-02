@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-02T05:26:29.041477+00:00",
+  "guest": "nt351-usbsetup-rtl8139-proof-8127",
+  "result": "FAIL",
+  "scope": "Loopback-only bidirectional TCP fixture; compare every byte, retain failures.",
+  "rounds": [],
+  "sources": {
+    "tcp_stream_fixture.py": "c6d6cb61cdcff90eac82ef2d58cfdb6b16b73c5f44a00c5160dfccc7d61222cd",
+    "guest_tcp35.c": "f2ee3e9277a2b26a86178d6895bcbaf62ba7437dad4aa65bfddaffbf07d7336d"
+  },
+  "error": "PermissionError(1, 'Operation not permitted')"
+}

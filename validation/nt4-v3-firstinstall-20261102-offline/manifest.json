@@ -1,0 +1,32 @@
+{
+  "SYSTEM": {
+    "guest_path": "WINNT4/SYSTEM32/CONFIG/SYSTEM",
+    "bytes": 1015808,
+    "sha256": "bdf96f22ce8795dd9c7fdfa16b39d9e0cc059e75813e9f1794386f6d32c2baa0"
+  },
+  "SOFTWARE": {
+    "guest_path": "WINNT4/SYSTEM32/CONFIG/SOFTWARE",
+    "bytes": 598016,
+    "sha256": "b7be0ffe0241700c720e88146444c391afdf71e646f3e0639cb9f8bf0e25864c"
+  },
+  "RLTSETUP.DLL": {
+    "guest_path": "WINNT4/SYSTEM32/RLTSETUP.DLL",
+    "bytes": 22451,
+    "sha256": "04bbf1bf056e8b735db20a324c2e6912b2001ad6a78f8cd523d28086ad965fa2"
+  },
+  "RLTKNT35.INF": {
+    "guest_path": "WINNT4/SYSTEM32/RLTKNT35.INF",
+    "bytes": 23995,
+    "sha256": "2fd78779d686641ab8907416fffedc9b1ddbe725854b6cb2daefa470a0921330"
+  },
+  "RLTUSB.EXE": {
+    "guest_path": "WINNT4/SYSTEM32/RLTUSB.EXE",
+    "bytes": 12974,
+    "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+  },
+  "RLTKLANT.SYS": {
+    "guest_path": "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+    "bytes": 503183,
+    "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615"
+  }
+}

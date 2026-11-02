@@ -1,0 +1,5 @@
+PASS: pinned PCI MAC extraction
+RTL8117 real payload: 59 commands (transport only)
+PASS: 47 MAC dispatch versions, 8350 failed/cancelled boundary schedules, bounded CSI/ERI/EPHY/CMAC waits, mapping and operation/delay budgets; no DMA enable
+PASS: 564 hardware initialization/DASH cases, 5140 failed/cancelled boundaries; DP/EP/2.5G-BP selection, RTL8127 revision gate, RTL8117 OOB address adjustment, bounded waits; no DMA enable
+/workspace/rltklant-work/validation/pci-mac-hardware-v3-20261102/manifest.json

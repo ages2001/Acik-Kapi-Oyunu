@@ -1,0 +1,66 @@
+{
+  "utc": "2026-11-01T21:34:14.117020+00:00",
+  "scope": "Read-only NT3.1 installation hive inspection",
+  "hive_sha256": {
+    "SYSTEM": "2828e09951183ffb74bdb55ca88feeca4374d3edf70be21c6b90d086488e07b3",
+    "SOFTWARE": "2baa19a54f17a6ff43dd045cc212b01001aa3a81e727122c43ae190b0efb2899"
+  },
+  "network_cards": {
+    "01": {
+      "ServiceName": "RLTKLANT01",
+      "Manufacturer": "Realtek",
+      "Title": "[01] Realtek PCI/PCIe Ethernet Adapter",
+      "Description": "Realtek PCI/PCIe Ethernet Adapter",
+      "ProductName": "RLTKLANT",
+      "InstallDate": 1793178221,
+      "parameters": {
+        "InterruptNumber": 10,
+        "BusType": 0,
+        "MediaType": 1,
+        "EnableDHCP": 0,
+        "IoBaseAddress": 768,
+        "UsbNtAdapter": 1,
+        "UsbPermanentAddress": "525400abcdef",
+        "DhcpHwAddress": "52:54:00:ab:cd:ef"
+      },
+      "tcpip": {
+        "IPAddress": "10.0.2.15",
+        "SubnetMask": "255.255.255.0",
+        "KeepAlive": 1,
+        "BroadcastType": 1,
+        "ForwardBroadcasts": 0,
+        "Trailers": 0,
+        "DefaultGateway": "10.0.2.2",
+        "NameServer": "10.0.2.3"
+      }
+    },
+    "02": {
+      "ServiceName": "RLTKLANT02",
+      "Manufacturer": "Realtek",
+      "Title": "[02] Realtek PCI/PCIe or USB Ethernet Adapter",
+      "Description": "Realtek PCI/PCIe or USB Ethernet Adapter",
+      "ProductName": "RLTKLANT",
+      "InstallDate": 1793568428,
+      "parameters": {
+        "InterruptNumber": 10,
+        "BusType": 5,
+        "MediaType": 1,
+        "EnableDHCP": 1,
+        "IoBaseAddress": 768,
+        "UsbNtAdapter": 0,
+        "DhcpHwAddress": "52:54:00:12:34:56"
+      },
+      "tcpip": {
+        "IPAddress": "10.0.3.15",
+        "SubnetMask": "255.255.255.0",
+        "KeepAlive": 1,
+        "BroadcastType": 1,
+        "ForwardBroadcasts": 0,
+        "Trailers": 0,
+        "DefaultGateway": "10.0.3.2",
+        "NameServer": "10.0.3.3"
+      }
+    }
+  },
+  "logon_run": null
+}

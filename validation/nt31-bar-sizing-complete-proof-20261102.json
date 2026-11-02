@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-02T00:35:26.304340+00:00",
+  "result": "PASS_HOST_AND_GUEST",
+  "driver": "frozen-builds/nt31-bar-sizing-20261102/manifest.json",
+  "host": "nt31-bar-sizing-host-20261102.log",
+  "traffic": "nt31-usbsetup-bar-sizing-8127-bar-sizing-v2-20261102.json",
+  "full_payload_replies": 8,
+  "evidence": "nt31-bar-sizing-final-evidence-20261102/manifest.json",
+  "scope": "Measured PCI BAR mapping, actual NT3.1 cold boot with MMIO-only RTL8127 and surviving USB network, normal safe-off",
+  "limits": [
+    "Earlier USB wire replies passed but cursor-obscured OCR failed; preserved separate run.",
+    "The standalone MAC configuration component is not linked into this driver."
+  ]
+}

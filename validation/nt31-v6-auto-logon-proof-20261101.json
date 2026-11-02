@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-01T21:34:14.127932+00:00",
+  "result": "PASS",
+  "scope": "NT3.1 additional-adapter NCPA installation followed by normal cold boot, installing-user Startup DHCP execution and USB/PCI traffic. Distinct preconfigured subnets; no manual DHCP invocation after cold boot.",
+  "installer": "nt31-v6-installer-copy-startup-proof-20261101.json",
+  "start": "nt31-v6-auto-logon-start-20261101.json",
+  "packet_capture": "nt31-v6-auto-logon-pcaps-20261101/manifest.json",
+  "post_logon_traffic": "nt31-usbsetup-ncpa-v6-reboot-8127-auto-dhcp-coldboot-20261101.json",
+  "traffic_capture": "nt31-v6-post-logon-traffic-pcaps-20261101/manifest.json",
+  "offline_files": "nt31-v6-auto-logon-offline-20261101/manifest.json",
+  "offline_registry": "nt31-v6-auto-logon-registry-20261101.json",
+  "screenshot": "nt31-v6-auto-dhcp-log-20261101.png",
+  "sequence": [
+    "DISCOVER",
+    "OFFER",
+    "REQUEST",
+    "ACK"
+  ],
+  "enabled_service": "RLTKLANT02",
+  "disabled_service": "RLTKLANT01",
+  "disabled_interface_dhcp_packets": 0,
+  "new_log_records": 1,
+  "startup_title_count_after_logon": 1,
+  "full_payload_replies_after_logon": 8,
+  "limits": [
+    "Not a clean first-driver installation",
+    "Custom Startup group, repeated installation and uninstall remain untested",
+    "Unconfigured/overlapping multi-adapter subnets unsupported",
+    "Lease is saved for restart; no live address change or continuous renewal",
+    "QEMU protocol evidence, not physical silicon validation"
+  ]
+}

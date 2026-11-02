@@ -1,0 +1,10 @@
+{
+  "guest": "xp64-usbnet-classreset-8127",
+  "utc": "2026-11-02T12:36:32.005233+00:00",
+  "token": "classreset-20261102-8159-after-power",
+  "report": "TOKEN classreset-20261102-8159-after-power\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:02.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+  "peer": [
+    "127.0.0.1",
+    50323
+  ]
+}

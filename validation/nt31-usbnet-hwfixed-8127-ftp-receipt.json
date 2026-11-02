@@ -1,0 +1,9 @@
+{
+  "guest": "nt31-usbnet-hwfixed-8127",
+  "file": "nprobe3.exe",
+  "sha256": "1e0e3769c4e3c0d4df037c30518b10aa8ac51b11c153914a743ee290d67190a3",
+  "bytes": 15190,
+  "time": 1793551632.1756315,
+  "utc": "2026-11-01T16:47:12.175642+00:00",
+  "scope": "Server buffered bytes; guest byte count and ftp prompt still require visual verification"
+}

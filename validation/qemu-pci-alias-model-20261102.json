@@ -1,0 +1,43 @@
+{
+  "utc": "2026-11-01T23:35:26.069513+00:00",
+  "qemu_sha256": "d651fe629799661c2fda009bf67cc2ab52cb6e49499cac92604b38ceb854162f",
+  "result": "PASS",
+  "profiles": [
+    {
+      "alias": "0x3000",
+      "mmio_only": false,
+      "checks": "PCIe identity, PHY/OCP, XID, TX/RX/FCS, DMA bounds, carrier, reset"
+    },
+    {
+      "alias": "0x3000",
+      "mmio_only": true,
+      "checks": "PCIe identity, PHY/OCP, XID, TX/RX/FCS, DMA bounds, carrier, reset"
+    },
+    {
+      "alias": "0x5000",
+      "mmio_only": false,
+      "checks": "PCIe identity, PHY/OCP, XID, TX/RX/FCS, DMA bounds, carrier, reset"
+    },
+    {
+      "alias": "0x5000",
+      "mmio_only": true,
+      "checks": "PCIe identity, PHY/OCP, XID, TX/RX/FCS, DMA bounds, carrier, reset"
+    },
+    {
+      "alias": "0xe10",
+      "mmio_only": false,
+      "checks": "PCIe identity, PHY/OCP, XID, TX/RX/FCS, DMA bounds, carrier, reset"
+    },
+    {
+      "alias": "0xe10",
+      "mmio_only": true,
+      "checks": "PCIe identity, PHY/OCP, XID, TX/RX/FCS, DMA bounds, carrier, reset"
+    }
+  ],
+  "rejected": [
+    "rtl8125,pci-id-alias=0x1234",
+    "rtl8127,pci-id-alias=0x3000",
+    "rtl8169,variant=2,pci-id-alias=0x3000"
+  ],
+  "scope": "PCI aliases share the modeled RTL8125A register contract; no physical or distinct silicon-revision claim"
+}

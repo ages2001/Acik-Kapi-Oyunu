@@ -1,0 +1,30 @@
+{
+  "guest": "win2000-standard-usbnet-retirement-8127",
+  "utc": "2026-11-02T08:49:34.218747+00:00",
+  "scope": "Actual guest internal USB RESET_PORT plus automatic driver recovery; no PnP disable/enable or guest restart; QEMU only",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-retirement-8127",
+      "utc": "2026-11-02T08:49:34.209863+00:00",
+      "token": "retirement-20261102-8153-portreset01",
+      "report": "TOKEN retirement-20261102-8153-portreset01\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:03.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        58890
+      ],
+      "reset_trace": "RESETTEST object=00000000\nRESETTEST ioctl=00000000\n",
+      "readiness": {
+        "ready": true,
+        "requests": 4,
+        "matched_replies": 4,
+        "unmatched_requests": 0,
+        "first_reply_seconds": 4.307376060998649,
+        "four_reply_seconds": 6.720265071009635,
+        "timeout_seconds": 60,
+        "scope": "End-to-end timing after helper completion and any requested cable restoration, including guest command dispatch and ping intervals; final guest probe required"
+      },
+      "cable_down_at_reset": false,
+      "elapsed_seconds": 20.534028841007967
+    }
+  ]
+}

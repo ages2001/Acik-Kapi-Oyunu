@@ -1,0 +1,9 @@
+QEMU-tested development drivers, not universal hardware support.
+
+NT3.1 and NT3.5x/4 setup helper/utility bytes match the previously guest-tested packages. The INF templates are unchanged except automatically corrected copy-list sizes. The new combined package is assembled/read back; a full fresh installation of this exact combination is not claimed.
+
+2KXP contains the existing universal INF and the exact ndis5/ndis5x64 tested drivers. A new self-signed test catalog covers these exact files. Windows 2000 and XP x64 CryptoAPI verify this exact catalog's signatures, all three member digests and rejection of a modified INF. The generator sorts encoded subject identifiers; the prior unsorted catalog failed x64 membership on both OSes. No certificate was imported. It does not grant publisher trust or WHQL status.
+
+Legacy USB networking requires USBNT. NT5 ordinary devices use the universal INF; the fictional mixed NIC/HID test INF belongs only to validation, not real hardware.
+
+Consult ../../validation/STATUS.md and SOURCE-AUDIT.md for tested models, OS versions, firmware/PHY limits and remaining work.

@@ -1,0 +1,1 @@
+PASS: 63 production retained-controller transactions, 49 restore fault points, preflight rollback, failed start/release retry, changed identity/removal, six Windows functions and all five native owner gates

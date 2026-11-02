@@ -1,0 +1,25 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-release13-v2-8127",
+  "utc": "2026-11-02T18:41:27.349578+00:00",
+  "result": "HOST_DEVICE_REMOVED_WHILE_CONTROLLER_D3",
+  "scope": "Remove the fictional mixed NIC/HID device while its EHCI parent is in D3.\n\nStop after D0 so the caller can inspect any legitimate Windows removal notice.\nThis does not assert that unplugging hardware preserves its old Windows PDO.\n",
+  "device_del": {},
+  "peripherals_while_d3": [
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "debugcon",
+      "type": "child<isa-debugcon>"
+    },
+    {
+      "name": "ahci",
+      "type": "child<ich9-ahci>"
+    },
+    {
+      "name": "ehci",
+      "type": "child<usb-ehci>"
+    }
+  ]
+}

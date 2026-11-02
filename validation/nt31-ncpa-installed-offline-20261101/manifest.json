@@ -1,0 +1,34 @@
+{
+  "utc": "2026-11-01T20:36:27.642571+00:00",
+  "scope": "Read-only extraction after actual NCPA install and normal shutdown",
+  "files": {
+    "SYSTEM": {
+      "guest_path": "WINNT31/system32/config/SYSTEM",
+      "size": 643072,
+      "sha256": "33630534ace9105ecf7f27f518e0f5f786b43cd439141a1ece1c11276eb8c2a4"
+    },
+    "SOFTWARE": {
+      "guest_path": "WINNT31/system32/config/SOFTWARE",
+      "size": 319488,
+      "sha256": "f3f871f51267c67ef14a5d36dfed17f1f14f58b785551640e6d7565ae5a22fb2"
+    },
+    "RLTUSB.EXE": {
+      "guest_path": "WINNT31/system32/RLTUSB.EXE",
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "matches_package": true
+    },
+    "RLTKLANT.SYS": {
+      "guest_path": "WINNT31/system32/drivers/RLTKLANT.SYS",
+      "size": 506368,
+      "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca",
+      "matches_package": true
+    },
+    "DHCPNT31.EXE": {
+      "guest_path": "WINNT31/system32/DHCPNT31.EXE",
+      "size": 21758,
+      "sha256": "add434c0e5f26bd1ef8f45246a2c7d11c646fe85dcdbf741128825f54a1b8ddf",
+      "matches_package": false
+    }
+  }
+}

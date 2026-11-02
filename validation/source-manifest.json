@@ -1,0 +1,68 @@
+{
+  "repository": "https://github.com/torvalds/linux",
+  "commit": "65ba8f34ec886ec72b2c07ddc8cf3d815c32869d",
+  "files": [
+    {
+      "path": "ethernet/realtek/r8169_main.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/65ba8f34ec886ec72b2c07ddc8cf3d815c32869d/drivers/net/ethernet/realtek/r8169_main.c",
+      "sha256": "cb918734e19369d22fd0e65657c0183518f0ba59b57745a74f6a5bbcf56f37cc"
+    },
+    {
+      "path": "ethernet/realtek/r8169_phy_config.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/65ba8f34ec886ec72b2c07ddc8cf3d815c32869d/drivers/net/ethernet/realtek/r8169_phy_config.c",
+      "sha256": "11a8ef375261e3aa3575ac641ea413f3c951d2cbf3b716bfd241b2c9ef78819c"
+    },
+    {
+      "path": "ethernet/realtek/r8169_firmware.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/65ba8f34ec886ec72b2c07ddc8cf3d815c32869d/drivers/net/ethernet/realtek/r8169_firmware.c",
+      "sha256": "24f9397bab187dbdcf20918e86740081e2c44934b0427ca7902fa7ac773fa1b9"
+    },
+    {
+      "path": "ethernet/realtek/r8169_firmware.h",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/65ba8f34ec886ec72b2c07ddc8cf3d815c32869d/drivers/net/ethernet/realtek/r8169_firmware.h",
+      "sha256": "d3ccb59f6f0eefd714d1aa7e7b475b42c4951fcad12c1e241be0037f1955c94a"
+    },
+    {
+      "path": "ethernet/realtek/r8169.h",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/65ba8f34ec886ec72b2c07ddc8cf3d815c32869d/drivers/net/ethernet/realtek/r8169.h",
+      "sha256": "d886f95742dfcfeb30433b12f31fb078df122817c4c088394dd6199b38fb88ea"
+    },
+    {
+      "path": "ethernet/realtek/8139too.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/65ba8f34ec886ec72b2c07ddc8cf3d815c32869d/drivers/net/ethernet/realtek/8139too.c",
+      "sha256": "0bfee561b410dcf248a954d951ba92707a4b1ff6cfcf28a89f5abe5d5f16d9a1"
+    },
+    {
+      "path": "ethernet/realtek/8139cp.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/65ba8f34ec886ec72b2c07ddc8cf3d815c32869d/drivers/net/ethernet/realtek/8139cp.c",
+      "sha256": "9690c6c86ad511d7241277100873faeffb4d38617477339417e40d85f7f65193"
+    },
+    {
+      "path": "usb/r8152.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/65ba8f34ec886ec72b2c07ddc8cf3d815c32869d/drivers/net/usb/r8152.c",
+      "sha256": "5bd96f8f64dffd5d57b9b0f5bbe1117454750154b281f6106529ee62c5ae49d7"
+    },
+    {
+      "path": "usb/rtl8150.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/65ba8f34ec886ec72b2c07ddc8cf3d815c32869d/drivers/net/usb/rtl8150.c",
+      "sha256": "37ff525813fc739a7222fefaf5cfd99fe81379907b3e63785578e7ce5635485d"
+    },
+    {
+      "path": "ethernet/8390/ne2k-pci.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/65ba8f34ec886ec72b2c07ddc8cf3d815c32869d/drivers/net/ethernet/8390/ne2k-pci.c",
+      "sha256": "42319cbc965e70774ddaf833b4b2fc3968af2f1dc07066684aec8fb9e7c70315"
+    }
+  ],
+  "vendor_references": [
+    {
+      "repository": "https://github.com/minisforum-repo/r8127-dkms",
+      "commit": "7e9523a0f75ff2ee0090c4c8dc608893dea51dc9",
+      "license": "GPL-2.0; reference checkout kept separately from release binaries"
+    },
+    {
+      "repository": "https://github.com/bb-qq/r8152",
+      "commit": "477a723a41c3340bd7d701f657711c334d0c42bd",
+      "license": "GPL-2.0; reference checkout kept separately from release binaries"
+    }
+  ]
+}

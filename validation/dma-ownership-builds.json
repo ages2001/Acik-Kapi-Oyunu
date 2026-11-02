@@ -1,0 +1,26 @@
+[
+  {
+    "target": "ndis3",
+    "size": 74032,
+    "sha256": "3abc979a82a7cd776be117664ec304191a5dd2ac1e824467e05d9183da0500e6",
+    "scope": "C+ DMA compiler ordering; NT3.1 PCI TX ownership/backpressure and serialization. Not the older stall32/stall64 guest binary."
+  },
+  {
+    "target": "ndis5",
+    "size": 88510,
+    "sha256": "3a914df780237e61534d85e16e9efaf059ad6b6d5f52905c8a20bec1993d23db",
+    "scope": "C+ DMA compiler ordering; NT3.1 PCI TX ownership/backpressure and serialization. Not the older stall32/stall64 guest binary."
+  },
+  {
+    "target": "ndis5x64",
+    "size": 89449,
+    "sha256": "9ee93ada9cf2f539cbf5f0cfe8315733c5eabe110488575439f53ac92af96f89",
+    "scope": "C+ DMA compiler ordering; NT3.1 PCI TX ownership/backpressure and serialization. Not the older stall32/stall64 guest binary."
+  },
+  {
+    "target": "ndisnt31",
+    "size": 51712,
+    "sha256": "62304d3c2180fd145c4609eabac6ee63bb92641b1a59a1aa27d966787f1f2fb2",
+    "scope": "C+ DMA compiler ordering; NT3.1 PCI TX ownership/backpressure and serialization. Not the older stall32/stall64 guest binary."
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "release": false,
+  "version": "1.2 development candidate",
+  "files": {
+    "usbntkbd.inf": {
+      "bytes": 999,
+      "sha256": "2fbcdcfab0f23e7e60d9267f4a0487f4009dce331fa95fd365592504ad84514b"
+    },
+    "usbnt.inf": {
+      "bytes": 39630,
+      "sha256": "71426da78b4a31c56da88f3968b00ce055adfd84aad4301723a532b953fccbfb"
+    },
+    "usbntmou.inf": {
+      "bytes": 987,
+      "sha256": "76749cb112f48fb514899e685169d6d6802b221ac714ed76a155e8c9671f1087"
+    },
+    "amd64/usbnt.sys": {
+      "bytes": 521728,
+      "sha256": "dfed77a964f30d23fc6d7a247f9c95880edc1ba32a7134ace703c195f82a9d4d"
+    },
+    "amd64/usbntcap.dll": {
+      "bytes": 31232,
+      "sha256": "7ab849991869e175751a318f0879f9db7f65293f2878ff43160614f8b42a6fa8"
+    },
+    "amd64/usbinst.exe": {
+      "bytes": 37888,
+      "sha256": "0fd3e3c49a75bf6a7b86e112731c0a63917f8cdb8827ed3182e1be6f0e17945a"
+    }
+  }
+}

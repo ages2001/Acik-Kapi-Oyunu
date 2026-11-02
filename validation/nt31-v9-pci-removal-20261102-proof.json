@@ -1,0 +1,54 @@
+{
+  "utc": "2026-11-01T22:46:31.662841+00:00",
+  "guest": "nt31-usbsetup-v9-remove-8127",
+  "result": "PASS",
+  "checks": {
+    "pci_card_removed": true,
+    "pci_parameters_removed": true,
+    "owned_startup_removed": true,
+    "unrelated_startup_preserved": true,
+    "usb_parameters_preserved": true,
+    "usb_card_preserved": true,
+    "shared_service_preserved": true,
+    "shared_product_preserved": true
+  },
+  "scope": "Actual NCPA removal, completed native TCP/IP bindings and normal shutdown readback",
+  "expected_remaining": "usb",
+  "usb_parameters": {
+    "InterruptNumber": 10,
+    "BusType": 0,
+    "MediaType": 1,
+    "EnableDHCP": 0,
+    "IoBaseAddress": 768,
+    "UsbNtAdapter": 1,
+    "UsbPermanentAddress": "525400abcdef",
+    "DhcpHwAddress": "52:54:00:ab:cd:ef"
+  },
+  "pci_parameters": null,
+  "shared_service": {
+    "Type": 1,
+    "Start": 3,
+    "ErrorControl": 1,
+    "ImagePath": "\\SystemRoot\\System32\\drivers\\rltklant.sys",
+    "DisplayName": "Realtek RLTKLANT Adapter Driver",
+    "Group": "NDIS"
+  },
+  "shared_product": {
+    "ServiceName": "RLTKLANT",
+    "RefCount": 1,
+    "SoftwareType": "driver",
+    "MajorVersion": 3,
+    "MinorVersion": 1,
+    "Title": "Realtek RLTKLANT Adapter Driver",
+    "Description": "Realtek RLTKLANT Adapter Driver",
+    "InstallDate": 1793178221
+  },
+  "hives": {
+    "SYSTEM": "5cd89f860cdca9bd1bb192cb9e060305bf97e7a5bf86aacb2382427437dcc3a8",
+    "SOFTWARE": "e4e1422902f33b7f787ec34c5b50b19c27a2f049cef234b95aaa6a2c5ce228e1",
+    "TEST_000": "da14613607ec850ee04e9cedfc729b0289f8a07ea3db4d592a401b3dd907e202"
+  },
+  "limitations": [
+    "Cold boot and surviving adapter traffic require separate evidence"
+  ]
+}

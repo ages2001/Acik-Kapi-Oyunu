@@ -1,0 +1,61 @@
+{
+  "utc": "2026-11-02T12:26:52.995077+00:00",
+  "result": "PASS_WITH_OPEN_RELEASE_WORK",
+  "snapshot": "frozen-builds/usbnt-audio-reset-v3-20261102",
+  "production_host_cases": {
+    "rundown": 10000,
+    "open_restore_fault_retry": 4050,
+    "uac2_clock_outcomes": 4
+  },
+  "qemu_physical_resets": 25,
+  "qemu_rows": [
+    {
+      "fixture": "xhci-uac2",
+      "result": "PASS",
+      "physical_resets": 5
+    },
+    {
+      "fixture": "ehci-uac2",
+      "result": "PASS",
+      "physical_resets": 5
+    },
+    {
+      "fixture": "ehci-tt-uac1",
+      "result": "PASS",
+      "physical_resets": 5
+    },
+    {
+      "fixture": "uhci-uac1",
+      "result": "PASS",
+      "physical_resets": 5
+    },
+    {
+      "fixture": "ohci-uac1",
+      "result": "PASS",
+      "physical_resets": 5
+    }
+  ],
+  "evidence": {
+    "usbnt-audio-reset-v3-xhci-uac2-20261102.log": "eee0336b5dde1c8da0f0aa4d9ca40807f36158d88d9b03099d7ac3eb6b193d04",
+    "usbnt-audio-reset-v3-ehci-uac2-20261102.log": "496b3218cb0638f31b9dabba7279dfb316c07ffb4957bff49ce55a4c8ffd5569",
+    "usbnt-audio-reset-v3-ehci-tt-uac1-20261102.log": "1086014c090d2c27b4130c797cf77146dd15634776c0573ade3de87468574636",
+    "usbnt-audio-reset-v3-uhci-uac1-20261102.log": "fbce8e2407174bbb68a1d7d9a9130ef356fb51ba5e4ab82d31466dabdb6014fd",
+    "usbnt-audio-reset-v3-ohci-uac1-20261102.log": "851c814300c081410645252381b58169066591cfc7e57a8344c735a44d0f8ca5",
+    "usbnt-audio-reset-rundown-host-v3-20261102.log": "67b568decfdf86206cd6462a4dbbb4d651ae0f8dd5e3952339d00fcbcf5a5dd6",
+    "usbnt-audio-reset-open-host-v2-20261102.log": "8f45ba16e6f0538cc3163bf8ee4a398f7e451208a54c8c0ab273f41752c09ae3",
+    "usbnt-audio-reset-orchestration-20261102.log": "c73bb3a94b25bcd5c075174296db7f7a00fd93850df18ca285edb8f4754e7a16"
+  },
+  "tests": {
+    "USBNT/test/host/tuacrundown.c": "bb9eb475558acf5c6b9650e520078e98c43323fc62356c6dcd7480db14812186",
+    "USBNT/test/host/tuaopen.c": "b51a971bc92c6c020534c3effb34be821881e79d12b8ecece17a1eb8d540261e",
+    "USBNT/test/tuacreset.py": "a490743064049721027b46d40768db5cb5953377b5891d56709a17d481c54b93",
+    "validation/test_usbdi_port_reset.py": "87586f459b26efbc127ee5a88d1f541bb4b83b5d34905868124d473ce9e4859e"
+  },
+  "scope": "Native QEMU UAC1/UAC2 duplex audio, feedback, capture, MIDI and control replay. Physical reset preserves audio ID, requested format and callback context. Host tests exercise production allocation, pipe, control, startup failure and retry paths.",
+  "limits": [
+    "Host controller and register operations are mocked in fault tests.",
+    "Installed Windows regression is recorded separately for these exact hashes.",
+    "Identity-preserving parent sleep, mixed-owner guest fixtures and release media remain open.",
+    "No physical silicon certification. USBNT 1.3 remains unreleased."
+  ]
+}

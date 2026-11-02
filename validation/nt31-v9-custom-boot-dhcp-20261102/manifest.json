@@ -1,0 +1,106 @@
+{
+  "utc": "2026-11-01T23:14:28.271241+00:00",
+  "result": "PASS",
+  "scope": "Cold boot and ordinary logon with custom RltBoot Startup; no manual DHCP invocation; one PCI DORA and zero disabled USB DHCP",
+  "captures": {
+    "usb.pcap": {
+      "bytes": 34427,
+      "sha256": "adb8f9ddc09b20ce24a41d3ea67cfa9e2ec433d73044f1fc674c6209af4ee04c",
+      "start_offset": 24,
+      "events": []
+    },
+    "pci.pcap": {
+      "bytes": 9285,
+      "sha256": "ecb5ca6df50d0c3ea1687503382b1809bd4de5c7e6e571de3cb613186b21b0df",
+      "start_offset": 24,
+      "events": [
+        {
+          "offset": 4222,
+          "timestamp": 1793574813.89922,
+          "source": "10.0.3.15",
+          "destination": "255.255.255.255",
+          "ports": [
+            68,
+            67
+          ],
+          "message_type": 1,
+          "xid": "6aa80000",
+          "mac": "525400123456",
+          "yiaddr": "0.0.0.0",
+          "options": {
+            "53": "01",
+            "55": "01030633"
+          }
+        },
+        {
+          "offset": 4530,
+          "timestamp": 1793574813.899286,
+          "source": "10.0.3.2",
+          "destination": "255.255.255.255",
+          "ports": [
+            67,
+            68
+          ],
+          "message_type": 2,
+          "xid": "6aa80000",
+          "mac": "525400123456",
+          "yiaddr": "10.0.3.15",
+          "options": {
+            "53": "02",
+            "54": "0a000302",
+            "1": "ffffff00",
+            "3": "0a000302",
+            "6": "0a000303",
+            "51": "00015180"
+          }
+        },
+        {
+          "offset": 5136,
+          "timestamp": 1793574813.903433,
+          "source": "10.0.3.15",
+          "destination": "255.255.255.255",
+          "ports": [
+            68,
+            67
+          ],
+          "message_type": 3,
+          "xid": "6aa80000",
+          "mac": "525400123456",
+          "yiaddr": "0.0.0.0",
+          "options": {
+            "53": "03",
+            "50": "0a00030f",
+            "54": "0a000302",
+            "55": "01030633"
+          }
+        },
+        {
+          "offset": 5456,
+          "timestamp": 1793574813.903448,
+          "source": "10.0.3.2",
+          "destination": "255.255.255.255",
+          "ports": [
+            67,
+            68
+          ],
+          "message_type": 5,
+          "xid": "6aa80000",
+          "mac": "525400123456",
+          "yiaddr": "10.0.3.15",
+          "options": {
+            "53": "05",
+            "54": "0a000302",
+            "1": "ffffff00",
+            "3": "0a000302",
+            "6": "0a000303",
+            "51": "00015180"
+          }
+        }
+      ]
+    }
+  },
+  "configuration": "nt31-v9-custom-proof-20261102.json",
+  "limits": [
+    "Distinct preconfigured subnets; no live address replacement or renewal proof"
+  ]
+}

@@ -1,0 +1,897 @@
+[
+  {
+    "path": "validation/__pycache__/boot_smoke.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "6620c0d3c265bb9c1e41b4fc747d9de40fece117940178c76e06a8ac3a0e89ad"
+  },
+  {
+    "path": "validation/__pycache__/build_hc_power_probe.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "4aa27cf8821857a4736d66f40edd75930b5eb9e9a60c8a1a455e820404d0c840"
+  },
+  {
+    "path": "validation/__pycache__/close_release13_legacy.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "02a74669ffa141772fb72476776fdee619d78ae24c0cfbfd335b60ddf62789b5"
+  },
+  {
+    "path": "validation/__pycache__/close_release13_nt5.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "6fc0e6b3665c6716ca726fb69314f4be71289aeaba43ac9a5eaf9eee81f94807"
+  },
+  {
+    "path": "validation/__pycache__/close_sleep_v3_checkpoint.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "5ef0482548a3ca813fb8916b9b6a54e17e6a447ea818b711aae35246ba0ef1c2"
+  },
+  {
+    "path": "validation/__pycache__/close_syncrun_checkpoint.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "cc276ce044af65855d1b2381d14b48604068cd347f392f77304d0ade4d9e56a2"
+  },
+  {
+    "path": "validation/__pycache__/dhcp_capture.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "692bac6e2c8e8aa427d0990f2effcaa6a54c5e25aa30f0a6b3695176c41b2cc0"
+  },
+  {
+    "path": "validation/__pycache__/dismiss_w2k_unsafe.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "386665e6510ce153d3f02ae162e9b4f27bde126a925623e6e92be05959f88ab0"
+  },
+  {
+    "path": "validation/__pycache__/freeze_stopped_guest.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "5d0b30bfa98ffda3590bb42e7950b2e4b889a7a8a7d382444970c039bac675da"
+  },
+  {
+    "path": "validation/__pycache__/hotplug_guest.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "694380f2b82a1e9d7013185d7cba633251932728111c16d27b64e6da2459f3da"
+  },
+  {
+    "path": "validation/__pycache__/inspect_nt31_install.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "f9cd7e10626faa43206c7ba6dce5cf4c5147c234a5749a93e6c4c690e227a428"
+  },
+  {
+    "path": "validation/__pycache__/legacy_first_readback.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "0c5e87307c49e467b14cf2de26f152c8be1a00cd89b2b1ae9694c3bcd5acc92b"
+  },
+  {
+    "path": "validation/__pycache__/legacy_network_report.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "1bf13acac0a6ca2a430a08242f637c90a9727aae95033f8830d1f4fcd97a710c"
+  },
+  {
+    "path": "validation/__pycache__/legacy_sibling_cycles.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "6fc3fcc2b40e9ab720c15f392ac77cc869628fd8752ae63bd47baf4dde6f0737"
+  },
+  {
+    "path": "validation/__pycache__/measure_legacy_attach.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "f89e1ee7716a026371eecd56afd279944361a580e75b3011921c9476e4e6452a"
+  },
+  {
+    "path": "validation/__pycache__/mixed_controller_sleep_cycles.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "1156b1cf518140bb74eee0ec083720ecfc1fd5a8cdb4021c8374285b8208d563"
+  },
+  {
+    "path": "validation/__pycache__/mixed_key_observer.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "900be81f0a43c92525b424e5ee7b5dc08d03ecc170d74e4b274db38ecd76d981"
+  },
+  {
+    "path": "validation/__pycache__/mixed_owner_reset_cycles.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "839f0f0c257a5888a8869657ba01c4ee51740d814c99057f895abe59e01582ca"
+  },
+  {
+    "path": "validation/__pycache__/mixed_physical_reset_cycles.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "8c6ab6e037daeb88b577d50e8232b832c8d0eac34a5dcc9ad25108f87deae519"
+  },
+  {
+    "path": "validation/__pycache__/mixed_sleep_remove.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "193f44b84041f23b7cfa03d56173134584b1cf8f1c92649762e4af201926970a"
+  },
+  {
+    "path": "validation/__pycache__/native_controller_power_cycles.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "a647f65f22c7d99e4b9972ad47765e1917274d3caacf321481da3b0383dd693d"
+  },
+  {
+    "path": "validation/__pycache__/native_controller_power_each.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "141ce90211f86ec7917803ad8dff9dac4ccc25fb761169deb4d2bc9fa2c9b8c2"
+  },
+  {
+    "path": "validation/__pycache__/native_port_reset_cycles.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "070686cb867e021c86f70f6b401f18015da6360f20602f1ee8665a79eb7d669e"
+  },
+  {
+    "path": "validation/__pycache__/native_report.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "00bcf856bdc96c34db9727e10f84d15ddcfd069dc8b3145c89a2fb76345ba22e"
+  },
+  {
+    "path": "validation/__pycache__/native_retirement_matrix.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "8e8ad4d7244474e4276a1d9e37f5eb326f5785f1f06b9a0cc43a37d9a995e4e8"
+  },
+  {
+    "path": "validation/__pycache__/native_usb_cycles.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "507126654b08779577d5d6ceaa1d76b1cf7200d2597a4124fd6b1ed0af9a11d0"
+  },
+  {
+    "path": "validation/__pycache__/nt31_8139_rx_fault.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "8da38ae28463bd6f54de62f64a18775c6eaef67170a4339a51212b874a2f9378"
+  },
+  {
+    "path": "validation/__pycache__/nt31_network_report.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "ca46542e19fb3e0cfa5f894a251376233a03fcd1e4c190d87b25537bb419e98c"
+  },
+  {
+    "path": "validation/__pycache__/nt351_tcp_reset_matrix.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "6d2a56039728032eb01cce447be318286eb6fda33c525f59a5be6efdd2c5f3cb"
+  },
+  {
+    "path": "validation/__pycache__/package_development.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "81357d8eca32dba6f65654546fb44eb59b0161820bc2e7e9bb0b090afc72ecd2"
+  },
+  {
+    "path": "validation/__pycache__/package_release13_candidate.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "003f74ec3f5be75342b2eda03487a50e188b0fcb6e8214c5fbd2b5553834174b"
+  },
+  {
+    "path": "validation/__pycache__/prepare_legacy_first.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "2bf14665db1d114c09025de677edb54bb100ebe2476fb151208896961ba0392c"
+  },
+  {
+    "path": "validation/__pycache__/read_legacy_evt.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "e5ed90e4b6a712c12cdc19867a1aa2e081101cbce70110418f8bdd736a41c44b"
+  },
+  {
+    "path": "validation/__pycache__/reassemble_media.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "05f7ded53ca78130efa1d2a992056a4223138bdff5b087635d3a79c7c4e2ec69"
+  },
+  {
+    "path": "validation/__pycache__/record_sync_rundown_proof.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "daf834ed9430ed9da4894c95f59542eadccb0eb3960bd8392590fbb1b6c8528e"
+  },
+  {
+    "path": "validation/__pycache__/replace_fat_fixture.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "a145924a14dccbddb54180dc8cd9cdb2f45f51f7f70115b711143fa2315d5e44"
+  },
+  {
+    "path": "validation/__pycache__/reset_traffic_readiness.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "da1023ff2513838d187a2a882765e323ec6c31259dc5a0cd65b7f6d0579b982c"
+  },
+  {
+    "path": "validation/__pycache__/stage_fat_hardware.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "eab5c257e4257931125b17f75854d6ed8df83b3be47ba838cf5f9f27febc4936"
+  },
+  {
+    "path": "validation/__pycache__/test_nt31_8139_ring.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "8b55c701bea1d1e400c31057957148675c3e0dba1e44ca632165951ed11e16a4"
+  },
+  {
+    "path": "validation/__pycache__/test_pcie_model.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "0be8f7e8a9d887cca815f6fa030ed46692e05883b9e7181aaf3f0605ce2a513d"
+  },
+  {
+    "path": "validation/__pycache__/test_qemu_firmware.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "1a7db250ad03edef608de3713d9a580bd15b06e5a031815fad7972f1b0c19223"
+  },
+  {
+    "path": "validation/__pycache__/test_qemu_mac.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "5bc3f38b9b9825dc1f6ccf1960ba20b4922dfd524f436a6159d3942200adbedb"
+  },
+  {
+    "path": "validation/__pycache__/test_qemu_management.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "8c34002eac6cdf18461c6d614aec9028fbbd9518823bdaae8d055b58e59bf27b"
+  },
+  {
+    "path": "validation/__pycache__/usb_cable_guest.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "a16ca85b4bd32b5b9e293c19f5be6875cb6cecb110086ba585ab7df0770340bf"
+  },
+  {
+    "path": "validation/catalog-compat-20261101/__pycache__/makecat-after.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "b4c6a3c4f3fc1719ab3f20616a636e4bb8605849aa40b12dbc956d4c849ea239"
+  },
+  {
+    "path": "validation/catalog-compat-20261101/__pycache__/makecat-before.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "cdc12bee0ca673caf10986671d4adff3bcf91c17b84d37c2b3bf54ef7d65f14f"
+  },
+  {
+    "path": "validation/catalog-compat-20261101/__pycache__/makecat-v2.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "a5bb8ac26c61442d7ae59b631ba6b8412176698737208b32aaeb6a898e68cfa4"
+  },
+  {
+    "path": "validation/catalog13-unsorted-generator-20261102/__pycache__/makecat.cpython-312.pyc",
+    "reason": "rebuildable intermediate",
+    "sha256": "7fa877874f60fc59f0304697777d444bbaad2c5d8e49c7ffaae910cb88069ad8"
+  },
+  {
+    "path": "validation/lifecycle/test_native_backend",
+    "reason": "rebuildable host test executable",
+    "sha256": "7743a6a404ad2024860272d60c635e937ab1ea2b9678aafeaaafe9dfc4a90cfa"
+  },
+  {
+    "path": "validation/lifecycle/test_nt31_poll",
+    "reason": "rebuildable host test executable",
+    "sha256": "92da63af26afc12fd4437d4e74703ec773d214d50d40d9a7f681ad8a799cd8e5"
+  },
+  {
+    "path": "validation/lifecycle/test_timer",
+    "reason": "rebuildable host test executable",
+    "sha256": "fb551c5d00c8af9fcb4b1e8e102917e28e920d488f3bf6e2e21fac1f2b0d5616"
+  },
+  {
+    "path": "validation/lifecycle/test_usb_backend",
+    "reason": "rebuildable host test executable",
+    "sha256": "245785005b25e4ffe8e8c2db5f5d4c87ab77a8eeebda65ddc98887e5e5511cd4"
+  },
+  {
+    "path": "validation/nt31-ncpa-installed-offline-20261101/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "f3f871f51267c67ef14a5d36dfed17f1f14f58b785551640e6d7565ae5a22fb2"
+  },
+  {
+    "path": "validation/nt31-ncpa-installed-offline-20261101/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "33630534ace9105ecf7f27f518e0f5f786b43cd439141a1ece1c11276eb8c2a4"
+  },
+  {
+    "path": "validation/nt31-reconfigure-v6-offline-20261102/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "f2ef4cc9a7adc4ae26dcfb067c13339b6bb782e90af34bb5727db46fa2c88197"
+  },
+  {
+    "path": "validation/nt31-reconfigure-v6-offline-20261102/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "f139a58083c9a2fe04cc6d347ee4a930cedcd023b9c6076d535b9bf7352fa0f7"
+  },
+  {
+    "path": "validation/nt31-reconfigure-v6-offline-20261102/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "281c5dbc6035d9dca58e0548086912c2e5d50ac9a99a40fe477d57607fdbb736"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v3-20261102/driver.o",
+    "reason": "rebuildable intermediate",
+    "sha256": "daf982a42371919ae07885553379419dc062419ddebbd0db44741df9463945fc"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v3-20261102/libhal.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "f539baaa1294b0badc4539f2c7e9614d4a00800086780a26e84fa8759889d3ec"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v3-20261102/libndis.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "bfa2cd119a7b42effba25acf345dfd265740d9b5b12407f9f13242f2ce98ebfb"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v3-20261102/libntos.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "8f87db7cceb8f1f2b17fcf3a6bf46e3d6a14baada27db9e3b15b99ec44f1d427"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v4-20261102/driver.o",
+    "reason": "rebuildable intermediate",
+    "sha256": "daf982a42371919ae07885553379419dc062419ddebbd0db44741df9463945fc"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v4-20261102/libhal.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "f539baaa1294b0badc4539f2c7e9614d4a00800086780a26e84fa8759889d3ec"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v4-20261102/libndis.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "bfa2cd119a7b42effba25acf345dfd265740d9b5b12407f9f13242f2ce98ebfb"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v4-20261102/libntos.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "8f87db7cceb8f1f2b17fcf3a6bf46e3d6a14baada27db9e3b15b99ec44f1d427"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v5-20261102/driver.o",
+    "reason": "rebuildable intermediate",
+    "sha256": "4c402fc398dacf2d720ce40d32141ada48774bda6ccf69da20e0da61c4826149"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v5-20261102/libhal.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "f539baaa1294b0badc4539f2c7e9614d4a00800086780a26e84fa8759889d3ec"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v5-20261102/libndis.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "bfa2cd119a7b42effba25acf345dfd265740d9b5b12407f9f13242f2ce98ebfb"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v5-20261102/libntos.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "8f87db7cceb8f1f2b17fcf3a6bf46e3d6a14baada27db9e3b15b99ec44f1d427"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v6-20261102/driver.o",
+    "reason": "rebuildable intermediate",
+    "sha256": "51a5ad2af5732c4498d40087a4e94ec3ecb46830e1ecf47b809bc275400cf5de"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v6-20261102/libhal.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "f539baaa1294b0badc4539f2c7e9614d4a00800086780a26e84fa8759889d3ec"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v6-20261102/libndis.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "bfa2cd119a7b42effba25acf345dfd265740d9b5b12407f9f13242f2ce98ebfb"
+  },
+  {
+    "path": "validation/nt31-reset-probe-v6-20261102/libntos.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "8f87db7cceb8f1f2b17fcf3a6bf46e3d6a14baada27db9e3b15b99ec44f1d427"
+  },
+  {
+    "path": "validation/nt31-startup-helper-v4-offline-20261102/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "d99e6443dbeb471ebe71856ea6dac5925fc0b5910ca3bede09d6f13be0f40661"
+  },
+  {
+    "path": "validation/nt31-startup-helper-v4-offline-20261102/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "3e4c3a1740c47eeec26c8b882d1b191c0610c02a6a7a3dce25744fba29846d01"
+  },
+  {
+    "path": "validation/nt31-startup-helper-v4-offline-20261102/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "ef090891f0c4abc3ee1ab195e305f3c3c5451a1094eb35c8c89806dea774f52c"
+  },
+  {
+    "path": "validation/nt31-unbound-system-20261101",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "a613be0dd4fb281a99c608a0fb53f0d1bcf855d4e53101a814021c2a4c698972"
+  },
+  {
+    "path": "validation/nt31-unbound-system-fixed-20261101",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "c8a0dc49e1deac9ead498c37bc1d35b678891a60f52bdcd8d1a64004492a78de"
+  },
+  {
+    "path": "validation/nt31-update-v8b-offline-20261102/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "fea5ad9773f3a4f974e4d84da5c0c59144f3eef29e29e4b55c5cf0e90a6a0f44"
+  },
+  {
+    "path": "validation/nt31-update-v8b-offline-20261102/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "baaae8fd625e1c549a0082873e83ed86acd8e165c5ea800135eae718600ae16d"
+  },
+  {
+    "path": "validation/nt31-update-v8b-offline-20261102/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "b31377fdfe9d01791a21a9029a200378fddf0b26a32a30ee3a124c2df97b7f5c"
+  },
+  {
+    "path": "validation/nt31-update-v9-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "4b547863de01ae4ff493ba4049be8592c98b74c5f44d4e9b2d26f1a9e576ce89"
+  },
+  {
+    "path": "validation/nt31-update-v9-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "267d3dcb4ae91549a9c239196a69cf45e33eeadc8d9fc8a7bffd413cc6cb5ca3"
+  },
+  {
+    "path": "validation/nt31-update-v9-20261102-offline/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "a0b1383eba41f66739b4a1a7f070fcf607578c3562f8c57c162d15a695130db2"
+  },
+  {
+    "path": "validation/nt31-v4-dhcp-final-offline-20261101/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "e5174fe0cb241963d5b5d1afadda5d798b43376c6539636aafbc15752d01c32f"
+  },
+  {
+    "path": "validation/nt31-v4-dhcp-final-offline-20261101/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "3c0be43c0d7e6cc8e87caded10317d584780908154080f303ff8dd40fe347af3"
+  },
+  {
+    "path": "validation/nt31-v4-installed-offline-20261101/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "1fbd60594c7985e46cc3abc6a87bfe7c69765e41a6d2d8479df3e4efef41a336"
+  },
+  {
+    "path": "validation/nt31-v4-installed-offline-20261101/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "6520993eedd3b25cbba7cb59a3763a07daff589a992838a29bf47c0b97eb50aa"
+  },
+  {
+    "path": "validation/nt31-v6-auto-logon-offline-20261101/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "2baa19a54f17a6ff43dd045cc212b01001aa3a81e727122c43ae190b0efb2899"
+  },
+  {
+    "path": "validation/nt31-v6-auto-logon-offline-20261101/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "2828e09951183ffb74bdb55ca88feeca4374d3edf70be21c6b90d086488e07b3"
+  },
+  {
+    "path": "validation/nt31-v6-auto-logon-offline-20261101/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "5dc2ca030351d6bd30bacb6c3df860c406de14faefe054efff790989f5a9574d"
+  },
+  {
+    "path": "validation/nt31-v6-installed-offline-20261101/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "c13da1926b559ef59dd2e8fbd7abff7c379d4b19b197bbf83e859703c2bc8fa3"
+  },
+  {
+    "path": "validation/nt31-v6-installed-offline-20261101/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "3535e68d3e18e87d52167618be564b9196d51c5e6c39c2d1361f05dae527aa08"
+  },
+  {
+    "path": "validation/nt31-v6-installed-offline-20261101/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "f2e87084dace0126a7d89e8f124b00b860e71213b18311226ecd2f76d6f2efcf"
+  },
+  {
+    "path": "validation/nt31-v9-conflict-offline-20261102/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "058ad8d1617431c85764d731e614d1bf06a94537ea85e4a0e1ea7c3d88305287"
+  },
+  {
+    "path": "validation/nt31-v9-conflict-offline-20261102/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "6cc1bab04562fef27377150a6d559f822a47acbf25383fe4c1bd677d22f321fe"
+  },
+  {
+    "path": "validation/nt31-v9-conflict-offline-20261102/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "ae6d83a11a39be29295df7cd925383517f98336ee10becb7c7e50428656a7a8e"
+  },
+  {
+    "path": "validation/nt31-v9-custom-boot-offline-20261102/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "2cbee0a9850fcd123612a23d51f2e529c65b6a3a0e0592d2f22ebdf4663ff078"
+  },
+  {
+    "path": "validation/nt31-v9-custom-boot-offline-20261102/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "ad6789da0db1e3f247703cb8a5cd74e405dffbd1b4a8ff651994cb9a43d35196"
+  },
+  {
+    "path": "validation/nt31-v9-custom-boot-offline-20261102/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "0f54959dbe2328b93b41fa03a930f6d789843545ca07d41e1fcc79aaf19f3421"
+  },
+  {
+    "path": "validation/nt31-v9-custom-offline-20261102/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "66bc509e9c2f8a15ed1325e9f8b668868b39f446f13c9a954d032b8727e620ed"
+  },
+  {
+    "path": "validation/nt31-v9-custom-offline-20261102/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "4f79ef41354f63664e0bf012e8a2c6e2b6fb6061a6c239061fa4de2bc4f5d028"
+  },
+  {
+    "path": "validation/nt31-v9-custom-offline-20261102/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "0f8fcd3fd58d09772904733f062d869137b2105c26444a090f4c84cefbfcc892"
+  },
+  {
+    "path": "validation/nt31-v9-disable-offline-20261102/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "9c8d0804f3033ed63e92a94a8ad1cf1791914707858d3f424ea90f4cb695683a"
+  },
+  {
+    "path": "validation/nt31-v9-disable-offline-20261102/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "da5d995935ce9cf94192500bf93195bcf52e624e1df32d5286c747f85a549f72"
+  },
+  {
+    "path": "validation/nt31-v9-disable-offline-20261102/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "5bef388b2d05a1b7eed729a78624e13c956e5355549eb185675009a431254cb0"
+  },
+  {
+    "path": "validation/nt31-v9-disabled-coldboot-offline-20261102/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "cb1dd349929053e35c9dee3a6acbd27f762c499fe713d6b197fb9a285339a329"
+  },
+  {
+    "path": "validation/nt31-v9-disabled-coldboot-offline-20261102/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "9590d18e870cbb02d4133f8ec027e7a67844f500ae7b04598944ae542f0582d2"
+  },
+  {
+    "path": "validation/nt31-v9-disabled-coldboot-offline-20261102/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "bf35605090a8d3836059fc07d7a24e92c64e919e261f5881afdd6dff6ae6d00e"
+  },
+  {
+    "path": "validation/nt31-v9-final-removal-coldboot-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "3d61ce06f66212fc18e34869d2fce5eec9e1c81eecedba216caa87e28963e6b4"
+  },
+  {
+    "path": "validation/nt31-v9-final-removal-coldboot-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "89462c71a235a2071b7d5c80d08442c05efcc876caa7dd3a15ef73e52f818b92"
+  },
+  {
+    "path": "validation/nt31-v9-final-removal-coldboot-20261102-offline/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "bf72135a3b6c6d09579351c11c1c9e41fae03e7cfa0d520bbbc005a595512993"
+  },
+  {
+    "path": "validation/nt31-v9-firstinstall-offline-20261102/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "45d814f3fc02e6ba8cc5eeca4498498618d0271566f751643292583b461a4cc7"
+  },
+  {
+    "path": "validation/nt31-v9-firstinstall-offline-20261102/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "c3f391175cb7a93be6f77210beee7d5487465fb8ab2ddb5652119541dd753ba2"
+  },
+  {
+    "path": "validation/nt31-v9-firstinstall-offline-20261102/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "6837ca6bbf5bc0e1ad0a91a68ed60e3a0a31e09cc6a545c38ea48bab9fb0eb45"
+  },
+  {
+    "path": "validation/nt31-v9-firstinstall-preconditions-20261102/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "0f4b15190c086b50052de9d34afdaebae4d806d6c1e5ddf5afcdfae07125722b"
+  },
+  {
+    "path": "validation/nt31-v9-firstinstall-preconditions-20261102/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "eed8f9f34cae02d0fd242ac71938b01a8ee6cacee116a2274f375771597ad1cd"
+  },
+  {
+    "path": "validation/nt31-v9-firstinstall-preconditions-20261102/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "a9cf591a7c7a50e5e1ec0609bf5ba0f8e7801f0567a9199379fa9f079f7d5042"
+  },
+  {
+    "path": "validation/nt31-v9-last-removal-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "0e2c52094f3016b9e5fd664513e76c35ca961be7848d035002a581f57fda1db9"
+  },
+  {
+    "path": "validation/nt31-v9-last-removal-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "6d0d9443fc76da30af289eb63661b1a1430289d4c32fad62e534f74cf057a284"
+  },
+  {
+    "path": "validation/nt31-v9-last-removal-20261102-offline/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "2b79e62d6872064dd060b442f8b4453f7d14fdac37e91a1c2e49526b51376fb1"
+  },
+  {
+    "path": "validation/nt31-v9-pci-removal-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "e4e1422902f33b7f787ec34c5b50b19c27a2f049cef234b95aaa6a2c5ce228e1"
+  },
+  {
+    "path": "validation/nt31-v9-pci-removal-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "5cd89f860cdca9bd1bb192cb9e060305bf97e7a5bf86aacb2382427437dcc3a8"
+  },
+  {
+    "path": "validation/nt31-v9-pci-removal-20261102-offline/TEST_000",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "da14613607ec850ee04e9cedfc729b0289f8a07ea3db4d592a401b3dd907e202"
+  },
+  {
+    "path": "validation/nt351-ncpa-installed-offline-20261101/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "b9c9ab6b4396b8010194369c2d29805c3b6d0f6007c265a27732665add45999b"
+  },
+  {
+    "path": "validation/nt351-ncpa-installed-offline-20261101/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "91cd2aaa38153ca96282d5a40ccd8e6a13c3216155b787cc9f56295086b3c4a1"
+  },
+  {
+    "path": "validation/nt351-protocol-references-20261102/ADVAPI32.DLL",
+    "reason": "Windows reference DLL supplied externally",
+    "sha256": "03edea5c5ed09b35add1f0cfac88dc8c38278cad23a38b52bc0702e4aa807c84"
+  },
+  {
+    "path": "validation/nt351-protocol-references-20261102/KERNEL32.DLL",
+    "reason": "Windows reference DLL supplied externally",
+    "sha256": "d4379506d34b8bbcc6eb08dc44b8a2ecd712c5593a0b5bb5d1cb38e11adf5314"
+  },
+  {
+    "path": "validation/nt351-reset-probe-v1-20261102/driver.o",
+    "reason": "rebuildable intermediate",
+    "sha256": "0fa59eb561c5acedf9e099c013c968eaae052136c9dcedf15c66a4936a524d3c"
+  },
+  {
+    "path": "validation/nt351-reset-probe-v1-20261102/libhal.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "f539baaa1294b0badc4539f2c7e9614d4a00800086780a26e84fa8759889d3ec"
+  },
+  {
+    "path": "validation/nt351-reset-probe-v1-20261102/libndis.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "bfa2cd119a7b42effba25acf345dfd265740d9b5b12407f9f13242f2ce98ebfb"
+  },
+  {
+    "path": "validation/nt351-reset-probe-v1-20261102/libntos.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "8f87db7cceb8f1f2b17fcf3a6bf46e3d6a14baada27db9e3b15b99ec44f1d427"
+  },
+  {
+    "path": "validation/nt351-reset-probe-v2-20261102/driver.o",
+    "reason": "rebuildable intermediate",
+    "sha256": "bfd9dd7c6a86e7863dc87cc173711ad5a34614ba887c1fb2b8d771449afa8d62"
+  },
+  {
+    "path": "validation/nt351-reset-probe-v2-20261102/libhal.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "f539baaa1294b0badc4539f2c7e9614d4a00800086780a26e84fa8759889d3ec"
+  },
+  {
+    "path": "validation/nt351-reset-probe-v2-20261102/libndis.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "bfa2cd119a7b42effba25acf345dfd265740d9b5b12407f9f13242f2ce98ebfb"
+  },
+  {
+    "path": "validation/nt351-reset-probe-v2-20261102/libntos.a",
+    "reason": "rebuildable intermediate",
+    "sha256": "8f87db7cceb8f1f2b17fcf3a6bf46e3d6a14baada27db9e3b15b99ec44f1d427"
+  },
+  {
+    "path": "validation/nt351-update-v2-offline-20261102/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "44cb358c5c8be3b1623bf1b40bc99ac3237073cbae53b285ec007dc10f98d0b9"
+  },
+  {
+    "path": "validation/nt351-update-v2-offline-20261102/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "50eaf3d4821fbae1109a22efeb571f0d1bc37e26c443fec7713363ca869acc74"
+  },
+  {
+    "path": "validation/nt351-v2-final-removal-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "37244867e342a49b15fbca289e34c47bd6d6b3ea2fa8d8c464480300af136841"
+  },
+  {
+    "path": "validation/nt351-v2-final-removal-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "1f9ceef275fd95597fd3126c123f17cced9cb4f40c769d0bd24782a76ad666c1"
+  },
+  {
+    "path": "validation/nt351-v2-final-removal-coldboot-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "3fc936c690fd5449820e7f6c36e08c005637fe9674fa4abc3b57fa7f801c5932"
+  },
+  {
+    "path": "validation/nt351-v2-final-removal-coldboot-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "8f175018834b17f84397cc80a7f1339892c595385ed948cb1a7c6d4cfd6efb91"
+  },
+  {
+    "path": "validation/nt351-v2-firstinstall-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "596d1b5eeda2bda0419fc22906f2884b73c92dc8bac9a318105cfb8812437d97"
+  },
+  {
+    "path": "validation/nt351-v2-firstinstall-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "1e4c066c475941de615f0e97ea7c4231f5c8f8d938941eeea03ceec6cbcb5fe9"
+  },
+  {
+    "path": "validation/nt351-v2-firstinstall-20261102-preconditions/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "3fc936c690fd5449820e7f6c36e08c005637fe9674fa4abc3b57fa7f801c5932"
+  },
+  {
+    "path": "validation/nt351-v2-firstinstall-20261102-preconditions/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "8f175018834b17f84397cc80a7f1339892c595385ed948cb1a7c6d4cfd6efb91"
+  },
+  {
+    "path": "validation/nt351-v2-pci-removal-readback-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "2334c725a894ddf491f172db4f53e9eafbb277185c6dfeed0b90d277d8abd875"
+  },
+  {
+    "path": "validation/nt351-v2-pci-removal-readback-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "29cf41d6bc2183dc04ee4b0b096490aee487064bdd8f9e5c920c42f20a8270c4"
+  },
+  {
+    "path": "validation/nt4-installed-offline-20261101/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "05705c20747463537d0e06790c005aa86df95454c8c34f8917189a3bb502fc12"
+  },
+  {
+    "path": "validation/nt4-installed-offline-20261101/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "e0bfb0c3b0d07afb976f90851a909104dd1ad6494b2df3349f05671d2bb865e6"
+  },
+  {
+    "path": "validation/nt4-setup-tool-system",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "796e4c406bc709f17c9941802d39afb7b75bed690ce9aaf9bec20346d5c9e563"
+  },
+  {
+    "path": "validation/nt4-system-reset",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "5be64970cba4b269a35b819612e4bc44a201fa06131e5330a8d4369088c1a7b3"
+  },
+  {
+    "path": "validation/nt4-v2-installed-offline-20261101/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "4db591a6735a292cee2842d0241a72df8d69f13055379aca6be9c03ca242ea6d"
+  },
+  {
+    "path": "validation/nt4-v2-installed-offline-20261101/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "3ef29a3dbcb5eef65d7874c07f3860e9ea5c3932bf5fe4d844b42a510e817204"
+  },
+  {
+    "path": "validation/nt4-v3-final-removal-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "014438ce76a0513ca45232b238e95d940470cbe4f77691796399aa760aa8f04c"
+  },
+  {
+    "path": "validation/nt4-v3-final-removal-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "00555d340b53d32a282750bcaa3ae5a2bcb5de5ab1544dda322053e32459a7bd"
+  },
+  {
+    "path": "validation/nt4-v3-final-removal-coldboot-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "33e68a12e94e64fcec9c68750394dad2ed69ce587dc01b4824da7e64fc53f0aa"
+  },
+  {
+    "path": "validation/nt4-v3-final-removal-coldboot-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "7bde43ca498a5133a16ddeb4091d87e34c4d96253ef8dc91b0f2e7622ad58a1f"
+  },
+  {
+    "path": "validation/nt4-v3-firstinstall-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "b7be0ffe0241700c720e88146444c391afdf71e646f3e0639cb9f8bf0e25864c"
+  },
+  {
+    "path": "validation/nt4-v3-firstinstall-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "bdf96f22ce8795dd9c7fdfa16b39d9e0cc059e75813e9f1794386f6d32c2baa0"
+  },
+  {
+    "path": "validation/nt4-v3-firstinstall-20261102-preconditions/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "33e68a12e94e64fcec9c68750394dad2ed69ce587dc01b4824da7e64fc53f0aa"
+  },
+  {
+    "path": "validation/nt4-v3-firstinstall-20261102-preconditions/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "7bde43ca498a5133a16ddeb4091d87e34c4d96253ef8dc91b0f2e7622ad58a1f"
+  },
+  {
+    "path": "validation/nt4-v3-third-removal-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "79f7970bb06e783c704c6c63090463e617fe48dd94ea790ab6971c8489fe9add"
+  },
+  {
+    "path": "validation/nt4-v3-third-removal-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "2610472ffcedbc4b586fd9c55f7462fc0e0536a9e2ad54af97e6155e608948a9"
+  },
+  {
+    "path": "validation/nt4-v3-update-20261102-offline/SOFTWARE",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "097f0578edd82e69f9d543e345c049f3c7c10ebaf30a9c9cd1123a8eb0be5dce"
+  },
+  {
+    "path": "validation/nt4-v3-update-20261102-offline/SYSTEM",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "f4470094e0a82e5e4778d403b75346be17a364422a94f8e64a233e13bce9ca15"
+  },
+  {
+    "path": "validation/ntcli/test_lifetime",
+    "reason": "rebuildable host test executable",
+    "sha256": "85e43b552fbdaa7c21be99b9e45bfc7fc471c3fa318abef41a5d9fe21506bb5a"
+  },
+  {
+    "path": "validation/test_fwbus",
+    "reason": "rebuildable host test executable",
+    "sha256": "daac57b4de82c966fd639fd09a6eba7a95dd7f5b5086649b4744435c1aaa57d7"
+  },
+  {
+    "path": "validation/test_fwvm",
+    "reason": "rebuildable host test executable",
+    "sha256": "b6969f3ad903e6c211c8152ad1b39e7b6ac4b2c95dbe6f59d6b7b698abf414f2"
+  },
+  {
+    "path": "validation/test_identity",
+    "reason": "rebuildable host test executable",
+    "sha256": "e8f74de00b04c987e47a14137ba26a76c597e3476375aa6caf5d6e0a5e2800f2"
+  },
+  {
+    "path": "validation/test_physeq",
+    "reason": "rebuildable host test executable",
+    "sha256": "b53e0b56a7f32d3320185760f0b2d628b41bc4d09c0a2a34cd9a106e0fa74597"
+  },
+  {
+    "path": "validation/test_qemu_8150_asan",
+    "reason": "rebuildable host test executable",
+    "sha256": "646c76e237d3e71aa37b5f750858df878f1f28c2f07dccec85e86d5110cf8f0b"
+  },
+  {
+    "path": "validation/test_rtl8150_asan",
+    "reason": "rebuildable host test executable",
+    "sha256": "aa12eaa0b2335e6551e02296932b9c85c69cf124a0c2ad5689315b64c9e68df8"
+  },
+  {
+    "path": "validation/test_usb_banks_asan",
+    "reason": "rebuildable host test executable",
+    "sha256": "af3beda7872866b4ca7c3abc2f998f926225a976e66bfb08ee878546bcf23569"
+  },
+  {
+    "path": "validation/test_usb_carrier_asan",
+    "reason": "rebuildable host test executable",
+    "sha256": "78d65d92ec55d857906c08b087666453221231e628edcb6a087b4574283117a0"
+  },
+  {
+    "path": "validation/test_usb_phy_asan",
+    "reason": "rebuildable host test executable",
+    "sha256": "eb1358869321a6d482c9524885911214a8551bf61ffa80929c9dc3875f99c208"
+  },
+  {
+    "path": "validation/test_usb_register_banks",
+    "reason": "rebuildable host test executable",
+    "sha256": "d5e2c5ff3b8a6b6e529b3e15b6d3c925a790edc29723df4245545f9bacd08d2b"
+  },
+  {
+    "path": "validation/test_usb_reset_versions",
+    "reason": "rebuildable host test executable",
+    "sha256": "a28aadd4c9d38b998d8c42ff8068e69da43306a7f28bb2603b3144b37fd57939"
+  },
+  {
+    "path": "validation/win2000-system-after",
+    "reason": "guest registry hive retained in workspace",
+    "sha256": "20cb1764e873172c949fc8294d1f66f439e0e220896ce49c696609b121301431"
+  }
+]

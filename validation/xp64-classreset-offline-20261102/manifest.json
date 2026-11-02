@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T12:40:09.091255+00:00",
+  "guest": "xp64-usbnet-classreset-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 534016,
+      "sha256": "1ded9e8d2972efb7f8d92827e6ec83863bb921c08fa73c40109bb71edf06d997"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    }
+  }
+}

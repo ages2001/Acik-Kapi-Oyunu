@@ -1,0 +1,1 @@
+PASS: RTL8150 legacy attach, MAC, RCR/TCR, padded TX, RX trailer, cable state, 20 reattaches and invalid request rejection (host interoperability only)

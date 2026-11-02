@@ -1,0 +1,42 @@
+{
+  "guest": "nt31-usbsetup-management-ep-v2-8127",
+  "token": "management-ep-hotplug-20261102-c4-reinsert",
+  "mask": 3,
+  "result": "PASS",
+  "utc": "2026-11-02T05:15:35.923156+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 127700,
+      "end_offset": 139940,
+      "capture_prefix_sha256": "b60d6b10eb8f6d9649c9ec8c0b287c760bebca3f50ac7b0b067050327e61245e",
+      "screenshot": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c4-reinsert-usb.png",
+      "ocr": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c4-reinsert-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "17618c9605ab0f37d4c486b30db6c85b7aefb5f38536b2aa8e2937a755c1c9af"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 193776,
+      "end_offset": 206016,
+      "capture_prefix_sha256": "80a3c3c9db9598e3edbf7edec5dde2b9ee81e6de37073ee2e326c99b02ea22c6",
+      "screenshot": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c4-reinsert-pci.png",
+      "ocr": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c4-reinsert-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "2a012455c57365d6f5d69c7754b3545fdfd2b95052a8be6e558f37613a8cc316"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T05:15:47.364629+00:00"
+}

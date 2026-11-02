@@ -1,0 +1,49 @@
+{
+  "guest": "xp64-management-rtl8117-v2-multi-8127",
+  "utc": "2026-11-02T06:43:01.422902+00:00",
+  "result": "PASS",
+  "cycles": [
+    {
+      "cycle": 1,
+      "device": "pcinic",
+      "elapsed_seconds": 9.932,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra1",
+      "elapsed_seconds": 9.915,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra2",
+      "elapsed_seconds": 9.94,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra3",
+      "elapsed_seconds": 8.904,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra4",
+      "elapsed_seconds": 10.418,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra5",
+      "elapsed_seconds": 10.929,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    }
+  ]
+}

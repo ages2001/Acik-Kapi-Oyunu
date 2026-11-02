@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T09:16:33.523114+00:00",
+  "guest": "nt31-usbsetup-capacity-rtl8117-8127",
+  "files": {
+    "WINNT31/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 411648,
+      "sha256": "92b201af42e3ddc15a8fd46f88f0f28ffd337ae2ac0f04f74558f0abbd2bbcab"
+    },
+    "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+    }
+  }
+}

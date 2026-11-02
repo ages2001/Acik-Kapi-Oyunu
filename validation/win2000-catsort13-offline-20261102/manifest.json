@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T19:20:32.198683+00:00",
+  "guest": "win2000-standard-usbnet-mixed-catsort13-8127",
+  "files": {
+    "RLTTEST/CATSORT.LOG": {
+      "file": "CATSORT.LOG",
+      "size": 1102,
+      "sha256": "7285fd26d3ab7bab9da5bc37a1f69fdce1cdc1d23f9402ace086f440b71e863c"
+    },
+    "RLTTEST/CATSORT.RC": {
+      "file": "CATSORT.RC",
+      "size": 4,
+      "sha256": "9aca8dfce962538fb8131d73f84cada05e4dc79f5a0d3612c511b1150f3e33e2"
+    }
+  }
+}

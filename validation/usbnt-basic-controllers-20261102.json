@@ -1,0 +1,30 @@
+{
+  "utc": "2026-11-02T07:16:10.129814+00:00",
+  "scope": "Bare-metal USBNT core/HCD/native class harness: storage read/write plus keyboard/mouse; not NT generic-client or WDM power coverage",
+  "rows": [
+    {
+      "controller": "xhci",
+      "exit_code": 0,
+      "result": "PASS",
+      "log": "usbnt-basic-xhci-20261102.log"
+    },
+    {
+      "controller": "ehci",
+      "exit_code": 0,
+      "result": "PASS",
+      "log": "usbnt-basic-ehci-20261102.log"
+    },
+    {
+      "controller": "uhci",
+      "exit_code": 0,
+      "result": "PASS",
+      "log": "usbnt-basic-uhci-20261102.log"
+    },
+    {
+      "controller": "ohci",
+      "exit_code": 0,
+      "result": "PASS",
+      "log": "usbnt-basic-ohci-20261102.log"
+    }
+  ]
+}

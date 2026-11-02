@@ -1,0 +1,60 @@
+Formatting '/workspace/rltklant-vm/run/win2000-standard-passivereset-multi-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=1747006464 backing_file=/tmp/rltk-growing-fat-ixh9dib4/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+36/26658 = 0.14% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 2686976
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/win2000-standard-passivereset-multi-8127.qcow2",
+  "sha256_before_boot": "77b209e5e90f2450655f8866ad3cf000eed88d756d24b2bc874cc53970157d42",
+  "files": [
+    {
+      "guest_path": "WINNT/system32/drivers/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/passive-reset-fixture-v1-20261102/FW32.SYS",
+      "size": 520469,
+      "sha256": "89340995b837ca23f3121eb8e2700b999cc3744feaa0296a8f8f41dcebe6f3d7",
+      "old_size": 518127,
+      "old_sha256": "d6da718325c8a5e1911c3c028d266a791ebea6bc4365b4910d4c1ca4b175ddc7"
+    },
+    {
+      "guest_path": "rlttest/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/passive-reset-fixture-v1-20261102/FW32.SYS",
+      "size": 520469,
+      "sha256": "89340995b837ca23f3121eb8e2700b999cc3744feaa0296a8f8f41dcebe6f3d7",
+      "old_size": 518127,
+      "old_sha256": "d6da718325c8a5e1911c3c028d266a791ebea6bc4365b4910d4c1ca4b175ddc7"
+    },
+    {
+      "guest_path": "rlttest/i386/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/passive-reset-fixture-v1-20261102/FW32.SYS",
+      "size": 520469,
+      "sha256": "89340995b837ca23f3121eb8e2700b999cc3744feaa0296a8f8f41dcebe6f3d7",
+      "old_size": 518127,
+      "old_sha256": "d6da718325c8a5e1911c3c028d266a791ebea6bc4365b4910d4c1ca4b175ddc7"
+    },
+    {
+      "guest_path": "rlttest/PCNEW.EXE",
+      "source": "/workspace/rltklant-work/validation/passive-reset-fixture-v1-20261102/PC32.EXE",
+      "size": 16319,
+      "sha256": "80ee8c2baa1ee49dd3cf3ac0233dbee9ad674d9984b15ddb63f576abb4072278",
+      "old_size": 16319,
+      "old_sha256": "7cd44a61a3e51d5c0ace470a3019a1380561cacddb14cb5893b249542d3de9a8"
+    },
+    {
+      "guest_path": "rlttest/PCRT.SYS",
+      "source": "/workspace/rltklant-work/validation/pci-reset-helper-v3-20261102/PCRT32.SYS",
+      "size": 14055,
+      "sha256": "b19e02881addef3238222ba220423b4687d840b48c1014c9f078f81916227527",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "rlttest/PCRT.EXE",
+      "source": "/workspace/rltklant-work/validation/pci-reset-helper-v3-20261102/PCRT32.EXE",
+      "size": 11006,
+      "sha256": "131624cd6d5401b2160083ce9eb935c0dd1aa224bf2778cee35e2fc70a33feb6",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

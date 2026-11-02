@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/nt31-usbnet-image-rundown-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=419010560 backing_file=/tmp/rltk-growing-fat-ffxk8pia/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+11/6394 = 0.17% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1048576
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt31-usbnet-image-rundown-8127.qcow2",
+  "sha256_before_boot": "d2cd5f4f9f7e1a6dea67db0355ed24668f21a9c36f5dc5621bdab89825e3cbab",
+  "files": [
+    {
+      "guest_path": "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys",
+      "size": 505344,
+      "sha256": "a5a24ffea2c1c823cb353f4fe0bbbd5e924f3b6a8bf4a82ee3eb8b5b0e4824bc",
+      "old_size": 504832,
+      "old_sha256": "cd4b80c56509cc48f2986d38d1d1d1f8dbc5dd0afb6e9d5c1fc5442106e48f51"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

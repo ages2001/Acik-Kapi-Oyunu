@@ -1,0 +1,888 @@
+{
+  "utc": "2026-11-01T19:05:12.881833+00:00",
+  "rows": [
+    {
+      "guest": "win2000-standard-observed-multi-8127",
+      "proof": "win2000-standard-observed-multi-8127-observed-current-pci.json",
+      "proof_sha256": "7ee271cacb33fd972365695f96f1d2ddea80990e12f6b6b3db5fdbd412f7ca43",
+      "fixture": {
+        "utc": "2026-11-01T18:50:12.375970+00:00",
+        "parent": "/workspace/rltklant-vm/run/win2000-standard-usbnet-piperecover-ehci-8127.qcow2",
+        "parent_chain": [
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 10420224,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-piperecover-ehci-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 10362880,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-piperecover-ehci-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 10362880,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portrecover-ehci-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portrecover-ehci-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 10682368,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portrecover-ehci-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 10625024,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portrecover-ehci-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 10625024,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-public-ehci-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-public-ehci-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 9043968,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-public-ehci-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 8986624,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-public-ehci-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 8986624,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-ehci-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-ehci-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 11206656,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-ehci-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 11145216,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-portreset-ehci-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 11145216,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 337510400,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 336662528,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-hardware-ehci-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 336662528,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zstd",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 10944512,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 10887168,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-nousbd-ehci-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 10887168,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 11730944,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 11669504,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-stall-ehci-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 11669504,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 11599872,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 11542528,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "raw",
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 11542528,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+            "backing-filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 1747006464,
+                  "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+                  "format": "file",
+                  "actual-size": 684900352,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "virtual-size": 1747006464,
+            "filename": "/workspace/rltklant-vm/run/win2000-standard-usbnet-native-ehci-8127.raw",
+            "format": "raw",
+            "actual-size": 684900352,
+            "dirty-flag": false
+          }
+        ],
+        "image": "/workspace/rltklant-vm/run/win2000-standard-observed-multi-8127.qcow2",
+        "sha256_before_boot": "81d190ce9dca9a9a95b3b6e96e2b3e7a7c4daa2cedf6b6c14db1c4eb3242226e",
+        "files": [
+          {
+            "guest_path": "WINNT/system32/drivers/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5.sys",
+            "size": 514013,
+            "sha256": "0f5c866ace9ce0b9929448aa961044cc9164068b94539f774c7fa6f0f4388ef4",
+            "old_size": 513928,
+            "old_sha256": "3c0af22af498405163e395473ac764023c0068ca94b8e7501f1e596c3f8d2f9e"
+          },
+          {
+            "guest_path": "rlttest/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5.sys",
+            "size": 514013,
+            "sha256": "0f5c866ace9ce0b9929448aa961044cc9164068b94539f774c7fa6f0f4388ef4",
+            "old_size": 513928,
+            "old_sha256": "3c0af22af498405163e395473ac764023c0068ca94b8e7501f1e596c3f8d2f9e"
+          },
+          {
+            "guest_path": "rlttest/i386/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5.sys",
+            "size": 514013,
+            "sha256": "0f5c866ace9ce0b9929448aa961044cc9164068b94539f774c7fa6f0f4388ef4",
+            "old_size": 513928,
+            "old_sha256": "3c0af22af498405163e395473ac764023c0068ca94b8e7501f1e596c3f8d2f9e"
+          }
+        ],
+        "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+      },
+      "launch": {
+        "started_at": 1793559063.3908274,
+        "command": [
+          "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+          "-machine",
+          "q35",
+          "-cpu",
+          "pentium3",
+          "-m",
+          "128",
+          "-drive",
+          "file=/workspace/rltklant-vm/run/win2000-standard-observed-multi-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+          "-nic",
+          "none",
+          "-display",
+          "none",
+          "-vga",
+          "cirrus",
+          "-qmp",
+          "unix:/workspace/rltklant-vm/run/win2000-standard-observed-multi-8127/qmp.sock,server=on,wait=off",
+          "-no-reboot",
+          "-no-shutdown",
+          "-device",
+          "ich9-ahci,id=ahci",
+          "-device",
+          "ide-hd,drive=bootdisk,bus=ahci.0,bootindex=0",
+          "-debugcon",
+          "file:/workspace/rltklant-vm/run/win2000-standard-observed-multi-8127/debug.log",
+          "-serial",
+          "file:/workspace/rltklant-vm/run/win2000-standard-observed-multi-8127/serial.log",
+          "-global",
+          "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+          "-global",
+          "q35-pcihost.pci-hole64-size=0",
+          "-no-hpet",
+          "-netdev",
+          "user,id=pci0",
+          "-device",
+          "rtl8127,id=pcinic,netdev=pci0",
+          "-object",
+          "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/win2000-standard-observed-multi-8127/pci.pcap",
+          "-netdev",
+          "user,id=extra1,net=10.0.3.0/24",
+          "-device",
+          "rtl8169,id=extra1,netdev=extra1,mac=52:54:00:12:35:01,addr=7",
+          "-object",
+          "filter-dump,id=dump1,netdev=extra1,file=/workspace/rltklant-vm/run/win2000-standard-observed-multi-8127/extra1.pcap",
+          "-netdev",
+          "user,id=extra2,net=10.0.4.0/24",
+          "-device",
+          "rtl8168,id=extra2,netdev=extra2,mac=52:54:00:12:35:02,addr=b",
+          "-object",
+          "filter-dump,id=dump2,netdev=extra2,file=/workspace/rltklant-vm/run/win2000-standard-observed-multi-8127/extra2.pcap",
+          "-netdev",
+          "user,id=extra3,net=10.0.5.0/24",
+          "-device",
+          "rtl8125,id=extra3,netdev=extra3,mac=52:54:00:12:35:03,addr=f",
+          "-object",
+          "filter-dump,id=dump3,netdev=extra3,file=/workspace/rltklant-vm/run/win2000-standard-observed-multi-8127/extra3.pcap",
+          "-netdev",
+          "user,id=extra4,net=10.0.6.0/24",
+          "-device",
+          "rtl8126,id=extra4,netdev=extra4,mac=52:54:00:12:35:04,addr=13",
+          "-object",
+          "filter-dump,id=dump4,netdev=extra4,file=/workspace/rltklant-vm/run/win2000-standard-observed-multi-8127/extra4.pcap",
+          "-netdev",
+          "user,id=extra5,net=10.0.7.0/24",
+          "-device",
+          "rtl8127,id=extra5,netdev=extra5,mac=52:54:00:12:35:05,addr=17",
+          "-object",
+          "filter-dump,id=dump5,netdev=extra5,file=/workspace/rltklant-vm/run/win2000-standard-observed-multi-8127/extra5.pcap",
+          "-drive",
+          "file=/workspace/rltklant-work/validation/observed-pci-tools-20261101.iso,format=raw,if=none,id=fixture,media=cdrom,readonly=on",
+          "-device",
+          "ide-cd,drive=fixture,bus=ahci.1"
+        ],
+        "qemu_sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a"
+      },
+      "pcaps": [
+        {
+          "name": "extra1.pcap",
+          "sha256": "584b3ba673b30caac106729cd4be8cead15c3de9a5185c1ae72858bd97eb8df0"
+        },
+        {
+          "name": "extra2.pcap",
+          "sha256": "8cae376840be6fc064cb8d16014e30dd5ec27f936f01453b40766d87759fd620"
+        },
+        {
+          "name": "extra3.pcap",
+          "sha256": "acd9166094b86c948380fae15c496e450e41685057682a2fddebd0bc9e777e68"
+        },
+        {
+          "name": "extra4.pcap",
+          "sha256": "fad784ad8d4b9acf72bacf1920aaa81af8a5dc789fa98e30640679fd19bcdb5b"
+        },
+        {
+          "name": "extra5.pcap",
+          "sha256": "d294d53fdf9a346e70a6f7a9218bf07b5a74953200274ffbce55738901a5db4e"
+        },
+        {
+          "name": "pci.pcap",
+          "sha256": "eb2a82f6c51eb1d4913ee2efedc5a80a89e8ae6b1a9de28e9c6ab29714f09cde"
+        }
+      ]
+    },
+    {
+      "guest": "xp64-observed-multi-8127",
+      "proof": "xp64-observed-multi-8127-observed-current-pci.json",
+      "proof_sha256": "17dc7804670425384dbb68ac20cb3481650bae219162be69a91524a863802369",
+      "fixture": {
+        "utc": "2026-11-01T18:50:15.818362+00:00",
+        "parent": "/workspace/rltklant-vm/run/xp64-usbnet-resetsequence-8127.qcow2",
+        "parent_chain": [
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 27197440,
+                  "filename": "/workspace/rltklant-vm/run/xp64-usbnet-resetsequence-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 27140096,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 5368709120,
+            "filename": "/workspace/rltklant-vm/run/xp64-usbnet-resetsequence-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 27140096,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-piperecover-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-piperecover-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 54853632,
+                  "filename": "/workspace/rltklant-vm/run/xp64-usbnet-piperecover-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 54796288,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 5368709120,
+            "filename": "/workspace/rltklant-vm/run/xp64-usbnet-piperecover-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 54796288,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-resettrace-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-resettrace-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 25559040,
+                  "filename": "/workspace/rltklant-vm/run/xp64-usbnet-resettrace-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 25501696,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 5368709120,
+            "filename": "/workspace/rltklant-vm/run/xp64-usbnet-resettrace-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 25501696,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-portrecover-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-portrecover-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 30670848,
+                  "filename": "/workspace/rltklant-vm/run/xp64-usbnet-portrecover-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 30613504,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 5368709120,
+            "filename": "/workspace/rltklant-vm/run/xp64-usbnet-portrecover-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 30613504,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 427819008,
+                  "filename": "/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 427827200,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 5368709120,
+            "filename": "/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 427827200,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 26673152,
+                  "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 26615808,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "raw",
+            "virtual-size": 5368709120,
+            "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 26615808,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+            "backing-filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 5368709120,
+                  "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+                  "format": "file",
+                  "actual-size": 2542632960,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "virtual-size": 5368709120,
+            "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+            "format": "raw",
+            "actual-size": 2542632960,
+            "dirty-flag": false
+          }
+        ],
+        "image": "/workspace/rltklant-vm/run/xp64-observed-multi-8127.qcow2",
+        "sha256_before_boot": "38c75f568443f882598054243f0f809df314a12e446ddd37d3edd94cf417b526",
+        "files": [
+          {
+            "guest_path": "windows/system32/drivers/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5x64.sys",
+            "size": 568707,
+            "sha256": "a0dbd8e0ca52d27c37c11871573c1e9ba71994fbd7d4053a72aa8f1f6bb22078",
+            "old_size": 568624,
+            "old_sha256": "071dd1a73153e90f0b509fa7df194e6deef5e043f629b0d616edacd6412a271e"
+          },
+          {
+            "guest_path": "rlttest/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5x64.sys",
+            "size": 568707,
+            "sha256": "a0dbd8e0ca52d27c37c11871573c1e9ba71994fbd7d4053a72aa8f1f6bb22078",
+            "old_size": 568624,
+            "old_sha256": "071dd1a73153e90f0b509fa7df194e6deef5e043f629b0d616edacd6412a271e"
+          },
+          {
+            "guest_path": "rlttest/amd64/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5x64.sys",
+            "size": 568707,
+            "sha256": "a0dbd8e0ca52d27c37c11871573c1e9ba71994fbd7d4053a72aa8f1f6bb22078",
+            "old_size": 568624,
+            "old_sha256": "071dd1a73153e90f0b509fa7df194e6deef5e043f629b0d616edacd6412a271e"
+          }
+        ],
+        "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+      },
+      "launch": {
+        "started_at": 1793559064.8161302,
+        "command": [
+          "/workspace/rltklant-tools/qemu-src/build/qemu-system-x86_64",
+          "-machine",
+          "q35",
+          "-cpu",
+          "qemu64",
+          "-m",
+          "512",
+          "-drive",
+          "file=/workspace/rltklant-vm/run/xp64-observed-multi-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+          "-nic",
+          "none",
+          "-display",
+          "none",
+          "-vga",
+          "cirrus",
+          "-qmp",
+          "unix:/workspace/rltklant-vm/run/xp64-observed-multi-8127/qmp.sock,server=on,wait=off",
+          "-no-reboot",
+          "-no-shutdown",
+          "-debugcon",
+          "file:/workspace/rltklant-vm/run/xp64-observed-multi-8127/debug.log",
+          "-serial",
+          "file:/workspace/rltklant-vm/run/xp64-observed-multi-8127/serial.log",
+          "-global",
+          "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+          "-global",
+          "q35-pcihost.pci-hole64-size=0",
+          "-no-hpet",
+          "-device",
+          "piix3-ide,id=legacyide",
+          "-device",
+          "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0,lcyls=652,lheads=255,lsecs=63",
+          "-netdev",
+          "user,id=pci0",
+          "-device",
+          "rtl8127,id=pcinic,netdev=pci0",
+          "-object",
+          "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/xp64-observed-multi-8127/pci.pcap",
+          "-netdev",
+          "user,id=extra1,net=10.0.3.0/24",
+          "-device",
+          "rtl8169,id=extra1,netdev=extra1,mac=52:54:00:12:35:01",
+          "-object",
+          "filter-dump,id=dump1,netdev=extra1,file=/workspace/rltklant-vm/run/xp64-observed-multi-8127/extra1.pcap",
+          "-netdev",
+          "user,id=extra2,net=10.0.4.0/24",
+          "-device",
+          "rtl8168,id=extra2,netdev=extra2,mac=52:54:00:12:35:02",
+          "-object",
+          "filter-dump,id=dump2,netdev=extra2,file=/workspace/rltklant-vm/run/xp64-observed-multi-8127/extra2.pcap",
+          "-netdev",
+          "user,id=extra3,net=10.0.5.0/24",
+          "-device",
+          "rtl8125,id=extra3,netdev=extra3,mac=52:54:00:12:35:03",
+          "-object",
+          "filter-dump,id=dump3,netdev=extra3,file=/workspace/rltklant-vm/run/xp64-observed-multi-8127/extra3.pcap",
+          "-netdev",
+          "user,id=extra4,net=10.0.6.0/24",
+          "-device",
+          "rtl8126,id=extra4,netdev=extra4,mac=52:54:00:12:35:04",
+          "-object",
+          "filter-dump,id=dump4,netdev=extra4,file=/workspace/rltklant-vm/run/xp64-observed-multi-8127/extra4.pcap",
+          "-netdev",
+          "user,id=extra5,net=10.0.7.0/24",
+          "-device",
+          "rtl8127,id=extra5,netdev=extra5,mac=52:54:00:12:35:05",
+          "-object",
+          "filter-dump,id=dump5,netdev=extra5,file=/workspace/rltklant-vm/run/xp64-observed-multi-8127/extra5.pcap",
+          "-drive",
+          "file=/workspace/rltklant-work/validation/observed-pci-tools-20261101.iso,format=raw,if=none,id=fixture,media=cdrom,readonly=on",
+          "-device",
+          "ide-cd,drive=fixture,bus=legacyide.1"
+        ],
+        "qemu_sha256": "ce3a860c3b664dc5ee6e625b970ae87c9a29ffec789a3515005da7404968d9e5"
+      },
+      "pcaps": [
+        {
+          "name": "extra1.pcap",
+          "sha256": "1ad1ee440398f4f031b43de254f47406ef42f08c2f64b8e60a0e914195e168f1"
+        },
+        {
+          "name": "extra2.pcap",
+          "sha256": "52de200f313b1caad39d58544949e238bcb05ab982f34ca095774decf9fcb8f2"
+        },
+        {
+          "name": "extra3.pcap",
+          "sha256": "ba4636a66d8ac98cd21b54093f709c3f82022ade27f4c420363076bd7f5b1872"
+        },
+        {
+          "name": "extra4.pcap",
+          "sha256": "939f04f34d2c9ff1a772d9138f9b4c513375165d418a93473a4b2adbc4c3a1d0"
+        },
+        {
+          "name": "extra5.pcap",
+          "sha256": "dad2bdb069cb680b84a58f47227864a0e42ddefec1c4d8beec114238d9fd0ab4"
+        },
+        {
+          "name": "pci.pcap",
+          "sha256": "e42a407aa8d31bef04056f881c099a3fc6533c01da59c009f3b3076344919af9"
+        }
+      ]
+    }
+  ],
+  "scope": "Six exact names/problem0 and 24 full-payload replies per OS on current observed-reset binary; immutable fixture staging plus loaded module size; no silicon proof"
+}

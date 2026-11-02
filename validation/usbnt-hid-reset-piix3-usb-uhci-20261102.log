@@ -1,0 +1,305 @@
+harness: start
+usbnt: found UHCI at 00:02.0 (8086:7020) irq 10 io 0000c000
+usbnt: uhci: 2 ports at io c000
+usbnt: acpi: 5 tables (RSDT at 0ffe1c17)
+usbnt: aml: 337 named objects from the ACPI tables
+usbnt: device 0: 0409:55aa class 09, full speed, UHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB Hub
+usbnt: device 0: hub with 8 ports
+harness: client arrival notification 0
+usbnt: device 1: 46f4:0001 class 00, full speed, UHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB HARDDRIVE
+usbnt: device 1: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 1 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 1
+usbnt: device 2: 0627:0001 class 00, full speed, UHCI port 1 hub port 2, addr 3
+usbnt: device 2: QEMU QEMU USB Keyboard
+usbnt: device 2: keyboard
+harness: client arrival notification 2
+usbnt: device 3: 0627:0001 class 00, full speed, UHCI port 1 hub port 3, addr 4
+usbnt: device 3: QEMU QEMU USB Mouse
+usbnt: device 3: mouse, 5 buttons, wheel
+harness: client arrival notification 3
+harness: ready
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+DEV 3 0627:0001 speed=0 hc=0 root=1 depth=1 port=3 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+WRITE srb=01 scsi=00 xfer=32768
+CYCLE 0
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+HIDRESET index=2 result=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HIDRESET index=3 result=0
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e down
+KEY 1e up
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+DEV 3 0627:0001 speed=0 hc=0 root=1 depth=1 port=3 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+CYCLE 1
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+HIDRESET index=2 result=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HIDRESET index=3 result=0
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+DEV 3 0627:0001 speed=0 hc=0 root=1 depth=1 port=3 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+CYCLE 2
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e down
+KEY 1e up
+HIDRESET index=2 result=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HIDRESET index=3 result=0
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+DEV 3 0627:0001 speed=0 hc=0 root=1 depth=1 port=3 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+CYCLE 3
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+HIDRESET index=2 result=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HIDRESET index=3 result=0
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+DEV 3 0627:0001 speed=0 hc=0 root=1 depth=1 port=3 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+CYCLE 4
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e down
+KEY 1e up
+HIDRESET index=2 result=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HIDRESET index=3 result=0
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+DEV 3 0627:0001 speed=0 hc=0 root=1 depth=1 port=3 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+CYCLE 5
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e down
+KEY 1e up
+HIDRESET index=2 result=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HIDRESET index=3 result=0
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+DEV 3 0627:0001 speed=0 hc=0 root=1 depth=1 port=3 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+CYCLE 6
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+HIDRESET index=2 result=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HIDRESET index=3 result=0
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e down
+KEY 1e up
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+DEV 3 0627:0001 speed=0 hc=0 root=1 depth=1 port=3 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+CYCLE 7
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+HIDRESET index=2 result=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HIDRESET index=3 result=0
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e down
+KEY 1e up
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+DEV 3 0627:0001 speed=0 hc=0 root=1 depth=1 port=3 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+CYCLE 8
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+HIDRESET index=2 result=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HIDRESET index=3 result=0
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+DEV 3 0627:0001 speed=0 hc=0 root=1 depth=1 port=3 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+CYCLE 9
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+HIDRESET index=2 result=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+HIDRESET index=3 result=0
+KEY 1e down
+MOUSE flags=0001 x=0 y=0 wheel=0 pan=0 abs=0
+MOUSE flags=0002 x=0 y=0 wheel=0 pan=0 abs=0
+KEY 1e up
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+DEV 3 0627:0001 speed=0 hc=0 root=1 depth=1 port=3 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+usbnt: device 0: removed
+usbnt: device 2: removed
+harness: client removal notification 2
+usbnt: device 3: removed
+harness: client removal notification 3
+harness: client removal notification 0
+HC 0 UHCI running ports=2
+  port 2 status 0023 dev 1
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 0 MICE 0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+RESULT hid-reset piix3-usb-uhci PASS: 20 physical resets, held-input release, identity, storage sibling, populated-hub removal

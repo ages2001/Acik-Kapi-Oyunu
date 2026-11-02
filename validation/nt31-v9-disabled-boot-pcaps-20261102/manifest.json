@@ -1,0 +1,25 @@
+{
+  "utc": "2026-11-01T22:40:53.767397+00:00",
+  "result": "PASS",
+  "scope": "Cold boot after actual NCPA disable, no manual DHCP execution; unrelated Notepad Startup item launched",
+  "minimum_post_logon_observation_seconds": 60.57710385322571,
+  "start_screenshot": "nt31-v9-disabled-logon-current-20261102.png",
+  "end_screenshot": "nt31-v9-disabled-observation-end-20261102.png",
+  "captures": {
+    "usb.pcap": {
+      "bytes": 34358,
+      "sha256": "6b94ef25401816e413a113642e504f0d0af76c1a0203ee1b7a45f63220461ed5",
+      "start_offset": 24,
+      "events": []
+    },
+    "pci.pcap": {
+      "bytes": 7851,
+      "sha256": "a223d505eba71d2184698223651e6e0d9fdaa4be461db8fc13801747c1613983",
+      "start_offset": 24,
+      "events": []
+    }
+  },
+  "limitations": [
+    "Bounded observation does not prove indefinite absence of future traffic"
+  ]
+}

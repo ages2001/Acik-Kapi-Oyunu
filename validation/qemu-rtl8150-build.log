@@ -1,0 +1,5 @@
+ninja: Entering directory `/workspace/rltklant-tools/qemu-src/build'
+[1/7] Generating qemu-version.h with a custom command (wrapped by meson to capture output)
+[2/4] Compiling C object libcommon.fa.p/hw_usb_dev-rtl8153.c.o
+[3/4] Linking target qemu-system-x86_64
+[4/4] Linking target qemu-system-i386

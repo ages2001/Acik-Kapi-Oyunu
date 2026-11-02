@@ -1,0 +1,2 @@
+"Startup",Startup,1,1
+"Keep personal","notepad.exe",,,21,0,0,0,0

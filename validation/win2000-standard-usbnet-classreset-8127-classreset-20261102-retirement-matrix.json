@@ -1,0 +1,97 @@
+{
+  "guest": "win2000-standard-usbnet-classreset-8127",
+  "utc": "2026-11-02T12:25:10.809245+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8153-native-hotplug.json",
+        "sha256": "022c8e1aa1e2ebaa1cbce32c9e5e22cf0ae298f2a8ea3798a9bcc68a30805bc2"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8153-function-power.json",
+        "sha256": "32a0697b5fc48472065ef6f3191de4042811d8a79866f43eb9aec77aa30125d1"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8153-port-reset-cycles.json",
+        "sha256": "43e8c8074bdc6a56fc2461fed42f150baf22384562cb8d455a1f49cbbfdc1bf6"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8153-native-cable.json",
+        "sha256": "acde07e6c3d5e7f773120293ac047d92e898532ad809da421220de58555bd08f"
+      },
+      "seconds": 73.66
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8156-native-hotplug.json",
+        "sha256": "d80f59c776c8f810322688b434ba7ce08accbccef4d22f31d82f4379255eedcc"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8156-function-power.json",
+        "sha256": "cd96af1fe3ebec883fa29f45a19a576dbddc17b0fea2d4c7573455eda71a6fff"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8156-port-reset-cycles.json",
+        "sha256": "f22b2143ca60312cc87b1d277176fbb747c4e6f51410c9e579b3d29fd369c087"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8156-native-cable.json",
+        "sha256": "cb9e5e1c4f66e3066225b8c8ec9bfe64a5d35f38e460b97d15ea6ca7392d5cc1"
+      },
+      "seconds": 76.3
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8157-native-hotplug.json",
+        "sha256": "156bd9ba780bcf1745fe9a56ff4be9d27c7411e91d4d8e2a3a8a9873d8b5908a"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8157-function-power.json",
+        "sha256": "2864efca51902558c49999a2fdcd065bd90f14829dc96f460839ce98e13d2a61"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8157-port-reset-cycles.json",
+        "sha256": "2b299fe91b4bdc0fad0fdc7085065878bb49a8c3c1937f912190810dcdbc0b10"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8157-native-cable.json",
+        "sha256": "2058a88269c4997a40df5481cb062924647d48022477153be1782b676a5fa59c"
+      },
+      "seconds": 93.18
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8159-native-hotplug.json",
+        "sha256": "7ecdb2a7e1326a0c23a7ee2f3d2d7f76534fd0b1c37b8b01cb3c78751f0a8a12"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8159-function-power.json",
+        "sha256": "ee6ed19fb9864cb8cceebfdf0800a2bd4da8558f0adac2a4fb5a7b4d9b7e02c1"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8159-port-reset-cycles.json",
+        "sha256": "ca85f6619fd4cc35a288385b8cac5720bcc2a6a59901930460711b800cf1d451"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-classreset-8127-classreset-20261102-8159-native-cable.json",
+        "sha256": "0544754bc78279622e320a0208b15c82d27271b7fe40ac16c3b7ecd029ebc905"
+      },
+      "seconds": 128.33
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

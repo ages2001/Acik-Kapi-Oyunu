@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/nt351-usbsetup-tree13-v2-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-cqcc_a23/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+3/6384 = 0.05% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 524288
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt351-usbsetup-tree13-v2-8127.qcow2",
+  "sha256_before_boot": "b3ecdc44ea03ed09c2ed4cf5870f0c198e19505f9af8c6fb7bbaf6e239a2126d",
+  "files": [
+    {
+      "guest_path": "USBNT13/USBTREE.EXE",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-13-upgrade-v2-20261102/tools/usbtree.exe",
+      "size": 57344,
+      "sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97",
+      "old_size": 57344,
+      "old_sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

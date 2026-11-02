@@ -1,0 +1,1 @@
+RESULT hid-reset PASS: 1300 four-interface resets; each protocol/idle/partial-open failure; retry and failed-reset removal; stable handles; held-key release; sibling continuity

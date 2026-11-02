@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-01T21:42:19.512531+00:00",
+  "guest": "nt31-usbsetup-configure-v6-8127",
+  "package": "legacy-setup-nt31-v6-20261101/manifest.json",
+  "parameters_changed": {
+    "BusType": {
+      "before": 5,
+      "after": 1
+    }
+  },
+  "startup_title_count": 2,
+  "startup_command_count": 2,
+  "result": "FAIL",
+  "scope": "Actual existing PCI adapter Configure/Yes followed by normal shutdown and offline readback"
+}

@@ -1,0 +1,54 @@
+{
+  "utc": "2026-11-02T17:45:32.550951+00:00",
+  "result": "PASS_CONTROLLED_DIAGNOSTIC_PRIOR_LATENCY_CAUSE_UNRESOLVED",
+  "guest": "nt351-usbsetup-timerprobe-rtl8139-8127",
+  "phases": [
+    {
+      "phase": "coarse-a",
+      "resolution_100ns": 100144,
+      "attach_seconds": [
+        2.8238652090076357,
+        2.873858430015389,
+        3.127546572999563
+      ],
+      "pci_payload_replies": 12
+    },
+    {
+      "phase": "fast",
+      "resolution_100ns": 10032,
+      "attach_seconds": [
+        2.829170150012942,
+        2.977126951009268,
+        2.5249611850013025
+      ],
+      "pci_payload_replies": 12
+    },
+    {
+      "phase": "coarse-b",
+      "resolution_100ns": 100144,
+      "attach_seconds": [
+        2.8743457189993933,
+        3.1297056559997145,
+        3.2286295229860116
+      ],
+      "pci_payload_replies": 12
+    }
+  ],
+  "total_pci_payload_replies": 36,
+  "conclusion": "Coarse/fast/coarse requests were measured in the guest. All nine attachments meet the existing 30-second host-time target. Coarse timer resolution alone does not reproduce the prior slow attachments; this is not proof of their cause or a deterministic latency fix.",
+  "tool_result": "PASS_CLEAN_LINK_AND_NT351_RESOURCE_RENDERING",
+  "tool_scope": "Diagnostic tool differs from the frozen clean build only in PE checksum. Screenshot inspected: USB tree window, controller/port rows and icon resources render. No 1.3-versioned tool runtime claim is inherited.",
+  "proofs": {
+    "nt351-timer-coarse-a-20261102.json": "39dec570ccd41fd8fa8165265508ee2fdb8d5558cd451d55fb265e7f2e07d966",
+    "nt351-timer-fast-20261102.json": "ef46d502a42a10094008fb7af0e3453d1cef605ff14383bc33e092a6352fcabf",
+    "nt351-timer-coarse-b-20261102.json": "809f2f08f494ac17f205bfb2eeb99ac6a2087519e7e4e24ab61aab84c116573b",
+    "nt351-usbtree-alignment-runtime-20261102.png": "ad16f69e5e8e4ef67885233b42d7b73a4d3b21e3b37ca78bd000018f8ea2efc3",
+    "nt351-timerprobe-safeoff-20261102.png": "472573237d71270cbfd537c07eca38f762c3ccb719282f8577bbbff4ef6da89d",
+    "usbnt-tools-alignment-fixed-20261102.log": "c0b3b4a81d27319efe24001d097c5ec6d01f81dfb6b30e637504a46e06a8ebbe",
+    "usbtree-alignment-proof-20261102/manifest.json": "94d826d1f4f9cf2338bb07c4dba7bac28b05bf76d35dd379d326b26c7110baea",
+    "binutils-resource-reference-20261102/manifest.json": "546337b4d7ad6e4daa82523dca44328a7410e9a667795dc25f5e9e82feb298f1",
+    "usbtree-link-file-extent-20261102.log": "e704f84aa367b353b3580b00d3078bf3b402b547085acd8b47bc4dcd2058a163",
+    "nt351-timerprobe-evidence-20261102/manifest.json": "fc98a1393809ab7773333ec12425c9920113676b4e4ecad720520920a4c62429",
+    "nt351-timerprobe-offline-20261102/manifest.json": "f15489c91b6e651624e085473e8d6ae565c3459b0b74086430ca69106cdeb897"
+  }
+}

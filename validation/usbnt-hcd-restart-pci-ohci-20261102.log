@@ -1,0 +1,494 @@
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+WRITE srb=01 scsi=00 xfer=32768
+usbnt: OHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: slot 0: device removed
+harness: client removal notification 0
+usbnt: device 1: removed
+harness: client removal notification 1
+usbnt: device 2: removed
+usbnt: device 3: removed
+harness: client removal notification 3
+harness: client removal notification 2
+usbnt: found OHCI at 00:02.0 (106b:003f) irq 10 mem febff000
+usbnt: ohci: 3 ports, revision 10
+usbnt: device 0: 46f4:0001 class 00, full speed, OHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB HARDDRIVE
+usbnt: device 0: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 0 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 0
+usbnt: device 1: 0627:0001 class 00, full speed, OHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB Keyboard
+usbnt: device 1: keyboard
+harness: client arrival notification 1
+usbnt: device 2: 0409:55aa class 09, full speed, OHCI port 3 depth 0, addr 3
+usbnt: device 2: QEMU QEMU USB Hub
+usbnt: device 2: hub with 8 ports
+harness: client arrival notification 2
+usbnt: device 3: 0627:0001 class 00, full speed, OHCI port 3 hub port 1, addr 4
+usbnt: device 3: QEMU QEMU USB Mouse
+usbnt: device 3: mouse, 5 buttons, wheel
+harness: client arrival notification 3
+usbnt: OHCI 00:02.0: devices settled after 1295 ms
+HCRESET index=0 result=0 count=1
+HC 0 OHCI running ports=3
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+  port 3 status 0023 dev 2
+DEV 0 46f4:0001 speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=0 msc=1 hid=0
+DEV 1 0627:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=0 hid=1
+DEV 2 0409:55aa speed=0 hc=0 root=3 depth=0 port=3 addr=3 hub=1 msc=0 hid=0
+DEV 3 0627:0001 speed=0 hc=0 root=3 depth=1 port=1 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+PASS controller restart 1
+usbnt: OHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: slot 0: device removed
+harness: client removal notification 0
+usbnt: device 1: removed
+harness: client removal notification 1
+usbnt: device 2: removed
+usbnt: device 3: removed
+harness: client removal notification 3
+harness: client removal notification 2
+usbnt: found OHCI at 00:02.0 (106b:003f) irq 10 mem febff000
+usbnt: ohci: 3 ports, revision 10
+usbnt: device 0: 46f4:0001 class 00, full speed, OHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB HARDDRIVE
+usbnt: device 0: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 0 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 0
+usbnt: device 1: 0627:0001 class 00, full speed, OHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB Keyboard
+usbnt: device 1: keyboard
+harness: client arrival notification 1
+usbnt: device 2: 0409:55aa class 09, full speed, OHCI port 3 depth 0, addr 3
+usbnt: device 2: QEMU QEMU USB Hub
+usbnt: device 2: hub with 8 ports
+harness: client arrival notification 2
+usbnt: device 3: 0627:0001 class 00, full speed, OHCI port 3 hub port 1, addr 4
+usbnt: device 3: QEMU QEMU USB Mouse
+usbnt: device 3: mouse, 5 buttons, wheel
+harness: client arrival notification 3
+usbnt: OHCI 00:02.0: devices settled after 1296 ms
+HCRESET index=0 result=0 count=1
+HC 0 OHCI running ports=3
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+  port 3 status 0023 dev 2
+DEV 0 46f4:0001 speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=0 msc=1 hid=0
+DEV 1 0627:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=0 hid=1
+DEV 2 0409:55aa speed=0 hc=0 root=3 depth=0 port=3 addr=3 hub=1 msc=0 hid=0
+DEV 3 0627:0001 speed=0 hc=0 root=3 depth=1 port=1 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+PASS controller restart 2
+usbnt: OHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: slot 0: device removed
+harness: client removal notification 0
+usbnt: device 1: removed
+harness: client removal notification 1
+usbnt: device 2: removed
+usbnt: device 3: removed
+harness: client removal notification 3
+harness: client removal notification 2
+usbnt: found OHCI at 00:02.0 (106b:003f) irq 10 mem febff000
+usbnt: ohci: 3 ports, revision 10
+usbnt: device 0: 46f4:0001 class 00, full speed, OHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB HARDDRIVE
+usbnt: device 0: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 0 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 0
+usbnt: device 1: 0627:0001 class 00, full speed, OHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB Keyboard
+usbnt: device 1: keyboard
+harness: client arrival notification 1
+usbnt: device 2: 0409:55aa class 09, full speed, OHCI port 3 depth 0, addr 3
+usbnt: device 2: QEMU QEMU USB Hub
+usbnt: device 2: hub with 8 ports
+harness: client arrival notification 2
+usbnt: device 3: 0627:0001 class 00, full speed, OHCI port 3 hub port 1, addr 4
+usbnt: device 3: QEMU QEMU USB Mouse
+usbnt: device 3: mouse, 5 buttons, wheel
+harness: client arrival notification 3
+usbnt: OHCI 00:02.0: devices settled after 1296 ms
+HCRESET index=0 result=0 count=1
+HC 0 OHCI running ports=3
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+  port 3 status 0023 dev 2
+DEV 0 46f4:0001 speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=0 msc=1 hid=0
+DEV 1 0627:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=0 hid=1
+DEV 2 0409:55aa speed=0 hc=0 root=3 depth=0 port=3 addr=3 hub=1 msc=0 hid=0
+DEV 3 0627:0001 speed=0 hc=0 root=3 depth=1 port=1 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+PASS controller restart 3
+usbnt: OHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: slot 0: device removed
+harness: client removal notification 0
+usbnt: device 1: removed
+harness: client removal notification 1
+usbnt: device 2: removed
+usbnt: device 3: removed
+harness: client removal notification 3
+harness: client removal notification 2
+usbnt: found OHCI at 00:02.0 (106b:003f) irq 10 mem febff000
+usbnt: ohci: 3 ports, revision 10
+usbnt: device 0: 46f4:0001 class 00, full speed, OHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB HARDDRIVE
+usbnt: device 0: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 0 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 0
+usbnt: device 1: 0627:0001 class 00, full speed, OHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB Keyboard
+usbnt: device 1: keyboard
+harness: client arrival notification 1
+usbnt: device 2: 0409:55aa class 09, full speed, OHCI port 3 depth 0, addr 3
+usbnt: device 2: QEMU QEMU USB Hub
+usbnt: device 2: hub with 8 ports
+harness: client arrival notification 2
+usbnt: device 3: 0627:0001 class 00, full speed, OHCI port 3 hub port 1, addr 4
+usbnt: device 3: QEMU QEMU USB Mouse
+usbnt: device 3: mouse, 5 buttons, wheel
+harness: client arrival notification 3
+usbnt: OHCI 00:02.0: devices settled after 1296 ms
+HCRESET index=0 result=0 count=1
+HC 0 OHCI running ports=3
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+  port 3 status 0023 dev 2
+DEV 0 46f4:0001 speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=0 msc=1 hid=0
+DEV 1 0627:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=0 hid=1
+DEV 2 0409:55aa speed=0 hc=0 root=3 depth=0 port=3 addr=3 hub=1 msc=0 hid=0
+DEV 3 0627:0001 speed=0 hc=0 root=3 depth=1 port=1 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+PASS controller restart 4
+usbnt: OHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: slot 0: device removed
+harness: client removal notification 0
+usbnt: device 1: removed
+harness: client removal notification 1
+usbnt: device 2: removed
+usbnt: device 3: removed
+harness: client removal notification 3
+harness: client removal notification 2
+usbnt: found OHCI at 00:02.0 (106b:003f) irq 10 mem febff000
+usbnt: ohci: 3 ports, revision 10
+usbnt: device 0: 46f4:0001 class 00, full speed, OHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB HARDDRIVE
+usbnt: device 0: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 0 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 0
+usbnt: device 1: 0627:0001 class 00, full speed, OHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB Keyboard
+usbnt: device 1: keyboard
+harness: client arrival notification 1
+usbnt: device 2: 0409:55aa class 09, full speed, OHCI port 3 depth 0, addr 3
+usbnt: device 2: QEMU QEMU USB Hub
+usbnt: device 2: hub with 8 ports
+harness: client arrival notification 2
+usbnt: device 3: 0627:0001 class 00, full speed, OHCI port 3 hub port 1, addr 4
+usbnt: device 3: QEMU QEMU USB Mouse
+usbnt: device 3: mouse, 5 buttons, wheel
+harness: client arrival notification 3
+usbnt: OHCI 00:02.0: devices settled after 1296 ms
+HCRESET index=0 result=0 count=1
+HC 0 OHCI running ports=3
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+  port 3 status 0023 dev 2
+DEV 0 46f4:0001 speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=0 msc=1 hid=0
+DEV 1 0627:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=0 hid=1
+DEV 2 0409:55aa speed=0 hc=0 root=3 depth=0 port=3 addr=3 hub=1 msc=0 hid=0
+DEV 3 0627:0001 speed=0 hc=0 root=3 depth=1 port=1 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+PASS controller restart 5
+usbnt: OHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: slot 0: device removed
+harness: client removal notification 0
+usbnt: device 1: removed
+harness: client removal notification 1
+usbnt: device 2: removed
+usbnt: device 3: removed
+harness: client removal notification 3
+harness: client removal notification 2
+usbnt: found OHCI at 00:02.0 (106b:003f) irq 10 mem febff000
+usbnt: ohci: 3 ports, revision 10
+usbnt: device 0: 46f4:0001 class 00, full speed, OHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB HARDDRIVE
+usbnt: device 0: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 0 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 0
+usbnt: device 1: 0627:0001 class 00, full speed, OHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB Keyboard
+usbnt: device 1: keyboard
+harness: client arrival notification 1
+usbnt: device 2: 0409:55aa class 09, full speed, OHCI port 3 depth 0, addr 3
+usbnt: device 2: QEMU QEMU USB Hub
+usbnt: device 2: hub with 8 ports
+harness: client arrival notification 2
+usbnt: device 3: 0627:0001 class 00, full speed, OHCI port 3 hub port 1, addr 4
+usbnt: device 3: QEMU QEMU USB Mouse
+usbnt: device 3: mouse, 5 buttons, wheel
+harness: client arrival notification 3
+usbnt: OHCI 00:02.0: devices settled after 1296 ms
+HCRESET index=0 result=0 count=1
+HC 0 OHCI running ports=3
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+  port 3 status 0023 dev 2
+DEV 0 46f4:0001 speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=0 msc=1 hid=0
+DEV 1 0627:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=0 hid=1
+DEV 2 0409:55aa speed=0 hc=0 root=3 depth=0 port=3 addr=3 hub=1 msc=0 hid=0
+DEV 3 0627:0001 speed=0 hc=0 root=3 depth=1 port=1 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+PASS controller restart 6
+usbnt: OHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: slot 0: device removed
+harness: client removal notification 0
+usbnt: device 1: removed
+harness: client removal notification 1
+usbnt: device 2: removed
+usbnt: device 3: removed
+harness: client removal notification 3
+harness: client removal notification 2
+usbnt: found OHCI at 00:02.0 (106b:003f) irq 10 mem febff000
+usbnt: ohci: 3 ports, revision 10
+usbnt: device 0: 46f4:0001 class 00, full speed, OHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB HARDDRIVE
+usbnt: device 0: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 0 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 0
+usbnt: device 1: 0627:0001 class 00, full speed, OHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB Keyboard
+usbnt: device 1: keyboard
+harness: client arrival notification 1
+usbnt: device 2: 0409:55aa class 09, full speed, OHCI port 3 depth 0, addr 3
+usbnt: device 2: QEMU QEMU USB Hub
+usbnt: device 2: hub with 8 ports
+harness: client arrival notification 2
+usbnt: device 3: 0627:0001 class 00, full speed, OHCI port 3 hub port 1, addr 4
+usbnt: device 3: QEMU QEMU USB Mouse
+usbnt: device 3: mouse, 5 buttons, wheel
+harness: client arrival notification 3
+usbnt: OHCI 00:02.0: devices settled after 1294 ms
+HCRESET index=0 result=0 count=1
+HC 0 OHCI running ports=3
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+  port 3 status 0023 dev 2
+DEV 0 46f4:0001 speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=0 msc=1 hid=0
+DEV 1 0627:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=0 hid=1
+DEV 2 0409:55aa speed=0 hc=0 root=3 depth=0 port=3 addr=3 hub=1 msc=0 hid=0
+DEV 3 0627:0001 speed=0 hc=0 root=3 depth=1 port=1 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+PASS controller restart 7
+usbnt: OHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: slot 0: device removed
+harness: client removal notification 0
+usbnt: device 1: removed
+harness: client removal notification 1
+usbnt: device 2: removed
+usbnt: device 3: removed
+harness: client removal notification 3
+harness: client removal notification 2
+usbnt: found OHCI at 00:02.0 (106b:003f) irq 10 mem febff000
+usbnt: ohci: 3 ports, revision 10
+usbnt: device 0: 46f4:0001 class 00, full speed, OHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB HARDDRIVE
+usbnt: device 0: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 0 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 0
+usbnt: device 1: 0627:0001 class 00, full speed, OHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB Keyboard
+usbnt: device 1: keyboard
+harness: client arrival notification 1
+usbnt: device 2: 0409:55aa class 09, full speed, OHCI port 3 depth 0, addr 3
+usbnt: device 2: QEMU QEMU USB Hub
+usbnt: device 2: hub with 8 ports
+harness: client arrival notification 2
+usbnt: device 3: 0627:0001 class 00, full speed, OHCI port 3 hub port 1, addr 4
+usbnt: device 3: QEMU QEMU USB Mouse
+usbnt: device 3: mouse, 5 buttons, wheel
+harness: client arrival notification 3
+usbnt: OHCI 00:02.0: devices settled after 1296 ms
+HCRESET index=0 result=0 count=1
+HC 0 OHCI running ports=3
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+  port 3 status 0023 dev 2
+DEV 0 46f4:0001 speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=0 msc=1 hid=0
+DEV 1 0627:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=0 hid=1
+DEV 2 0409:55aa speed=0 hc=0 root=3 depth=0 port=3 addr=3 hub=1 msc=0 hid=0
+DEV 3 0627:0001 speed=0 hc=0 root=3 depth=1 port=1 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+PASS controller restart 8
+usbnt: OHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: slot 0: device removed
+harness: client removal notification 0
+usbnt: device 1: removed
+harness: client removal notification 1
+usbnt: device 2: removed
+usbnt: device 3: removed
+harness: client removal notification 3
+harness: client removal notification 2
+usbnt: found OHCI at 00:02.0 (106b:003f) irq 10 mem febff000
+usbnt: ohci: 3 ports, revision 10
+usbnt: device 0: 46f4:0001 class 00, full speed, OHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB HARDDRIVE
+usbnt: device 0: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 0 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 0
+usbnt: device 1: 0627:0001 class 00, full speed, OHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB Keyboard
+usbnt: device 1: keyboard
+harness: client arrival notification 1
+usbnt: device 2: 0409:55aa class 09, full speed, OHCI port 3 depth 0, addr 3
+usbnt: device 2: QEMU QEMU USB Hub
+usbnt: device 2: hub with 8 ports
+harness: client arrival notification 2
+usbnt: device 3: 0627:0001 class 00, full speed, OHCI port 3 hub port 1, addr 4
+usbnt: device 3: QEMU QEMU USB Mouse
+usbnt: device 3: mouse, 5 buttons, wheel
+harness: client arrival notification 3
+usbnt: OHCI 00:02.0: devices settled after 1299 ms
+HCRESET index=0 result=0 count=1
+HC 0 OHCI running ports=3
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+  port 3 status 0023 dev 2
+DEV 0 46f4:0001 speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=0 msc=1 hid=0
+DEV 1 0627:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=0 hid=1
+DEV 2 0409:55aa speed=0 hc=0 root=3 depth=0 port=3 addr=3 hub=1 msc=0 hid=0
+DEV 3 0627:0001 speed=0 hc=0 root=3 depth=1 port=1 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+PASS controller restart 9
+usbnt: OHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: slot 0: device removed
+harness: client removal notification 0
+usbnt: device 1: removed
+harness: client removal notification 1
+usbnt: device 2: removed
+usbnt: device 3: removed
+harness: client removal notification 3
+harness: client removal notification 2
+usbnt: found OHCI at 00:02.0 (106b:003f) irq 10 mem febff000
+usbnt: ohci: 3 ports, revision 10
+usbnt: device 0: 46f4:0001 class 00, full speed, OHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB HARDDRIVE
+usbnt: device 0: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 0 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 0
+usbnt: device 1: 0627:0001 class 00, full speed, OHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB Keyboard
+usbnt: device 1: keyboard
+harness: client arrival notification 1
+usbnt: device 2: 0409:55aa class 09, full speed, OHCI port 3 depth 0, addr 3
+usbnt: device 2: QEMU QEMU USB Hub
+usbnt: device 2: hub with 8 ports
+harness: client arrival notification 2
+usbnt: device 3: 0627:0001 class 00, full speed, OHCI port 3 hub port 1, addr 4
+usbnt: device 3: QEMU QEMU USB Mouse
+usbnt: device 3: mouse, 5 buttons, wheel
+harness: client arrival notification 3
+usbnt: OHCI 00:02.0: devices settled after 1298 ms
+HCRESET index=0 result=0 count=1
+HC 0 OHCI running ports=3
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+  port 3 status 0023 dev 2
+DEV 0 46f4:0001 speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=0 msc=1 hid=0
+DEV 1 0627:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=0 hid=1
+DEV 2 0409:55aa speed=0 hc=0 root=3 depth=0 port=3 addr=3 hub=1 msc=0 hid=0
+DEV 3 0627:0001 speed=0 hc=0 root=3 depth=1 port=1 addr=4 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 1
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+PASS controller restart 10
+RESULT controller-restart pci-ohci PASS 10

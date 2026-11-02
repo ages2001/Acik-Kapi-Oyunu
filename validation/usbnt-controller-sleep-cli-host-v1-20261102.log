@@ -1,0 +1,1 @@
+PASS: actual ntcli.c: stale handles, 1000 reattachments, concurrent transfer/removal, callback rundown, reset/claim/endpoint exclusion, failed reset and retry, invalid lengths

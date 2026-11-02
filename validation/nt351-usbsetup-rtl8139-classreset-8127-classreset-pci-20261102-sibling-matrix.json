@@ -1,0 +1,203 @@
+{
+  "guest": "nt351-usbsetup-rtl8139-classreset-8127",
+  "started_utc": "2026-11-02T12:30:06.511910+00:00",
+  "result": "FAIL",
+  "rows": [
+    {
+      "cycle": 1,
+      "device": "usbnic",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c1-absent.json",
+          "sha256": "7e38a45700adda5f9109ede51c73474dfaa3403711e7c54496868b27224fdd4b",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c1-reinsert.json",
+          "sha256": "d4968562c0d031c5f570299361e01e95ff6ff6d45af83745dd6d3c38b8e02e8a",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c1-cable-down.json",
+          "sha256": "f5ae46a4042c7a1f484cf2db235c23bf9b81b404e413633429077a48dcceed1d",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c1-cable-up.json",
+          "sha256": "711de0cb0e19209ed9e19b36348f48d137eaacbaa45652ebdbb90a1df360f079",
+          "mask": 2,
+          "full_payload_replies": 4
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000001 up=00000000 status=C0000001\nUNT-DOWN id=00000001\n",
+      "reinsert_trace": "UNT-UP id=00000002 pid=00008153 status=00000000\nUNT-LINK id=00000002 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000002 up=00000000 status=00000000\nUNT-LINK id=00000002 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c1-passed.png",
+        "sha256": "ea17b56bbad58515bd1673ecde9a3f2bb6cf1beb310f3419592ba6e8eee52522"
+      }
+    },
+    {
+      "cycle": 2,
+      "device": "usbnic",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c2-absent.json",
+          "sha256": "1f0cb3239b9dd050754b5b74586272f1d715109720e92f7a174e5acb2fd5f585",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c2-reinsert.json",
+          "sha256": "ee15a223b163f39174eb99e1b97c3fc8c58265dbfc1850328a101e0f043fa45a",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c2-cable-down.json",
+          "sha256": "c4be777d419b1feba64ee54ff5287ca07b0145eb15b94a44e71ad6b8e8bcd88b",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c2-cable-up.json",
+          "sha256": "352b5268b077b9efa2378e095d2ab73bb872ffc19f9a39a75f7d48113327f694",
+          "mask": 2,
+          "full_payload_replies": 4
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000002 up=00000000 status=C0000001\nUNT-DOWN id=00000002\n",
+      "reinsert_trace": "UNT-UP id=00000003 pid=00008156 status=00000000\nUNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c2-passed.png",
+        "sha256": "15fe35c3af0a3862b4eda5b00c1c5cd97997e328fed2a305461eb14e2b6f0df6"
+      }
+    },
+    {
+      "cycle": 3,
+      "device": "usbnic",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c3-absent.json",
+          "sha256": "9fc999bfb2c2aa9bc3cf8127b43138e07f33a195d9d9b6d08a25d61d4b9ed93c",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c3-reinsert.json",
+          "sha256": "65b9704f62880be4840f9ca6b2fa2884e8bc2b1b51f4c0d3685c32cdffc67618",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c3-cable-down.json",
+          "sha256": "20e10cb9925640bb5f368c584cc80c9ea17ca4d23cf9f386a0eb647b7215a73b",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c3-cable-up.json",
+          "sha256": "bcf38814835b8f100eba1af4f36fd2691c0ed0d865690c333095abded6e8c34f",
+          "mask": 2,
+          "full_payload_replies": 4
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000003 up=00000000 status=C0000001\nUNT-DOWN id=00000003\n",
+      "reinsert_trace": "UNT-UP id=00000004 pid=00008157 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c3-passed.png",
+        "sha256": "17966bf3527dadcb282cdb409eed12774a004dc2505608fff51f1135ecb6253e"
+      }
+    },
+    {
+      "cycle": 4,
+      "device": "usbnic",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-c4-absent.json",
+          "sha256": "759e27630daa5c682ddbe370756c3635427bb5700a2bdfc72e2858b5dfff41c9",
+          "mask": 2,
+          "full_payload_replies": 4
+        }
+      ],
+      "result": "RUNNING",
+      "absent_trace": "UNT-LINK id=00000004 up=00000000 status=C0000001\nUNT-DOWN id=00000004\n"
+    }
+  ],
+  "scope": "PCI-only network binding: verify full-MTU PCI traffic during USBNT generic-client attachment/removal and USB carrier changes. USB attachment/firmware status comes from driver traces; no USB TCP/IP traffic is claimed. QEMU only.",
+  "tools_sha256": {
+    "legacy_network_probe.c": "4b02046a9015753235bf06f90fe27ce612c2f492afc991dbc16997ba910194e9",
+    "LNET.EXE": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b",
+    "legacy_network_report.py": "0efc3ba390915115448fc267ef516167d2c5dfaa3d138ed8a7ef58d00c7c2bf2",
+    "legacy_sibling_cycles.py": "07f5ed93b85e35cbe54635b620bf3fd3fbca44d6e4bdfd9aace690aa33ec9673"
+  },
+  "launch": {
+    "started_at": 1793621813.4261973,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-classreset-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-classreset-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-classreset-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-classreset-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-classreset-8127/usb.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0",
+      "-netdev",
+      "user,id=pci0,net=10.0.3.0/24",
+      "-device",
+      "rtl8139,id=pcinic,netdev=pci0",
+      "-object",
+      "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-classreset-8127/pci.pcap"
+    ],
+    "qemu_sha256": "8de6bf9206c04b049be0f3b5692d535207143f8c99ee9c3d5825ae64b8d8e6b5"
+  },
+  "baseline": {
+    "file": "nt351-usbsetup-rtl8139-classreset-8127-classreset-pci-20261102-baseline.json",
+    "sha256": "2a35159fb9a26b93e78b34c95fb59e9eb36e579787c66d329210eb0b1824cd31",
+    "mask": 2,
+    "full_payload_replies": 4
+  },
+  "error": "AssertionError('Timed out waiting for pid=00008159 status=00000000\\n')",
+  "finished_utc": "2026-11-02T12:33:49.670426+00:00"
+}

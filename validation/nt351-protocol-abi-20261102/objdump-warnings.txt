@@ -1,0 +1,3 @@
+i686-w64-mingw32-objdump: /workspace/rltklant-vm/install/nt351-standard/installed-ndis.sys: warning: ignoring section flag IMAGE_SCN_MEM_NOT_PAGED in section .text
+i686-w64-mingw32-objdump: /workspace/rltklant-vm/install/nt351-standard/installed-ndis.sys: warning: ignoring section flag IMAGE_SCN_MEM_NOT_PAGED in section .rdata
+i686-w64-mingw32-objdump: /workspace/rltklant-vm/install/nt351-standard/installed-ndis.sys: warning: ignoring section flag IMAGE_SCN_MEM_NOT_PAGED in section .data

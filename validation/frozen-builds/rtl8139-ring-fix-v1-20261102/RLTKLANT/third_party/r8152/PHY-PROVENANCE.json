@@ -1,0 +1,828 @@
+{
+  "repository": "https://github.com/bb-qq/r8152",
+  "commit": "477a723a41c3340bd7d701f657711c334d0c42bd",
+  "source_sha256": "87397a44617a38ed21720cfd4b50f2dbaea263291f94915a18442ca846f7e7ca",
+  "license": "GPL-2.0-only",
+  "checked_wrappers": [
+    "r8153_aldps_en",
+    "r8153_phy_status",
+    "r8153_wdt1_end",
+    "r8156b_wait_loading_flash",
+    "r8159_wait_backup_restore",
+    "rtl8152_nic_reset",
+    "rtl_phy_patch_request",
+    "wait_adv_cmd_ready",
+    "wait_oob_link_list_ready"
+  ],
+  "changes": [
+    "Rename listed function definitions, preserving bodies, to add checked postconditions in usbphyseq.c. Other function bodies and embedded arrays are unchanged."
+  ],
+  "scope": "PHY configuration, embedded vendor patches, MAC cold-init/up/enable. Separate from host power policy, packet queues and actual silicon validation.",
+  "functions": [
+    {
+      "name": "usb_ocp_write",
+      "line": 1386,
+      "sha256": "c949fcd67ca7df74cea689a99716a2f5ea066c33b7436353815b612b728b696e"
+    },
+    {
+      "name": "r8152_mdio_write",
+      "line": 1566,
+      "sha256": "f8ee09da327f545385685d451707dd9016f649aba028cdebfa316244502e6054"
+    },
+    {
+      "name": "r8152_mdio_read",
+      "line": 1571,
+      "sha256": "737686bbe41b69dfd2ff4b1885cc5e54d917fb449b790a3748f0b97be296b6f4"
+    },
+    {
+      "name": "sram_write",
+      "line": 1581,
+      "sha256": "bccd8e1deaeb0ccc03909d67b141e13e483b215b3c605607492d36153cfd0d7e"
+    },
+    {
+      "name": "sram_read",
+      "line": 1595,
+      "sha256": "ba53c64bb45c8b9d2a59600a42ba68329ee5e7d590082ccd1b8c75a8fbb5924f"
+    },
+    {
+      "name": "ocp_dword_w0w1",
+      "line": 1654,
+      "sha256": "8952d9a55545299734d82ff84268b911b693e8c68527517206b7a4bf8dbaa644"
+    },
+    {
+      "name": "ocp_word_w0w1",
+      "line": 1671,
+      "sha256": "5ab116e074687c3e8a5c6c820ae68b824fbefdad6157453befb07f73ac2b41d3"
+    },
+    {
+      "name": "ocp_byte_w0w1",
+      "line": 1688,
+      "sha256": "34b72b7f7018756aa964b4f28fe7e20cc824a797aea8cff0e86308692243bbea"
+    },
+    {
+      "name": "ocp_dword_clr_bits",
+      "line": 1705,
+      "sha256": "bbbb41e92f7e34c147c51e37d8e1a68b7d59b0afce0e7469e89d3b36274763d1"
+    },
+    {
+      "name": "ocp_word_clr_bits",
+      "line": 1717,
+      "sha256": "6d8b8055f9c4bc8af9d287902d6af9fbc7b76475eb04cac1c80c383964d8ef9b"
+    },
+    {
+      "name": "ocp_word_set_bits",
+      "line": 1723,
+      "sha256": "949523c4a8d545e3d16b26bee7106e9051166af387d198fa185b4cd7c6e64097"
+    },
+    {
+      "name": "ocp_word_test_and_clr_bits",
+      "line": 1729,
+      "sha256": "55cf28fe343b78f9fc1cb5adc81e11fc8e8587daf2110e7e38a296265facb9f9"
+    },
+    {
+      "name": "ocp_byte_clr_bits",
+      "line": 1750,
+      "sha256": "3be6511a503ce80343266fdd6da187f8a1a7502ab5cd8f3e434af82670ce8207"
+    },
+    {
+      "name": "ocp_byte_set_bits",
+      "line": 1756,
+      "sha256": "ad20a0dffb281f0de2bbbc8289d9ad6ebff93f02b4a5da418f52aa22b8495aaf"
+    },
+    {
+      "name": "ocp_reg_w0w1",
+      "line": 1762,
+      "sha256": "089b241bddd5cbe4108eb45dc64fcb7c45709679af9bda89bd0fff41dae135b5"
+    },
+    {
+      "name": "ocp_reg_clr_bits",
+      "line": 1777,
+      "sha256": "1113712875e75fb3ba15e7b6a9cae8e1426b6509982679ef9ff3abdf65484f7c"
+    },
+    {
+      "name": "ocp_reg_set_bits",
+      "line": 1782,
+      "sha256": "ba3f57805f89eaeca52c04e4daaaaebcc86442dc9511730928482f127f5d74e7"
+    },
+    {
+      "name": "sram_write_w0w1",
+      "line": 1787,
+      "sha256": "8574c973295503085d3096944af0e0728b67ace16122110ea5166a7410743172"
+    },
+    {
+      "name": "sram_set_bits",
+      "line": 1803,
+      "sha256": "20cf540fa4128f0d4f3e8b29e8a5178e11cd2381ca263af9e23880a2e634fa5f"
+    },
+    {
+      "name": "sram_clr_bits",
+      "line": 1808,
+      "sha256": "c276f3034324075770c40b7c7d961d478f2809a91e072f07d8b40cf28bf92d7a"
+    },
+    {
+      "name": "sram2_write",
+      "line": 1813,
+      "sha256": "d6ab521b92e56f5c4504c33693b37991a6b4267ee45dada382132d5ebd80548b"
+    },
+    {
+      "name": "sram2_read",
+      "line": 1827,
+      "sha256": "06d8b79b55fc286603ab2c149252e0d83bd894f96ca247987080ae13b855c675"
+    },
+    {
+      "name": "sram2_write_w0w1",
+      "line": 1841,
+      "sha256": "bc76dde8ab7c42eb713fbc42f1bf731febe376ae43f6ba832463ed7b7ff04b8a"
+    },
+    {
+      "name": "sram2_set_bits",
+      "line": 1857,
+      "sha256": "78d2b5e8582aa06122054c3b3525c5a5ea18c521c3b1c682f43b06f6d47f2ab9"
+    },
+    {
+      "name": "sram2_clr_bits",
+      "line": 1862,
+      "sha256": "6ad16986445ca4740c3013bad3ef520b442896f1e4d6029516adf50317efad0d"
+    },
+    {
+      "name": "r8152_mdio_set_bit",
+      "line": 1867,
+      "sha256": "0b7fbd1eb317002c1565dce9d2e96582e7268e4c2a191c4cf7b0d54cdb3d224c"
+    },
+    {
+      "name": "r8152_mdio_clr_bit",
+      "line": 1881,
+      "sha256": "401117f372744461ac4d7be4e45a3f3ea96edb6b2ec336e40d31325e961f047b"
+    },
+    {
+      "name": "r8152_mdio_test_and_clr_bit",
+      "line": 1895,
+      "sha256": "fdd3c26938cde79487e75ad35b5f2e1567811f3477741c6f0db54dc14d32e52b"
+    },
+    {
+      "name": "wait_adv_cmd_ready",
+      "line": 1917,
+      "sha256": "8c8c540b0fa1d93edbdb2829451aefa2a761e55ac932912679558ef73c10ef47"
+    },
+    {
+      "name": "ocp_adv_access",
+      "line": 1938,
+      "sha256": "d45ceeab7bb2d6d5cbf044d689c57292c24b7f6d4b967468e136aa7bab55ee3c"
+    },
+    {
+      "name": "rtl_bmu_read",
+      "line": 1988,
+      "sha256": "c3361439cd0426c5ed03fee1cd6615ebd8fc2ca8dd424b1abbcd3cc30a3b9d31"
+    },
+    {
+      "name": "rtl_bmu_write",
+      "line": 1993,
+      "sha256": "a7bd884c4a1db275b94b3ac0868c563f742e1613f81408cacb7c624d7bf41bec"
+    },
+    {
+      "name": "rtl_bmu_w0w1",
+      "line": 1998,
+      "sha256": "450cca247c1723040100a499c2855fee62bb240db31ed531a6c3d78f93789004"
+    },
+    {
+      "name": "rtl_bmu_clr_bits",
+      "line": 2014,
+      "sha256": "25f9d2006dd1d2063fefc8aeb2bc5703c4ad5fa945c9b94b70d16183e3d6531d"
+    },
+    {
+      "name": "rtl_bmu_set_bits",
+      "line": 2019,
+      "sha256": "4344e4362f62b70ba5949e7fad38ef49e061218c4fc0bef407e391f95880f706"
+    },
+    {
+      "name": "rtl_ip_read",
+      "line": 2024,
+      "sha256": "2cb387dadd66c2592464f554d9366f08050d686152f28af27fd6941bb8e77181"
+    },
+    {
+      "name": "rtl_ip_write",
+      "line": 2029,
+      "sha256": "817090e0cba12bc0e5db2bbd199aa6c169f8b8deec401812443fa94d0ac0d594"
+    },
+    {
+      "name": "rtl_ip_w0w1",
+      "line": 2034,
+      "sha256": "5f91ed2793f58c3a698c3d97bf8eb30208dfb41559bc6f1899e3b1b6801f709d"
+    },
+    {
+      "name": "rtl_ip_clr_bits",
+      "line": 2050,
+      "sha256": "bde8408a6399d7925fdc660ef75bdbf627835dc48e2ea7e072a532d55104838d"
+    },
+    {
+      "name": "rtl_ip_set_bits",
+      "line": 2055,
+      "sha256": "d0f3281be1118588613fb44e4539d9579bf5f060b4bbeac96c34931e73772965"
+    },
+    {
+      "name": "r8152b_reset_packet_filter",
+      "line": 4227,
+      "sha256": "3f0486dd247c2ad196217bc8639be75ca4b7c22e1b5198a2b68d2ba00016b489"
+    },
+    {
+      "name": "rtl8152_nic_reset",
+      "line": 4241,
+      "sha256": "e1e97fe4bb03a345bf585c0b41fe14afccc304cb03bfa07c8372f91e1c4eb4d6"
+    },
+    {
+      "name": "set_tx_qlen",
+      "line": 4315,
+      "sha256": "231029a01834ee94a1582fa097402856777994ce954d2df432005dbb251c8a24"
+    },
+    {
+      "name": "rtl8152_get_speed",
+      "line": 4324,
+      "sha256": "e1d25efe61bf0100f092b529118a29870713454d4e010b0eac0f22a58b45dcc6"
+    },
+    {
+      "name": "rtl_eee_plus_en",
+      "line": 4334,
+      "sha256": "5ae6c387e032607eea4647936f05c6a2428010621a8d2c01d2bd8d04879a4101"
+    },
+    {
+      "name": "rtl_set_eee_plus",
+      "line": 4344,
+      "sha256": "b78c9fe60e2fcfce9eccd831a8f4b982d60026a58d69034fbe861a6e7cd7e777"
+    },
+    {
+      "name": "rxdy_gated_en",
+      "line": 4355,
+      "sha256": "2726da11a53db5831386f6c860b71d7c530a6c3cd0be52e6b4162f65a728bced"
+    },
+    {
+      "name": "rtl_set_ifg",
+      "line": 4441,
+      "sha256": "75699bbb3c1c94624c78a756f75edf45ddb64959f3a0862b786e5d6eaa61aad1"
+    },
+    {
+      "name": "r8153b_rx_agg_chg_indicate",
+      "line": 4465,
+      "sha256": "75834f27c9fc03eae371e4a92d702f2da5572a044877d381d0f077c8627fae3b"
+    },
+    {
+      "name": "rtl_enable",
+      "line": 4471,
+      "sha256": "999da60ff8a67212e7035807c6fcb1c3e6b2ffe9dc806c3ef2671c0149274c2e"
+    },
+    {
+      "name": "rtl8152_enable",
+      "line": 4506,
+      "sha256": "6a18ba7b14b6485303b6b11ec0667d9bbc649af05da798647101d6d3a4018c30"
+    },
+    {
+      "name": "r8153_set_rx_early_timeout",
+      "line": 4524,
+      "sha256": "126c4f4d351a20dda7b61e41d54f01dfff2db64387129b0b55c528c844842543"
+    },
+    {
+      "name": "rx_reserved_size",
+      "line": 4576,
+      "sha256": "226e160526cc3d54fbf044cdac575def641ebf6d789990256ebadbeaea4833ed"
+    },
+    {
+      "name": "r8153_set_rx_early_size",
+      "line": 4581,
+      "sha256": "80e6cf975ad85c6dcaec06fe48f52e8c6020c1ea09b7147581b5307bcad7bd35"
+    },
+    {
+      "name": "rtl8153_enable",
+      "line": 4621,
+      "sha256": "e10a3932326b600c1631081349b7e378608f4fca6b535bbbafbc1b1a28138bcf"
+    },
+    {
+      "name": "r8152_power_cut_en",
+      "line": 4713,
+      "sha256": "e40250d7c48e5a541103ef4ae416eeb83687b6bc6a465678e927de58087f3221"
+    },
+    {
+      "name": "rtl_rx_vlan_en",
+      "line": 4733,
+      "sha256": "71420d50218a04439616f5873e3f7892c0560f2830b03635f175a5135a15a76c"
+    },
+    {
+      "name": "__rtl_get_wol",
+      "line": 4850,
+      "sha256": "e56f6359a7faf5c7de0ec810d9c6fef18a15615f02fc096648ab07e19f2a61d3"
+    },
+    {
+      "name": "__rtl_set_wol",
+      "line": 4885,
+      "sha256": "ccc2a83dedb3e7e9dd287e604f26bbc70d187c932e28c07778b20cc98c9632c6"
+    },
+    {
+      "name": "r8153_mac_clk_speed_down",
+      "line": 4935,
+      "sha256": "5d8090e12ac6842b415719e0b83f2b445109cf01f659a5d0c2feee373387f9cb"
+    },
+    {
+      "name": "r8156_mac_clk_spd",
+      "line": 4950,
+      "sha256": "af331b1ba514149dc85fa03b55dfdfbf039d8ee0d77675a428d63dc3b0511e28"
+    },
+    {
+      "name": "r8153_u1u2en",
+      "line": 4975,
+      "sha256": "df268210baeef2d9875fb787ef301dac72be4b35028215c5e909ebd69abeb511"
+    },
+    {
+      "name": "r8153b_u1u2en",
+      "line": 4988,
+      "sha256": "e0b9d1a13143dd54c1b3af33171dd8aac6565265c50666973117b8908bfba3d5"
+    },
+    {
+      "name": "r8153_u2p3en",
+      "line": 4998,
+      "sha256": "bad055453f706b7705a082b231a2ad841d9b04c40ab4f735b6804cc0b4648506"
+    },
+    {
+      "name": "r8157_u2p3en",
+      "line": 5008,
+      "sha256": "120a5a59fd4b81991a46a7b5e3aa268160fa78dbafc679268a47573096cfa007"
+    },
+    {
+      "name": "r8156b_flash_used",
+      "line": 5016,
+      "sha256": "2c03c71663d7fd17dbc04179d522197fdfbfc9225a718d88484cc7314eb6cf6d"
+    },
+    {
+      "name": "r8153b_ups_flags",
+      "line": 5036,
+      "sha256": "6aa33b07946c778c4da59743d3c41cb040ff5ad50d2acb09e1ada7e34fea4ccb"
+    },
+    {
+      "name": "r8156_ups_flags",
+      "line": 5111,
+      "sha256": "3ea11cadf2babbe881458231e7dd87d917603892a14b0f7a28f1413fa80ed30d"
+    },
+    {
+      "name": "rtl_green_en",
+      "line": 5213,
+      "sha256": "5e404eae2752d86f98e0a0346fd063187de54c97563b9df98e3518bc8d81d699"
+    },
+    {
+      "name": "r8153b_green_en",
+      "line": 5227,
+      "sha256": "0757a4d378dc0fac5dd1bbfd8b728a07a8f39dbd114419eed8e3927da3f2d4ae"
+    },
+    {
+      "name": "r8153_phy_status",
+      "line": 5268,
+      "sha256": "297dab041f26088391af17f03355d0cbfd38eac4314048a44a4b3c875475205f"
+    },
+    {
+      "name": "r8153b_ups_en",
+      "line": 5295,
+      "sha256": "2580ff3ba737764cc615149bed1608618ce127007213399ea69a25bc309a77d9"
+    },
+    {
+      "name": "r8153c_ups_en",
+      "line": 5354,
+      "sha256": "750c6a04fc16af229b3f009f804c32e5fb76a45f64d8119a01348acb5d2e90bf"
+    },
+    {
+      "name": "r8156_ups_en",
+      "line": 5429,
+      "sha256": "76312d8f2f1c71c7499025ba089c127be4e7f402aa3e3ba7f78c846dadc05518"
+    },
+    {
+      "name": "r8157_ups_en",
+      "line": 5506,
+      "sha256": "f32b6a30a11218e6d69677aff20c759742c2d0eb611f08862e4b2c99e8697462"
+    },
+    {
+      "name": "r8153_power_cut_en",
+      "line": 5559,
+      "sha256": "f8cb6c1c54447a378e53dd08f3f6d0202bd6044769d2d631139be3dc8dd3a98d"
+    },
+    {
+      "name": "r8153b_power_cut_en",
+      "line": 5578,
+      "sha256": "d033cb7f21cbb12a3ec6b9383a0ed6e2d36b6ab81bad44f4d680c7e6f90bfbf7"
+    },
+    {
+      "name": "r8157_power_cut_en",
+      "line": 5597,
+      "sha256": "30f052ac7373f027815dd843027202dadeee4bbb77e07cc8e9c82cfb3dc60bf5"
+    },
+    {
+      "name": "r8153_queue_wake",
+      "line": 5628,
+      "sha256": "8d51fac7a017c85bb93349125e1324887c4b9820581249cba2cf89592aae5153"
+    },
+    {
+      "name": "rtl_runtime_suspend_enable",
+      "line": 5660,
+      "sha256": "cc67c5563bc3223c89e70c101e07b6388cfc1e8456a721dd5ad7141225189363"
+    },
+    {
+      "name": "r8153_teredo_off",
+      "line": 5968,
+      "sha256": "f49b4a333a0cbaaa739fdbb494058013c11d60ca3f44639e86f226242b579709"
+    },
+    {
+      "name": "rtl_reset_bmu",
+      "line": 6021,
+      "sha256": "2e0a43d0cf3afbd764293e9bfae831bc288a48db9747b93481b741ff6ed8a01b"
+    },
+    {
+      "name": "rtl_clear_bp",
+      "line": 6078,
+      "sha256": "f19b7e792c35704f28483b49ab68421feebe675c0310abdf04c4674d1a138659"
+    },
+    {
+      "name": "rtl_check_fw_ver_ok",
+      "line": 6138,
+      "sha256": "49d43a338f46d1725a60d5fbec9136edee78b26d9d80d34d8ec6584039c3dc59"
+    },
+    {
+      "name": "rtl_reset_ocp_base",
+      "line": 6154,
+      "sha256": "c7a234f671c09cd47768553e58e2d12fb63a4a080be4bc896dce1e3b76dd7eed"
+    },
+    {
+      "name": "rtl_phy_patch_request",
+      "line": 6159,
+      "sha256": "db8aa1f5432ab5f312d5305ef8b094a0a18194e5d5fbedec16e431ea646c1076"
+    },
+    {
+      "name": "rtl_patch_key_set",
+      "line": 6194,
+      "sha256": "af49695c946fec10ea61a6f65d4271050e12921a504b3c0f092e6eef83307c6c"
+    },
+    {
+      "name": "rtl_pre_ram_code",
+      "line": 6210,
+      "sha256": "16c945783dd2ff3c4b5ac08cdfa426a0944810de76e8a609bc82d63e2d0dccab"
+    },
+    {
+      "name": "rtl_post_ram_code",
+      "line": 6221,
+      "sha256": "7a7f9c2fcd7ba035eef49d6a68cf23d78f6cda65ff2b810fa4ba14396d26ecc8"
+    },
+    {
+      "name": "patch4",
+      "line": 6230,
+      "sha256": "cfdd7df6563572b7afb9ebb04fbb1824a47b21f3de2b57e6f399d384e3ba18fa"
+    },
+    {
+      "name": "r8152b_firmware",
+      "line": 6237,
+      "sha256": "f31967e8d45f3f94c24c29ec110d246973d18d9e00c57b84b7c953fb1ddfcb49"
+    },
+    {
+      "name": "r8152_aldps_en",
+      "line": 6955,
+      "sha256": "41d05bd6d3552e0ab09d44fdedef833054141e24a5b2069ba85d3fe24c7fa497"
+    },
+    {
+      "name": "r8152_mmd_indirect",
+      "line": 6970,
+      "sha256": "25d947337f68cdf05e96410c0a7a6e3035297ea2f94f50cf785343a0f5552f29"
+    },
+    {
+      "name": "r8152_mmd_write",
+      "line": 7004,
+      "sha256": "9518234a63af694d07f24dbb3f5d9318bd98ba667013944c3d6ae40b62f5a5ee"
+    },
+    {
+      "name": "r8152_eee_en",
+      "line": 7020,
+      "sha256": "5f62a027644dac0dfa2b14116bfb55458dbf4a66b6a5f0c40923c4c09e908ee5"
+    },
+    {
+      "name": "r8153_eee_en",
+      "line": 7062,
+      "sha256": "1ecfeb0ae13e269ddc322758ee0377f7b95502064759f8fd0c1e671cca3682f9"
+    },
+    {
+      "name": "r8156_eee_en",
+      "line": 7095,
+      "sha256": "94b0dccb6986aba8324ec14e7405e67b16cdbb7a17a3391e0b85680ab867a7b0"
+    },
+    {
+      "name": "r8157_eee_en",
+      "line": 7129,
+      "sha256": "0b38aa1653fe98399f88cfc3771816fa68fd5200061adf20438c81e8c86ff926"
+    },
+    {
+      "name": "rtl_eee_enable",
+      "line": 7166,
+      "sha256": "69c1a37974692da5630fc069b58912255de0882ccd883531e64956e0162eaf12"
+    },
+    {
+      "name": "rtl_disable_eee_bottom",
+      "line": 7219,
+      "sha256": "0e5b5c978b22ec4ed51397d13726461ce6c54d5364c9391b42a253aa66c0a7f1"
+    },
+    {
+      "name": "r8152b_enable_fc",
+      "line": 7235,
+      "sha256": "ae6cead3aa1479907f0ac5c46410636efa7ac600b37ec4da17eaf722035e2406"
+    },
+    {
+      "name": "r8152b_hw_phy_cfg",
+      "line": 7265,
+      "sha256": "51bc9b75f30d9b566478e39ccfcb2be13462495637e3dcb90aacdc05ea442026"
+    },
+    {
+      "name": "wait_oob_link_list_ready",
+      "line": 7276,
+      "sha256": "4f2a62e96d23e9b86d5cbcf74e8cc88e9612125b40cfeee9a07cebbfc3454d45"
+    },
+    {
+      "name": "r8156b_wait_loading_flash",
+      "line": 7289,
+      "sha256": "3cfeda5e90ae5e982b70d6b06a373fe5ac600e37074532948638d328e9d24617"
+    },
+    {
+      "name": "r8152b_exit_oob",
+      "line": 7310,
+      "sha256": "df1bc03a82345ce4b9efb3c9b4739c86a58a300d62050db6fd9537d3e3e90d22"
+    },
+    {
+      "name": "r8153_wdt1_end",
+      "line": 7517,
+      "sha256": "da2bba6bee6aec1401e306bad95a8365f1f641843d169063c6d59d5419ded1b8"
+    },
+    {
+      "name": "rtl_set_dbg_info_init",
+      "line": 7538,
+      "sha256": "794960628050dd5cf0296c0f0ce505f0f229fa0baa6d7b11a5aef666122fe3e9"
+    },
+    {
+      "name": "rtl_set_dbg_info_state",
+      "line": 7551,
+      "sha256": "4b7626fb9df2f0d81791e1e93c34b7248be5ce408056eebed0501d73e26c0696"
+    },
+    {
+      "name": "rtl_fw_ver_erase",
+      "line": 7561,
+      "sha256": "5ffe3237a7952720aec96bc116279e5079b176ed4fa45292743fa4d69cdb1262"
+    },
+    {
+      "name": "rtl_fc_pause_pkt_en",
+      "line": 7597,
+      "sha256": "b4c6c3aa4ff5669253a26cda18e1785bab04a98cf7f4f3aecd0bcd5bf9bab24b"
+    },
+    {
+      "name": "r8153_firmware",
+      "line": 7716,
+      "sha256": "d73e73f9a5c692bede2a34f8f347330e97cd5d52a61426ff7df6753e24d79169"
+    },
+    {
+      "name": "r8153b_firmware",
+      "line": 8845,
+      "sha256": "fa90c661a05416c0e8978051547ec2b0f0fd07335383f8d829d9d8a5536855f8"
+    },
+    {
+      "name": "r8153_aldps_en",
+      "line": 11006,
+      "sha256": "f2c3e91d98e5775f2c78997a92bf5b88e3a3b3b3c1f53620d82132c6632b0ea4"
+    },
+    {
+      "name": "r8153b_mcu_spdown_en",
+      "line": 11035,
+      "sha256": "80ea0edff2b9326bfc08164920bf6cce78c592454de146c23437c20553f227d8"
+    },
+    {
+      "name": "r8153_hw_phy_cfg",
+      "line": 11049,
+      "sha256": "1f94ea9ad19ddee9fdab0c62c6c38ac406c932f31c9023f4374cdcde7a5a0b51"
+    },
+    {
+      "name": "r8152_efuse_read",
+      "line": 11097,
+      "sha256": "eb1d2dc8dee7b096a1565b8f773b2ed7eae496f658fca5686fb532010b1d60fb"
+    },
+    {
+      "name": "r8153b_hw_phy_cfg",
+      "line": 11118,
+      "sha256": "1f4b4dc3e5f0080131e144bd321be8d49356e5f0d714803d8e67c9654e969348"
+    },
+    {
+      "name": "r8153c_hw_phy_cfg",
+      "line": 11221,
+      "sha256": "984fa3a85e15ff43de5b871e4bc529da020f404b79d714d580a9f586aad6ce9f"
+    },
+    {
+      "name": "rtl8153_change_mtu",
+      "line": 11228,
+      "sha256": "e66c3448a73a6c8bd3d7023ea9710e098f3ae32d137664c1a05f69d3cfc77312"
+    },
+    {
+      "name": "r8153_lanwake_clr_en",
+      "line": 11243,
+      "sha256": "fa34dd5986c103ffb6ce836d965c21d42d6a46a0b8245c0dbf5052412481d244"
+    },
+    {
+      "name": "r8153_first_init",
+      "line": 11267,
+      "sha256": "ddc79da060a943047a54a18c22d57f04b50366883e318aa712c48393bf10cf14"
+    },
+    {
+      "name": "fc_pause_on_auto",
+      "line": 11466,
+      "sha256": "66187e665002dc79ab9364aa74084acbbe876849d77e1ef07652f86cb2f9b220"
+    },
+    {
+      "name": "fc_pause_off_auto",
+      "line": 11471,
+      "sha256": "32a4cd41f2f21e58934c22de402d9f6a49a19c477fdbcc1ac2bd008d4e9d42b4"
+    },
+    {
+      "name": "r8156_fc_parameter",
+      "line": 11476,
+      "sha256": "fafa9d7d92c111a2cac4e3c1c24009400dc362baed134f9d7dbc5efd9fc43c64"
+    },
+    {
+      "name": "rtl8156_enable",
+      "line": 11493,
+      "sha256": "adc74d801de0e02b0a9eb35ee6af3d88d27ee3782caf10733b58f834f8d18dbf"
+    },
+    {
+      "name": "rtl8156b_enable",
+      "line": 11594,
+      "sha256": "020336aa554020b1329d62bbf56773b7f594e7a98a69658e668f66bc8641f9da"
+    },
+    {
+      "name": "rtl8157_enable",
+      "line": 11658,
+      "sha256": "b19ac510ed6fd956e24af2f835cd9d9a55b33a3bab5d7d34aa3093f0cc78be99"
+    },
+    {
+      "name": "rtl8152_set_speed",
+      "line": 11698,
+      "sha256": "08735e1d7202ed66a3718737a094da289e546dba59cadc201d39bbd16d84b8cf"
+    },
+    {
+      "name": "rtl8152_up",
+      "line": 12013,
+      "sha256": "9b9cda0ad951e30b949e1cd33203675cfa9284823f9767d789ffe08a942f4225"
+    },
+    {
+      "name": "rtl8153_up",
+      "line": 12060,
+      "sha256": "a499f5b838b8c6c2cd9d4d39b4d8f5028ad9d3d2cbc3d08524c68acd7d5b6987"
+    },
+    {
+      "name": "rtl8153b_up",
+      "line": 12141,
+      "sha256": "66c00cd90f7ed1316730c5f8b10a68eecf93441a69904d94ad77ab273d4fde74"
+    },
+    {
+      "name": "rtl8153c_change_mtu",
+      "line": 12217,
+      "sha256": "86905c9378d9dc5ed3466666657b1515bc0e50555e3136a95c36faf247b82b0e"
+    },
+    {
+      "name": "rtl8153c_up",
+      "line": 12253,
+      "sha256": "372fe810641ac2af81068a4dda8e73157c6d4f2af022619c80a673b559079bbb"
+    },
+    {
+      "name": "rtl8156_change_mtu",
+      "line": 12362,
+      "sha256": "6f7a8ef1cd892bfc0d0e7a12cc778632401fde51c24a832c9852d686832fc1c0"
+    },
+    {
+      "name": "rtl8156_up",
+      "line": 12388,
+      "sha256": "a0dc8263eaf638ef249ddf9b1a41d21ee6330fb36f9ba4be065caabbaace3d5f"
+    },
+    {
+      "name": "rtl8157_change_mtu",
+      "line": 12598,
+      "sha256": "6ccece0754bb5a7364b3ccff643b868b5a7786bc744533df8b068e0139755923"
+    },
+    {
+      "name": "rtl8157_up",
+      "line": 12633,
+      "sha256": "30d6b0eab139128b8232d8a8d0698d3ad38cfbac52ee6c1ea3ac92c3f4621196"
+    },
+    {
+      "name": "r8156_mdio_force_mode",
+      "line": 12854,
+      "sha256": "146139c8965a582b63d53a275afad0bf0e52dfde7dbda92a4a9efa90b0b03eeb"
+    },
+    {
+      "name": "rtl_tally_reset",
+      "line": 13285,
+      "sha256": "9b0c0a9705a5a7ee00fec1c0d648de5c809b1b88bf66a7e7f70e3d66929a1d50"
+    },
+    {
+      "name": "test_io_en",
+      "line": 13290,
+      "sha256": "bff38c9a74b2e9b9830b89a30ada70f1ff672f7aa97303e0f111850b912119e8"
+    },
+    {
+      "name": "rtl_disable_spi",
+      "line": 13300,
+      "sha256": "55821c05ba2e52be22296857c664d5bf166808d60de9acb60cba79a0efd2d8b0"
+    },
+    {
+      "name": "r8152b_init",
+      "line": 13316,
+      "sha256": "5671785ca6443d4fa0d4393cbf33f57b0f4dc58f13f1112a4eadb5f4d2633dc1"
+    },
+    {
+      "name": "r8153_init",
+      "line": 13419,
+      "sha256": "1fa3a700113c130844aa5504815ec8645b266a9cb9eda672a70292bce7a7a365"
+    },
+    {
+      "name": "r8153b_init",
+      "line": 13609,
+      "sha256": "207120a36b4cf78d50af3bd4f31f17ed4ab490f36a18056490de17e308e79d74"
+    },
+    {
+      "name": "r8153c_init",
+      "line": 13739,
+      "sha256": "3be081e93162fff841fd83c8b84ef1a5d197769ba037323a5e87eb7bb32012c6"
+    },
+    {
+      "name": "r8156_patch_code",
+      "line": 13853,
+      "sha256": "793b3b309b0d934bbf0dc60d83c13096bbac32e7e21edba56204c150bbd030e7"
+    },
+    {
+      "name": "r8157_patch_code",
+      "line": 15153,
+      "sha256": "453dae2939b028b4a92122ed5a2023d1475badf77a523902c3757b114fd1a5b3"
+    },
+    {
+      "name": "r8159_patch_code",
+      "line": 15409,
+      "sha256": "6769e3f1da02d22a11091931303f12a7798228d50c2c31ce9ae2e4616edd0cd5"
+    },
+    {
+      "name": "rtl_ram_code_speed_up",
+      "line": 17246,
+      "sha256": "006f619633f4f1e96aaac5c6773d6a36db7df6c33f2f58663afce32f06c39408"
+    },
+    {
+      "name": "r8156_ram_code",
+      "line": 25253,
+      "sha256": "028bf366718263a2f99167bbdcde8d9f80ff92c83f141f37d9da456cd899a6ba"
+    },
+    {
+      "name": "r8157_firmware",
+      "line": 29037,
+      "sha256": "8aa7d8212a79fbe4e9af1e767220720e01ec7f7b253ad4a68b2a2e484f229846"
+    },
+    {
+      "name": "r8156_hw_phy_cfg",
+      "line": 29046,
+      "sha256": "203ffe6c9e4ba0a9518fc7b39b4a5cab84632f4709d4a26f25501c77a4835fe6"
+    },
+    {
+      "name": "r8156b_hw_phy_cfg",
+      "line": 29292,
+      "sha256": "ab885b2866a54996fb9566c5236b608676d2ebed10ba6132b4b4fc51efe194e4"
+    },
+    {
+      "name": "r8157_hw_phy_cfg",
+      "line": 29640,
+      "sha256": "91e9a365d5d73075f8288d1af3cb72452d52ef2cd6afb57d96741128e743574f"
+    },
+    {
+      "name": "r8159_hw_phy_cfg",
+      "line": 29850,
+      "sha256": "4e0b1bc1abc944c254378be2a0d9c5258bd3f9c2c2502cc8516a70db5c726d85"
+    },
+    {
+      "name": "r8156_init",
+      "line": 30134,
+      "sha256": "af4cd1a11aa6e2cfe25e4ddb24a8e4f58db8c72a008fb16d32287f75ba6f7823"
+    },
+    {
+      "name": "r8156b_u2phy_backup",
+      "line": 30305,
+      "sha256": "e2b481d99e3eddd3d2e35fbc04e7a31bb8ace0b52af4d20c3f9aa5511cd0c798"
+    },
+    {
+      "name": "r8156b_init",
+      "line": 30318,
+      "sha256": "c4a982f0d07550d45d85bf1f557fedc1a6ed35cb7531bc06343b366cacf7a491"
+    },
+    {
+      "name": "r8157_init",
+      "line": 30495,
+      "sha256": "cf4f729070df6ee54b809db673f488b53eef1d92c941782327d3a1039fb0a097"
+    },
+    {
+      "name": "r8159_wait_backup_restore",
+      "line": 30677,
+      "sha256": "721ca25d2ec0cfecd1e58d34bbfbd4a86beb32ed7b7b4ac5475362e9bc582edf"
+    },
+    {
+      "name": "r8159_init",
+      "line": 30705,
+      "sha256": "2c0c50b535ca5f2aef5ac8593d4b588831ae186eef86d563ff7bbac167ed7d0d"
+    }
+  ]
+}

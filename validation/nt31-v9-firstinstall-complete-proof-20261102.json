@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-01T23:27:04.539981+00:00",
+  "result": "PASS",
+  "scope": "First-driver-path native Setup, exact copy/registry readback, cold boot and PCIe RTL8127 inbox receipt plus full 1472-byte payload proof",
+  "installation": "nt31-v9-firstinstall-proof-20261102.json",
+  "traffic": "nt31-usbsetup-v9-firstboot-8127-first-driver-20261102.json",
+  "full_payload_replies": 4,
+  "evidence": "nt31-v9-firstinstall-final-evidence-20261102/manifest.json",
+  "screenshot": "nt31-usbsetup-v9-firstboot-8127-first-driver-20261102-pci.png",
+  "limits": [
+    "Pre-existing OS and protocol configuration; not pristine installation",
+    "QEMU RTL8127 model only in this first-driver-path fixture",
+    "Source alias-mask correction is a different binary undergoing separate regression"
+  ]
+}

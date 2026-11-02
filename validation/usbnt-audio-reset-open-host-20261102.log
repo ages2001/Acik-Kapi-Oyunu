@@ -1,0 +1,1 @@
+PASS: 4050 production audio open/reset allocation, control, pipe and submission failures; no leaks; same format/context/ID on retry; volume/input/MIDI restored

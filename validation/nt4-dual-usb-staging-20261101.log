@@ -1,0 +1,28 @@
+Formatting '/workspace/rltklant-vm/run/nt4-ndis-dual-usb-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-w9kmsfej/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+4/6384 = 0.06% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 589824
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt4-ndis-dual-usb-8127.qcow2",
+  "sha256_before_boot": "43eb799d72b1e240d64ad942008208fe72fe98286e8b65eb49a94e62bcc2c6e6",
+  "files": [
+    {
+      "guest_path": "RLTTEST/RLTUSB.EXE",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/rltusb/RLTUSB.EXE",
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "old_size": 12974,
+      "old_sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    {
+      "guest_path": "RLTTEST/LNET.EXE",
+      "source": "/workspace/rltklant-work/validation/LNET.EXE",
+      "size": 11159,
+      "sha256": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

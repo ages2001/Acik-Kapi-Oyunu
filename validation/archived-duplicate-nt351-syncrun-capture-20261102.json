@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-02T13:34:46.933156+00:00",
+  "original": "/workspace/rltklant-vm/run/nt351-usbsetup-syncrun-rtl8139-8127/pci.pcap",
+  "archive": "/workspace/rltklant-vm/run/nt351-usbsetup-syncrun-rtl8139-8127/pci.pcap.gz",
+  "retained": "validation/nt351-syncrun-evidence-20261102/pci.pcap",
+  "sha256": "fb4f73bf4337ce56419950bbfabfb52d5e04379c30de4dc008bafa8ebd9aa0f4"
+}

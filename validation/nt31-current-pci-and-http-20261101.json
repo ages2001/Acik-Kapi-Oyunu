@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-01T18:52:11.856817+00:00",
+  "traffic_proof": "nt31-current-rtl8127-mmio-traffic-20261101-proof.json",
+  "earlier_pcap_prefix_bytes": 43660,
+  "earlier_pcap_file": "nt31-current-pci-before-http-20261101.pcap",
+  "pcap_file": "nt31-current-pci-and-http-20261101.pcap",
+  "pcap_sha256": "2796e7c78f8eb385b01c07b42d18d9230cc75f33000c742747fe80f20436223b",
+  "http_200_responses": 2,
+  "screenshot": "nt31-current-public-http-check2-20261101.png",
+  "scope": "Guest Winsock TCP/public HTTP through the configured proxy; no direct guest DNS/TLS proof"
+}

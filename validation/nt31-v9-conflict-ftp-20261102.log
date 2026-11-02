@@ -1,0 +1,12 @@
+[I 2026-11-01 22:56:31] concurrency model: async
+[I 2026-11-01 22:56:31] masquerade (NAT) address: None
+[I 2026-11-01 22:56:31] passive ports: None
+[I 2026-11-01 22:56:31] >>> starting FTP server on 127.0.0.1:2127, pid=85209 <<<
+[I 2026-11-01 22:57:04] 127.0.0.1:44134-[] FTP session opened (connect)
+[I 2026-11-01 22:57:08] 127.0.0.1:44134-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-01 22:57:16] 127.0.0.1:44134-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/CFTEST.BAT completed=1 bytes=1230 seconds=0.067
+[I 2026-11-01 22:58:28] 127.0.0.1:44134-[anonymous] FTP session closed (disconnect).
+[I 2026-11-01 23:00:30] 127.0.0.1:43406-[] FTP session opened (connect)
+[I 2026-11-01 23:00:34] 127.0.0.1:43406-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-01 23:00:43] 127.0.0.1:43406-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/CFTEST2.BAT completed=1 bytes=1085 seconds=0.07
+[I 2026-11-01 23:02:06] 127.0.0.1:43406-[anonymous] FTP session closed (disconnect).

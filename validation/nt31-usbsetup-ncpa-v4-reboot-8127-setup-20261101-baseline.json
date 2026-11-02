@@ -1,0 +1,38 @@
+{
+  "guest": "nt31-usbsetup-ncpa-v4-reboot-8127",
+  "token": "setup-20261101-baseline",
+  "mask": 3,
+  "result": "PASS",
+  "utc": "2026-11-01T21:01:17.111438+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "start_offset": 59740,
+      "end_offset": 71980,
+      "capture_prefix_sha256": "51304cc30a01eb205b6825aa0c396509bf7cb1d068b7ba624d1abfc3e47a2700",
+      "screenshot": "nt31-usbsetup-ncpa-v4-reboot-8127-setup-20261101-baseline-usb.png",
+      "ocr": "nt31-usbsetup-ncpa-v4-reboot-8127-setup-20261101-baseline-usb.ocr.txt",
+      "screenshot_sha256": "bade151751be3bc89c7c2ccadb2eee0192c00352b4521bd11ecd503a74eccf0f"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "start_offset": 32624,
+      "end_offset": 44864,
+      "capture_prefix_sha256": "651c429831f6cd93f58b6a26d4476d51d874532a96b5d755927dda202401bb47",
+      "screenshot": "nt31-usbsetup-ncpa-v4-reboot-8127-setup-20261101-baseline-pci.png",
+      "ocr": "nt31-usbsetup-ncpa-v4-reboot-8127-setup-20261101-baseline-pci.ocr.txt",
+      "screenshot_sha256": "f4ce85966fd2592759709d33270904d24dec982f206c097d50f227efeb30ade4"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-01T21:01:28.649820+00:00"
+}

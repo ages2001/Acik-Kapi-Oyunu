@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "utc": "2026-11-02T06:33:55.259434+00:00",
+  "guest": "nt31-usbsetup-rtl8139-rxtx-8127",
+  "sha256": "64facff9e68e18ef665ed0086e529feb67bd274da299bd53b0e9d324fd460449",
+  "tcp_bytes_each_direction": 3145728,
+  "protocol_reset_callbacks": 3,
+  "internal_rx_recoveries": 1,
+  "usb_model_cycles": 4,
+  "usb_matrix_replies": 104,
+  "evidence": "nt31-rxtx-evidence-20261102/manifest.json",
+  "offline": "nt31-rxtx-offline-20261102/manifest.json",
+  "wire": "nt31-rxtx-tcp-wire-proof-20261102.json",
+  "matrix": "nt31-usbsetup-rtl8139-rxtx-8127-rxtx-usb-20261102-sibling-matrix.json",
+  "scope": "NT3.1 IDE with actual RTL8139 plus persistent USBNT NIC. Synthetic malformed DMA header, protocol resets, cable cycle, four USB model hot-plug cycles; normal shutdown/exact SYS. Startup NTVDM/Dr Watson fixture warning preserved. This hash predates RTL8117 integration and is not a physical-silicon claim."
+}

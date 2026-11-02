@@ -1,0 +1,306 @@
+{
+  "utc": "2026-11-02T19:22:03.932507+00:00",
+  "scope": "Exact frozen drivers with prior tested legacy helpers, generated copy-list sizes and sorted NT5 catalog verified by Windows 2000/XP x64 CryptoAPI; candidate, not universal support",
+  "files": {
+    "2KXP/amd64/RLTKLANT.SYS": {
+      "bytes": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    },
+    "2KXP/i386/RLTKLANT.SYS": {
+      "bytes": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+    },
+    "2KXP/makecat.cmd": {
+      "bytes": 1355,
+      "sha256": "f9d4f5cf6155b388398cb503c30ef81d00f3cf06b5f47f35bd09e21de0279ed0"
+    },
+    "2KXP/makecat.py": {
+      "bytes": 11962,
+      "sha256": "5bb4d88fc4a4685fd3c040bb65ee19d889d742deba54ca307f2cc39807ea871d"
+    },
+    "2KXP/netrtlk.inf": {
+      "bytes": 8049,
+      "sha256": "1f09e506d10e7618e67fd7ec8152e7d0cec785038af0706d651499cf9921d0c8"
+    },
+    "2KXP/rltklant.cat": {
+      "bytes": 2556,
+      "sha256": "839853d80c5ce6ff7fb1339876dbee8e881dc7839944bb46764a01e772b5bb8a"
+    },
+    "2KXP/rltklant.cer": {
+      "bytes": 747,
+      "sha256": "ee86b1983fdeb5bbbc53b206c3e3b8c2573bfee8b9ddd7d2568f913dd93142c7"
+    },
+    "CHANGELOG.md": {
+      "bytes": 9493,
+      "sha256": "c3487d7ed833ad234656874b72c3bb2e8b7c6ef1b9224e93c28224052472f526"
+    },
+    "NT31/DHCPNT31.EXE": {
+      "bytes": 25911,
+      "sha256": "fd646d2021137fc60358b02a07fd5c76fc8326d43295fdb071053ce59f8326f3"
+    },
+    "NT31/DISK1": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "NT31/OEMSETUP.INF": {
+      "bytes": 26457,
+      "sha256": "97f38a8a296716a9c5cc1c290dfa646b01c58620c6912bf03baed2782c6d1335"
+    },
+    "NT31/RLTKLANT.SYS": {
+      "bytes": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+    },
+    "NT31/RLTSETUP.DLL": {
+      "bytes": 22451,
+      "sha256": "35094bec3a1cbb5d6e4f27b78a0706b038b9ceded88156eb6628ba03bd884f8d"
+    },
+    "NT31/RLTUSB.EXE": {
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    "NT31/manifest.json": {
+      "bytes": 1642,
+      "sha256": "4b140c838edb6c5ad08ce1385bdd8dca2ae1e6286ed895b935ed4a773018aab4"
+    },
+    "NT35x-4/DISK1": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "NT35x-4/OEMSETUP.INF": {
+      "bytes": 23995,
+      "sha256": "768203409ff863af5ee28b25314030263bda8bf45d78c986b89ea404a09b4e0c"
+    },
+    "NT35x-4/RLTKLANT.SYS": {
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    },
+    "NT35x-4/RLTSETUP.DLL": {
+      "bytes": 22451,
+      "sha256": "04bbf1bf056e8b735db20a324c2e6912b2001ad6a78f8cd523d28086ad965fa2"
+    },
+    "NT35x-4/RLTUSB.EXE": {
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    "NT35x-4/manifest.json": {
+      "bytes": 1374,
+      "sha256": "3e34272c57206765df43f89c89b2508af1f5e045f3314673c715eceb28b74cfc"
+    },
+    "PACKAGE-SCOPE.txt": {
+      "bytes": 1115,
+      "sha256": "206a7c0e7cec62b73477c693ef6cfd0b672dd135bb6a101803439bde545b77dd"
+    },
+    "README.MD": {
+      "bytes": 20549,
+      "sha256": "23b825c8fb0e955c8069ffe47628c0ad693f55a4f2ffefd321ade043a1a445ca"
+    },
+    "firmware-licenses-and-inputs/LICENSE.r8169": {
+      "bytes": 219,
+      "sha256": "f9689ba2640d61e7b4527ad84cbfa6a9f0ec11484e2c9f6b5500197e22c27ecd"
+    },
+    "firmware-licenses-and-inputs/README.md": {
+      "bytes": 2553,
+      "sha256": "70355f49addcd66de8f57873a9167d9cdb0cc6ff1b0abe46029aeab2557cf0ce"
+    },
+    "firmware-licenses-and-inputs/WHENCE.r8169": {
+      "bytes": 1624,
+      "sha256": "c99119886322ade13814189ded1c1ade1cbdb58f3908892ee5dc5e5f00a4b4dd"
+    },
+    "firmware-licenses-and-inputs/chips.json": {
+      "bytes": 8153,
+      "sha256": "cceb12a5995f0c94aed68cf6f1ad2271a63bf82367a748cd00ebd1a2d6a1063d"
+    },
+    "firmware-licenses-and-inputs/manifest.json": {
+      "bytes": 5445,
+      "sha256": "de2c7082af2c0492fb03937a311a40e33d1d880bfd2d706af3850111a351b8f7"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8105e-1.fw": {
+      "bytes": 2076,
+      "sha256": "03f7ee92f1a7c1723ac7a7447ae006930c9bb07e1d77c3d12bc70cc0d855bb00"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8106e-1.fw": {
+      "bytes": 1856,
+      "sha256": "b249074519d87ff8bde17185894333c993f25f747f221305cf69a5d7b4519674"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8106e-2.fw": {
+      "bytes": 832,
+      "sha256": "ba4f7ed4bac4768810ba8a6c118457f5912f61a0380aa4fb322093caf52de0ef"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8107e-1.fw": {
+      "bytes": 992,
+      "sha256": "da3b9939538376c0dd1a97cdfead9fedba1213146bbdda31ef12b87fd616b831"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8107e-2.fw": {
+      "bytes": 976,
+      "sha256": "edc3a14a76852c411c4af5514dae5d55be37873f56a7563f80db7a76f2dc1ba7"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8125a-3.fw": {
+      "bytes": 3456,
+      "sha256": "3f6c328af0ceff5969c729edf0f535e8bb2a9b9e05d15b6be3199a3e6d421b99"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8125b-1.fw": {
+      "bytes": 10128,
+      "sha256": "226b8bf6e8fda72853336bde066cb0afa9053e9e18a879b8e73682a0c5ad1954"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8125b-2.fw": {
+      "bytes": 3328,
+      "sha256": "529bf1c25c97ff52b401090d00ff89cc22351012336e5a0c9662728a3ee909ef"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8125bp-2.fw": {
+      "bytes": 752,
+      "sha256": "70010caccdb0d87461f26d77a15f86615dc970549126cf17db01a7f43baf5287"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8125cp-1.fw": {
+      "bytes": 1728,
+      "sha256": "22d01a77f530d0bb95818b2aac138a55e656eab303380b6c75c8b7e46275c412"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8125d-1.fw": {
+      "bytes": 17168,
+      "sha256": "bc3c82939f02df2f58a17e7354096375001a80a5c1ca3f459c555d5a7d42bf1b"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8125d-2.fw": {
+      "bytes": 6800,
+      "sha256": "c1cb0d358ca985b0d45584612143fd93613d567064702e265bfb370e99c90e35"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8125k-1.fw": {
+      "bytes": 8096,
+      "sha256": "3764d236c0e0dce55ac0570923c66d86e984509487b5740a75ec62f9242fd234"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8126a-2.fw": {
+      "bytes": 29248,
+      "sha256": "2ffa201aa7dec5e3726e268a10342b175ae8de4fa9f39f535bbbbf5cb8245879"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8126a-3.fw": {
+      "bytes": 13232,
+      "sha256": "18ffaf3b873d217bf780503a80f04fe2b03c088ba2d0c2a3d626145cb8e53b26"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8127a-1.fw": {
+      "bytes": 9632,
+      "sha256": "6cddd9249565e7c7b900391fdadd356ac06de9b509cd68c5de0842ba90db30e0"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168d-1.fw": {
+      "bytes": 1492,
+      "sha256": "ded779f55b3fc5bb8576b2d2b6c724581c72160b3c2f88e33b42dc6c2c4e70b0"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168d-2.fw": {
+      "bytes": 1324,
+      "sha256": "35dd68c01a7b24f6e554bd2c0b9cf57cf962a826651f66e75ffcea37cf2c3bb9"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168e-1.fw": {
+      "bytes": 5500,
+      "sha256": "c38d6818a99336c8e43883bbc136f9fab3b1b470ec0e86c61bf5dac617fe94bd"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168e-2.fw": {
+      "bytes": 3920,
+      "sha256": "0a489929b270df1533645a75d55ff357fd66e42057aa4e198ab738930de39386"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168e-3.fw": {
+      "bytes": 3872,
+      "sha256": "1287fdd82ff2f60d75c9970c108b49cfd11456ad3fe29c9666b8539a35777dbf"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168f-1.fw": {
+      "bytes": 3424,
+      "sha256": "ed3794c651d38b807168c7c49431bb8036922b16766588c520a20287f277615d"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168f-2.fw": {
+      "bytes": 1232,
+      "sha256": "5586b2093502f7dec762f23091fa90d6d8731e7d873509072ce2eae23ab8ee99"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168fp-3.fw": {
+      "bytes": 336,
+      "sha256": "c526c06aa0ab8d9b57ba2b730bb1e40a1c3513f8591e238dceb2e0f45210ed27"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168g-1.fw": {
+      "bytes": 4304,
+      "sha256": "64a0c74632909d7cb24222054af4bc37fa867046f295fb69e230386d844ca90a"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168g-2.fw": {
+      "bytes": 4896,
+      "sha256": "f878ec719f78e0b104bc73362a9862611858bec893f58a1b3b289a0a57d71d25"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168g-3.fw": {
+      "bytes": 832,
+      "sha256": "e4d5e62b0a5a097af34c7aa3c55f634fd5be2c232e02c6b983ebd7e699cb27e9"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168h-1.fw": {
+      "bytes": 992,
+      "sha256": "4ef963690f3a7b25a9bc97fb12c58922c02886699933ed6297636cc15aad9d8d"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8168h-2.fw": {
+      "bytes": 976,
+      "sha256": "0b4beab008e308f28296c13188ee23edfeff7d865e398a7ade170495c8cec7e6"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8402-1.fw": {
+      "bytes": 1824,
+      "sha256": "a14adee93b7c7ecc738137d910334761ecf9c64d3addeccbd024a2f902f7f808"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8411-1.fw": {
+      "bytes": 2112,
+      "sha256": "e66a3183787c80987e1e36c9f7d4b2c3cd5d976640b83f462702f914febc4b38"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl8411-2.fw": {
+      "bytes": 1040,
+      "sha256": "80dbdacba4d5dfee46b6c2b4e433f6f2eeb756d29ad46bf2362ba20c8ec594b1"
+    },
+    "firmware-licenses-and-inputs/rtl_nic/rtl9151a-1.fw": {
+      "bytes": 640,
+      "sha256": "b18901d05fd533567163151420828f59bf3d23574a4db8a0e889e22b878225e0"
+    },
+    "firmware-licenses-and-inputs/usb/LICENCE.rtlwifi_firmware.txt": {
+      "bytes": 2115,
+      "sha256": "a61351665b4f264f6c631364f85b907d8f8f41f8b369533ef4021765f9f3b62e"
+    },
+    "firmware-licenses-and-inputs/usb/README.md": {
+      "bytes": 3631,
+      "sha256": "24b6767106c78a680828bf3fa3e65b933104eda710b00280f90c9a9ea1e2f45c"
+    },
+    "firmware-licenses-and-inputs/usb/manifest.json": {
+      "bytes": 2053,
+      "sha256": "a114729bff1339e26cda980a879383828f40e81fb4f1fd93e588f45a297fd20e"
+    },
+    "firmware-licenses-and-inputs/usb/rtl_nic/rtl8153a-2.fw": {
+      "bytes": 1768,
+      "sha256": "7d4f422ec0e8141576c1b486fe6b7c6ce8ec9ea1f650815fd4058878c038366d"
+    },
+    "firmware-licenses-and-inputs/usb/rtl_nic/rtl8153a-3.fw": {
+      "bytes": 1440,
+      "sha256": "c7099a1b0fc80e02ff7276aacbb08b5771e2f5c763fb76a7a8df3a89d58d8208"
+    },
+    "firmware-licenses-and-inputs/usb/rtl_nic/rtl8153a-4.fw": {
+      "bytes": 1184,
+      "sha256": "99a05414fc0ae3b99a453d73b5cae90bfa6d371320f78011fc58cb03a33e2a09"
+    },
+    "firmware-licenses-and-inputs/usb/rtl_nic/rtl8153b-2.fw": {
+      "bytes": 1880,
+      "sha256": "137c9c752e8648ecfcf3b74ffc7d675c098145c222e2969721e6257af31716bc"
+    },
+    "firmware-licenses-and-inputs/usb/rtl_nic/rtl8153c-1.fw": {
+      "bytes": 832,
+      "sha256": "bbe5f74bd2625b71c9a70e0588472ef670b5eeb65f83b1202cd25b3381720a3f"
+    },
+    "firmware-licenses-and-inputs/usb/rtl_nic/rtl8156a-2.fw": {
+      "bytes": 4024,
+      "sha256": "7b50f4a307bde7b3f384935537c4d9705457fa42613eb0003ffbc4e19461a1e0"
+    },
+    "firmware-licenses-and-inputs/usb/rtl_nic/rtl8156b-2.fw": {
+      "bytes": 5776,
+      "sha256": "5a3b21e27305876af8eac4b9bd11a821487b338e4ac1b58b8be8d23467d3f91f"
+    },
+    "firmware-licenses-and-inputs/usb-vendor/README.md": {
+      "bytes": 1435,
+      "sha256": "9c03fd2b6460c8d5e3669563d63d4e5416a83591ad9868bb1ccd71175daac8f7"
+    },
+    "firmware-licenses-and-inputs/usb-vendor/manifest.json": {
+      "bytes": 1427,
+      "sha256": "c2ace19481c81a197e9a41e1c1ef6266cb90a3b073935188be91fc1e675b16f9"
+    },
+    "firmware-licenses-and-inputs/usb-vendor/rtl8157-vendor-0014.fw": {
+      "bytes": 9976,
+      "sha256": "bb218fe49681f5ab7ec463bb973da934e4eca64c2be499b588f6f76e237e2e7a"
+    },
+    "firmware-licenses-and-inputs/usb-vendor/rtl8159-vendor-0022.fw": {
+      "bytes": 17464,
+      "sha256": "29f9e86aa6b5b058ad0a6c425253c152fd448129b60e5eeafb11a6e78f943f87"
+    }
+  }
+}

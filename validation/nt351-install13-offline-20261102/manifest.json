@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-02T17:52:49.872468+00:00",
+  "guest": "nt351-usbsetup-install13-rtl8139-8127",
+  "files": {
+    "WINNT351/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 434176,
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e"
+    },
+    "WINNT351/SYSTEM32/USBTREE.EXE": {
+      "file": "USBTREE.EXE",
+      "size": 57344,
+      "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a"
+    },
+    "WINNT351/SYSTEM32/USBINST.EXE": {
+      "file": "USBINST.EXE",
+      "size": 45056,
+      "sha256": "94574174a470c4221ad032ef436a2f51fe549faa7d5e37db8869f3e6b6db1c84"
+    },
+    "RLTTEST/INST13.LOG": {
+      "file": "INST13.LOG",
+      "size": 638,
+      "sha256": "80da59633a6c43ac56eabd830a5f4ced7e047a709062c5f941cf5cf366d78379"
+    },
+    "RLTTEST/INST13.RC": {
+      "file": "INST13.RC",
+      "size": 15,
+      "sha256": "74e3c4fec71848d254539311ed31e679b9a3fb470980105714c8e6e4fad664d4"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "utc": "2026-11-02T00:51:47.516441+00:00",
+  "guest": "xp64-pciconfig-multi-8127",
+  "qmp": {
+    "status": "shutdown",
+    "singlestep": false,
+    "running": false
+  },
+  "scope": "Guest initiated ACPI power-off after shutdown -s -t 0; final framebuffer retains shutdown text, so not a visual safe-off claim."
+}

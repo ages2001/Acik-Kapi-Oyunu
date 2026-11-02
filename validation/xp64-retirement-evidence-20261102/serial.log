@@ -1,0 +1,134 @@
+usbnt: USB driver 1.2 for Windows 2000 / XP (x64), build Nov  2 2026
+usbnt: pcireloc: the kernel maps above 4 GB (PAE / x64), devices stay where they are
+usbnt: PnP: USBNT\Bus device installed
+usbnt: usbdi: cameras go to Windows' camera driver (usbvideo.sys)
+usbnt: SCSI port 2 created, 4 slot(s)
+usbnt: keyboard port 0, pointer port 0
+usbnt: timer resolution 976 us
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 21 mem febf1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: EHCI 00:02.0: devices settled after 735 ms
+usbnt: PnP: 00:02.0 started (0)
+usbnt: PnP: USBNT device bus started
+usbnt: pointer class driver connected
+usbnt: keyboard class driver connected
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: acpi: 5 tables (RSDT at 1ffe2058)
+usbnt: aml: 228 named objects from the ACPI tables
+usbnt: smbus: Intel SMBus 2930 at 00:1f.3, I/O 0700, host config 01, block buffer
+usbnt: smbus: PS/2 mouse in ACPI: PNP0F13
+usbnt: EHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 21 mem febf1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: EHCI 00:02.0: devices settled after 719 ms
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: EHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 21 mem febf1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: EHCI 00:02.0: devices settled after 750 ms
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: EHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 21 mem febf1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: EHCI 00:02.0: devices settled after 718 ms
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: EHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 21 mem febf1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: EHCI 00:02.0: devices settled after 750 ms
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: EHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 21 mem febf1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: EHCI 00:02.0: devices settled after 734 ms
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: EHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 21 mem febf1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: EHCI 00:02.0: devices settled after 735 ms
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: EHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 21 mem febf1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: EHCI 00:02.0: devices settled after 719 ms
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: EHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 21 mem febf1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: EHCI 00:02.0: devices settled after 735 ms
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: EHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 21 mem febf1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: EHCI 00:02.0: devices settled after 719 ms
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: EHCI at 00:02.0 stops
+usbnt: device 0: removed
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 21 mem febf1000
+usbnt: ehci: 6 ports, 0 companion controller(s)
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: EHCI 00:02.0: devices settled after 750 ms
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8153 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8153 USB 10/100/1000 Gigabit Ethernet
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: PnP: device 0 (0bda:8153) to Windows' USB drivers
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8156 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8156 USB 2.5G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: PnP: device 0 (0bda:8156) to Windows' USB drivers
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8157 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8157 USB 5G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: PnP: device 0 (0bda:8157) to Windows' USB drivers
+usbnt: device 0: removed
+usbnt: device 0: 0bda:8159 class 00, high speed, EHCI port 1 depth 0, addr 1
+usbnt: device 0: Realtek RTL8159 USB 10G Ethernet (protocol test model)
+usbnt: device 0: no driver for this device in USBNT, it goes to Windows
+usbnt: PnP: device 0 (0bda:8159) to Windows' USB drivers
+usbnt: EHCI at 00:02.0 stops
+usbnt: device 0: removed

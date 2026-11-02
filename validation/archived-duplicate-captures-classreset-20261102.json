@@ -1,0 +1,38 @@
+{
+  "utc": "2026-11-02T12:50:26.212709+00:00",
+  "scope": "Closed run captures only; exact uncompressed evidence retained; VM disks untouched",
+  "files": [
+    {
+      "original": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-classreset-8127/pci.pcap",
+      "archive": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-classreset-8127/pci.pcap.gz",
+      "retained_uncompressed_evidence": "validation/nt351-classreset-evidence-20261102/pci.pcap",
+      "original_sha256": "93f949fe131ea2de9b3f7b301623cc0e519cf6adc1eecf7c4887ec569f54fd00",
+      "original_bytes": 7252071,
+      "compressed_bytes": 255240
+    },
+    {
+      "original": "/workspace/rltklant-vm/run/nt31-usbsetup-rtl8117-8127/pci.pcap",
+      "archive": "/workspace/rltklant-vm/run/nt31-usbsetup-rtl8117-8127/pci.pcap.gz",
+      "retained_uncompressed_evidence": "validation/nt31-rtl8117-evidence-20261102/pci.pcap",
+      "original_sha256": "97220b25ecf4cf9d443e4983bf85a40a782768bbc67e911a4ed8c5abcb57c25e",
+      "original_bytes": 4798426,
+      "compressed_bytes": 153056
+    },
+    {
+      "original": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-cold-8127/pci.pcap",
+      "archive": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-cold-8127/pci.pcap.gz",
+      "retained_uncompressed_evidence": "validation/nt351-rtl8139-cold-evidence-20261102/pci.pcap",
+      "original_sha256": "6f6db5849c3c53d35ae470358c7c41a71b157effddef518e36a544dbcc0a032e",
+      "original_bytes": 2313972,
+      "compressed_bytes": 74180
+    },
+    {
+      "original": "/workspace/rltklant-vm/run/win2000-standard-usbnet-retirement-8127/usb.pcap",
+      "archive": "/workspace/rltklant-vm/run/win2000-standard-usbnet-retirement-8127/usb.pcap.gz",
+      "retained_uncompressed_evidence": "validation/win2000-retirement-evidence-20261102/usb.pcap",
+      "original_sha256": "9d4267f319a5629db916ec1a4847faaef1b2bac59bd6846abe40ab9808d279de",
+      "original_bytes": 582465,
+      "compressed_bytes": 33148
+    }
+  ]
+}

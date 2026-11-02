@@ -1,0 +1,14 @@
+/tmp/tmp9m611hsv/test.c: In function ‘n31_stop_hw’:
+/tmp/tmp9m611hsv/test.c:181:19: error: implicit declaration of function ‘n31_mac_hardware’ [-Wimplicit-function-declaration]
+  181 |             (void)n31_mac_hardware(a,RtlMacHardwareRelease);return TRUE;
+      |                   ^~~~~~~~~~~~~~~~
+/tmp/tmp9m611hsv/test.c:181:38: error: ‘RtlMacHardwareRelease’ undeclared (first use in this function)
+  181 |             (void)n31_mac_hardware(a,RtlMacHardwareRelease);return TRUE;
+      |                                      ^~~~~~~~~~~~~~~~~~~~~
+/tmp/tmp9m611hsv/test.c:181:38: note: each undeclared identifier is reported only once for each function it appears in
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_nt31_start_cleanup.py", line 139, in <module>
+    subprocess.run(['gcc','-std=c99','-Wall','-Wextra','-Werror','-Wno-cast-function-type','-fsanitize=address,undefined','-fno-omit-frame-pointer','-I',str(src),str(c),'-o',str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['gcc', '-std=c99', '-Wall', '-Wextra', '-Werror', '-Wno-cast-function-type', '-fsanitize=address,undefined', '-fno-omit-frame-pointer', '-I', '/workspace/rltklant-work/RLTKLANT/src', '/tmp/tmp9m611hsv/test.c', '-o', '/tmp/tmp9m611hsv/test']' returned non-zero exit status 1.

@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/nt351-usbnet-portrecover-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-mv2346w8/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+12/6384 = 0.19% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1114112
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt351-usbnet-portrecover-8127.qcow2",
+  "sha256_before_boot": "14131412609eb3d546401e56b4c6ffc9650fa515b0560e9750fb65d7559e7e66",
+  "files": [
+    {
+      "guest_path": "WINNT351/system32/drivers/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/legacy-portrecover-trace-20261101/ndis3.sys",
+      "size": 503183,
+      "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615",
+      "old_size": 502008,
+      "old_sha256": "4cb590ff527589ebbcad6af27436f084a27958f30d5fa2c013a6dd96bebd20f2"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

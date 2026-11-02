@@ -1,0 +1,56 @@
+{
+  "utc": "2026-11-02T15:19:59.121963+00:00",
+  "guest": "win2000-standard-usbnet-mixed-sleep-v1-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 499712,
+      "sha256": "2659ab101c5c4c323be5aef64e122e1d1f647642f89bf64cdf8bece7c3f0a44e"
+    },
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+    },
+    "RLTTEST/USBLOG.TXT": {
+      "file": "USBLOG.TXT",
+      "size": 2400,
+      "sha256": "0c817059e35580b71bdaeac29bb5b7a54837d1aebcb82796cf608124e88aa0d5"
+    },
+    "RLTTEST/USBLOG.EXE": {
+      "file": "USBLOG.EXE",
+      "size": 6845,
+      "sha256": "df2690acd4b575dac7d2cb94a9a271a976fbf8d422fe5bb5fb288fdef0f235e7"
+    },
+    "RLTTEST/SLPTEST.EXE": {
+      "file": "SLPTEST.EXE",
+      "size": 12159,
+      "sha256": "3e1debf1fe5e3d0dfa2cc87cfa17984eeefb87a53b00c87b1269c8dd11f8e97e"
+    },
+    "RLTTEST/SLPTEST.SYS": {
+      "file": "SLPTEST.SYS",
+      "size": 12535,
+      "sha256": "99e69094d830c07ccdb838088574e1f53cab992dfe4aa840b37b6548d711ef2a"
+    },
+    "RLTTEST/HCPOWER.EXE": {
+      "file": "HCPOWER.EXE",
+      "size": 11967,
+      "sha256": "3b3568c3427a83d849365a93449466f65b97fe2da4b9dca0c96a936efa058a78"
+    },
+    "RLTTEST/HCPOWER.SYS": {
+      "file": "HCPOWER.SYS",
+      "size": 12790,
+      "sha256": "189c3d10544e2e2957669401dea507f1e666dfcb9f61bf428d278eab18bd2817"
+    },
+    "RLTTEST/MKEY2.EXE": {
+      "file": "MKEY2.EXE",
+      "size": 12604,
+      "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549"
+    },
+    "MIXTEST/KEY.LOG": {
+      "file": "KEY.LOG",
+      "size": 2535,
+      "sha256": "b0147759cbcfacf8d78037c43d3444e2653a94b1f9e315fe1ee6cb3972c228d4"
+    }
+  }
+}

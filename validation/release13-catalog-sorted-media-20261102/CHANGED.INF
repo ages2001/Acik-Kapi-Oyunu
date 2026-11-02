@@ -1,0 +1,217 @@
+; netrtlk.inf - RLTKLANT: Realtek LAN family NDIS miniport (universal)
+;
+; ONE INF for Windows 2000, XP (x86) and XP x64 / Server 2003 x64, covering
+; BOTH the PCI/PCIe parts (PCI\VEN_10EC...) and the USB parts
+; (USB\VID_0BDA...).  The 32-bit driver is in i386\, the 64-bit driver in
+; amd64\; SetupAPI picks the right one per architecture.  Each hardware id
+; carries its own name; the driver refines it to the exact chip at run time.
+;
+; Copyright (C) 2026 ages2001.
+
+[version]
+Signature="$Windows NT$"
+Class=Net
+ClassGUID={4d36e972-e325-11ce-bfc1-08002be10318}
+Provider=%Provider%
+DriverVer=10/28/2026,1.0.0.0
+CatalogFile=rltklant.cat
+
+[Manufacturer]
+%Realtek%=Realtek, NTamd64
+
+; ---- undecorated models: Windows 2000 and XP (x86) --------------------
+[Realtek]
+; PCI / PCIe
+%D_8029% = RTL.ndi,    PCI\VEN_10EC&DEV_8029
+%D_8129% = RTL.ndi,    PCI\VEN_10EC&DEV_8129
+%D_8139% = RTL.ndi,    PCI\VEN_10EC&DEV_8139
+%D_8130% = RTL.ndi,    PCI\VEN_10EC&DEV_8130
+%D_8138% = RTL.ndi,    PCI\VEN_10EC&DEV_8138
+%D_8100% = RTL.ndi,    PCI\VEN_10EC&DEV_8100
+%D_8169% = RTL.ndi,    PCI\VEN_10EC&DEV_8169
+%D_8167% = RTL.ndi,    PCI\VEN_10EC&DEV_8167
+%D_8168% = RTL.ndi,    PCI\VEN_10EC&DEV_8168
+%D_8161% = RTL.ndi,    PCI\VEN_10EC&DEV_8161
+%D_8162% = RTL.ndi,    PCI\VEN_10EC&DEV_8162
+%D_8136% = RTL.ndi,    PCI\VEN_10EC&DEV_8136
+%D_8101% = RTL.ndi,    PCI\VEN_10EC&DEV_8101
+%D_8411% = RTL.ndi,    PCI\VEN_10EC&DEV_8411
+%D_2502% = RTL.ndi,    PCI\VEN_10EC&DEV_2502
+%D_2600% = RTL.ndi,    PCI\VEN_10EC&DEV_2600
+%D_8125% = RTL.ndi,    PCI\VEN_10EC&DEV_8125
+%D_3000% = RTL.ndi,    PCI\VEN_10EC&DEV_3000
+%D_5000% = RTL.ndi,    PCI\VEN_10EC&DEV_5000
+%D_0E10% = RTL.ndi,    PCI\VEN_10EC&DEV_0E10
+%D_8126% = RTL.ndi,    PCI\VEN_10EC&DEV_8126
+%D_8127% = RTL.ndi,    PCI\VEN_10EC&DEV_8127
+; USB
+%U_8150% = RTLUSB.ndi, USB\VID_0BDA&PID_8150
+%U_8151% = RTLUSB.ndi, USB\VID_0BDA&PID_8151
+%U_8152% = RTLUSB.ndi, USB\VID_0BDA&PID_8152
+%U_8153% = RTLUSB.ndi, USB\VID_0BDA&PID_8153
+%U_8154% = RTLUSB.ndi, USB\VID_0BDA&PID_8154
+%U_8155% = RTLUSB.ndi, USB\VID_0BDA&PID_8155
+%U_8156% = RTLUSB.ndi, USB\VID_0BDA&PID_8156
+%U_8157% = RTLUSB.ndi, USB\VID_0BDA&PID_8157
+%U_8159% = RTLUSB.ndi, USB\VID_0BDA&PID_8159
+
+; ---- amd64 models: XP x64 / Server 2003 x64 ---------------------------
+[Realtek.NTamd64]
+%D_8029% = RTL.ndi,    PCI\VEN_10EC&DEV_8029
+%D_8129% = RTL.ndi,    PCI\VEN_10EC&DEV_8129
+%D_8139% = RTL.ndi,    PCI\VEN_10EC&DEV_8139
+%D_8130% = RTL.ndi,    PCI\VEN_10EC&DEV_8130
+%D_8138% = RTL.ndi,    PCI\VEN_10EC&DEV_8138
+%D_8100% = RTL.ndi,    PCI\VEN_10EC&DEV_8100
+%D_8169% = RTL.ndi,    PCI\VEN_10EC&DEV_8169
+%D_8167% = RTL.ndi,    PCI\VEN_10EC&DEV_8167
+%D_8168% = RTL.ndi,    PCI\VEN_10EC&DEV_8168
+%D_8161% = RTL.ndi,    PCI\VEN_10EC&DEV_8161
+%D_8162% = RTL.ndi,    PCI\VEN_10EC&DEV_8162
+%D_8136% = RTL.ndi,    PCI\VEN_10EC&DEV_8136
+%D_8101% = RTL.ndi,    PCI\VEN_10EC&DEV_8101
+%D_8411% = RTL.ndi,    PCI\VEN_10EC&DEV_8411
+%D_2502% = RTL.ndi,    PCI\VEN_10EC&DEV_2502
+%D_2600% = RTL.ndi,    PCI\VEN_10EC&DEV_2600
+%D_8125% = RTL.ndi,    PCI\VEN_10EC&DEV_8125
+%D_3000% = RTL.ndi,    PCI\VEN_10EC&DEV_3000
+%D_5000% = RTL.ndi,    PCI\VEN_10EC&DEV_5000
+%D_0E10% = RTL.ndi,    PCI\VEN_10EC&DEV_0E10
+%D_8126% = RTL.ndi,    PCI\VEN_10EC&DEV_8126
+%D_8127% = RTL.ndi,    PCI\VEN_10EC&DEV_8127
+%U_8150% = RTLUSB.ndi, USB\VID_0BDA&PID_8150
+%U_8151% = RTLUSB.ndi, USB\VID_0BDA&PID_8151
+%U_8152% = RTLUSB.ndi, USB\VID_0BDA&PID_8152
+%U_8153% = RTLUSB.ndi, USB\VID_0BDA&PID_8153
+%U_8154% = RTLUSB.ndi, USB\VID_0BDA&PID_8154
+%U_8155% = RTLUSB.ndi, USB\VID_0BDA&PID_8155
+%U_8156% = RTLUSB.ndi, USB\VID_0BDA&PID_8156
+%U_8157% = RTLUSB.ndi, USB\VID_0BDA&PID_8157
+%U_8159% = RTLUSB.ndi, USB\VID_0BDA&PID_8159
+
+; ================= PCI install (BusType 5) =============================
+[RTL.ndi.NT]
+Characteristics=0x84
+BusType=5
+AddReg=RTL.reg, RTL.params
+CopyFiles=RTL.CopyFiles
+[RTL.ndi.NT.Services]
+AddService=RLTKLANT, 2, RTL.Service, RTL.EventLog
+
+[RTL.ndi.NTamd64]
+Characteristics=0x84
+BusType=5
+AddReg=RTL.reg, RTL.params
+CopyFiles=RTL.CopyFiles
+[RTL.ndi.NTamd64.Services]
+AddService=RLTKLANT, 2, RTL.Service, RTL.EventLog
+
+; ================= USB install (BusType 15 = PNPBus) ===================
+[RTLUSB.ndi.NT]
+Characteristics=0x84
+BusType=15
+AddReg=RTL.reg, RTL.params, RTL.usb
+CopyFiles=RTL.CopyFiles
+[RTLUSB.ndi.NT.Services]
+AddService=RLTKLANT, 2, RTL.Service, RTL.EventLog
+
+[RTLUSB.ndi.NTamd64]
+Characteristics=0x84
+BusType=15
+AddReg=RTL.reg, RTL.params, RTL.usb
+CopyFiles=RTL.CopyFiles
+[RTLUSB.ndi.NTamd64.Services]
+AddService=RLTKLANT, 2, RTL.Service, RTL.EventLog
+
+; ================= shared service / registry ===========================
+[RTL.Service]
+DisplayName=%RTL.service.desc%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\rltklant.sys
+LoadOrderGroup=NDIS
+
+[RTL.EventLog]
+AddReg=RTL.EventLog.AddReg
+[RTL.EventLog.AddReg]
+HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\netevent.dll"
+HKR,,TypesSupported,0x00010001,7
+
+[RTL.reg]
+HKR, Ndi,            Service,    0, "RLTKLANT"
+HKR, Ndi\Interfaces, UpperRange, 0, "ndis5"
+HKR, Ndi\Interfaces, LowerRange, 0, "ethernet"
+
+[RTL.usb]
+HKR,,UsbNativeAdapter,0x00010001,1
+
+[RTL.params]
+HKR, Ndi\params\SpeedDuplex,      ParamDesc, 0, "Speed & Duplex"
+HKR, Ndi\params\SpeedDuplex,      default,   0, "0"
+HKR, Ndi\params\SpeedDuplex,      type,      0, "enum"
+HKR, Ndi\params\SpeedDuplex\enum, "0", 0, "Auto Negotiation"
+HKR, Ndi\params\SpeedDuplex\enum, "1", 0, "10 Mbps Half Duplex"
+HKR, Ndi\params\SpeedDuplex\enum, "2", 0, "10 Mbps Full Duplex"
+HKR, Ndi\params\SpeedDuplex\enum, "3", 0, "100 Mbps Half Duplex"
+HKR, Ndi\params\SpeedDuplex\enum, "4", 0, "100 Mbps Full Duplex"
+HKR, Ndi\params\SpeedDuplex\enum, "5", 0, "1.0 Gbps Full Duplex"
+HKR, Ndi\params\SpeedDuplex\enum, "6", 0, "2.5 Gbps Full Duplex"
+HKR, Ndi\params\SpeedDuplex\enum, "7", 0, "5.0 Gbps Full Duplex"
+HKR, Ndi\params\SpeedDuplex\enum, "8", 0, "10 Gbps Full Duplex"
+
+[RTL.CopyFiles]
+rltklant.sys,,,2
+
+; ================= source media (per-architecture subfolders) ==========
+[SourceDisksNames.x86]
+1=%DiskName%,,,i386
+[SourceDisksNames.amd64]
+1=%DiskName%,,,amd64
+[SourceDisksFiles.x86]
+rltklant.sys=1
+[SourceDisksFiles.amd64]
+rltklant.sys=1
+[DestinationDirs]
+RTL.CopyFiles=12
+
+[Strings]
+Provider="ages2001"
+Realtek="Realtek"
+DiskName="RLTKLANT Driver Disk"
+RTL.service.desc="RLTKLANT Realtek LAN Family Driver"
+; --- PCI / PCIe names ---
+D_8029="Realtek RTL8029(AS) PCI Ethernet"
+D_8129="Realtek RTL8129 PCI Fast Ethernet"
+D_8139="Realtek RTL8139 Family PCI Fast Ethernet"
+D_8130="Realtek RTL8139D PCI Fast Ethernet"
+D_8138="Realtek RTL8139B CardBus Fast Ethernet"
+D_8100="Realtek RTL8100 PCI Fast Ethernet"
+D_8169="Realtek RTL8169/8110 Gigabit Ethernet"
+D_8167="Realtek RTL8110SC/8169SC Gigabit Ethernet"
+D_8168="Realtek RTL8168/8111 PCIe Gigabit Ethernet"
+D_8161="Realtek RTL8168 PCIe Gigabit Ethernet"
+D_8162="Realtek RTL8168 PCIe Gigabit Ethernet"
+D_8136="Realtek RTL810xE PCIe Fast Ethernet"
+D_8101="Realtek RTL8101E/8102E PCIe Fast Ethernet"
+D_8411="Realtek RTL8411 PCIe Gigabit Ethernet"
+D_2502="Realtek RTL8168 PCIe Gigabit Ethernet"
+D_2600="Realtek RTL8168 PCIe Gigabit Ethernet"
+D_8125="Realtek RTL8125 2.5GbE Family Controller"
+D_3000="Realtek RTL8125 2.5GbE Controller"
+D_5000="Realtek RTL8125 2.5GbE Controller"
+D_0E10="Realtek RTL8125 2.5GbE Controller"
+D_8126="Realtek RTL8126 5GbE Family Controller"
+D_8127="Realtek RTL8127 10GbE Family Controller"
+; --- USB names ---
+U_8150="Realtek RTL8150 USB 10/100 Fast Ethernet"
+U_8151="Realtek RTL8151 USB 10/100 Fast Ethernet"
+U_8152="Realtek RTL8152B USB 10/100 Fast Ethernet"
+U_8153="Realtek RTL8153/B/C/D/E USB Gigabit Ethernet"
+U_8154="Realtek RTL8154/B USB 2.0 Gigabit Ethernet"
+U_8155="Realtek RTL8156 USB 2.5G Ethernet"
+U_8156="Realtek RTL8156/B(G) USB 2.5G Ethernet"
+U_8157="Realtek RTL8157 USB 5G Ethernet"
+U_8159="Realtek RTL8159 USB 10G Ethernet"
+
+; Deliberate catalog negative control

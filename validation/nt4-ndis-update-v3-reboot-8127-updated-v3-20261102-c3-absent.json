@@ -1,0 +1,11 @@
+{
+  "guest": "nt4-ndis-update-v3-reboot-8127",
+  "token": "updated-v3-20261102-c3-absent",
+  "mask": 6,
+  "utc": "2026-11-01T23:05:05.154205+00:00",
+  "peer": [
+    "127.0.0.1",
+    41080
+  ],
+  "report": "TOKEN updated-v3-20261102-c3-absent\r\nMASK 6\r\nPATH 10.0.3.2 REPLIES 4 PAYLOAD 1472\r\nPATH 10.0.4.2 REPLIES 4 PAYLOAD 1472\r\nTOTAL 8 EXPECTED 8\r\nPASS\r\n"
+}

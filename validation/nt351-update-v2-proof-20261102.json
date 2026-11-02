@@ -1,0 +1,57 @@
+{
+  "utc": "2026-11-01T22:42:31.630236+00:00",
+  "result": "PASS",
+  "scope": "Actual NT3.51 NCPA Update and Configure of both existing USB/PCI adapters, normal binding completion and shutdown",
+  "checks": {
+    "parameters_preserved": true,
+    "registrations_updated": true,
+    "exact_copies": true
+  },
+  "parameter_changes": {
+    "1": {},
+    "2": {}
+  },
+  "registrations": {
+    "1": {
+      "InfName": "RLTKNT35.INF",
+      "type": "rltklant rltklantAdapter",
+      "bindform": "\"RLTKLANT1\" yes yes container",
+      "class": [
+        "rltklantAdapter basic"
+      ],
+      "InfOption": "RLTKLANT"
+    },
+    "2": {
+      "InfName": "RLTKNT35.INF",
+      "type": "rltklant rltklantAdapter",
+      "bindform": "\"RLTKLANT2\" yes yes container",
+      "class": [
+        "rltklantAdapter basic"
+      ],
+      "InfOption": "RLTKLANT"
+    },
+    "software": {
+      "InfName": "RLTKNT35.INF",
+      "type": "rltklantSys ndisDriver rltklantDriver",
+      "use": "driver",
+      "bindform": "\"rltklantSys\" yes no container",
+      "class": [
+        "rltklantDriver basic"
+      ],
+      "bindable": [
+        "rltklantDriver rltklantAdapter non exclusive 100"
+      ],
+      "InfOption": "RLTKLANT"
+    }
+  },
+  "exact_copies": {
+    "RLTSETUP.DLL": true,
+    "RLTKNT35.INF": true,
+    "RLTUSB.EXE": true,
+    "RLTKLANT.SYS": true
+  },
+  "limitations": [
+    "Cold boot/network recovery tested separately",
+    "NT4, first-install and removal remain separate"
+  ]
+}

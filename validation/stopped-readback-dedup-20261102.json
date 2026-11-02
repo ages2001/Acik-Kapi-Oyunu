@@ -1,0 +1,1159 @@
+{
+  "utc": "2026-11-02T19:13:27.848016+00:00",
+  "scope": "Identical immutable stopped-guest PE readbacks only. Hashes, sizes and modes preserved. File timestamps now follow the identical retained copy; original timestamps recorded here. Never edit these snapshots in place. VM disks and uploaded media unchanged.",
+  "bytes_recovered": 50282496,
+  "files": [
+    {
+      "file": "validation/nt31-classreset-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt31-capacity-offline-20261102/RLTKLANT.SYS",
+      "bytes": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24",
+      "previous_mtime_ns": 1793622689901298072,
+      "mtime_ns": 1793610993522704939
+    },
+    {
+      "file": "validation/nt31-hidcap-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt31-capacity-offline-20261102/RLTKLANT.SYS",
+      "bytes": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24",
+      "previous_mtime_ns": 1793611811054512448,
+      "mtime_ns": 1793610993522704939
+    },
+    {
+      "file": "validation/nt31-hidreset-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt31-capacity-offline-20261102/RLTKLANT.SYS",
+      "bytes": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24",
+      "previous_mtime_ns": 1793614418360798821,
+      "mtime_ns": 1793610993522704939
+    },
+    {
+      "file": "validation/nt31-release13-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt31-capacity-offline-20261102/RLTKLANT.SYS",
+      "bytes": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24",
+      "previous_mtime_ns": 1793642646417537045,
+      "mtime_ns": 1793610993522704939
+    },
+    {
+      "file": "validation/nt31-rxtx-offline-20261102/TCP31.EXE",
+      "same_as": "validation/nt31-rtl8117-offline-corrected-path-20261102/TCP31.EXE",
+      "bytes": 12024,
+      "sha256": "e23a00ee62d2eea2ecf3f824e5ba15461664b1d9f8354685f046a6493307c5bd",
+      "previous_mtime_ns": 1793601064536910581,
+      "mtime_ns": 1793602650318946366
+    },
+    {
+      "file": "validation/nt31-sleep-v3-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt31-capacity-offline-20261102/RLTKLANT.SYS",
+      "bytes": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24",
+      "previous_mtime_ns": 1793635877727080052,
+      "mtime_ns": 1793610993522704939
+    },
+    {
+      "file": "validation/nt31-syncrun-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt31-capacity-offline-20261102/RLTKLANT.SYS",
+      "bytes": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24",
+      "previous_mtime_ns": 1793627096529224769,
+      "mtime_ns": 1793610993522704939
+    },
+    {
+      "file": "validation/nt31-update-v8b-offline-20261102/RLTUSB.EXE",
+      "same_as": "validation/nt31-ncpa-installed-offline-20261101/RLTUSB.EXE",
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "previous_mtime_ns": 1793571231566169491,
+      "mtime_ns": 1793565387632601068
+    },
+    {
+      "file": "validation/nt31-usbnt-new-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt31-rtl8117-offline-corrected-path-20261102/RLTKLANT.SYS",
+      "bytes": 538112,
+      "sha256": "3e6e3d0e406850e579692e89c08cc8e6d3ac6c06620f8cfaac3a87d42f5254e2",
+      "previous_mtime_ns": 1793605045343279171,
+      "mtime_ns": 1793602650271405902
+    },
+    {
+      "file": "validation/nt31-v4-installed-offline-20261101/RLTKLANT.SYS",
+      "same_as": "validation/nt31-ncpa-installed-offline-20261101/RLTKLANT.SYS",
+      "bytes": 506368,
+      "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca",
+      "previous_mtime_ns": 1793566470390329218,
+      "mtime_ns": 1793565387633967637
+    },
+    {
+      "file": "validation/nt31-v4-installed-offline-20261101/RLTUSB.EXE",
+      "same_as": "validation/nt31-ncpa-installed-offline-20261101/RLTUSB.EXE",
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "previous_mtime_ns": 1793566470393078934,
+      "mtime_ns": 1793565387632601068
+    },
+    {
+      "file": "validation/nt31-v6-installed-offline-20261101/DHCPNT31.EXE",
+      "same_as": "validation/nt31-update-v8b-offline-20261102/DHCPNT31.EXE",
+      "bytes": 25911,
+      "sha256": "fd646d2021137fc60358b02a07fd5c76fc8326d43295fdb071053ce59f8326f3",
+      "previous_mtime_ns": 1793568654900643907,
+      "mtime_ns": 1793571231564595009
+    },
+    {
+      "file": "validation/nt31-v6-installed-offline-20261101/RLTKLANT.SYS",
+      "same_as": "validation/nt31-ncpa-installed-offline-20261101/RLTKLANT.SYS",
+      "bytes": 506368,
+      "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca",
+      "previous_mtime_ns": 1793568654903755493,
+      "mtime_ns": 1793565387633967637
+    },
+    {
+      "file": "validation/nt31-v6-installed-offline-20261101/RLTUSB.EXE",
+      "same_as": "validation/nt31-ncpa-installed-offline-20261101/RLTUSB.EXE",
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "previous_mtime_ns": 1793568654902504429,
+      "mtime_ns": 1793565387632601068
+    },
+    {
+      "file": "validation/nt31-v9-custom-offline-20261102/RLTSETUP.DLL",
+      "same_as": "validation/nt31-v9-conflict-offline-20261102/RLTSETUP.DLL",
+      "bytes": 22451,
+      "sha256": "35094bec3a1cbb5d6e4f27b78a0706b038b9ceded88156eb6628ba03bd884f8d",
+      "previous_mtime_ns": 1793574719015944458,
+      "mtime_ns": 1793574309081573587
+    },
+    {
+      "file": "validation/nt31-v9-firstinstall-offline-20261102/DHCPNT31.EXE",
+      "same_as": "validation/nt31-update-v8b-offline-20261102/DHCPNT31.EXE",
+      "bytes": 25911,
+      "sha256": "fd646d2021137fc60358b02a07fd5c76fc8326d43295fdb071053ce59f8326f3",
+      "previous_mtime_ns": 1793575382625981458,
+      "mtime_ns": 1793571231564595009
+    },
+    {
+      "file": "validation/nt31-v9-firstinstall-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt31-ncpa-installed-offline-20261101/RLTKLANT.SYS",
+      "bytes": 506368,
+      "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca",
+      "previous_mtime_ns": 1793575382627412440,
+      "mtime_ns": 1793565387633967637
+    },
+    {
+      "file": "validation/nt31-v9-firstinstall-offline-20261102/RLTSETUP.DLL",
+      "same_as": "validation/nt31-v9-conflict-offline-20261102/RLTSETUP.DLL",
+      "bytes": 22451,
+      "sha256": "35094bec3a1cbb5d6e4f27b78a0706b038b9ceded88156eb6628ba03bd884f8d",
+      "previous_mtime_ns": 1793575382621267278,
+      "mtime_ns": 1793574309081573587
+    },
+    {
+      "file": "validation/nt31-v9-firstinstall-offline-20261102/RLTUSB.EXE",
+      "same_as": "validation/nt31-ncpa-installed-offline-20261101/RLTUSB.EXE",
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "previous_mtime_ns": 1793575382624672234,
+      "mtime_ns": 1793565387632601068
+    },
+    {
+      "file": "validation/nt31-vendor-oid-offline-20261102/N31RESET.EXE",
+      "same_as": "validation/nt31-management-ep-offline-20261102/N31RESET.EXE",
+      "bytes": 7828,
+      "sha256": "f419a466e5e8bbf69f9bc285ee53ffb22f7a14401d4321214c96a1170d68af46",
+      "previous_mtime_ns": 1793586396180623610,
+      "mtime_ns": 1793597174236005245
+    },
+    {
+      "file": "validation/nt31-vendor-oid-offline-20261102/N31RESET.SYS",
+      "same_as": "validation/nt31-management-ep-offline-20261102/N31RESET.SYS",
+      "bytes": 6144,
+      "sha256": "618dc162548343df7aecfcdab76cc1964920cc16d09e920527b89b2a72915fe4",
+      "previous_mtime_ns": 1793586396155902923,
+      "mtime_ns": 1793597174207472072
+    },
+    {
+      "file": "validation/nt351-classreset-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-classreset-offline-20261102/USBNT.SYS",
+      "bytes": 418304,
+      "sha256": "d65acc8f8d9eb3abe0c7e03cd09c26e50d6101957a95f6a128d91166ae3d8080",
+      "previous_mtime_ns": 1793623683317017473,
+      "mtime_ns": 1793622688766406428
+    },
+    {
+      "file": "validation/nt351-finalcheck-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793610062307427140,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt351-finalcheck-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-capacity-offline-20261102/USBNT.SYS",
+      "bytes": 411648,
+      "sha256": "92b201af42e3ddc15a8fd46f88f0f28ffd337ae2ac0f04f74558f0abbd2bbcab",
+      "previous_mtime_ns": 1793610061408839481,
+      "mtime_ns": 1793610992500375535
+    },
+    {
+      "file": "validation/nt351-hidcap-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793612295921229559,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt351-hidcap-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-hidcap-offline-20261102/USBNT.SYS",
+      "bytes": 411648,
+      "sha256": "92d6f836da50302b026ac16f1e02daba932dbebd3c233beab1a8eb4374b53d4c",
+      "previous_mtime_ns": 1793612294782685588,
+      "mtime_ns": 1793611810186163008
+    },
+    {
+      "file": "validation/nt351-hidreset-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793614873144636805,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt351-hidreset-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-hidreset-offline-20261102/USBNT.SYS",
+      "bytes": 412672,
+      "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241",
+      "previous_mtime_ns": 1793614872018014152,
+      "mtime_ns": 1793614417339638913
+    },
+    {
+      "file": "validation/nt351-install13-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-release13-offline-20261102/USBNT.SYS",
+      "bytes": 434176,
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e",
+      "previous_mtime_ns": 1793641969287411698,
+      "mtime_ns": 1793642645008724610
+    },
+    {
+      "file": "validation/nt351-install13-offline-20261102/USBTREE.EXE",
+      "same_as": "validation/nt31-release13-offline-20261102/USBTREE.EXE",
+      "bytes": 57344,
+      "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a",
+      "previous_mtime_ns": 1793641969525653752,
+      "mtime_ns": 1793642646590610386
+    },
+    {
+      "file": "validation/nt351-ncpa-installed-offline-20261101/RLTUSB.EXE",
+      "same_as": "validation/nt31-ncpa-installed-offline-20261101/RLTUSB.EXE",
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "previous_mtime_ns": 1793565387941743302,
+      "mtime_ns": 1793565387632601068
+    },
+    {
+      "file": "validation/nt351-newcompare-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793625500438594287,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt351-newcompare-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-classreset-offline-20261102/USBNT.SYS",
+      "bytes": 418304,
+      "sha256": "d65acc8f8d9eb3abe0c7e03cd09c26e50d6101957a95f6a128d91166ae3d8080",
+      "previous_mtime_ns": 1793625499357350009,
+      "mtime_ns": 1793622688766406428
+    },
+    {
+      "file": "validation/nt351-oldcompare-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793625502535636009,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt351-oldcompare-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-hidreset-offline-20261102/USBNT.SYS",
+      "bytes": 412672,
+      "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241",
+      "previous_mtime_ns": 1793625501476559784,
+      "mtime_ns": 1793614417339638913
+    },
+    {
+      "file": "validation/nt351-release13-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793642829227784522,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt351-release13-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-release13-offline-20261102/USBNT.SYS",
+      "bytes": 434176,
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e",
+      "previous_mtime_ns": 1793642827673918096,
+      "mtime_ns": 1793642645008724610
+    },
+    {
+      "file": "validation/nt351-release13-offline-20261102/USBTREE.EXE",
+      "same_as": "validation/nt31-release13-offline-20261102/USBTREE.EXE",
+      "bytes": 57344,
+      "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a",
+      "previous_mtime_ns": 1793642829454535772,
+      "mtime_ns": 1793642646590610386
+    },
+    {
+      "file": "validation/nt351-release13-usb-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793643920240187212,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt351-release13-usb-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-release13-offline-20261102/USBNT.SYS",
+      "bytes": 434176,
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e",
+      "previous_mtime_ns": 1793643919450096470,
+      "mtime_ns": 1793642645008724610
+    },
+    {
+      "file": "validation/nt351-rtl8139-current-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-usbnt-new-offline-20261102/USBNT.SYS",
+      "bytes": 410112,
+      "sha256": "f3a7e6e09ffec491d62cec183dba1b6aeb56f1f15c7b6e4a3a9a43f03d836f37",
+      "previous_mtime_ns": 1793603802372437602,
+      "mtime_ns": 1793605046034948877
+    },
+    {
+      "file": "validation/nt351-rtl8139-filterfixed-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-rtl8139-cold-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540269,
+      "sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0",
+      "previous_mtime_ns": 1793600029763109607,
+      "mtime_ns": 1793598281817379731
+    },
+    {
+      "file": "validation/nt351-rtl8139-filterfixed-offline-20261102/TCP35.EXE",
+      "same_as": "validation/nt351-rtl8139-current-offline-20261102/TCP35.EXE",
+      "bytes": 11466,
+      "sha256": "987dd6118fab5b8b1f3f455add33fc99078b6ce4715f35d0ac4a13c1dce8e37f",
+      "previous_mtime_ns": 1793600029949714289,
+      "mtime_ns": 1793603802423801837
+    },
+    {
+      "file": "validation/nt351-rtl8139-fixed-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-rtl8139-cold-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540269,
+      "sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0",
+      "previous_mtime_ns": 1793597972604505614,
+      "mtime_ns": 1793598281817379731
+    },
+    {
+      "file": "validation/nt351-rtl8139-fixed-offline-20261102/TCP35.EXE",
+      "same_as": "validation/nt351-rtl8139-current-offline-20261102/TCP35.EXE",
+      "bytes": 11466,
+      "sha256": "987dd6118fab5b8b1f3f455add33fc99078b6ce4715f35d0ac4a13c1dce8e37f",
+      "previous_mtime_ns": 1793597972662483649,
+      "mtime_ns": 1793603802423801837
+    },
+    {
+      "file": "validation/nt351-sleep-v3-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793636508827646417,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt351-sleep-v3-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-sleep-v3-offline-20261102/USBNT.SYS",
+      "bytes": 419328,
+      "sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6",
+      "previous_mtime_ns": 1793636507443285253,
+      "mtime_ns": 1793635876332658738
+    },
+    {
+      "file": "validation/nt351-syncrun-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793626197952366893,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt351-syncrun-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-syncrun-offline-20261102/USBNT.SYS",
+      "bytes": 418304,
+      "sha256": "3c5f00721bfcbedb1876ae40ee6288d905bde1339ccef7e2a5ef3f1a8b5f21b4",
+      "previous_mtime_ns": 1793626196632528542,
+      "mtime_ns": 1793627095223386245
+    },
+    {
+      "file": "validation/nt351-timerprobe-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793641402395484919,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt351-timerprobe-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-sleep-v3-offline-20261102/USBNT.SYS",
+      "bytes": 419328,
+      "sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6",
+      "previous_mtime_ns": 1793641401049219382,
+      "mtime_ns": 1793635876332658738
+    },
+    {
+      "file": "validation/nt351-tree13-v2-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793644641760563272,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt351-tree13-v2-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-release13-offline-20261102/USBNT.SYS",
+      "bytes": 434176,
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e",
+      "previous_mtime_ns": 1793644641046700934,
+      "mtime_ns": 1793642645008724610
+    },
+    {
+      "file": "validation/nt351-update-v2-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-ncpa-installed-offline-20261101/RLTKLANT.SYS",
+      "bytes": 503183,
+      "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615",
+      "previous_mtime_ns": 1793572940631593101,
+      "mtime_ns": 1793565387943108089
+    },
+    {
+      "file": "validation/nt351-update-v2-offline-20261102/RLTUSB.EXE",
+      "same_as": "validation/nt31-ncpa-installed-offline-20261101/RLTUSB.EXE",
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "previous_mtime_ns": 1793572940630151460,
+      "mtime_ns": 1793565387632601068
+    },
+    {
+      "file": "validation/nt4-capacity-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793610927420940720,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt4-capacity-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-capacity-offline-20261102/USBNT.SYS",
+      "bytes": 411648,
+      "sha256": "92b201af42e3ddc15a8fd46f88f0f28ffd337ae2ac0f04f74558f0abbd2bbcab",
+      "previous_mtime_ns": 1793610926847038062,
+      "mtime_ns": 1793610992500375535
+    },
+    {
+      "file": "validation/nt4-classreset-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793622799881723669,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt4-classreset-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-classreset-offline-20261102/USBNT.SYS",
+      "bytes": 418304,
+      "sha256": "d65acc8f8d9eb3abe0c7e03cd09c26e50d6101957a95f6a128d91166ae3d8080",
+      "previous_mtime_ns": 1793622799055449773,
+      "mtime_ns": 1793622688766406428
+    },
+    {
+      "file": "validation/nt4-hidcap-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793611966054021341,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt4-hidcap-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-hidcap-offline-20261102/USBNT.SYS",
+      "bytes": 411648,
+      "sha256": "92d6f836da50302b026ac16f1e02daba932dbebd3c233beab1a8eb4374b53d4c",
+      "previous_mtime_ns": 1793611965325180244,
+      "mtime_ns": 1793611810186163008
+    },
+    {
+      "file": "validation/nt4-hidreset-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793614510418966295,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt4-hidreset-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-hidreset-offline-20261102/USBNT.SYS",
+      "bytes": 412672,
+      "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241",
+      "previous_mtime_ns": 1793614509677687368,
+      "mtime_ns": 1793614417339638913
+    },
+    {
+      "file": "validation/nt4-installed-offline-20261101/RLTKLANT.SYS",
+      "same_as": "validation/nt351-ncpa-installed-offline-20261101/RLTKLANT.SYS",
+      "bytes": 503183,
+      "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615",
+      "previous_mtime_ns": 1793562914461001843,
+      "mtime_ns": 1793565387943108089
+    },
+    {
+      "file": "validation/nt4-macstart-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-macstart-offline-20261102/RLTKLANT.SYS",
+      "bytes": 534638,
+      "sha256": "41a54b3668d23ff145f346b4872ccbeb84206b101e1b782abaca2891109b6e84",
+      "previous_mtime_ns": 1793583910529692909,
+      "mtime_ns": 1793583911353653291
+    },
+    {
+      "file": "validation/nt4-management-ringfix-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-rtl8139-cold-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540269,
+      "sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0",
+      "previous_mtime_ns": 1793599482911560080,
+      "mtime_ns": 1793598281817379731
+    },
+    {
+      "file": "validation/nt4-release13-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793642759234441060,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt4-release13-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-release13-offline-20261102/USBNT.SYS",
+      "bytes": 434176,
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e",
+      "previous_mtime_ns": 1793642758401862558,
+      "mtime_ns": 1793642645008724610
+    },
+    {
+      "file": "validation/nt4-release13-offline-20261102/USBTREE.EXE",
+      "same_as": "validation/nt31-release13-offline-20261102/USBTREE.EXE",
+      "bytes": 57344,
+      "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a",
+      "previous_mtime_ns": 1793642759330083374,
+      "mtime_ns": 1793642646590610386
+    },
+    {
+      "file": "validation/nt4-rtl8117-v2-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-rtl8139-current-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540311,
+      "sha256": "d1703001357511d876fd293508ad2c7d761df33eca76a6493475e4cfb1e973e9",
+      "previous_mtime_ns": 1793601885014989115,
+      "mtime_ns": 1793603801700410866
+    },
+    {
+      "file": "validation/nt4-sleep-v3-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793636349284969837,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt4-sleep-v3-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-sleep-v3-offline-20261102/USBNT.SYS",
+      "bytes": 419328,
+      "sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6",
+      "previous_mtime_ns": 1793636348333236151,
+      "mtime_ns": 1793635876332658738
+    },
+    {
+      "file": "validation/nt4-syncrun-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf",
+      "previous_mtime_ns": 1793627523062946935,
+      "mtime_ns": 1793623684456824744
+    },
+    {
+      "file": "validation/nt4-syncrun-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-syncrun-offline-20261102/USBNT.SYS",
+      "bytes": 418304,
+      "sha256": "3c5f00721bfcbedb1876ae40ee6288d905bde1339ccef7e2a5ef3f1a8b5f21b4",
+      "previous_mtime_ns": 1793627522148750396,
+      "mtime_ns": 1793627095223386245
+    },
+    {
+      "file": "validation/nt4-usbnt-new-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/nt351-rtl8139-current-offline-20261102/RLTKLANT.SYS",
+      "bytes": 540311,
+      "sha256": "d1703001357511d876fd293508ad2c7d761df33eca76a6493475e4cfb1e973e9",
+      "previous_mtime_ns": 1793605202308215272,
+      "mtime_ns": 1793603801700410866
+    },
+    {
+      "file": "validation/nt4-usbnt-new-offline-20261102/USBNT.SYS",
+      "same_as": "validation/nt31-usbnt-new-offline-20261102/USBNT.SYS",
+      "bytes": 410112,
+      "sha256": "f3a7e6e09ffec491d62cec183dba1b6aeb56f1f15c7b6e4a3a9a43f03d836f37",
+      "previous_mtime_ns": 1793605202865966809,
+      "mtime_ns": 1793605046034948877
+    },
+    {
+      "file": "validation/nt4-v2-installed-offline-20261101/RLTKLANT.SYS",
+      "same_as": "validation/nt351-ncpa-installed-offline-20261101/RLTKLANT.SYS",
+      "bytes": 503183,
+      "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615",
+      "previous_mtime_ns": 1793564137872055234,
+      "mtime_ns": 1793565387943108089
+    },
+    {
+      "file": "validation/nt4-v2-installed-offline-20261101/RLTUSB.EXE",
+      "same_as": "validation/nt31-ncpa-installed-offline-20261101/RLTUSB.EXE",
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "previous_mtime_ns": 1793564137870694051,
+      "mtime_ns": 1793565387632601068
+    },
+    {
+      "file": "validation/win2000-hidcap-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/win2000-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5",
+      "previous_mtime_ns": 1793611809313215498,
+      "mtime_ns": 1793622800732709143
+    },
+    {
+      "file": "validation/win2000-hidreset-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/win2000-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5",
+      "previous_mtime_ns": 1793614325743728645,
+      "mtime_ns": 1793622800732709143
+    },
+    {
+      "file": "validation/win2000-install13-offline-20261102/USBINST.EXE",
+      "same_as": "validation/nt351-install13-offline-20261102/USBINST.EXE",
+      "bytes": 45056,
+      "sha256": "94574174a470c4221ad032ef436a2f51fe549faa7d5e37db8869f3e6b6db1c84",
+      "previous_mtime_ns": 1793642647625163297,
+      "mtime_ns": 1793641969750022035
+    },
+    {
+      "file": "validation/win2000-install13-offline-20261102/USBTREE.EXE",
+      "same_as": "validation/nt31-release13-offline-20261102/USBTREE.EXE",
+      "bytes": 57344,
+      "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a",
+      "previous_mtime_ns": 1793642647475296717,
+      "mtime_ns": 1793642646590610386
+    },
+    {
+      "file": "validation/win2000-install13-v2-offline-20261102/USBNT.SYS",
+      "same_as": "validation/win2000-install13-offline-20261102/USBNT.SYS",
+      "bytes": 516096,
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b",
+      "previous_mtime_ns": 1793644475501013646,
+      "mtime_ns": 1793642647330804990
+    },
+    {
+      "file": "validation/win2000-install13-v2-offline-20261102/USBTREE.EXE",
+      "same_as": "validation/nt351-tree13-v2-offline-20261102/USBTREE.EXE",
+      "bytes": 57344,
+      "sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97",
+      "previous_mtime_ns": 1793644475709532657,
+      "mtime_ns": 1793644641874870308
+    },
+    {
+      "file": "validation/win2000-management-v4-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/win2000-management-v2-incomplete-offline-20261102/RLTKLANT.SYS",
+      "bytes": 555784,
+      "sha256": "428f94ea70e445a6ae974359d47fed8176e5cb50a13be3a1f124cb2a013a4cf6",
+      "previous_mtime_ns": 1793597752037521793,
+      "mtime_ns": 1793596502541797838
+    },
+    {
+      "file": "validation/win2000-mixed-sleep-v1-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/win2000-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5",
+      "previous_mtime_ns": 1793632798670587175,
+      "mtime_ns": 1793622800732709143
+    },
+    {
+      "file": "validation/win2000-mixed-v2-offline-20261102/MKEY2.EXE",
+      "same_as": "validation/win2000-mixed-sleep-v1-offline-20261102/MKEY2.EXE",
+      "bytes": 12604,
+      "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549",
+      "previous_mtime_ns": 1793629039241229187,
+      "mtime_ns": 1793632799073551983
+    },
+    {
+      "file": "validation/win2000-mixed-v2-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/win2000-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5",
+      "previous_mtime_ns": 1793629038977823519,
+      "mtime_ns": 1793622800732709143
+    },
+    {
+      "file": "validation/win2000-release13-v1-failure-offline-20261102/USBNT.SYS",
+      "same_as": "validation/win2000-install13-offline-20261102/USBNT.SYS",
+      "bytes": 516096,
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b",
+      "previous_mtime_ns": 1793643920890911623,
+      "mtime_ns": 1793642647330804990
+    },
+    {
+      "file": "validation/win2000-release13-v1-failure-readback-20261102/USBNT.SYS",
+      "same_as": "validation/win2000-install13-offline-20261102/USBNT.SYS",
+      "bytes": 516096,
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b",
+      "previous_mtime_ns": 1793643966831803246,
+      "mtime_ns": 1793642647330804990
+    },
+    {
+      "file": "validation/win2000-release13-v2-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/win2000-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5",
+      "previous_mtime_ns": 1793645916723461960,
+      "mtime_ns": 1793622800732709143
+    },
+    {
+      "file": "validation/win2000-release13-v2-offline-20261102/USBNT.SYS",
+      "same_as": "validation/win2000-install13-offline-20261102/USBNT.SYS",
+      "bytes": 516096,
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b",
+      "previous_mtime_ns": 1793645916326818212,
+      "mtime_ns": 1793642647330804990
+    },
+    {
+      "file": "validation/win2000-release13-v2-offline-20261102/USBTREE.EXE",
+      "same_as": "validation/nt351-tree13-v2-offline-20261102/USBTREE.EXE",
+      "bytes": 57344,
+      "sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97",
+      "previous_mtime_ns": 1793645917118770924,
+      "mtime_ns": 1793644641874870308
+    },
+    {
+      "file": "validation/win2000-retirement-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/win2000-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5",
+      "previous_mtime_ns": 1793610055301979820,
+      "mtime_ns": 1793622800732709143
+    },
+    {
+      "file": "validation/win2000-sleep-v3-offline-20261102/HCPOWER.EXE",
+      "same_as": "validation/win2000-mixed-sleep-v1-offline-20261102/HCPOWER.EXE",
+      "bytes": 11967,
+      "sha256": "3b3568c3427a83d849365a93449466f65b97fe2da4b9dca0c96a936efa058a78",
+      "previous_mtime_ns": 1793636295443707424,
+      "mtime_ns": 1793632798968511181
+    },
+    {
+      "file": "validation/win2000-sleep-v3-offline-20261102/HCPOWER.SYS",
+      "same_as": "validation/win2000-mixed-sleep-v1-offline-20261102/HCPOWER.SYS",
+      "bytes": 12790,
+      "sha256": "189c3d10544e2e2957669401dea507f1e666dfcb9f61bf428d278eab18bd2817",
+      "previous_mtime_ns": 1793636295518204936,
+      "mtime_ns": 1793632799022422339
+    },
+    {
+      "file": "validation/win2000-sleep-v3-offline-20261102/MKEY2.EXE",
+      "same_as": "validation/win2000-mixed-sleep-v1-offline-20261102/MKEY2.EXE",
+      "bytes": 12604,
+      "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549",
+      "previous_mtime_ns": 1793636295687002789,
+      "mtime_ns": 1793632799073551983
+    },
+    {
+      "file": "validation/win2000-sleep-v3-offline-20261102/MRESET.EXE",
+      "same_as": "validation/win2000-mixed-v2-offline-20261102/MRESET.EXE",
+      "bytes": 11814,
+      "sha256": "b18129df4bc5a10422aa6970be1403cb3836476bce06988f77874f47eb8214c6",
+      "previous_mtime_ns": 1793636295736121301,
+      "mtime_ns": 1793629039186746283
+    },
+    {
+      "file": "validation/win2000-sleep-v3-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/win2000-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5",
+      "previous_mtime_ns": 1793636295208758791,
+      "mtime_ns": 1793622800732709143
+    },
+    {
+      "file": "validation/win2000-sleep-v3-offline-20261102/SLPTEST.EXE",
+      "same_as": "validation/win2000-mixed-sleep-v1-offline-20261102/SLPTEST.EXE",
+      "bytes": 12159,
+      "sha256": "3e1debf1fe5e3d0dfa2cc87cfa17984eeefb87a53b00c87b1269c8dd11f8e97e",
+      "previous_mtime_ns": 1793636295577402265,
+      "mtime_ns": 1793632798851374959
+    },
+    {
+      "file": "validation/win2000-sleep-v3-offline-20261102/SLPTEST.SYS",
+      "same_as": "validation/win2000-mixed-sleep-v1-offline-20261102/SLPTEST.SYS",
+      "bytes": 12535,
+      "sha256": "99e69094d830c07ccdb838088574e1f53cab992dfe4aa840b37b6548d711ef2a",
+      "previous_mtime_ns": 1793636295632415064,
+      "mtime_ns": 1793632798908011920
+    },
+    {
+      "file": "validation/win2000-syncrun-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/win2000-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5",
+      "previous_mtime_ns": 1793627268916785595,
+      "mtime_ns": 1793622800732709143
+    },
+    {
+      "file": "validation/win2000-syncrun-offline-20261102/USBNT.SYS",
+      "same_as": "validation/win2000-mixed-v2-offline-20261102/USBNT.SYS",
+      "bytes": 495616,
+      "sha256": "2c4dc477f30d86ad73c09499da01e68868b052de759f4b203e0197f63ff8d91c",
+      "previous_mtime_ns": 1793627268498361790,
+      "mtime_ns": 1793629038549877034
+    },
+    {
+      "file": "validation/win2000-usbnt-hcpower-offline-20261102/HCPOWER.EXE",
+      "same_as": "validation/win2000-hcd-release-offline-20261102/HCPOWER.EXE",
+      "bytes": 11761,
+      "sha256": "3214b753e7ce6e59196d1b5024af89ae6e5a94dbbf81d38ddf15c068f3f933aa",
+      "previous_mtime_ns": 1793605666050094668,
+      "mtime_ns": 1793607207029537818
+    },
+    {
+      "file": "validation/win2000-usbnt-hcpower-offline-20261102/HCPOWER.SYS",
+      "same_as": "validation/win2000-hcd-release-offline-20261102/HCPOWER.SYS",
+      "bytes": 12790,
+      "sha256": "0fd1c980f8159a145ea5a40943209d4f76740ab5ca5d4e037394b65f462b9eba",
+      "previous_mtime_ns": 1793605666012056252,
+      "mtime_ns": 1793607206979450839
+    },
+    {
+      "file": "validation/win2000-usbnt-hcpower-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/win2000-hcd-release-offline-20261102/RLTKLANT.SYS",
+      "bytes": 555860,
+      "sha256": "69d92dc9dc2567ab814ae39744977338444a7f3bcf06a4cb207d1dcc1bc50418",
+      "previous_mtime_ns": 1793605665932207689,
+      "mtime_ns": 1793607206936192488
+    },
+    {
+      "file": "validation/win2000-usbnt-power-v2-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/win2000-hcd-release-offline-20261102/RLTKLANT.SYS",
+      "bytes": 555860,
+      "sha256": "69d92dc9dc2567ab814ae39744977338444a7f3bcf06a4cb207d1dcc1bc50418",
+      "previous_mtime_ns": 1793603866928253343,
+      "mtime_ns": 1793607206936192488
+    },
+    {
+      "file": "validation/win2000-usbnt-power-v2-offline-20261102/UPOWER.EXE",
+      "same_as": "validation/win2000-usbnt-power-v1-failed-offline-20261102/UPOWER.EXE",
+      "bytes": 11761,
+      "sha256": "483c04e8da5e16c2f05227986df4895e2189c1c76e54ab45a66e6aceeff26dab",
+      "previous_mtime_ns": 1793603867055525313,
+      "mtime_ns": 1793603002782516404
+    },
+    {
+      "file": "validation/win2000-usbnt-power-v2-offline-20261102/UPOWER.SYS",
+      "same_as": "validation/win2000-usbnt-power-v1-failed-offline-20261102/UPOWER.SYS",
+      "bytes": 12558,
+      "sha256": "54a41b06460817766b4817602dbce36f393f04857cf5501c4e523c3025353340",
+      "previous_mtime_ns": 1793603867013056279,
+      "mtime_ns": 1793603002739972703
+    },
+    {
+      "file": "validation/win2000-usbnt-power-v2-offline-20261102/USBNT.SYS",
+      "same_as": "validation/win2000-usbnt-power-v1-failed-offline-20261102/USBNT.SYS",
+      "bytes": 483840,
+      "sha256": "c39d4b27157a266430e79aee71b34a284a10fe6a5efdf8cc4be72858ba5972c8",
+      "previous_mtime_ns": 1793603866583657599,
+      "mtime_ns": 1793603002369330843
+    },
+    {
+      "file": "validation/xp64-hcd-release-offline-20261102/USBNT.SYS",
+      "same_as": "validation/xp64-hcd-inittrace-offline-20261102/USBNT.SYS",
+      "bytes": 525312,
+      "sha256": "746574178357c8ba3a9b76da9bb9d68e9585355fcc86bb2682521bd02704e47c",
+      "previous_mtime_ns": 1793607204331119479,
+      "mtime_ns": 1793607484499078953
+    },
+    {
+      "file": "validation/xp64-hcd-singletrace-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/xp64-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8",
+      "previous_mtime_ns": 1793608107579947403,
+      "mtime_ns": 1793623209088416864
+    },
+    {
+      "file": "validation/xp64-hcd-singletrace-offline-20261102/USBNT.SYS",
+      "same_as": "validation/xp64-hcd-inittrace-offline-20261102/USBNT.SYS",
+      "bytes": 525312,
+      "sha256": "746574178357c8ba3a9b76da9bb9d68e9585355fcc86bb2682521bd02704e47c",
+      "previous_mtime_ns": 1793608106221227508,
+      "mtime_ns": 1793607484499078953
+    },
+    {
+      "file": "validation/xp64-hidcap-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/xp64-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8",
+      "previous_mtime_ns": 1793611808432866641,
+      "mtime_ns": 1793623209088416864
+    },
+    {
+      "file": "validation/xp64-hidreset-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/xp64-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8",
+      "previous_mtime_ns": 1793614330277310965,
+      "mtime_ns": 1793623209088416864
+    },
+    {
+      "file": "validation/xp64-install13-offline-20261102/USBINST.EXE",
+      "same_as": "validation/nt351-install13-offline-20261102/USBINST.EXE",
+      "bytes": 45056,
+      "sha256": "94574174a470c4221ad032ef436a2f51fe549faa7d5e37db8869f3e6b6db1c84",
+      "previous_mtime_ns": 1793642956514558657,
+      "mtime_ns": 1793641969750022035
+    },
+    {
+      "file": "validation/xp64-install13-offline-20261102/USBTREE.EXE",
+      "same_as": "validation/nt31-release13-offline-20261102/USBTREE.EXE",
+      "bytes": 57344,
+      "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a",
+      "previous_mtime_ns": 1793642955940126890,
+      "mtime_ns": 1793642646590610386
+    },
+    {
+      "file": "validation/xp64-install13-offline-corrected-20261102/USBINST.EXE",
+      "same_as": "validation/nt351-install13-offline-20261102/USBINST.EXE",
+      "bytes": 45056,
+      "sha256": "94574174a470c4221ad032ef436a2f51fe549faa7d5e37db8869f3e6b6db1c84",
+      "previous_mtime_ns": 1793643104075030526,
+      "mtime_ns": 1793641969750022035
+    },
+    {
+      "file": "validation/xp64-install13-offline-corrected-20261102/USBNT.SYS",
+      "same_as": "validation/xp64-install13-offline-20261102/USBNT.SYS",
+      "bytes": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1",
+      "previous_mtime_ns": 1793643103111403455,
+      "mtime_ns": 1793642955326587309
+    },
+    {
+      "file": "validation/xp64-install13-offline-corrected-20261102/USBTREE.EXE",
+      "same_as": "validation/nt31-release13-offline-20261102/USBTREE.EXE",
+      "bytes": 57344,
+      "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a",
+      "previous_mtime_ns": 1793643103618151761,
+      "mtime_ns": 1793642646590610386
+    },
+    {
+      "file": "validation/xp64-install13-v2-offline-20261102/USBINST.EXE",
+      "same_as": "validation/win2000-install13-v2-offline-20261102/USBINST.EXE",
+      "bytes": 45056,
+      "sha256": "102e16349209fd52ab2ca0ef4f92c72e46f763b437cacfe8ea8a0a348079f73e",
+      "previous_mtime_ns": 1793644831618133563,
+      "mtime_ns": 1793644475605088065
+    },
+    {
+      "file": "validation/xp64-install13-v2-offline-20261102/USBNT.SYS",
+      "same_as": "validation/xp64-install13-offline-20261102/USBNT.SYS",
+      "bytes": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1",
+      "previous_mtime_ns": 1793644831185738844,
+      "mtime_ns": 1793642955326587309
+    },
+    {
+      "file": "validation/xp64-install13-v2-offline-20261102/USBTREE.EXE",
+      "same_as": "validation/nt351-tree13-v2-offline-20261102/USBTREE.EXE",
+      "bytes": 57344,
+      "sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97",
+      "previous_mtime_ns": 1793644832107246247,
+      "mtime_ns": 1793644641874870308
+    },
+    {
+      "file": "validation/xp64-mixed-sleep-v1-offline-20261102/HCPOWER.EXE",
+      "same_as": "validation/xp64-hcd-singletrace-offline-20261102/HCPOWER.EXE",
+      "bytes": 11754,
+      "sha256": "5d41ac14ae793f0470039924d248b929472d35f79990742e48010289395c9b93",
+      "previous_mtime_ns": 1793632849436504975,
+      "mtime_ns": 1793608107658804388
+    },
+    {
+      "file": "validation/xp64-mixed-sleep-v1-offline-20261102/HCPOWER.SYS",
+      "same_as": "validation/xp64-hcd-singletrace-offline-20261102/HCPOWER.SYS",
+      "bytes": 11433,
+      "sha256": "217ebb498a307eb77ff6581b0d3c63002fa2a134876fcdeccf5769948ae1091f",
+      "previous_mtime_ns": 1793632849517882385,
+      "mtime_ns": 1793608107614752554
+    },
+    {
+      "file": "validation/xp64-mixed-sleep-v1-offline-20261102/MKEY2.EXE",
+      "same_as": "validation/win2000-mixed-sleep-v1-offline-20261102/MKEY2.EXE",
+      "bytes": 12604,
+      "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549",
+      "previous_mtime_ns": 1793632849602282131,
+      "mtime_ns": 1793632799073551983
+    },
+    {
+      "file": "validation/xp64-mixed-sleep-v1-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/xp64-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8",
+      "previous_mtime_ns": 1793632849068540032,
+      "mtime_ns": 1793623209088416864
+    },
+    {
+      "file": "validation/xp64-mixed-sleep-v1-offline-20261102/USBLOG.EXE",
+      "same_as": "validation/win2000-mixed-sleep-v1-offline-20261102/USBLOG.EXE",
+      "bytes": 6845,
+      "sha256": "df2690acd4b575dac7d2cb94a9a271a976fbf8d422fe5bb5fb288fdef0f235e7",
+      "previous_mtime_ns": 1793632849174996376,
+      "mtime_ns": 1793632798782552677
+    },
+    {
+      "file": "validation/xp64-oldpdo-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/xp64-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8",
+      "previous_mtime_ns": 1793608775805688714,
+      "mtime_ns": 1793623209088416864
+    },
+    {
+      "file": "validation/xp64-oldpdo-offline-20261102/USBNT.SYS",
+      "same_as": "validation/xp64-hcd-inittrace-offline-20261102/USBNT.SYS",
+      "bytes": 525312,
+      "sha256": "746574178357c8ba3a9b76da9bb9d68e9585355fcc86bb2682521bd02704e47c",
+      "previous_mtime_ns": 1793608774338699295,
+      "mtime_ns": 1793607484499078953
+    },
+    {
+      "file": "validation/xp64-pdoidentity-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/xp64-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8",
+      "previous_mtime_ns": 1793608779464251961,
+      "mtime_ns": 1793623209088416864
+    },
+    {
+      "file": "validation/xp64-release13-v1-control-offline-20261102/USBNT.SYS",
+      "same_as": "validation/xp64-install13-offline-20261102/USBNT.SYS",
+      "bytes": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1",
+      "previous_mtime_ns": 1793643983719097757,
+      "mtime_ns": 1793642955326587309
+    },
+    {
+      "file": "validation/xp64-release13-v2-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/xp64-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8",
+      "previous_mtime_ns": 1793646040727711015,
+      "mtime_ns": 1793623209088416864
+    },
+    {
+      "file": "validation/xp64-release13-v2-offline-20261102/USBNT.SYS",
+      "same_as": "validation/xp64-install13-offline-20261102/USBNT.SYS",
+      "bytes": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1",
+      "previous_mtime_ns": 1793646037918524063,
+      "mtime_ns": 1793642955326587309
+    },
+    {
+      "file": "validation/xp64-release13-v2-offline-20261102/USBTREE.EXE",
+      "same_as": "validation/nt351-tree13-v2-offline-20261102/USBTREE.EXE",
+      "bytes": 57344,
+      "sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97",
+      "previous_mtime_ns": 1793646041692276506,
+      "mtime_ns": 1793644641874870308
+    },
+    {
+      "file": "validation/xp64-retirement-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/xp64-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8",
+      "previous_mtime_ns": 1793610054338557592,
+      "mtime_ns": 1793623209088416864
+    },
+    {
+      "file": "validation/xp64-sleep-v3-offline-20261102/HCPOWER.EXE",
+      "same_as": "validation/xp64-hcd-singletrace-offline-20261102/HCPOWER.EXE",
+      "bytes": 11754,
+      "sha256": "5d41ac14ae793f0470039924d248b929472d35f79990742e48010289395c9b93",
+      "previous_mtime_ns": 1793636875223190389,
+      "mtime_ns": 1793608107658804388
+    },
+    {
+      "file": "validation/xp64-sleep-v3-offline-20261102/HCPOWER.SYS",
+      "same_as": "validation/xp64-hcd-singletrace-offline-20261102/HCPOWER.SYS",
+      "bytes": 11433,
+      "sha256": "217ebb498a307eb77ff6581b0d3c63002fa2a134876fcdeccf5769948ae1091f",
+      "previous_mtime_ns": 1793636875294265009,
+      "mtime_ns": 1793608107614752554
+    },
+    {
+      "file": "validation/xp64-sleep-v3-offline-20261102/MKEY2.EXE",
+      "same_as": "validation/win2000-mixed-sleep-v1-offline-20261102/MKEY2.EXE",
+      "bytes": 12604,
+      "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549",
+      "previous_mtime_ns": 1793636875527639989,
+      "mtime_ns": 1793632799073551983
+    },
+    {
+      "file": "validation/xp64-sleep-v3-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/xp64-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8",
+      "previous_mtime_ns": 1793636875022730116,
+      "mtime_ns": 1793623209088416864
+    },
+    {
+      "file": "validation/xp64-sleep-v3-offline-20261102/SLPTEST.EXE",
+      "same_as": "validation/xp64-mixed-sleep-v1-offline-20261102/SLPTEST.EXE",
+      "bytes": 11931,
+      "sha256": "d549ed45ecfcdcabdc23fc5dcf54b2c356d7775e3c549a3002c8311057cb639b",
+      "previous_mtime_ns": 1793636875365355412,
+      "mtime_ns": 1793632849250009743
+    },
+    {
+      "file": "validation/xp64-sleep-v3-offline-20261102/SLPTEST.SYS",
+      "same_as": "validation/xp64-mixed-sleep-v1-offline-20261102/SLPTEST.SYS",
+      "bytes": 11187,
+      "sha256": "dc47f439966d814f932747b08a8599bc16e87c2f90e1209e76d21ffbbb36312e",
+      "previous_mtime_ns": 1793636875434586386,
+      "mtime_ns": 1793632849369498832
+    },
+    {
+      "file": "validation/xp64-syncrun-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/xp64-classreset-offline-20261102/RLTKLANT.SYS",
+      "bytes": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8",
+      "previous_mtime_ns": 1793627273711053840,
+      "mtime_ns": 1793623209088416864
+    },
+    {
+      "file": "validation/xp64-usbnt-new-offline-20261102/RLTKLANT.SYS",
+      "same_as": "validation/xp64-hcd-release-offline-20261102/RLTKLANT.SYS",
+      "bytes": 612153,
+      "sha256": "c741f31533bdcc327f481cefee2d444fd1adf67e711a5b73c0d70980cc3470c2",
+      "previous_mtime_ns": 1793605517595602544,
+      "mtime_ns": 1793607205955374421
+    }
+  ]
+}

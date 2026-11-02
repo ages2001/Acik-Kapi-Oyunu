@@ -1,0 +1,10 @@
+{
+  "utc": "2026-11-01T18:07:10.655033+00:00",
+  "public_path": "/workspace/rltklant-tools/qemu-src/build",
+  "cache_path": "/tmp/rltklant-qemu-build-cache-20261101",
+  "binaries": {
+    "qemu-system-i386": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a",
+    "qemu-system-x86_64": "ce3a860c3b664dc5ee6e625b970ae87c9a29ffec789a3515005da7404968d9e5"
+  },
+  "scope": "Build cache relocated to temporary filesystem to reserve guest disk space; no guest image or backing file moved"
+}

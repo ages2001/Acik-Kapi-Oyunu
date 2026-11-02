@@ -1,0 +1,31 @@
+{
+  "guest": "win2000-standard-usbnet-portrecover-ehci-8127",
+  "utc": "2026-11-01T18:07:17.363923+00:00",
+  "scope": "Actual guest internal USB RESET_PORT plus automatic driver recovery; no PnP disable/enable or guest restart; QEMU only",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-portrecover-ehci-8127",
+      "utc": "2026-11-01T18:07:00.662828+00:00",
+      "token": "recovery-8156-portreset01",
+      "report": "TOKEN recovery-8156-portreset01\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:03.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        54369
+      ],
+      "reset_trace": "RESETTEST object=00000000\nRESETTEST ioctl=00000000\n",
+      "elapsed_seconds": 16.773739816999296
+    },
+    {
+      "guest": "win2000-standard-usbnet-portrecover-ehci-8127",
+      "utc": "2026-11-01T18:07:17.357110+00:00",
+      "token": "recovery-8156-portreset02",
+      "report": "TOKEN recovery-8156-portreset02\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:03.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        46864
+      ],
+      "reset_trace": "RESETTEST object=00000000\nRESETTEST ioctl=00000000\n",
+      "elapsed_seconds": 16.69484991299396
+    }
+  ]
+}

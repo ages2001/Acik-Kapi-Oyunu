@@ -1,0 +1,9 @@
+==377952==LeakSanitizer has encountered a fatal error.
+==377952==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==377952==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_usbnt_controller_power.py", line 147, in <module>
+    subprocess.run([str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/tmp4cwer3rl/test']' returned non-zero exit status 1.

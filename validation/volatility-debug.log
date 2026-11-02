@@ -1,0 +1,494 @@
+26-10-28 11:44:11 volatility3.cli INFO     Logging started
+26-10-28 11:44:11 volatility3.cli INFO     Volatility plugins path: ['/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/plugins', '/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins']
+26-10-28 11:44:11 volatility3.cli INFO     Volatility symbols path: ['/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/symbols', '/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/symbols', '/workspace/rltklant-tools/cache/volatility3/symbols']
+26-10-28 11:44:11 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/plugins, /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins
+26-10-28 11:44:11 volatility3.plugins.yarascan INFO     Neither yara-x nor yara-python (>3.8.0) module was found, plugin (and dependent plugins) not available
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 19, in <module>
+    import yara_x
+ModuleNotFoundError: No module named 'yara_x'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 25, in <module>
+    import yara
+ModuleNotFoundError: No module named 'yara'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.yarascan based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/hashdump.py", line 11, in <module>
+    from Crypto.Cipher import ARC4, DES, AES
+ModuleNotFoundError: No module named 'Crypto'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/hashdump.py", line 7, in <module>
+    from volatility3.plugins.windows.registry import hashdump
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/hashdump.py", line 14, in <module>
+    from Cryptodome.Cipher import ARC4, DES, AES
+ModuleNotFoundError: No module named 'Cryptodome'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.hashdump based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/hashdump.py
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/cachedump.py", line 9, in <module>
+    from Crypto.Cipher import ARC4, AES
+ModuleNotFoundError: No module named 'Crypto'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/cachedump.py", line 7, in <module>
+    from volatility3.plugins.windows.registry import cachedump
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/cachedump.py", line 13, in <module>
+    from Cryptodome.Cipher import ARC4, AES
+ModuleNotFoundError: No module named 'Cryptodome'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.cachedump based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/cachedump.py
+26-10-28 11:44:11 volatility3.plugins.yarascan INFO     Neither yara-x nor yara-python (>3.8.0) module was found, plugin (and dependent plugins) not available
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 19, in <module>
+    import yara_x
+ModuleNotFoundError: No module named 'yara_x'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/direct_system_calls.py", line 7, in <module>
+    from volatility3.plugins.windows.malware import direct_system_calls
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/malware/direct_system_calls.py", line 13, in <module>
+    from volatility3.plugins import yarascan
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 25, in <module>
+    import yara
+ModuleNotFoundError: No module named 'yara'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.direct_system_calls based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/direct_system_calls.py
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/lsadump.py", line 10, in <module>
+    from Crypto.Cipher import ARC4, DES, AES
+ModuleNotFoundError: No module named 'Crypto'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/lsadump.py", line 7, in <module>
+    from volatility3.plugins.windows.registry import lsadump
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/lsadump.py", line 13, in <module>
+    from Cryptodome.Cipher import ARC4, DES, AES
+ModuleNotFoundError: No module named 'Cryptodome'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.lsadump based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/lsadump.py
+26-10-28 11:44:11 volatility3.plugins.yarascan INFO     Neither yara-x nor yara-python (>3.8.0) module was found, plugin (and dependent plugins) not available
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 19, in <module>
+    import yara_x
+ModuleNotFoundError: No module named 'yara_x'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/vadyarascan.py", line 12, in <module>
+    from volatility3.plugins import yarascan
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 25, in <module>
+    import yara
+ModuleNotFoundError: No module named 'yara'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.vadyarascan based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/vadyarascan.py
+26-10-28 11:44:11 volatility3.plugins.yarascan INFO     Neither yara-x nor yara-python (>3.8.0) module was found, plugin (and dependent plugins) not available
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 19, in <module>
+    import yara_x
+ModuleNotFoundError: No module named 'yara_x'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/indirect_system_calls.py", line 6, in <module>
+    from volatility3.plugins.windows.malware import indirect_system_calls
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/malware/indirect_system_calls.py", line 11, in <module>
+    from volatility3.plugins import yarascan
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 25, in <module>
+    import yara
+ModuleNotFoundError: No module named 'yara'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.indirect_system_calls based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/indirect_system_calls.py
+26-10-28 11:44:11 volatility3.plugins.yarascan INFO     Neither yara-x nor yara-python (>3.8.0) module was found, plugin (and dependent plugins) not available
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 19, in <module>
+    import yara_x
+ModuleNotFoundError: No module named 'yara_x'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/mftscan.py", line 13, in <module>
+    from volatility3.plugins import timeliner, yarascan
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 25, in <module>
+    import yara
+ModuleNotFoundError: No module named 'yara'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.mftscan based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/mftscan.py
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/hashdump.py", line 11, in <module>
+    from Crypto.Cipher import ARC4, DES, AES
+ModuleNotFoundError: No module named 'Crypto'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/hashdump.py", line 14, in <module>
+    from Cryptodome.Cipher import ARC4, DES, AES
+ModuleNotFoundError: No module named 'Cryptodome'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.registry.hashdump based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/hashdump.py
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/cachedump.py", line 9, in <module>
+    from Crypto.Cipher import ARC4, AES
+ModuleNotFoundError: No module named 'Crypto'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/cachedump.py", line 13, in <module>
+    from Cryptodome.Cipher import ARC4, AES
+ModuleNotFoundError: No module named 'Cryptodome'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.registry.cachedump based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/cachedump.py
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/lsadump.py", line 10, in <module>
+    from Crypto.Cipher import ARC4, DES, AES
+ModuleNotFoundError: No module named 'Crypto'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/lsadump.py", line 13, in <module>
+    from Cryptodome.Cipher import ARC4, DES, AES
+ModuleNotFoundError: No module named 'Cryptodome'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.registry.lsadump based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/registry/lsadump.py
+26-10-28 11:44:11 volatility3.plugins.yarascan INFO     Neither yara-x nor yara-python (>3.8.0) module was found, plugin (and dependent plugins) not available
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 19, in <module>
+    import yara_x
+ModuleNotFoundError: No module named 'yara_x'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/malware/direct_system_calls.py", line 13, in <module>
+    from volatility3.plugins import yarascan
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 25, in <module>
+    import yara
+ModuleNotFoundError: No module named 'yara'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.malware.direct_system_calls based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/malware/direct_system_calls.py
+26-10-28 11:44:11 volatility3.plugins.yarascan INFO     Neither yara-x nor yara-python (>3.8.0) module was found, plugin (and dependent plugins) not available
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 19, in <module>
+    import yara_x
+ModuleNotFoundError: No module named 'yara_x'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/malware/indirect_system_calls.py", line 11, in <module>
+    from volatility3.plugins import yarascan
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 25, in <module>
+    import yara
+ModuleNotFoundError: No module named 'yara'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.windows.malware.indirect_system_calls based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/windows/malware/indirect_system_calls.py
+26-10-28 11:44:11 volatility3.plugins.renderers.parquet_renderer DEBUG    Arrow/Parquet libraries not found
+26-10-28 11:44:11 volatility3.plugins.yarascan INFO     Neither yara-x nor yara-python (>3.8.0) module was found, plugin (and dependent plugins) not available
+26-10-28 11:44:11 volatility3.framework DEBUG    Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 19, in <module>
+    import yara_x
+ModuleNotFoundError: No module named 'yara_x'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/__init__.py", line 168, in import_file
+    importlib.import_module(module)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/linux/vmayarascan.py", line 11, in <module>
+    from volatility3.plugins import yarascan
+  File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/yarascan.py", line 25, in <module>
+    import yara
+ModuleNotFoundError: No module named 'yara'
+
+26-10-28 11:44:11 volatility3.framework DEBUG    Failed to import module volatility3.plugins.linux.vmayarascan based on file: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/plugins/linux/vmayarascan.py
+26-10-28 11:44:11 volatility3.cli INFO     The following plugins could not be loaded (use -vv to see why): volatility3.plugins.linux.vmayarascan, volatility3.plugins.windows.cachedump, volatility3.plugins.windows.direct_system_calls, volatility3.plugins.windows.hashdump, volatility3.plugins.windows.indirect_system_calls, volatility3.plugins.windows.lsadump, volatility3.plugins.windows.malware.direct_system_calls, volatility3.plugins.windows.malware.indirect_system_calls, volatility3.plugins.windows.mftscan, volatility3.plugins.windows.registry.cachedump, volatility3.plugins.windows.registry.hashdump, volatility3.plugins.windows.registry.lsadump, volatility3.plugins.windows.vadyarascan, volatility3.plugins.yarascan
+26-10-28 11:44:11 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/automagic
+26-10-28 11:44:11 volatility3.cli DETAIL 3 Cache directory used: /workspace/rltklant-tools/vol-cache
+26-10-28 11:44:11 volatility3.framework.automagic INFO     Detected a windows category plugin
+26-10-28 11:44:11 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:11 volatility3.framework.automagic INFO     Running automagic: ConstructionMagic
+26-10-28 11:44:11 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 IndexError - No configuration provided: plugins.Info.kernel.layer_name
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:11 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 IndexError - No configuration provided: plugins.Info.kernel.layer_name
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:11 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:11 volatility3.framework.automagic.construct_layers DETAIL 1 Failed on requirement: plugins.Info.kernel
+26-10-28 11:44:11 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 IndexError - No configuration provided: plugins.Info.kernel.layer_name
+26-10-28 11:44:11 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:11 volatility3.framework.automagic.construct_layers DETAIL 1 Failed on requirement: plugins.Info.kernel.layer_name
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 IndexError - No configuration provided: plugins.Info.kernel.layer_name
+26-10-28 11:44:11 volatility3.framework.automagic.construct_layers DETAIL 1 Failed on requirement: plugins.Info.kernel
+26-10-28 11:44:11 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:11 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:11 volatility3.framework.automagic.construct_layers DETAIL 1 Failed on requirement: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:11 volatility3.framework.automagic.construct_layers DETAIL 1 Failed on requirement: plugins.Info.kernel
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 IndexError - No configuration provided: plugins.Info.kernel.layer_name
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:11 volatility3.framework.automagic.construct_layers DETAIL 1 Failed on requirement: plugins.Info
+26-10-28 11:44:11 volatility3.framework.automagic INFO     Running automagic: SymbolCacheMagic
+26-10-28 11:44:11 volatility3.framework.symbols.intermed DETAIL 4 Searching for symbols in /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/symbols, /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/symbols, /workspace/rltklant-tools/cache/volatility3/symbols
+26-10-28 11:44:11 volatility3.framework.automagic INFO     Running automagic: LayerStacker
+26-10-28 11:44:11 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 IndexError - No configuration provided: plugins.Info.kernel.layer_name
+26-10-28 11:44:11 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:11 volatility3.framework.layers.resources DETAIL 3 Available URL handlers: HTTPErrorProcessor, HTTPDefaultErrorHandler, HTTPRedirectHandler, ProxyHandler, HTTPBasicAuthHandler, ProxyBasicAuthHandler, HTTPDigestAuthHandler, ProxyDigestAuthHandler, AbstractHTTPHandler, HTTPHandler, HTTPSHandler, HTTPCookieProcessor, UnknownHandler, FileHandler, FTPHandler, CacheFTPHandler, DataHandler, VolatilityHandler, JarHandler, OfflineHandler
+26-10-28 11:44:11 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using LimeStacker
+26-10-28 11:44:11 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using QemuStacker
+26-10-28 11:44:11 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using AVMLStacker
+26-10-28 11:44:11 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using Elf64Stacker
+26-10-28 11:44:11 volatility3.framework.layers.elf DETAIL 4 Exception: Bad magic 0xf000ff53 at file offset 0x0
+26-10-28 11:44:11 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using XenCoreDumpStacker
+26-10-28 11:44:11 volatility3.framework.layers.xen DETAIL 4 Exception: Bad magic 0xf000ff53 at file offset 0x0
+26-10-28 11:44:11 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using WindowsCrashDumpStacker
+26-10-28 11:44:11 volatility3.framework.layers.crash DETAIL 4 Exception reading crashdump: Bad signature 0xf000ff53 at file offset 0x0
+26-10-28 11:44:11 volatility3.framework.layers.crash DETAIL 4 Exception reading crashdump: Bad signature 0xf000ff53 at file offset 0x0
+26-10-28 11:44:11 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using VmwareStacker
+26-10-28 11:44:11 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using WindowsIntelStacker
+26-10-28 11:44:11 volatility3.framework.automagic.windows DEBUG    Detecting Self-referential pointer for recent windows
+26-10-28 11:44:11 volatility3.framework.automagic.windows DEBUG    WindowsIntelStacker hits: []
+26-10-28 11:44:11 volatility3.framework.automagic.windows DEBUG    Older windows fixed location self-referential pointers
+26-10-28 11:44:12 volatility3.framework.automagic.windows DEBUG    WindowsIntelStacker hits: [(<volatility3.framework.automagic.windows.DtbSelfRef64bitOldWindows object at 0x7fd8b2e44500>, 3600384)]
+26-10-28 11:44:12 volatility3.framework.automagic.windows DEBUG    DtbSelfRef64bitOldWindows test succeeded at 0x36f000
+26-10-28 11:44:12 volatility3.framework.automagic.windows DEBUG    DTB was found at: 0x36f000
+26-10-28 11:44:12 volatility3.framework.automagic.stacker DETAIL 2 Stacked IntelLayer using WindowsIntelStacker
+26-10-28 11:44:12 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using LimeStacker
+26-10-28 11:44:12 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using QemuStacker
+26-10-28 11:44:12 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using AVMLStacker
+26-10-28 11:44:12 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using Elf64Stacker
+26-10-28 11:44:12 volatility3.framework.layers.elf DETAIL 4 Exception: Offset 0x0 does not exist within the base layer
+26-10-28 11:44:12 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using XenCoreDumpStacker
+26-10-28 11:44:12 volatility3.framework.layers.xen DETAIL 4 Exception: Offset 0x0 does not exist within the base layer
+26-10-28 11:44:12 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using WindowsCrashDumpStacker
+26-10-28 11:44:12 volatility3.framework.layers.crash DETAIL 4 Exception reading crashdump: Crashdump header not found at offset 0
+26-10-28 11:44:12 volatility3.framework.layers.crash DETAIL 4 Exception reading crashdump: Crashdump header not found at offset 0
+26-10-28 11:44:12 volatility3.framework.automagic.stacker DETAIL 2 Attempting to stack using VmwareStacker
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 IndexError - No configuration provided: plugins.Info.kernel.layer_name
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 IndexError - No configuration provided: plugins.Info.kernel.layer_name
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 IndexError - No configuration provided: plugins.Info.kernel.layer_name
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework.automagic.construct_layers DETAIL 1 Failed on requirement: plugins.Info.kernel
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 IndexError - No configuration provided: plugins.Info.kernel.layer_name
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 IndexError - No configuration provided: plugins.Info.kernel.layer_name.memory_layer
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework.interfaces.configuration DETAIL 1 TypeError - kernel_virtual_offset requirements only accept int type: None
+26-10-28 11:44:12 volatility3.framework.interfaces.configuration DETAIL 1 TypeError - kernel_virtual_offset requirements only accept int type: None
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework.interfaces.configuration DETAIL 1 TypeError - kernel_banner requirements only accept str type: None
+26-10-28 11:44:12 volatility3.framework.interfaces.configuration DETAIL 1 TypeError - kernel_banner requirements only accept str type: None
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:12 volatility3.framework DETAIL 4 Importing from the following paths: /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/layers
+26-10-28 11:44:12 volatility3.framework.automagic.construct_layers DETAIL 1 Failed on requirement: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:12 volatility3.framework.automagic.construct_layers DETAIL 1 Failed on requirement: plugins.Info.kernel
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:12 volatility3.framework.automagic.construct_layers DETAIL 1 Failed on requirement: plugins.Info
+26-10-28 11:44:12 volatility3.framework.automagic.stacker DEBUG    physical_layer maximum_address: 536870911
+26-10-28 11:44:12 volatility3.framework.automagic.stacker DEBUG    Stacked layers: ['IntelLayer', 'FileLayer']
+26-10-28 11:44:12 volatility3.framework.automagic INFO     Running automagic: WinSwapLayers
+26-10-28 11:44:12 volatility3.framework.automagic INFO     Running automagic: KernelPDBScanner
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:12 volatility3.framework.automagic.pdbscan DEBUG    Kernel base determination - searching layer module list structure
+26-10-28 11:44:12 volatility3.framework.automagic.pdbscan DEBUG    Setting kernel_virtual_offset to 0xf80001000000
+26-10-28 11:44:12 volatility3.framework.symbols.windows.pdbconv INFO     Download PDB file...
+26-10-28 11:44:12 volatility3.framework.symbols.windows.pdbconv DEBUG    Attempting to retrieve http://msdl.microsoft.com/download/symbols/ntoskrnl.pdb/7BAC9352CD4C497BAC3DAF42289B10AD2/ntoskrnl.pdb
+26-10-28 11:44:12 volatility3.framework.symbols.windows.pdbconv DEBUG    Failed with HTTP Error 403: Forbidden
+26-10-28 11:44:12 volatility3.framework.symbols.windows.pdbconv DEBUG    Attempting to retrieve http://msdl.microsoft.com/download/symbols/ntoskrnl.pdb/7BAC9352CD4C497BAC3DAF42289B10AD2/ntoskrnl.pd_
+26-10-28 11:44:12 volatility3.framework.symbols.windows.pdbconv DEBUG    Failed with HTTP Error 403: Forbidden
+26-10-28 11:44:12 volatility3.framework.symbols.windows.pdbutil WARNING  Symbol file could not be downloaded from remote server                                                                                                    
+26-10-28 11:44:12 volatility3.framework.symbols.intermed DETAIL 4 Searching for symbols in /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/symbols, /workspace/rltklant-tools/venv/lib/python3.12/site-packages/volatility3/framework/symbols, /workspace/rltklant-tools/cache/volatility3/symbols
+26-10-28 11:44:12 volatility3.framework.symbols.windows.pdbutil DEBUG    Required symbol library path not found: ntoskrnl.pdb/7BAC9352CD4C497BAC3DAF42289B10AD-2
+26-10-28 11:44:12 volatility3.framework.symbols.windows.pdbutil INFO     The symbols can be downloaded later using pdbconv.py -p ntoskrnl.pdb -g 7BAC9352CD4C497BAC3DAF42289B10AD2
+26-10-28 11:44:12 volatility3.framework.automagic INFO     Running automagic: SymbolFinder
+26-10-28 11:44:12 volatility3.framework.automagic INFO     Running automagic: KernelModule
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name
+26-10-28 11:44:12 volatility3.framework.configuration.requirements DETAIL 1 Symbol table requirement not yet fulfilled: plugins.Info.kernel.symbol_table_name

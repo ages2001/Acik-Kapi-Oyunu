@@ -1,0 +1,2 @@
+PASS: partial backend init/reset failure releases resources and keeps interrupts disabled
+PASS: 800 timer stop schedules: queued, executing, dispatched, and rearmed; production lifecycle.c

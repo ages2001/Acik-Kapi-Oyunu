@@ -1,0 +1,68 @@
+{
+  "utc": "2026-11-01T21:19:52.537631+00:00",
+  "result": "FAIL",
+  "scope": "Correct selected PCI interface, but directed broadcast receives no DHCP offer in this fixture",
+  "start_record": "dhcpnt31-select-guest-start-20261101.json",
+  "screenshot": "nt31-dhcp-select-auto-result-20261101.png",
+  "pcaps": {
+    "usb.pcap": {
+      "file": "nt31-dhcp-select-usb.pcap",
+      "bytes": 243924,
+      "sha256": "e85a1be197bf79ef7fefe2d162eba439b36f0702e17d679f8e2ddfa9d5c70259",
+      "start_offset": 209963,
+      "dhcp_events": []
+    },
+    "pci.pcap": {
+      "file": "nt31-dhcp-select-pci.pcap",
+      "bytes": 245472,
+      "sha256": "70335a52c6e974e0533db087adae722ae95e84619d793294d348f8d90b14568e",
+      "start_offset": 242693,
+      "dhcp_events": [
+        {
+          "source": "10.0.3.15",
+          "destination": "10.0.3.255",
+          "ports": [
+            68,
+            67
+          ],
+          "bootp_op": 1,
+          "mac": "525400123456",
+          "bytes": 250
+        },
+        {
+          "source": "10.0.3.15",
+          "destination": "10.0.3.255",
+          "ports": [
+            68,
+            67
+          ],
+          "bootp_op": 1,
+          "mac": "525400123456",
+          "bytes": 250
+        },
+        {
+          "source": "10.0.3.15",
+          "destination": "10.0.3.255",
+          "ports": [
+            68,
+            67
+          ],
+          "bootp_op": 1,
+          "mac": "525400123456",
+          "bytes": 250
+        },
+        {
+          "source": "10.0.3.15",
+          "destination": "10.0.3.255",
+          "ports": [
+            68,
+            67
+          ],
+          "bootp_op": 1,
+          "mac": "525400123456",
+          "bytes": 250
+        }
+      ]
+    }
+  }
+}

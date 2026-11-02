@@ -1,0 +1,30 @@
+{
+  "utc": "2026-11-02T00:00:19.406215+00:00",
+  "guest": "nt4-ndis-v3-removed-boot-8127",
+  "result": "PASS",
+  "scope": "Native NCPA removal and normal-shutdown registry readback",
+  "checks": {
+    "remaining_instances": true,
+    "remaining_parameters": true,
+    "removed_instance_services_absent": true,
+    "network_providers_preserved": true,
+    "shared_product_removed": true,
+    "shared_service_removed": true
+  },
+  "remaining": [],
+  "removed": {
+    "1": "RLTKLANT1",
+    "3": "RLTKLANT3",
+    "2": "RLTKLANT2"
+  },
+  "shared_service": null,
+  "shared_product": null,
+  "registry": "nt4-v3-final-removal-coldboot-20261102-registry.json",
+  "files": {
+    "SYSTEM": "7bde43ca498a5133a16ddeb4091d87e34c4d96253ef8dc91b0f2e7622ad58a1f",
+    "SOFTWARE": "33e68a12e94e64fcec9c68750394dad2ed69ce587dc01b4824da7e64fc53f0aa"
+  },
+  "limits": [
+    "Cold boot and surviving-adapter traffic require separate evidence"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "result": "FAIL_SHUTDOWN",
+  "utc": "2026-11-02T06:12:10.063462+00:00",
+  "reason": "Controller quit QEMU while Notepad save prompt still blocked shutdown. Screenshot named safeoff is not a safe-off screen. Do not use this disk as a clean parent. The two 64-reply network tests and three reset callbacks passed separately.",
+  "screenshot": "nt31-ringfix-safeoff-20261102.png",
+  "files": {
+    "usb.pcap": "b20da71f9e7e32f0ebf910835e8a42cdf0d7e2ff0cc619a8243a3ceab162d1e0",
+    "debug.log": "7e82756e054b2b38b5de0d0a6232373906391e3f527c217940e41b217268bb35",
+    "pci.pcap": "dad01e01558d83fde1c6af3b8eaaf2a910c7327fc77624133ef06d9bb3a3233e",
+    "launch.json": "32bbe19a3f0c5968c995751aefe33b0b0730714f730c549bafe81e249ffa4bc3",
+    "process-exit.json": "e2327f46bcff02138c528bbb3c25fe03185fa699659ead3a09f9e34898e9537d",
+    "serial.log": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44",
+    "qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

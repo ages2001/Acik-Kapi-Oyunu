@@ -1,0 +1,99 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-sleep-v1-8127",
+  "utc": "2026-11-02T14:55:52.645324+00:00",
+  "scope": "Injected controller D3/D0 and system-power IRPs with mixed NIC/HID owners.\n\nNo ACPI machine sleep is asserted. Same PDO/gen confirmation requires the\nstopped guest USBLOG.TXT, beyond the live network/input evidence recorded here.\n",
+  "result": "PASS_LIVE_PENDING_STOPPED_PDO_READBACK",
+  "rows": [
+    {
+      "mode": "device",
+      "cycle": 1,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-device1.json",
+        "sha256": "630f416ca66a4ae6b7bbc1f5251011122630d2a02f48db180a0b8063ada3ec71"
+      },
+      "keyboard": {
+        "file": "win2000-mixed-sleep-v1-cycles-20261102-device1-key.json",
+        "sha256": "752dced98d4dd268075e2953ac24d888e3768b3d072de4caee72adf588cbc2b3"
+      },
+      "seconds": 31.56
+    },
+    {
+      "mode": "device",
+      "cycle": 2,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-device2.json",
+        "sha256": "13b9a2bc13329a95d09ec125521b436dbc5c0b482d1ee9945733c0e2cdc51fcc"
+      },
+      "keyboard": {
+        "file": "win2000-mixed-sleep-v1-cycles-20261102-device2-key.json",
+        "sha256": "1ddf433b6ad8a32032d6bcc1fc80796ff3122c74708b63580fd1572844d9873a"
+      },
+      "seconds": 31.514
+    },
+    {
+      "mode": "device",
+      "cycle": 3,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-device3.json",
+        "sha256": "1b5ae5aa06245d021708e3d6b87890afd7b5cb34a602e498c358ad1a7891c6ee"
+      },
+      "keyboard": {
+        "file": "win2000-mixed-sleep-v1-cycles-20261102-device3-key.json",
+        "sha256": "9200638e1ec1eea6d207fee6d8d3f6fdf18dcdf02e13d469300c109cada50d33"
+      },
+      "seconds": 31.639
+    },
+    {
+      "mode": "system",
+      "cycle": 1,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-system1.json",
+        "sha256": "ebacd54c53d2fe3a7dba40b44007a4a2132a166a642cd7000c3877293da4f737"
+      },
+      "keyboard": {
+        "file": "win2000-mixed-sleep-v1-cycles-20261102-system1-key.json",
+        "sha256": "9a16aaeba038a432fb06cb1eb47354596c8c44694d77fedfe6af725b821b8265"
+      },
+      "seconds": 31.682
+    },
+    {
+      "mode": "system",
+      "cycle": 2,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-system2.json",
+        "sha256": "bce9bcbd1d9cea69506ad08105d703d8357bad6bec21840a78b604f422b7a595"
+      },
+      "keyboard": {
+        "file": "win2000-mixed-sleep-v1-cycles-20261102-system2-key.json",
+        "sha256": "71e32d7401259e692683da25ee2930c658775c59e4998d9cbcf1655423c4abad"
+      },
+      "seconds": 31.608
+    },
+    {
+      "mode": "system",
+      "cycle": 3,
+      "result": "PASS_LIVE_PENDING_PDO_READBACK",
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n",
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v1-8127-win2000-mixed-sleep-v1-cycles-20261102-system3.json",
+        "sha256": "182b251763fba1a355aa424485aeaccaab14cf975edb28334ba009842cda9ef8"
+      },
+      "keyboard": {
+        "file": "win2000-mixed-sleep-v1-cycles-20261102-system3-key.json",
+        "sha256": "1032a6efff17061e5f3194b29c15c27368f8d9ffd094d78aa1f924f70a4b530e"
+      },
+      "seconds": 31.795
+    }
+  ],
+  "network_instance": "DEVICE USB\\VID_0BDA&PID_8153&MI_00\\3&227AC3A4&0&0&01&01&0&00"
+}

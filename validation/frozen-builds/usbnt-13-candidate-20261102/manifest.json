@@ -1,0 +1,264 @@
+{
+  "utc": "2026-11-02T17:43:23.751659+00:00",
+  "result": "PASS_BUILD_METADATA_IMPORTS_AND_MEDIA_READBACK",
+  "scope": "Freeze the versioned 1.3 candidate and validate PE metadata and OEM media.\n\nNo release claim: exact installed-Windows and text-mode setup tests are separate.\n",
+  "files": {
+    "legacy": {
+      "size": 434176,
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e"
+    },
+    "i386": {
+      "size": 516096,
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b"
+    },
+    "amd64": {
+      "size": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1"
+    }
+  },
+  "source": {
+    "MAKEFILE": "0350066fc7cd89f3db46317311dec536364555c3d60a9c39226cac5a7e53531e",
+    "SOURCES": "97d1c2565c143c2719be123668735c9f637f2bddb25741bc4408c31789f2e6af",
+    "acpi.c": "46c8e5a8ed8cb93f865e598f7078653ae00393039b81efdcc1b424db1a67fb7c",
+    "acpi.h": "1adbbdc21466f039b82ab6562116b690d1e84cc7e9c933e8c1a6bec082b62019",
+    "aml.c": "b3a69c15057cd981126e15971bcae9535969d3cd3e47334b21cd53e2436f9adc",
+    "aml.h": "c67b7c82ce0d860659c9fb3123ac9effa5b79af21490f183db6fb6bf473e4546",
+    "dmapool.c": "6a631f1b2dad16bec113343c26b23af283d8aa42462203d193cf217babeff636",
+    "gpio.c": "735b50838c02a456615be5d6ffad39a5edba1af139c0151a476a035de8237d73",
+    "gpio.h": "8d15affa671dd319ff0b0136c2332c80051689a1582f0d5eee11466fcf261b17",
+    "gpiotab.h": "917a36530c72a3dbd81a31362b45c28fafade2b39bbfef9c373bfad55fc0185c",
+    "hcehci.c": "f87669bda3d5315fb39a3602a811f5143e860f443b80e5b1193bf585671c6df2",
+    "hcohci.c": "9775e2217d54502b277e1635445ee9b4ed3380b43ab2f0bb15b5e611019a6493",
+    "hcuhci.c": "f5c3ca91c3c3b161feb6b3a5daf3d0e00ad4545f88092bcc1bb376cc733070aa",
+    "hcxhci.c": "b20c7ca9cac7d8055ea22b550fe11537e9bb507d2f8e58c288b52be471e40eec",
+    "hidparse.c": "edfe1ef71143d6e9c3ede2023707096e1df73941d6f0979a45e6447b11ea8470",
+    "i2chid.c": "8ffbe1085f506ff0c9f540a64b1bbdd1fb9889e13472210846f9eecbe648db0a",
+    "lpssids.h": "f70bdb7f54c277a18810c3a2ceb4835d8a65adf32bf6b4c07c9c9c811fde37f2",
+    "ntaudio.c": "c4f82de9f94ccacae5e0bde5d873558947d9b1e034f2db3d6f859e1c34f11639",
+    "ntcli.c": "05878caf66a99520a780e57d8fd559fbe58419634d38172dc69ade933c454192",
+    "ntdrv.h": "8d111764b3e149b69abaa35f654ca837863fb0f1185ca3034ce16111ad8ab989",
+    "ntinput.c": "d76551e91038c88c9ed4d926454f012fd759134058d3dca5805f453ef902ce4e",
+    "ntmain.c": "71f00eec2d7dd28dc4d5dd6cb1a8a6875bc6848fd70df5d024838afbd86b1902",
+    "ntos.c": "47b421deb847ce72ab30901eb9999145b25817e25f9b054d2782f8dce8fa1ce6",
+    "ntps2.c": "bb07df963c39c377890452ac82214a5ec0d92b97002ec22bb7da6a3d6a6d8c24",
+    "ntscsi.c": "680967ed011500d95f889f3167ff49afaed82cffba0b40ba99d70ea9814bbaa0",
+    "nvmehp.c": "2e37958b6eb6cc56b0a3d2972c06845f2ae29bec46388eea39b27d1adcf73368",
+    "nvmehp.h": "d2256e530ed8d93b5a36f8a8065b1d886314efc5b54cb3265851ba79c5e0d8b3",
+    "pcireloc.c": "b3b022a658948c7df863dbe067634a58ec30be21901178e45d6d9e267bd8e267",
+    "ps2pad.c": "dc0798503b1db09bc6d02db21b74f3f1af2b4ad867b2ab62509ead038986af30",
+    "ps2pad.h": "b9d49f890703bc2d7af900af72a656328244baeae655b5e6d3a956ac4b5f0a1a",
+    "ptp.c": "f3bdc491ffe483d0cec52ee73da0791466e737a783d2297570396ab562ae4749",
+    "ptp.h": "c1dede6e377f9792d5b8cc7d82dc225e3661fa9bf1070c4e45163a8ae825186f",
+    "rtsxpci.c": "7f1cde7bf8c57cb04099b17b6c9a844b5d67ab75e445d9314029ae04bee706ce",
+    "rtsxpreg.h": "52c51944f7da1c5c140d05eaff66bfcc3e2f3561b16830d1c25219e27183c75a",
+    "rtsxusb.c": "454a4e637b947c2b79bb1505865535e0568acdf66751fdaf48df0d97121d0ba0",
+    "sdcard.c": "957587adc1d663faa4495cf8072394a2ed7b0d3dee8c137826eea2cb2b6e866d",
+    "sdcard.h": "9ebd3f914755fcc6ca86c0f4501e540027974c33cb4265aa96c762d901558e70",
+    "sdhci.c": "90761ec496db9ffa39892a4fb9df7f68577f056fad6c31f4725294c1ce510d67",
+    "smbtp.c": "e076c320f8d34884d48e206d45b65eb953eef5bbb48b4225019c3de6084190d7",
+    "smbtp.h": "6b4ee3aba42966db9379c0212e092920506eee2b92839ba8625d53c014a7a066",
+    "smbtpdec.c": "c43ee6b2835e13bd5b45900b1656381e2eb2afff3cd32884fe2601bc093841d1",
+    "smbus.c": "3a2da762641a93fc104d2d7ecb0d9672c2b379c7acc7039a9c80503e320c4d93",
+    "tbt.c": "1a456a94b5527e1531d029b3c8f599c70c1c8311c51cddc18e936f3c5af3f34f",
+    "tbt.h": "436405ee346d5006dca3e3fef121da45d67656e1fb99aba7133f2a7710041d63",
+    "usbaudio.c": "f73ee249bdec50ee4a060f80750ba0eb7876b375a105c8a06305b4c4a613d92d",
+    "usbaudio.h": "3e9b6a65ff53b939e80acaaafb06de09087686aa35d54ae3525b9577e864a6d4",
+    "usbblk.h": "8d91f1dc3d6475703ef414311d42df92efa5483eac705aafec0d74dab13cf0e3",
+    "usbcore.c": "d9fd1c4bf3951dbe5b027c117fee0786b605573bd138440993a60e5bd19b36f2",
+    "usbdi.c": "4165c76f73b861fbead154398fa01d233419eb292e0095613505d6568dc1458c",
+    "usbhid.c": "7647aea899ad37d1e9b2f90460cfbe5134f890b75cfccd706d2c19eaad90a9a3",
+    "usbhub.c": "c9fa8748e17acab38b42f62f043e65c9f0f299a5ec639570f182b0c1ed3fb3ff",
+    "usbinput.h": "1964de5128c80be1fdae7e2016af06765046f7030ec8455cbd6dfe8a20cfb1a6",
+    "usbmsc.c": "7abab05b7353876fff2bb40b3be63fcc9b7f6269d72f34609ffab9c6f1d2d2da",
+    "usbnt.h": "d0463e275cc1f020f2c30f21795c78ced1d2c74f3558ee69adc73c56e10dc8bf",
+    "usbnt.rc": "b59feb259fb4e1d1a6cd4a43b129359db4d5fe20bf18e9584d8e65c528694e1d",
+    "usbntaud.h": "d133544f16197031e8605b4789872a904739f5a40777ee2f9ac9708568e0c8ee",
+    "usbntcli.h": "6720fc3729273dae2408dc7ac555069bee86d7c2cbee9fdb66e182be0a2172a6",
+    "usbntioc.h": "9cd978c523f2a234256c3c72ec059519304866e08c6791d350c934595671c41c",
+    "usbntver.h": "a272e75e4363c012a2eb4608c45ea7d17a7e257dcac96b69ebbfd37d9d9e9bf2",
+    "usbos.h": "95a7ad13ffbc9200eeb36d7fb65e7504b17a28b1aca5f8b7872991f2701f34f4",
+    "usbscsi.h": "0c1ebc0ba9c334a93550e59e9330c120ce98251247d901b3e065e14297d62c6e",
+    "usbsleep.h": "8ccdc1969b974da0c6c0f5af74f95183f4236a16595104f454666627776f7467",
+    "usbutil.c": "0359d9a1ecf56dcd33a51fe240f1da2c37232555ce25d0e38ebe42f1bb15e9f9",
+    "usbvideo.c": "84b8eca241aab7f0578f289eafc3a2d7655f2c3330c0bc97a2efac77dbc7aab7",
+    "usbvideo.h": "830ec4344214524d5a32fb3c8686b4cf94ba55f85ae95ebd73b949a6a9a93b5d",
+    "version.rc": "4fdd2beb585413e489ac1ed79b8bf62ec3f5aca64321a0e926332987ec7f011f",
+    "wdm.h": "7e5796564ff91ca69577a4af602f5427d8647eac33d5dc002f043ad7ba9008da",
+    "wdmbus.c": "2030af3b266c8b0c7c6a236294ba9b8a6c7f4e381885c0929ba73fa3a16c6470",
+    "wdmflt.c": "b1e20b87fba852f3e77ee0989f3684a20403ea95682cb058e5efba41c340c582",
+    "wdmmain.c": "6e82c7efa947a2665b170c59fe03c00b228ab67369a6942f825b240a96267e0e",
+    "wdmps2.c": "64653bfa01610bcb31c4031b97625e871935b59aae408cce48bed417d876af70",
+    "wdmtree.c": "2902d8065def9c1fdc1d6e40f8b269f060aec5b6682f60f42ea93d1e90c94d5a"
+  },
+  "pe_metadata": [
+    {
+      "file": "legacy.sys",
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT USB host controller and device driver"
+    },
+    {
+      "file": "i386.sys",
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT USB host controller and device driver"
+    },
+    {
+      "file": "amd64.sys",
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT USB host controller and device driver"
+    },
+    {
+      "file": "tools/amd64/usbinst.exe",
+      "sha256": "3ed814bdca51a86545b26bed7545f4158059fe1a125ff741f5ccfa247a4cc0ba",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT installer"
+    },
+    {
+      "file": "tools/amd64/usbntcap.dll",
+      "sha256": "73d3f34cf0594b862d66c87a479ffa701de7414fd6d6b5ee80cb2f9c7bb4f3a3",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT video capture driver"
+    },
+    {
+      "file": "tools/usbcam.exe",
+      "sha256": "551a9cb25d4b7e06607a4a56beada4358694cd04de013c2532af7de2c6f98251",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT camera viewer"
+    },
+    {
+      "file": "tools/usbeject.exe",
+      "sha256": "8633a07d0a6fdf75b5865a82c5ef3f7818bfd101135fce0d53ebce3137077eb0",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT device eject utility"
+    },
+    {
+      "file": "tools/usbinst.exe",
+      "sha256": "94574174a470c4221ad032ef436a2f51fe549faa7d5e37db8869f3e6b6db1c84",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT installer"
+    },
+    {
+      "file": "tools/usbmon.exe",
+      "sha256": "e9e4f94035fc5d5d431b1b1f7be05bd53034d51b7fabd0f252080f799f65213a",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT input and device monitor"
+    },
+    {
+      "file": "tools/usbntcap.dll",
+      "sha256": "75c8e1955520c58fb464ba158472cbb0b2f730b039e739cc8919a473c3ba33fd",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT video capture driver"
+    },
+    {
+      "file": "tools/usbtree.exe",
+      "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT device tree"
+    },
+    {
+      "file": "tools/wheeltst.exe",
+      "sha256": "1e94aef5306df6f95503a0c85ef3bd250bb84061defd60b0ee5d22fbeff74b9c",
+      "version": "1.3.0.0",
+      "file_alignment": 4096,
+      "description": "USBNT wheel test"
+    }
+  ],
+  "imports": [
+    {
+      "arch": "legacy",
+      "imports_verified": 58,
+      "references": {
+        "hal.dll": {
+          "file": "/workspace/rltklant-vm/install/nt31-exports/hal.dll",
+          "sha256": "b8b9bc98421f2773772ecc01a3db52a5a7729b6417c0f59d04456f2d3030e6ad"
+        },
+        "ntoskrnl.exe": {
+          "file": "/workspace/rltklant-vm/install/nt31-exports/ntoskrnl.exe",
+          "sha256": "fa93543f775ef08be70e8d07b5b4ee6317d66a46074e7984e1c6324796833ef0"
+        }
+      }
+    },
+    {
+      "arch": "i386",
+      "imports_verified": 106,
+      "references": {
+        "hal.dll": {
+          "file": "/workspace/rltklant-vm/install/win2000-standard/hal.dll",
+          "sha256": "ad863d1b51d6d1f67c1b8150a097d4ee26aa2ae13e14c6121bbdb1e634df1501"
+        },
+        "ntoskrnl.exe": {
+          "file": "/workspace/rltklant-vm/install/win2000-standard/ntoskrnl.exe",
+          "sha256": "a89254608f243574e99210afc103d0e3f272d91a1277f8e4599e47343a042769"
+        }
+      }
+    },
+    {
+      "arch": "amd64",
+      "imports_verified": 95,
+      "references": {
+        "hal.dll": {
+          "file": "/workspace/rltklant-vm/install/xp64-kernel/hal.dll",
+          "sha256": "e942f223a8c630ef6919c9d95b9a847fd8f54a58ccd863d01befaeffcb303cc4"
+        },
+        "ntoskrnl.exe": {
+          "file": "/workspace/rltklant-vm/install/xp64-kernel/ntoskrnl.exe",
+          "sha256": "6e2f369fd7dc0bfff03edc778f51353bb06be4f060b6374ada415a9ae119dc99"
+        }
+      }
+    }
+  ],
+  "media": [
+    {
+      "arch": "legacy",
+      "image": "USBNTNT.IMG",
+      "sha256": "ca3fd9245874651ac524e10c7c2212b5fd4396ceec31e62c3731e68962f61f03",
+      "files": {
+        "TXTSETUP.OEM": "08a0721700d0297cbfa8c2d88b8930742c02d2a8fab431352edcfb8c4ce49bf2",
+        "README.TXT": "aa289cfa8f2b9dc3023600dbb03e875a49d65ff8713f634bcc5368cc2f32ea3f",
+        "USBNT.TAG": "b71c2c329fbb4184bc93dacf5cc3d581b21bad96968309406d6eb301d97913a5",
+        "USBNT.SYS": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e"
+      }
+    },
+    {
+      "arch": "i386",
+      "image": "USBNT2K.IMG",
+      "sha256": "eab2009361bea309c37d711f87c769860b927f2dabb2819c44592b5a7c255376",
+      "files": {
+        "USBNTMOU.INF": "1b06b07ede69fb6264d82f771e8f12575caab25fcafc9bdecc0a67e5d60a1499",
+        "TXTSETUP.OEM": "ed3b886f5e50bd797dd5f7b4392f4daf50d1d70c15835edc127ecb0843ccd7bf",
+        "USBNTKBD.INF": "8e2c8152747dddd4e56b2229a838d9865ab6e59b5c4f2cbc87db1c8941186f87",
+        "README.TXT": "51de9a49eeb4aa8324d67bdb1cc6bd7bf686d74fd89337face3900cd14bbb810",
+        "USBNT.TAG": "53b01c18449a73b26bd6fc17b33e3c35f181b34b8f5914b9057dcb95ff481546",
+        "USBNT.INF": "4e26c29ec3b97af7aeca162b00c192c1804be0b51f7205f91e5fc627afc8410f",
+        "USBNT.SYS": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b"
+      }
+    },
+    {
+      "arch": "amd64",
+      "image": "USBNT64.IMG",
+      "sha256": "654b297c00965c05a3fa1b53ef8b6b61f859e548097b0d90f94bf0e36b45ab7b",
+      "files": {
+        "USBNTMOU.INF": "1b06b07ede69fb6264d82f771e8f12575caab25fcafc9bdecc0a67e5d60a1499",
+        "TXTSETUP.OEM": "7348d40285c441801428affdd07644fb298cf81934c4672735d39e60236afb27",
+        "USBNTKBD.INF": "8e2c8152747dddd4e56b2229a838d9865ab6e59b5c4f2cbc87db1c8941186f87",
+        "README.TXT": "9516b0772a7f33a29b23768c910fd77f6de20a12e73e18b0b08ee267efffea2f",
+        "USBNT.TAG": "aa3a0666d6eb94252a69f9597dd658e98891c9a7e7cfc35b77e2aef919dd07c1",
+        "USBNT.INF": "4e26c29ec3b97af7aeca162b00c192c1804be0b51f7205f91e5fc627afc8410f",
+        "USBNT.SYS": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1"
+      }
+    }
+  ]
+}

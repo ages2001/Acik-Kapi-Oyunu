@@ -1,0 +1,86 @@
+{
+  "utc": "2026-11-02T10:00:43.134491+00:00",
+  "result": "PASS",
+  "snapshot": "frozen-builds/usbnt-hid-reset-v1-20261102",
+  "scope": "8000 concurrent removal/reset schedules; 1300 four-interface restore/failure schedules; production Windows orchestration host test; 20 physical native-HID resets per QEMU HCD with held-input release, identity and storage sibling continuity, then populated hub removal.",
+  "limits": [
+    "Host tests mock USB hardware and NT ABI.",
+    "QEMU native-class harness does not run Windows.",
+    "Shared native HID + Windows function coordination is host-tested, not a mixed-owner QEMU composite fixture.",
+    "Other native classes and hubs remain rejected by the Windows physical-reset path.",
+    "Physical silicon/PHY analog/MCU execution and identity-preserving system sleep are not certified."
+  ],
+  "binaries": {
+    "legacy": {
+      "size": 412672,
+      "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241"
+    },
+    "i386": {
+      "size": 488960,
+      "sha256": "3c9ae36eaeac2a3ff1c5e317ff8369560d57846c74f1a213f945971bf2518456"
+    },
+    "amd64": {
+      "size": 526848,
+      "sha256": "434f5b30b3d7a754ee58ca845f92f70ea5ded77e73c3c0f81ca22eb9b6d568eb"
+    },
+    "harness": {
+      "size": 1734388,
+      "sha256": "34bd32346679282641b07ab9f08484e4212a24254bbb9f44821af60fe1e6c85f"
+    }
+  },
+  "evidence": [
+    {
+      "file": "usbnt-hid-reset-host-20261102.log",
+      "sha256": "ffefcf5f139e53fd7d9a2b13d87a2623e2afe6ae9d026d5f1385cd7d8c590d27"
+    },
+    {
+      "file": "usbnt-hid-reset-rundown-v2-20261102.log",
+      "sha256": "1eae25869d6f4036c4ce606148ab46dc01f707a80de798abac08aa04273da114"
+    },
+    {
+      "file": "usbnt-hid-reset-orchestration-20261102.log",
+      "sha256": "25f29988c585db13f81fcfba2143b5967d2109447987252f69ecbe1583d6259f"
+    },
+    {
+      "file": "usbnt-hid-reset-qemu-xhci-20261102.log",
+      "sha256": "50485645675beb7aa8d6f59a489382032c644c2db8d14cc52af8687c9e034e60"
+    },
+    {
+      "file": "usbnt-hid-reset-usb-ehci-20261102.log",
+      "sha256": "a459babde7d1f8aa58adad92790849c5b13c8b874bce68dbc406b198bced8bb2"
+    },
+    {
+      "file": "usbnt-hid-reset-piix3-usb-uhci-20261102.log",
+      "sha256": "12883b1ba3ed72c6fe91c59ec174fc6ac123bb7f5fdb1d199e6c27e358f2637f"
+    },
+    {
+      "file": "usbnt-hid-reset-pci-ohci-20261102.log",
+      "sha256": "08a90def75a03b7ea35ca42cc44ea68f9bc80fb87951775fb31e4399384537fa"
+    },
+    {
+      "file": "usbnt-hid-reset-rundown-packaged-20261102.log",
+      "sha256": "1eae25869d6f4036c4ce606148ab46dc01f707a80de798abac08aa04273da114"
+    },
+    {
+      "file": "usbnt-hid-rundown-before-repro-20261102.log",
+      "sha256": "1645d4278e9b8803ebeb238846adaacfc562222d66ae9534e0539a95c03f6c38"
+    }
+  ],
+  "preserved_failures": [
+    "usbnt-hid-rundown-before-20261102.log (old source fails lifetime assertion)",
+    "usbnt-hid-reset-orchestration-counter-error-20261102.log (test counter reset corrected)"
+  ],
+  "tests": {
+    "USBNT/test/host/thidrundown.c": "d6efc52d20cb61156d4d7bf833e88704b4248e50b3f0c35409ec1d9e1a761ab6",
+    "USBNT/test/host/thidrundown.sh": "c05513658bb61fdfd2fba43ca41c6a89418ff9c4f337ed4756f7dc991844cd46",
+    "USBNT/test/host/thidreset.c": "9a83e6c5379aa220afb55b3f2fbe0de9b3dbf336101121dac96c2dec9d29ca1d",
+    "USBNT/test/host/thidreset.sh": "a31ce11b39546ab74f498eec8a3bc55273d2562bc0d25041e202794923c1d903",
+    "USBNT/test/thidreset.py": "d2eb1e94e89f070b24ddea19cacbfded1678965c1210636c03f059ae432a8e95",
+    "USBNT/harness/main.c": "b7d67d22b1d35e7d2bf510df81b438fd93e4a4b0b335f665ccc17c4e9b985b7d",
+    "validation/test_usbdi_port_reset.py": "b6b1359bf2f5f52388bb18a3d08e5b73f498dc2b53596dfe66c74686106c0488"
+  },
+  "related_closed_windows_proofs": {
+    "usbnt-hidreset-four-os-closed-proof-20261102.json": "baed6048f5a00bf600bc89ae35374316e09ff661b75a4c77782f92934a999498",
+    "nt351-hidreset-closed-proof-20261102.json": "2cbaebdc7689b9458c674393ccb279ac4341c19b94a81819170e7d6eb18de53b"
+  }
+}

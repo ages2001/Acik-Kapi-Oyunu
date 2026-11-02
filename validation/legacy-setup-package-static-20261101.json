@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-01T19:11:44.154574+00:00",
+  "checks": [
+    "tool file size equals INF declaration",
+    "tool in install and update System32 copy lists",
+    "CRLF text",
+    "configure keeps Parameters handle through write"
+  ],
+  "files": [
+    {
+      "file": "bin/NT31/OEMSETUP.INF",
+      "sha256": "c35b9e27c0a43cf02a96e66f0ecdc96dfb469c292292c3d5f99331350c58b0a0"
+    },
+    {
+      "file": "bin/NT31/RLTUSB.EXE",
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    {
+      "file": "bin/NT35x-4/OEMSETUP.INF",
+      "sha256": "ec78a9c3ac237c749e0c2ef5756bc1ab513bd88a71614393e5df96be4e1b8194"
+    },
+    {
+      "file": "bin/NT35x-4/RLTUSB.EXE",
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    }
+  ],
+  "scope": "Static package checks only; fresh NCPA installation from the revised INF remains unverified"
+}

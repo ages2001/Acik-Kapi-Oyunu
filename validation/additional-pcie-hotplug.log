@@ -1,0 +1,3 @@
+PASS: rtl8168 PCIe slot removal/reinsert with armed DMA: 50 cycles (model only)
+PASS: rtl8125 PCIe slot removal/reinsert with armed DMA: 50 cycles (model only)
+PASS: rtl8126 PCIe slot removal/reinsert with armed DMA: 50 cycles (model only)

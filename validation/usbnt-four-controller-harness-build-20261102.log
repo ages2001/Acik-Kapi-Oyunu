@@ -1,0 +1,6 @@
+ld: obj/usbcore.o: in function `UsbDevDetach':
+/workspace/rltklant-work/USBNT/harness/../src/usbcore.c:1071:(.text+0x27ac): undefined reference to `CliDetach'
+ld: obj/usbcore.o: in function `UsbDevAttach':
+/workspace/rltklant-work/USBNT/harness/../src/usbcore.c:1049:(.text+0x3762): undefined reference to `CliDetach'
+ld: obj/usbcore.o: in function `Enumerate':
+/workspace/rltklant-work/USBNT/harness/../src/usbcore.c:982:(.text+0x3f60): undefined reference to `CliArrival'

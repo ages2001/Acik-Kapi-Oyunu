@@ -1,0 +1,8 @@
+{
+  "guest": "xp64-usbnet-stall-8127",
+  "source": "/workspace/rltklant-work/validation/ftp-fixture/stall64.sys",
+  "size": 93177,
+  "sha256": "b23fd46b56a5ef55deebbb17a9cf00390c67c47b713d9e094a2a0f192dfadd20",
+  "previous_checkpoint": "xp64-usbnet-native-8127",
+  "scope": "Native stalled-pipe recovery; IDE, inbox EHCI; firmware/physical validation incomplete"
+}

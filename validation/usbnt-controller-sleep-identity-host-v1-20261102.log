@@ -1,0 +1,2 @@
+PASS: 13 actual identity checks; transport errors retain identity, malformed descriptors fail, changed strings request PnP, cached bytes preserved
+PASS: 17 actual root-PDO relation states; retained sleep never withdraws or replaces the root object

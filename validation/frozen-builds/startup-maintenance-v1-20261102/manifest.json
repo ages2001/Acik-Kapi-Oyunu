@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-01T21:50:31.248830+00:00",
+  "files": {
+    "test_setup_startup_parser.py": {
+      "bytes": 3485,
+      "sha256": "29881d6c7bdc06787cc82aa557e768e644221dfdef2c31dd128e31456370aee9"
+    },
+    "rltsetup.c": {
+      "bytes": 14261,
+      "sha256": "7649840203e6c0de375465c4324bbe1d30b32dc4fa95ffcf5f032dccef53dda3"
+    },
+    "build-rltsetup.sh": {
+      "bytes": 627,
+      "sha256": "b06bf0ec8abb9ee862625ee9f70c4227cb4bbea60718f24c588c30f96eebff1e"
+    },
+    "RLTSETUP.DLL": {
+      "bytes": 19798,
+      "sha256": "4e3709f4b1f76c11de44359b95428ccb85e327b260d8fa0c8aaf1f3eed79a624"
+    }
+  },
+  "scope": "Development setup extension; actual NT3.1 tests pending"
+}

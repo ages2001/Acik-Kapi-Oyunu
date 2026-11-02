@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-01T19:45:03.515147+00:00",
+  "result": "PASS",
+  "command": "python validation/test_catalog_compat.py",
+  "test_sha256": "ce68a4ebb77617e04dbe78b9677779503e651366057f5c241f7704eac83f086c",
+  "generator_sha256": "45b0c23a1dcd436fa04c413b007b2a84d281261aa75d03710813b5360a073f18",
+  "scope": "Independent Windows digest oracles; checksum, EOF and content mutations; malformed/unsupported PE rejection; generated certificate and PKCS7 signatures."
+}

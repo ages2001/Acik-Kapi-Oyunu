@@ -1,0 +1,104 @@
+{
+  "utc": "2026-11-01T21:30:25.177982+00:00",
+  "reader": "dhcp_capture.py",
+  "reader_sha256": "3c5a4626ce256e9c2573080c8ad1f0aa0956e3e9c397fbf5ebffc688a27c70e2",
+  "captures": {
+    "usb.pcap": {
+      "bytes": 279431,
+      "sha256": "4be070d69d6e7f34e61586d53b2c3e3e2b0eb8abba0ca2bbf6f5bbd31ede0e69",
+      "start_offset": 279431,
+      "events": []
+    },
+    "pci.pcap": {
+      "bytes": 248643,
+      "sha256": "53e2bdc44d7fbcd142ee9b81cb83aa354b1cefafba8060b1505f8812eea6f246",
+      "start_offset": 246803,
+      "events": [
+        {
+          "offset": 246803,
+          "timestamp": 1793568028.082574,
+          "source": "10.0.3.15",
+          "destination": "255.255.255.255",
+          "ports": [
+            68,
+            67
+          ],
+          "message_type": 1,
+          "xid": "ed251700",
+          "mac": "525400123456",
+          "yiaddr": "0.0.0.0",
+          "options": {
+            "53": "01",
+            "55": "01030633"
+          }
+        },
+        {
+          "offset": 247111,
+          "timestamp": 1793568028.082662,
+          "source": "10.0.3.2",
+          "destination": "255.255.255.255",
+          "ports": [
+            67,
+            68
+          ],
+          "message_type": 2,
+          "xid": "ed251700",
+          "mac": "525400123456",
+          "yiaddr": "10.0.3.15",
+          "options": {
+            "53": "02",
+            "54": "0a000302",
+            "1": "ffffff00",
+            "3": "0a000302",
+            "6": "0a000303",
+            "51": "00015180"
+          }
+        },
+        {
+          "offset": 247717,
+          "timestamp": 1793568028.088236,
+          "source": "10.0.3.15",
+          "destination": "255.255.255.255",
+          "ports": [
+            68,
+            67
+          ],
+          "message_type": 3,
+          "xid": "ed251700",
+          "mac": "525400123456",
+          "yiaddr": "0.0.0.0",
+          "options": {
+            "53": "03",
+            "50": "0a00030f",
+            "54": "0a000302",
+            "55": "01030633"
+          }
+        },
+        {
+          "offset": 248037,
+          "timestamp": 1793568028.088255,
+          "source": "10.0.3.2",
+          "destination": "255.255.255.255",
+          "ports": [
+            67,
+            68
+          ],
+          "message_type": 5,
+          "xid": "ed251700",
+          "mac": "525400123456",
+          "yiaddr": "10.0.3.15",
+          "options": {
+            "53": "05",
+            "54": "0a000302",
+            "1": "ffffff00",
+            "3": "0a000302",
+            "6": "0a000303",
+            "51": "00015180"
+          }
+        }
+      ]
+    }
+  },
+  "result": "PASS",
+  "scope": "Independent bounded Ethernet/IPv4/UDP/DHCP capture readback, with IP and nonzero UDP checksum verification"
+}

@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-01T21:19:52.537631+00:00",
+  "files": {
+    "DHCPNT31.EXE": {
+      "bytes": 25911,
+      "sha256": "fd646d2021137fc60358b02a07fd5c76fc8326d43295fdb071053ce59f8326f3"
+    },
+    "dhcpnt31.c": {
+      "bytes": 31256,
+      "sha256": "199b49c3e0ea7208a33cf7d50c05f51fbcf10eea815cd15fee9532b2774d34cb"
+    },
+    "test_dhcpnt31_routes.py": {
+      "bytes": 5304,
+      "sha256": "5170920fb32da18c2b43846ebe438d456f2fd90d894fa8736ba14d6a5df747d0"
+    }
+  },
+  "scope": "Bound selected configured local IPv4 address and limited broadcast; host regression passed, actual guest test pending"
+}

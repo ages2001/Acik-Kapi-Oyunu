@@ -1,0 +1,329 @@
+{
+  "utc": "2026-11-02T06:23:30.719338+00:00",
+  "scope": "Pinned production hardware/DASH transactions against QEMU MMIO.\n\nTransport only: management/FIFO completion is synthetic; no firmware execution,\nphysical silicon, Windows lifecycle or full power-management claim.\n",
+  "result": "PASS_TRANSPORT_ONLY",
+  "qemu_sha256": "8de6bf9206c04b049be0f3b5692d535207143f8c99ee9c3d5825ae64b8d8e6b5",
+  "sources": {
+    "/workspace/rltklant-work/RLTKLANT/qemu/hw-net/rtl8169.c": "90618db5468cb2f65788ba9d8002af94abb0c4607077f49e5691625088cf03f8",
+    "/workspace/rltklant-work/RLTKLANT/src/macseq.c": "f77aaafac99c199c5f7b448a9e7dc6695c22906179bcb22842cc0db6365a4aeb",
+    "/workspace/rltklant-work/RLTKLANT/src/macseq.h": "6dbadd84dd86fc00757858d9cc999b32e905ea5b8931746814861467dc2c53b6",
+    "/workspace/rltklant-work/RLTKLANT/src/physeq.c": "3559b7220312547b13dd126c6942b1e131192e7d82da11ca7ed3e23c7614e03c",
+    "/workspace/rltklant-work/RLTKLANT/third_party/r8169/phy_config.c": "5fb4be8fe50e7efc845da2f5ee625afc18fb9694679fd99c66a445ac5ceed13a",
+    "/workspace/rltklant-work/validation/test_qemu_management.py": "89e3100403fec4f2225326a3f2d6cff6e984dc6851edaa968ee949bdb31d3515",
+    "/workspace/rltklant-work/validation/test_qemu_mac.py": "988612701d5372028cfedd6afda4a109ed33deabff2350fa6a0c7e2fbda928f4"
+  },
+  "results": [
+    {
+      "profile": "rtl8168,chip-profile=8111dp",
+      "dash_enabled": false,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 4,
+          "delay_us": 0
+        },
+        {
+          "stage": 1,
+          "operations": 10,
+          "delay_us": 0,
+          "phy_operations": 14,
+          "phy_firmware_commands": 0,
+          "mac_operations": 37,
+          "mac_firmware_commands": 0
+        },
+        {
+          "stage": 2,
+          "operations": 10,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    },
+    {
+      "profile": "rtl8168,chip-profile=8111dp",
+      "dash_enabled": true,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 4,
+          "delay_us": 0
+        },
+        {
+          "stage": 1,
+          "operations": 13,
+          "delay_us": 0,
+          "phy_operations": 14,
+          "phy_firmware_commands": 0,
+          "mac_operations": 37,
+          "mac_firmware_commands": 0
+        },
+        {
+          "stage": 2,
+          "operations": 13,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    },
+    {
+      "profile": "rtl8168,chip-profile=8111dp-b",
+      "dash_enabled": false,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 4,
+          "delay_us": 0
+        },
+        {
+          "stage": 1,
+          "operations": 10,
+          "delay_us": 0,
+          "phy_operations": 2,
+          "phy_firmware_commands": 0,
+          "mac_operations": 13,
+          "mac_firmware_commands": 0
+        },
+        {
+          "stage": 2,
+          "operations": 10,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    },
+    {
+      "profile": "rtl8168,chip-profile=8111dp-b",
+      "dash_enabled": true,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 4,
+          "delay_us": 0
+        },
+        {
+          "stage": 1,
+          "operations": 13,
+          "delay_us": 0,
+          "phy_operations": 2,
+          "phy_firmware_commands": 0,
+          "mac_operations": 13,
+          "mac_firmware_commands": 0
+        },
+        {
+          "stage": 2,
+          "operations": 13,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    },
+    {
+      "profile": "rtl8168,chip-profile=8111ep",
+      "dash_enabled": false,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 31,
+          "delay_us": 3000
+        },
+        {
+          "stage": 1,
+          "operations": 13,
+          "delay_us": 0,
+          "phy_operations": 177,
+          "phy_firmware_commands": 0,
+          "mac_operations": 115,
+          "mac_firmware_commands": 0
+        },
+        {
+          "stage": 2,
+          "operations": 20,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    },
+    {
+      "profile": "rtl8168,chip-profile=8111ep",
+      "dash_enabled": true,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 31,
+          "delay_us": 3000
+        },
+        {
+          "stage": 1,
+          "operations": 16,
+          "delay_us": 0,
+          "phy_operations": 177,
+          "phy_firmware_commands": 0,
+          "mac_operations": 115,
+          "mac_firmware_commands": 0
+        },
+        {
+          "stage": 2,
+          "operations": 23,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    },
+    {
+      "profile": "rtl8168,chip-profile=8117",
+      "dash_enabled": false,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 31,
+          "delay_us": 3000
+        },
+        {
+          "stage": 1,
+          "operations": 13,
+          "delay_us": 0,
+          "phy_operations": 165,
+          "phy_firmware_commands": 0,
+          "mac_operations": 238,
+          "mac_firmware_commands": 59
+        },
+        {
+          "stage": 2,
+          "operations": 20,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    },
+    {
+      "profile": "rtl8168,chip-profile=8117",
+      "dash_enabled": true,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 31,
+          "delay_us": 3000
+        },
+        {
+          "stage": 1,
+          "operations": 16,
+          "delay_us": 0,
+          "phy_operations": 165,
+          "phy_firmware_commands": 0,
+          "mac_operations": 238,
+          "mac_firmware_commands": 59
+        },
+        {
+          "stage": 2,
+          "operations": 23,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    },
+    {
+      "profile": "rtl8125,chip-profile=8125bp",
+      "dash_enabled": false,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 28,
+          "delay_us": 3000
+        },
+        {
+          "stage": 1,
+          "operations": 13,
+          "delay_us": 0,
+          "phy_operations": 49,
+          "phy_firmware_commands": 157,
+          "mac_operations": 199,
+          "mac_firmware_commands": 0
+        },
+        {
+          "stage": 2,
+          "operations": 13,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    },
+    {
+      "profile": "rtl8125,chip-profile=8125bp",
+      "dash_enabled": true,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 28,
+          "delay_us": 3000
+        },
+        {
+          "stage": 1,
+          "operations": 13,
+          "delay_us": 0,
+          "phy_operations": 49,
+          "phy_firmware_commands": 157,
+          "mac_operations": 199,
+          "mac_firmware_commands": 0
+        },
+        {
+          "stage": 2,
+          "operations": 13,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    },
+    {
+      "profile": "rtl8127,chip-profile=8127bp",
+      "dash_enabled": false,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 28,
+          "delay_us": 3000
+        },
+        {
+          "stage": 1,
+          "operations": 13,
+          "delay_us": 0,
+          "phy_operations": 562,
+          "phy_firmware_commands": 4748,
+          "mac_operations": 202,
+          "mac_firmware_commands": 0
+        },
+        {
+          "stage": 2,
+          "operations": 13,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    },
+    {
+      "profile": "rtl8127,chip-profile=8127bp",
+      "dash_enabled": true,
+      "phases": [
+        {
+          "stage": 0,
+          "operations": 28,
+          "delay_us": 3000
+        },
+        {
+          "stage": 1,
+          "operations": 13,
+          "delay_us": 0,
+          "phy_operations": 562,
+          "phy_firmware_commands": 4748,
+          "mac_operations": 202,
+          "mac_firmware_commands": 0
+        },
+        {
+          "stage": 2,
+          "operations": 13,
+          "delay_us": 0
+        }
+      ],
+      "fault_recovery": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "utc": "2026-11-01T23:59:43.943929+00:00",
+  "result": "INCOMPLETE_SHUTDOWN_OBSERVATION",
+  "guest": "nt351-usbsetup-v2-firstboot-8127",
+  "traffic": "nt351-usbsetup-v2-firstboot-8127-first-driver-20261102.json",
+  "last_screenshot": "nt351-v2-firstboot-safeoff-20261102.png",
+  "issue": "The last screenshot still says Shutdown in Progress. QMP quit followed later, without a new safe-off screenshot. Traffic PASS is retained, but normal shutdown completion was not observed.",
+  "next": "Repeat cold boot, traffic and observed safe-off from the normally stopped first-install parent."
+}

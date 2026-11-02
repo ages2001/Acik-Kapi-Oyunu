@@ -1,0 +1,10 @@
+{
+  "guest": "xp64-usbnet-native-8127",
+  "utc": "2026-10-29T19:53:16.140869+00:00",
+  "token": "native03",
+  "report": "TOKEN native03\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+  "peer": [
+    "127.0.0.1",
+    50891
+  ]
+}

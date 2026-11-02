@@ -1,0 +1,6 @@
+{
+  "url": "https://raw.githubusercontent.com/torvalds/linux/v2.6.18/drivers/usb/net/rtl8150.c",
+  "ref": "v2.6.18",
+  "sha256": "c3b97930e56fcfde16525341aa8f1f9d6496f04299d5ebd4426eb15107cc6408",
+  "purpose": "Historical comparison of RTL8150 MSR carrier bit; current pinned Linux source is also available"
+}

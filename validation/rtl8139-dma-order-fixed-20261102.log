@@ -1,0 +1,9 @@
+==134638==LeakSanitizer has encountered a fatal error.
+==134638==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==134638==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_dma_start_order.py", line 157, in <module>
+    subprocess.run([str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/tmpmcy_sese/test']' returned non-zero exit status 1.

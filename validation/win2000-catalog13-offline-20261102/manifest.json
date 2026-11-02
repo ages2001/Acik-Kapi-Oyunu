@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T19:08:04.989891+00:00",
+  "guest": "win2000-standard-usbnet-mixed-catalog13-8127",
+  "files": {
+    "RLTTEST/CAT13.LOG": {
+      "file": "CAT13.LOG",
+      "size": 453,
+      "sha256": "fa9df713f6611799ac0369b12b412b090c6dcb667d20833cda62dac8b0b94656"
+    },
+    "RLTTEST/CAT13.RC": {
+      "file": "CAT13.RC",
+      "size": 4,
+      "sha256": "9aca8dfce962538fb8131d73f84cada05e4dc79f5a0d3612c511b1150f3e33e2"
+    }
+  }
+}

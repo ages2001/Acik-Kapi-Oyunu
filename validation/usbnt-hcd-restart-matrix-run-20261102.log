@@ -1,0 +1,4 @@
+{'controller': 'qemu-xhci', 'exit_code': 0, 'cycles_requested': 10, 'log': 'usbnt-hcd-restart-qemu-xhci-20261102.log', 'result': 'PASS'}
+{'controller': 'usb-ehci', 'exit_code': 0, 'cycles_requested': 10, 'log': 'usbnt-hcd-restart-usb-ehci-20261102.log', 'result': 'PASS'}
+{'controller': 'piix3-usb-uhci', 'exit_code': 0, 'cycles_requested': 10, 'log': 'usbnt-hcd-restart-piix3-usb-uhci-20261102.log', 'result': 'PASS'}
+{'controller': 'pci-ohci', 'exit_code': 0, 'cycles_requested': 10, 'log': 'usbnt-hcd-restart-pci-ohci-20261102.log', 'result': 'PASS'}

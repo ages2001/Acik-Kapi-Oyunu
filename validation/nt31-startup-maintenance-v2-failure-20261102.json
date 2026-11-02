@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-01T21:55:31.403860+00:00",
+  "result": "FAIL",
+  "candidate": "frozen-builds/startup-maintenance-v2-20261102/manifest.json",
+  "screenshot": "nt31-startup-helper-v2-sync-20261102.png",
+  "error": "Valid CF_TEXT allocation has nonzero bytes after the first NUL; rejecting that unused tail was incorrect. No mutation attempted.",
+  "next": "Bound the copy by DDE size, append a private terminator, and parse only through the first NUL."
+}

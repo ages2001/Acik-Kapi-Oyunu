@@ -1,0 +1,36 @@
+Formatting '/workspace/rltklant-vm/run/win2000-standard-watchdog-multi-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=1747006464 backing_file=/tmp/rltk-growing-fat-hli6iaxz/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+22/26658 = 0.08% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1769472
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/win2000-standard-watchdog-multi-8127.qcow2",
+  "sha256_before_boot": "d49e220503680bcd755c6d03a07800a4be8955b8398a1fff22bda43057048ee4",
+  "files": [
+    {
+      "guest_path": "WINNT/system32/drivers/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/watchdog-fixture-v1-20261102/FW32.SYS",
+      "size": 521017,
+      "sha256": "9fbd52dd59bb43d5486543944782939b13ff309f9366e8d01a9c629907cd51db",
+      "old_size": 520469,
+      "old_sha256": "89340995b837ca23f3121eb8e2700b999cc3744feaa0296a8f8f41dcebe6f3d7"
+    },
+    {
+      "guest_path": "rlttest/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/watchdog-fixture-v1-20261102/FW32.SYS",
+      "size": 521017,
+      "sha256": "9fbd52dd59bb43d5486543944782939b13ff309f9366e8d01a9c629907cd51db",
+      "old_size": 520469,
+      "old_sha256": "89340995b837ca23f3121eb8e2700b999cc3744feaa0296a8f8f41dcebe6f3d7"
+    },
+    {
+      "guest_path": "rlttest/PCNEW.EXE",
+      "source": "/workspace/rltklant-work/validation/watchdog-fixture-v1-20261102/PC32.EXE",
+      "size": 16319,
+      "sha256": "d1d6b4ccdcc1bbb9ce21eb168f05d62c1f0ed9e0ec1cd58acbf74636ab547d18",
+      "old_size": 16319,
+      "old_sha256": "80ee8c2baa1ee49dd3cf3ac0233dbee9ad674d9984b15ddb63f576abb4072278"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

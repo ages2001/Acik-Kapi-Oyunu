@@ -1,0 +1,110 @@
+{
+  "result": "PASS",
+  "utc": "2026-11-02T07:46:29.513692+00:00",
+  "guest": "xp64-usbnet-usbnt-power-8127",
+  "drivers": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 521728,
+      "sha256": "dfed77a964f30d23fc6d7a247f9c95880edc1ba32a7134ace703c195f82a9d4d"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 612153,
+      "sha256": "c741f31533bdcc327f481cefee2d444fd1adf67e711a5b73c0d70980cc3470c2"
+    },
+    "RLTTEST/POWER.LOG": {
+      "file": "POWER.LOG",
+      "size": 81,
+      "sha256": "256bcfe004621a3c20d3e8caa7debe41c3ac466e7e51860fa1cd6ee8ed182318"
+    },
+    "RLTTEST/USBINST.LOG": {
+      "file": "USBINST.LOG",
+      "size": 683,
+      "sha256": "ba561fcd6eb73583f3a8a738b8a2f49bb2781dbc6f520340347e4fd2d01ad6e7"
+    },
+    "RLTTEST/UINST1.LOG": {
+      "file": "UINST1.LOG",
+      "size": 266,
+      "sha256": "8cdc2b4837c795be141e3300e264fa2c929c862f1bbe005773abf1dca9006a6a"
+    },
+    "RLTTEST/UPOWER.SYS": {
+      "file": "UPOWER.SYS",
+      "size": 11207,
+      "sha256": "95924777530247f6583d28189e60d6035b2200ee5e2def58d9b1b5097c7735eb"
+    },
+    "RLTTEST/UPOWER.EXE": {
+      "file": "UPOWER.EXE",
+      "size": 11554,
+      "sha256": "476cd2cb7cb8fce5578a476ba95a27abc55f63c09ef6a98dec15dc0fed7c96ab"
+    }
+  },
+  "rows": [
+    {
+      "model": "8153",
+      "power_cycles": 3,
+      "hotplug_cycles": 1,
+      "port_reset_cycles": 1,
+      "cable_cycles": 1,
+      "final_probe_replies": 16,
+      "evidence": {
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8153-20261102-native-hotplug.json": "29316ca27c23864587f77bb4bceeafb05f1b6fb479741354b80d8453dcdab5a3",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8153-20261102-function-power.json": "d3e31230bd9fad48851bda99c667c793d8735f44c0007037e0c239d58be00402",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8153-20261102-port-reset-cycles.json": "57c82104efc19a420f7a46b27eb7683aa4bbae7a18176f276c4bf60b2c7993db",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8153-20261102-native-cable.json": "68e3cb702cb70ae46bb2358f2ae3eb8944a40e14a2237d77e7e26f88bfac738d"
+      }
+    },
+    {
+      "model": "8156",
+      "power_cycles": 3,
+      "hotplug_cycles": 1,
+      "port_reset_cycles": 1,
+      "cable_cycles": 1,
+      "final_probe_replies": 16,
+      "evidence": {
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8156-20261102-native-hotplug.json": "a57c936a5236dedf45e26371e33c0cb15901a4aeeaafe959ec503c061ef13cab",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8156-20261102-function-power.json": "fe169c403aa2fb9bec350129c53f62d3309ab426e4f5b64a88dfa665ff9605ac",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8156-20261102-port-reset-cycles.json": "3ee57abe0de842dafb39129a5955f24ad322e4f4aa42199d015229c004488278",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8156-20261102-native-cable.json": "c18f58af76be2570a7bd8926c2c8b5d235a8ab0543b878d76afebbc08226ffa0"
+      }
+    },
+    {
+      "model": "8157",
+      "power_cycles": 3,
+      "hotplug_cycles": 1,
+      "port_reset_cycles": 1,
+      "cable_cycles": 1,
+      "final_probe_replies": 16,
+      "evidence": {
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8157-20261102-native-hotplug.json": "21e9d6a0f04ba8892848407002bdb1793da9a15210e709f8c84bb5ea82a1d4d8",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8157-20261102-function-power.json": "f79334ccd5111802a75a13d97163d37ff49860715e7319fcdc45b2ba08f08af3",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8157-20261102-port-reset-cycles.json": "8c84be53c0703ab7146d3b9fa082627894c0926d380a754550078cafbda0d276",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8157-20261102-native-cable.json": "dc26970c072778800cb47fd43a426d1aa667658003c42b5ff3cf43a4a121e590"
+      }
+    },
+    {
+      "model": "8159",
+      "power_cycles": 3,
+      "hotplug_cycles": 1,
+      "port_reset_cycles": 1,
+      "cable_cycles": 1,
+      "final_probe_replies": 16,
+      "evidence": {
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8159-20261102-native-hotplug.json": "eb218cc2cb6b57c9e41beb948a924246a6ae3d6ef915e6220f8de480a58257e3",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8159-20261102-function-power.json": "ff3cb41a070361544aecad1b3e34c5de63080ad066e2ceb088749ccbcd6ddd68",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8159-20261102-port-reset-cycles.json": "70e06603ccc6d1697515a027f5b794a4cc087332e5afb2bee534debceeb595ad",
+        "xp64-usbnet-usbnt-power-8127-usbnt-new-8159-20261102-native-cable.json": "5111ebc679d153225f60de6052d768dd643d3be18a1cd03d97617ae689db845d"
+      }
+    }
+  ],
+  "totals": {
+    "power_cycles": 12,
+    "port_reset_cycles": 4,
+    "hotplug_cycles": 4,
+    "cable_cycles": 4,
+    "final_probe_replies": 64
+  },
+  "offline": "xp64-usbnt-new-offline-20261102/manifest.json",
+  "evidence": "xp64-usbnt-new-evidence-20261102/manifest.json",
+  "scope": "XP x64 IDE, actual USBNT installation. Exact driver readback after ACPI shutdown. Device names/revision, problem=0 and full 1472-byte guest comparisons on four Realtek USB models. Function power, not full machine sleep or newer controller-power candidate. The initial inherited serious-error popup and first installer failure are retained; no claim of a warning-free baseline."
+}

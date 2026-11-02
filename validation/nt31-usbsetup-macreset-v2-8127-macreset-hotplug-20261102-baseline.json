@@ -1,0 +1,42 @@
+{
+  "guest": "nt31-usbsetup-macreset-v2-8127",
+  "token": "macreset-hotplug-20261102-baseline",
+  "mask": 3,
+  "result": "PASS",
+  "utc": "2026-11-02T02:09:23.673533+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 46622,
+      "end_offset": 58862,
+      "capture_prefix_sha256": "6c8c7b36d8659b052bafdcdd96704ab3b621afc2ca2dcb1ad52056e667c60afb",
+      "screenshot": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-baseline-usb.png",
+      "ocr": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-baseline-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "17618c9605ab0f37d4c486b30db6c85b7aefb5f38536b2aa8e2937a755c1c9af"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 21884,
+      "end_offset": 34124,
+      "capture_prefix_sha256": "3d2fe1149ff4f938c395c3296ec93fcb39d375094fbe636d7390ca9cc3a28df4",
+      "screenshot": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-baseline-pci.png",
+      "ocr": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-baseline-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "2a012455c57365d6f5d69c7754b3545fdfd2b95052a8be6e558f37613a8cc316"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T02:09:35.103958+00:00"
+}

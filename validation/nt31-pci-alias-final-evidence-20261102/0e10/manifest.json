@@ -1,0 +1,26 @@
+{
+  "usb.pcap": {
+    "bytes": 150,
+    "sha256": "bd97b56db42930815c0bd7e5d683b2e84a684c2d0087020f39873e49c954ccc7"
+  },
+  "pci.pcap": {
+    "bytes": 47000,
+    "sha256": "fb33236092119906596b047ba2059a460eb63bd989b9abfb05b6a67a32baee4f"
+  },
+  "debug.log": {
+    "bytes": 859,
+    "sha256": "5ca5ed45328b40f712648cd87a57b605dca5008ff05ba408266ee998c0b0182f"
+  },
+  "serial.log": {
+    "bytes": 12,
+    "sha256": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44"
+  },
+  "launch.json": {
+    "bytes": 1536,
+    "sha256": "3ac074c90a82cb4f87b4f16cf55849f11a440053a681a2c294133f14079812ee"
+  },
+  "process-exit.json": {
+    "bytes": 52,
+    "sha256": "057e4d3b7d5230d0860553c6f59574c3c1d9d05936e4eb879d1cf40b69820142"
+  }
+}

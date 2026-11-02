@@ -1,0 +1,28 @@
+{
+  "guest": "nt31-usbsetup-sleep-v3-rtl8117-8127",
+  "token": "sleep-v3-20261102-c4-cable-down",
+  "mask": 2,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T16:08:25.667715+00:00",
+  "paths": [
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 193573,
+      "end_offset": 205813,
+      "capture_prefix_sha256": "2b1e93fb10e1c889bbc65b4266e8eb566977427e87b62ebd586079f95001fcd5",
+      "screenshot": "nt31-usbsetup-sleep-v3-rtl8117-8127-sleep-v3-20261102-c4-cable-down-pci.png",
+      "ocr": "nt31-usbsetup-sleep-v3-rtl8117-8127-sleep-v3-20261102-c4-cable-down-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "c7e6d8753cf42edd40c6a1c6b086905af062b6444e6acd0fcde15f17314b1489"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 4,
+  "finished_utc": "2026-11-02T16:08:31.589108+00:00"
+}

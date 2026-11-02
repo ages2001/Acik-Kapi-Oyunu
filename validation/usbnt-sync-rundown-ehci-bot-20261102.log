@@ -1,0 +1,18 @@
+harness: start
+usbnt: found EHCI at 00:02.0 (8086:24cd) irq 10 mem febff000
+usbnt: EHCI at 00:02.0 failed to start (-5)
+usbnt: acpi: 5 tables (RSDT at 0ffe1c17)
+usbnt: aml: 337 named objects from the ACPI tables
+harness: no USB controller started
+harness: ready
+HC 0 EHCI stopped ports=0
+SLOT 0 present=0 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 0 MICE 0
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/USBNT/test/tmscreset.py", line 26, in <module>
+    ls=cmd('ls');baseline=devices(ls);storage=[re.search(r'DEV (\d+) .*msc=1',l) for l in ls];storage=[m for m in storage if m];assert len(storage)==1
+                                                                                                                                       ^^^^^^^^^^^^^^^
+AssertionError

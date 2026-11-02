@@ -1,0 +1,22 @@
+{
+  "result": "OVERSTRICT_TEST_ASSERTION",
+  "issue": "An initial evidence check assumed one transaction ID across all four inbox DHCP messages. NT3.51 uses one ID for DISCOVER/OFFER and a second ID for REQUEST/ACK. Traffic had already passed. No driver or guest configuration was changed.",
+  "observed": [
+    {
+      "type": 1,
+      "xid": "c741e24a"
+    },
+    {
+      "type": 2,
+      "xid": "c741e24a"
+    },
+    {
+      "type": 3,
+      "xid": "2416092a"
+    },
+    {
+      "type": 5,
+      "xid": "2416092a"
+    }
+  ]
+}

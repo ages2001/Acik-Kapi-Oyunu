@@ -1,0 +1,42 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-v1-8127",
+  "utc": "2026-11-02T13:55:43.108804+00:00",
+  "scope": "Windows network owner plus native HID on one fictional USB device.\n\nOwns the guest's QMP and console. Final PASS requires stopped-disk KEY.LOG\nreadback; QMP delivery alone is insufficient proof of Windows input events.\n",
+  "result": "NETWORK_PASS_PENDING_STOPPED_GUEST_KEY_LOG",
+  "rows": [
+    {
+      "cycle": 1,
+      "result": "NETWORK_PASS_HID_DELIVERED_PENDING_GUEST_LOG",
+      "physical_resets": 1,
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-v1-8127-win2000-mixed-v2-reset-20261102-c1-port-reset-cycles.json",
+        "sha256": "af25922a8424b5d41b2c0d89885ea5c8b0ef95ca18a2962921e8d2174ecbdb7c"
+      },
+      "key_token": "win2000-mixed-v2-reset-20261102-c1",
+      "key_screen": "win2000-mixed-v2-reset-20261102-c1-key-screen.png"
+    },
+    {
+      "cycle": 2,
+      "result": "NETWORK_PASS_HID_DELIVERED_PENDING_GUEST_LOG",
+      "physical_resets": 1,
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-v1-8127-win2000-mixed-v2-reset-20261102-c2-port-reset-cycles.json",
+        "sha256": "7905d1c270a16e361d0a923f15e16facea895d3b29de68690473fe564fbf4c3a"
+      },
+      "key_token": "win2000-mixed-v2-reset-20261102-c2",
+      "key_screen": "win2000-mixed-v2-reset-20261102-c2-key-screen.png"
+    },
+    {
+      "cycle": 3,
+      "result": "NETWORK_PASS_HID_DELIVERED_PENDING_GUEST_LOG",
+      "physical_resets": 1,
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-v1-8127-win2000-mixed-v2-reset-20261102-c3-port-reset-cycles.json",
+        "sha256": "c1385207ee59587fe9dba52008a0fb9180bb301e27b17df86236c8615ff81d57"
+      },
+      "key_token": "win2000-mixed-v2-reset-20261102-c3",
+      "key_screen": "win2000-mixed-v2-reset-20261102-c3-key-screen.png"
+    }
+  ],
+  "finished_utc": "2026-11-02T13:57:18.272008+00:00"
+}

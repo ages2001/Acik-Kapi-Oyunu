@@ -1,0 +1,408 @@
+{
+  "guest": "nt4-ndis-update-v3-reboot-8127",
+  "started_utc": "2026-11-01T23:03:23.260566+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "cycle": 1,
+      "device": "usbnic",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c1-absent.json",
+          "sha256": "a826e09980d59b52d90d8a0dd1edd04b3e392a9246e046b2bac7cf90c9a1967c",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c1-reinsert.json",
+          "sha256": "eee6acc4c7ee82bbd419cf105f8cd68fd6b4754a7cfaca366a975495e42ff3f6",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c1-cable-down.json",
+          "sha256": "e2678ccf5d26e8cf6d1cb109e94f6254e71cb0b3a4ce0bc350012306fbe409f7",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c1-cable-up.json",
+          "sha256": "59e3d31196f72673f2adf9eaeb731b459adbd4acb107550cce0b83319b46d519",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000001 up=00000000 status=C0000001\nUNT-DOWN id=00000001\n",
+      "reinsert_trace": "UNT-UP id=00000003 pid=00008153 status=00000000\nUNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c1-passed.png",
+        "sha256": "6377a2f26f2fa2666bd257aa85d49636acdb8368f157f67df1fbf61a39946892"
+      }
+    },
+    {
+      "cycle": 2,
+      "device": "usbnic",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c2-absent.json",
+          "sha256": "420af75508a73bf42190ae9216b17043870635b1f2b33e56a43a958c238cc0b6",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c2-reinsert.json",
+          "sha256": "525f55bdb519df91d830331bc0a214320d552995324117d93a46f91c2e801a6c",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c2-cable-down.json",
+          "sha256": "e74843aefbf5a81a79b7c5d6d7ab698033de3bce46d56032b3c809aff98df77a",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c2-cable-up.json",
+          "sha256": "0cbe9002a0835f772e0298de52b30df4fac41a6f0d7c596919f80622bb7eed25",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-DOWN id=00000003\n",
+      "reinsert_trace": "UNT-UP id=00000004 pid=00008156 status=00000000\nUNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c2-passed.png",
+        "sha256": "696a62f6af2bdbe51fce0917a37f90ce5ce986b7afd47e0fa905f9d168170d17"
+      }
+    },
+    {
+      "cycle": 3,
+      "device": "usbnic",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c3-absent.json",
+          "sha256": "9b640e89837aa7c984414ac6d0b2a6f10b2753ae517221288f3be41ca32cef0c",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c3-reinsert.json",
+          "sha256": "18129d06d496e5b575e6a6ea2ce582f2b6c4763739e6ff9d62b5be2db6d35663",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c3-cable-down.json",
+          "sha256": "d5d723a4f9c299eea4c8030ff5c3b031097b0f7c6d89ae2f6326af3f5874bc63",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c3-cable-up.json",
+          "sha256": "534d86c72026cf1dc5bec4c59b51467cfef133c51a0ca62fca38cd997201c1a0",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000004 up=00000000 status=C0000001\nUNT-DOWN id=00000004\n",
+      "reinsert_trace": "UNT-UP id=00000005 pid=00008157 status=00000000\nUNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c3-passed.png",
+        "sha256": "87b7ae76c8f70c9fb0b6413a827908a448596984d120671ae331f9c04129314f"
+      }
+    },
+    {
+      "cycle": 4,
+      "device": "usbnic",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c4-absent.json",
+          "sha256": "d96f4f9f47921812bb6b64e08e245c8eedc9fd6d858ee4eb678e2cb1824d36a5",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c4-reinsert.json",
+          "sha256": "4beb8df314970cccebb4c513610dfb0a936bc98d340302660f16bbad47a5446c",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c4-cable-down.json",
+          "sha256": "e8a3728b9527e323708b8ba854985f135482578e472dec18099a05a38625200d",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c4-cable-up.json",
+          "sha256": "4e88c3f9db110deedadfb4f257bbb9948dda1e5b07994f123fa6313b440c2dd5",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000005 up=00000000 status=C0000001\nUNT-DOWN id=00000005\n",
+      "reinsert_trace": "UNT-UP id=00000006 pid=00008159 status=00000000\nUNT-LINK id=00000006 up=00000000 status=00000000\nUNT-LINK id=00000006 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000006 up=00000000 status=00000000\nUNT-LINK id=00000006 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c4-passed.png",
+        "sha256": "c32498c794bdd2c8ce22240f2196a077502be4d5c7c1950c65c402839bcaab2a"
+      }
+    },
+    {
+      "cycle": 5,
+      "device": "usbnic2",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c5-absent.json",
+          "sha256": "c73a117b86565d136fc6cfec7b795bd8a6f1309be4f3ea238109f29394a8bec2",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c5-reinsert.json",
+          "sha256": "06385a9cc503683a6bbad2ae14d2634fd25ab6064f7dc12dfb0d05342115960c",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c5-cable-down.json",
+          "sha256": "9c0669b6d6092bb3c3366a8cb42181301659872ef6cd7634c18cc2862ca6394e",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c5-cable-up.json",
+          "sha256": "81681bca3f3836cf7323c18924a64a99d69a632ba503b105b4a5b553ea56ead3",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000002 up=00000000 status=C0000001\nUNT-DOWN id=00000002\n",
+      "reinsert_trace": "UNT-UP id=00000007 pid=00008159 status=00000000\nUNT-LINK id=00000007 up=00000000 status=00000000\nUNT-LINK id=00000007 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000007 up=00000000 status=00000000\nUNT-LINK id=00000007 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c5-passed.png",
+        "sha256": "b9e5a9893a715e3608dd46484ec2ea48bb57dae8d8c65b8dc28a818abe2cbf89"
+      }
+    },
+    {
+      "cycle": 6,
+      "device": "usbnic2",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c6-absent.json",
+          "sha256": "5b647f07153809b06ba5970c320387c94253d367578c1536fe99ad51e7d05592",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c6-reinsert.json",
+          "sha256": "bc4c6ae59e8287da1218daca2faaefc0dfdfb51a5c4fe872c291de8612528810",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c6-cable-down.json",
+          "sha256": "3aaf1b1ce51211f738f107856a2e7e86efba56ff6c7444d51244679bc9ccaf2a",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c6-cable-up.json",
+          "sha256": "33aebfaa4983d2b5677ab5e236b2913b5d733e7f64cc88dc832f770a70d08b73",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000007 up=00000000 status=C0000001\nUNT-DOWN id=00000007\n",
+      "reinsert_trace": "UNT-UP id=00000008 pid=00008157 status=00000000\nUNT-LINK id=00000008 up=00000000 status=00000000\nUNT-LINK id=00000008 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000008 up=00000000 status=00000000\nUNT-LINK id=00000008 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c6-passed.png",
+        "sha256": "0f49904f19fdfec50aa7735ea3c1d4e69099400ad6798882d9d31bba7840a150"
+      }
+    },
+    {
+      "cycle": 7,
+      "device": "usbnic2",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c7-absent.json",
+          "sha256": "fae5fc09c5a8c18121c6265e060f1eaa7f861d618caec06bb9415f686c3de15d",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c7-reinsert.json",
+          "sha256": "261337db328da42d696ae43f3bbb377cbf27392cb3fd000fa66c7a9f4ad2f5d4",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c7-cable-down.json",
+          "sha256": "41f1c90bb033d6b0d00c22335ecf725133e56f0d167892ea0c9d33bbd61442c5",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c7-cable-up.json",
+          "sha256": "d37388f8ec9a42dad9c31da0537bb2608c87deee5723d41ecc7449f4a6932896",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000008 up=00000000 status=C0000001\nUNT-DOWN id=00000008\n",
+      "reinsert_trace": "UNT-UP id=00000009 pid=00008156 status=00000000\nUNT-LINK id=00000009 up=00000000 status=00000000\nUNT-LINK id=00000009 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000009 up=00000000 status=00000000\nUNT-LINK id=00000009 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c7-passed.png",
+        "sha256": "0b9a62fb0cd6e0ecc543fe417dc6c85e882f2b74843bb8452ce00a63f9ddce1c"
+      }
+    },
+    {
+      "cycle": 8,
+      "device": "usbnic2",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c8-absent.json",
+          "sha256": "57687509a85fa3364cd5d33266b039e6a72679227d4de63481c1022e5fc13c62",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c8-reinsert.json",
+          "sha256": "3197713e679bd720c712b015874a54132dffd88a73874fda63b5994c732c08e4",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c8-cable-down.json",
+          "sha256": "8fd414f60a7dc549aeb6103f227dc63c83393e01d128979400944b62d1365a72",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c8-cable-up.json",
+          "sha256": "cf97f1deaafb777094d0fa191ecbe515c6a224818b22f5657367a991ff84ffd1",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-DOWN id=00000009\n",
+      "reinsert_trace": "UNT-UP id=0000000A pid=00008153 status=00000000\nUNT-LINK id=0000000A up=00000000 status=00000000\nUNT-LINK id=0000000A up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=0000000A up=00000000 status=00000000\nUNT-LINK id=0000000A up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-c8-passed.png",
+        "sha256": "f88925dca393b8d8c28549bac762ca85e568bf661318155f5a7169c30721c27a"
+      }
+    }
+  ],
+  "scope": "Legacy persistent USBNT adapters in QEMU, two EHCI siblings plus native RTL8127 PCIe; actual guest payload comparisons, not physical-silicon validation",
+  "tools_sha256": {
+    "legacy_network_probe.c": "4b02046a9015753235bf06f90fe27ce612c2f492afc991dbc16997ba910194e9",
+    "LNET.EXE": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b",
+    "legacy_network_report.py": "0efc3ba390915115448fc267ef516167d2c5dfaa3d138ed8a7ef58d00c7c2bf2",
+    "legacy_sibling_cycles.py": "b441bf3dcd9690c7ebacd1888d6a0ce61e2442e7dcaea9d34383748beaac3def"
+  },
+  "launch": {
+    "started_at": 1793573942.6253746,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/nt4-ndis-update-v3-reboot-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/nt4-ndis-update-v3-reboot-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/nt4-ndis-update-v3-reboot-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/nt4-ndis-update-v3-reboot-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt4-ndis-update-v3-reboot-8127/usb.pcap",
+      "-netdev",
+      "user,id=n1,net=10.0.4.0/24",
+      "-device",
+      "usb-rtl8159,id=usbnic2,bus=ehci.0,netdev=n1,mac=52:54:00:ab:cd:ee",
+      "-object",
+      "filter-dump,id=f1,netdev=n1,file=/workspace/rltklant-vm/run/nt4-ndis-update-v3-reboot-8127/usb2.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0",
+      "-netdev",
+      "user,id=pci0,net=10.0.3.0/24",
+      "-device",
+      "rtl8127,id=pcinic,netdev=pci0",
+      "-object",
+      "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/nt4-ndis-update-v3-reboot-8127/pci.pcap"
+    ],
+    "qemu_sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a"
+  },
+  "baseline": {
+    "file": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-baseline.json",
+    "sha256": "8be0b018a56540a90afe6e7915550dabbfae0d98933f464bf82336351aa7c777",
+    "mask": 7,
+    "full_payload_replies": 12
+  },
+  "qmp_status": {
+    "status": "running",
+    "singlestep": false,
+    "running": true
+  },
+  "full_payload_replies": 332,
+  "pcaps": {
+    "usb.pcap": {
+      "bytes": 348427,
+      "sha256": "433ecc9f0958b6107426707344c73c4b7b0a28d20874cbebf31bbdc72d6ffd33"
+    },
+    "usb2.pcap": {
+      "bytes": 348502,
+      "sha256": "409adaeca3708ec33377754100fc300eb3c204c3e22b07dc1300da33348a2169"
+    },
+    "pci.pcap": {
+      "bytes": 461327,
+      "sha256": "2d936eed09dfee0b34b26df14fed6adbb84c9565a7aa43c119e385bb78ae9e2f"
+    }
+  },
+  "finished_utc": "2026-11-01T23:08:58.206255+00:00"
+}

@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T16:19:09.285481+00:00",
+  "guest": "nt4-ndis-dual-sleep-v3-8127",
+  "files": {
+    "WINNT4/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 419328,
+      "sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6"
+    },
+    "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    }
+  }
+}

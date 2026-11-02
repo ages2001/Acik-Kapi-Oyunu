@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-02T13:32:00.892805+00:00",
+  "result": "PASS_WITH_PRIOR_LATENCY_FINDING_OPEN",
+  "snapshot": "usbnt-sync-rundown-v2-20261102",
+  "tcp_bytes_each_direction": 3145728,
+  "registered_ndis_resets": 3,
+  "full_payload_pci_replies": 68,
+  "usb_models": 4,
+  "evidence": {
+    "nt351-syncrun-tcp-baseline-20261102.json": "5629f5e6f6d176bd71c68aac9d83da44100f0fd9b4e860b869aa7a4424f871ae",
+    "nt351-syncrun-tcp-baseline-screen-20261102.png": "9ea1a14009f0f3e87de115258f91d179f7e2cb28c99ec0708594a9905c62e6ac",
+    "nt351-syncrun-tcp-reset-20261102.json": "124686e4a102279faadbb89f603fa4cb8989ac291f5624f803b82366fe3ab28b",
+    "nt351-syncrun-tcp-reset-screen-20261102.png": "bb0256e55e01250ad60f102ccc136f7869629c84e80f48c671bb04e6a1f4ab49",
+    "nt351-syncrun-tcp-cable-20261102.json": "8dd6c369444aed3a0f349781bb70882a1eb60d46e93bb90693b76025c387b135",
+    "nt351-syncrun-tcp-cable-screen-20261102.png": "5ceaa80440fe86438b6c724cb1a17a0bfa580429b7da48821b1042fb50d13b9e",
+    "nt351-syncrun-tcp-wire-20261102.json": "5c6d93e94f1fe38bbbc07ad0e8ed8635f15dd0aa1359c176bfdc8bd267d7296d",
+    "nt351-usbsetup-syncrun-rtl8139-8127-syncrun-20261102-sibling-matrix.json": "b6df7fbe17781ed43da714d5a4a3cbf6cdf392b0af942561ce42e716521af3aa",
+    "nt351-syncrun-offline-20261102/manifest.json": "029a4c8a22c17bc4607fc3eb7dfb405711c451b90a87d60d548f4ae3a8be8dc0",
+    "nt351-syncrun-evidence-20261102/manifest.json": "a5f1d616f6a8576d9dff766db26c72f6370a8f89db0951a17613dcf4a737bacd"
+  },
+  "scope": "Exact installed SYS readback after normal shutdown. Actual RTL8139, IDE, PCI-only TCP route. TCP before/after registered reset and cable reconnection; four USB attachment/carrier cycles preserve PCI traffic.",
+  "limits": [
+    "The earlier audio-reset-v3 RTL8159 30-second attachment failures are retained and unexplained. This passing run is not deterministic proof of a latency fix.",
+    "No USB TCP/IP binding in this NT3.51 fixture.",
+    "No physical silicon certification; USBNT 1.3 unreleased."
+  ]
+}

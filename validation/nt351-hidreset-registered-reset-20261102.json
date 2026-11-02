@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-02T10:14:52.443554+00:00",
+  "result": "PASS",
+  "scope": "Three registered NDIS-wrapper RTL8139 resets on NT3.51 with the HID-reset/rundown USBNT candidate",
+  "command": "net start RltkNt351ResetV2",
+  "trace_start": 683,
+  "trace": "N35TEST register=00000000\nN35TEST open=00000000\nN35TEST query=00000000\nN35TEST vendor=00005452\nN35TEST permanent-query=00000000\nN35TEST rtl8139-description=00000001\nN35TEST status=40010004\nN35TEST reset-return=00000103\nN35TEST status=40010005\nN35TEST reset-complete=00000000\nN35TEST status=40010004\nN35TEST reset-return=00000103\nN35TEST status=40010005\nN35TEST reset-complete=00000000\nN35TEST status=40010004\nN35TEST reset-return=00000103\nN35TEST status=40010005\nN35TEST reset-complete=00000000\nN35TEST close=00000000\nN35TEST completions=00000003\nN35TEST starts=00000003\nN35TEST ends=00000003\nN35TEST result=00000000\nN35TEST deregister=00000000\n"
+}

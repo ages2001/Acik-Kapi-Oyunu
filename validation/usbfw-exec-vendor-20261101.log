@@ -1,0 +1,12 @@
+PASS USB replay /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-2.fw v4: three exact upstream write traces; 61 transfer/wait boundaries
+PASS USB replay /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-3.fw v5: three exact upstream write traces; 65 transfer/wait boundaries
+PASS USB replay /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-4.fw v6: three exact upstream write traces; 50 transfer/wait boundaries
+PASS USB replay /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153b-2.fw v9: three exact upstream write traces; 28 transfer/wait boundaries
+PASS USB replay /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153c-1.fw v14: three exact upstream write traces; 25 transfer/wait boundaries
+PASS USB replay /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156a-2.fw v11: three exact upstream write traces; 624 transfer/wait boundaries
+PASS USB replay /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156b-2.fw v13: three exact upstream write traces; 48 transfer/wait boundaries
+PASS USB replay /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156b-2.fw v15: three exact upstream write traces; 48 transfer/wait boundaries
+PASS USB replay /workspace/rltklant-work/RLTKLANT/firmware/usb-vendor/rtl8157-vendor-0014.fw v16: three exact upstream write traces; 40 transfer/wait boundaries
+PASS USB replay /workspace/rltklant-work/RLTKLANT/firmware/usb-vendor/rtl8159-vendor-0022.fw v17: three exact upstream write traces; 64 transfer/wait boundaries
+PASS: 2106 I/O-failure and cancellation schedules; SHA rejection before I/O, bounded timeouts/budgets and version readback
+PASS: USB firmware executor cross-compiles for x86/x64

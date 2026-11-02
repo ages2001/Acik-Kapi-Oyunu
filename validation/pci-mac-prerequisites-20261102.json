@@ -1,0 +1,394 @@
+{
+  "result": "IMPLEMENTATION_GAP_INVENTORY",
+  "source_sha256": "cb918734e19369d22fd0e65657c0183518f0ba59b57745a74f6a5bbcf56f37cc",
+  "roots": [
+    "rtl_hw_config",
+    "rtl_hw_start_8125",
+    "rtl_hw_start_8168",
+    "rtl_hw_start_8169"
+  ],
+  "functions": [
+    {
+      "name": "rtl_mod_config5",
+      "line": 970,
+      "sha256": "de683ac58de086de31a08cb3a62277b9d3f0e632aa28e0e73c576d7d67738b48"
+    },
+    {
+      "name": "rtl_is_8168evl_up",
+      "line": 997,
+      "sha256": "2f5b297d264757128f6d8d297edfabfaeb919f793c5ca3c963544424edc77f1c"
+    },
+    {
+      "name": "rtl_w0w1_eri",
+      "line": 1215,
+      "sha256": "f48626dc62f023b0aee1c66c79a55a8efa8961c5b2732ea40607866f66b8c55c"
+    },
+    {
+      "name": "rtl_eri_set_bits",
+      "line": 1222,
+      "sha256": "39c1c5d5048079feb53b39e83a60af5c67f2321c4f2319e975f3e32f0a7e61dc"
+    },
+    {
+      "name": "rtl_eri_clear_bits",
+      "line": 1227,
+      "sha256": "18953fbf1008f84be0e25e7f97daf52851e58b7ddc1eeea06528be7aa0a6575a"
+    },
+    {
+      "name": "rtl_ocp_reg_failure",
+      "line": 1232,
+      "sha256": "9864583beeacf51cbd2c7c7702668380e13fa315f131d78178b43739a84fdd11"
+    },
+    {
+      "name": "__r8168_mac_ocp_write",
+      "line": 1263,
+      "sha256": "6c2554365d08e7f08e7db29fb851bb7f70c1359d5bd57e5f99618c802a004e60"
+    },
+    {
+      "name": "__r8168_mac_ocp_read",
+      "line": 1280,
+      "sha256": "e15c557bd864605e6958969d060a9f4d152550dab0c9754a0c54f28b3a69c2e8"
+    },
+    {
+      "name": "r8168_mac_ocp_modify",
+      "line": 1302,
+      "sha256": "07ab1c895b5d9a4e9b1040e8db602be0d51171e688934d44302d90b9635aa7ce"
+    },
+    {
+      "name": "rtl_reset_packet_filter",
+      "line": 1831,
+      "sha256": "cbaae211ff5f1ee27eba2c0922a19ef9bcda274413f4eec45cde349c7a83b83a"
+    },
+    {
+      "name": "rtl_disable_rxdvgate",
+      "line": 2976,
+      "sha256": "3f57a9e6d7ae57b7b80dd891b0fbbc3012c83b18fa5bb2455a3759cdc43509c5"
+    },
+    {
+      "name": "rtl8169_set_magic_reg",
+      "line": 3104,
+      "sha256": "33d43cecb88a7b9705305ba5752d38b7c4edaddd322178ee149c04a10040e4aa"
+    },
+    {
+      "name": "rtl_csi_write",
+      "line": 3176,
+      "sha256": "7f2bed9e217d4d3a283aed7932ae388e21e6fdd4233f4f61401d63442690273f"
+    },
+    {
+      "name": "rtl_csi_read",
+      "line": 3187,
+      "sha256": "70d0eb07bbd28275ad25c5ed802efd02efb24220c644c7f4e7aa08410bcdc94b"
+    },
+    {
+      "name": "rtl_csi_mod",
+      "line": 3198,
+      "sha256": "e47ff86fff069f63acda0f0b3f2b77e5091024bc3095af4675bad1c849309647"
+    },
+    {
+      "name": "rtl_disable_zrxdc_timeout",
+      "line": 3212,
+      "sha256": "cadcc1d491280f52c087137c8802e5a2048875255da1c2dcc5bdcc81eaf70ae4"
+    },
+    {
+      "name": "rtl_set_def_aspm_entry_latency",
+      "line": 3251,
+      "sha256": "e76c7e094d39eeae8dd212b11801c7b53f63c3075e342aa96fd6979f40446848"
+    },
+    {
+      "name": "rtl_disable_clock_request",
+      "line": 3277,
+      "sha256": "6f34d69d157357de856dc231a7d9e32f6c4b9ef6bb3eb46e588b8d5257ca7aff"
+    },
+    {
+      "name": "rtl_enable_clock_request",
+      "line": 3283,
+      "sha256": "0f8ae3127e26ec62dcfb3adc9c5d93f622c1a1a593d9f78d9d525d47ea0fe9a7"
+    },
+    {
+      "name": "rtl_pcie_state_l2l3_disable",
+      "line": 3289,
+      "sha256": "247af3bfc896e513e6c72beaf13b2e769d627fcf0583dd656381e27c8ad3c822"
+    },
+    {
+      "name": "rtl_set_fifo_size",
+      "line": 3502,
+      "sha256": "f848e3422848a585e34ac20f4507e0e3fe1292bc0ed1a1dcffd08c906f6d08b6"
+    },
+    {
+      "name": "rtl8168g_set_pause_thresholds",
+      "line": 3512,
+      "sha256": "f0abf76750f4e8fcfbf63f6bd8b8620c415b0d8e6b0b7465fd9c9cd9ac18edef"
+    },
+    {
+      "name": "rtl_hw_start_8168b",
+      "line": 3520,
+      "sha256": "6e28952ae1c9eb7c40c042f54f2a7858127353406d9ccc11c960b8851366f491"
+    },
+    {
+      "name": "__rtl_hw_start_8168cp",
+      "line": 3525,
+      "sha256": "5ff2dbda87652d6973e24a8904e85fa2b9177a27b8ecf45409465da5688751d8"
+    },
+    {
+      "name": "rtl_hw_start_8168cp_1",
+      "line": 3534,
+      "sha256": "c5516d2e11353ca2453818c4fbfda0561f51292bdf56145d6c5d08c4007a687b"
+    },
+    {
+      "name": "rtl_hw_start_8168cp_2",
+      "line": 3551,
+      "sha256": "cd7df0715d97c8388a35daf564eb6b60991736a1479e06a5cd0b781577123679"
+    },
+    {
+      "name": "rtl_hw_start_8168cp_3",
+      "line": 3558,
+      "sha256": "ae3946fd40339b00652822abdff4010dd79c51eadf6514cd1eb57629036befec"
+    },
+    {
+      "name": "rtl_hw_start_8168c_1",
+      "line": 3568,
+      "sha256": "e55853455939e7ef40bafb0f0333242888e96e209f2d4527b231f6ad526f9651"
+    },
+    {
+      "name": "rtl_hw_start_8168c_2",
+      "line": 3585,
+      "sha256": "3df712717be608456bc7863bb3d80a81d66da28962a61ad85e56785885594c1c"
+    },
+    {
+      "name": "rtl_hw_start_8168c_4",
+      "line": 3599,
+      "sha256": "e52f96e3ea1e664645f31bdcbed3e347d1632567689fa5da5a29ff30cd225830"
+    },
+    {
+      "name": "rtl_hw_start_8168d",
+      "line": 3606,
+      "sha256": "f75f942c9bcd6ce8e9e230d13fdc5e15f593a1a1de56d6c152a8acbf3797f0fc"
+    },
+    {
+      "name": "rtl_hw_start_8168d_4",
+      "line": 3613,
+      "sha256": "7ffc9243ba11a47eeab19ba29dc50c1c22ecad1b6fd4eb5cc95c65e17079925b"
+    },
+    {
+      "name": "rtl_hw_start_8168e_1",
+      "line": 3629,
+      "sha256": "50296d843f6a4b61d3761572e9f7c0a056f02c09fd5d4347b9762ac11c37fded"
+    },
+    {
+      "name": "rtl_hw_start_8168e_2",
+      "line": 3660,
+      "sha256": "e7a305ea1c935ecf1caa8e0416f11dc098f31c6101995262152b1fc1f6b6b8c0"
+    },
+    {
+      "name": "rtl_hw_start_8168f",
+      "line": 3691,
+      "sha256": "00143685e4805edc7ee684107a99cdc317cdcee6c358e99a3f5123cc55ade3df"
+    },
+    {
+      "name": "rtl_hw_start_8168f_1",
+      "line": 3712,
+      "sha256": "eca10e2331f48958a9d47566f9a8dada9d3e4a931fb3c0db003b11d6164f2c08"
+    },
+    {
+      "name": "rtl_hw_start_8411",
+      "line": 3728,
+      "sha256": "774db2eac16f524954c4e0343a922182fcdc2e3a6e8332b208cc6ebd5b6ae5e4"
+    },
+    {
+      "name": "rtl_hw_start_8168g",
+      "line": 3744,
+      "sha256": "8c1540921d7fa28e9162f74ed1a5a7bf2e815a61b04815679bcb67bee602f571"
+    },
+    {
+      "name": "rtl_hw_start_8168g_1",
+      "line": 3765,
+      "sha256": "b856168fa09d31c9e4058cf935470bf0110ad5ff72778d4d78e2fff24ab9e0e9"
+    },
+    {
+      "name": "rtl_hw_start_8168g_2",
+      "line": 3778,
+      "sha256": "bb0c5bd25cac2a23591d8fe33fe9d961f1264056aa79e7014a268971043c1056"
+    },
+    {
+      "name": "rtl8411b_fix_phy_down",
+      "line": 3796,
+      "sha256": "eb9a5e4b638b0974ae03993137e10fc6edf207f5ac8d6e99830047d8eb9c4fa8"
+    },
+    {
+      "name": "rtl_hw_start_8411_2",
+      "line": 3823,
+      "sha256": "c8d31ca55950a59ed8973b2a75adcf9f0b189b12a0472dcf4acbeec42ecf74fd"
+    },
+    {
+      "name": "rtl_hw_start_8168h_1",
+      "line": 3869,
+      "sha256": "bc8aa1cf804bf1abc9a162edeaf40897a199d62180bc0feab374704bc763e9fe"
+    },
+    {
+      "name": "rtl_hw_start_8168ep",
+      "line": 3928,
+      "sha256": "e6dc128e42b8e1a94d0f282f9c6cef5a6a00af55ec75e7e0bb1cf7170b046027"
+    },
+    {
+      "name": "rtl_hw_start_8168ep_3",
+      "line": 3953,
+      "sha256": "be3b37fd4f273a042a4901d4a595821408d000650d36551ce08fc9cc9c929ee4"
+    },
+    {
+      "name": "rtl_hw_start_8117",
+      "line": 4009,
+      "sha256": "e3ac9cee9861e1cbe8de1031fbd1d5307942166a89c8ab67fb8531316b62db65"
+    },
+    {
+      "name": "rtl_hw_start_8102e_1",
+      "line": 4069,
+      "sha256": "408742db716d1b72c5d7547d29785f86322bfb4b3315c1b3872ff3959768428a"
+    },
+    {
+      "name": "rtl_hw_start_8102e_2",
+      "line": 4098,
+      "sha256": "19bf5d8eff461e1c89e494af7c159e5f8b953c0babcd706c1ed052ce00ff5edf"
+    },
+    {
+      "name": "rtl_hw_start_8102e_3",
+      "line": 4106,
+      "sha256": "eca8582c5ef4bfede18c71e625d2f081bd43c67a507d8b2430945145615c14e0"
+    },
+    {
+      "name": "rtl_hw_start_8401",
+      "line": 4113,
+      "sha256": "692c6b69c97d7ca1726e7a387aa58c25511d8f105bf85184f4ea89fd0aadccbc"
+    },
+    {
+      "name": "rtl_hw_start_8105e_1",
+      "line": 4126,
+      "sha256": "cf8e7670a0ac8c4f016718fa8b0f225f69df8ef2eecb57a929c5a8d6fe68f82a"
+    },
+    {
+      "name": "rtl_hw_start_8105e_2",
+      "line": 4153,
+      "sha256": "2d747decbd33790b37c73d81831925c4b0561f15ceb13b51151d6d90212307fe"
+    },
+    {
+      "name": "rtl_hw_start_8402",
+      "line": 4159,
+      "sha256": "f807246ca5f3f085ccae948162e3806ffc1e294e71f5067ffbfd613b3c1a028f"
+    },
+    {
+      "name": "rtl_hw_start_8106",
+      "line": 4187,
+      "sha256": "1c596e892270e91712cf5daf08f4091e7264fc8dccca4a04e88ac0a23b691362"
+    },
+    {
+      "name": "rtl8125_set_rx_q_num",
+      "line": 4212,
+      "sha256": "453ee25e3acdf22324d1356485fc5e822222b20b642e8b2f3856003608541724"
+    },
+    {
+      "name": "rtl8169_hw_enable_vec_mapping",
+      "line": 4224,
+      "sha256": "51465ba1ad4ce6c064d7bbba48d566e9110fba37b587feb9de1b1d345ba8c546"
+    },
+    {
+      "name": "rtl_hw_start_8125_common",
+      "line": 4233,
+      "sha256": "4f2d7be7934c4a055a470f36397f55fde6466c0a246d689d0b248b9db47ea89b"
+    },
+    {
+      "name": "rtl_hw_start_8125a_2",
+      "line": 4312,
+      "sha256": "48d02d54de8eac94cf478ec7881cd0fec52c178aa63c0092b0f0f5e0cffb2f26"
+    },
+    {
+      "name": "rtl_hw_start_8125b",
+      "line": 4335,
+      "sha256": "5a65c8fcb1a963e37e5697568a6215bab1e7fa7c4f5452452f08970c99bcde07"
+    },
+    {
+      "name": "rtl_hw_start_8125d",
+      "line": 4351,
+      "sha256": "e019185ba57c47035957b078be386150662715d7f6872453a2ccf679734ef521"
+    },
+    {
+      "name": "rtl_hw_start_8126a",
+      "line": 4357,
+      "sha256": "aad3eccbaa0012f1fbfbee33fc64d11226734684028099f09378e9dad051ca85"
+    },
+    {
+      "name": "rtl_hw_start_8127a",
+      "line": 4364,
+      "sha256": "1252a4426bd37f0bb688def2b12abd86a1c36f181ec590ea388fe1f2a9646d4b"
+    },
+    {
+      "name": "rtl_hw_config",
+      "line": 4370,
+      "sha256": "3c1d555103b9b33827696537e9b7de99f16f2ddef84853c17f2a9dcf9c7e10c3"
+    },
+    {
+      "name": "rtl_hw_start_8125",
+      "line": 4421,
+      "sha256": "8bb56097e361da12cb390f17d4a0f01629737ac27fc62ab729c3068c0c4176ad"
+    },
+    {
+      "name": "rtl_hw_start_8168",
+      "line": 4455,
+      "sha256": "a42d1d7abe14a5207c1301bb929db14408f0ac4ba456470e821ccc7fb2800e97"
+    },
+    {
+      "name": "rtl_hw_start_8169",
+      "line": 4468,
+      "sha256": "dc904fc31fd3f4da6d4ba51702943e6ef3eca2e999374f2af6c7bba3e4e8584c"
+    }
+  ],
+  "explicit_boundary": [
+    "r8168_mac_ocp_read",
+    "r8168_mac_ocp_write",
+    "r8169_apply_firmware",
+    "rtl8168ep_stop_cmac",
+    "rtl_csi_access_enable",
+    "rtl_ephy_read",
+    "rtl_ephy_write",
+    "rtl_eri_read",
+    "rtl_eri_write",
+    "rtl_loop_wait_high",
+    "rtl_loop_wait_low",
+    "rtl_set_aspm_entry_latency"
+  ],
+  "external_calls": [
+    "ARRAY_SIZE",
+    "BIT",
+    "FIELD_PREP",
+    "PCI_FUNC",
+    "RTL_R16",
+    "RTL_R32",
+    "RTL_R8",
+    "RTL_W16",
+    "RTL_W32",
+    "RTL_W8",
+    "WARN",
+    "WARN_ONCE",
+    "ilog2",
+    "mdelay",
+    "netdev_notice_once",
+    "pci_read_config_byte",
+    "pci_write_config_byte",
+    "pcie_capability_clear_word",
+    "pcie_capability_set_word",
+    "phy_read_paged",
+    "r8169_apply_firmware",
+    "raw_spin_lock_irqsave",
+    "raw_spin_unlock_irqrestore",
+    "rtl_ephy_init",
+    "udelay"
+  ],
+  "required_integration": [
+    "Per-revision MAC/EPHY/ERI/CSI prerequisites before enabling DMA, with bounded error propagation",
+    "RTL8125+ register windows include 0x1880; current NT3.1 mapping is only 0x100 and current QEMU BAR is 0x1000",
+    "PCI capability/extended configuration access and source-based ASPM policy",
+    "RTL8117 separate MAC-only firmware step and CMAC stop handshakes",
+    "Stop/resume/reset ordering and separate SFP/SerDes paths"
+  ],
+  "limits": [
+    "This inventory is not a port, test pass, or proof of physical silicon behavior.",
+    "Selected roots describe the MAC configuration subtree; full driver initialization and lifecycle require additional upstream functions."
+  ]
+}

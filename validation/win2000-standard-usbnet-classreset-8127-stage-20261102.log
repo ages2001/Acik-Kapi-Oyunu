@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/win2000-standard-usbnet-classreset-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=1747006464 backing_file=/tmp/rltk-growing-fat-xfhz8w2w/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+14/26658 = 0.05% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1245184
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/win2000-standard-usbnet-classreset-8127.qcow2",
+  "sha256_before_boot": "13b04da35e5658f25b91e1ee0151ab38b4a8e5ad5f8775db865139dfca4be39e",
+  "files": [
+    {
+      "guest_path": "WINNT/SYSTEM32/DRIVERS/USBNT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-audio-reset-v3-20261102/i386.sys",
+      "size": 495104,
+      "sha256": "c03e153f9964607ec064ae59ee8be4c08016e62854300a9a42af956f717ecf67",
+      "old_size": 488960,
+      "old_sha256": "3c9ae36eaeac2a3ff1c5e317ff8369560d57846c74f1a213f945971bf2518456"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

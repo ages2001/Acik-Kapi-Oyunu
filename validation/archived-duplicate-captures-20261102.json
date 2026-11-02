@@ -1,0 +1,62 @@
+{
+  "utc": "2026-11-02T12:15:18.563241+00:00",
+  "scope": "Only closed original run captures with an exact retained uncompressed evidence copy; no VM disk or backing chain modified. Restore original with gzip -dk ARCHIVE if needed.",
+  "files": [
+    {
+      "original": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-finalcheck-8127/pci.pcap",
+      "archive": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-finalcheck-8127/pci.pcap.gz",
+      "retained_uncompressed_evidence": "/workspace/rltklant-work/validation/nt351-finalcheck-evidence-20261102/pci.pcap",
+      "original_bytes": 7091193,
+      "compressed_bytes": 237303,
+      "original_sha256": "9366ad34fa408864f0000499eb2b60613b4ebe6647e06dcdd70f595602dbdd42"
+    },
+    {
+      "original": "/workspace/rltklant-vm/run/nt31-usbsetup-rtl8139-rxtx-8127/pci.pcap",
+      "archive": "/workspace/rltklant-vm/run/nt31-usbsetup-rtl8139-rxtx-8127/pci.pcap.gz",
+      "retained_uncompressed_evidence": "/workspace/rltklant-work/validation/nt31-rxtx-evidence-20261102/pci.pcap",
+      "original_bytes": 7087424,
+      "compressed_bytes": 226898,
+      "original_sha256": "6a7c660a93418d393b60eb2b5a838f27d6ded28315a2d14ffe6ec881927a5772"
+    },
+    {
+      "original": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-fixed-8127/pci.pcap",
+      "archive": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-fixed-8127/pci.pcap.gz",
+      "retained_uncompressed_evidence": "/workspace/rltklant-work/validation/nt351-rtl8139-fixed-evidence-20261102/pci.pcap",
+      "original_bytes": 6898076,
+      "compressed_bytes": 215425,
+      "original_sha256": "e7f87fa6203b0f09feba89d61f0af6c84cfa8c67bd7080efa21daae876cc9305"
+    },
+    {
+      "original": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-current-8127/pci.pcap",
+      "archive": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-current-8127/pci.pcap.gz",
+      "retained_uncompressed_evidence": "/workspace/rltklant-work/validation/nt351-rtl8139-current-evidence-20261102/pci.pcap",
+      "original_bytes": 7124154,
+      "compressed_bytes": 240512,
+      "original_sha256": "37c463d749fdd42b2a7b2c8aa0628c3e013c9a6e57bda39291571856a37f20b3"
+    },
+    {
+      "original": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-hidreset-8127/pci.pcap",
+      "archive": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-hidreset-8127/pci.pcap.gz",
+      "retained_uncompressed_evidence": "/workspace/rltklant-work/validation/nt351-hidreset-evidence-20261102/pci.pcap",
+      "original_bytes": 7092860,
+      "compressed_bytes": 237017,
+      "original_sha256": "7556d45a21a398f4b40f03ae9d55fa5db644bdb2fe7699bc51e7255c7e1b7cae"
+    },
+    {
+      "original": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-filterfixed-8127/pci.pcap",
+      "archive": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-filterfixed-8127/pci.pcap.gz",
+      "retained_uncompressed_evidence": "/workspace/rltklant-work/validation/nt351-rtl8139-filterfixed-evidence-20261102/pci.pcap",
+      "original_bytes": 6885988,
+      "compressed_bytes": 214465,
+      "original_sha256": "9b1d300118e0e1abb522a8e0e18b4f32ff8c7260a3b72709dd8f0e41df1f0b84"
+    },
+    {
+      "original": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-hidcap-8127/pci.pcap",
+      "archive": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-hidcap-8127/pci.pcap.gz",
+      "retained_uncompressed_evidence": "/workspace/rltklant-work/validation/nt351-hidcap-evidence-20261102/pci.pcap",
+      "original_bytes": 7092913,
+      "compressed_bytes": 237152,
+      "original_sha256": "fc513a6334709a7e88bc5d7c1b998465ac82a0c68bc60fd2e3b51d55c0c8f2ba"
+    }
+  ]
+}

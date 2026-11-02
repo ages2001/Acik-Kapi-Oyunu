@@ -1,0 +1,28 @@
+Formatting '/workspace/rltklant-vm/run/xp64-management-rtl8117-multi-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=5368709120 backing_file=/tmp/rltk-growing-fat-8qx7w2yr/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+18/81920 = 0.02% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1572864
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/xp64-management-rtl8117-multi-8127.qcow2",
+  "sha256_before_boot": "234717827df4bc3b906264a716d2ab55b01db256e158e22bb7c71b19835ca5b3",
+  "files": [
+    {
+      "guest_path": "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis5x64/rltklant.sys",
+      "size": 608832,
+      "sha256": "87d35fc7d739a1399b19ed76834e090a9ac09fc3a863b2e12ac7dc73bf2d8667",
+      "old_size": 612079,
+      "old_sha256": "094c0b99f7f8d470134ccaa445e07a2802bb378e77cbfc2ff6b14a7b383d15b1"
+    },
+    {
+      "guest_path": "RLTTEST/PCNEW.EXE",
+      "source": "/workspace/rltklant-work/validation/rtl8117-integrated-native-fixture-20261102/PC64.EXE",
+      "size": 17123,
+      "sha256": "dbe1637c5bc5e9df64cb54cf4c4408ae0853ab72beb3952c510d77a2ab51fc6f",
+      "old_size": 17123,
+      "old_sha256": "75a3e925cd49bc1de3e08417c27116c20b4e62c089bbeedbea4f14016012965c"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

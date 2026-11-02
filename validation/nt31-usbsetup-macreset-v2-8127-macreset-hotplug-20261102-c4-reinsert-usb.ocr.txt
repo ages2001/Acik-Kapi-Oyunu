@@ -1,0 +1,11 @@
+[el Program Manager - TEST-PC\test_user macs
+Ie ‘Options Window Help |
+j emd RE
+lc:\users\default>ping <n 4 -1 1472 10.0,2.2
+Pinging host 10.0-2-2 Cunnaned> : 10.0.2.2
+CHP Echo Reply:TiL 255
+icHP Echo Reply:TTL 255
+icHP Echo Reply:TTL 255
+icHP Echo Reply:TTL. 255
+lost 10.0.2-2 replied to all 4 of the 4 pings
+Jo:\users\default>

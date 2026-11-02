@@ -1,0 +1,30 @@
+{
+  "utc": "2026-11-01T18:27:17.940705+00:00",
+  "builds": [
+    {
+      "file": "ndis5.sys",
+      "size": 513928,
+      "sha256": "3c0af22af498405163e395473ac764023c0068ca94b8e7501f1e596c3f8d2f9e"
+    },
+    {
+      "file": "ndis5x64.sys",
+      "size": 568624,
+      "sha256": "071dd1a73153e90f0b509fa7df194e6deef5e043f629b0d616edacd6412a271e"
+    }
+  ],
+  "sources": [
+    {
+      "file": "src/native_urb.c",
+      "sha256": "32dd008c0140aa93c61433c63f9dabfc593650351dd05795ae62ca26fec92e75"
+    },
+    {
+      "file": "src/backend_usb.c",
+      "sha256": "85db62e4cc6c8481351b92eca0b15f4645a219ad5720a635b43e37206f1af37b"
+    },
+    {
+      "file": "USBNT/src/usbnic.c",
+      "sha256": "5d85d61397a01c77725be8956da47c59c19f08e853c1296e5ed28bc597111972"
+    }
+  ],
+  "scope": "NT5 pipe reconfiguration candidate; XP has RTL_USB_TRACE, Windows 2000 does not; guest checks ongoing"
+}

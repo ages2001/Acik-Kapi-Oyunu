@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-01T23:28:54.703466+00:00",
+  "result": "HARNESS_RECEIPT_FAILURE",
+  "matrix": "nt31-usbsetup-phy-alias-8127-phy-alias-20261102-sibling-matrix.json",
+  "scope": "Initial USB baseline only; hot-plug cycles not started",
+  "observation": "Screenshot shows 4/4 inbox replies; Windows pointer overlays the receipt between 4 and pings. Wire check passed, strict OCR receipt failed in modes 6 and 3. Original failure remains preserved.",
+  "action": "Move guest cursor to top-right corner and run a fresh matrix with a distinct tag; no receipt regex relaxation",
+  "followup": {
+    "v2_matrix": "PASS; the last multithread OCR completed after an unusually long run",
+    "v2_matrix_file": "nt31-usbsetup-phy-alias-8127-phy-alias-v2-20261102-sibling-matrix.json",
+    "process_termination": "Attempted bounded cleanup found the OCR child already exited; no process was terminated",
+    "harness_fix": "OMP_THREAD_LIMIT=1 and 15-second per-OCR timeout; v3 verifies bounded harness"
+  }
+}

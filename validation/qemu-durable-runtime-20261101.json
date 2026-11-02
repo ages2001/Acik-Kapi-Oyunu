@@ -1,0 +1,23 @@
+{
+  "utc": "2026-11-01T18:48:10.816317+00:00",
+  "source": "/tmp/rltklant-qemu-build-cache-20261101",
+  "destination": "/workspace/rltklant-tools/qemu-bin",
+  "files": [
+    {
+      "file": "qemu-system-i386",
+      "size": 76312800,
+      "sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a"
+    },
+    {
+      "file": "qemu-system-x86_64",
+      "size": 76516432,
+      "sha256": "ce3a860c3b664dc5ee6e625b970ae87c9a29ffec789a3515005da7404968d9e5"
+    },
+    {
+      "file": "config.status",
+      "size": 1503,
+      "sha256": "433a87cac4a1a03912716bcf2ddfebcbee73dc1f46ceabf5177ee2309adf352d"
+    }
+  ],
+  "scope": "Exact executable copies and configuration retained under /workspace; build objects remain ephemeral; no guest image moved"
+}

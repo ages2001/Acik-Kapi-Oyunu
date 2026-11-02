@@ -1,0 +1,68 @@
+Formatting '/workspace/rltklant-vm/run/nt31-usbsetup-ncpa-v4-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=419010560 backing_file=/tmp/rltk-growing-fat-nz5e_5_u/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+14/6394 = 0.22% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1245184
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt31-usbsetup-ncpa-v4-8127.qcow2",
+  "sha256_before_boot": "61f769310fe26fb76e78034634cf3399ee6c8a28f25145dd9263e45e5b9a7511",
+  "files": [
+    {
+      "guest_path": "RLTTEST/RLTUSB.EXE",
+      "source": "/workspace/rltklant-work/validation/legacy-setup-nt31-v4-20261101/RLTUSB.EXE",
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "old_size": 12974,
+      "old_sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    {
+      "guest_path": "RLTTEST/LNET.EXE",
+      "source": "/workspace/rltklant-work/validation/LNET.EXE",
+      "size": 11159,
+      "sha256": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTSET4/OEMSETUP.INF",
+      "source": "/workspace/rltklant-work/validation/legacy-setup-nt31-v4-20261101/OEMSETUP.INF",
+      "size": 24527,
+      "sha256": "76a7ab420ade542044baf725346813a89553765f69dd5fbcf6e46307039903e1",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTSET4/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/legacy-setup-nt31-v4-20261101/RLTKLANT.SYS",
+      "size": 506368,
+      "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTSET4/RLTUSB.EXE",
+      "source": "/workspace/rltklant-work/validation/legacy-setup-nt31-v4-20261101/RLTUSB.EXE",
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTSET4/DHCPNT31.EXE",
+      "source": "/workspace/rltklant-work/validation/legacy-setup-nt31-v4-20261101/DHCPNT31.EXE",
+      "size": 23899,
+      "sha256": "166782ced1eff2d9a8c4363aa5ff17293e221d1fbf0e1409f1998eb28612f030",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTSET4/DISK1",
+      "source": "/workspace/rltklant-work/validation/legacy-setup-nt31-v4-20261101/DISK1",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

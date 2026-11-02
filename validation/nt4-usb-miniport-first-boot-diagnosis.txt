@@ -1,0 +1,12 @@
+The first USB miniport guest stopped with IRQL_NOT_LESS_OR_EQUAL at
+NDIS.SYS fcdfbc09 (image base fcdee000, RVA dc09). The faulting instruction
+push (%edx) followed mov 0x38(%esi),%edx: NDIS tried to synchronize the
+registered DisableInterruptHandler through a null interrupt object.
+The USB-backed software miniport correctly registered no physical IRQ.
+The optional Enable/DisableInterrupt handlers had been inherited from PCI.
+
+Resolution: leave these optional miniport characteristics null. The PCI ISR
+already masks its source; its HandleInterrupt path now re-enables the source
+at completion, guarded against Halt. This affects PCI and requires PCI
+regression tests as well as a fresh USB guest boot. The crashed overlay is
+retained separately; it was not described as a clean shutdown.

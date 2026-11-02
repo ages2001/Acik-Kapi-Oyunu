@@ -1,0 +1,10 @@
+{
+  "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+  "utc": "2026-10-29T20:27:22.501921+00:00",
+  "token": "async-8150-native06",
+  "report": "TOKEN async-8150-native06\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+  "peer": [
+    "127.0.0.1",
+    40227
+  ]
+}

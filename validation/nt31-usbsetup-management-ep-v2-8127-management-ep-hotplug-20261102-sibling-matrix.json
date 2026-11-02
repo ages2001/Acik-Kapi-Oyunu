@@ -1,0 +1,245 @@
+{
+  "guest": "nt31-usbsetup-management-ep-v2-8127",
+  "started_utc": "2026-11-02T05:12:54.958881+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "cycle": 1,
+      "device": "usbnic",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c1-absent.json",
+          "sha256": "517638daffa82358d5ade5d9703ed2f1ab8ef12a445937a1945c0c606c2c2510",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c1-reinsert.json",
+          "sha256": "d1d221ea295a6b8c76ca108c979cca3da6b41f2f567805c916614be06d0690e6",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c1-cable-down.json",
+          "sha256": "33b3ecca6c89b75637d87d20036c72731510a438c872baec5d1492fc8ffaaaf7",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c1-cable-up.json",
+          "sha256": "122946a871c2591908c8cc3994e905513f58edb3b2d0bbb4a7b26d28b088c230",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000001 up=00000000 status=C0000001\nUNT-DOWN id=00000001\n",
+      "reinsert_trace": "UNT-UP id=00000002 pid=00008153 status=00000000\nUNT-LINK id=00000002 up=00000000 status=00000000\nUNT-LINK id=00000002 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000002 up=00000000 status=00000000\nUNT-LINK id=00000002 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c1-passed.png",
+        "sha256": "405a9e9235d31411bddfa8144b60c200cbe2984b7f5a747e6b3f49f4aec0df13"
+      }
+    },
+    {
+      "cycle": 2,
+      "device": "usbnic",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c2-absent.json",
+          "sha256": "4009d23dbdb18003dc964b214cd7c98b908ba7190db751c5e44f7c2d58593ea9",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c2-reinsert.json",
+          "sha256": "c616bccb7a2a97612a5ccc2ef68b0a0b0389d3f785d8565b37a551d1be504c12",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c2-cable-down.json",
+          "sha256": "80223cef12daf884efed0d625003ee20a2de5fc8eb86f62a12fabfc6b2440bcc",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c2-cable-up.json",
+          "sha256": "9a5e3a8605b3e07c5c3d681ba654ea723bf369037b833882043028fa67fe21d5",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-DOWN id=00000002\n",
+      "reinsert_trace": "UNT-UP id=00000003 pid=00008156 status=00000000\nUNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c2-passed.png",
+        "sha256": "2a012455c57365d6f5d69c7754b3545fdfd2b95052a8be6e558f37613a8cc316"
+      }
+    },
+    {
+      "cycle": 3,
+      "device": "usbnic",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c3-absent.json",
+          "sha256": "0ac0f5fe0d4da93a410a98e6254259277814d7e3099ae8c82e7255f92791a434",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c3-reinsert.json",
+          "sha256": "b5b8cd972f489aa0bdaf0f4a5e63c372eb454ae9d8af7513120c95027e17213e",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c3-cable-down.json",
+          "sha256": "3ca86ede7b60a9e520db2c2fecce1182b8bffc285b3693c888ec93d822600be4",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c3-cable-up.json",
+          "sha256": "715301d505a576b8565a12aafe444a1f42eac0c01ad7a04ab1f81642b15387e5",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000003 up=00000000 status=C0000001\nUNT-DOWN id=00000003\n",
+      "reinsert_trace": "UNT-UP id=00000004 pid=00008157 status=00000000\nUNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c3-passed.png",
+        "sha256": "405a9e9235d31411bddfa8144b60c200cbe2984b7f5a747e6b3f49f4aec0df13"
+      }
+    },
+    {
+      "cycle": 4,
+      "device": "usbnic",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c4-absent.json",
+          "sha256": "a7403cef70dabeaa24fa6256a884311ef699c640b91ed372fc316c7853105de4",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c4-reinsert.json",
+          "sha256": "21436907a83df5824610980c24de6fadbf147b3fa24da2c58aa3f096a7195836",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c4-cable-down.json",
+          "sha256": "6a8c42a86d92817cf4fe8e1e0af7739d1cea4f74256d7210665aa8df87618b4e",
+          "mask": 2,
+          "full_payload_replies": 4
+        },
+        {
+          "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c4-cable-up.json",
+          "sha256": "88f1b122206cbf7270c0c2dacf61f52f4f4da4b70353e461fe27a4e9fce769d6",
+          "mask": 3,
+          "full_payload_replies": 8
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-DOWN id=00000004\n",
+      "reinsert_trace": "UNT-UP id=00000005 pid=00008159 status=00000000\nUNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-c4-passed.png",
+        "sha256": "405a9e9235d31411bddfa8144b60c200cbe2984b7f5a747e6b3f49f4aec0df13"
+      }
+    }
+  ],
+  "scope": "NT3.1 persistent USBNT plus native PCI/PCIe adapter recorded in the launch manifest in QEMU; inbox ping receipt summaries plus complete 1472-byte wire payload matching during USB interruption/recovery. Not a custom guest-side payload comparator or physical-silicon validation.",
+  "tools_sha256": {
+    "legacy_network_probe.c": "4b02046a9015753235bf06f90fe27ce612c2f492afc991dbc16997ba910194e9",
+    "LNET.EXE": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b",
+    "legacy_network_report.py": "0efc3ba390915115448fc267ef516167d2c5dfaa3d138ed8a7ef58d00c7c2bf2",
+    "legacy_sibling_cycles.py": "a307800e75ce0017459ae1ce01f7b92422f49d35077497090a0c1b9d13691991",
+    "nt31_network_report.py": "bc3fd8f15781499d2ffc2f45d4bc59372f47dbc3a1d9760cb2ee4ff08cb2da49"
+  },
+  "launch": {
+    "started_at": 1793596013.9795103,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/nt31-usbsetup-management-ep-v2-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/nt31-usbsetup-management-ep-v2-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/nt31-usbsetup-management-ep-v2-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/nt31-usbsetup-management-ep-v2-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt31-usbsetup-management-ep-v2-8127/usb.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0",
+      "-netdev",
+      "user,id=pci0,net=10.0.3.0/24",
+      "-device",
+      "rtl8168,chip-profile=8111ep,dash-enabled=on,id=pcinic,netdev=pci0",
+      "-object",
+      "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/nt31-usbsetup-management-ep-v2-8127/pci.pcap",
+      "-global",
+      "rtl8169.io-bar=off"
+    ],
+    "qemu_sha256": "e296ab523280432e7768c7b6c9c36235c2c7fd90fa471d7f03385e3c1acbab84"
+  },
+  "baseline": {
+    "file": "nt31-usbsetup-management-ep-v2-8127-management-ep-hotplug-20261102-baseline.json",
+    "sha256": "f8d05b4510449fa2715fe730021e2b431df8b0f0ef5762e7441b64d9eb158d53",
+    "mask": 3,
+    "full_payload_replies": 8
+  },
+  "qmp_status": {
+    "status": "running",
+    "singlestep": false,
+    "running": true
+  },
+  "full_payload_replies": 104,
+  "pcaps": {
+    "usb.pcap": {
+      "bytes": 152180,
+      "sha256": "b3fba9fbf7337d4fd6c9c8f9942475655d39ce5dbe05b8aa50c4c7c20a2c75f1"
+    },
+    "pci.pcap": {
+      "bytes": 230496,
+      "sha256": "f33570d0549e7579219a4da00fd16eba50d973bae2c851083d24278663eaceb1"
+    }
+  },
+  "finished_utc": "2026-11-02T05:16:06.029207+00:00"
+}

@@ -1,0 +1,26 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Collecting pyftpdlib
+  Downloading pyftpdlib-2.2.0.tar.gz (189 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting pyasynchat (from pyftpdlib)
+  Downloading pyasynchat-1.0.5-py3-none-any.whl.metadata (4.0 kB)
+Collecting pyasyncore (from pyftpdlib)
+  Downloading pyasyncore-1.0.5-py3-none-any.whl.metadata (4.3 kB)
+Downloading pyasynchat-1.0.5-py3-none-any.whl (7.9 kB)
+Downloading pyasyncore-1.0.5-py3-none-any.whl (10 kB)
+Building wheels for collected packages: pyftpdlib
+  Building wheel for pyftpdlib (pyproject.toml): started
+  Building wheel for pyftpdlib (pyproject.toml): finished with status 'done'
+  Created wheel for pyftpdlib: filename=pyftpdlib-2.2.0-py3-none-any.whl size=89456 sha256=48db2368ba689d557f0c258f21bc63e99cb3504bc60e876038f96d3bb2479ce6
+  Stored in directory: /tmp/pip-ephem-wheel-cache-6v3nuo_h/wheels/59/e3/e7/c05b910f1d94f6bc00586a000cd4fc83c4f07e9b34d2404b3d
+Successfully built pyftpdlib
+Installing collected packages: pyasyncore, pyasynchat, pyftpdlib
+Successfully installed pyasynchat-1.0.5 pyasyncore-1.0.5 pyftpdlib-2.2.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: pip install --upgrade pip

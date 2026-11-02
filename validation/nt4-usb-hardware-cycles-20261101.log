@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/usb_ndis_guest.py", line 61, in <module>
+    assert time.monotonic()<deadline,(i,model,len(req),len(rep),matched)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (0, 'usb-rtl8153', 0, 0, 0)

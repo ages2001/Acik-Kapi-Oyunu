@@ -1,0 +1,4 @@
+wrote rltklant.cat (2556 bytes) + rltklant.cer
+  netrtlk.inf            sha1(authenticode/flat)=36f875295425919d48ea0e9e4dceaf7bc8e0f3d8
+  i386/RLTKLANT.SYS      sha1(authenticode/flat)=ebea58223b8de97704edcc35b2436d2f8405867a
+  amd64/RLTKLANT.SYS     sha1(authenticode/flat)=749ec2753867665892a237405310790fb9113033

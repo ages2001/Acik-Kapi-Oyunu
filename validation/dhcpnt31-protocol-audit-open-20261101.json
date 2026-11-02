@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-01T20:45:17.868470+00:00",
+  "status": "OPEN",
+  "scope": "Source audit beyond the earlier successful single-interface DHCP exchange; requires fixes and negative packet tests",
+  "findings": [
+    {
+      "file": "RLTKLANT/DHCPNT31/src/dhcpnt31.c",
+      "function": "find_opt",
+      "problem": "Uses struct capacity instead of received datagram length; reads option length without checking remaining byte and does not bound option data before returning."
+    },
+    {
+      "function": "run",
+      "problem": "Does not verify BOOTREPLY, Ethernet htype/hlen, cookie, chaddr, source port, exact server-id option length or ACK server identity before accepting a lease."
+    },
+    {
+      "function": "run /auto",
+      "problem": "All sockets bind INADDR_ANY and use limited broadcast; no verified per-interface routing for multiple independent networks. /auto ignores per-adapter EnableDHCP selection."
+    }
+  ],
+  "prior_evidence_limit": "Earlier successful single-interface exchange does not cover malformed replies or interface isolation."
+}

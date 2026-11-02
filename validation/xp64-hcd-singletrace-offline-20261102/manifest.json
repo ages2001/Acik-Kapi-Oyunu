@@ -1,0 +1,36 @@
+{
+  "utc": "2026-11-02T08:28:28.570777+00:00",
+  "guest": "xp64-usbnet-hcpower-singletrace-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 525312,
+      "sha256": "746574178357c8ba3a9b76da9bb9d68e9585355fcc86bb2682521bd02704e47c"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    },
+    "RLTTEST/HCPOWER.SYS": {
+      "file": "HCPOWER.SYS",
+      "size": 11433,
+      "sha256": "217ebb498a307eb77ff6581b0d3c63002fa2a134876fcdeccf5769948ae1091f"
+    },
+    "RLTTEST/HCPOWER.EXE": {
+      "file": "HCPOWER.EXE",
+      "size": 11754,
+      "sha256": "5d41ac14ae793f0470039924d248b929472d35f79990742e48010289395c9b93"
+    },
+    "RLTTEST/HPOWER.LOG": {
+      "file": "HPOWER.LOG",
+      "size": 94,
+      "sha256": "e73965f84780d1955542378021a80d41331e327ed105ac1c0b2ce38d046e05a1"
+    },
+    "WINDOWS/SETUPAPI.LOG": {
+      "file": "SETUPAPI.LOG",
+      "size": 399900,
+      "sha256": "b720febe62c9cc556e170b0bd350fbe61ebb2b1db7e42a0abf58afcfc51f8736"
+    }
+  }
+}

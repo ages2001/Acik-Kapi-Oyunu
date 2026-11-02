@@ -1,0 +1,33 @@
+{
+  "result": "PASS",
+  "imports": {
+    "KERNEL32.DLL": [
+      "CloseHandle",
+      "CreateFileA",
+      "ExitProcess",
+      "GetCommandLineA",
+      "GetProcAddress",
+      "GetStdHandle",
+      "LoadLibraryA",
+      "SetFilePointer",
+      "Sleep",
+      "WriteFile"
+    ],
+    "WSOCK32.DLL": [
+      "WSACleanup",
+      "WSAStartup",
+      "closesocket",
+      "htons",
+      "inet_addr",
+      "sendto",
+      "socket"
+    ]
+  },
+  "dynamic_icmp_exports": [
+    "IcmpCreateFile",
+    "IcmpCloseHandle",
+    "IcmpSendEcho"
+  ],
+  "helper_sha256": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b",
+  "scope": "Compared with DLL exports from the actual stopped NT4 installation."
+}

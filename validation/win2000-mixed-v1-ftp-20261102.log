@@ -1,0 +1,14 @@
+[I 2026-11-02 13:54:04] concurrency model: async
+[I 2026-11-02 13:54:04] masquerade (NAT) address: None
+[I 2026-11-02 13:54:04] passive ports: None
+[I 2026-11-02 13:54:04] >>> starting FTP server on 127.0.0.1:2131, pid=374967 <<<
+[I 2026-11-02 13:54:14] 127.0.0.1:50058-[] FTP session opened (connect)
+[I 2026-11-02 13:54:18] 127.0.0.1:50058-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-02 13:54:26] 127.0.0.1:50058-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/MRESET.EXE completed=1 bytes=11814 seconds=0.045
+[I 2026-11-02 13:55:38] 127.0.0.1:50058-[anonymous] FTP session closed (disconnect).
+[I 2026-11-02 14:12:42] 127.0.0.1:53320-[] FTP session opened (connect)
+[I 2026-11-02 14:12:46] 127.0.0.1:53320-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-02 14:12:54] 127.0.0.1:53320-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/MKEY2.EXE completed=1 bytes=12604 seconds=0.017
+[I 2026-11-02 14:13:57] 127.0.0.1:53320-[anonymous] FTP session closed (disconnect).
+[I 2026-11-02 14:15:28] received interrupt signal
+[I 2026-11-02 14:15:28] >>> shutting down FTP server, pid=374967, 1 open socket(s) <<<

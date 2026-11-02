@@ -1,0 +1,1 @@
+PASS: 1000 stalled-engine detections; 63 lifecycle/link/backend exclusion combinations; idle, progress, renewed stall and 32-bit ring-counter wrap

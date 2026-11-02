@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T08:13:51.705354+00:00",
+  "guest": "xp64-usbnet-hcpower-release-8127",
+  "result": "FAIL_REENUMERATION_INIT",
+  "initialization_failures": [
+    "RLTK INIT FAIL st=0xC000009A",
+    "RLTK INIT FAIL st=0xC000009A",
+    "RLTK INIT FAIL st=0xC000009A"
+  ],
+  "power_irp_pairs": 6,
+  "final_network_replies": 4,
+  "collector": "xp64-usbnet-hcpower-release-8127-hcd-release-20261102-controller-power.json",
+  "evidence": "xp64-hcd-release-evidence-20261102/manifest.json",
+  "offline_readback": "xp64-hcd-release-offline-20261102/manifest.json",
+  "limitations": "Controller stop removes/re-enumerates children. Final traffic does not establish traffic after each cycle. No physical ACPI S3 or identity-preserving suspend claim."
+}

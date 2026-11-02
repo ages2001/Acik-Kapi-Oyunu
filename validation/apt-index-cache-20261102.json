@@ -1,0 +1,7 @@
+{
+  "scope": "Rebuildable APT package index cache only. Runtime/toolchain, media, project files and VM chains unchanged. APT may refresh this index on the next package operation.",
+  "source": "/workspace/rltklant-tools/apt/lists/deb.debian.org_debian_dists_trixie_main_binary-amd64_Packages.lz4",
+  "temporary_copy": "/tmp/rltklant-apt-index-backup-20261102/deb.debian.org_debian_dists_trixie_main_binary-amd64_Packages.lz4",
+  "sha256": "31c37ab52e49bc16fd5116607198838519beb0fa5defaa99ad33e1d45666d551",
+  "bytes": 20802454
+}

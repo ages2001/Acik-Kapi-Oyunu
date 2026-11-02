@@ -1,0 +1,55 @@
+# RLTKLANT changelog
+
+## v1.0
+
+Changelog:
+- Development corrections (2026-10-28): correct RTL815x command/config-write
+  register addresses; fail stuck resets; use the RTL8150 stop backend.
+- Run the bundled QEMU-core host tests by default; use Windows-width ULONG
+  in the host shim and the correct QEMU PCI receive callback return type.
+- USB support is still bring-up only; full NDIS USB integration is pending.
+
+
+First release. One driver source, conditionally compiled, for every Realtek
+LAN controller from the NE2000-compatible RTL8029 up to the RTL8127 10GbE,
+across Windows NT 3.1 through XP x64 / Server 2003 x64, plus a separate
+general DHCP client for NT 3.1 (DHCPNT31).
+
+- **PCI / PCIe**: full device-id coverage (22 ids, 10 Mbit through 10 Gbit),
+  including RTL8101E/8102E (`0x8101`) and RTL8139D (`0x8130`); exact chip
+  resolved at run time from the device id and the C+ XID.
+- **USB**: the whole Realtek USB-LAN line - RTL8150 (legacy USB 1.1, own
+  backend), RTL8152B, RTL8153/B/C/D/E, RTL8154/B, RTL8156/B(G), RTL8157 (5G)
+  and RTL8159 (10G) - driven on top of USBNT; routing policy, protocol
+  framing and hot-plug with host unit tests, a QEMU `usb-rtl8153` device
+  model and a driver<->device interop test.
+- **Per-OS packaging**:
+  - `bin/NT31` - NT 3.1 NDIS 3.0 MAC-model driver (`OEMSETUP.INF`).
+  - `bin/NT35x-4` - NT 3.5 / 3.51 / 4.0 NDIS 3.0 miniport (`OEMSETUP.INF`).
+  - `bin/2KXP` - one universal PnP package for Windows 2000 / XP / XP x64 /
+    Server 2003 x64: a single `netrtlk.inf` covering x86 **and** amd64 and
+    both the PCI and USB device ids, the 32-bit driver in `i386\`, the
+    64-bit driver in `amd64\`, and a `rltklant.cat` catalog.
+- **Multi-adapter** on every OS (NDIS 5 PnP; NDIS 3.0 slot-claim bitmap;
+  NT 3.1 shared-pool adapter list), and **MPS/SMP** safe.
+- **Device name** always the exact chip: per-device-id names in the PnP INF,
+  `OID_GEN_VENDOR_DESCRIPTION` at run time everywhere.
+- **DHCPNT31**: standalone general DHCP client for NT 3.1 (any TCP/IP
+  adapter, single or multiple), delivered separately with its own README.
+  - NT 3.1 has no built-in DHCP client, so the NT 3.1 `OEMSETUP.INF` now
+    offers an **"Enable automatic DHCP configuration (DHCPNT31)"** checkbox
+    at adapter setup. Ticking it writes `Parameters\EnableDHCP`, copies
+    `DHCPNT31.EXE` to `System32`, and registers it to run at logon as
+    `DHCPNT31.EXE /auto /apply`. The dialog is best-effort - if it is
+    unavailable or cancelled the adapter still installs and DHCP stays off.
+  - New `DHCPNT31 /auto` mode: discovers each bound adapter's MAC from the
+    registry, so the client needs no MAC on the command line. The RLTKLANT
+    NT 3.1 driver publishes its burned-in MAC as
+    `Services\RLTKLANT\Parameters\DhcpHwAddress` (REG_SZ) at adapter start
+    for `/auto` to read.
+- **On-target validation (headless QEMU)**: the USB data path was proven end
+  to end on **NT 4.0** and **NT 3.51** - USBNT enumerates an emulated Realtek
+  `usb-rtl8153`, RLTKLANT claims it through `\Device\UsbNtDev`, reads the MAC
+  over control transfers, transmits over the bulk pipe, and completes a full
+  **DHCP DISCOVER/OFFER** exchange (lease 10.0.2.15). On **NT 3.1** the PCI
+  path was proven to init the chip, read the MAC and publish `DhcpHwAddress`.

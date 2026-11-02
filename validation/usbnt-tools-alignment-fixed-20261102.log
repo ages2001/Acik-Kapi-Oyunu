@@ -1,0 +1,9 @@
+out/usbntcap.dll: 30208 bytes, imports OK on NT 3.1-4.0
+out/usbmon.exe: 33792 bytes, imports OK on NT 3.1-4.0
+out/usbtree.exe: 57344 bytes, imports OK on NT 3.1-4.0
+out/usbeject.exe: 12800 bytes, imports OK on NT 3.1-4.0
+out/usbinst.exe: 35328 bytes, imports OK on NT 3.1-4.0
+out/wheeltst.exe: 8704 bytes, imports OK on NT 3.1-4.0
+out/usbcam.exe: 47616 bytes, imports OK on NT 3.1-4.0
+out/fstest.exe: 17920 bytes, imports OK on NT 3.1-4.0
+out/inptest.exe: 5632 bytes, imports OK on NT 3.1-4.0

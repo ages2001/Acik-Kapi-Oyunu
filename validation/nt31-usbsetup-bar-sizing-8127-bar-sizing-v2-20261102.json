@@ -1,0 +1,42 @@
+{
+  "guest": "nt31-usbsetup-bar-sizing-8127",
+  "token": "bar-sizing-v2-20261102",
+  "mask": 3,
+  "result": "PASS",
+  "utc": "2026-11-02T00:32:03.351165+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 48609,
+      "end_offset": 60849,
+      "capture_prefix_sha256": "cde187948074b04d80c40a95736db70d7ef58e3f932e79e4f1906505f0c8eb38",
+      "screenshot": "nt31-usbsetup-bar-sizing-8127-bar-sizing-v2-20261102-usb.png",
+      "ocr": "nt31-usbsetup-bar-sizing-8127-bar-sizing-v2-20261102-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "335dc8d1a8e417f5b1ed8ad9fdd1ede0ddd5d94cdc50dd3a164b64740b4f4965"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 9817,
+      "end_offset": 22213,
+      "capture_prefix_sha256": "fe35ccc31b7dd7fd11a3cf9d294657f55417cf1fdcb30c61560a855684927b5e",
+      "screenshot": "nt31-usbsetup-bar-sizing-8127-bar-sizing-v2-20261102-pci.png",
+      "ocr": "nt31-usbsetup-bar-sizing-8127-bar-sizing-v2-20261102-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "b4a7a4556448fa9bd1dce3ed4620a0e5ffc5094050f8e737ceeb5b8eb44c1017"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T00:32:14.830376+00:00"
+}

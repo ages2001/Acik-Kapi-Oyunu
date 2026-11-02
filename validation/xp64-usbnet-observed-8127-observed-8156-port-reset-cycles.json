@@ -1,0 +1,53 @@
+{
+  "guest": "xp64-usbnet-observed-8127",
+  "utc": "2026-11-01T18:47:03.916138+00:00",
+  "scope": "Actual guest internal USB RESET_PORT plus automatic driver recovery; no PnP disable/enable or guest restart; QEMU only",
+  "cycles": [
+    {
+      "guest": "xp64-usbnet-observed-8127",
+      "utc": "2026-11-01T18:46:44.471063+00:00",
+      "token": "observed-8156-portreset01",
+      "report": "TOKEN observed-8156-portreset01\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:02.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        59507
+      ],
+      "reset_trace": "RESETTEST object=00000000\nURB-RX failure NT/USBD C000009D C0007000 \nURB-RX failure NT/USBD C000000D 80000300 \nRESETTEST ioctl=00000000\n",
+      "readiness": {
+        "ready": true,
+        "requests": 4,
+        "matched_replies": 4,
+        "unmatched_requests": 0,
+        "first_reply_seconds": 4.282757573993877,
+        "four_reply_seconds": 6.691355909992126,
+        "timeout_seconds": 60,
+        "scope": "End-to-end timing after helper completion and any requested cable restoration, including guest command dispatch and ping intervals; final guest probe required"
+      },
+      "cable_down_at_reset": false,
+      "elapsed_seconds": 20.711466224995092
+    },
+    {
+      "guest": "xp64-usbnet-observed-8127",
+      "utc": "2026-11-01T18:47:03.908498+00:00",
+      "token": "observed-8156-portreset02",
+      "report": "TOKEN observed-8156-portreset02\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:02.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        48313
+      ],
+      "reset_trace": "RESETTEST object=00000000\nURB-RX failure NT/USBD C000009D C0007000 \nURB-RX failure NT/USBD C000000D 80000300 \nRESETTEST ioctl=00000000\n",
+      "readiness": {
+        "ready": true,
+        "requests": 4,
+        "matched_replies": 4,
+        "unmatched_requests": 0,
+        "first_reply_seconds": 4.313394797994988,
+        "four_reply_seconds": 6.725089507002849,
+        "timeout_seconds": 60,
+        "scope": "End-to-end timing after helper completion and any requested cable restoration, including guest command dispatch and ping intervals; final guest probe required"
+      },
+      "cable_down_at_reset": false,
+      "elapsed_seconds": 19.434410458008642
+    }
+  ]
+}

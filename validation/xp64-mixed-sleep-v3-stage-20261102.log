@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/xp64-usbnet-mixed-sleep-v3-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=5368709120 backing_file=/tmp/rltk-growing-fat-j0ipe5p_/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+16/81920 = 0.02% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1441792
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/xp64-usbnet-mixed-sleep-v3-8127.qcow2",
+  "sha256_before_boot": "2049a9fb88cb211ffe988983199add1fa5ed9900561f13c9b3ed10b5ccfab58e",
+  "files": [
+    {
+      "guest_path": "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-controller-sleep-v3-20261102/amd64.sys",
+      "size": 539648,
+      "sha256": "44a78f6b6ac9e4ab6f82e07e0f1bfe5c9b51332857d095b4d271f49140c56763",
+      "old_size": 539648,
+      "old_sha256": "20b6ea186a86740e3aea741cfc3790b93ce66b39e80baf2f3a6fc2402faa2dca"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

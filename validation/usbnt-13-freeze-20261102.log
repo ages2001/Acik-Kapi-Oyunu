@@ -1,0 +1,32 @@
+{
+  "files": {
+    "legacy": {
+      "size": 434176,
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e"
+    },
+    "i386": {
+      "size": 516096,
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b"
+    },
+    "amd64": {
+      "size": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1"
+    }
+  },
+  "pe_files": 12,
+  "media": 3,
+  "imports": [
+    [
+      "legacy",
+      58
+    ],
+    [
+      "i386",
+      106
+    ],
+    [
+      "amd64",
+      95
+    ]
+  ]
+}

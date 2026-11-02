@@ -1,0 +1,11 @@
+{
+  "guest": "nt31-usbsetup-bar-sizing-8127",
+  "token": "bar-sizing-20261102",
+  "mask": 3,
+  "result": "FAIL",
+  "utc": "2026-11-02T00:31:24.677470+00:00",
+  "paths": [],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "error": "AssertionError('inbox ping receipt summary was not verified: er Ta]\\n\\nns indow Help |\\na\\nmd [~|-\\n\\nlc:\\\\users\\\\default ping -n 4 -1 1472 10.0,2.2\\nPinging host 10.0.2.2 Cunnaned? : 10.0.2.2\\nCHP\\n\\nCMP\\nCMP\\nicMP Echo Reply:TIL 255\\n\\nHest 10-0.2-2 replied to all 4 of the 4ypings\\n\\nlc:\\\\users\\\\default>.\\n\\n')",
+  "finished_utc": "2026-11-02T00:31:30.656747+00:00"
+}

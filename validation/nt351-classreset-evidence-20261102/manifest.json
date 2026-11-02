@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-02T12:48:02.300843+00:00",
+  "guest": "nt351-usbsetup-rtl8139-classreset-8127",
+  "safeoff_screenshot": "nt351-classreset-safeoff-20261102.png",
+  "safeoff_sha256": "472573237d71270cbfd537c07eca38f762c3ccb719282f8577bbbff4ef6da89d",
+  "files": {
+    "debug.log": {
+      "bytes": 3301,
+      "sha256": "440fbec1c9273d9183e00591f3fc1dfd66fb4ed27bb72868fdc38c63390dc6fd"
+    },
+    "serial.log": {
+      "bytes": 12,
+      "sha256": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44"
+    },
+    "qemu.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "launch.json": {
+      "bytes": 1577,
+      "sha256": "f6315c4ea978ec1b197073e85a528bc4052d36d9d325b63be6e69ed58217fb19"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "03c1486637cc15f8fd318e225dca18262736a211876fc597076d758ddadfe827"
+    },
+    "pci.pcap": {
+      "bytes": 7252071,
+      "sha256": "93f949fe131ea2de9b3f7b301623cc0e519cf6adc1eecf7c4887ec569f54fd00"
+    },
+    "usb.pcap": {
+      "bytes": 528,
+      "sha256": "0c38e4d75b480ba462ad5672e2276d7767653abbed66cc9f948d0c8ae6183179"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

@@ -1,0 +1,1 @@
+PASS: 6272 PCI config schedules: sync/pending, short/error, timeout/late/racing cancellation; bounds/IRQL/allocation/function guards; no free before completion

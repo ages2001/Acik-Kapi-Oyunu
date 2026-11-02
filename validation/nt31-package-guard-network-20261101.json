@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-01T15:55:27.367671+00:00",
+  "guest": "nt31-package-guard-slot-8127",
+  "driver": {
+    "utc": "2026-11-01T15:39:41.675512+00:00",
+    "parent": "/workspace/rltklant-vm/run/nt31-firmware-mmio-slot-8127.qcow2",
+    "overlay": "/workspace/rltklant-vm/run/nt31-package-guard-slot-8127.qcow2",
+    "guest_path": "WINNT31/system32/drivers/RLTKLANT.SYS",
+    "old_sha256": "93bb77336d18177fea90726d8f7b5f58bb6df8efd253bb83c5b102e27fbfc6b6",
+    "sha256": "d716ee3cb2cc7ecf592e4addf395641caad8c644fbdc3df2a6058ee3032fb44a",
+    "size": 237056,
+    "scope": "Offline replacement in a fresh child; FAT allocation unchanged; full readback verified"
+  },
+  "matched_1472_byte_echoes": 4,
+  "pcap_sha256": "e8eb5f0dbf912dae79bec9fc53eaf9b8c31adc97f9015fd0c8586fd74f94d2f6",
+  "screenshot": "nt31-package-guard-network-20261101.png",
+  "screenshot_sha256": "b46acf35ae625f744bb670adc2f1e6d66dda750e7fff7bacb311b1e68371cc0d",
+  "http": "Guest screenshot: PASS TCP + public HTTP 200 through proxy, 1358 bytes including headers. Proxy log confirms deb.debian.org/debian/README, 1198 body bytes.",
+  "scope": "IDE/native PCIe RTL8127 with MMIO only. Does not verify direct guest DNS/TLS or physical PHY/MCU execution."
+}

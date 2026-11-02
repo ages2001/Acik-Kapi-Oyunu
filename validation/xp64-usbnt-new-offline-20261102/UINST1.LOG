@@ -1,0 +1,5 @@
+Installing the USB driver (Windows 5.2 SP1, x64)
+  Windows' own drivers: UHCI / OHCI yes, EHCI yes, cameras (usbvideo.sys) yes
+  controllers: EHCI to USBNT (/ehci)
+  usbnt.inf -> C:\WINDOWS\INF\oem4.inf
+  c:\USBTEST\usbntkbd.inf: cannot copy (error 3758096943)

@@ -1,0 +1,10 @@
+{
+  "guest": "win2000-standard-usbnet-nousbd-ehci-8127",
+  "utc": "2026-10-30T06:22:48.214705+00:00",
+  "token": "nousbd-8153-stall07",
+  "report": "TOKEN nousbd-8153-stall07\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:03.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+  "peer": [
+    "127.0.0.1",
+    52835
+  ]
+}

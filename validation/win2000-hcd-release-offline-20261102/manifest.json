@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-02T08:13:27.074414+00:00",
+  "guest": "win2000-standard-usbnet-hcpower-release-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 487424,
+      "sha256": "27ff9b1eb51c7e1cb5b3b49bcd1a3da6cd177c6f4adf44deed8678e5a5e074ee"
+    },
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 555860,
+      "sha256": "69d92dc9dc2567ab814ae39744977338444a7f3bcf06a4cb207d1dcc1bc50418"
+    },
+    "RLTTEST/HCPOWER.SYS": {
+      "file": "HCPOWER.SYS",
+      "size": 12790,
+      "sha256": "0fd1c980f8159a145ea5a40943209d4f76740ab5ca5d4e037394b65f462b9eba"
+    },
+    "RLTTEST/HCPOWER.EXE": {
+      "file": "HCPOWER.EXE",
+      "size": 11761,
+      "sha256": "3214b753e7ce6e59196d1b5024af89ae6e5a94dbbf81d38ddf15c068f3f933aa"
+    },
+    "RLTTEST/HPOWER.LOG": {
+      "file": "HPOWER.LOG",
+      "size": 93,
+      "sha256": "6343ce54e734806d6ca0da3c4045dc7f7c06d4daaaa01b36bf0d10b50158d6eb"
+    }
+  }
+}

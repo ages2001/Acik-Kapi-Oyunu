@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T08:18:05.811956+00:00",
+  "guest": "xp64-usbnet-hcpower-inittrace-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 525312,
+      "sha256": "746574178357c8ba3a9b76da9bb9d68e9585355fcc86bb2682521bd02704e47c"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 612730,
+      "sha256": "b0dc52d9f95c25de829d350cc4b790686439b973caf56c0e5e8c32cb3ecd92a3"
+    },
+    "RLTTEST/HPOWER.LOG": {
+      "file": "HPOWER.LOG",
+      "size": 94,
+      "sha256": "e73965f84780d1955542378021a80d41331e327ed105ac1c0b2ce38d046e05a1"
+    }
+  }
+}

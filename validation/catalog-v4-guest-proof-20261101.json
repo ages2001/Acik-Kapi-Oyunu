@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-01T19:43:29.407443+00:00",
+  "result": "PASS",
+  "scope": "Actual Windows 2000 x86 and XP x64 CryptoAPI/Wintrust APIs; no trust-store changes and no WHQL claim. File hashes are computed by CryptCATAdminCalcHashFromFileHandle and matched through CryptCATGetMemberInfo and its indirect digest.",
+  "files": {
+    "netrtlk.inf": "36f875295425919d48ea0e9e4dceaf7bc8e0f3d8",
+    "i386/RLTKLANT.SYS": "3d7c1dd2024e69195b96f6f37e205f746006f119",
+    "amd64/RLTKLANT.SYS": "69c3bd3f1e2d7f5eddd28d59e8f9c6ea363b14c5"
+  },
+  "negative_control": "Modified INF hash 851fd1c97079a914eb20d47d28629cdc6387989b absent from catalog on both OSes.",
+  "signature_checks": [
+    "Catalog opened and enumerated 3 members",
+    "CryptMsgControl signature PASS",
+    "CryptVerifyCertificateSignatureEx self-signature PASS"
+  ],
+  "catalog_sha256": "1a142c44822d253ca4a5adbf63c24dda1dea16b4ff38d213f9680d2cc6ae634d",
+  "generator_sha256": "45b0c23a1dcd436fa04c413b007b2a84d281261aa75d03710813b5360a073f18",
+  "input_sha256": {
+    "netrtlk.inf": "1f09e506d10e7618e67fd7ec8152e7d0cec785038af0706d651499cf9921d0c8",
+    "i386/RLTKLANT.SYS": "0f5c866ace9ce0b9929448aa961044cc9164068b94539f774c7fa6f0f4388ef4",
+    "amd64/RLTKLANT.SYS": "a0dbd8e0ca52d27c37c11871573c1e9ba71994fbd7d4053a72aa8f1f6bb22078"
+  },
+  "screenshots": {
+    "win2000-catalog-membership-v4-20261101.png": "0a6f0b5c8719aa80915dd6325218c04bf7790b8c28931e1a5377bcd719348e41",
+    "xp64-catalog-membership-v4-20261101.png": "6cc8cdc8a3fb8ce8a22e16be186b141366879c08e07abdcc8b3bf0b22fb6f960"
+  },
+  "historical_failure": "V3 signatures passed, but both PE memberships failed because virtual EOF padding to eight bytes was missing. Initial catalogs also failed Windows decoding. All earlier screenshots retained."
+}

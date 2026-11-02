@@ -1,0 +1,108 @@
+{
+  "guest": "xp64-usbnet-stall-8127",
+  "model": "usb-rtl8153",
+  "rx_stall_injected_before_each_remove": true,
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "utc": "2026-10-29T21:23:33.913746+00:00",
+      "token": "stall-remove-native01",
+      "report": "TOKEN stall-remove-native01\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        34626
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "utc": "2026-10-29T21:23:50.120198+00:00",
+      "token": "stall-remove-native02",
+      "report": "TOKEN stall-remove-native02\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        58310
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "utc": "2026-10-29T21:24:06.354296+00:00",
+      "token": "stall-remove-native03",
+      "report": "TOKEN stall-remove-native03\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        35313
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "utc": "2026-10-29T21:24:22.560342+00:00",
+      "token": "stall-remove-native04",
+      "report": "TOKEN stall-remove-native04\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        43867
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "utc": "2026-10-29T21:24:38.679871+00:00",
+      "token": "stall-remove-native05",
+      "report": "TOKEN stall-remove-native05\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        53515
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "utc": "2026-10-29T21:24:54.893554+00:00",
+      "token": "stall-remove-native06",
+      "report": "TOKEN stall-remove-native06\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        54536
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "utc": "2026-10-29T21:25:11.134370+00:00",
+      "token": "stall-remove-native07",
+      "report": "TOKEN stall-remove-native07\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        42108
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "utc": "2026-10-29T21:25:27.501975+00:00",
+      "token": "stall-remove-native08",
+      "report": "TOKEN stall-remove-native08\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        60583
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "utc": "2026-10-29T21:25:43.042031+00:00",
+      "token": "stall-remove-native09",
+      "report": "TOKEN stall-remove-native09\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        45357
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "utc": "2026-10-29T21:25:58.509285+00:00",
+      "token": "stall-remove-native10",
+      "report": "TOKEN stall-remove-native10\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        46598
+      ]
+    }
+  ]
+}

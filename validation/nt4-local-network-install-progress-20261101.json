@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-01T19:53:17.545860+00:00",
+  "guest": "nt4-ndis-setup-local-8127",
+  "installer_result": "Networking has been installed on this computer. Before the network can be used, the system must be restarted.",
+  "new_adapter": "[2] Realtek PCI/PCIe or USB Ethernet Adapter",
+  "new_adapter_ip_configuration": "DHCP enabled through Microsoft TCP/IP Properties",
+  "source_files": 3290,
+  "source_bytes": 81406549,
+  "package_manifest": "legacy-setup-package-20261101/manifest.json",
+  "screenshot_sha256": "3da60d143d7bfada0453a7ae1bdcbb2fc2b3b540fc914f8657287c0809902239",
+  "pending": "Normal shutdown, cold boot, loaded driver/services and traffic. This progress record alone is not an installation validation pass."
+}

@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/xp64-usbnet-syncrun-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=5368709120 backing_file=/tmp/rltk-growing-fat-bnnt9hjb/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+11/81920 = 0.01% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1114112
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/xp64-usbnet-syncrun-8127.qcow2",
+  "sha256_before_boot": "6b75522bba23049e4ee0c5ea5faeb0bd21c0318283acc2d8943842d20137cc8b",
+  "files": [
+    {
+      "guest_path": "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-sync-rundown-v2-20261102/amd64.sys",
+      "size": 534016,
+      "sha256": "090105c3b37098b10dd326fa64a979903e8232cf4a2c033dad2a5d06e10d01d4",
+      "old_size": 534016,
+      "old_sha256": "1ded9e8d2972efb7f8d92827e6ec83863bb921c08fa73c40109bb71edf06d997"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

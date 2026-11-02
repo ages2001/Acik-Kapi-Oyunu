@@ -1,0 +1,395 @@
+{
+  "utc": "2026-11-01T18:51:06.217356+00:00",
+  "cycles": 24,
+  "matched_replies": 96,
+  "rows": [
+    {
+      "guest": "nt31-usbnet-portrecover-8127",
+      "evidence": "nt31-usbnet-portrecover-8127-usb-cable-traffic-cycles.json",
+      "sha256": "71f8c0155560bcd8e9a629427fe8e20744f25f5c12e63fc764a1921d85506ea0",
+      "fixture": {
+        "utc": "2026-11-01T18:26:25.826586+00:00",
+        "parent": "/workspace/rltklant-vm/run/nt31-usbnet-image-rundown-8127.qcow2",
+        "parent_chain": [
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 3473408,
+                  "filename": "/workspace/rltklant-vm/run/nt31-usbnet-image-rundown-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 3416064,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 419010560,
+            "filename": "/workspace/rltklant-vm/run/nt31-usbnet-image-rundown-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 3416064,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/nt31-usbnet-dma-unload-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/nt31-usbnet-dma-unload-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 3473408,
+                  "filename": "/workspace/rltklant-vm/run/nt31-usbnet-dma-unload-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 3416064,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "backing-filename-format": "qcow2",
+            "virtual-size": 419010560,
+            "filename": "/workspace/rltklant-vm/run/nt31-usbnet-dma-unload-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 3416064,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zlib",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "full-backing-filename": "/workspace/rltklant-vm/run/nt31-usbnet-hwfixed-8127.qcow2",
+            "backing-filename": "/workspace/rltklant-vm/run/nt31-usbnet-hwfixed-8127.qcow2",
+            "dirty-flag": false
+          },
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 52887552,
+                  "filename": "/workspace/rltklant-vm/run/nt31-usbnet-hwfixed-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 52768768,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "virtual-size": 419010560,
+            "filename": "/workspace/rltklant-vm/run/nt31-usbnet-hwfixed-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 52768768,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zstd",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "dirty-flag": false
+          }
+        ],
+        "image": "/workspace/rltklant-vm/run/nt31-usbnet-portrecover-8127.qcow2",
+        "sha256_before_boot": "8532cea7cf8be41cea553aaa317d58148ce83deba98723b568bbe2b245211bd5",
+        "files": [
+          {
+            "guest_path": "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/port-recovery-20261101/ndisnt31.sys",
+            "size": 506368,
+            "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca",
+            "old_size": 505344,
+            "old_sha256": "a5a24ffea2c1c823cb353f4fe0bbbd5e924f3b6a8bf4a82ee3eb8b5b0e4824bc"
+          }
+        ],
+        "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+      },
+      "launch": {
+        "started_at": 1793557612.662248,
+        "command": [
+          "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+          "-machine",
+          "q35",
+          "-cpu",
+          "pentium3",
+          "-m",
+          "128",
+          "-drive",
+          "file=/workspace/rltklant-vm/run/nt31-usbnet-portrecover-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+          "-nic",
+          "none",
+          "-display",
+          "none",
+          "-vga",
+          "cirrus",
+          "-qmp",
+          "unix:/workspace/rltklant-vm/run/nt31-usbnet-portrecover-8127/qmp.sock,server=on,wait=off",
+          "-no-reboot",
+          "-no-shutdown",
+          "-debugcon",
+          "file:/workspace/rltklant-vm/run/nt31-usbnet-portrecover-8127/debug.log",
+          "-serial",
+          "file:/workspace/rltklant-vm/run/nt31-usbnet-portrecover-8127/serial.log",
+          "-device",
+          "usb-ehci,id=ehci",
+          "-netdev",
+          "user,id=n0",
+          "-device",
+          "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+          "-object",
+          "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt31-usbnet-portrecover-8127/usb.pcap",
+          "-global",
+          "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+          "-device",
+          "piix3-ide,id=legacyide",
+          "-device",
+          "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0"
+        ],
+        "qemu_sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a"
+      }
+    },
+    {
+      "guest": "nt351-usbnet-portrecover-8127",
+      "evidence": "nt351-usbnet-portrecover-8127-usb-cable-traffic-cycles.json",
+      "sha256": "24e31430a1a87a37ec6250cf03313af45fd5a705fadac27f21eabc88388f4d61",
+      "fixture": {
+        "utc": "2026-11-01T18:19:38.267000+00:00",
+        "parent": "/workspace/rltklant-vm/run/nt351-usbnet-hardware-8127.qcow2",
+        "parent_chain": [
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 117047296,
+                  "filename": "/workspace/rltklant-vm/run/nt351-usbnet-hardware-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 115306496,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "virtual-size": 418381824,
+            "filename": "/workspace/rltklant-vm/run/nt351-usbnet-hardware-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 115306496,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zstd",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "dirty-flag": false
+          }
+        ],
+        "image": "/workspace/rltklant-vm/run/nt351-usbnet-portrecover-8127.qcow2",
+        "sha256_before_boot": "14131412609eb3d546401e56b4c6ffc9650fa515b0560e9750fb65d7559e7e66",
+        "files": [
+          {
+            "guest_path": "WINNT351/system32/drivers/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/legacy-portrecover-trace-20261101/ndis3.sys",
+            "size": 503183,
+            "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615",
+            "old_size": 502008,
+            "old_sha256": "4cb590ff527589ebbcad6af27436f084a27958f30d5fa2c013a6dd96bebd20f2"
+          }
+        ],
+        "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+      },
+      "launch": {
+        "started_at": 1793557214.9695783,
+        "command": [
+          "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+          "-machine",
+          "q35",
+          "-cpu",
+          "pentium3",
+          "-m",
+          "128",
+          "-drive",
+          "file=/workspace/rltklant-vm/run/nt351-usbnet-portrecover-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+          "-nic",
+          "none",
+          "-display",
+          "none",
+          "-vga",
+          "cirrus",
+          "-qmp",
+          "unix:/workspace/rltklant-vm/run/nt351-usbnet-portrecover-8127/qmp.sock,server=on,wait=off",
+          "-no-reboot",
+          "-no-shutdown",
+          "-debugcon",
+          "file:/workspace/rltklant-vm/run/nt351-usbnet-portrecover-8127/debug.log",
+          "-serial",
+          "file:/workspace/rltklant-vm/run/nt351-usbnet-portrecover-8127/serial.log",
+          "-device",
+          "usb-ehci,id=ehci",
+          "-netdev",
+          "user,id=n0",
+          "-device",
+          "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+          "-object",
+          "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt351-usbnet-portrecover-8127/usb.pcap",
+          "-global",
+          "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+          "-device",
+          "piix3-ide,id=legacyide",
+          "-device",
+          "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0"
+        ],
+        "qemu_sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a"
+      }
+    },
+    {
+      "guest": "nt4-ndis-usbnet-portrecover-8127",
+      "evidence": "nt4-ndis-usbnet-portrecover-8127-usb-cable-traffic-cycles.json",
+      "sha256": "a80adb934bd21dd6e049818fabb01346d1fbefadc6af3b4df53686f7719d400a",
+      "fixture": {
+        "utc": "2026-11-01T18:19:39.191589+00:00",
+        "parent": "/workspace/rltklant-vm/run/nt4-ndis-usbnet-hardware-8127.qcow2",
+        "parent_chain": [
+          {
+            "children": [
+              {
+                "name": "file",
+                "info": {
+                  "children": [],
+                  "virtual-size": 48693248,
+                  "filename": "/workspace/rltklant-vm/run/nt4-ndis-usbnet-hardware-8127.qcow2",
+                  "format": "file",
+                  "actual-size": 48623616,
+                  "format-specific": {
+                    "type": "file",
+                    "data": {}
+                  },
+                  "dirty-flag": false
+                }
+              }
+            ],
+            "virtual-size": 418381824,
+            "filename": "/workspace/rltklant-vm/run/nt4-ndis-usbnet-hardware-8127.qcow2",
+            "cluster-size": 65536,
+            "format": "qcow2",
+            "actual-size": 48623616,
+            "format-specific": {
+              "type": "qcow2",
+              "data": {
+                "compat": "1.1",
+                "compression-type": "zstd",
+                "lazy-refcounts": false,
+                "refcount-bits": 16,
+                "corrupt": false,
+                "extended-l2": false
+              }
+            },
+            "dirty-flag": false
+          }
+        ],
+        "image": "/workspace/rltklant-vm/run/nt4-ndis-usbnet-portrecover-8127.qcow2",
+        "sha256_before_boot": "1609a4348ea392f7718fcaa2bcb605a7e3d9ee42ea48c57ab8e7df9ec373d91e",
+        "files": [
+          {
+            "guest_path": "WINNT4/system32/drivers/RLTKLANT.SYS",
+            "source": "/workspace/rltklant-work/validation/frozen-builds/legacy-portrecover-trace-20261101/ndis3.sys",
+            "size": 503183,
+            "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615",
+            "old_size": 502008,
+            "old_sha256": "4cb590ff527589ebbcad6af27436f084a27958f30d5fa2c013a6dd96bebd20f2"
+          }
+        ],
+        "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+      },
+      "launch": {
+        "started_at": 1793557221.6741893,
+        "command": [
+          "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+          "-machine",
+          "q35",
+          "-cpu",
+          "pentium3",
+          "-m",
+          "128",
+          "-drive",
+          "file=/workspace/rltklant-vm/run/nt4-ndis-usbnet-portrecover-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+          "-nic",
+          "none",
+          "-display",
+          "none",
+          "-vga",
+          "cirrus",
+          "-qmp",
+          "unix:/workspace/rltklant-vm/run/nt4-ndis-usbnet-portrecover-8127/qmp.sock,server=on,wait=off",
+          "-no-reboot",
+          "-no-shutdown",
+          "-debugcon",
+          "file:/workspace/rltklant-vm/run/nt4-ndis-usbnet-portrecover-8127/debug.log",
+          "-serial",
+          "file:/workspace/rltklant-vm/run/nt4-ndis-usbnet-portrecover-8127/serial.log",
+          "-device",
+          "usb-ehci,id=ehci",
+          "-netdev",
+          "user,id=n0",
+          "-device",
+          "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+          "-object",
+          "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt4-ndis-usbnet-portrecover-8127/usb.pcap",
+          "-global",
+          "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+          "-device",
+          "piix3-ide,id=legacyide",
+          "-device",
+          "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0"
+        ],
+        "qemu_sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a"
+      }
+    }
+  ],
+  "scope": "Three legacy IDE guests; four USB protocol models; persistent network adapters; exact staged candidates; no physical silicon certification"
+}

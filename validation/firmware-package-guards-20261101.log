@@ -1,0 +1,69 @@
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8105e-1.fw commands=519 version=
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8106e-1.fw commands=439 version=rtl8106e-1_0.0.1 06/29/12
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8106e-2.fw commands=187 version=rtl8106e-2_0.0.1 04/23/13
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8107e-1.fw commands=218 version=rtl8107e-1_0.0.2 02/26/15
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8107e-2.fw commands=211 version=rtl8107e-2_0.0.2 02/26/15
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8125a-3.fw commands=838 version=rtl8125a-3_0.0.1 08/24/19
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8125b-1.fw commands=2501 version=rtl8125b-1_0.0.2 07/14/20
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8125b-2.fw commands=800 version=rtl8125b-2_0.0.2 07/13/20
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8125bp-2.fw commands=157 version=rtl8125bp-2_0.0.4 12/18/24
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8125cp-1.fw commands=401 version=rtl8125cp-1_0.0.6 01/27/26
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8125d-1.fw commands=4262 version=rtl8125d-1_0.0.7 10/15/24
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8125d-2.fw commands=1669 version=rtl8125d-2_0.0.4 12/10/24
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8125k-1.fw commands=1992 version=rtl8125k-1_0.0.1 11/06/25
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8126a-2.fw commands=7282 version=rtl8126a-2_0.0.2 02/01/24
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8126a-3.fw commands=3279 version=rtl8126a-3_0.0.5 08/30/24
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8127a-1.fw commands=2376 version=rtl8127a-1_0.0.5 05/14/25
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168d-1.fw commands=373 version=
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168d-2.fw commands=331 version=
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168e-1.fw commands=1375 version=
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168e-2.fw commands=980 version=
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168e-3.fw commands=943 version=rtl8168e-3_0.0.4 03/27/12
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168f-1.fw commands=834 version=rtl8168f-1_0.0.5 06/18/12
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168f-2.fw commands=285 version=rtl8168f-2_0.0.4 03/27/12
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168fp-3.fw commands=59 version=rtl8168fp-3_0.0.1 11/16/19
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168g-1.fw commands=1050 version=rtl8168g-1_0.0.3 10/23/12
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168g-2.fw commands=1190 version=rtl8168g-2_0.0.1 02/06/13
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168g-3.fw commands=187 version=rtl8168g-3_0.0.1 04/23/13
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168h-1.fw commands=218 version=rtl8168h-1_0.0.2 02/26/15
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8168h-2.fw commands=211 version=rtl8168h-2_0.0.2 02/26/15
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8402-1.fw commands=431 version=rtl8402-1_0.0.1 10/26/11
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8411-1.fw commands=507 version=rtl8411-1_0.0.3 06/18/12
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl8411-2.fw commands=235 version=rtl8411-2_0.0.1 07/08/13
+VALID /workspace/rltklant-work/validation/../RLTKLANT/src/../firmware/rtl_nic/rtl9151a-1.fw commands=130 version=rtl9151a-1_0.0.1 11/17/25
+PASS: PCI firmware opcodes, branch targets, mode switches, I/O failures, cancellation, budgets and header bounds
+PASS: firmware bus addressing, mode switches, DP restore, valid all-ones data, timeout/removal/cancellation and bounded reset wait
+PASS: 47 PHY dispatch versions, 4845 cancellation boundaries, bounded efuse/readiness errors and raw MMD/page isolation
+PAYLOAD rtl_nic/rtl8168d-2.fw result=0 commands=331 delay=0
+PAYLOAD rtl_nic/rtl8168d-1.fw result=0 commands=373 delay=0
+PAYLOAD rtl_nic/rtl8168e-2.fw result=0 commands=1194 delay=41
+PAYLOAD rtl_nic/rtl8168e-1.fw result=0 commands=1589 delay=41
+PAYLOAD rtl_nic/rtl8168e-3.fw result=0 commands=1647 delay=121
+PAYLOAD rtl_nic/rtl8105e-1.fw result=0 commands=519 delay=0
+PAYLOAD rtl_nic/rtl8402-1.fw result=0 commands=431 delay=0
+PAYLOAD rtl_nic/rtl8106e-1.fw result=0 commands=439 delay=0
+PAYLOAD rtl_nic/rtl8168f-1.fw result=0 commands=1538 delay=121
+PAYLOAD rtl_nic/rtl8168f-2.fw result=0 commands=878 delay=100
+PAYLOAD rtl_nic/rtl8411-1.fw result=0 commands=1211 delay=121
+PAYLOAD rtl_nic/rtl8168g-2.fw result=0 commands=1783 delay=103
+PAYLOAD rtl_nic/rtl8106e-2.fw result=0 commands=780 delay=100
+PAYLOAD rtl_nic/rtl8107e-2.fw result=0 commands=804 delay=103
+PAYLOAD rtl_nic/rtl8168fp-3.fw result=0 commands=59 delay=3
+PAYLOAD rtl_nic/rtl8411-2.fw result=0 commands=828 delay=103
+PAYLOAD rtl_nic/rtl8125a-3.fw result=0 commands=1431 delay=103
+PAYLOAD rtl_nic/rtl8125b-2.fw result=0 commands=1393 delay=103
+PAYLOAD rtl_nic/rtl8126a-2.fw result=0 commands=9654 delay=403
+PAYLOAD rtl_nic/rtl8126a-3.fw result=0 commands=4465 delay=203
+PAYLOAD rtl_nic/rtl8125bp-2.fw result=0 commands=157 delay=3
+PAYLOAD rtl_nic/rtl8125d-1.fw result=0 commands=7820 delay=603
+PAYLOAD rtl_nic/rtl8125d-2.fw result=0 commands=4041 delay=403
+PAYLOAD rtl_nic/rtl8125k-1.fw result=0 commands=4364 delay=403
+PAYLOAD rtl_nic/rtl9151a-1.fw result=0 commands=1316 delay=203
+PAYLOAD rtl_nic/rtl8127a-1.fw result=0 commands=4748 delay=403
+PAYLOAD rtl_nic/rtl8125cp-1.fw result=0 commands=1587 delay=203
+PAYLOAD rtl_nic/rtl8168g-3.fw result=0 commands=780 delay=100
+PAYLOAD rtl_nic/rtl8168h-2.fw result=0 commands=804 delay=103
+PASS: 29 selected real payloads traversed the bounded register transport (MCU execution not modeled)
+Verified 33 payload hashes; 54 primary silicon rows
+PASS: 131072 selector cases; 29 selected/33 embedded payloads; all compiled hashes; fast-Ethernet overrides; unknown XID rejection
+PASS: both kernel wait wrappers, 0..2000 ms, signed 100 ns intervals, zero delay, failure and overflow guards

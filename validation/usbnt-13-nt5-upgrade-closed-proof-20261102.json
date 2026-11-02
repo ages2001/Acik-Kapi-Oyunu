@@ -1,0 +1,239 @@
+{
+  "utc": "2026-11-02T19:00:55.514599+00:00",
+  "result": "PASS_BOUNDED_NT5_UPGRADE_REGRESSION_WITH_RETAINED_FAILURES",
+  "rows": [
+    {
+      "os": "win2000",
+      "guest": "win2000-standard-usbnet-mixed-release13-v2-8127",
+      "result": "PASS_BOUNDED_UPGRADE_AND_RUNTIME",
+      "driver_files": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 516096,
+          "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 557016,
+          "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+        },
+        "SLPDONE.TXT": {
+          "file": "SLPDONE.TXT",
+          "size": 2708,
+          "sha256": "cb420ed7f6b2933c25b4aa1c9edf22e0a5a8daf53adf0528eba1b97376852f98"
+        },
+        "SLPLOG.TXT": {
+          "file": "SLPLOG.TXT",
+          "size": 1993,
+          "sha256": "f367f3091b54dab897769c1760e364ce9bebd9ec9bb3841984bf2a88d646c088"
+        },
+        "KEY.LOG": {
+          "file": "KEY.LOG",
+          "size": 6313,
+          "sha256": "7c69279290be8c850aed9e790b54c8d820c9d4c6a14226ed682ae45efdbe3589"
+        },
+        "NATIVE.LOG": {
+          "file": "NATIVE.LOG",
+          "size": 85149,
+          "sha256": "9d108b8d5f49471df61f19d13155ffccf834c107b770dfb0995906c4f5ab8233"
+        },
+        "USBTREE.EXE": {
+          "file": "USBTREE.EXE",
+          "size": 57344,
+          "sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97"
+        }
+      },
+      "unchanged_network_instance": "DEVICE USB\\VID_0BDA&PID_8153&MI_00\\3&227AC3A4&0&0&01&01&0&00",
+      "retained_pdo": [
+        "0",
+        "1",
+        "8146b410"
+      ],
+      "controller_device_power_pairs": 3,
+      "controller_system_irp_pairs": 3,
+      "removal_during_d3": 1,
+      "mixed_physical_resets": 3,
+      "windows_key_checks": 10,
+      "ordinary_usb_models": 4,
+      "function_power_pairs": 12,
+      "stalled_removals": 4,
+      "port_resets": 4,
+      "carrier_cycles": 4,
+      "full_payload_replies": 108,
+      "storage": "AHCI"
+    },
+    {
+      "os": "xp64",
+      "guest": "xp64-usbnet-mixed-release13-v2-8127",
+      "result": "PASS_BOUNDED_UPGRADE_AND_RUNTIME",
+      "driver_files": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 565248,
+          "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 613306,
+          "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+        },
+        "SLPDONE.TXT": {
+          "file": "SLPDONE.TXT",
+          "size": 2484,
+          "sha256": "40aa0dd747a67d53a3b4da8cb949b2e4e03edb2c9fa5e9b92c48aa2c03679a4f"
+        },
+        "SLPLOG.TXT": {
+          "file": "SLPLOG.TXT",
+          "size": 2077,
+          "sha256": "320e8b2dcadb2c096f9916c984565c95a5ca1e5709fb8a69329000d726d5137b"
+        },
+        "KEY.LOG": {
+          "file": "KEY.LOG",
+          "size": 3902,
+          "sha256": "dc6864a32eff82fd45f18468804e7245635af5ef07467b91c3568ee238278d8f"
+        },
+        "NATIVE.LOG": {
+          "file": "NATIVE.LOG",
+          "size": 65289,
+          "sha256": "1261188283a90f3732fd7baf0dab66525d13577ec5df7436a4c9bd094db778fe"
+        },
+        "USBTREE.EXE": {
+          "file": "USBTREE.EXE",
+          "size": 57344,
+          "sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97"
+        }
+      },
+      "unchanged_network_instance": "DEVICE USB\\VID_0BDA&PID_8153&MI_00\\1&2B53A856&0&0&01&01&0&00",
+      "retained_pdo": [
+        "0",
+        "1",
+        "f3c38d90"
+      ],
+      "controller_device_power_pairs": 3,
+      "controller_system_irp_pairs": 3,
+      "removal_during_d3": 1,
+      "mixed_physical_resets": 3,
+      "windows_key_checks": 10,
+      "ordinary_usb_models": 4,
+      "function_power_pairs": 12,
+      "stalled_removals": 4,
+      "port_resets": 4,
+      "carrier_cycles": 4,
+      "full_payload_replies": 108,
+      "storage": "IDE"
+    }
+  ],
+  "references": {
+    "win2000-release13-v2-offline-20261102/manifest.json": "62078a82bb3e1462036571c1c2402d16e4ed111f079d97a5c1ac001ee7a76906",
+    "win2000-install13-v2-offline-20261102/manifest.json": "fea770ab48b94835525b144120f1a920e196a6c9f74329a9d6fdbbb728dc06ba",
+    "win2000-release13-v2-evidence-20261102/manifest.json": "b10d560f8bf3072630f766008feb37d7e6ec9152710abc922fdc2df02bafcd10",
+    "win2000-release13-v2-evidence-20261102/process-exit.json": "ad5b9ed9174d4ecaa9e22066dc9e076a50a33128940c79c986f3833e3394abea",
+    "win2000-install13-v2-evidence-20261102/manifest.json": "3a3b90b1a81c6e298995ecb4775117733bd07848f8f270d256e2737e2c3a897c",
+    "win2000-install13-v2-evidence-20261102/process-exit.json": "570b6a0f71cf00b4c99ef69fb4368d9b2790e842c0931351f7b151523e8dca1d",
+    "win2000-standard-usbnet-mixed-install13-v2-8127-upgrade-v2-before-20261102.json": "4e63a3dcabf56e6a412a01cb81c2f4233186980259523d35e4e0dd7014b02e9c",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-upgrade-v2-after-20261102.json": "4a8f1069bfc130a449f86b66cb7ef908207a21bfebc6fbb307311dfe214c2b85",
+    "win2000-release13-v2-power-20261102.json": "63bd8ddf10abf549866c45e9205d9fa4be4b61bb12cd3f0f5492c7998f48830f",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-device1.json": "4179e7812805c6b69e64ca32d3019cb60579721534138480008695092c55c19f",
+    "win2000-release13-v2-power-20261102-device1-key.json": "e77cde392ade18362271d5d1dd15ffe1824e671575fbcc6a7212013b91a67de5",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-device2.json": "04756b9703c66c441f4a74ad580cb696977363f1269503dc24dba4d7f7826579",
+    "win2000-release13-v2-power-20261102-device2-key.json": "fb8ded8ff8bcb38284c9c24daf62aba40fadd2528a856ac41f03bee246fc8d16",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-device3.json": "3ebd92f76fe61413b2827c459c07b3b4f388b3ff5abaf72a10541571cea6828a",
+    "win2000-release13-v2-power-20261102-device3-key.json": "77c7df341455df35befaf8499dd798cc5e79163bb3351c2195a24baecac47fbd",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-system1.json": "9ca2e3787901c801bd97b40e9aeb1ae175fd6a57bf811497c5e040a68b653260",
+    "win2000-release13-v2-power-20261102-system1-key.json": "ee94d44e08e3d507a08af3329a13245e91aaebe39cc0b7c90763ed1b9786b6b1",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-system2.json": "15c56d15b5b3f226f4f7a3b3f83ea2e3bcc174e87819a2989b6b469c67220f29",
+    "win2000-release13-v2-power-20261102-system2-key.json": "be9118fb13423d5e4fe2fa28c1bbf0fdd62973addbdfdedac77fcef7d18279d0",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-power-20261102-system3.json": "7615bbef7374f1dc3c74dd343828eb7618f936adb4893e1b8cdc64070b42a5ba",
+    "win2000-release13-v2-power-20261102-system3-key.json": "321f42bedb3ffe4acb622a65285182bee027e1bf774bf317563a2cd249d81b1f",
+    "win2000-release13-v2-reset-20261102.json": "136cf29e6e0233e4c0ae12a06b1c57b8f88dd20b55a131604c10291e8c8bdb56",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-reset-20261102-c1-port-reset-cycles.json": "fb1f6e315b36c84a876a96402a468f72670a5d8a00977a9367a24955eb0e92ba",
+    "win2000-release13-v2-reset-20261102-c1-key.json": "b0d84417caf3769b8b23666a72d5276db97b33762ce3aa1b820eb0d82d815f11",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-reset-20261102-c2-port-reset-cycles.json": "df09ca74ce10db13d19f709f319a4277b65b85422a030a3196555b11999b271a",
+    "win2000-release13-v2-reset-20261102-c2-key.json": "04135e561a3dd48593ed9fb3d1537ec7982f9700abd940693b867407df62d31d",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-win2000-release13-v2-reset-20261102-c3-port-reset-cycles.json": "220e5255e0a17582c3e3e7182735b9fba2d57a640c4a73ca6a323ae64b353909",
+    "win2000-release13-v2-reset-20261102-c3-key.json": "9903474011b8daafd2d6eeb7090ad62695c53a279e8d36deac58ffcfa3e7d67f",
+    "win2000-release13-v2-sleep-remove-20261102-query.json": "344f2f54710d002d6160fae3e20adaa164545fb90381827343dbf78d6c0c18ae",
+    "win2000-release13-v2-sleep-remove-20261102-unplug-down.json": "b229e8c5d7a179964c9c6fed8e96b06610d953519d5eb3444d803febe6d606cd",
+    "win2000-release13-v2-sleep-remove-20261102-unplug-up.json": "a586cf7a6ab7099a0c1076af184be1a0116ab77c223b3257c0269461caa6c39e",
+    "win2000-release13-v2-sleep-remove-20261102-unplug-host.json": "c3125e760eedeacef7d9485e30e1312a07b1fba5c6fbee79088909c735acec56",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-port1-recovery-20261102.json": "28a27147af8b66da329ee8599a6dbf4d042609b977bc254d1bc3a5aeefb54ace",
+    "win2000-release13-v2-port1-recovery-key-20261102.json": "4a2c2e7374fe93b367db880404a0cda260f18e13af5aba344b9cbc039068c77f",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-retirement-matrix.json": "8ffc1ff81147697bc2aa4e448df30f23c9051bbd072ba4f494051965a96b282d",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-native-hotplug.json": "cd8c96b7954aa3d74814b9bda5a655a67bbc374f93d60280b9c391d902216923",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-function-power.json": "1729fa8422bd4e7ada1addfb89854d288af77565abdf480d592442a1fb9c5daf",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-port-reset-cycles.json": "0a036426a3c218e0c487bc52877dd46744a1ccc37126205265cfeac4fe6bc807",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-native-cable.json": "59fb9cbf70e21aa0be59c9b585380d64577ee544e540ea6e6178f4224cc0727a",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-native-hotplug.json": "e5e7c76d0da92043016573d6eb051cb900c85a30c2493b5aac43c86f553011f8",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-function-power.json": "9c0e87b9387bee6346f91a883dbf04ed5cebd10e6e9859386e2de53ec0a082e4",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-port-reset-cycles.json": "850586aca58faac468dc0e14874d2462a075bec54544193e167f03ba59a162b6",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-native-cable.json": "9cc9500a074335612ad69bae24486886671ff77a56022abd4023a99d35076850",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-native-hotplug.json": "1f64c0cae16a1ca2d710a6abd872ec74676db1b7b02ed2d7ca22cf4e05fd237b",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-function-power.json": "98bf4288bafe0a00fc2ffed21583cc8714d8cddf1f179f2781bfe38f962eadc2",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-port-reset-cycles.json": "6a634154d1091856dc908aecf1c2ff350ec8476689654e74bc1d5dc81cac087c",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-native-cable.json": "904444ee95bb4acf42806c542a84ff12d099e2897a49aebc4aa08c2822b4d649",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-native-hotplug.json": "9ef1159c28abfd262bd87502d3ba5ca73e7450d7b43c9845779e310b473ad039",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-function-power.json": "2db8debf7c7df93433a3c0f5634919b657515a7b1012a63a2e98e45ae6295145",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-port-reset-cycles.json": "b1671a407be2ac72f79f8f1d7b938ac303ce1f9549a54a4ed4e48118e56f5e89",
+    "win2000-standard-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-native-cable.json": "f341729142e6f4a32812440a2a4db05a4f6feb0609e36c37325c4747a7fb33a0",
+    "xp64-release13-v2-offline-20261102/manifest.json": "11da2683498d52af13539a5a1ca2e1593298c2d1bf473f6eb5519dd37b80fa07",
+    "xp64-install13-v2-offline-20261102/manifest.json": "602dc229b19fd2dbd85242b6ad97f3455b3defe99545861033b2d042f233ed9e",
+    "xp64-release13-v2-evidence-20261102/manifest.json": "ba10bd942520272dc3867d6e49cb646f1f6c7785c2a25e1494822297fb549243",
+    "xp64-release13-v2-evidence-20261102/process-exit.json": "1f871a0323623e5ae01072033fe98defcf7d291dbb3cff47b21e721f3a0c9ccc",
+    "xp64-install13-v2-evidence-20261102/manifest.json": "88993f6d01cf79e355715bc98f805cdd1dd9cd4e98f0b3d045a72aa2aaaff9c5",
+    "xp64-install13-v2-evidence-20261102/process-exit.json": "e78f09f9880692794b25565622fd1f88a8c6a130a4ab4a6f7793790349c1ea7c",
+    "xp64-install13-v2-native-installer-20261102/manifest.json": "7b3b55c91cfd6c48d06856c7109757ca8b6e8c7daf9c099b34b53302b95c5114",
+    "xp64-usbnet-mixed-install13-v2-8127-upgrade-v2-before-20261102.json": "3afd6ea08c6735d561955999a42127af46b342a8a8fea5c65257d8d0789859ef",
+    "xp64-usbnet-mixed-release13-v2-8127-upgrade-v2-after-20261102.json": "66429cadc2ab64a50f28c3b1f09a0e3d71f8ca43b4f19be7671e0a99f1f00c9a",
+    "xp64-release13-v2-power-20261102.json": "10d585e096f4d8f51b55082b83b99583f35ca972d268a62ab866cf22826e3c14",
+    "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-power-20261102-device1.json": "da8b84835be916b594deb7430f3eae6432166fdec354cc7ac766e745eecb2d58",
+    "xp64-release13-v2-power-20261102-device1-key.json": "06f58e9adfb27362b97fbdad6f10c2fa141b583671c76c49f4963b3a84b0016a",
+    "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-power-20261102-device2.json": "71b7d71fab932274c192c4cad3638bc480fb52d6ab467a463efe22fac442cb4e",
+    "xp64-release13-v2-power-20261102-device2-key.json": "9b96e0504acb4e5e1c8e4236c55417bab77029dd090aaaa3f10e57fe15460136",
+    "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-power-20261102-device3.json": "46d89c24d95da1b4fe34b95faba5afc8afefe78e03d34f14ce354cc6a5c6bb2d",
+    "xp64-release13-v2-power-20261102-device3-key.json": "786b015d6e1f313b0a1eb19aef00af04ab4e871d389ba4d6a728ba5194ac6f59",
+    "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-power-20261102-system1.json": "e3dd7467a022ca4be2a2f262c11dff24afbc12229cae64a7caad8727de2a937f",
+    "xp64-release13-v2-power-20261102-system1-key.json": "b7cd59dda659ac1c2b49c84ba30ad1042b2bf4e282c69de0dc7c617c22d58199",
+    "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-power-20261102-system2.json": "37d812a4b5a3757032eff167a090fb96c01c5a92178296a66050a89cf0253152",
+    "xp64-release13-v2-power-20261102-system2-key.json": "084a82c9ce297ac09bf19ac95fe1efa4fda26810acb33c1127451da414f3d123",
+    "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-power-20261102-system3.json": "22974d546b5fd894df2920953e1fee301b1d50dc7f709ea72512040f5c96ca7b",
+    "xp64-release13-v2-power-20261102-system3-key.json": "3f056a8a2a3b9cf38387afd544e7a63e27217c0d3c9df392305103062aefaa97",
+    "xp64-release13-v2-reset-20261102.json": "8ff807cdca7f04bcc148749aab5a8d5fbf51e12a37ef8b34bb50141cfcaf47b4",
+    "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-reset-20261102-c1-port-reset-cycles.json": "a8f5294a8fcb62eb4228ce125cf7c924252c611565ab536df67fa624ea91352f",
+    "xp64-release13-v2-reset-20261102-c1-key.json": "06f26636f930c721dd4e005c1f2dbdcb0435e0f26163639bca7e402b89dae0b2",
+    "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-reset-20261102-c2-port-reset-cycles.json": "cf8243c8a407f0dd8f88cf141c8f9dc4d12d91bf68d6d9f732a9c1a848a651e3",
+    "xp64-release13-v2-reset-20261102-c2-key.json": "bd6a8e4a350017f3b2d0dd2428186b01c361b4c9254820807e2e125e2f0048ae",
+    "xp64-usbnet-mixed-release13-v2-8127-xp64-release13-v2-reset-20261102-c3-port-reset-cycles.json": "345ec529167e406c633d2efd6bce293bab40fb0c5a6d42b22255604e6bd7f348",
+    "xp64-release13-v2-reset-20261102-c3-key.json": "c3cb8d67ad389d11b2b2c37362fa1ff275fe394610e3aa4dd6d8e6bdc5d37f8a",
+    "xp64-release13-v2-sleep-remove-20261102-query.json": "c657a9006cf7b8c8febaf8eb087cde081c6594251943cd9b4e394347b377f410",
+    "xp64-release13-v2-sleep-remove-20261102-unplug-down.json": "54e3f695b027d408919bfbd91d43cde4f4d299c7bbbf2a511b219746833d78de",
+    "xp64-release13-v2-sleep-remove-20261102-unplug-up.json": "931cbd7318160dbe1bc8ceef21438c0635a25f6ed35eb5db5bed19024b00eda7",
+    "xp64-release13-v2-sleep-remove-20261102-unplug-host.json": "499781f6adde4e2812485eeb706affb1956bb430fb50876b4161fec8b4ef524b",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-port1-recovery-20261102.json": "657a945e7c2774e53f351c4fa8d226151c6343c63f59d51b940bd78af5ce9f11",
+    "xp64-release13-v2-port1-recovery-key-20261102.json": "83cba1bca5b56be099908c57cb56ee41d7aba8a3ba0f8b1fbe859053f37e58a7",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-retirement-matrix.json": "07945b2e878700d49e740db8abcc13f7245db4f63e918d278db7aa2f67410e5e",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-native-hotplug.json": "e84999b4cb9001f49f26b7e29edd98101b82ce3370167d5f71dc86c3316639a2",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-function-power.json": "9bbd5866b27b9652a9025ebe32c131d66e171c8076174e192c06071a09d15b92",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-port-reset-cycles.json": "2c3b8a044415a0612b85f4a3cebf842146d613a8119dd6cfc39deea68e66e022",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8153-native-cable.json": "d06afd577000e9ae96512789190943bec73656c7397fd7b7e08dead8eb13923d",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-native-hotplug.json": "bd78b3459b3fbcc5b7d2945e462bbe0b61328d72ec068ea4326026303ab10bc0",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-function-power.json": "0a59c547650afeaf28b2aafca7f4623c9e986417993960e8a9eef2c58c2b6328",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-port-reset-cycles.json": "c77642618b6aff722133f898c102dafefc220392a49bc18d526dad124d5eddeb",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8156-native-cable.json": "d9d2399eb37a09c9457de7cdde7b18a011028fb9d94604bfe3f1e21fe14b3bb5",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-native-hotplug.json": "46e4e9f4c88306960fe63e3b56ec8e3ce828c2cc6bb0c594a815a6d9b541d155",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-function-power.json": "dcfe5d6e27ac9bfc7025ebf68e3cb49231b8b67f4dd7757981241ac73d7de46e",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-port-reset-cycles.json": "fb9f049279594a406679980dac5a08e731d19b8e2d3918cdab9e16d4e3bcf46f",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8157-native-cable.json": "143a4ac4bfa8f3c2a10dbb7af11cee39a4f06c2f2c9612e14ae6da85c753e52d",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-native-hotplug.json": "ac04962ebce07d0dda364ff1e5fcb21b73c896fc8fb32adf060888d581fdd67f",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-function-power.json": "10cd071e23c5ada94fadce604712204f11b7e8f938ef6c132ee10a2748b28caa",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-port-reset-cycles.json": "1d5d2438113dbc381fe6cee41bad8539da8ffe99a44b42e47ae30d97b29beb92",
+    "xp64-usbnet-mixed-release13-v2-8127-release13-v2-20261102-8159-native-cable.json": "81e4468cecc285e0506b755f1e26f3c0147be83ca0c7c8fde6acaf9fdad3d89c",
+    "release13-upgrade-v1-observations-20261102.json": "51d1b6b2d14fc2de0c0c560048d89e093637e3527ccd90db3f179eed60d58f09",
+    "release13-hotplug-test-events-20261102.json": "94a77c51e2f7cb5c49d2053d299ac3208ba411aab7962cefb3c54e8181f2bbed"
+  },
+  "limits": [
+    "Fictional mixed NIC/HID fixture, not a real Realtek product.",
+    "Injected system-power IRPs, not full platform ACPI S3.",
+    "Same-port reinsertion is verified. A mistaken W2K port-2 attachment required a new binding and is retained as a non-passing separate topology.",
+    "QEMU cannot certify physical silicon, analog PHY or real firmware MCU execution."
+  ]
+}

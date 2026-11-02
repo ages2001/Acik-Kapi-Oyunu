@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-01T19:05:12.880411+00:00",
+  "result": "PASS",
+  "schedules": 832,
+  "sanitizers": [
+    "AddressSanitizer",
+    "UndefinedBehaviorSanitizer"
+  ],
+  "source_sha256": "0816d7c61728449fb880fbf7d3c1c8d6c9127bb10079643103f5ce52b08b531d",
+  "test_sha256": "2ce9b05bffc072b882c39626e1efa9ab98bb7eb53fa633294d2d58724f26e2a2",
+  "scope": "Extracted unchanged production address/service validation and registry transaction; write/query fault injection, original types/absence rollback; guest installation is separate"
+}

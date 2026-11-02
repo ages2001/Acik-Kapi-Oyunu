@@ -1,0 +1,41 @@
+{
+  "utc": "2026-11-02T19:00:41.692396+00:00",
+  "guest": "xp64-usbnet-mixed-release13-v2-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    },
+    "RLTTEST/SLPDONE.TXT": {
+      "file": "SLPDONE.TXT",
+      "size": 2484,
+      "sha256": "40aa0dd747a67d53a3b4da8cb949b2e4e03edb2c9fa5e9b92c48aa2c03679a4f"
+    },
+    "RLTTEST/SLPLOG.TXT": {
+      "file": "SLPLOG.TXT",
+      "size": 2077,
+      "sha256": "320e8b2dcadb2c096f9916c984565c95a5ca1e5709fb8a69329000d726d5137b"
+    },
+    "MIXTEST/KEY.LOG": {
+      "file": "KEY.LOG",
+      "size": 3902,
+      "sha256": "dc6864a32eff82fd45f18468804e7245635af5ef07467b91c3568ee238278d8f"
+    },
+    "RLTTEST/NATIVE.LOG": {
+      "file": "NATIVE.LOG",
+      "size": 65289,
+      "sha256": "1261188283a90f3732fd7baf0dab66525d13577ec5df7436a4c9bd094db778fe"
+    },
+    "WINDOWS/SYSWOW64/USBTREE.EXE": {
+      "file": "USBTREE.EXE",
+      "size": 57344,
+      "sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97"
+    }
+  }
+}

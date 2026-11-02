@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-01T20:17:58.577454+00:00",
+  "result": "PASS",
+  "scope": "Additional-adapter installation into an existing NT4 RLTKLANT software component; not a clean first-driver install or an NT3.x installer result.",
+  "package": "legacy-setup-package-v2-20261101/manifest.json",
+  "copied_utility": "nt4-v2-installed-offline-20261101/manifest.json",
+  "registry": "nt4-v2-installed-registry-20261101.json",
+  "normal_shutdown": "nt4-v2-normal-shutdown-complete-20261101.png",
+  "installed_tool_configuration": "nt4-v2-second-usb-configured-20261101.png",
+  "new_instance": "RLTKLANT3",
+  "new_permanent_mac": "525400abcdee",
+  "note": "The temporary Remove adapter2 confirmation was cancelled. Both original instances were retained; a third was added and configured for USB through the installed utility."
+}

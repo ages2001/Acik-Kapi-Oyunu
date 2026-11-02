@@ -1,0 +1,43 @@
+{
+  "guest": "nt31-usbsetup-syncrun-rtl8117-8127",
+  "token": "syncrun-20261102-c4-cable-up",
+  "mask": 3,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T13:41:33.018237+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 130412,
+      "end_offset": 142652,
+      "capture_prefix_sha256": "1e2984964a82c540c6f8a19ad84d62c7626ee07a68fbc5dcfe9081a9ea40cf11",
+      "screenshot": "nt31-usbsetup-syncrun-rtl8117-8127-syncrun-20261102-c4-cable-up-usb.png",
+      "ocr": "nt31-usbsetup-syncrun-rtl8117-8127-syncrun-20261102-c4-cable-up-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "e184af53ed551862c4f123d1a98b887270d320894d4ea4072fac34f7b21ab283"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 206016,
+      "end_offset": 218256,
+      "capture_prefix_sha256": "81ed3305f87a2030ca19862dddd3e589887c3625f38ee99ac7a105f5845d6b2d",
+      "screenshot": "nt31-usbsetup-syncrun-rtl8117-8127-syncrun-20261102-c4-cable-up-pci.png",
+      "ocr": "nt31-usbsetup-syncrun-rtl8117-8127-syncrun-20261102-c4-cable-up-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "7f1e9a1a77aaa48a587247ecacaff741700bef8a217dabd0b4c9d08bbdadfb99"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T13:41:44.627770+00:00"
+}

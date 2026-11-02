@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "guest": "nt31-usbsetup-rtl8117-8127",
+  "sha256": "3e6e3d0e406850e579692e89c08cc8e6d3ac6c06620f8cfaac3a87d42f5254e2",
+  "tcp_bytes_each_direction": 2097152,
+  "reset_callbacks": 3,
+  "usb_cycles": 4,
+  "usb_payload_replies": 104,
+  "offline": "validation/nt31-rtl8117-offline-corrected-path-20261102/manifest.json",
+  "evidence": "validation/nt31-rtl8117-evidence-20261102/manifest.json",
+  "wire": "nt31-rtl8117-tcp-wire-proof-20261102.json",
+  "matrix": "nt31-usbsetup-rtl8117-8127-rtl8117-usb-20261102-sibling-matrix.json",
+  "scope": "NT3.1 IDE, RTL8117 with DASH, latest NT31 miniport. Actual guest traffic and registered MAC reset callbacks; four USB hot-plug/carrier cycles preserve PCI. Older USBNT binary; no physical silicon claim."
+}

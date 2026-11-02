@@ -1,0 +1,119 @@
+{
+  "guest": "win2000-standard-usbnet-retirement-8127",
+  "utc": "2026-11-02T08:41:23.366739+00:00",
+  "scope": "Observe every USBNT controller recovery before starting another transition.\n\nRequires the --single HCPOWER fixture. Each pair receives its own actual\nSetupAPI/name/problem-code and four full-MTU ICMP checks. Stops on the first\ninitialization failure, so a later successful transition cannot mask it.\nThese are injected controller IRPs, not whole-machine ACPI sleep. Children\ncurrently re-enumerate; success is explicitly limited to that recovery path.\n",
+  "result": "FAIL",
+  "cycles": [
+    {
+      "mode": "device",
+      "cycle": 1,
+      "offset": 152,
+      "result": "PASS",
+      "observed": [
+        {
+          "seconds": 6.956,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 6.956,
+          "line": "HCPTEST D3=00000000"
+        },
+        {
+          "seconds": 7.658,
+          "line": ""
+        },
+        {
+          "seconds": 7.658,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 7.658,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 7.658,
+          "line": ""
+        },
+        {
+          "seconds": 7.658,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 7.658,
+          "line": "HCPTEST D0=00000000"
+        },
+        {
+          "seconds": 8.862,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 8.862,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 8.862,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST D0=00000000\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\n",
+      "report": "win2000-standard-usbnet-retirement-8127-retirement-20261102-device-1.json",
+      "report_sha256": "6fde5d40d0fe5356034f86cde19b2e8e43cd089077fef022bcb2063d96e64e37",
+      "seconds": 21.934
+    },
+    {
+      "mode": "device",
+      "cycle": 2,
+      "offset": 368,
+      "result": "FAIL",
+      "observed": [
+        {
+          "seconds": 6.97,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 6.97,
+          "line": "HCPTEST D3=00000000"
+        },
+        {
+          "seconds": 7.772,
+          "line": ""
+        },
+        {
+          "seconds": 7.772,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 7.772,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 7.772,
+          "line": ""
+        },
+        {
+          "seconds": 7.772,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 7.772,
+          "line": "HCPTEST D0=00000000"
+        },
+        {
+          "seconds": 9.077,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 9.077,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 9.077,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST D0=00000000\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\nRXF\n  filt FOUND\nRXF\nRXF\nRXF\nRXF\nRXF\n"
+    }
+  ],
+  "error": "CalledProcessError(1, ['/workspace/rltklant-tools/venv/bin/python3', '/workspace/rltklant-work/validation/native_report.py', 'win2000-standard-usbnet-retirement-8127', 'retirement-20261102-device-2', 'nprobe5.exe'])",
+  "screenshot": "win2000-standard-usbnet-retirement-8127-retirement-20261102-power-each-screen.png"
+}

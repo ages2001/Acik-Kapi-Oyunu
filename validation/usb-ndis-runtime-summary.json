@@ -1,0 +1,671 @@
+{
+  "recorded_utc": "2026-10-29T18:12:20.806978+00:00",
+  "results": [
+    {
+      "guest": "nt351-usbnet-packets-8127",
+      "driver": {
+        "source": "nt351-current.raw",
+        "target": "ndis3",
+        "sha256": "0465486a6a240d539a98ad16eb894ee86be98f6be668eb4db822eabd71e93f44",
+        "usbnt_sha256": "17a795252baf5f7d632e140a831639bb1808475b30aaacf2aa26049928770c48",
+        "debug_build": true
+      },
+      "qemu_sha256": "70be5d9a95883871f123a6d66e5a6a73d313c82516e603ee73c8a7a9973058fa",
+      "reinsert_cycles": 20,
+      "post_reinsert_echo_replies": 80,
+      "carrier_transitions": 8,
+      "post_carrier_full_mtu_replies": 16,
+      "launch": [
+        "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+        "-machine",
+        "q35",
+        "-cpu",
+        "pentium3",
+        "-m",
+        "128",
+        "-drive",
+        "file=/workspace/rltklant-vm/run/nt351-usbnet-packets-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+        "-nic",
+        "none",
+        "-display",
+        "none",
+        "-vga",
+        "cirrus",
+        "-qmp",
+        "unix:/workspace/rltklant-vm/run/nt351-usbnet-packets-8127/qmp.sock,server=on,wait=off",
+        "-no-reboot",
+        "-no-shutdown",
+        "-debugcon",
+        "file:/workspace/rltklant-vm/run/nt351-usbnet-packets-8127/debug.log",
+        "-serial",
+        "file:/workspace/rltklant-vm/run/nt351-usbnet-packets-8127/serial.log",
+        "-device",
+        "usb-ehci,id=ehci",
+        "-netdev",
+        "user,id=n0",
+        "-device",
+        "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+        "-object",
+        "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt351-usbnet-packets-8127/usb.pcap",
+        "-global",
+        "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+        "-device",
+        "piix3-ide,id=legacyide",
+        "-device",
+        "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0"
+      ],
+      "cycle_evidence": {
+        "guest": "nt351-usbnet-packets-8127",
+        "verified_utc": "2026-10-29T18:05:33.925464+00:00",
+        "results": [
+          {
+            "cycle": 1,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 2,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 3,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 4,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 5,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 6,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 7,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 8,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 9,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 10,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 11,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 12,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 13,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 14,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 15,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 16,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 17,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 18,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 19,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 20,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4
+          }
+        ],
+        "pcap_sha256": "bc21765bd108d06758bbef66091aaf34b3a93045f18ba508ee820b2883c63888",
+        "scope": "Persistent USBNT miniport on emulated hardware; not native USB PDO/PnP or physical-device certification"
+      },
+      "cable_evidence": {
+        "guest": "nt351-usbnet-packets-8127",
+        "verified_utc": "2026-10-29T18:11:13.812185+00:00",
+        "results": [
+          {
+            "cycle": 1,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          },
+          {
+            "cycle": 2,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          },
+          {
+            "cycle": 3,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          },
+          {
+            "cycle": 4,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          }
+        ],
+        "pcap_sha256": "31535e20080d233bdec0d1f15aa2cbe93691efe0bc8de0957f8f07747209aa9f",
+        "scope": "Persistent USBNT miniport on emulated hardware; not native USB PDO/PnP or physical-device certification"
+      }
+    },
+    {
+      "guest": "nt4-ndis-usbnet-packets-8127",
+      "driver": {
+        "source": "nt4-ndis-usbnet-8127.raw",
+        "target": "ndis3",
+        "sha256": "0465486a6a240d539a98ad16eb894ee86be98f6be668eb4db822eabd71e93f44",
+        "debug_build": true
+      },
+      "qemu_sha256": "70be5d9a95883871f123a6d66e5a6a73d313c82516e603ee73c8a7a9973058fa",
+      "reinsert_cycles": 20,
+      "post_reinsert_echo_replies": 80,
+      "carrier_transitions": 8,
+      "post_carrier_full_mtu_replies": 16,
+      "launch": [
+        "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+        "-machine",
+        "q35",
+        "-cpu",
+        "pentium3",
+        "-m",
+        "128",
+        "-drive",
+        "file=/workspace/rltklant-vm/run/nt4-ndis-usbnet-packets-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+        "-nic",
+        "none",
+        "-display",
+        "none",
+        "-vga",
+        "cirrus",
+        "-qmp",
+        "unix:/workspace/rltklant-vm/run/nt4-ndis-usbnet-packets-8127/qmp.sock,server=on,wait=off",
+        "-no-reboot",
+        "-no-shutdown",
+        "-debugcon",
+        "file:/workspace/rltklant-vm/run/nt4-ndis-usbnet-packets-8127/debug.log",
+        "-serial",
+        "file:/workspace/rltklant-vm/run/nt4-ndis-usbnet-packets-8127/serial.log",
+        "-device",
+        "usb-ehci,id=ehci",
+        "-netdev",
+        "user,id=n0",
+        "-device",
+        "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+        "-object",
+        "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt4-ndis-usbnet-packets-8127/usb.pcap",
+        "-global",
+        "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+        "-device",
+        "piix3-ide,id=legacyide",
+        "-device",
+        "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0"
+      ],
+      "cycle_evidence": {
+        "guest": "nt4-ndis-usbnet-packets-8127",
+        "verified_utc": "2026-10-29T18:05:28.436676+00:00",
+        "results": [
+          {
+            "cycle": 1,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 2,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 3,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 4,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 5,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 6,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 7,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 8,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 9,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 10,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 11,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 12,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 13,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 14,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 15,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 16,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 17,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 18,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 19,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 20,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4
+          }
+        ],
+        "pcap_sha256": "cf932e72a7bb527a6e71c5ca5423b9a20125f01cfc3124aeee824d392dff39e1",
+        "scope": "Persistent USBNT miniport on emulated hardware; not native USB PDO/PnP or physical-device certification"
+      },
+      "cable_evidence": {
+        "guest": "nt4-ndis-usbnet-packets-8127",
+        "verified_utc": "2026-10-29T18:11:14.390013+00:00",
+        "results": [
+          {
+            "cycle": 1,
+            "model": "usb-rtl8153",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          },
+          {
+            "cycle": 2,
+            "model": "usb-rtl8156",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          },
+          {
+            "cycle": 3,
+            "model": "usb-rtl8157",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          },
+          {
+            "cycle": 4,
+            "model": "usb-rtl8159",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          }
+        ],
+        "pcap_sha256": "afbadeb00ae24a324410eeb94251a9d8a2504a4c8e37378ee6b99cbf1b836616",
+        "scope": "Persistent USBNT miniport on emulated hardware; not native USB PDO/PnP or physical-device certification"
+      }
+    },
+    {
+      "guest": "nt4-ndis-usbnet-legacyusb-packets-8127",
+      "driver": {
+        "source": "nt4-ndis-usbnet-8127.raw",
+        "target": "ndis3",
+        "sha256": "0465486a6a240d539a98ad16eb894ee86be98f6be668eb4db822eabd71e93f44",
+        "usbnt_sha256": "17a795252baf5f7d632e140a831639bb1808475b30aaacf2aa26049928770c48",
+        "debug_build": true
+      },
+      "qemu_sha256": "70be5d9a95883871f123a6d66e5a6a73d313c82516e603ee73c8a7a9973058fa",
+      "reinsert_cycles": 20,
+      "post_reinsert_echo_replies": 80,
+      "carrier_transitions": 8,
+      "post_carrier_full_mtu_replies": 16,
+      "launch": [
+        "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+        "-machine",
+        "q35",
+        "-cpu",
+        "pentium3",
+        "-m",
+        "128",
+        "-drive",
+        "file=/workspace/rltklant-vm/run/nt4-ndis-usbnet-legacyusb-packets-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+        "-nic",
+        "none",
+        "-display",
+        "none",
+        "-vga",
+        "cirrus",
+        "-qmp",
+        "unix:/workspace/rltklant-vm/run/nt4-ndis-usbnet-legacyusb-packets-8127/qmp.sock,server=on,wait=off",
+        "-no-reboot",
+        "-no-shutdown",
+        "-debugcon",
+        "file:/workspace/rltklant-vm/run/nt4-ndis-usbnet-legacyusb-packets-8127/debug.log",
+        "-serial",
+        "file:/workspace/rltklant-vm/run/nt4-ndis-usbnet-legacyusb-packets-8127/serial.log",
+        "-device",
+        "piix3-usb-uhci,id=uhci",
+        "-netdev",
+        "user,id=n0",
+        "-device",
+        "usb-rtl8150,id=usbnic,bus=uhci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+        "-object",
+        "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt4-ndis-usbnet-legacyusb-packets-8127/usb.pcap",
+        "-global",
+        "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+        "-device",
+        "piix3-ide,id=legacyide",
+        "-device",
+        "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0"
+      ],
+      "cycle_evidence": {
+        "guest": "nt4-ndis-usbnet-legacyusb-packets-8127",
+        "verified_utc": "2026-10-29T18:03:56.097999+00:00",
+        "results": [
+          {
+            "cycle": 1,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 2,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 3,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 4,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 5,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 6,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 7,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 8,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 9,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 10,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 11,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 12,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 13,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 14,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 15,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 16,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 17,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 18,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 19,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          },
+          {
+            "cycle": 20,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4
+          }
+        ],
+        "pcap_sha256": "7458f02b8c031bf0b93721625b03f506b9720809f78dbc7d7dc9a49df28a108b",
+        "scope": "Persistent USBNT miniport on emulated hardware; not native USB PDO/PnP or physical-device certification"
+      },
+      "cable_evidence": {
+        "guest": "nt4-ndis-usbnet-legacyusb-packets-8127",
+        "verified_utc": "2026-10-29T18:10:54.640150+00:00",
+        "results": [
+          {
+            "cycle": 1,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          },
+          {
+            "cycle": 2,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          },
+          {
+            "cycle": 3,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          },
+          {
+            "cycle": 4,
+            "model": "usb-rtl8150",
+            "requests": 4,
+            "matched_replies": 4,
+            "carrier_down_up": true,
+            "payload": 1472
+          }
+        ],
+        "pcap_sha256": "ab905821ac95e789ff3ea6ad6ba4482686197f1db04753c08eb3d3ea598f1d2a",
+        "scope": "Persistent USBNT miniport on emulated hardware; not native USB PDO/PnP or physical-device certification"
+      }
+    }
+  ],
+  "scope": "Configured USBNT NDIS adapter in QEMU, IDE storage. No native USB PDO enumeration, physical PHY/firmware validation or NT3.1 USB coverage."
+}

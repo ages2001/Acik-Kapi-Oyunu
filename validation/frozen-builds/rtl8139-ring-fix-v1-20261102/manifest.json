@@ -1,0 +1,278 @@
+{
+  "utc": "2026-11-02T05:36:09.232394+00:00",
+  "files": {
+    "RLTKLANT/src/macseq.h": {
+      "bytes": 2003,
+      "sha256": "6dbadd84dd86fc00757858d9cc999b32e905ea5b8931746814861467dc2c53b6"
+    },
+    "RLTKLANT/src/native_urb.c": {
+      "bytes": 23890,
+      "sha256": "b8e1f6c04f69233781d0f10965d8a96c5cb2a7dcdc706bc15e2e096861da1bd1"
+    },
+    "RLTKLANT/src/native_urb.h": {
+      "bytes": 821,
+      "sha256": "e3b7bedf891789bd2f81ee9132823da7f48f0419ce6d992b0edb9f5b076ed4a3"
+    },
+    "RLTKLANT/src/lifecycle.c": {
+      "bytes": 6248,
+      "sha256": "d38cf66ab1ca96de9db75d7204cebb95474615317d9a3b3665deef239869a5c4"
+    },
+    "RLTKLANT/src/fwimages.c": {
+      "bytes": 759073,
+      "sha256": "26a040b9588912755bfe9205cbdf2b78a4b88011588261d8047c7ac1c3b4e588"
+    },
+    "RLTKLANT/src/rtlchip.h": {
+      "bytes": 13290,
+      "sha256": "aa75302a95393fb179feabea7cde120d2ef525844c873c1a740890c3a30c8555"
+    },
+    "RLTKLANT/src/hwdetect.c": {
+      "bytes": 3442,
+      "sha256": "3bbc7e649e97180387c9e3873f53155261f56e1475f023db3b82f6dcc78fb169"
+    },
+    "RLTKLANT/src/ndisvendor.h": {
+      "bytes": 582,
+      "sha256": "acd27dba1256a18ba55f152a72d0cb609c1ae2399d98696128729f31e24e5e16"
+    },
+    "RLTKLANT/src/nt31usb.c": {
+      "bytes": 2790,
+      "sha256": "8b4c634f49fcd40f6f37ed05411b3af9cb771a7273c117e2b2a1dea91131a871"
+    },
+    "RLTKLANT/src/rtlrange.h": {
+      "bytes": 546,
+      "sha256": "d73198ad2c95daf7b15ff3dfe6b6a709389158458b84243c64b406bb10086381"
+    },
+    "RLTKLANT/src/phy.c": {
+      "bytes": 3187,
+      "sha256": "d29b7be08d7fbd8d9b0e65056f537e46a1a49a2ece474cf87fbb6a01ae33c6e1"
+    },
+    "RLTKLANT/src/nt31poll.h": {
+      "bytes": 1316,
+      "sha256": "bcfc1655a51ca45b40ac6e386fcbffa14cffdd1229c5a38bd99ed9fd9a2977e9"
+    },
+    "RLTKLANT/src/pci_start.c": {
+      "bytes": 8155,
+      "sha256": "0bf0a65bfb48c96807977396842ec030a7e4e2b59722df0b303aea5bbb2e471c"
+    },
+    "RLTKLANT/src/native_usb.c": {
+      "bytes": 2331,
+      "sha256": "1514cfd4029296ea8ec79a073f96505e676f413a7bdcb53a2167738cfd82fe20"
+    },
+    "RLTKLANT/src/rltkhw.h": {
+      "bytes": 12738,
+      "sha256": "31461184c578f6fc3c7cdab13613d4858dd88c9cbc639ef32f4246a9eb0e0b92"
+    },
+    "RLTKLANT/src/fwimages.h": {
+      "bytes": 410,
+      "sha256": "4ee99b60611e76f946337f2dc807dc29bd6ec5e32cc27d120cce313efe3e53d4"
+    },
+    "RLTKLANT/src/ndisnt31.h": {
+      "bytes": 15298,
+      "sha256": "4c6e9adfa5c4c68d3840add9aa3273dd78bb1a8a0b7f3ae7ab3a1ff145bcc0cc"
+    },
+    "RLTKLANT/src/drvnt31.c": {
+      "bytes": 71190,
+      "sha256": "fe99f6d573da3c423fed9caf7faeff951eabf8215903df879af018479772b4e7"
+    },
+    "RLTKLANT/src/backend_ne2000.c": {
+      "bytes": 8832,
+      "sha256": "85d10d773bec238818643dfd17ea4dad9841e2bbf50058cb0a8456cd32391601"
+    },
+    "RLTKLANT/src/backend_8139.c": {
+      "bytes": 7867,
+      "sha256": "d0218383dc66359e4509907b0d7ee6e01e91cbca7099ff0e4e21a66a3e01f8ef"
+    },
+    "RLTKLANT/src/native_pci.h": {
+      "bytes": 521,
+      "sha256": "b5d4ff8dd748a8f93f2744b41f22a48a653a6991cf94f8a89a2fa70eb6c43592"
+    },
+    "RLTKLANT/src/datapath.c": {
+      "bytes": 10088,
+      "sha256": "f6a1a67d50611f56764f6bd1ef872ec19b8639cc468838516bcf8c22107f1a70"
+    },
+    "RLTKLANT/src/regname.c": {
+      "bytes": 6634,
+      "sha256": "384755499d7f000f7450d0d7770389cd4cecde5f6f6aeb60d3c305045a7c2004"
+    },
+    "RLTKLANT/src/rtlcrt.c": {
+      "bytes": 1034,
+      "sha256": "f46d786e439d0b681ab3cdf64b3ec81049a750906dae1bbdc0f4a6e8bb60c8e8"
+    },
+    "RLTKLANT/src/nt31recovery.h": {
+      "bytes": 6032,
+      "sha256": "59eb63b291c8ca464e153ca85b73168be551bfb797ae620a7e6ae6433c080f87"
+    },
+    "RLTKLANT/src/fwvm.c": {
+      "bytes": 4127,
+      "sha256": "41178fb02bee5c44a81435c3d99ad44858e439bd19b63f9662d3867123032bae"
+    },
+    "RLTKLANT/src/nt31pcimac.h": {
+      "bytes": 5522,
+      "sha256": "46f3e8ac074cfab27da7aeeabee7357f4eaa914da1c66a95732d291830c48b09"
+    },
+    "RLTKLANT/src/physeq.h": {
+      "bytes": 667,
+      "sha256": "70708f126be76ea21d562087967b6f9e11aa632a4a13dd213e1e77205ad74fbe"
+    },
+    "RLTKLANT/src/backend_usb.c": {
+      "bytes": 12042,
+      "sha256": "849fb73628adcae98708b88b38bdbce39ac9f77416a968a7d4b4005515542285"
+    },
+    "RLTKLANT/src/usbqueue.h": {
+      "bytes": 977,
+      "sha256": "41a62c4528ae3267a75e2853c5ab7dafd308778d0f4059abf9930969fab6397c"
+    },
+    "RLTKLANT/src/driver.c": {
+      "bytes": 3782,
+      "sha256": "33daa107149db98e1343c8e02655d78040509f92a45b8fb5dc92533725b29b8d"
+    },
+    "RLTKLANT/src/native_pci.c": {
+      "bytes": 3282,
+      "sha256": "fd0c76624af57480d2bfe3de1ac90ca1568d1b3b4c1bbc3628125a50acd930b1"
+    },
+    "RLTKLANT/src/macseq.c": {
+      "bytes": 15382,
+      "sha256": "f77aaafac99c199c5f7b448a9e7dc6695c22906179bcb22842cc0db6365a4aeb"
+    },
+    "RLTKLANT/src/ndiskit.h": {
+      "bytes": 16162,
+      "sha256": "3a292d4c4de4ed781fa298a252cd60c623c4f8cac11d2fda6f9f879785127765"
+    },
+    "RLTKLANT/src/rxbind.c": {
+      "bytes": 3992,
+      "sha256": "ec10ccacc9d249f3a40082b565a08f0e956f6886767d4abfbf53c83cd2a6f89d"
+    },
+    "RLTKLANT/src/usbntclient.c": {
+      "bytes": 10736,
+      "sha256": "8f02ad59208dc9986a5f6c8c075678aa48aef33eacf4c1277c04c2f4b3e41502"
+    },
+    "RLTKLANT/src/nt31ndisabi.h": {
+      "bytes": 2430,
+      "sha256": "4b2d4d93aa24e1490c847d4f66ba6807ad9efc95822882807960ffa75eba07c5"
+    },
+    "RLTKLANT/src/backend_usb.h": {
+      "bytes": 885,
+      "sha256": "b46abdbeb23153259f30bf0409c2aa6b58084ccd69d4887cecbdf91bd01b8731"
+    },
+    "RLTKLANT/src/physeq.c": {
+      "bytes": 8636,
+      "sha256": "da815ef7b5fb54faafcbb002e5f3b72cf41953ddb5f5d16937a04411041442d8"
+    },
+    "RLTKLANT/src/rltklant.h": {
+      "bytes": 9408,
+      "sha256": "5f3c81a0aa076ade10566c2495d9bea29c26135773ee8fec80474413e4771048"
+    },
+    "RLTKLANT/src/ndismac.h": {
+      "bytes": 532,
+      "sha256": "394770d2eb81146c2a8ca713be95ab5793cb33c3f49e7335f4f41cd293a26363"
+    },
+    "RLTKLANT/src/rltklant.rc": {
+      "bytes": 914,
+      "sha256": "daabc1892e86ff11eafcdc62b7c86ec2eb48f8ed943367cdec2a904246f1d952"
+    },
+    "RLTKLANT/src/fwbus.h": {
+      "bytes": 1005,
+      "sha256": "3d1876f28e16997c227bd7fb498c92e9620a876725f8adfadec3f303e2cfbfa2"
+    },
+    "RLTKLANT/src/nt31usb.h": {
+      "bytes": 711,
+      "sha256": "b089a2fa419114b69f86d77304031aa34e7b236036a8d27beb65614b5d14a849"
+    },
+    "RLTKLANT/src/pcirecovery.c": {
+      "bytes": 3858,
+      "sha256": "eda0e3bd6d4d67b7525cc6eb471a3608e9ab98ab751f7768a2bf43b5858a5f37"
+    },
+    "RLTKLANT/src/backend_cplus.c": {
+      "bytes": 14744,
+      "sha256": "c137992ac13fe9537271911d61eda426204bada1f1f18ba28fcd53d9c58f01aa"
+    },
+    "RLTKLANT/src/fwvm.h": {
+      "bytes": 1334,
+      "sha256": "418bccf06da8091f2317a2f46fa99f659bfd5d4cc6cfd82a3b3afa184f054e11"
+    },
+    "RLTKLANT/src/rtlport.c": {
+      "bytes": 1839,
+      "sha256": "faea77e3d92f12db401e9ee3d4c0a91cd187755251ac09986f48275aed41bae0"
+    },
+    "RLTKLANT/src/fwbus.c": {
+      "bytes": 5654,
+      "sha256": "3f1f87bc12452bfec14c313fd0738a930353287b80950662d716f38810a61862"
+    },
+    "RLTKLANT/src/init.c": {
+      "bytes": 21287,
+      "sha256": "838da8cd3c00b1fc1f0bee56b41079143bc5d121719413b0a423ad1331dd8dcc"
+    },
+    "RLTKLANT/third_party/r8152/COPYING": {
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    "RLTKLANT/third_party/r8152/phy-sequences.inc": {
+      "bytes": 698122,
+      "sha256": "62619f9f00196bdc866bf0d540348324bbb22912a7888a3104ff8014fd07c157"
+    },
+    "RLTKLANT/third_party/r8152/phy-constants.h": {
+      "bytes": 15099,
+      "sha256": "48c7be8a947487be0fe3d436b168ecf6a003dcf3420216c331806ca39d263c5f"
+    },
+    "RLTKLANT/third_party/r8152/PHY-PROVENANCE.json": {
+      "bytes": 24974,
+      "sha256": "9c8f7d5382325ec4eb56aebfbb02ca39a9934d540261976ceb367b74af1f3adc"
+    },
+    "RLTKLANT/third_party/r8152/vendor-r8152.c": {
+      "bytes": 969822,
+      "sha256": "87397a44617a38ed21720cfd4b50f2dbaea263291f94915a18442ca846f7e7ca"
+    },
+    "RLTKLANT/third_party/r8169/PROVENANCE.json": {
+      "bytes": 651,
+      "sha256": "9de294fd4ade156a11fb4dd2b907a3ce5704ffe49270d8467eff332a0e650f8f"
+    },
+    "RLTKLANT/third_party/r8169/COPYING": {
+      "bytes": 17984,
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+    },
+    "RLTKLANT/third_party/r8169/mac-sequences.inc": {
+      "bytes": 53281,
+      "sha256": "3873fcdfc0f2577e3982b92acf58943541cb91a761a4941fd02b2a9d0c92ba89"
+    },
+    "RLTKLANT/third_party/r8169/r8169_main.c": {
+      "bytes": 187674,
+      "sha256": "cb918734e19369d22fd0e65657c0183518f0ba59b57745a74f6a5bbcf56f37cc"
+    },
+    "RLTKLANT/third_party/r8169/MAC-PROVENANCE.json": {
+      "bytes": 16812,
+      "sha256": "fc6a3601a2ff1678200bcb00ba4cd5b33b172316d1f8413652b04c051b896d40"
+    },
+    "RLTKLANT/third_party/r8169/versions.h": {
+      "bytes": 1268,
+      "sha256": "7a1a38b66a8b7bd61e46408028317e1550db4bf699dbf620e7dedf1e7cbd5b0f"
+    },
+    "RLTKLANT/third_party/r8169/mac-constants.h": {
+      "bytes": 10088,
+      "sha256": "ef5ededd2a6010dba5c66140e9d335c6c4e35ba5cbdde956bbaf2c481179c39f"
+    },
+    "RLTKLANT/third_party/r8169/phycompat.h": {
+      "bytes": 2186,
+      "sha256": "c802bc86a18d99f24bc2ba844ebf3bca6a4fab7373da6febaa5af579e6f3bc57"
+    },
+    "RLTKLANT/third_party/r8169/phy_config.c": {
+      "bytes": 40554,
+      "sha256": "5fb4be8fe50e7efc845da2f5ee625afc18fb9694679fd99c66a445ac5ceed13a"
+    },
+    "RLTKLANT/build/ndisnt31/rltklant.sys": {
+      "bytes": 537600,
+      "sha256": "307d4d7931599a77f46fd2d31d6f99e10f37cc19e2955b805e96d594eb8afbaf"
+    },
+    "RLTKLANT/build/ndis3/rltklant.sys": {
+      "bytes": 540269,
+      "sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0"
+    },
+    "RLTKLANT/build/ndis5/rltklant.sys": {
+      "bytes": 555784,
+      "sha256": "475411b4ed2c96009eda0be362a8ac041bed76c2d8dc0866b8b771519464da17"
+    },
+    "RLTKLANT/build/ndis5x64/rltklant.sys": {
+      "bytes": 612079,
+      "sha256": "094c0b99f7f8d470134ccaa445e07a2802bb378e77cbfc2ff6b14a7b383d15b1"
+    }
+  },
+  "scope": "Development candidate: corrected 32 KiB RTL8139 RCR, NT3.1 linear overrun, deferred malformed-RX recovery. Guest verification in progress."
+}

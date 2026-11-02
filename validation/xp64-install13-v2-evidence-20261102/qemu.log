@@ -1,0 +1,14 @@
+qemu-system-x86_64: -no-hpet: warning: -no-hpet is deprecated, use '-machine hpet=off' instead
+usbnt-mixed-test: physical reset 1
+usbnt-mixed-test: physical reset 2
+usbnt-mixed-test: physical reset 3
+usbnt-mixed-test: keyboard up delivered
+usbnt-mixed-test: physical reset 4
+usbnt-mixed-test: physical reset 5
+usbnt-mixed-test: keyboard up delivered
+usbnt-mixed-test: physical reset 6
+usbnt-mixed-test: physical reset 7
+usbnt-mixed-test: keyboard up delivered
+usbnt-mixed-test: physical reset 8
+usbnt-mixed-test: physical reset 9
+usbnt-mixed-test: keyboard up delivered

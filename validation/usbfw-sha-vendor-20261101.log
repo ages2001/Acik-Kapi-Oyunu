@@ -1,0 +1,14 @@
+Verified 2 vendor containers; exact source/payload provenance retained
+PASS: freestanding SHA256 vs OpenSSL; padding/block boundaries, unaligned input, million-a and overlapping output
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-2.fw version=4
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-3.fw version=5
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-4.fw version=6
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153b-2.fw version=9
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153c-1.fw version=14
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156a-2.fw version=11
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156b-2.fw version=13
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156b-2.fw version=15
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb-vendor/rtl8157-vendor-0014.fw version=16
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb-vendor/rtl8159-vendor-0022.fw version=17
+PASS: USB firmware real inputs, 50572 rehashed structural faults/truncations, checksum and unaligned reads
+PASS: freestanding x86/x64 compilation; no runtime imports

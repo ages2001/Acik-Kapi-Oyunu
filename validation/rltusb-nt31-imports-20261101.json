@@ -1,0 +1,20 @@
+{
+  "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+  "size": 12974,
+  "subsystem": [
+    3,
+    10
+  ],
+  "rows": [
+    {
+      "dll": "ADVAPI32.dll",
+      "imports": 6,
+      "reference_sha256": "053a9299976be68535649e35a09d7ff2c3d6ff218b9038424e867e959a90830a"
+    },
+    {
+      "dll": "KERNEL32.dll",
+      "imports": 9,
+      "reference_sha256": "640af46e83aafb1d75f6cd5de9a603fd1a9ac878e51f65586a706f6036ba156f"
+    }
+  ]
+}

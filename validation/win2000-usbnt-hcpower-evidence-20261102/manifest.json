@@ -1,0 +1,33 @@
+{
+  "utc": "2026-11-02T07:47:45.301150+00:00",
+  "guest": "win2000-standard-usbnet-hcpower-v1-8127",
+  "safeoff_screenshot": "win2000-usbnt-hcpower-safeoff-20261102.png",
+  "safeoff_sha256": "0a48d2055d8424eb171f92402d5bfab616993c504ac17896d3edf4a85261425d",
+  "files": {
+    "debug.log": {
+      "bytes": 1185,
+      "sha256": "9e40130dcf6c7419812807134bb6ddcae66d9f65d7f3fd42a483c0312a614dcb"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 93,
+      "sha256": "362d0a13fc98dfbb9371656472334e527e9f9c53e2e37afa7065d84457a28076"
+    },
+    "launch.json": {
+      "bytes": 1399,
+      "sha256": "589a995d417f3acefd16b9295f6a83e1ba5e06b26fe923f853e71a412a76c7ef"
+    },
+    "process-exit.json": {
+      "bytes": 51,
+      "sha256": "8c9c04c0cd78d3c1270f15f690a2d998dbd6bb65f67a10497819eea78e28f716"
+    },
+    "usb.pcap": {
+      "bytes": 68366,
+      "sha256": "097bb7557007d90e0bfb15a3a06e0f3585d1eeb3b3ec27425bf98cba9120cda3"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

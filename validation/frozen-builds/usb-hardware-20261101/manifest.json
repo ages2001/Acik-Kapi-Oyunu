@@ -1,0 +1,30 @@
+{
+  "utc": "2026-11-01T16:36:21.585826+00:00",
+  "images": [
+    {
+      "target": "ndisnt31",
+      "size": 503296,
+      "sha256": "4c440f6fefa7fefac95861ae1994b61d6cedf7236dc06b2630a2c812644e9b77"
+    },
+    {
+      "target": "ndis3",
+      "size": 502008,
+      "sha256": "4cb590ff527589ebbcad6af27436f084a27958f30d5fa2c013a6dd96bebd20f2"
+    },
+    {
+      "target": "ndis5",
+      "size": 514732,
+      "sha256": "b5df28381087e2c942d5269425309e845728a658b6d8d7abafe558df4167e430"
+    },
+    {
+      "target": "ndis5x64",
+      "size": 568893,
+      "sha256": "9071429bc2ab0d526f06a019d209af55b584b1f0cca8a44795df3130cccc708c"
+    },
+    {
+      "target": "usbnt-legacy",
+      "size": 408576,
+      "sha256": "40e31bf691585d43bc3b517e27a174bf1adb26e24d3e6b3351771fc4f86e1c4b"
+    }
+  ]
+}

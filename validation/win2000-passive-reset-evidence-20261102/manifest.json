@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-02T01:17:44.540864+00:00",
+  "guest": "win2000-standard-passivereset-multi-8127",
+  "safeoff_screenshot": "win2000-passivereset-safeoff-20261102.png",
+  "safeoff_sha256": "0a48d2055d8424eb171f92402d5bfab616993c504ac17896d3edf4a85261425d",
+  "files": {
+    "debug.log": {
+      "bytes": 8140,
+      "sha256": "0f3cad1a0942b6b56b58cb1e451e4e6c5fe36cf9d9c3f3cf1cd51632a15cb685"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 93,
+      "sha256": "362d0a13fc98dfbb9371656472334e527e9f9c53e2e37afa7065d84457a28076"
+    },
+    "launch.json": {
+      "bytes": 2732,
+      "sha256": "8815d1e475fe3801450e083ad583079d54a4af6c73a6b0951252191de403caa8"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "9b025c76b4b45ad31a11f232c56fee55187116583d82bdfe9f7eccffd1e274f1"
+    },
+    "pci.pcap": {
+      "bytes": 113857,
+      "sha256": "b708560c78cdc83db6237fb7a54f82c82eda8df9bfddb3d528658de5514b7ee9"
+    }
+  }
+}

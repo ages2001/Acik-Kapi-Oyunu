@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-02T01:23:07.335429+00:00",
+  "guest": "xp64-passivereset-multi-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 576187,
+      "sha256": "1ffb0bbd1c683b2830890b16706f45af4f2018054078da7577ee500d55dfede4"
+    },
+    "RLTTEST/PCRT4.LOG": {
+      "file": "PCRT4.LOG",
+      "size": 22,
+      "sha256": "ff15ca990f96bf906ed1ad511a8059c7e96eaa3550c1fd188a6faa25c9b51e39"
+    },
+    "RLTTEST/PCRT5.LOG": {
+      "file": "PCRT5.LOG",
+      "size": 22,
+      "sha256": "ff15ca990f96bf906ed1ad511a8059c7e96eaa3550c1fd188a6faa25c9b51e39"
+    },
+    "RLTTEST/PCRT6.LOG": {
+      "file": "PCRT6.LOG",
+      "size": 196,
+      "sha256": "d8f16dca54d3bbb30c1fe773cbf48aa153c833c71f60bea01e24a8aa74ce4281"
+    },
+    "RLTTEST/PCIPNP.LOG": {
+      "file": "PCIPNP.LOG",
+      "size": 2151,
+      "sha256": "c130cefe1e1cd77bae3ac66fbc2d1ffa7f27368687ba12bfc24020bbf7d02d38"
+    }
+  }
+}

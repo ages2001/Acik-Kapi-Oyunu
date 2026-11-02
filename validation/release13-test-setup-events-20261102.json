@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T17:54:48.614843+00:00",
+  "events": [
+    {
+      "guest": "nt31-usbsetup-release13-rtl8117-8127",
+      "issue": "Initial matrix omitted --nt31-inbox and called absent C:\\RLTTEST\\LNET.EXE. Guest console confirms command not found; timeout occurred before any USB mutation.",
+      "action": "Preserve the failure; rerun with the fixture-specific inbox ping and full PCAP payload verifier under a new label."
+    },
+    {
+      "guest": "nt351-usbsetup-install13-rtl8139-8127",
+      "issue": "NT3.51 CMD does not expand the modern dynamic %errorlevel% variable; INST13.RC contains the literal token.",
+      "action": "Do not claim installer exit-code verification. Observed Done message and exact installed SYS/tools are separately recorded; reboot/load validation follows."
+    }
+  ],
+  "files": {
+    "nt31-release13-matrix-20261102.log": "82a1b0121525be3c7f415aa1868d4270be46ef66f1356e9232e262dfebe4ab88",
+    "nt31-usbsetup-release13-rtl8117-8127-release13-20261102-sibling-matrix.json": "d10dd8f374ba1bf0ab735ffe1b005ae46d2596390a28f2d2b75b53df8aaf9f2f",
+    "nt31-release13-baseline-failure-inspect-20261102.png": "fd2e152bff94278fbe17bced46ae63ee75664a17ba8689b2990875d553a09dda",
+    "nt351-install13-offline-20261102/INST13.RC": "74e3c4fec71848d254539311ed31e679b9a3fb470980105714c8e6e4fad664d4"
+  }
+}

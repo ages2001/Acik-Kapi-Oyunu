@@ -1,0 +1,10 @@
+{
+  "usb.pcap": "a6b83b493a6c72d72bbeb260ac6edd4c66dc9ba6629e907c6e6caa3c5d9fbeff",
+  "nt31-usb-first-tested-rltklant.sys": "b7760b859525847a1da51a1d9b8865bb43c419a74d412fa92eb5fa30c8ae3327",
+  "debug.log": "69dda05ae4fcb7d491e8a29fa3d7e399c4dee67472bde7930ddd54054e7ec68f",
+  "launch.json": "0e4dc62851cb28100302551c8439aa5d72d60f0aaafb85c5d6493c545ee5df10",
+  "serial.log": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44",
+  "qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "nt31-usbnet-packets-8127-usb-cable-traffic-cycles.json": "15c00f5ac4a3a0002925601bcf565d57d401ce6104b9344598f3c14d155a6116",
+  "nt31-usbnet-packets-8127-usb-traffic-cycles.json": "6ff967d677f4c48e7a42e989c70477e75fab11e5b98277352528998d7f32198f"
+}

@@ -1,0 +1,8 @@
+{
+  "utc": "2026-10-30T06:28:13.925762+00:00",
+  "guest": "nt4-ndis-firmware-slot-8127",
+  "source": "nt4-carrier.raw",
+  "sha256": "97b24feeee7affbb5c27d67ed8998217f1c26bdc143f1b1672ec2aa10088c568",
+  "size": 263900,
+  "scope": "IDE/native PCIe RTL8127; initial PCI PHY firmware integration"
+}

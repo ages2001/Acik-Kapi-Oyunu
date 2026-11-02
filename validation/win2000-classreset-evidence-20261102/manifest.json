@@ -1,0 +1,33 @@
+{
+  "utc": "2026-11-02T12:33:19.927761+00:00",
+  "guest": "win2000-standard-usbnet-classreset-8127",
+  "safeoff_screenshot": "win2000-classreset-safeoff-20261102.png",
+  "safeoff_sha256": "0a48d2055d8424eb171f92402d5bfab616993c504ac17896d3edf4a85261425d",
+  "files": {
+    "debug.log": {
+      "bytes": 1596,
+      "sha256": "b61ef4151ac141e1060f401a3daca5b278fa74124bd3c1e2633316ff6617d578"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 93,
+      "sha256": "362d0a13fc98dfbb9371656472334e527e9f9c53e2e37afa7065d84457a28076"
+    },
+    "launch.json": {
+      "bytes": 1399,
+      "sha256": "c48df72c06d76038bed8272284d2f553010484791c1f2f41e136fba382612d4f"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "c86dbc5b2eabf59fd79b05960025c33dfa4850b54ec99ba87aa60a23a10bc51c"
+    },
+    "usb.pcap": {
+      "bytes": 357533,
+      "sha256": "38f00bc26bbf2f69c7b20b32c2346581fa4d45bd6f5c36cf8a9115db84b5c016"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

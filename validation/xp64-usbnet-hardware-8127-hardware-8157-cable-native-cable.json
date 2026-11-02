@@ -1,0 +1,36 @@
+{
+  "guest": "xp64-usbnet-hardware-8127",
+  "model": "usb-rtl8157",
+  "rx_stall_injected_before_each_remove": false,
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "xp64-usbnet-hardware-8127",
+      "utc": "2026-11-01T17:21:48.388155+00:00",
+      "token": "hardware-8157-cable-cable01",
+      "report": "TOKEN hardware-8157-cable-cable01\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:02.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        35815
+      ],
+      "network_readiness": {
+        "evidence": "carrier cycle; existing IPv4 assignment",
+        "wait_seconds": 7
+      }
+    },
+    {
+      "guest": "xp64-usbnet-hardware-8127",
+      "utc": "2026-11-01T17:22:03.480043+00:00",
+      "token": "hardware-8157-cable-cable02",
+      "report": "TOKEN hardware-8157-cable-cable02\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:02.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        41130
+      ],
+      "network_readiness": {
+        "evidence": "carrier cycle; existing IPv4 assignment",
+        "wait_seconds": 7
+      }
+    }
+  ]
+}

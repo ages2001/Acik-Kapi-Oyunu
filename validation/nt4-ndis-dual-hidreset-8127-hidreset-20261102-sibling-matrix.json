@@ -1,0 +1,408 @@
+{
+  "guest": "nt4-ndis-dual-hidreset-8127",
+  "started_utc": "2026-11-02T10:08:04.056837+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "cycle": 1,
+      "device": "usbnic",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c1-absent.json",
+          "sha256": "a741e8040331ecc26f529a4f8dae26ae2011e82133f9da0ad8966a91ff159974",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c1-reinsert.json",
+          "sha256": "78f45e314831ae2be0ed2d89f11b1faa7f44a4e4bdffb9ab62be90fffab41515",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c1-cable-down.json",
+          "sha256": "97e728c023fc91c448815eb3daeaa3a204191e67f726d393088399e87f7768e0",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c1-cable-up.json",
+          "sha256": "4a18b2d2362e54dbf353edf26aa1f64cf6f86d84755e1948712fee648b424815",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-DOWN id=00000001\n",
+      "reinsert_trace": "UNT-UP id=00000003 pid=00008153 status=00000000\nUNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c1-passed.png",
+        "sha256": "1fda36d2a1e83760df6d7dddbabadcf30e57b23873b81ef0c8c3d04d4d683eff"
+      }
+    },
+    {
+      "cycle": 2,
+      "device": "usbnic",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c2-absent.json",
+          "sha256": "7dfe640aa349ae94168df0b7625d8a06e26f2eb9827506cec416797c611df906",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c2-reinsert.json",
+          "sha256": "29b7814842f9b2d287cfa64bbacc204d0b89248fc70d9c54f6e5ae4510498798",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c2-cable-down.json",
+          "sha256": "436b4430a016ccd3908adc91721ff581588ec3f65b168843ca42d263ca6b4e1c",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c2-cable-up.json",
+          "sha256": "32f3f3dd571675a7debd9780e736b395b07ea4447514575b6d69640bb9031099",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000003 up=00000000 status=C0000001\nUNT-DOWN id=00000003\n",
+      "reinsert_trace": "UNT-UP id=00000004 pid=00008156 status=00000000\nUNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c2-passed.png",
+        "sha256": "680d83d120cf45954a3576a7d1ff8ff4dc679ea4b73045b7b4dbd3dab4bdb5ce"
+      }
+    },
+    {
+      "cycle": 3,
+      "device": "usbnic",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c3-absent.json",
+          "sha256": "592ca95346b52871613b75ac4059a7790e55782d1d088f59f416f7204a18aed1",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c3-reinsert.json",
+          "sha256": "ab23edc1ba402c0f5d5918a634e5862d466fa72cf20b3aaa5f407d854e6aab51",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c3-cable-down.json",
+          "sha256": "56ac49dbd3f2d76a05b7b21caf249d6546bb9baab3cb62596c85afd309f7281a",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c3-cable-up.json",
+          "sha256": "902bad64922437fa33120dbb8e1a435a9e2e895fc5a9aa6de8a9673668318462",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000004 up=00000000 status=C0000001\nUNT-DOWN id=00000004\n",
+      "reinsert_trace": "UNT-UP id=00000005 pid=00008157 status=00000000\nUNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c3-passed.png",
+        "sha256": "b5f52861737a9b5c4a04f4184ef8f90125461bd4d2444c014e6c5313366f81c1"
+      }
+    },
+    {
+      "cycle": 4,
+      "device": "usbnic",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c4-absent.json",
+          "sha256": "48a29d617d3b9a3befc56fa3d5d606f574ce364a3053da190b6bc307b63d7071",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c4-reinsert.json",
+          "sha256": "15b80aa609ab62e63065d3aa0a69b0e078eda01b6de00a02838d71079cf98aeb",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c4-cable-down.json",
+          "sha256": "85446f38bff9f8daa39c0af972b9fcbd0da209589ed4f594f6bdaf896a5f66fb",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c4-cable-up.json",
+          "sha256": "412ed873f8afcdbf002d3e640cab7d575012b46b76e24ce321c7b1f1fa6c1540",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000005 up=00000000 status=C0000001\nUNT-DOWN id=00000005\n",
+      "reinsert_trace": "UNT-UP id=00000006 pid=00008159 status=00000000\nUNT-LINK id=00000006 up=00000000 status=00000000\nUNT-LINK id=00000006 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000006 up=00000000 status=00000000\nUNT-LINK id=00000006 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c4-passed.png",
+        "sha256": "f439b1ce3e7a45fee35cf27339456c265a8621dac12501eab234758a0e784b10"
+      }
+    },
+    {
+      "cycle": 5,
+      "device": "usbnic2",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c5-absent.json",
+          "sha256": "72d15aaa428e368c1d7818b6f0067ec828f090f75345e0f9d49c2b892a4ee394",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c5-reinsert.json",
+          "sha256": "6699699ecb979df06c1285de25d1365dd7cd747f0d95f62340b0bf274e1aa429",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c5-cable-down.json",
+          "sha256": "9dc8e56684b00919512848afa972d72546874e9005f6e9e16aef7e72917ea0ea",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c5-cable-up.json",
+          "sha256": "7d07f34c25210b33e157dfa58be5b434e987d6c6079e560e008eff4b71c28bfb",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000002 up=00000000 status=C0000001\nUNT-DOWN id=00000002\n",
+      "reinsert_trace": "UNT-UP id=00000007 pid=00008159 status=00000000\nUNT-LINK id=00000007 up=00000000 status=00000000\nUNT-LINK id=00000007 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000007 up=00000000 status=00000000\nUNT-LINK id=00000007 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c5-passed.png",
+        "sha256": "440d20f20db811ba5bbd3ac43cf8bfd70c7b2bd97c16258afec9d28562b88bc0"
+      }
+    },
+    {
+      "cycle": 6,
+      "device": "usbnic2",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c6-absent.json",
+          "sha256": "eda1258042c311dbdfa2877c244d4fdd76fe02e03837aef93f79e4598736b949",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c6-reinsert.json",
+          "sha256": "4c6f1363d1fa2baa463d60091e77e4d6d41ead635227ce7cae868cbcdbaf4085",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c6-cable-down.json",
+          "sha256": "9abeac0635802ae8007fc025205d36ea6e528fbf7cdc15a853978e5278ba5016",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c6-cable-up.json",
+          "sha256": "36ec58f6b0b25d679c9fec78ba7506a95a9b3114294abcae80f3dfb777f077b2",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000007 up=00000000 status=C0000001\nUNT-DOWN id=00000007\n",
+      "reinsert_trace": "UNT-UP id=00000008 pid=00008157 status=00000000\nUNT-LINK id=00000008 up=00000000 status=00000000\nUNT-LINK id=00000008 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000008 up=00000000 status=00000000\nUNT-LINK id=00000008 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c6-passed.png",
+        "sha256": "3a9a8a736e372cf6a25a738704d128fd98c4821f46d9155e03f0a43c46d15eb1"
+      }
+    },
+    {
+      "cycle": 7,
+      "device": "usbnic2",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c7-absent.json",
+          "sha256": "b654b77f09f506de616401a4451b7340206191477880dbba510713e6d5f10a0d",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c7-reinsert.json",
+          "sha256": "6489b2e9da45a0e35af808e504d66619c1f2146dd613aac6a3d8c7ae3d1603fe",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c7-cable-down.json",
+          "sha256": "38287243e17289089858777d8fc8aa2b4e1b9f29964cb9bd7d23bab715bffd17",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c7-cable-up.json",
+          "sha256": "a4f489fdef11c9d969d3e9b5be2099ae2a9b79ce832575447e10c3a1e975daed",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000008 up=00000000 status=C0000001\nUNT-DOWN id=00000008\n",
+      "reinsert_trace": "UNT-UP id=00000009 pid=00008156 status=00000000\nUNT-LINK id=00000009 up=00000000 status=00000000\nUNT-LINK id=00000009 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000009 up=00000000 status=00000000\nUNT-LINK id=00000009 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c7-passed.png",
+        "sha256": "0ed1f70ea3d091526ea6a923fe19c56fa344494fd3e89af03dc7ffab1e51493c"
+      }
+    },
+    {
+      "cycle": 8,
+      "device": "usbnic2",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c8-absent.json",
+          "sha256": "05fe65c6af4ecea7a56242dc3b24aea0fa6adef1413fd14806f2da9f57bf5d12",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c8-reinsert.json",
+          "sha256": "6d01a41269b2721fe7325879e5bbc620baca8d9c4c75c99b415b7c1151f05ba3",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c8-cable-down.json",
+          "sha256": "04620321da7f8501155585e1fdf677f29a5a122dbb6666819441506052a52d5b",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c8-cable-up.json",
+          "sha256": "d68de0f02d8dada84c3f92dedcb75f48e6b6271a12968697e54d15589b83e1e4",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000009 up=00000000 status=C0000001\nUNT-DOWN id=00000009\n",
+      "reinsert_trace": "UNT-UP id=0000000A pid=00008153 status=00000000\nUNT-LINK id=0000000A up=00000000 status=00000000\nUNT-LINK id=0000000A up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=0000000A up=00000000 status=00000000\nUNT-LINK id=0000000A up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-c8-passed.png",
+        "sha256": "562adf01520d00776440aaf4ffb3d1221744d1563fcbd3ff8484787de6f6f1ed"
+      }
+    }
+  ],
+  "scope": "Legacy persistent USBNT adapters in QEMU, two EHCI siblings plus native PCI/PCIe adapter recorded in the launch manifest; actual guest payload comparisons, not physical-silicon validation",
+  "tools_sha256": {
+    "legacy_network_probe.c": "4b02046a9015753235bf06f90fe27ce612c2f492afc991dbc16997ba910194e9",
+    "LNET.EXE": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b",
+    "legacy_network_report.py": "0efc3ba390915115448fc267ef516167d2c5dfaa3d138ed8a7ef58d00c7c2bf2",
+    "legacy_sibling_cycles.py": "07f5ed93b85e35cbe54635b620bf3fd3fbca44d6e4bdfd9aace690aa33ec9673"
+  },
+  "launch": {
+    "started_at": 1793613873.217915,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/nt4-ndis-dual-hidreset-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/nt4-ndis-dual-hidreset-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/nt4-ndis-dual-hidreset-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/nt4-ndis-dual-hidreset-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt4-ndis-dual-hidreset-8127/usb.pcap",
+      "-netdev",
+      "user,id=n1,net=10.0.4.0/24",
+      "-device",
+      "usb-rtl8156,id=usbnic2,bus=ehci.0,netdev=n1,mac=52:54:00:ab:cd:ee",
+      "-object",
+      "filter-dump,id=f1,netdev=n1,file=/workspace/rltklant-vm/run/nt4-ndis-dual-hidreset-8127/usb2.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0",
+      "-netdev",
+      "user,id=pci0,net=10.0.3.0/24",
+      "-device",
+      "rtl8127,id=pcinic,netdev=pci0",
+      "-object",
+      "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/nt4-ndis-dual-hidreset-8127/pci.pcap"
+    ],
+    "qemu_sha256": "8de6bf9206c04b049be0f3b5692d535207143f8c99ee9c3d5825ae64b8d8e6b5"
+  },
+  "baseline": {
+    "file": "nt4-ndis-dual-hidreset-8127-hidreset-20261102-baseline.json",
+    "sha256": "a09b7a295f736d39f72edd4ac3ccf8469bf9c557ffa225688915e2fda339427d",
+    "mask": 7,
+    "full_payload_replies": 12
+  },
+  "qmp_status": {
+    "status": "running",
+    "singlestep": false,
+    "running": true
+  },
+  "full_payload_replies": 332,
+  "pcaps": {
+    "usb.pcap": {
+      "bytes": 335396,
+      "sha256": "7d38d828d60b2be09963134ad9255244e6125314ab4700e68e1ddaac482f5000"
+    },
+    "usb2.pcap": {
+      "bytes": 332333,
+      "sha256": "f61d1bbe5f073ccb37adde95db64f2bb6925126c2154e07025521d685dcb55ee"
+    },
+    "pci.pcap": {
+      "bytes": 444479,
+      "sha256": "2db2072b5df59d3cdb25b750515e2f2808495e174eb21436f9d94b7badf0860e"
+    }
+  },
+  "finished_utc": "2026-11-02T10:13:32.954360+00:00"
+}

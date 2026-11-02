@@ -1,0 +1,35 @@
+{
+  "captured_utc": "2026-10-29T18:14:48.019168+00:00",
+  "records": [
+    {
+      "guest": "nt351-usbnet-packets-8127",
+      "clean_shutdown": "Safe-to-turn-off screenshot inspected before QMP quit",
+      "files": {
+        "usb.pcap": "b1fe57e0b4f2890df691d0dd258bd8b1965af867b40510c1d9c28365db795725",
+        "debug.log": "31a0b5fe96eb0af419be6909c0cac2099c1abc1d156bf4cd636e48908170db1f",
+        "launch.json": "a06e802b82f1ea0d3e3754df9bc8a151e27d3d0691f88ca9ed949fc12cbefdca",
+        "qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "guest": "nt4-ndis-usbnet-packets-8127",
+      "clean_shutdown": "Safe-to-turn-off screenshot inspected before QMP quit",
+      "files": {
+        "usb.pcap": "66ed2bf9e162715935255be28d73dcb167a2891e3344aca2a3f930010a22abe5",
+        "debug.log": "1845b825ba47fe8d2a9fba6998f1061861688982c50c2ed72c8b6d96b549ee2e",
+        "launch.json": "31511d41aa4f5fe8352d3fe4e2baaec249f282d5234736e21c6f11080acad2e5",
+        "qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "guest": "nt4-ndis-usbnet-legacyusb-packets-8127",
+      "clean_shutdown": "Safe-to-turn-off screenshot inspected before QMP quit",
+      "files": {
+        "usb.pcap": "1677d2c9ece66630953519e0332756074b461e9c4bdf3a652442938f6aab33eb",
+        "debug.log": "e3b5d740a77c11882edef2527d51f2f56fbf7d73b286595e4fa685d0059e90f0",
+        "launch.json": "28a7257051db584f4c0453a3fac754a1180c23263db678d9aa3d5862528a33a8",
+        "qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ]
+}

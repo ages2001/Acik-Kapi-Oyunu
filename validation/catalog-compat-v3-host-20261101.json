@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-01T19:32:39.424026+00:00",
+  "catalog_sha256": "f0013ee6aa42baa7a1dba5a0e6694b2b94b7540f52fb75e89e70c731def7882c",
+  "generator_sha256": "de90cf0ffce302b1e29b698f5987c0c192cd61c706f9bc5e6a60989da59ac43e",
+  "checks": [
+    "explicit typed PKCS7 content",
+    "SET member attributes",
+    "legacy catalogue member OID",
+    "three UTF16/NUL member digests",
+    "typed content-octet digest",
+    "RSA/SHA1 certificate self-signature",
+    "RSA/SHA1 message signature"
+  ],
+  "result": "PASS",
+  "scope": "Host structure/cryptographic verification; Windows APIs are a separate test"
+}

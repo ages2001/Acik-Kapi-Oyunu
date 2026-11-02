@@ -1,0 +1,12 @@
+[
+  {
+    "screenshot": "win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-system-1-notice0.png",
+    "ocr": "& KE)\n\n\u2018You have unplugged ar ejected a device without stopping it\nUnplugging or ejecting devices without fist stopping them can\nten cause your computer to crash and ose valuable data\n\nTo safely unplug or eject any ofthe folowing devices, fist use the Hardware\nwizard in the Contral Panel ta stop the device.\n\n[BG Restek RTLETS3 USB Gigabit Ethemet (tev 5C10)\n\nIt you frequently need to unplug this device, Windows can give you an icon\nton the taskbar to quickly unplug or eject your device. Ifyou would ke to use\nthis option, check the fllowing\n\n7 Show Unplug/Eject icon on the taskbar\n\ny\n,) 2:01em\n\nae\n\nMstart||| (2/] @ Sy || Found new Her.\n\n",
+    "dismissed": true
+  },
+  {
+    "screenshot": "win2000-standard-usbnet-retirement-8127-retirement-v2-20261102-system-1-notice1.png",
+    "ocr": "I\n\nMy Documents\n\nWINNT) System32\\cmd.exe - c:\\rlttest\\hcpower.exe /s\n\nUSB DEVICES 1 PROBLEMS @ ICHP_REPLIES 4 PavLOaD 1472\n\n:\\de:\\plttest\\hepouer.exe > \u00a2:\\rlttest\\hpover.log\n\n2\\do:\\r1ttest\\nprobed .exe retirement-v2-20261182-device-2\nTOKEN ret irement\u2014v2-20261102-device-2\n\nDEVICE USB\\UID_GBDA&PID_8153\\a001-A000:00:03.0-1\n\nNAME Realtek RTL8153 USB Gigabit Ethernet Crev 5C1@>\nPROBLEM @ STATUS 25190410 CM a\n\nUSB DEVICES 1 PROBLEMS @ ICHP_REPLIES 4 payLoa 1472\n\n:\\de:\\plttest\\hepouer.exe > \u00a2:\\rlttest\\hpover.log\n\n:\\e:\\r1ttest\\nprobeS .exe retirement\u2014v2-20261182\u2014device-3\nTOKEN ret irenent\u2014v2-20261102-device\u20143\n\nDEVICE USB\\UID_GBDA&PID_8153\\a001-A000:00:03.0-1\n\nNAME Realtek RTL8153 USB Gigabit Ethernet Crev 5C1@>\nPROBLEM @ STATUS 25190410 CM a\n\nUSB DEVICES 1 PROBLEMS @ ICHP_REPLIES 4 PayLoaD 1472\n\n:\\de:\\plttest\\hepouer.exe /s > \u00a2:\\r1ttest\\hpower.log\n\n",
+    "dismissed": false
+  }
+]

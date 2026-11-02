@@ -1,0 +1,97 @@
+{
+  "guest": "xp64-usbnet-retirement-8127",
+  "utc": "2026-11-02T08:48:44.384630+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8153-native-hotplug.json",
+        "sha256": "bd2932e1d9fbae42c510e1df458df677f732195d5faee67474e74dff8bb6d472"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8153-function-power.json",
+        "sha256": "64172d7492711ad13e9726e7f0c046632e0336b26024d0900a1ec1d021e2e66c"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8153-port-reset-cycles.json",
+        "sha256": "25fe1144777c64a55cd26f86a25db6633bf0e67e6c3dd6bb2e97f2a3c87f766f"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8153-native-cable.json",
+        "sha256": "2304a959377ecd0651da3b194321c20ca6b087321f0567d56fadd8d5f846cee5"
+      },
+      "seconds": 76.0
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8156-native-hotplug.json",
+        "sha256": "a41ec1e8b63bb49c471a62e4b8ae2d1c1ca423faca6b04174e4bbe9aaf8a6463"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8156-function-power.json",
+        "sha256": "04872cb4cc1670b7cc0dd0f1774053e22dce7382dcdd00c9e358cfc07df0976e"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8156-port-reset-cycles.json",
+        "sha256": "dde7c4e7921cb5b51c2272f1198d2062418af040f61b3b66ef3391096d5a7011"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8156-native-cable.json",
+        "sha256": "4729103db8407db0a81ec6fb36edad590abc82bb29c45e059296b68d49fc1cc7"
+      },
+      "seconds": 79.49
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8157-native-hotplug.json",
+        "sha256": "2f2d2dc91ba0dad1fa496c43a42958e0fa9a4623e5eec212bd7c4d6885f48b52"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8157-function-power.json",
+        "sha256": "070e8fcf88738c5bc01056fd9d684fe2223487277bbd381b4b1c5d8498c677f2"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8157-port-reset-cycles.json",
+        "sha256": "ce90945d759693b18f91461b8a74986b48f08b3e472bda882b75b11cdd6130b0"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8157-native-cable.json",
+        "sha256": "dad71a58ccaa2d77415a2cfbf43f552d8f2e2ea603686e0bf9fa0832fbcd4a64"
+      },
+      "seconds": 90.98
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8159-native-hotplug.json",
+        "sha256": "adf302378056b03e608ebf17e75e7513b703bb255d161a07f5ef31beb9b6b6f3"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8159-function-power.json",
+        "sha256": "544d678a31e5ea9e4aaa1f3b995278304b189ed5d6024b1be2b72e69c52a7644"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8159-port-reset-cycles.json",
+        "sha256": "5aa0b3b2bdde43cbcac40203edad9047a9f69f1e0a159e62366942cb3212f3dd"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-retirement-8127-retirement-20261102-8159-native-cable.json",
+        "sha256": "03c12d2a82d592b689e2a38e784ee4354781b6cf631d93e123d183f9d84e1e00"
+      },
+      "seconds": 104.57
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

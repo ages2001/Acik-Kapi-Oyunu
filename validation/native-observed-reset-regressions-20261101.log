@@ -1,0 +1,19 @@
+PASS: native URB 200 inline/error/timeout/stop schedules plus 100 independent indefinite RX/control lanes, submission barrier, competing request rejection and complete-before-free ownership
+PASS: 20000 concurrent RX buffers, 12287 copied intact, 1000 carrier epochs, production miniport reset, bounds/full/stop checks
+PASS: 27 clear/reset fault combinations, control-before-DATA0 ordering, no false success or halt clearing, abort and invalid handles
+PASS: native RESET_PIPE ABI request, original TX failure preserved, no ambiguous frame resend, no bulk reset for control stalls
+PASS: production SELECT_CONFIGURATION variable pipe bounds, zero initialization, descriptor metadata and allocation failures
+PASS: 16 receive recovery schedules; cancelled/stalled pipe ACK clears fault without RX traffic; failed reset and stopping never publish recovery
+PASS: 1100 production pipe reconfiguration schedules; identity/allocation/submit/shape/handle/stop failures never publish partial handles; carrier gated; no old frame replay
+In file included from /workspace/rltklant-work/validation/lifecycle/test_usb_backend.c:61:
+/workspace/rltklant-work/validation/lifecycle/../../RLTKLANT/src/backend_usb.c: In function ‘RtlUsbService’:
+/workspace/rltklant-work/validation/lifecycle/../../RLTKLANT/src/backend_usb.c:195:13: error: implicit declaration of function ‘RtlNativeSetCarrier’; did you mean ‘RtlNativeStart’? [-Wimplicit-function-declaration]
+  195 |             RtlNativeSetCarrier(a,FALSE);
+      |             ^~~~~~~~~~~~~~~~~~~
+      |             RtlNativeStart
+/workspace/rltklant-work/validation/lifecycle/../../RLTKLANT/src/backend_usb.c:231:46: error: conflicting types for ‘RtlNativeSetCarrier’; have ‘BOOLEAN(struct Adapter *, BOOLEAN)’ {aka ‘unsigned char(struct Adapter *, unsigned char)’}
+  231 |     if(a->NativeUsbRequested){extern BOOLEAN RtlNativeSetCarrier(PRLTK_ADAPTER,BOOLEAN);up=RtlNativeSetCarrier(a,c->Up);c->Up=up;}
+      |                                              ^~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-work/validation/lifecycle/../../RLTKLANT/src/backend_usb.c:195:13: note: previous implicit declaration of ‘RtlNativeSetCarrier’ with type ‘int()’
+  195 |             RtlNativeSetCarrier(a,FALSE);
+      |             ^~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/win2000-standard-management-v2-multi-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=1747006464 backing_file=/tmp/rltk-growing-fat-tw7nodbf/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+3/26658 = 0.01% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 524288
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/win2000-standard-management-v2-multi-8127.qcow2",
+  "sha256_before_boot": "31601e1a0e4035864fec3178ecb0e41adb9ed4cb37421113054f284d688b0502",
+  "files": [
+    {
+      "guest_path": "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis5/rltklant.sys",
+      "size": 555784,
+      "sha256": "428f94ea70e445a6ae974359d47fed8176e5cb50a13be3a1f124cb2a013a4cf6",
+      "old_size": 520469,
+      "old_sha256": "24710c88d4dc254c162cd5e873135251ffe033d5b55052175eea70951af7f7b1"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

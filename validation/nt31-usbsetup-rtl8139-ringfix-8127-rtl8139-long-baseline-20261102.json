@@ -1,0 +1,12 @@
+{
+  "guest": "nt31-usbsetup-rtl8139-ringfix-8127",
+  "token": "rtl8139-long-baseline-20261102",
+  "mask": 2,
+  "requested_count": 64,
+  "result": "FAIL",
+  "utc": "2026-11-02T05:59:01.127751+00:00",
+  "paths": [],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "error": "AssertionError(('10.0.3.2', 0, 0))",
+  "finished_utc": "2026-11-02T06:01:28.725975+00:00"
+}

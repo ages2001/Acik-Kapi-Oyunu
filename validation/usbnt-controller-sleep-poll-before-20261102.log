@@ -1,0 +1,7 @@
+test: /tmp/tmppisx0lfi/test.c:28: releasehc: Assertion `!atomic_load(&polling)' failed.
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_usbnt_sleep_poll_rundown.py", line 52, in <module>
+    subprocess.run([str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/tmppisx0lfi/test']' died with <Signals.SIGABRT: 6>.

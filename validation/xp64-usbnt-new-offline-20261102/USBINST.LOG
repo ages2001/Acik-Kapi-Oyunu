@@ -1,0 +1,14 @@
+Installing the USB driver (Windows 5.2 SP1, x64)
+  Windows' own drivers: UHCI / OHCI yes, EHCI yes, cameras (usbvideo.sys) yes
+  controllers: EHCI to USBNT (/ehci)
+  oem4.inf (USBNT) removed
+  usbnt.inf -> C:\WINDOWS\INF\oem4.inf
+  usbntkbd.inf -> C:\WINDOWS\INF\oem5.inf
+  usbntmou.inf -> C:\WINDOWS\INF\oem6.inf
+  IntelRouteToXhci = 1 (Intel chipsets: USB 2.0 ports to xHCI)
+  WindowsCamera = 1 (USB cameras go to Windows' usbvideo.sys)
+  USBNT device bus installed
+  EHCI Intel(R) 82801DB/DBM USB 2.0 Enhanced Host Controller - 24CD (PCI\VEN_8086&DEV_24CD&SUBSYS_11001AF4&REV_10): usbnt.sys
+Done.
+The disks of Windows' USB storage driver
+The PS/2 mouse (touch pads)

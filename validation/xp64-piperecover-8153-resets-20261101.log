@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_report.py", line 10, in <module>
+    data,peer=s.recvfrom(16384);s.close();text=data.decode('ascii');print(text,flush=True)
+              ^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_port_reset_cycles.py", line 24, in <module>
+    call('native_report.py',token,'nprobe64.exe' if name.startswith('xp64') else 'nprobe5.exe')
+  File "/workspace/rltklant-work/validation/native_port_reset_cycles.py", line 9, in call
+    def call(script,*args):subprocess.run([sys.executable,str(v/script),name,*args],check=True)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '/workspace/rltklant-work/validation/native_report.py', 'xp64-usbnet-piperecover-8127', 'pipe-8153-portreset01', 'nprobe64.exe']' returned non-zero exit status 1.

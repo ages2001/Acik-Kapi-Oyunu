@@ -1,0 +1,7 @@
+{
+  "source": "nt4-ndis-usbnet-8127.raw",
+  "target": "ndis3",
+  "sha256": "0465486a6a240d539a98ad16eb894ee86be98f6be668eb4db822eabd71e93f44",
+  "usbnt_sha256": "17a795252baf5f7d632e140a831639bb1808475b30aaacf2aa26049928770c48",
+  "debug_build": true
+}

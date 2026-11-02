@@ -1,0 +1,2 @@
+test: tuvcrundown.c:44: main: Assertion `waiting&&!stopped&&blocks==5' failed.
+USBNT/test/host/tuvcrundown.sh: line 10: 278944 Aborted                 "$test_dir/test"

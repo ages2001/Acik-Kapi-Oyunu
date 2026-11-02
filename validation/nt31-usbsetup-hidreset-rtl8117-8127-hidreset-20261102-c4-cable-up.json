@@ -1,0 +1,43 @@
+{
+  "guest": "nt31-usbsetup-hidreset-rtl8117-8127",
+  "token": "hidreset-20261102-c4-cable-up",
+  "mask": 3,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T10:11:02.643387+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 127042,
+      "end_offset": 139282,
+      "capture_prefix_sha256": "0a1a62445ebb4699e9a9f81063b28f51709155c4e55bc1959303941be5792edd",
+      "screenshot": "nt31-usbsetup-hidreset-rtl8117-8127-hidreset-20261102-c4-cable-up-usb.png",
+      "ocr": "nt31-usbsetup-hidreset-rtl8117-8127-hidreset-20261102-c4-cable-up-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "e184af53ed551862c4f123d1a98b887270d320894d4ea4072fac34f7b21ab283"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 205813,
+      "end_offset": 218053,
+      "capture_prefix_sha256": "c3553819c91a96bda884cf89542085c803a2ee7363f1de4f298231a292816833",
+      "screenshot": "nt31-usbsetup-hidreset-rtl8117-8127-hidreset-20261102-c4-cable-up-pci.png",
+      "ocr": "nt31-usbsetup-hidreset-rtl8117-8127-hidreset-20261102-c4-cable-up-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "7f1e9a1a77aaa48a587247ecacaff741700bef8a217dabd0b4c9d08bbdadfb99"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T10:11:14.189989+00:00"
+}

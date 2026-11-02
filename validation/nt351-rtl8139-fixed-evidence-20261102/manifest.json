@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-02T05:39:31.639937+00:00",
+  "guest": "nt351-usbsetup-rtl8139-fixed-8127",
+  "safeoff_screenshot": "nt351-rtl8139-fixed-safeoff-20261102.png",
+  "safeoff_sha256": "472573237d71270cbfd537c07eca38f762c3ccb719282f8577bbbff4ef6da89d",
+  "files": {
+    "debug.log": {
+      "bytes": 1354,
+      "sha256": "e23c45db712c3126bfb2bc790be8f73935b8997a596664d0fcc99bfe88a57380"
+    },
+    "serial.log": {
+      "bytes": 12,
+      "sha256": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44"
+    },
+    "qemu.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "launch.json": {
+      "bytes": 1546,
+      "sha256": "cb01d315a4c85e02edca214d119545556fc3bfd7bf7206b3cdc40c63b90e74be"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "f439b1cafdfef4a48b271d46a684c0c7235b73e3b1c8e6780f72b1cfc21e46c8"
+    },
+    "pci.pcap": {
+      "bytes": 6898076,
+      "sha256": "e7f87fa6203b0f09feba89d61f0af6c84cfa8c67bd7080efa21daae876cc9305"
+    },
+    "usb.pcap": {
+      "bytes": 150,
+      "sha256": "61cd26b7b2b65b5209bbb199cd2beca2696b01bcd0714b24b0751361cc45875b"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

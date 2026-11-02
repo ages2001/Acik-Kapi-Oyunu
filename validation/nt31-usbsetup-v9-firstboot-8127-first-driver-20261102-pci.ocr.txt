@@ -1,0 +1,11 @@
+[el Program Manager - TEST-PC\test_user macs
+| File Options Window Help I
+j cmd RE
+lc:\users\default>ping <n 4 -1 1472 10.0.3.2
+Pinging host 10.0-3-2 <unnamed> : 10.0.3-2
+CHB Echo Reply:TiL 255
+GHP Echo Reply:ITL 255
+GHP Echo Reply:ITL 255
+CHP Echo Reply:ITL 255
+lost 10.0.3.2 replied to all 4 of the 4 pings
+lc:\users\defaule>., r

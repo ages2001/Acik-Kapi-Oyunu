@@ -1,0 +1,97 @@
+{
+  "guest": "win2000-standard-usbnet-hidreset-8127",
+  "utc": "2026-11-02T10:02:47.506722+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8153-native-hotplug.json",
+        "sha256": "bed4d604250defd5839b02197eeb9e2b5514d1245094fb17f466e030eb4daab0"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8153-function-power.json",
+        "sha256": "c6a5afb4d07e51572d48da55caae5e54d3d4db77e94148ceecfe45a67dd7ec2f"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8153-port-reset-cycles.json",
+        "sha256": "b6f842fd2cf07b1b5d0fb723e50b4ddd7d81b86808082b43d0a095c58297485d"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8153-native-cable.json",
+        "sha256": "a0ec0a8dabca49eedd04a5a1c0e566d0fcc92de99c0fd8ab501b308c61ab28b8"
+      },
+      "seconds": 78.41
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8156-native-hotplug.json",
+        "sha256": "acf691b4629482d115d184abf81897d38e8abed33942b2b1648c4c76abea4082"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8156-function-power.json",
+        "sha256": "22b76eb701b49dcbbcfaafadfb685e9a8c1f2917f2689118d7cfe04385627a6f"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8156-port-reset-cycles.json",
+        "sha256": "013454f61d4a32773af385613f0c7b4631ff612da11cc88aee04ebb18495d1b0"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8156-native-cable.json",
+        "sha256": "74c14f87239c09a93ddc79e58443abab7bcab41111b9b78110eee5278ec67df2"
+      },
+      "seconds": 77.17
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8157-native-hotplug.json",
+        "sha256": "4fbf86f1b58a653d0bf3e8780a1ad0fc192723f587882d4aa164439a453a1939"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8157-function-power.json",
+        "sha256": "0240af3053d7ed6f9a2248be0870140128a8011984e57af48886f309cb01ec12"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8157-port-reset-cycles.json",
+        "sha256": "46ecf77341f73da2490db94d69450f0da6b08f7718931fa47e30b321a0c3ba70"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8157-native-cable.json",
+        "sha256": "9e5e47ed9cbfbb19fcb7db8840550b3c6db9c7788c62b7975abda7cc3fc5004f"
+      },
+      "seconds": 93.4
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8159-native-hotplug.json",
+        "sha256": "330a389f0a724efa45336785d88fe118ba985a3912292038ee67d0c470dd6b05"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8159-function-power.json",
+        "sha256": "a6726e43cededa2cc59130da59959827adcbb12588a38fbfa183f526cf76edf0"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8159-port-reset-cycles.json",
+        "sha256": "c367808d7ecf78e8da9ee9f119a385003643ee621c2a30faba67ec879e26eafc"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8159-native-cable.json",
+        "sha256": "f487a7a00a05b50651f3c3c9b859786bc1f1a856bc1269de28b56224bd3fd592"
+      },
+      "seconds": 128.9
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

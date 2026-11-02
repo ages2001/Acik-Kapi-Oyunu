@@ -1,0 +1,28 @@
+{
+  "result": "PASS",
+  "targets": {
+    "nt31": {
+      "reference": "legacy-setup-nt31-v9-20261102",
+      "generated": "legacy-generated-nt31-20261102",
+      "byte_identical": {
+        "DHCPNT31.EXE": true,
+        "DISK1": true,
+        "OEMSETUP.INF": true,
+        "RLTKLANT.SYS": true,
+        "RLTSETUP.DLL": true,
+        "RLTUSB.EXE": true
+      }
+    },
+    "nt35": {
+      "reference": "legacy-setup-nt35-v2-20261102",
+      "generated": "legacy-generated-nt35-20261102",
+      "byte_identical": {
+        "DISK1": true,
+        "OEMSETUP.INF": true,
+        "RLTKLANT.SYS": true,
+        "RLTSETUP.DLL": true,
+        "RLTUSB.EXE": true
+      }
+    }
+  }
+}

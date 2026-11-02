@@ -1,0 +1,42 @@
+{
+  "guest": "nt31-usbsetup-macreset-v2-8127",
+  "token": "macreset-hotplug-20261102-c3-reinsert",
+  "mask": 3,
+  "result": "PASS",
+  "utc": "2026-11-02T02:11:19.049908+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 107822,
+      "end_offset": 120062,
+      "capture_prefix_sha256": "ddde43ca1a91c78883228838fef0b52281a717d083485f52c148e8a8a8f47a2b",
+      "screenshot": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c3-reinsert-usb.png",
+      "ocr": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c3-reinsert-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "17618c9605ab0f37d4c486b30db6c85b7aefb5f38536b2aa8e2937a755c1c9af"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 144613,
+      "end_offset": 156853,
+      "capture_prefix_sha256": "3fb73c5aeebc3b3d43f144474f4f7c002111f6e1c5081922bf6db94e79b19e2d",
+      "screenshot": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c3-reinsert-pci.png",
+      "ocr": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-c3-reinsert-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "2a012455c57365d6f5d69c7754b3545fdfd2b95052a8be6e558f37613a8cc316"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T02:11:30.477317+00:00"
+}

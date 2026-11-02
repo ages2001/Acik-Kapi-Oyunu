@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T02:13:57.966863+00:00",
+  "guest": "nt31-usbsetup-macreset-v2-8127",
+  "result": "PASS",
+  "scope": "Registered NDIS full-MAC ResetHandler dispatch through actual NT3.1 binding, with other TCP/IP bindings retained; not an exported NdisReset test",
+  "checks": {
+    "N31TEST reset-return=00000103": true,
+    "N31TEST reset-complete=00000000": true,
+    "N31TEST status=40010004": true,
+    "N31TEST status=40010005": true,
+    "NT31 PCI PHY/MAC prepared": true,
+    "N31TEST result=00000000": true,
+    "N31TEST close=00000000": true,
+    "N31TEST deregister=00000000": true
+  },
+  "trace": "N31TEST register=00000000\nOPN arrsz=0x00000001\nopen ok\nN31TEST open=00000000\nN31TEST query=00000000\nN31TEST vendor=0000EC10\nN31TEST reset-return=00000103\nN31TEST status=40010004\nPCI PHY result=0x00000000 commands=0x0000128C\nNT31 PCI PHY/MAC prepared\nCP id=0x00008127 MAC=0x000000520x000000540x000000000x000000120x000000340x00000056\nCP speed=0x05F5E100\nN31TEST status=40010005\nN31TEST reset-complete=00000000\nN31TEST reset-return=00000103\nN31TEST status=40010004\nPCI PHY result=0x00000000 commands=0x0000128C\nNT31 PCI PHY/MAC prepared\nCP id=0x00008127 MAC=0x000000520x000000540x000000000x000000120x000000340x00000056\nCP speed=0x05F5E100\nN31TEST status=40010005\nN31TEST reset-complete=00000000\nN31TEST reset-return=00000103\nN31TEST status=40010004\nPCI PHY result=0x00000000 commands=0x0000128C\nNT31 PCI PHY/MAC prepared\nCP id=0x00008127 MAC=0x000000520x000000540x000000000x000000120x000000340x00000056\nCP speed=0x05F5E100\nN31TEST status=40010005\nN31TEST reset-complete=00000000\nN31TEST close=00000000\nN31TEST completions=00000003\nN31TEST starts=00000003\nN31TEST ends=00000003\nN31TEST result=00000000\nN31TEST deregister=00000000",
+  "diagnostic": "nt31-reset-probe-v5-20261102/manifest.json",
+  "post_reset_traffic": "nt31-usbsetup-macreset-v2-8127-mac-reset-after-20261102.json",
+  "hotplug": "nt31-usbsetup-macreset-v2-8127-macreset-hotplug-20261102-sibling-matrix.json",
+  "shutdown_and_readback": "pending separate collection"
+}

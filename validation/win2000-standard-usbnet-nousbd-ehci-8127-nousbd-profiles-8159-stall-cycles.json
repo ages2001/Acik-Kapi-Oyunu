@@ -1,0 +1,37 @@
+{
+  "guest": "win2000-standard-usbnet-nousbd-ehci-8127",
+  "utc": "2026-10-30T06:33:35.117940+00:00",
+  "scope": "Injected USB endpoint halt in the protocol model; actual guest SetupAPI and payload-checked ICMP recovery, not physical silicon validation",
+  "results": [
+    {
+      "cycle": 1,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-nousbd-ehci-8127-nousbd-profiles-8159-stall01.json"
+    },
+    {
+      "cycle": 2,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-nousbd-ehci-8127-nousbd-profiles-8159-stall02.json"
+    },
+    {
+      "cycle": 3,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-nousbd-ehci-8127-nousbd-profiles-8159-stall03.json"
+    },
+    {
+      "cycle": 4,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-nousbd-ehci-8127-nousbd-profiles-8159-stall04.json"
+    },
+    {
+      "cycle": 5,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-nousbd-ehci-8127-nousbd-profiles-8159-stall05.json"
+    }
+  ]
+}

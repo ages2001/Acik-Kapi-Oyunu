@@ -1,0 +1,5 @@
+{
+  "source": "xp64-phy-multi-8127.qcow2",
+  "target": "ndis5x64",
+  "sha256": "f96ec58eac90b6d5958df41e9bba7d6282db247db362f962cb5b556d94073738"
+}

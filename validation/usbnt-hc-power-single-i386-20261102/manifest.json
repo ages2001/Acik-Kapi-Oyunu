@@ -1,0 +1,77 @@
+{
+  "utc": "2026-11-02T08:37:59.909169+00:00",
+  "scope": "Build a test-only USBNT EHCI FDO D3/D0 and S3/S0 IRP injector.\n\nThe S pairs test system-to-device IRP mapping, not actual ACPI machine sleep.\nOnly the single QEMU Intel 24CD EHCI controller is selected. The kernel helper\nrequires the attached FDO's driver to be USBNT and retains it across calls.\n",
+  "single_pair": true,
+  "arch": "i386",
+  "commands": [
+    [
+      "i686-w64-mingw32-gcc",
+      "-O2",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-mno-stack-arg-probe",
+      "-mno-sse",
+      "-mno-mmx",
+      "-D_X86_",
+      "-fno-asynchronous-unwind-tables",
+      "-nostdlib",
+      "-I/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk",
+      "-Wl,--subsystem,native",
+      "-Wl,--entry,_DriverEntry@8",
+      "-Wl,--image-base,0x10000",
+      "-Wl,--no-insert-timestamp",
+      "-o",
+      "/workspace/rltklant-work/validation/usbnt-hc-power-single-i386-20261102/HCPOWER.SYS",
+      "/workspace/rltklant-work/validation/usbnt-hc-power-single-i386-20261102/hcpower_driver.c",
+      "-lntoskrnl",
+      "-lhal"
+    ],
+    [
+      "/workspace/rltklant-tools/venv/bin/python3",
+      "/workspace/rltklant-work/USBNT/build/fixpe5.py",
+      "/workspace/rltklant-work/validation/usbnt-hc-power-single-i386-20261102/HCPOWER.SYS",
+      "i386"
+    ],
+    [
+      "i686-w64-mingw32-gcc",
+      "-O2",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-mno-stack-arg-probe",
+      "-mno-sse",
+      "-mno-mmx",
+      "-D_X86_",
+      "-fno-asynchronous-unwind-tables",
+      "-nostdlib",
+      "-Wl,--entry,_Entry",
+      "-Wl,--subsystem,console:5.0",
+      "-Wl,--no-insert-timestamp",
+      "-o",
+      "/workspace/rltklant-work/validation/usbnt-hc-power-single-i386-20261102/HCPOWER.EXE",
+      "/workspace/rltklant-work/validation/usbnt-hc-power-single-i386-20261102/hcpower_probe.c",
+      "-lkernel32",
+      "-ladvapi32",
+      "-lsetupapi"
+    ]
+  ],
+  "files": {
+    "hcpower_probe.c": {
+      "size": 2641,
+      "sha256": "a4d725f1c5720341c6ac2e757859b150e4c7b4e124457955272d453d33761166"
+    },
+    "hcpower_driver.c": {
+      "size": 6084,
+      "sha256": "71bf52b218cf403745abc6ad9aecb2c7b466fc59f3dfc7869add534383a7d2f8"
+    },
+    "HCPOWER.SYS": {
+      "size": 12790,
+      "sha256": "189c3d10544e2e2957669401dea507f1e666dfcb9f61bf428d278eab18bd2817"
+    },
+    "HCPOWER.EXE": {
+      "size": 11967,
+      "sha256": "3b3568c3427a83d849365a93449466f65b97fe2da4b9dca0c96a936efa058a78"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "guest": "xp64-usbnet-mixed-sleep-probe-v1-8127",
+  "token": "xp64-mixed-sleep-v1-baseline-key-20261102",
+  "utc": "2026-11-02T15:16:54.281203+00:00",
+  "result": "PASS_GUEST_CONSOLE_EVENTS",
+  "scope": "Wait for the guest console observer before injecting composite HID input.",
+  "messages": [
+    {
+      "stage": "READY",
+      "text": "MKEY2 READY c:\\rlttest\\mkey2.exe xp64-mixed-sleep-v1-baseline-key-20261102",
+      "peer": [
+        "127.0.0.1",
+        38599
+      ],
+      "monotonic": 147091.185479662
+    },
+    {
+      "stage": "KEY_DOWN",
+      "text": "MKEY2 KEY_DOWN c:\\rlttest\\mkey2.exe xp64-mixed-sleep-v1-baseline-key-20261102",
+      "peer": [
+        "127.0.0.1",
+        38599
+      ],
+      "monotonic": 147091.224883752
+    },
+    {
+      "stage": "KEY_UP",
+      "text": "MKEY2 KEY_UP c:\\rlttest\\mkey2.exe xp64-mixed-sleep-v1-baseline-key-20261102",
+      "peer": [
+        "127.0.0.1",
+        38599
+      ],
+      "monotonic": 147091.277009433
+    },
+    {
+      "stage": "PASS",
+      "text": "MKEY2 PASS c:\\rlttest\\mkey2.exe xp64-mixed-sleep-v1-baseline-key-20261102",
+      "peer": [
+        "127.0.0.1",
+        38599
+      ],
+      "monotonic": 147091.278116534
+    }
+  ],
+  "observer_sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549"
+}

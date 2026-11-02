@@ -1,0 +1,33 @@
+{
+  "scope": "Test catalog for the frozen observed-reset inputs; regenerate for any changed release package. Actual Windows guest API proof is catalog-v4-guest-proof-20261101.json.",
+  "files": {
+    "makecat.py": {
+      "size": 11749,
+      "sha256": "45b0c23a1dcd436fa04c413b007b2a84d281261aa75d03710813b5360a073f18"
+    },
+    "rltklant.cat": {
+      "size": 2556,
+      "sha256": "1a142c44822d253ca4a5adbf63c24dda1dea16b4ff38d213f9680d2cc6ae634d"
+    },
+    "rltklant.cer": {
+      "size": 747,
+      "sha256": "449e84897f9a61deb536d2fb18d5cdc947d03c589f7049fd6dcf7bcb7e12385d"
+    },
+    "catalog_guest_probe.c": {
+      "size": 4289,
+      "sha256": "651577f41eacf53556493e15605042e7ada385c3105e127f047d2b03d03681cd"
+    },
+    "test_catalog_compat.py": {
+      "size": 4516,
+      "sha256": "ce68a4ebb77617e04dbe78b9677779503e651366057f5c241f7704eac83f086c"
+    },
+    "HASH32.EXE": {
+      "size": 13814,
+      "sha256": "84ce45977419414d4b5a790242d1713cdbffd2adcb8f16153b006463e6f6705a"
+    },
+    "HASH64.EXE": {
+      "size": 13070,
+      "sha256": "a527e4ab5cadb28239c4b10dc46d0589d8e80e31d311b0969757079e680123d2"
+    }
+  }
+}

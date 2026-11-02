@@ -1,0 +1,41 @@
+{
+  "utc": "2026-11-02T05:06:04.756106+00:00",
+  "result": "INTERRUPTED_NOT_PASS",
+  "observed": "Both previous tool-owned QEMU processes are zombies; QMP connections refused. No normal-shutdown proof. Preserve snapshots; no completed new management guest proof is inferred.",
+  "guests": {
+    "win2000-standard-management-multi-8127": {
+      "pid": 125914,
+      "process_state": "Z",
+      "normal_shutdown_observed": false,
+      "tests_completed": false,
+      "files": {
+        "extra3.pcap": "dd43179107e12fece5ea0122e41fef0fc30b6063f023ccbfeeff438acc009544",
+        "extra2.pcap": "9fa9c5ab35002964e6f52dde5d141a301356694f5a24d05f743cab26f868bb39",
+        "debug.log": "186752fc78528bf6fb567c251f48fef05bb830dccf7636ba47df3aa44c372514",
+        "pci.pcap": "65d119f88892dd0c2b8c8c14cac38bfe8d4ce48c2a35d909216512dcad1c4a2c",
+        "extra4.pcap": "f38a85ebb251ac928e650e0e991612f50406e4a35264b3a2d6b321d511eec18d",
+        "launch.json": "a1c395042bdbcf0cef77d27b8285f388860b71233de32298bdfb75a22cce9113",
+        "serial.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "qemu.log": "362d0a13fc98dfbb9371656472334e527e9f9c53e2e37afa7065d84457a28076",
+        "extra5.pcap": "a1579529013975b2190d020bc6784a8804a54544a720532c33422a7c7b56f5d2",
+        "extra1.pcap": "4e65dbad4fb26808a8ae602d10c536e632670531833efca11dc4866fbed66763"
+      },
+      "disk_preserved": "/workspace/rltklant-vm/run/win2000-standard-management-multi-8127.qcow2"
+    },
+    "nt31-usbsetup-management-ep-8127": {
+      "pid": 126764,
+      "process_state": "Z",
+      "normal_shutdown_observed": false,
+      "tests_completed": false,
+      "files": {
+        "usb.pcap": "39842bc30ca8b812af7363e04a555b85431f5c34814576517ff461c8038ba3b8",
+        "debug.log": "e6e3f320801c7925b71de9cb8ba1f611e46d929c1ae90f61bd0ddf43a8f8850e",
+        "pci.pcap": "45798aaeeb0d0ce76bfb4deba6555881e45b41c69bc667a6984ff9d7dba7deb1",
+        "launch.json": "0604f0692a051f3a00ae5bbed599ea810f86c9469db2bd3a3b65790f40091040",
+        "serial.log": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44",
+        "qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "disk_preserved": "/workspace/rltklant-vm/run/nt31-usbsetup-management-ep-8127.qcow2"
+    }
+  }
+}

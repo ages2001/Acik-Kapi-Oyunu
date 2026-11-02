@@ -1,0 +1,13 @@
+{
+  "scope": "Test-only native x64 network-class-filtered reset invoker; existing RRESET.SYS retained.",
+  "files": {
+    "validation/ftp-fixture/MRESET64.EXE": {
+      "size": 11606,
+      "sha256": "d2bf5b8a247418fbfe4a33d5522e4cc0626748c36e257bbdf160411458b1b8d3"
+    },
+    "validation/guest_usb_reset_probe.c": {
+      "size": 2685,
+      "sha256": "a93ef5de6dc519a250becd129dfc261e3a42dfbfa4ad14a2e6b9723c43cdaa26"
+    }
+  }
+}

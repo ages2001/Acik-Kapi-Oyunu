@@ -1,0 +1,2 @@
+PASS: 196608 register-window boundaries; exact PCI write widths; malformed/cyclic capabilities; passive/delay/cancellation guards; PHY then MAC; no success after failure or DMA enable
+PASS: 196608 register-window boundaries; exact PCI write widths; malformed/cyclic capabilities; passive/delay/cancellation guards; PHY then MAC; no success after failure or DMA enable

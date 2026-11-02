@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T13:47:53.711661+00:00",
+  "guest": "xp64-usbnet-syncrun-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 534016,
+      "sha256": "090105c3b37098b10dd326fa64a979903e8232cf4a2c033dad2a5d06e10d01d4"
+    },
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    }
+  }
+}

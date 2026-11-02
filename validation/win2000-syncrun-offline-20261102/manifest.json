@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T13:47:48.917290+00:00",
+  "guest": "win2000-standard-usbnet-syncrun-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 495616,
+      "sha256": "2c4dc477f30d86ad73c09499da01e68868b052de759f4b203e0197f63ff8d91c"
+    },
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+    }
+  }
+}

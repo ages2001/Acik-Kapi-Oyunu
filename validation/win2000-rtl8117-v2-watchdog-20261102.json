@@ -1,0 +1,49 @@
+{
+  "guest": "win2000-standard-rtl8117-v2-multi-8127",
+  "utc": "2026-11-02T06:34:36.209313+00:00",
+  "result": "PASS",
+  "cycles": [
+    {
+      "cycle": 1,
+      "device": "pcinic",
+      "elapsed_seconds": 9.398,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra1",
+      "elapsed_seconds": 9.9,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra2",
+      "elapsed_seconds": 8.894,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra3",
+      "elapsed_seconds": 9.405,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra4",
+      "elapsed_seconds": 9.425,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra5",
+      "elapsed_seconds": 10.398,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    }
+  ]
+}

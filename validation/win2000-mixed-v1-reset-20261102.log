@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_port_reset_cycles.py", line 25, in <module>
+    assert time.monotonic()-started<30,('No successful reset completion',text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('No successful reset completion', '')
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/mixed_owner_reset_cycles.py", line 51, in <module>
+    call('native_port_reset_cycles.py', tag, '1')
+  File "/workspace/rltklant-work/validation/mixed_owner_reset_cycles.py", line 24, in call
+    subprocess.run([sys.executable, str(v / script), guest, *args], check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '/workspace/rltklant-work/validation/native_port_reset_cycles.py', 'win2000-standard-usbnet-mixed-v1-8127', 'win2000-mixed-v1-reset-20261102-c1', '1']' returned non-zero exit status 1.

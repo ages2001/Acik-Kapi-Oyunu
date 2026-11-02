@@ -1,0 +1,14 @@
+{
+  "scope": "Clean 1.2 tool rebuild after usbtree file-alignment fix; before 1.3 metadata changes.",
+  "files": {
+    "fstest.exe": "8803e62123be9fa9557441f69c364a83dc89de84110fa01d3829a8d39e12c09c",
+    "inptest.exe": "73ecd93591d41ecb1f272a3f106e9b5fd8ad345a1c5c7d41d9a21c92b785cc2c",
+    "usbcam.exe": "871441630c1162998cdcc31d7c0660f3cd9319a456d5b9fdde03e08cf7711b5b",
+    "usbeject.exe": "e694f869d65a1dcad517a7b88ecadfa5defe137fa45ab6b9cfca250ec63e545f",
+    "usbinst.exe": "154a8b51b8f33927341e3a43e5436c88d55869d79df865fedc4032e8e6c38a03",
+    "usbmon.exe": "c72bee0ee55962f907758fa8a565b9b28adfacdc4d1841f0dc1101f2f7f51cf3",
+    "usbtree.exe": "fea1d48df200e0c617e969bb2288dfbde0e27b79d3491b05b6c8b28aa64f3748",
+    "wheeltst.exe": "4a8c9eb8195dce9f057341313c5809dcfc8f4e087bdc1c6821aa1060c54b9f85",
+    "usbntcap.dll": "836aa34859410f5427fc1d31a1b897c6631ce48a4f62ba285e9a22ea9d9bc305"
+  }
+}

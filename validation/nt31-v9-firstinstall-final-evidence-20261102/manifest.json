@@ -1,0 +1,30 @@
+{
+  "usb.pcap": {
+    "bytes": 24,
+    "sha256": "653932defd05743054207942b60e946cfd591200e6ab808d058e382a8999d9fc"
+  },
+  "debug.log": {
+    "bytes": 859,
+    "sha256": "97cfb1e4319780e526c6ded2314b0293ffb85ffab6f1647c7504c82cd60dfa87"
+  },
+  "pci.pcap": {
+    "bytes": 49605,
+    "sha256": "7e9598392be956ac9b7f1eac9cdbf792911041a109bb22f9b634ea8b736a1817"
+  },
+  "launch.json": {
+    "bytes": 1535,
+    "sha256": "551603b829abe4e984cc77f1afce689fc1ccfc47d3455c7666a341436af9dda1"
+  },
+  "process-exit.json": {
+    "bytes": 52,
+    "sha256": "5e3d98fdd09a69bb95d85400f9fa0f4eda5b5adced4ef20d00306deebe58125d"
+  },
+  "serial.log": {
+    "bytes": 12,
+    "sha256": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44"
+  },
+  "qemu.log": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

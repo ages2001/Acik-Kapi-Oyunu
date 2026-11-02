@@ -1,0 +1,136 @@
+{
+  "utc": "2026-11-02T02:24:49.007343+00:00",
+  "guest": "xp64-vendor-oid-multi-8127",
+  "safeoff_screenshot": "xp64-vendor-oid-shutdown-20261102.png",
+  "safeoff_sha256": "098ba26ede684aa190f6f409de15b1044e0a5fe15b0b2b754b0e8d4c74fc744f",
+  "files": {
+    "debug.log": {
+      "bytes": 1957,
+      "sha256": "58a8f50f54cd560723ac43ea49645d33977fcb7744c3a64a2391e191abbbca2b"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 95,
+      "sha256": "28c8b46daf4b31edc331222d779ff1fbc3f320b382692555d6474fc78f8e59f9"
+    },
+    "launch.json": {
+      "bytes": 2595,
+      "sha256": "62eb5eedbb7ce035b23e68aa7d9a7ffcf3f4dd501889f8b789c48a25aa84628d"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "cbf861fd0eae4c12ec0ad921bf935994d53663269c61358fb0446f2c1726548c"
+    },
+    "extra1.pcap": {
+      "bytes": 19698,
+      "sha256": "21755c51e1ab7c73a0efea30fc57cae376355b284d7b82e450792ea58e942ff7"
+    },
+    "extra2.pcap": {
+      "bytes": 20024,
+      "sha256": "8002c3a049f28d24ef55c712cf3cc3f11eed7d5d3e3afdc930a13c4f7caeca78"
+    },
+    "extra3.pcap": {
+      "bytes": 20178,
+      "sha256": "b724d5da8ffae8604dae46023cea4d9ecb9ff10cb930efe677d96abba8fcb3d2"
+    },
+    "extra4.pcap": {
+      "bytes": 19410,
+      "sha256": "14a1bc8067901e5938e2d6d02f958a17fda8ca82809e96a2f3c9ccbe02cca2a0"
+    },
+    "extra5.pcap": {
+      "bytes": 20572,
+      "sha256": "85b4e454a6453a078f35921f441e02a7ccb61ce6a3ab2ed28354cb6c33a78bca"
+    },
+    "pci.pcap": {
+      "bytes": 20946,
+      "sha256": "528c18615281c973359a5af4845355c85fb47f376dc0d1285d6ae30e2e4e7799"
+    }
+  },
+  "shutdown_evidence": "QMP ACPI shutdown, running=false; framebuffer may retain shutdown text",
+  "qmp_capture": {
+    "guest": "xp64-vendor-oid-multi-8127",
+    "captured_utc": "2026-11-02T02:22:46.427699+00:00",
+    "qmp_status": {
+      "status": "shutdown",
+      "singlestep": false,
+      "running": false
+    },
+    "launch": {
+      "started_at": 1793585881.7815778,
+      "command": [
+        "/workspace/rltklant-tools/qemu-src/build/qemu-system-x86_64",
+        "-machine",
+        "q35",
+        "-cpu",
+        "qemu64",
+        "-m",
+        "512",
+        "-drive",
+        "file=/workspace/rltklant-vm/run/xp64-vendor-oid-multi-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+        "-nic",
+        "none",
+        "-display",
+        "none",
+        "-vga",
+        "cirrus",
+        "-qmp",
+        "unix:/workspace/rltklant-vm/run/xp64-vendor-oid-multi-8127/qmp.sock,server=on,wait=off",
+        "-no-reboot",
+        "-no-shutdown",
+        "-debugcon",
+        "file:/workspace/rltklant-vm/run/xp64-vendor-oid-multi-8127/debug.log",
+        "-serial",
+        "file:/workspace/rltklant-vm/run/xp64-vendor-oid-multi-8127/serial.log",
+        "-global",
+        "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+        "-global",
+        "q35-pcihost.pci-hole64-size=0",
+        "-no-hpet",
+        "-device",
+        "piix3-ide,id=legacyide",
+        "-device",
+        "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0,lcyls=652,lheads=255,lsecs=63",
+        "-netdev",
+        "user,id=pci0",
+        "-device",
+        "rtl8127,id=pcinic,netdev=pci0",
+        "-object",
+        "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/xp64-vendor-oid-multi-8127/pci.pcap",
+        "-netdev",
+        "user,id=extra1,net=10.0.3.0/24",
+        "-device",
+        "rtl8169,id=extra1,netdev=extra1,mac=52:54:00:12:35:01",
+        "-object",
+        "filter-dump,id=dump1,netdev=extra1,file=/workspace/rltklant-vm/run/xp64-vendor-oid-multi-8127/extra1.pcap",
+        "-netdev",
+        "user,id=extra2,net=10.0.4.0/24",
+        "-device",
+        "rtl8168,id=extra2,netdev=extra2,mac=52:54:00:12:35:02",
+        "-object",
+        "filter-dump,id=dump2,netdev=extra2,file=/workspace/rltklant-vm/run/xp64-vendor-oid-multi-8127/extra2.pcap",
+        "-netdev",
+        "user,id=extra3,net=10.0.5.0/24",
+        "-device",
+        "rtl8125,id=extra3,netdev=extra3,mac=52:54:00:12:35:03",
+        "-object",
+        "filter-dump,id=dump3,netdev=extra3,file=/workspace/rltklant-vm/run/xp64-vendor-oid-multi-8127/extra3.pcap",
+        "-netdev",
+        "user,id=extra4,net=10.0.6.0/24",
+        "-device",
+        "rtl8126,id=extra4,netdev=extra4,mac=52:54:00:12:35:04",
+        "-object",
+        "filter-dump,id=dump4,netdev=extra4,file=/workspace/rltklant-vm/run/xp64-vendor-oid-multi-8127/extra4.pcap",
+        "-netdev",
+        "user,id=extra5,net=10.0.7.0/24",
+        "-device",
+        "rtl8127,id=extra5,netdev=extra5,mac=52:54:00:12:35:05",
+        "-object",
+        "filter-dump,id=dump5,netdev=extra5,file=/workspace/rltklant-vm/run/xp64-vendor-oid-multi-8127/extra5.pcap"
+      ],
+      "qemu_sha256": "37a91463e5572e82283e7eb4994a49c5acde5b984b049dc9fd82e573780bb826"
+    }
+  }
+}

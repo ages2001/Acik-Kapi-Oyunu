@@ -1,0 +1,166 @@
+{
+  "utc": "2026-11-01T22:17:06.650963+00:00",
+  "files": {
+    "oemnadTK.inf": {
+      "bytes": 30749,
+      "sha256": "75cf833a481f37c2913cea048dde8a1147712f7a9571b3c90b4b55714cb338fc"
+    },
+    "oemnadWD.inf": {
+      "bytes": 32830,
+      "sha256": "b57b64d323394ee3c4d59b6522d580bf3f91f5427616307583d3e0211fbec5c3"
+    },
+    "SYSTEM": {
+      "bytes": 655360,
+      "sha256": "baaae8fd625e1c549a0082873e83ed86acd8e165c5ea800135eae718600ae16d"
+    },
+    "oemnadLB.inf": {
+      "bytes": 26590,
+      "sha256": "174981f1a81b8a6fdf39fae208ded914c847db950b03ae6c06c37267dbd946ca"
+    },
+    "oemnadFD.inf": {
+      "bytes": 24858,
+      "sha256": "26c317f711186f73a2eaba51d88798536b5490d21858c550570935f4c0a09495"
+    },
+    "oemnadEE.inf": {
+      "bytes": 25150,
+      "sha256": "5dff74dfa9c5b2869aaa8ebd6539d67f68fe1470664924483fc92227a8b5096e"
+    },
+    "oemnad0.inf": {
+      "bytes": 23851,
+      "sha256": "c0be170bd8e147fc49374bf73b4a814da9f4ec30e23d8829b5e2e3ed43751a26"
+    },
+    "oemnadUB.inf": {
+      "bytes": 31307,
+      "sha256": "333a109bfe561619dde8fb89b2a7a312c2762cd0120f43bcb7cd1f70d1ae313d"
+    },
+    "oemnadP3.inf": {
+      "bytes": 30112,
+      "sha256": "1b5372a2ec790422c427d6bcbaa2d2bed1dfa62423a645db565b4a682bef98fb"
+    },
+    "oemnadWM.inf": {
+      "bytes": 26797,
+      "sha256": "08320f1252e5198bdf4958444671641edf4d93a8912e057bfa8d164ee35db1ee"
+    },
+    "oemnadNP.inf": {
+      "bytes": 25671,
+      "sha256": "b53e2fb45cbe3a35d67c4d56750cc70528e0852beeedaec6743b19fea4cd41db"
+    },
+    "DHCPNT31.EXE": {
+      "bytes": 25911,
+      "sha256": "fd646d2021137fc60358b02a07fd5c76fc8326d43295fdb071053ce59f8326f3"
+    },
+    "RLTUSB.EXE": {
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    "oemnadUM.inf": {
+      "bytes": 24947,
+      "sha256": "f2e3a3259bc4b6990f38feeec68f9a3bcf483cfe65bd1e3f3b1aa5c801f21f40"
+    },
+    "oemnadE1.inf": {
+      "bytes": 34754,
+      "sha256": "405bfb60a34092a82f53d49c5398f88f0b7899f84c753d4379447ca5f236ef34"
+    },
+    "oemnadD2.inf": {
+      "bytes": 32369,
+      "sha256": "548d10f2e02d366f268f8c0e5b259103d0b8eefe36c353107529470e6bdabe91"
+    },
+    "oemnadNF.inf": {
+      "bytes": 25032,
+      "sha256": "104a6e23485b6396085cfe2019ce5bd01a5cb6082622ed36fae3603dc4c5dfd4"
+    },
+    "oemnadD1.inf": {
+      "bytes": 33182,
+      "sha256": "60946e65c0d85732a932a9e2d0aa43d9161006dba64d2c999bc2d4d356b5c920"
+    },
+    "oemnadLM.inf": {
+      "bytes": 22745,
+      "sha256": "cccb5922e4259f6e02a5ba073fc563000205abea3ceb80dd9e914070f8ff884f"
+    },
+    "SOFTWARE": {
+      "bytes": 319488,
+      "sha256": "fea5ad9773f3a4f974e4d84da5c0c59144f3eef29e29e4b55c5cf0e90a6a0f44"
+    },
+    "oemnadAM.inf": {
+      "bytes": 34394,
+      "sha256": "e069d0f42e817b81bee44d278ac6235170b59a778fb77a7e4fd95e7b372ed22c"
+    },
+    "oemnadDE.inf": {
+      "bytes": 25066,
+      "sha256": "e0e48fc6793dd3d6785193e8e458117a1b4971117d14bdabc329941301403c3d"
+    },
+    "oemnadTM.inf": {
+      "bytes": 26341,
+      "sha256": "7f9c9691f8e4faa74eb4a09f7f8d8a064658b7b58d984e20ab3f71b9ef084a9e"
+    },
+    "oemnadDI.inf": {
+      "bytes": 17602,
+      "sha256": "3d16da483ccc12ecd0e02e1b5c605f1a6beb860e07dfbdc2790d929365e3ed68"
+    },
+    "oemnadP9.inf": {
+      "bytes": 26567,
+      "sha256": "2ddbfb8ed97ea96a0e2e5ff006961e85e8edfddf8fa72a6ee33debc07008b241"
+    },
+    "oemnadN1.inf": {
+      "bytes": 31242,
+      "sha256": "f244d984a5feaf60799aa16cb517fc255c7be415c7c948a43bfefc5e02b39fe6"
+    },
+    "oemnadD4.inf": {
+      "bytes": 25044,
+      "sha256": "67d4631495d4f8d14218bd21a6b1100c4dadfb6b189fbd38423d05994413711d"
+    },
+    "oemnadLT.inf": {
+      "bytes": 24628,
+      "sha256": "daeeb4e03df587b9b88686250a3e90e0c3d0486b5a0900910485692044adb526"
+    },
+    "oemnadDP.inf": {
+      "bytes": 26480,
+      "sha256": "bd6ae03e6e507bbb69bc0c3cc9dee86c02c7780146abadfb26c7c6ddc5ebd393"
+    },
+    "oemnadIN.inf": {
+      "bytes": 33491,
+      "sha256": "8fb4504901949e5653f982ecfde4fab0442855ede3192794afa0cd1092c158e7"
+    },
+    "oemnadE2.inf": {
+      "bytes": 33722,
+      "sha256": "213197462961c0fba9a68d5bee24867c3e25690611a94ecf1d5c2af5ae786868"
+    },
+    "oemnad1.inf": {
+      "bytes": 26182,
+      "sha256": "8a181507ede3e61c9b571e471f06f359dbf7352a5c6dc768ee6ef1f9270f2546"
+    },
+    "oemnadEM.inf": {
+      "bytes": 24859,
+      "sha256": "7a20689acaf924407f1414f829ce415e74221eb460679142a9e5d3c009b411d1"
+    },
+    "oemnadNE.inf": {
+      "bytes": 24925,
+      "sha256": "5c983f1dc59591806d5e4cbf1c9ff7a6581a990989cbbb7a912cd13993e04c41"
+    },
+    "oemnadN2.inf": {
+      "bytes": 31546,
+      "sha256": "a84acde891d88113f41960d575f4f086592421049cd24c00dca04dcb1a88762e"
+    },
+    "oemnadEN.inf": {
+      "bytes": 26951,
+      "sha256": "a320c54c1bedefa0336cbea4fe5e6846dc989973d0b988ea459695c0eb664b5f"
+    },
+    "RLTSETUP.DLL": {
+      "bytes": 19798,
+      "sha256": "be74e8439963db196502b8e99928329a6610e3020fd2788fcdcea75a43873193"
+    },
+    "oemnadDS.inf": {
+      "bytes": 70066,
+      "sha256": "f13b4973d0ac2c0e128337007566ea4c347cc0938fcda8519e559d908f27f398"
+    },
+    "oemnadE3.inf": {
+      "bytes": 31327,
+      "sha256": "323db1e438359a00e73965ed4a6edbda6a67e6285894ce5b7ac1b4e9e15db930"
+    },
+    "TEST_000": {
+      "bytes": 98304,
+      "sha256": "b31377fdfe9d01791a21a9029a200378fddf0b26a32a30ee3a124c2df97b7f5c"
+    }
+  },
+  "scope": "Stopped NT3.1 v8b readback; preserve failed Update/Configure evidence"
+}

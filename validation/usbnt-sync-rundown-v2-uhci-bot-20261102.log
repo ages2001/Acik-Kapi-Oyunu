@@ -1,0 +1,162 @@
+harness: start
+usbnt: found UHCI at 00:02.0 (8086:7020) irq 10 io 0000c000
+usbnt: uhci: 2 ports at io c000
+usbnt: acpi: 5 tables (RSDT at 0ffe1c17)
+usbnt: aml: 337 named objects from the ACPI tables
+usbnt: device 0: 0409:55aa class 09, full speed, UHCI port 1 depth 0, addr 1
+usbnt: device 0: QEMU QEMU USB Hub
+usbnt: device 0: hub with 8 ports
+harness: client arrival notification 0
+usbnt: device 1: 46f4:0001 class 00, full speed, UHCI port 2 depth 0, addr 2
+usbnt: device 1: QEMU QEMU USB HARDDRIVE
+usbnt: device 1: mass storage, subclass 06 protocol 50, 1 LUN(s), 64 KB per command
+usbnt: msc 1 lun 0: slot 0, type 0, 'QEMU     QEMU HARDDISK   '
+harness: client arrival notification 1
+usbnt: device 2: 0627:0001 class 00, full speed, UHCI port 1 hub port 2, addr 3
+usbnt: device 2: QEMU QEMU USB Keyboard
+usbnt: device 2: keyboard
+harness: client arrival notification 2
+harness: ready
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+WRITE srb=01 scsi=00 xfer=32768
+CYCLE 0
+BIGW srb=01 scsi=00 xfer=262144
+BIGW srb=01 scsi=00 xfer=262144
+MSCRESET index=1 result=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+QV fails=0 bad=0
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+CYCLE 1
+BIGW srb=01 scsi=00 xfer=262144
+BIGW srb=01 scsi=00 xfer=262144
+MSCRESET index=1 result=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+QV fails=0 bad=0
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+CYCLE 2
+BIGW srb=01 scsi=00 xfer=262144
+BIGW srb=01 scsi=00 xfer=262144
+MSCRESET index=1 result=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+QV fails=0 bad=0
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+CYCLE 3
+BIGW srb=01 scsi=00 xfer=262144
+BIGW srb=01 scsi=00 xfer=262144
+MSCRESET index=1 result=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+QV fails=0 bad=0
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+CYCLE 4
+BIGW srb=01 scsi=00 xfer=262144
+BIGW srb=01 scsi=00 xfer=262144
+MSCRESET index=1 result=0
+HC 0 UHCI running ports=2
+  port 1 status 0023 dev 0
+  port 2 status 0023 dev 1
+DEV 0 0409:55aa speed=0 hc=0 root=1 depth=0 port=1 addr=1 hub=1 msc=0 hid=0
+DEV 1 46f4:0001 speed=0 hc=0 root=2 depth=0 port=2 addr=2 hub=0 msc=1 hid=0
+DEV 2 0627:0001 speed=0 hc=0 root=1 depth=1 port=2 addr=3 hub=0 msc=0 hid=1
+SLOT 0 present=1 type=0
+SLOT 1 present=0 type=0
+SLOT 2 present=0 type=0
+SLOT 3 present=0 type=0
+KBDS 1 MICE 0
+TUR srb=01 scsi=00 xfer=0
+TUR srb=01 scsi=00 xfer=0
+READ srb=01 scsi=00 xfer=32768
+VERIFY bad=0
+QV fails=0 bad=0
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+usbnt: device 1: removed
+usbnt: slot 0: device removed
+harness: client removal notification 1
+TUR srb=84 scsi=02 xfer=0 sense=2/3a/00
+KEY 2a down
+KEY 30 down
+KEY 30 up
+KEY 2a up
+RESULT msc-reset piix3-usb-uhci bot PASS: five physical resets; stable slots/identity; retained data; queued reads; removal and keyboard continuity

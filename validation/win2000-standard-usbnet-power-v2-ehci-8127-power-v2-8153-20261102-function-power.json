@@ -1,0 +1,12 @@
+{
+  "guest": "win2000-standard-usbnet-power-v2-ehci-8127",
+  "utc": "2026-11-02T07:08:39.653787+00:00",
+  "scope": "Test USBNT PDO D3/D0 worker IRPs and subsequent real NIC traffic.\n\nUPOWER targets only USBNT, directly at the PDO, and forces DISPATCH_LEVEL.\nThis is lower-device function-idle fault injection, not full NDIS/system sleep.\nThe helper does three D3/D0 pairs and restores D0 even after a failed D3.\n",
+  "result": "PASS",
+  "offset": 462,
+  "power_trace": "POWERTEST object=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\n",
+  "power_cycles": 3,
+  "report": "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8153-20261102-after-power.json",
+  "report_sha256": "7cf8cb7c51447b3a938b9f7fd9a7ecb5415189d98e1b15c244570828771d0083",
+  "screenshot": "win2000-standard-usbnet-power-v2-ehci-8127-power-v2-8153-20261102-function-power-screen.png"
+}

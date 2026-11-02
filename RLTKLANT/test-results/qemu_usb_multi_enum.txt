@@ -1,0 +1,6 @@
+  Device 1.0, Port 1, Speed 480 Mb/s, Product Realtek RTL8153 USB Gigabit Eth
+  Device 1.0, Port 2, Speed 480 Mb/s, Product Realtek RTL8153 USB Gigabit Eth
+  Device 1.0, Port 3, Speed 480 Mb/s, Product Realtek RTL8153 USB Gigabit Eth
+usb-rtl8153.0: index=0,type=nic,model=usb-rtl8153,macaddr=52:54:00:11:11:01
+usb-rtl8153.1: index=0,type=nic,model=usb-rtl8153,macaddr=52:54:00:11:11:02
+usb-rtl8153.2: index=0,type=nic,model=usb-rtl8153,macaddr=52:54:00:11:11:03

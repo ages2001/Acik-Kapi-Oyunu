@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/USBNT/test/qharn.py", line 44, in _connect
+    s.connect(path)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/USBNT/test/thotplug.py", line 24, in <module>
+    h = Harness(['-device', hc+',id=hc',
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/rltklant-work/USBNT/test/qharn.py", line 34, in __init__
+    self.qmp = self._connect(self.qmp_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/rltklant-work/USBNT/test/qharn.py", line 48, in _connect
+    raise RuntimeError("qemu exited: %s" % open(self.qlog_path).read())
+RuntimeError: qemu exited: qemu-system-i386: -chardev socket,id=ser,path=/tmp/usbquhmw8pjm/ser,server=on,wait=on: info: QEMU waiting for connection on: disconnected:unix:/tmp/usbquhmw8pjm/ser,server=on
+qemu-system-i386: -device usb-hub,bus=hc.0,port=1,id=hub1: Warning: speed mismatch trying to attach usb device "QEMU USB Hub" (full speed) to bus "hc.0", port "1" (high speed)
+

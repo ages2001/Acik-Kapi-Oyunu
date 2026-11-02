@@ -1,0 +1,102 @@
+{
+  "utc": "2026-11-01T22:28:27.738576+00:00",
+  "result": "PASS",
+  "scope": "Fresh cold boot after v9 Update/Configure, automatic logon DHCP; no manual invocation. Distinct preconfigured subnets.",
+  "captures": {
+    "usb.pcap": {
+      "bytes": 15716,
+      "sha256": "6db6377841d8b7ce5b30d0b4b0268017b88760ebd1af600e4b855f4d106dd3a4",
+      "start_offset": 24,
+      "events": []
+    },
+    "pci.pcap": {
+      "bytes": 4180,
+      "sha256": "3bcb63854e61aa8df470dd5e7bb4ca611a348adf9743cc7845bf526ad332bb8b",
+      "start_offset": 24,
+      "events": [
+        {
+          "offset": 1220,
+          "timestamp": 1793572090.168601,
+          "source": "10.0.3.15",
+          "destination": "255.255.255.255",
+          "ports": [
+            68,
+            67
+          ],
+          "message_type": 1,
+          "xid": "663a0000",
+          "mac": "525400123456",
+          "yiaddr": "0.0.0.0",
+          "options": {
+            "53": "01",
+            "55": "01030633"
+          }
+        },
+        {
+          "offset": 1528,
+          "timestamp": 1793572090.168653,
+          "source": "10.0.3.2",
+          "destination": "255.255.255.255",
+          "ports": [
+            67,
+            68
+          ],
+          "message_type": 2,
+          "xid": "663a0000",
+          "mac": "525400123456",
+          "yiaddr": "10.0.3.15",
+          "options": {
+            "53": "02",
+            "54": "0a000302",
+            "1": "ffffff00",
+            "3": "0a000302",
+            "6": "0a000303",
+            "51": "00015180"
+          }
+        },
+        {
+          "offset": 2134,
+          "timestamp": 1793572090.181664,
+          "source": "10.0.3.15",
+          "destination": "255.255.255.255",
+          "ports": [
+            68,
+            67
+          ],
+          "message_type": 3,
+          "xid": "663a0000",
+          "mac": "525400123456",
+          "yiaddr": "0.0.0.0",
+          "options": {
+            "53": "03",
+            "50": "0a00030f",
+            "54": "0a000302",
+            "55": "01030633"
+          }
+        },
+        {
+          "offset": 2454,
+          "timestamp": 1793572090.181682,
+          "source": "10.0.3.2",
+          "destination": "255.255.255.255",
+          "ports": [
+            67,
+            68
+          ],
+          "message_type": 5,
+          "xid": "663a0000",
+          "mac": "525400123456",
+          "yiaddr": "10.0.3.15",
+          "options": {
+            "53": "05",
+            "54": "0a000302",
+            "1": "ffffff00",
+            "3": "0a000302",
+            "6": "0a000303",
+            "51": "00015180"
+          }
+        }
+      ]
+    }
+  }
+}

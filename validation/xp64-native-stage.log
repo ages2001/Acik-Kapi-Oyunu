@@ -1,0 +1,25 @@
+
+7-Zip 25.01 (x64) : Copyright (c) 1999-2025 Igor Pavlov : 2025-08-03
+ 64-bit locale=C.UTF-8 Threads:5 OPEN_MAX:16384, ASM
+
+Scanning the drive for archives:
+1 file, 62713372 bytes (60 MiB)
+
+Extracting archive: /workspace/rltklant-vm/install/xp64-kernel/driver.cab
+--
+Path = /workspace/rltklant-vm/install/xp64-kernel/driver.cab
+Type = Cab
+Physical Size = 62713372
+Method = LZX:21
+Blocks = 55
+Volumes = 1
+Volume Index = 0
+ID = 34679
+
+Everything is Ok
+
+Files: 72
+Size:       3526884
+Compressed: 62713372
+Formatting '/workspace/rltklant-vm/run/xp64-usbnet-native-8127.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=5368709120 backing_file=/tmp/rltklant-checkpoints/xp64-usbnet-native-8127.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+Guest running: xp64-usbnet-native-8127, PID 140163

@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T06:03:12.087178+00:00",
+  "guest": "win2000-standard-ringfix-multi-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 555784,
+      "sha256": "475411b4ed2c96009eda0be362a8ac041bed76c2d8dc0866b8b771519464da17"
+    },
+    "RLTTEST/PCNEW.EXE": {
+      "file": "PCNEW.EXE",
+      "size": 16319,
+      "sha256": "89582ba6a20d839326c4f40cf9a021172d476a3b5276f2b4cac30e839625b867"
+    },
+    "RLTTEST/RINGPNP.LOG": {
+      "file": "RINGPNP.LOG",
+      "size": 2145,
+      "sha256": "7adb25580da6d5ee0d4ed26ea4be0231eac1ce0f7425e3bdf1402e70ce19008c"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "result": "FAIL",
+  "scope": "Actual NT3.1 automatic selector chose only enabled PCI instance RLTKLANT02, but required socket-option setup failed before any DHCP request",
+  "screenshot": "nt31-dhcp-route-auto-result-20261101.png",
+  "candidate": "frozen-builds/dhcp-interface-route-20261101/manifest.json",
+  "followup": "Use Winsock 1.1 select for timeout and required SO_BROADCAST only; distinct-subnet routes still checked before sending"
+}

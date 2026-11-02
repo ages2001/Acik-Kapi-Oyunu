@@ -1,0 +1,5 @@
+{
+  "url": "https://raw.githubusercontent.com/Paolo-Maffei/OpenNT/master/public/ddk/inc/ndis.h",
+  "sha256": "b21f08b5059d6e21e30187d20e2ec0f1fb57df77dd99ebcc2210aaf237d00253",
+  "scope": "Historical NDIS protocol macro and OPEN_BLOCK reference, not proof of NT3.51 runtime layout; runtime comparison still required."
+}

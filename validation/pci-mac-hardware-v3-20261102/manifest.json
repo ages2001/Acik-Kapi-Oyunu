@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-02T02:32:38.927251+00:00",
+  "result": "PASS_STANDALONE_TRANSPORT",
+  "sources": {
+    "validation/test_macseq.c": "92786d3dcb231514ec8beb553f18b5af3d6eba317f540c5402ae4d2d003b5042",
+    "validation/run_macseq_checks.py": "bac0f7ef634099a3283a44eb64af2a5e4755b35bd9e180dd280a2a968352f730",
+    "RLTKLANT/build/make-pci-mac.py": "e1f43bce2ea9b501e8e3d6db294b4c5bcaf5c346b89d8864220667c16dee867c",
+    "validation/test_mac_hardware.c": "27bb95ea2d8dbdfd6430de179360e822e5645b85188e23b47ace3f3252d29c51",
+    "RLTKLANT/src/macseq.c": "f77aaafac99c199c5f7b448a9e7dc6695c22906179bcb22842cc0db6365a4aeb",
+    "RLTKLANT/src/macseq.h": "6dbadd84dd86fc00757858d9cc999b32e905ea5b8931746814861467dc2c53b6",
+    "RLTKLANT/src/fwbus.c": "3f1f87bc12452bfec14c313fd0738a930353287b80950662d716f38810a61862",
+    "RLTKLANT/src/fwbus.h": "3d1876f28e16997c227bd7fb498c92e9620a876725f8adfadec3f303e2cfbfa2",
+    "RLTKLANT/src/fwvm.c": "41178fb02bee5c44a81435c3d99ad44858e439bd19b63f9662d3867123032bae",
+    "RLTKLANT/src/fwvm.h": "418bccf06da8091f2317a2f46fa99f659bfd5d4cc6cfd82a3b3afa184f054e11",
+    "RLTKLANT/src/fwimages.c": "26a040b9588912755bfe9205cbdf2b78a4b88011588261d8047c7ac1c3b4e588",
+    "RLTKLANT/src/fwimages.h": "4ee99b60611e76f946337f2dc807dc29bd6ec5e32cc27d120cce313efe3e53d4",
+    "RLTKLANT/third_party/r8169/r8169_main.c": "cb918734e19369d22fd0e65657c0183518f0ba59b57745a74f6a5bbcf56f37cc",
+    "RLTKLANT/third_party/r8169/mac-sequences.inc": "3873fcdfc0f2577e3982b92acf58943541cb91a761a4941fd02b2a9d0c92ba89",
+    "RLTKLANT/third_party/r8169/mac-constants.h": "ef5ededd2a6010dba5c66140e9d335c6c4e35ba5cbdde956bbaf2c481179c39f",
+    "RLTKLANT/third_party/r8169/MAC-PROVENANCE.json": "a2ae0cd11b18c3ce43b46769e29079dca33fafb4f9ac519785f53575be26140f",
+    "RLTKLANT/third_party/r8169/versions.h": "7a1a38b66a8b7bd61e46408028317e1550db4bf699dbf620e7dedf1e7cbd5b0f"
+  },
+  "limits": [
+    "Standalone transport evidence only; Windows lifecycle integration has separate proof. The new hardware/DASH API is not integrated yet.",
+    "Synthetic register readiness does not execute PHY/MCU firmware or validate silicon.",
+    "Full MAC power/startup, resource mapping and lifecycle ordering remain separate."
+  ]
+}

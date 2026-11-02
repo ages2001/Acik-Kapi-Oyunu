@@ -1,0 +1,124 @@
+{
+  "utc": "2026-11-02T13:24:20.862863+00:00",
+  "guest": "nt351-usbsetup-syncrun-rtl8139-8127",
+  "result": "PASS_HOST_PAYLOAD",
+  "scope": "Loopback-only bidirectional TCP fixture; compare every byte, retain failures.",
+  "rounds": [
+    {
+      "round": 1,
+      "rx_bytes": 65536,
+      "rx_sha256": "bacc5287b7d1402bf9be9c1d5b518996becd42909cec3fb9185034bbf938825a",
+      "tx_bytes": 65536,
+      "tx_sha256": "f779dbe3aeaa609beb32212579f3aea441f244621d13c977cb8b52d7ec3016d9"
+    },
+    {
+      "round": 2,
+      "rx_bytes": 65536,
+      "rx_sha256": "d83d3c02421ee991dcbe953555efad80ecd5d8dccb88cf4c8b2e6cb4c57d8afc",
+      "tx_bytes": 65536,
+      "tx_sha256": "4b048c1b657fbc61d2c35870eed20b1a0690a13a0ce9a74b76bb15c5c59fc0ed"
+    },
+    {
+      "round": 3,
+      "rx_bytes": 65536,
+      "rx_sha256": "5ad1a070fa827444a9b76e15a0bbf137f6176daf7e7fe81d6bcedc8ef58c5254",
+      "tx_bytes": 65536,
+      "tx_sha256": "3499d193b129cbbbe315bb6fbe8c3aa307814bfe79ced38701467920d25d1cc4"
+    },
+    {
+      "round": 4,
+      "rx_bytes": 65536,
+      "rx_sha256": "0784cae4d49f1ef47020c9b2e5440fda48bbcbd484a900d7828551896b9b0da6",
+      "tx_bytes": 65536,
+      "tx_sha256": "fa18a85d51afc545fb7d2acae37d5c18250c0e7c09d4a186dd6c6a621f4d64bb"
+    },
+    {
+      "round": 5,
+      "rx_bytes": 65536,
+      "rx_sha256": "2ed6160ec6bb3da6f0e0c66fc7ecfd1e7ef95d5b1667cd207da78cfdf0a25cda",
+      "tx_bytes": 65536,
+      "tx_sha256": "9db4fc2df96501ea36bd911e730eb1e02d1520ee9505ad8a8ea96cc8007bc0a1"
+    },
+    {
+      "round": 6,
+      "rx_bytes": 65536,
+      "rx_sha256": "7f03e0e9451059b254dcf490da62ebeb514c51f1e28d3bbe569c70db63730b81",
+      "tx_bytes": 65536,
+      "tx_sha256": "513f5cfb04ea7a7e30db7a758518f527b22ccff0da1c63818f1bd69039c00c05"
+    },
+    {
+      "round": 7,
+      "rx_bytes": 65536,
+      "rx_sha256": "b89ba941e477e62ca2ba2999e7c33a6a98d374eeca9d2abfd030f73c4f7c051f",
+      "tx_bytes": 65536,
+      "tx_sha256": "08d8990bb1138f358ee1a0bdf89fce03580f9efd23a79ba2c7e6209a45a83975"
+    },
+    {
+      "round": 8,
+      "rx_bytes": 65536,
+      "rx_sha256": "b009b89097ff9e90088d24b507e39c59a84ecae452019b39d82673ef807f24e4",
+      "tx_bytes": 65536,
+      "tx_sha256": "139b8e5667379a273ad7e91d3ecc3fbbb535c3efce0d40a8e04efcb32060ff50"
+    },
+    {
+      "round": 9,
+      "rx_bytes": 65536,
+      "rx_sha256": "2f6afa8afeb8a1f121aa2f8d67356bb18799b3614c9d4cda7700e9430550b055",
+      "tx_bytes": 65536,
+      "tx_sha256": "015c0c72c83fccc18a4374c2138f8276fa7688cbbeae11386a5ca8acaf73e59b"
+    },
+    {
+      "round": 10,
+      "rx_bytes": 65536,
+      "rx_sha256": "2bc5c3829e8e7593e4e7904ddd8bedc9daf8d00d4836a4982ac584bccd82ea57",
+      "tx_bytes": 65536,
+      "tx_sha256": "28457f1b884d52cd0da3d912cd9688fd4ef0c8ed010f2c524c9156b865559f35"
+    },
+    {
+      "round": 11,
+      "rx_bytes": 65536,
+      "rx_sha256": "71d3bc4dc0b36d01e2ab7673a046ef5c3b0e438436db051a9bb2f9fc47153fde",
+      "tx_bytes": 65536,
+      "tx_sha256": "02855ac33c5c8150d9fb6e79b2a59b83c663cee6a017e926c4ad67e330ed0263"
+    },
+    {
+      "round": 12,
+      "rx_bytes": 65536,
+      "rx_sha256": "a7f8901703e516ce0c3184c309086cce16427900c31add81366059ee3ba65074",
+      "tx_bytes": 65536,
+      "tx_sha256": "9003c7ba208d4055cc235e51d16b73053de7ec93950db5a3cd4d5d9ddfce7f58"
+    },
+    {
+      "round": 13,
+      "rx_bytes": 65536,
+      "rx_sha256": "c2a05b414427af95ae434caf9402a0db77a056439d6d9e4d84c59005500ac8bf",
+      "tx_bytes": 65536,
+      "tx_sha256": "5d2e6425e133c37ed7e22f05826ce15713d3374994ae8a4a6012317a0747ec44"
+    },
+    {
+      "round": 14,
+      "rx_bytes": 65536,
+      "rx_sha256": "885ef6d2abcb54515730fa29be6a6daa400239525256d75509340a1610d2ba0c",
+      "tx_bytes": 65536,
+      "tx_sha256": "c770f0427e5dc7dae3880f8549b302645ab60f8f29563dfb60c452f4c52ba901"
+    },
+    {
+      "round": 15,
+      "rx_bytes": 65536,
+      "rx_sha256": "5201e1a9efa4223ed361298921a9cb107cb15cad7464f1a27da93cdb2250d2f0",
+      "tx_bytes": 65536,
+      "tx_sha256": "1d75d76cfbed4a712ec604fc45ad26e1cd08bd9e3fc915f9865fc6b6c2a54586"
+    },
+    {
+      "round": 16,
+      "rx_bytes": 65536,
+      "rx_sha256": "32a390c0a3c915160e9e2adc6a5dd78a6bcdecafda266d20adacb0dbb6488b1a",
+      "tx_bytes": 65536,
+      "tx_sha256": "d61336d92024bf6cc139eeaedd80e8c5eca1fdeefcaba649f490ddcbecf718bd"
+    }
+  ],
+  "sources": {
+    "tcp_stream_fixture.py": "c6d6cb61cdcff90eac82ef2d58cfdb6b16b73c5f44a00c5160dfccc7d61222cd",
+    "guest_tcp35.c": "f2ee3e9277a2b26a86178d6895bcbaf62ba7437dad4aa65bfddaffbf07d7336d"
+  }
+}

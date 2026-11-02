@@ -1,0 +1,30 @@
+{
+  "SYSTEM": {
+    "bytes": 643072,
+    "sha256": "3535e68d3e18e87d52167618be564b9196d51c5e6c39c2d1361f05dae527aa08"
+  },
+  "DHCPNT31.EXE": {
+    "bytes": 25911,
+    "sha256": "fd646d2021137fc60358b02a07fd5c76fc8326d43295fdb071053ce59f8326f3"
+  },
+  "RLTUSB.EXE": {
+    "bytes": 12974,
+    "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+  },
+  "SOFTWARE": {
+    "bytes": 319488,
+    "sha256": "c13da1926b559ef59dd2e8fbd7abff7c379d4b19b197bbf83e859703c2bc8fa3"
+  },
+  "RLTKLANT.SYS": {
+    "bytes": 506368,
+    "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca"
+  },
+  "DHCPNT31.LOG": {
+    "bytes": 80,
+    "sha256": "946a3d89d5bb5141156d6315a1dde0318a06ec587b095ea731ff540378e26f2c"
+  },
+  "TEST_000": {
+    "bytes": 94208,
+    "sha256": "f2e87084dace0126a7d89e8f124b00b860e71213b18311226ecd2f76d6f2efcf"
+  }
+}

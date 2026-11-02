@@ -1,0 +1,33 @@
+{
+  "utc": "2026-11-02T18:25:20.308610+00:00",
+  "guest": "win2000-standard-usbnet-mixed-release13-8127",
+  "safeoff_screenshot": "win2000-release13-failed-upgrade-safeoff-20261102.png",
+  "safeoff_sha256": "0a48d2055d8424eb171f92402d5bfab616993c504ac17896d3edf4a85261425d",
+  "files": {
+    "debug.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 348,
+      "sha256": "1713c223fc74d60acf7aefc8b33840cb14d28615b969d5ae575d10dc11097efe"
+    },
+    "launch.json": {
+      "bytes": 1433,
+      "sha256": "f19efa365c14d280fb965734c27a9e28fc4faecad4c740122ab955e17bc7f6cb"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "449569b21db9d4d9392659bea44798077101705de2d78f999bd878884148189a"
+    },
+    "usb.pcap": {
+      "bytes": 276,
+      "sha256": "ccc55d5d596e0ac95044061260dab28d2ca1ccfeb2be6aee4c10f475e3316962"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

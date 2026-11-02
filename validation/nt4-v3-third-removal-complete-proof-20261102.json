@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-01T23:54:39.417492+00:00",
+  "result": "PASS",
+  "scope": "Native third-adapter removal preserves both surviving adapters, shared service and product; cold boot USB and PCI payload tests",
+  "removal": "nt4-v3-third-removal-20261102-proof.json",
+  "traffic": "nt4-ndis-v3-remove-boot-8127-third-removed-20261102.json",
+  "captures": "nt4-v3-third-removal-traffic-prefixes-20261102/manifest.json",
+  "full_payload_replies": 8,
+  "limits": [
+    "Remaining two-adapter and final shared-service removal are separate scenarios."
+  ]
+}

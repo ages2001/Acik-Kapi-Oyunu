@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-01T21:57:55.535636+00:00",
+  "result": "FAIL",
+  "candidate": "frozen-builds/startup-maintenance-v3-20261102/manifest.json",
+  "screenshots": [
+    "nt31-startup-helper-v3-sync-20261102.png",
+    "nt31-startup-helper-v3-console-20261102.png"
+  ],
+  "error": "CreateGroup without an explicit personal/common argument created common groups. Subsequent item maintenance failed. This disposable fixture contains partial UI/group changes and must not be treated as a passing install.",
+  "remaining": "Resolve NT3.1 DDE group-selection semantics from reference source and retest on a clean child."
+}

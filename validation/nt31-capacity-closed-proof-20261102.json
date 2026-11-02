@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-02T09:17:40.236872+00:00",
+  "result": "PASS",
+  "guest": "nt31-usbsetup-capacity-rtl8117-8127",
+  "drivers": {
+    "USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 411648,
+      "sha256": "92b201af42e3ddc15a8fd46f88f0f28ffd337ae2ac0f04f74558f0abbd2bbcab"
+    },
+    "RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+    }
+  },
+  "hotplug_cycles": 4,
+  "carrier_cycles": 4,
+  "full_payload_replies": 104,
+  "evidence": {
+    "nt31-capacity-offline-20261102/manifest.json": "d6fe02ca788f9a1996b3d9504f20b74ba4c51e659a2881e208ba056e9975f254",
+    "nt31-capacity-evidence-20261102/manifest.json": "258392ba494228beae29e0b69814ac7c747631696b0f2a18053a0e1936422054",
+    "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-sibling-matrix.json": "11b2271311d8f68b8c8325e4256371161bb7bc5ca8303bb7179861d30b32813e"
+  },
+  "scope": "NT3.1 persistent USBNT plus native PCI/PCIe adapter recorded in the launch manifest in QEMU; inbox ping receipt summaries plus complete 1472-byte wire payload matching during USB interruption/recovery. Not a custom guest-side payload comparator or physical-silicon validation. Clean shutdown and stopped-disk driver readback. Predates the later native HID capacity guard; do not transfer this exact-binary result to the HID candidate."
+}

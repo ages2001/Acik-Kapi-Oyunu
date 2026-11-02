@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "cases": [
+    {
+      "file": "win2000-standard-usbnet-retirement-8127-retirement-retry-20261102-device-1-notice0.png",
+      "expected": true,
+      "match": true,
+      "ocr": "& KE)\n\n\u2018You have unplugged ar ejected a device without stopping it\nUnplugging or ejecting devices without fist stopping them can\nten cause your computer to crash and ose valuable data\n\nTo safely unplug or eject any ofthe folowing devices, fist use the Hardware\nwizard in the Contral Panel ta stop the device.\n\n[BG Restek RTLETS3 USB Gigabit Ethemet (tev 5C10)\n\nIt you frequently need to unplug this device, Windows can give you an icon\nton the taskbar to quickly unplug or eject your device. Ifyou would ke to use\nthis option, check the fllowing\n\n7 Show Unplug/Eject icon on the taskbar\n\ny\n,) 2:01em\n\nae\n\nMstart||| (2/] @ Sy || Found new Her.\n\n"
+    },
+    {
+      "file": "win2000-standard-usbnet-retirement-8127-retirement-20261102-device-2-notice0.png",
+      "expected": true,
+      "match": true,
+      "ocr": "& KE)\n\n\u2018You have unplugged ar ejected a device without stopping it\nUnplugging or ejecting devices without fist stopping them can\nten cause your computer to crash and ose valuable data\n\nTo safely unplug or eject any ofthe folowing devices, fist use the Hardware\nwizard in the Contral Panel ta stop the device.\n\n[BG Restek RTLETS3 USB Gigabit Ethemet (tev 5C10)\n\nIt you frequently need to unplug this device, Windows can give you an icon\nton the taskbar to quickly unplug or eject your device. Ifyou would ke to use\nthis option, check the fllowing\n\n7 Show Unplug/Eject icon on the taskbar\n\ny\n,) 2:01em\n\nae\n\nMstart||| (2/] @ Sy || Found new Her.\n\n"
+    },
+    {
+      "file": "win2000-retirement-boot-20261102.png",
+      "expected": false,
+      "match": false,
+      "ocr": "Welcome to the Found New\nHardware Wizard\n\nThis wizard helps you install a device civer for a\nhardware device,\n\nConnect ta\nthe Internet\n\n"
+    },
+    {
+      "file": "win2000-usbnt-hcd-release-safeoff-20261102.png",
+      "expected": false,
+      "match": false,
+      "ocr": ""
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+PASS: 24 passive recovery schedules; timer cancellation/join before interrupt drain and DMA teardown; init/register/halt failures; clear-before-rearm; pending/halting callback rundown

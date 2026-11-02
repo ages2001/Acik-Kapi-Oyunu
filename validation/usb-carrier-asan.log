@@ -1,0 +1,27 @@
+ok  : A: port idle at load (no device yet)
+ok  : A: link down while idle
+ok  : A: later arrival attaches on NT4
+ok  : A: media connect reported
+ok  : A: link up after arrival
+ok  : B: present-at-boot arrival attaches on NT 3.51
+ok  : C: connect on first insert
+ok  : C: disconnect + re-armed on removal
+ok  : C: link down after removal
+ok  : C: re-insert attaches again
+ok  : C: arrival/removal counters correct
+ok  : D: send refused while idle
+ok  : D: send works once attached
+ok  : D: send refused after unplug
+ok  : E: 2000 EHCI NIC left to in-box stack (idle)
+ok  : E: 2000 xHCI (USB3) NIC attaches on USBNT
+ok  : F: non-Realtek arrival ignored
+ok  : attached without carrier does not fabricate media connect
+ok  : cable connect is detected independently of USB arrival
+ok  : stable carrier does not emit duplicate notifications
+ok  : failed PHY status read drops cached carrier
+ok  : all-ones PHY status is not link up
+ok  : physical removal disconnects established carrier once
+ok  : RTL8150 MSR bit1 is not carrier
+ok  : RTL8150 carrier is MSR bit2
+
+ALL HOT-PLUG TESTS PASSED (0 failures)

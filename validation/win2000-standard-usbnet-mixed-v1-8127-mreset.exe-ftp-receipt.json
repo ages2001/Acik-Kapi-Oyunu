@@ -1,0 +1,9 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-v1-8127",
+  "file": "MRESET.EXE",
+  "sha256": "b18129df4bc5a10422aa6970be1403cb3836476bce06988f77874f47eb8214c6",
+  "bytes": 11814,
+  "time": 1793627667.297009,
+  "utc": "2026-11-02T13:54:27.297018+00:00",
+  "scope": "Server buffered bytes; guest byte count and ftp prompt still require visual verification"
+}

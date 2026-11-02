@@ -1,0 +1,67 @@
+{
+  "guest": "win2000-standard-usbnet-stall-legacyusb-8127",
+  "utc": "2026-10-29T21:17:02.431170+00:00",
+  "scope": "Injected USB endpoint halt in the protocol model; actual guest SetupAPI and payload-checked ICMP recovery, not physical silicon validation",
+  "results": [
+    {
+      "cycle": 1,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-stall-legacyusb-8127-recovery-stall01.json"
+    },
+    {
+      "cycle": 2,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-stall-legacyusb-8127-recovery-stall02.json"
+    },
+    {
+      "cycle": 3,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-stall-legacyusb-8127-recovery-stall03.json"
+    },
+    {
+      "cycle": 4,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-stall-legacyusb-8127-recovery-stall04.json"
+    },
+    {
+      "cycle": 5,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-stall-legacyusb-8127-recovery-stall05.json"
+    },
+    {
+      "cycle": 6,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-stall-legacyusb-8127-recovery-stall06.json"
+    },
+    {
+      "cycle": 7,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-stall-legacyusb-8127-recovery-stall07.json"
+    },
+    {
+      "cycle": 8,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-stall-legacyusb-8127-recovery-stall08.json"
+    },
+    {
+      "cycle": 9,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-stall-legacyusb-8127-recovery-stall09.json"
+    },
+    {
+      "cycle": 10,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "win2000-standard-usbnet-stall-legacyusb-8127-recovery-stall10.json"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-02T02:02:46.729812+00:00",
+  "guest": "nt31-usbsetup-macstart-8127",
+  "traffic_proof": "nt31-usbsetup-macstart-8127-mac-start-baseline-v2-20261102.json",
+  "status": "Interrupted after traffic verification; normal shutdown not verified",
+  "observed": "Tool execution was aborted; QMP refused connection and QEMU PID 117708 became a zombie. No process-exit.json or verified safe-off capture exists. Do not credit normal shutdown. New reset fixture uses the earlier stopped BAR-sizing parent, not this disk.",
+  "logs": {
+    "debug.log": "2701bc9a34c86919840bbe00f6eb4a3637bdc2f184ae2ac488c20f155dbb7eb8",
+    "launch.json": "23df4d1968ef32f0febbde4b22ae81ac809ceb21f74a555eb61afd4f8c280d72",
+    "usb.pcap": "f48369b7dc7dd6863236d8605490abe92520d09471caa4441f799ec73df63141",
+    "pci.pcap": "9833bb4c71c9468d928eaad6571459e1db1df8a357fc3cc8065beec232897565"
+  }
+}

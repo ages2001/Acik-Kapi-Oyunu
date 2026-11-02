@@ -1,0 +1,47 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-sleep-v3-8127",
+  "utc": "2026-11-02T16:06:40.023344+00:00",
+  "result": "PASS_LIVE_PENDING_STOPPED_READBACK",
+  "scope": "Observe actual shared-device resets, network payloads and Windows HID events.",
+  "rows": [
+    {
+      "cycle": 1,
+      "result": "PASS_LIVE_PENDING_READBACK",
+      "physical_resets": 1,
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-reset-v3-20261102-c1-port-reset-cycles.json",
+        "sha256": "566b0ee5ba4f6ae22ca2f2b1547f15d547a5d20bcac9741b72d933a6a9ce52bb"
+      },
+      "keyboard": {
+        "file": "win2000-mixed-reset-v3-20261102-c1-key.json",
+        "sha256": "35e814fcfec1f10f2bc4406a0f2052f8a64054617852cd124e153f670720f1dc"
+      }
+    },
+    {
+      "cycle": 2,
+      "result": "PASS_LIVE_PENDING_READBACK",
+      "physical_resets": 1,
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-reset-v3-20261102-c2-port-reset-cycles.json",
+        "sha256": "d7a4ac1857a3aaf5ba80a3b3f66ba918033ce758c2f92f283a6fff2d9337368b"
+      },
+      "keyboard": {
+        "file": "win2000-mixed-reset-v3-20261102-c2-key.json",
+        "sha256": "bed9df25b11e650193eb1b0a134a7a345c4f0313f9b3b2bbaa0ecd4d813de5e5"
+      }
+    },
+    {
+      "cycle": 3,
+      "result": "PASS_LIVE_PENDING_READBACK",
+      "physical_resets": 1,
+      "network": {
+        "file": "win2000-standard-usbnet-mixed-sleep-v3-8127-win2000-mixed-reset-v3-20261102-c3-port-reset-cycles.json",
+        "sha256": "c5a771fb9a413b27736b559bd150a6988930094c28fc0d9805896dafa13284d7"
+      },
+      "keyboard": {
+        "file": "win2000-mixed-reset-v3-20261102-c3-key.json",
+        "sha256": "ca992da34683d6f846bc97aef3913537346813f8b526a016b29052375c8cdca0"
+      }
+    }
+  ]
+}

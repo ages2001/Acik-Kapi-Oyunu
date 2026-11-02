@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-01T20:01:35.812132+00:00",
+  "guest": "nt4-ndis-setup-upgrade-8127",
+  "command": "C:\\RLTTEST\\RLTUSB.EXE usb RLTKLANT2 525400abcdef",
+  "result": "Rejected: This permanent MAC is already assigned to another adapter.",
+  "list_after": [
+    "RLTKLANT1 USB 525400abcdef",
+    "RLTKLANT2 PCI/PCIe"
+  ],
+  "screenshot_sha256": "e888c04470f3a1b4f109f2af11843f22a01a5d2bdcd6d10936424afe26ee2d51",
+  "scope": "Actual duplicate permanent-MAC rejection with two NCPA instances; uses staged test utility, not yet the System32 installer copy."
+}

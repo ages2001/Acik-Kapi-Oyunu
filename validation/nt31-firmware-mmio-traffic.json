@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-30T05:56:34.392367+00:00",
+  "driver": {
+    "guest": "nt31-firmware-mmio-slot-8127",
+    "utc": "2026-10-30T05:29:53.441698+00:00",
+    "source": "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys",
+    "size": 237056,
+    "sha256": "93bb77336d18177fea90726d8f7b5f58bb6df8efd253bb83c5b102e27fbfc6b6",
+    "previous_checkpoint": "nt31-ownership-slot-8127.raw",
+    "scope": "IDE/native PCIe RTL8127 without an I/O BAR; passive initial PHY/firmware upload. MCU instruction execution/physical calibration not modeled."
+  },
+  "matched": 4,
+  "pcap_sha256": "8fb4883402dc51bbf195d0a875a66a858109109ee40bc17e34657f702bb9cf76",
+  "scope": "Four 1472-byte guest ICMP request/reply payload+ID+sequence matches; guest screenshot corroborates receipt. Separate screenshot shows HTTP 200 / 1358 bytes through proxy, not guest DNS/TLS."
+}

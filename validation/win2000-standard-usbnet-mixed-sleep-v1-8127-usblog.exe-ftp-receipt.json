@@ -1,0 +1,9 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-sleep-v1-8127",
+  "file": "USBLOG.EXE",
+  "sha256": "df2690acd4b575dac7d2cb94a9a271a976fbf8d422fe5bb5fb288fdef0f235e7",
+  "bytes": 6845,
+  "time": 1793631285.2389874,
+  "utc": "2026-11-02T14:54:45.238996+00:00",
+  "scope": "Server buffered bytes; guest byte count and ftp prompt still require visual verification"
+}

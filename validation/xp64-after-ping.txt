@@ -1,0 +1,72 @@
+
+Pinging 10.0.2.2 with 32 bytes of data:
+
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+
+Ping statistics for 10.0.2.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+Pinging 10.0.3.2 with 32 bytes of data:
+
+Reply from 10.0.3.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.3.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.3.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.3.2: bytes=32 time<1ms TTL=255
+
+Ping statistics for 10.0.3.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+Pinging 10.0.4.2 with 32 bytes of data:
+
+Reply from 10.0.4.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.4.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.4.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.4.2: bytes=32 time<1ms TTL=255
+
+Ping statistics for 10.0.4.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+Pinging 10.0.5.2 with 32 bytes of data:
+
+Reply from 10.0.5.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.5.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.5.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.5.2: bytes=32 time<1ms TTL=255
+
+Ping statistics for 10.0.5.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+Pinging 10.0.6.2 with 32 bytes of data:
+
+Reply from 10.0.6.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.6.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.6.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.6.2: bytes=32 time<1ms TTL=255
+
+Ping statistics for 10.0.6.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+Pinging 10.0.7.2 with 32 bytes of data:
+
+Reply from 10.0.7.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.7.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.7.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.7.2: bytes=32 time<1ms TTL=255
+
+Ping statistics for 10.0.7.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms

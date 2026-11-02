@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-01T21:13:30.398250+00:00",
+  "files": {
+    "DHCPNT31.EXE": {
+      "bytes": 25911,
+      "sha256": "4e3576d5352cee388df84e88c23dda646c77535a568cd8968ea86f3d77d8f221"
+    },
+    "dhcpnt31.c": {
+      "bytes": 31256,
+      "sha256": "26044f1ef458cd37cbdd430fc7080c95c5b57cb57bc2c65e306e8181890e784b"
+    },
+    "test_dhcpnt31_routes.py": {
+      "bytes": 5253,
+      "sha256": "6d879d405e895efa5fd8aa568213e32026a7371c0dfd2bf7350c25007b3286bb"
+    }
+  },
+  "scope": "Winsock 1.1 select timeout plus distinct configured-subnet route selection; actual guest retest pending",
+  "host_test_log": "dhcpnt31-select-tests-20261101.log"
+}

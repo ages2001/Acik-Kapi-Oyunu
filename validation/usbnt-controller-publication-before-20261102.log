@@ -1,0 +1,7 @@
+test: /tmp/tmpuvbv3cfx/test.c:23: main: Assertion `!atomic_load(&finished)&&UsbHcs[0]==&old' failed.
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_usbnt_hc_publication.py", line 38, in <module>
+    subprocess.run([str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/tmpuvbv3cfx/test']' died with <Signals.SIGABRT: 6>.

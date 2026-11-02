@@ -1,0 +1,1 @@
+PASS: 50000 actual x86 stdcall DPC/unload/reclaim schedules; immediate worker execution; exact kernel return addresses; stack balanced; image retained while live

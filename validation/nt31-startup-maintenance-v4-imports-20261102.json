@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-01T22:07:35.463269+00:00",
+  "result": "PASS",
+  "sha256": "be74e8439963db196502b8e99928329a6610e3020fd2788fcdcea75a43873193",
+  "imports": {
+    "ADVAPI32.dll": [
+      "RegCloseKey",
+      "RegCreateKeyExA",
+      "RegEnumKeyExA",
+      "RegOpenKeyExA",
+      "RegQueryValueExA",
+      "RegSetValueExA"
+    ],
+    "KERNEL32.dll": [
+      "CloseHandle",
+      "CreateMutexA",
+      "FindClose",
+      "FindFirstFileA",
+      "GetSystemDirectoryA",
+      "ReleaseMutex",
+      "WaitForSingleObject",
+      "lstrcatA",
+      "lstrcmpiA",
+      "lstrcpyA",
+      "lstrlenA"
+    ],
+    "USER32.dll": [
+      "DdeClientTransaction",
+      "DdeConnect",
+      "DdeCreateStringHandleA",
+      "DdeDisconnect",
+      "DdeFreeDataHandle",
+      "DdeFreeStringHandle",
+      "DdeGetData",
+      "DdeInitializeA",
+      "DdeUninitialize"
+    ]
+  },
+  "scope": "Every named import resolves in the actual supplied NT3.1 system DLL exports; not a runtime execution test."
+}

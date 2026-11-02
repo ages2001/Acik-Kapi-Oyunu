@@ -1,0 +1,4 @@
+Verified 33 payload hashes; 54 primary silicon rows
+PASS: pinned USB PHY extraction
+flat image: size=505344 FileChar=0x838e checksum=0x0008470a
+built /workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys

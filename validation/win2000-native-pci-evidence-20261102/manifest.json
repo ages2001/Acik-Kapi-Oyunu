@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-02T00:51:52.331259+00:00",
+  "guest": "win2000-standard-pciconfig-v2-multi-8127",
+  "safeoff_screenshot": "win2000-native-pci-safeoff-20261102.png",
+  "safeoff_sha256": "0a48d2055d8424eb171f92402d5bfab616993c504ac17896d3edf4a85261425d",
+  "files": {
+    "debug.log": {
+      "bytes": 2035,
+      "sha256": "12bd4b2db7736d8f459b11f7979fa89cf9a6a783099ee2c28b91555103cef82d"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 93,
+      "sha256": "362d0a13fc98dfbb9371656472334e527e9f9c53e2e37afa7065d84457a28076"
+    },
+    "launch.json": {
+      "bytes": 2731,
+      "sha256": "74cb59d4b209107dfb85583a28d1541d96f75f651b884278546e1e9f971fc2fa"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "6ad94c76254847fc6a8f766401065f2657f9fd3eb4d989c659ccaa80740e2056"
+    },
+    "pci.pcap": {
+      "bytes": 26769,
+      "sha256": "fb06a77bad2e25cdb4ac6d0f0876514316391f2bc7d2dee0a2059e04c0708567"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "utc": "2026-11-02T14:17:19.241319+00:00",
+  "guest": "win2000-standard-usbnet-mixed-v1-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 495616,
+      "sha256": "2c4dc477f30d86ad73c09499da01e68868b052de759f4b203e0197f63ff8d91c"
+    },
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+    },
+    "MIXTEST/KEY.LOG": {
+      "file": "KEY.LOG",
+      "size": 1186,
+      "sha256": "7f0da0795d60477899813e72ea4cd7951aafdb59cf91d52283012cc766af278d"
+    },
+    "MIXTEST/MIXKEY.EXE": {
+      "file": "MIXKEY.EXE",
+      "size": 9037,
+      "sha256": "e446d0c6977d4ac402334487304782bcccba1441478bc90dcbdf07ea7d040031"
+    },
+    "MIXTEST/MIXNET.INF": {
+      "file": "MIXNET.INF",
+      "size": 8218,
+      "sha256": "49acf9c1e1277774cbcf76c06c885fc5d01099e65fd44966065bfd0deb867ee4"
+    },
+    "RLTTEST/MRESET.EXE": {
+      "file": "MRESET.EXE",
+      "size": 11814,
+      "sha256": "b18129df4bc5a10422aa6970be1403cb3836476bce06988f77874f47eb8214c6"
+    },
+    "RLTTEST/MKEY2.EXE": {
+      "file": "MKEY2.EXE",
+      "size": 12604,
+      "sha256": "114fa9cd385ae7ab8cccaed3091705b4bbee31cea6eda354f463bb9e89993549"
+    }
+  }
+}

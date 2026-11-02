@@ -1,0 +1,10 @@
+/tmp/tmpzoyl6x_o/test.c:71:20: error: ‘n31_queue_reset’ declared ‘static’ but never defined [-Werror=unused-function]
+   71 | static NDIS_STATUS n31_queue_reset(PN31_BINDING binding);
+      |                    ^~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_nt31_start_cleanup.py", line 139, in <module>
+    subprocess.run(['gcc','-std=c99','-Wall','-Wextra','-Werror','-Wno-cast-function-type','-fsanitize=address,undefined','-fno-omit-frame-pointer','-I',str(src),str(c),'-o',str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['gcc', '-std=c99', '-Wall', '-Wextra', '-Werror', '-Wno-cast-function-type', '-fsanitize=address,undefined', '-fno-omit-frame-pointer', '-I', '/workspace/rltklant-work/RLTKLANT/src', '/tmp/tmpzoyl6x_o/test.c', '-o', '/tmp/tmpzoyl6x_o/test']' returned non-zero exit status 1.

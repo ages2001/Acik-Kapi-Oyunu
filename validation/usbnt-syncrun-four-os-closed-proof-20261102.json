@@ -1,0 +1,119 @@
+{
+  "utc": "2026-11-02T13:52:03.108475+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "os": "nt31",
+      "guest": "nt31-usbsetup-syncrun-rtl8117-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 418304,
+          "sha256": "3c5f00721bfcbedb1876ae40ee6288d905bde1339ccef7e2a5ef3f1a8b5f21b4"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 538624,
+          "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+        }
+      },
+      "counts": {
+        "hotplug_cycles": 4,
+        "carrier_cycles": 4,
+        "full_payload_replies": 104
+      },
+      "evidence": {
+        "nt31-syncrun-offline-20261102/manifest.json": "fd93df5db6900aa366771e7a8aaeaaec254efe457712d0840c2e0b17c946752a",
+        "nt31-syncrun-evidence-20261102/manifest.json": "4203ffaf0dfc30e47bb8da666496bf8c34a7e0d3ad6d76ff5e67b1b597fd9583",
+        "nt31-usbsetup-syncrun-rtl8117-8127-syncrun-20261102-sibling-matrix.json": "14d953a1ab9403dcb349feb59aa4837246ca6d907a819240aa158f325744ed04"
+      }
+    },
+    {
+      "os": "nt4",
+      "guest": "nt4-ndis-dual-syncrun-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 418304,
+          "sha256": "3c5f00721bfcbedb1876ae40ee6288d905bde1339ccef7e2a5ef3f1a8b5f21b4"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 540920,
+          "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+        }
+      },
+      "counts": {
+        "hotplug_cycles": 8,
+        "carrier_cycles": 8,
+        "full_payload_replies": 332
+      },
+      "evidence": {
+        "nt4-syncrun-offline-20261102/manifest.json": "af929eff72441c3b1f4bb9cd021b81c84cf4353198fb091022d461d7f2c5e66f",
+        "nt4-syncrun-evidence-20261102/manifest.json": "2a356f53282a440bc900df7a39086b24c7931e1ce73425846d0614b5cb1d00e7",
+        "nt4-ndis-dual-syncrun-8127-syncrun-20261102-sibling-matrix.json": "58f34b6f5653c2b1529e21c4df0b744e0e3e2350cda37fb9a102b8d6e614c78e"
+      }
+    },
+    {
+      "os": "win2000",
+      "guest": "win2000-standard-usbnet-syncrun-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 495616,
+          "sha256": "2c4dc477f30d86ad73c09499da01e68868b052de759f4b203e0197f63ff8d91c"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 557016,
+          "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+        }
+      },
+      "counts": {
+        "function_power_pairs": 12,
+        "stalled_removals": 4,
+        "port_resets": 4,
+        "carrier_cycles": 4,
+        "full_mtu_replies": 64
+      },
+      "evidence": {
+        "win2000-syncrun-offline-20261102/manifest.json": "df2982ab8af26cadd7010cd93dd737e332eef2f37687a480597e090c98019d37",
+        "win2000-syncrun-evidence-20261102/manifest.json": "c3445342fcadba74e4870299d7d0756d68a53c05e0e955a55f682fd76dd9c401",
+        "win2000-standard-usbnet-syncrun-8127-syncrun-20261102-retirement-matrix.json": "1abb9e58cb46c01630d676e412c576ec16a18137c4e1b4233c918967df607f10"
+      }
+    },
+    {
+      "os": "xp64",
+      "guest": "xp64-usbnet-syncrun-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 534016,
+          "sha256": "090105c3b37098b10dd326fa64a979903e8232cf4a2c033dad2a5d06e10d01d4"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 613306,
+          "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+        }
+      },
+      "counts": {
+        "function_power_pairs": 12,
+        "stalled_removals": 4,
+        "port_resets": 4,
+        "carrier_cycles": 4,
+        "full_mtu_replies": 64
+      },
+      "evidence": {
+        "xp64-syncrun-offline-20261102/manifest.json": "0e6910b0b1d366773203d1d6521882996a33850948a02d7c693d5add4a384f5c",
+        "xp64-syncrun-evidence-20261102/manifest.json": "dc605955ffdd114a64f83ffe4d12417c367f2cfdd58466f18f5575c7ccdfee85",
+        "xp64-usbnet-syncrun-8127-syncrun-20261102-retirement-matrix.json": "5f33faa1da0fb2316306b7f0a7a6a849ee6ac845982cf0e879336f6e35328cf0"
+      }
+    }
+  ],
+  "scope": "Exact installed development binaries after synchronous transfer completion/event rundown, retaining native-class reset support. Windows 2000 AHCI, all other guests IDE. Normal shutdown and stopped-disk readback. NT3.1 uses inbox receipt plus complete wire payload matching; NT4/NT5 use guest payload checks. Shared native-class + Windows reset coordination is host-tested; native class physical resets have separate QEMU evidence. These network tests do not establish system sleep, physical silicon, or a USBNT 1.3 release."
+}

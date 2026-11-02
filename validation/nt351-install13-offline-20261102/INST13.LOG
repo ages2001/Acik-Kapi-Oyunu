@@ -1,0 +1,13 @@
+Installing the USB driver
+  copied C:\WINNT351\System32\drivers\usbnt.sys
+  copied C:\WINNT351\System32\usbeject.exe
+  copied C:\WINNT351\System32\usbtree.exe
+  copied C:\WINNT351\System32\usbmon.exe
+  copied C:\WINNT351\System32\usbcam.exe
+  copied C:\WINNT351\System32\usbinst.exe
+  copied C:\WINNT351\System32\usbntcap.dll
+  usbntcap.dll registered as Video for Windows driver msvideo (cameras)
+  service usbnt registered (boot start, group SCSI miniport)
+  i8042prt disabled, usbnt drives the PS/2 keyboard and mouse
+  kbdclass and mouclass set to serve USB and PS/2 together
+Done. Restart Windows NT to load the driver.

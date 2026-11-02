@@ -1,0 +1,34 @@
+{
+  "utc": "2026-11-01T22:06:11.761336+00:00",
+  "result": "PASS",
+  "scope": "Actual NT3.1 direct SyncStartup ABI: custom personal Startup migration and repeated synchronization in a fixture containing same-name common groups. Normal shutdown and read-only user-hive verification.",
+  "candidate": "frozen-builds/startup-maintenance-v4-20261102/manifest.json",
+  "groups": {
+    "Startup": {
+      "title_count": 0,
+      "command_count": 0,
+      "sha256": "b153c5d5f8b50a71ab2e81ab7926bfa01c94b6d5fb94fd2b01e7eeb9575dabaf"
+    },
+    "RltBoot": {
+      "title_count": 1,
+      "command_count": 1,
+      "sha256": "3ae19d41385789226b60e8875f692d83f1eb9dd4f247ad359de598dc43dc8017"
+    }
+  },
+  "files": {
+    "SYSTEM": "3e4c3a1740c47eeec26c8b882d1b191c0610c02a6a7a3dce25744fba29846d01",
+    "SOFTWARE": "d99e6443dbeb471ebe71856ea6dac5925fc0b5910ca3bede09d6f13be0f40661",
+    "TEST_000": "ef090891f0c4abc3ee1ab195e305f3c3c5451a1094eb35c8c89806dea774f52c"
+  },
+  "screenshots": [
+    "nt31-startup-helper-v4-first-sync-20261102.png",
+    "nt31-startup-helper-v4-repeat-sync-20261102.png",
+    "nt31-startup-helper-v4-group-query-20261102.png",
+    "nt31-startup-helper-v4-safe-off-20261102.png"
+  ],
+  "limits": [
+    "Direct helper invocation; native NCPA integration not yet verified",
+    "Unrelated-item preservation, conflict rejection and disable/remove paths still pending",
+    "Earlier failed candidate left common groups; this helper manages only current-user personal groups"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "guest": "nt31-ownership-retry-slot-8127",
+  "utc": "2026-10-30T04:27:02.585256+00:00",
+  "matched_1472_byte_echoes": 4,
+  "pcap_sha256": "b2b2510a9cc051fcff6c3a80a91667adf487567a917fbb9c58fdc365844a38c1",
+  "driver": {
+    "guest": "nt31-ownership-retry-slot-8127",
+    "utc": "2026-10-30T04:19:02.663990+00:00",
+    "source": "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys",
+    "size": 51712,
+    "sha256": "62304d3c2180fd145c4609eabac6ee63bb92641b1a59a1aa27d966787f1f2fb2",
+    "previous_checkpoint": "nt31-dma-slot-8127",
+    "scope": "IDE/native PCIe RTL8127, C+ ownership/backpressure and compiler ordering; no firmware upload",
+    "retry_reason": "First QEMU process exited with code 0 before traffic verification; no OOM kill recorded. Reason unresolved; retain original logs."
+  },
+  "screens": [
+    "nt31-ownership-full-mtu.png",
+    "nt31-ownership-public-http.png"
+  ],
+  "scope": "Guest screen confirms four replies; PCAP checks exact payload/ID/sequence. HTTP 200 through authorized proxy, no direct DNS/TLS claim."
+}

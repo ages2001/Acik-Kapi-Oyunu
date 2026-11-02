@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-02T05:10:39.339909+00:00",
+  "scope": "Read-only analysis of the supplied NT3.51 NDIS.SYS, not runtime completion proof",
+  "findings": {
+    "NdisOpenAdapter": "0x12b4d-0x12b61 stores MAC pointer in open+0 and caches MAC send/transfer; 0x12bd6 passes open+4 for MAC binding context, 0x12bef dispatches MAC open+0x20. No NT4 cached ResetHandler is assumed.",
+    "NdisRegisterMac": "0x14487-0x14496 copies 0x38 bytes of supplied MAC characteristics at MAC+0x18. NDIS 3.0 Reset/Request fields therefore reside at MAC+0x30/+0x34."
+  },
+  "files": {
+    "/workspace/rltklant-vm/install/nt351-standard/installed-ndis.sys": "a991c599fa98335cbb02731dff0b97c498a1a77c0366a316735f102570a1acdc",
+    "validation/nt351-protocol-abi-20261102/NdisOpenAdapter.asm": "f68924a35030590be6f175a092c3f6f5ed3895a5a68e2e345e633993df07c6ed",
+    "validation/nt351-protocol-abi-20261102/NdisRegisterMac.asm": "462276502cc87bf4aad362baec49666c89964dcf89aff2128b5f8367147bbe22"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "utc": "2026-11-02T17:43:22.736857+00:00",
+  "guest": "nt351-usbsetup-timerprobe-rtl8139-8127",
+  "files": {
+    "WINNT351/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 419328,
+      "sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6"
+    },
+    "WINNT351/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    },
+    "RLTTEST/TIMER.LOG": {
+      "file": "TIMER.LOG",
+      "size": 230,
+      "sha256": "fba745afedfd000e3131afd1a2904facaecdac9ca5663583dd50429b4da0102d"
+    },
+    "RLTTEST/TIMECTL.EXE": {
+      "file": "TIMECTL.EXE",
+      "size": 12299,
+      "sha256": "fdb9815cb4c7a8dc5523494f38bf8962ddeccca2d56be54fec4e59c90a94a819"
+    },
+    "RLTTEST/TREEFIX.EXE": {
+      "file": "TREEFIX.EXE",
+      "size": 57344,
+      "sha256": "fea1d48df200e0c617e969bb2288dfbde0e27b79d3491b05b6c8b28aa64f3748"
+    },
+    "RLTTEST/USBLOG.TXT": {
+      "file": "USBLOG.TXT",
+      "size": 3086,
+      "sha256": "21c7aa91cb92c6ff416987b91a3666f164e7f491beed8e2b976b2cef597f2343"
+    }
+  }
+}

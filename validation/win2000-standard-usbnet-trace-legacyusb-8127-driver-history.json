@@ -1,0 +1,42 @@
+[
+  {
+    "phase": "initial",
+    "record": {
+      "source": "win2000-standard-usbnet-native2-legacyusb-8127.qcow2",
+      "sha256": "9b1b07173635d3d3707ae8b9427ecbd90f6a1b5704acdab7c231d45845fb87fc",
+      "diagnostic": "RTL_USB_TRACE; RX timeout still 20 ms"
+    }
+  },
+  {
+    "phase": "persistent-rx",
+    "verified_utc": "2026-10-29T20:25:26.049374+00:00",
+    "source": "async32.sys",
+    "sha256": "b5416dcdd6a78db1cb395eb08dac6ad20f57f8034e5f15bf1a5ff3b6950ed5f3",
+    "installation": "FTP transfer completed in guest; native PnP unload, copy to system driver and both package locations, then reinsert; screenshots record copy results",
+    "scope": "Async-prefixed reports use this binary; original and names-prefixed reports precede it"
+  },
+  {
+    "phase": "persistent-rx-reset-hook",
+    "recorded_utc": "2026-10-29T20:46:33.314633+00:00",
+    "source": "reset32.sys",
+    "sha256": "2b7573853d0c1340b4a8d7f8e2756b75e8a00ab3cd997fc2eaaa4ecc42eb29b1",
+    "installation": "Completed guest FTP plus unload and successful copies to all three driver/package locations; reinsert/probe passed",
+    "scope": "reset-prefixed reports, before the later atomic reset/carrier ordering fix; no concurrent NDIS-reset guest proof"
+  },
+  {
+    "phase": "atomic-native-reset-carrier",
+    "recorded_utc": "2026-10-29T20:52:48.868639+00:00",
+    "source": "order32.sys",
+    "sha256": "d3698d9401c6e7d54d48ffaaebf42912fd9d99b42a1de3ebb589a3007a2dd143",
+    "installation": "Guest FTP completed; PnP unload and three successful package/system driver copies visually verified; new attach probe passed",
+    "scope": "ordered-prefixed reports only; includes MDIO page fix, precedes PCI DMA-order change"
+  },
+  {
+    "phase": "stall-recovery-staged",
+    "recorded_utc": "2026-10-29T21:13:25.000670+00:00",
+    "source": "stall32.sys",
+    "size": 91798,
+    "sha256": "dac82c3edf56876ba30a416b88baaeaad75c079765a1499da788c75970f76877",
+    "scope": "Staged while NIC unloaded; not loaded before shutdown; new guest required for runtime validation"
+  }
+]

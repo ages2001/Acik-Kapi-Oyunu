@@ -1,0 +1,1 @@
+PASS: production QEMU callbacks: 8730 fragmented TX transfers, 9006 RX boundary/queue schedules, reset/link purge

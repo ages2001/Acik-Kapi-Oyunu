@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-02T18:38:39.107959+00:00",
+  "result": "PASS_NT351_UI_AND_EXTERNAL_CLIENT_TRAFFIC",
+  "scope": "Visually checked tree and icons, corrected No built-in driver label, eight full-payload replies across USB and PCI paths, normal shutdown, exact installed tool readback. NT5 tool runtime is separate.",
+  "tool_sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97",
+  "evidence": {
+    "nt351-tree13-v2-runtime-20261102.png": "e8ee0f6ccbf18615ec797d9e24684e44f8e118606527a2ebc6915fc6aeca3af4",
+    "nt351-tree13-v2-network-pass-20261102.png": "09ec2b2583cba8aff41dcb0de67ee395a0501486861db729a66a60d8fe23b27d",
+    "nt351-usbsetup-tree13-v2-8127-tree13-v2-network-20261102.json": "b1218bbc25165e3f4952954f5a9893f1e577eb7e5f5f21b2780796cc0d1d12e2",
+    "nt351-tree13-v2-offline-20261102/manifest.json": "5582e966dece0f193e136652e8acbf2cc0da1a6ab6d57f2a84b96bd8cb117c4f",
+    "nt351-tree13-v2-evidence-20261102/manifest.json": "cd52e956ad943cd320ff70118def6b530bb8f90998f315af1ffa7d7c498541d3"
+  }
+}

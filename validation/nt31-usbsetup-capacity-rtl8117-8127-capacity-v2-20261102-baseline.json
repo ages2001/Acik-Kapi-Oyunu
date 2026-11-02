@@ -1,0 +1,43 @@
+{
+  "guest": "nt31-usbsetup-capacity-rtl8117-8127",
+  "token": "capacity-v2-20261102-baseline",
+  "mask": 3,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T09:09:49.626907+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 44776,
+      "end_offset": 57016,
+      "capture_prefix_sha256": "6d7b9f464472559b2d97a6c49b7f04e505d133636894bd648d6b3aceb8953140",
+      "screenshot": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-baseline-usb.png",
+      "ocr": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-baseline-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "45e160a31c602f77720d2a59eae2bbc4c79ffabb740968c5c03103855fa21a82"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 9817,
+      "end_offset": 22213,
+      "capture_prefix_sha256": "f9cfe2fd3f8d167760e05e241fe325c36cae3fb9688318de384926638c094aa1",
+      "screenshot": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-baseline-pci.png",
+      "ocr": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-baseline-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "c7e6d8753cf42edd40c6a1c6b086905af062b6444e6acd0fcde15f17314b1489"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T09:10:01.363900+00:00"
+}

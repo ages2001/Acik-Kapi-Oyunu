@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-01T20:55:57.751192+00:00",
+  "result": "PASS",
+  "scope": "NT3.1 actual additional-adapter install and TCP/IP binding, native Yes prompt without fault, exact RLTUSB/DHCPNT31 copy, original shared driver retained, normal shutdown and read-only hive verification. This does not establish automatic logon renewal or complete DHCP correctness.",
+  "evidence": {
+    "nt31-v4-installed-offline-20261101/manifest.json": "7fb898c61e84196ec6cf23a1131b0548aa0ebe2175bfcd58ef86976a9170fe27",
+    "nt31-v4-installed-registry-20261101.json": "c394d9286815dc8589cff8f6267377cc891e1ec2f0a0d09c0337b6ca2116e77e",
+    "legacy-setup-nt31-v4-20261101/manifest.json": "fc7b72250983d1dc5f81ed8608c945cba5a47952d1343e31dc9102db70ae98c3"
+  },
+  "new_instance": "RLTKLANT02",
+  "network_paths": [
+    "USB 10.0.2.15",
+    "PCIe 10.0.3.15"
+  ],
+  "configuration": "Existing USB1 retained; new PCI2 explicitly selected with installed RLTUSB; static TCP/IP values entered through NCPA."
+}

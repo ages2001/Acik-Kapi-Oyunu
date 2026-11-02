@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "utc": "2026-11-02T05:40:23.808857+00:00",
+  "guest": "nt351-usbsetup-rtl8139-fixed-8127",
+  "sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0",
+  "tcp_total_each_direction": 3145728,
+  "protocol_resets": 3,
+  "scope": "Actual rtl8139, NT3.51, IDE; baseline/after-reset/after-cable full payload TCP, final ICMP, clean shutdown and exact offline binary/log readback. Cold boot verification separate; no physical hot-plug or universal hardware claim.",
+  "evidence": "nt351-rtl8139-fixed-evidence-20261102/manifest.json",
+  "offline": "nt351-rtl8139-fixed-offline-20261102/manifest.json",
+  "rx_watchdog_events": 1
+}

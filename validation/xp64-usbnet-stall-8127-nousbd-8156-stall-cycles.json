@@ -1,0 +1,67 @@
+{
+  "guest": "xp64-usbnet-stall-8127",
+  "utc": "2026-10-30T06:14:40.545903+00:00",
+  "scope": "Injected USB endpoint halt in the protocol model; actual guest SetupAPI and payload-checked ICMP recovery, not physical silicon validation",
+  "results": [
+    {
+      "cycle": 1,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "xp64-usbnet-stall-8127-nousbd-8156-stall01.json"
+    },
+    {
+      "cycle": 2,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "xp64-usbnet-stall-8127-nousbd-8156-stall02.json"
+    },
+    {
+      "cycle": 3,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "xp64-usbnet-stall-8127-nousbd-8156-stall03.json"
+    },
+    {
+      "cycle": 4,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "xp64-usbnet-stall-8127-nousbd-8156-stall04.json"
+    },
+    {
+      "cycle": 5,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "xp64-usbnet-stall-8127-nousbd-8156-stall05.json"
+    },
+    {
+      "cycle": 6,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "xp64-usbnet-stall-8127-nousbd-8156-stall06.json"
+    },
+    {
+      "cycle": 7,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "xp64-usbnet-stall-8127-nousbd-8156-stall07.json"
+    },
+    {
+      "cycle": 8,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "xp64-usbnet-stall-8127-nousbd-8156-stall08.json"
+    },
+    {
+      "cycle": 9,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "xp64-usbnet-stall-8127-nousbd-8156-stall09.json"
+    },
+    {
+      "cycle": 10,
+      "injected_rx_halt": true,
+      "halted_after_guest_probe": false,
+      "report": "xp64-usbnet-stall-8127-nousbd-8156-stall10.json"
+    }
+  ]
+}

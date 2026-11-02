@@ -1,0 +1,74 @@
+{
+  "utc": "2026-11-01T22:16:00.556215+00:00",
+  "files": {
+    "PMTEST4.EXE": {
+      "bytes": 13304,
+      "sha256": "cf8d3c71aa2cbb52e8ae0100b38b62928a6fd2ad701766d44bd4da395be1cefe"
+    },
+    "test_setup_startup_parser.py": {
+      "bytes": 3485,
+      "sha256": "29881d6c7bdc06787cc82aa557e768e644221dfdef2c31dd128e31456370aee9"
+    },
+    "test_setup_registration.py": {
+      "bytes": 4686,
+      "sha256": "a3d7cefa7e9abdd06ada9a32f8b0f377f7a40f9a6fb06c0d871baa879b5dda48"
+    },
+    "rltsetup.c": {
+      "bytes": 19324,
+      "sha256": "91ef96dc325854545b776aa7fdd753229f185a73d25235b1ada94c981c1cf079"
+    },
+    "progman_probe.c": {
+      "bytes": 3477,
+      "sha256": "b4c4ef12e4801e50f497c543e0c7415d47678a5bb018c983d51353065c53fd63"
+    },
+    "build-rltsetup.sh": {
+      "bytes": 627,
+      "sha256": "b06bf0ec8abb9ee862625ee9f70c4227cb4bbea60718f24c588c30f96eebff1e"
+    },
+    "RLTSETUP.DLL": {
+      "bytes": 22451,
+      "sha256": "35094bec3a1cbb5d6e4f27b78a0706b038b9ceded88156eb6628ba03bd884f8d"
+    },
+    "test_setup_dde_reply.py": {
+      "bytes": 3273,
+      "sha256": "19776e4a8c8b6465d0bce4c0074874301efcb1f924fc0156c895771d6dd01d6a"
+    }
+  },
+  "nt31_imports": {
+    "ADVAPI32.dll": [
+      "RegCloseKey",
+      "RegCreateKeyExA",
+      "RegDeleteValueA",
+      "RegEnumKeyExA",
+      "RegOpenKeyExA",
+      "RegQueryValueExA",
+      "RegSetValueExA"
+    ],
+    "KERNEL32.dll": [
+      "CloseHandle",
+      "CreateMutexA",
+      "FindClose",
+      "FindFirstFileA",
+      "GetFileAttributesA",
+      "GetSystemDirectoryA",
+      "ReleaseMutex",
+      "WaitForSingleObject",
+      "lstrcatA",
+      "lstrcmpiA",
+      "lstrcpyA",
+      "lstrlenA"
+    ],
+    "USER32.dll": [
+      "DdeClientTransaction",
+      "DdeConnect",
+      "DdeCreateStringHandleA",
+      "DdeDisconnect",
+      "DdeFreeDataHandle",
+      "DdeFreeStringHandle",
+      "DdeGetData",
+      "DdeInitializeA",
+      "DdeUninitialize"
+    ]
+  },
+  "scope": "Persistent private INF registration with rollback; DDE repeated-call state reset; actual NCPA validation pending"
+}

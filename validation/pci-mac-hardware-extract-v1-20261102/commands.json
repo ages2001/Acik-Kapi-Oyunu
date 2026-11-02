@@ -1,0 +1,73 @@
+[
+  {
+    "command": [
+      "python3",
+      "RLTKLANT/build/make-pci-mac.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "output": "PASS: pinned PCI MAC extraction\n"
+  },
+  {
+    "command": [
+      "gcc",
+      "-std=gnu99",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-unused-function",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "validation/test_macseq.c",
+      "RLTKLANT/src/macseq.c",
+      "RLTKLANT/src/fwbus.c",
+      "RLTKLANT/src/fwvm.c",
+      "RLTKLANT/src/fwimages.c",
+      "-o",
+      "/tmp/rltk-mac-check-msatad2a/test"
+    ],
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "command": [
+      "/tmp/rltk-mac-check-msatad2a/test"
+    ],
+    "exit_code": 0,
+    "output": "RTL8117 real payload: 59 commands (transport only)\nPASS: 47 MAC dispatch versions, 8350 failed/cancelled boundary schedules, bounded CSI/ERI/EPHY/CMAC waits, mapping and operation/delay budgets; no DMA enable\n"
+  },
+  {
+    "command": [
+      "i686-w64-mingw32-gcc",
+      "-std=gnu99",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-unused-function",
+      "-ffreestanding",
+      "-c",
+      "RLTKLANT/src/macseq.c",
+      "-o",
+      "/tmp/rltk-mac-check-msatad2a/i686.o"
+    ],
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "command": [
+      "x86_64-w64-mingw32-gcc",
+      "-std=gnu99",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-unused-function",
+      "-ffreestanding",
+      "-c",
+      "RLTKLANT/src/macseq.c",
+      "-o",
+      "/tmp/rltk-mac-check-msatad2a/x86_64.o"
+    ],
+    "exit_code": 0,
+    "output": ""
+  }
+]

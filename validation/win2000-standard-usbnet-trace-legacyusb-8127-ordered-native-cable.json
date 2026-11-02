@@ -1,0 +1,47 @@
+{
+  "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+  "model": "usb-rtl8150",
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:52:43.322253+00:00",
+      "token": "ordered-cable01",
+      "report": "TOKEN ordered-cable01\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        54392
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:53:02.996022+00:00",
+      "token": "ordered-cable02",
+      "report": "TOKEN ordered-cable02\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        42630
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:53:22.677362+00:00",
+      "token": "ordered-cable03",
+      "report": "TOKEN ordered-cable03\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        60783
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+      "utc": "2026-10-29T20:53:42.267392+00:00",
+      "token": "ordered-cable04",
+      "report": "TOKEN ordered-cable04\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        58485
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/nt351-usbsetup-macstart-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-iqss8rqh/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+13/6384 = 0.20% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1179648
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt351-usbsetup-macstart-8127.qcow2",
+  "sha256_before_boot": "7f1c0ac16da77b3c5d9dda97128d213ff45b8cd83e5fd92b9fc0601c009a9dae",
+  "files": [
+    {
+      "guest_path": "WINNT351/system32/drivers/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis3/rltklant.sys",
+      "size": 534638,
+      "sha256": "41a54b3668d23ff145f346b4872ccbeb84206b101e1b782abaca2891109b6e84",
+      "old_size": 503183,
+      "old_sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

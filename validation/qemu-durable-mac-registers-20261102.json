@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-02T00:24:42.112156+00:00",
+  "binaries": {
+    "qemu-system-i386": {
+      "sha256": "efb4a87c7f37bdf16a5a19295bc5cac2d30cdbd1ba4211536c327f6cf8b7a555",
+      "previous_sha256": "d651fe629799661c2fda009bf67cc2ab52cb6e49499cac92604b38ceb854162f"
+    },
+    "qemu-system-x86_64": {
+      "sha256": "0b28dba57820fa3ff74e9ad29d259ae46895c66c4b9a23e65c2305e2731c39b3",
+      "previous_sha256": "207b16c3ce1959f07704336cb2cf6e5845f461800c50888d2b6ed06ab045f3df"
+    }
+  },
+  "model_only_checks": [
+    "qemu-mac-transport-v1-20261102.json",
+    "qemu-mac-default-regression-20261102.log",
+    "qemu-firmware-mmio-results-mac-model-20261102.json"
+  ],
+  "limits": [
+    "No Windows driver uses the new MAC component yet.",
+    "CSI/ERI/EPHY acknowledgements and configuration cells are protocol models, not full silicon emulation."
+  ]
+}

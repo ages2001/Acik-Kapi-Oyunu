@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-01T20:17:58.577103+00:00",
+  "scope": "Frozen compiled helper and actual-guest matrix/collector; NT4 DLL imports verified, runtime matrix pending.",
+  "files": {
+    "legacy_network_probe.c": {
+      "size": 3945,
+      "sha256": "4b02046a9015753235bf06f90fe27ce612c2f492afc991dbc16997ba910194e9"
+    },
+    "LNET.EXE": {
+      "size": 11159,
+      "sha256": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b"
+    },
+    "legacy_sibling_cycles.py": {
+      "size": 6069,
+      "sha256": "719150926151bcc7aaa8512cb86f7a97ba3d95993d08983ba4abcdeaa1525444"
+    },
+    "legacy_network_report.py": {
+      "size": 1576,
+      "sha256": "0efc3ba390915115448fc267ef516167d2c5dfaa3d138ed8a7ef58d00c7c2bf2"
+    }
+  }
+}

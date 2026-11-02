@@ -1,0 +1,79 @@
+{
+  "utc": "2026-11-01T23:23:02.632847+00:00",
+  "result": "PASS",
+  "scope": "Actual NCPA Add Adapter from verified absent driver registrations/files, DHCP No, native TCP/IP setup and normal-shutdown readback",
+  "preconditions": "nt31-v9-firstinstall-preconditions-20261102/manifest.json",
+  "checks": {
+    "one_adapter": true,
+    "service_present": true,
+    "product_present": true,
+    "all_files_exact": true,
+    "all_private_inf": true,
+    "pci_bus_type": true,
+    "dhcp_disabled": true,
+    "no_owned_startup": true,
+    "user_item_preserved": true,
+    "static_pci_ip": true,
+    "static_mask": true
+  },
+  "parameters": {
+    "InterruptNumber": 10,
+    "BusType": 5,
+    "MediaType": 1,
+    "EnableDHCP": 0,
+    "IoBaseAddress": 768
+  },
+  "tcpip": {
+    "IPAddress": "10.0.3.15",
+    "SubnetMask": "255.255.255.0",
+    "KeepAlive": 1,
+    "BroadcastType": 1,
+    "ForwardBroadcasts": 0,
+    "Trailers": 0
+  },
+  "registrations": {
+    "01": {
+      "InfName": "RLTKNT31.INF",
+      "type": "rltklant rltklantAdapter",
+      "bindform": "\"RLTKLANT01\" yes yes container",
+      "class": [
+        "rltklantAdapter basic"
+      ],
+      "InfOption": "RLTKLANT"
+    },
+    "software": {
+      "InfName": "RLTKNT31.INF",
+      "type": "rltklantSys ndisDriver rltklantDriver",
+      "use": "driver",
+      "bindform": "\"rltklantSys\" yes no container",
+      "class": [
+        "rltklantDriver basic"
+      ],
+      "bindable": [
+        "rltklantDriver rltklantAdapter non exclusive 100"
+      ],
+      "InfOption": "RLTKLANT"
+    }
+  },
+  "exact_files": {
+    "RLTSETUP.DLL": true,
+    "RLTKNT31.INF": true,
+    "RLTUSB.EXE": true,
+    "DHCPNT31.EXE": true,
+    "RLTKLANT.SYS": true
+  },
+  "files": {
+    "SYSTEM": "c3f391175cb7a93be6f77210beee7d5487465fb8ab2ddb5652119541dd753ba2",
+    "SOFTWARE": "45d814f3fc02e6ba8cc5eeca4498498618d0271566f751643292583b461a4cc7",
+    "TEST_000": "6837ca6bbf5bc0e1ad0a91a68ed60e3a0a31e09cc6a545c38ea48bab9fb0eb45",
+    "RLTSETUP.DLL": "35094bec3a1cbb5d6e4f27b78a0706b038b9ceded88156eb6628ba03bd884f8d",
+    "RLTKNT31.INF": "d11ec821127069c1778cd5dac7eff7d247d63da9b4e4f01652b44c669c7127e1",
+    "RLTUSB.EXE": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+    "DHCPNT31.EXE": "fd646d2021137fc60358b02a07fd5c76fc8326d43295fdb071053ce59f8326f3",
+    "RLTKLANT.SYS": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca"
+  },
+  "limits": [
+    "Existing OS/protocol configuration and OEM cache retained; not pristine OS installation",
+    "Cold boot/traffic separate"
+  ]
+}

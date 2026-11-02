@@ -1,0 +1,57 @@
+{
+  "guest": "win2000-standard-usbnet-native-ehci-8127",
+  "model": "usb-rtl8157",
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-native-ehci-8127",
+      "utc": "2026-10-29T20:29:37.712087+00:00",
+      "token": "async-8157-native01",
+      "report": "TOKEN async-8157-native01\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        47689
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-native-ehci-8127",
+      "utc": "2026-10-29T20:29:58.778276+00:00",
+      "token": "async-8157-native02",
+      "report": "TOKEN async-8157-native02\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        60163
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-native-ehci-8127",
+      "utc": "2026-10-29T20:30:19.898564+00:00",
+      "token": "async-8157-native03",
+      "report": "TOKEN async-8157-native03\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        56158
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-native-ehci-8127",
+      "utc": "2026-10-29T20:30:40.999457+00:00",
+      "token": "async-8157-native04",
+      "report": "TOKEN async-8157-native04\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        58737
+      ]
+    },
+    {
+      "guest": "win2000-standard-usbnet-native-ehci-8127",
+      "utc": "2026-10-29T20:31:02.126876+00:00",
+      "token": "async-8157-native05",
+      "report": "TOKEN async-8157-native05\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        42456
+      ]
+    }
+  ]
+}

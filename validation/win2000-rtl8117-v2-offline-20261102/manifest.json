@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T06:44:43.933621+00:00",
+  "guest": "win2000-standard-rtl8117-v2-multi-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 555826,
+      "sha256": "721b685122d7bda772878fda152b760f37566083755ba106dbf02701440e9330"
+    },
+    "RLTTEST/PCNEW.EXE": {
+      "file": "PCNEW.EXE",
+      "size": 16319,
+      "sha256": "7c62a8d08cce1f46df3a61708555755776383fbe69c50039d11f41782b8f3836"
+    },
+    "RLTTEST/R7PNP.LOG": {
+      "file": "R7PNP.LOG",
+      "size": 2145,
+      "sha256": "7adb25580da6d5ee0d4ed26ea4be0231eac1ce0f7425e3bdf1402e70ce19008c"
+    }
+  }
+}

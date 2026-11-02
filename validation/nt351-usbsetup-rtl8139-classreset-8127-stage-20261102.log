@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-classreset-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-pllhbidn/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+12/6384 = 0.19% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1114112
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt351-usbsetup-rtl8139-classreset-8127.qcow2",
+  "sha256_before_boot": "227c32579311b99a81501ae0bfd2b2d15a8fbf672f35bccea143eeafbd146bef",
+  "files": [
+    {
+      "guest_path": "WINNT351/SYSTEM32/DRIVERS/USBNT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-audio-reset-v3-20261102/legacy.sys",
+      "size": 418304,
+      "sha256": "d65acc8f8d9eb3abe0c7e03cd09c26e50d6101957a95f6a128d91166ae3d8080",
+      "old_size": 412672,
+      "old_sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

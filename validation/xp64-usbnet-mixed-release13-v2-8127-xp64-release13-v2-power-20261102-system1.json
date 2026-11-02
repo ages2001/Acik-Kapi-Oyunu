@@ -1,0 +1,10 @@
+{
+  "guest": "xp64-usbnet-mixed-release13-v2-8127",
+  "utc": "2026-11-02T18:46:17.845674+00:00",
+  "token": "xp64-release13-v2-power-20261102-system1",
+  "report": "TOKEN xp64-release13-v2-power-20261102-system1\r\nDEVICE USB\\VID_0BDA&PID_8153&MI_00\\1&2B53A856&0&0&01&01&0&00\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+  "peer": [
+    "127.0.0.1",
+    38843
+  ]
+}

@@ -1,0 +1,1 @@
+PASS: NT3.1 and miniport C+/8139 initialize complete DMA rings before enable; removal and every allocation failure never enable DMA

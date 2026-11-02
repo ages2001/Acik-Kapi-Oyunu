@@ -1,0 +1,40 @@
+{
+  "guest": "nt351-usbnet-packets-8127",
+  "verified_utc": "2026-10-29T18:11:13.812185+00:00",
+  "results": [
+    {
+      "cycle": 1,
+      "model": "usb-rtl8153",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    },
+    {
+      "cycle": 2,
+      "model": "usb-rtl8156",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    },
+    {
+      "cycle": 3,
+      "model": "usb-rtl8157",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    },
+    {
+      "cycle": 4,
+      "model": "usb-rtl8159",
+      "requests": 4,
+      "matched_replies": 4,
+      "carrier_down_up": true,
+      "payload": 1472
+    }
+  ],
+  "pcap_sha256": "31535e20080d233bdec0d1f15aa2cbe93691efe0bc8de0957f8f07747209aa9f",
+  "scope": "Persistent USBNT miniport on emulated hardware; not native USB PDO/PnP or physical-device certification"
+}

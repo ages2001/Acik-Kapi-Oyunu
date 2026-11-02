@@ -1,0 +1,22 @@
+{
+  "guest": "win2000-standard-usbnet-mixed-release13-v2-8127",
+  "model": "usb-rtl8157",
+  "rx_stall_injected_before_each_remove": false,
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-mixed-release13-v2-8127",
+      "utc": "2026-11-02T18:53:00.088301+00:00",
+      "token": "release13-v2-20261102-8157-cable01",
+      "report": "TOKEN release13-v2-20261102-8157-cable01\r\nDEVICE USB\\VID_0BDA&PID_8157\\0007-0000:00:03.0-1\r\nNAME Realtek RTL8157 USB 5G Ethernet (rev 1030)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        33608
+      ],
+      "network_readiness": {
+        "evidence": "carrier cycle; existing IPv4 assignment",
+        "wait_seconds": 7
+      }
+    }
+  ]
+}

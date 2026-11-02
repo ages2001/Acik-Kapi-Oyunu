@@ -1,0 +1,103 @@
+{
+  "utc": "2026-11-01T21:32:22.861856+00:00",
+  "scope": "Cold boot and ordinary user logon, no manual DHCP command; packet capture proof only, saved lease readback pending",
+  "result": "DORA_PASS",
+  "reader_sha256": "3c5a4626ce256e9c2573080c8ad1f0aa0956e3e9c397fbf5ebffc688a27c70e2",
+  "captures": {
+    "usb.pcap": {
+      "bytes": 27704,
+      "sha256": "d762a9f1c594b0b3ea9f7909b4ffbe9634d3a65aae0c127537e3886edab4cdca",
+      "start_offset": 24,
+      "events": []
+    },
+    "pci.pcap": {
+      "bytes": 6747,
+      "sha256": "a2ee219f95b97f846a25546aaf51604d9798b73bf02b734882f93d9f84ecd3c3",
+      "start_offset": 24,
+      "events": [
+        {
+          "offset": 2109,
+          "timestamp": 1793568708.447616,
+          "source": "10.0.3.15",
+          "destination": "255.255.255.255",
+          "ports": [
+            68,
+            67
+          ],
+          "message_type": 1,
+          "xid": "63db0000",
+          "mac": "525400123456",
+          "yiaddr": "0.0.0.0",
+          "options": {
+            "53": "01",
+            "55": "01030633"
+          }
+        },
+        {
+          "offset": 2417,
+          "timestamp": 1793568708.447666,
+          "source": "10.0.3.2",
+          "destination": "255.255.255.255",
+          "ports": [
+            67,
+            68
+          ],
+          "message_type": 2,
+          "xid": "63db0000",
+          "mac": "525400123456",
+          "yiaddr": "10.0.3.15",
+          "options": {
+            "53": "02",
+            "54": "0a000302",
+            "1": "ffffff00",
+            "3": "0a000302",
+            "6": "0a000303",
+            "51": "00015180"
+          }
+        },
+        {
+          "offset": 3023,
+          "timestamp": 1793568708.464581,
+          "source": "10.0.3.15",
+          "destination": "255.255.255.255",
+          "ports": [
+            68,
+            67
+          ],
+          "message_type": 3,
+          "xid": "63db0000",
+          "mac": "525400123456",
+          "yiaddr": "0.0.0.0",
+          "options": {
+            "53": "03",
+            "50": "0a00030f",
+            "54": "0a000302",
+            "55": "01030633"
+          }
+        },
+        {
+          "offset": 3343,
+          "timestamp": 1793568708.4646,
+          "source": "10.0.3.2",
+          "destination": "255.255.255.255",
+          "ports": [
+            67,
+            68
+          ],
+          "message_type": 5,
+          "xid": "63db0000",
+          "mac": "525400123456",
+          "yiaddr": "10.0.3.15",
+          "options": {
+            "53": "05",
+            "54": "0a000302",
+            "1": "ffffff00",
+            "3": "0a000302",
+            "6": "0a000303",
+            "51": "00015180"
+          }
+        }
+      ]
+    }
+  }
+}

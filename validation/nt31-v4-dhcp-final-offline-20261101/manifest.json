@@ -1,0 +1,14 @@
+{
+  "SYSTEM": {
+    "bytes": 651264,
+    "sha256": "3c0be43c0d7e6cc8e87caded10317d584780908154080f303ff8dd40fe347af3"
+  },
+  "SOFTWARE": {
+    "bytes": 319488,
+    "sha256": "e5174fe0cb241963d5b5d1afadda5d798b43376c6539636aafbc15752d01c32f"
+  },
+  "DHCPNT31.LOG": {
+    "bytes": 160,
+    "sha256": "3728deac9f92cc1a95036b2ad81eb77e0009bb90e2894865cd9dc222383e5ee9"
+  }
+}

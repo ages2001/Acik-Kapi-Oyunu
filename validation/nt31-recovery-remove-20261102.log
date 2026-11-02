@@ -1,0 +1,1 @@
+PASS: 200 concurrent first-adapter removals, surviving adapter polling, hole reuse, last removal and timer restart; unacknowledged DMA retained

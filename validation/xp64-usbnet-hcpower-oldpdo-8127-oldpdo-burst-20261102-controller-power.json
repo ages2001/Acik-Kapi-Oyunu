@@ -1,0 +1,325 @@
+{
+  "guest": "xp64-usbnet-hcpower-oldpdo-8127",
+  "utc": "2026-11-02T08:34:05.591716+00:00",
+  "scope": "Test USBNT EHCI FDO power IRPs and subsequent real NIC traffic.\n\nHCPOWER targets the USBNT Intel 24CD EHCI FDO at DISPATCH_LEVEL.\nThree D3/D0 pairs and three S3/S0 IRP pairs exercise controller recovery and\nsystem-to-device mapping. This does not put the QEMU machine into ACPI S3.\nThe current path removes/re-enumerates children; it is not identity-preserving\nsuspend. Windows 2000's resulting unsafe-removal notices are retained.\n",
+  "result": "FAIL",
+  "offset": 1448,
+  "observed": [
+    {
+      "seconds": 0.773,
+      "line": "HCPTEST object=00000000"
+    },
+    {
+      "seconds": 0.773,
+      "line": "HCPTEST D3=00000000"
+    },
+    {
+      "seconds": 1.275,
+      "line": "HCPTEST D0=00000000"
+    },
+    {
+      "seconds": 3.682,
+      "line": ""
+    },
+    {
+      "seconds": 3.682,
+      "line": "RLTK DriverEntry"
+    },
+    {
+      "seconds": 3.682,
+      "line": "RegisterMiniport st=0x00000000"
+    },
+    {
+      "seconds": 3.682,
+      "line": ""
+    },
+    {
+      "seconds": 3.682,
+      "line": "RLTK RtlInitialize"
+    },
+    {
+      "seconds": 4.486,
+      "line": "HCPTEST object=00000000"
+    },
+    {
+      "seconds": 4.486,
+      "line": "USBNIC-INIT hardware 00000003"
+    },
+    {
+      "seconds": 4.486,
+      "line": "USBNIC-INIT space 00000001"
+    },
+    {
+      "seconds": 4.486,
+      "line": "USBNIC-INIT register 0000F97C"
+    },
+    {
+      "seconds": 4.486,
+      "line": "USBNIC-INIT operations 00000148"
+    },
+    {
+      "seconds": 4.486,
+      "line": "USBNIC-INIT delay-ms 00000009"
+    },
+    {
+      "seconds": 4.486,
+      "line": "NATIVE-INIT attach C0000001"
+    },
+    {
+      "seconds": 4.486,
+      "line": "RLTK INIT FAIL st=0xC000009A"
+    },
+    {
+      "seconds": 4.586,
+      "line": "HCPTEST S3=00000000"
+    },
+    {
+      "seconds": 5.49,
+      "line": ""
+    },
+    {
+      "seconds": 5.491,
+      "line": "RLTK DriverEntry"
+    },
+    {
+      "seconds": 5.491,
+      "line": "RegisterMiniport st=0x00000000"
+    },
+    {
+      "seconds": 5.491,
+      "line": ""
+    },
+    {
+      "seconds": 5.491,
+      "line": "RLTK RtlInitialize"
+    },
+    {
+      "seconds": 5.491,
+      "line": "HCPTEST S0=00000000"
+    },
+    {
+      "seconds": 6.996,
+      "line": "post-Timer"
+    },
+    {
+      "seconds": 6.996,
+      "line": "post-PublishName"
+    },
+    {
+      "seconds": 6.996,
+      "line": "RLTK INIT DONE OK"
+    },
+    {
+      "seconds": 8.706,
+      "line": "HCPTEST object=00000000"
+    },
+    {
+      "seconds": 8.706,
+      "line": "HCPTEST S3=00000000"
+    },
+    {
+      "seconds": 9.71,
+      "line": "HCPTEST S0=00000000"
+    },
+    {
+      "seconds": 11.822,
+      "line": ""
+    },
+    {
+      "seconds": 11.822,
+      "line": "RLTK DriverEntry"
+    },
+    {
+      "seconds": 11.822,
+      "line": "RegisterMiniport st=0x00000000"
+    },
+    {
+      "seconds": 11.822,
+      "line": ""
+    },
+    {
+      "seconds": 11.822,
+      "line": "RLTK RtlInitialize"
+    },
+    {
+      "seconds": 12.925,
+      "line": "HCPTEST object=00000000"
+    },
+    {
+      "seconds": 12.925,
+      "line": "USBNIC-INIT hardware 00000003"
+    },
+    {
+      "seconds": 12.925,
+      "line": "USBNIC-INIT space 00000001"
+    },
+    {
+      "seconds": 12.925,
+      "line": "USBNIC-INIT register 0000FBBC"
+    },
+    {
+      "seconds": 12.925,
+      "line": "USBNIC-INIT operations 000001D8"
+    },
+    {
+      "seconds": 12.925,
+      "line": "USBNIC-INIT delay-ms 00000009"
+    },
+    {
+      "seconds": 12.925,
+      "line": "NATIVE-INIT attach C0000001"
+    },
+    {
+      "seconds": 12.925,
+      "line": "RLTK INIT FAIL st=0xC000009A"
+    },
+    {
+      "seconds": 12.925,
+      "line": "HCPTEST S3=00000000"
+    },
+    {
+      "seconds": 13.929,
+      "line": ""
+    },
+    {
+      "seconds": 13.929,
+      "line": "RLTK DriverEntry"
+    },
+    {
+      "seconds": 13.929,
+      "line": "RegisterMiniport st=0x00000000"
+    },
+    {
+      "seconds": 13.929,
+      "line": ""
+    },
+    {
+      "seconds": 13.929,
+      "line": "RLTK RtlInitialize"
+    },
+    {
+      "seconds": 13.929,
+      "line": "HCPTEST S0=00000000"
+    },
+    {
+      "seconds": 15.434,
+      "line": "post-Timer"
+    },
+    {
+      "seconds": 15.434,
+      "line": "post-PublishName"
+    },
+    {
+      "seconds": 15.434,
+      "line": "RLTK INIT DONE OK"
+    },
+    {
+      "seconds": 15.835,
+      "line": "RXF"
+    },
+    {
+      "seconds": 15.835,
+      "line": "  filt FOUND"
+    },
+    {
+      "seconds": 16.036,
+      "line": "RXF"
+    },
+    {
+      "seconds": 17.038,
+      "line": "HCPTEST object=00000000"
+    },
+    {
+      "seconds": 17.038,
+      "line": "HCPTEST D3=00000000"
+    },
+    {
+      "seconds": 18.041,
+      "line": "HCPTEST D0=00000000"
+    },
+    {
+      "seconds": 20.148,
+      "line": ""
+    },
+    {
+      "seconds": 20.148,
+      "line": "RLTK DriverEntry"
+    },
+    {
+      "seconds": 20.148,
+      "line": "RegisterMiniport st=0x00000000"
+    },
+    {
+      "seconds": 20.148,
+      "line": ""
+    },
+    {
+      "seconds": 20.148,
+      "line": "RLTK RtlInitialize"
+    },
+    {
+      "seconds": 21.353,
+      "line": "HCPTEST object=00000000"
+    },
+    {
+      "seconds": 21.353,
+      "line": "USBNIC-INIT hardware 00000003"
+    },
+    {
+      "seconds": 21.353,
+      "line": "USBNIC-INIT space 00000001"
+    },
+    {
+      "seconds": 21.353,
+      "line": "USBNIC-INIT register 0000FB54"
+    },
+    {
+      "seconds": 21.353,
+      "line": "USBNIC-INIT operations 000001BE"
+    },
+    {
+      "seconds": 21.353,
+      "line": "USBNIC-INIT delay-ms 00000009"
+    },
+    {
+      "seconds": 21.353,
+      "line": "NATIVE-INIT attach C0000001"
+    },
+    {
+      "seconds": 21.353,
+      "line": "RLTK INIT FAIL st=0xC000009A"
+    },
+    {
+      "seconds": 21.353,
+      "line": "HCPTEST S3=00000000"
+    },
+    {
+      "seconds": 22.257,
+      "line": ""
+    },
+    {
+      "seconds": 22.257,
+      "line": "RLTK DriverEntry"
+    },
+    {
+      "seconds": 22.257,
+      "line": "RegisterMiniport st=0x00000000"
+    },
+    {
+      "seconds": 22.257,
+      "line": ""
+    },
+    {
+      "seconds": 22.257,
+      "line": "RLTK RtlInitialize"
+    },
+    {
+      "seconds": 22.257,
+      "line": "HCPTEST S0=00000000"
+    }
+  ],
+  "command": "for /l %i in (1,1,3) do c:\\rlttest\\hcpower.exe & for /l %j in (1,1,3) do c:\\rlttest\\hcpower.exe /s",
+  "error": "AssertionError('HCPTEST object=00000000\\nHCPTEST D3=00000000\\nHCPTEST D0=00000000\\n\\nRLTK DriverEntry\\nRegisterMiniport st=0x00000000\\n\\nRLTK RtlInitialize\\nHCPTEST object=00000000\\nUSBNIC-INIT hardware 00000003\\nUSBNIC-INIT space 00000001\\nUSBNIC-INIT register 0000F97C\\nUSBNIC-INIT operations 00000148\\nUSBNIC-INIT delay-ms 00000009\\nNATIVE-INIT attach C0000001\\nRLTK INIT FAIL st=0xC000009A\\nHCPTEST S3=00000000\\n\\nRLTK DriverEntry\\nRegisterMiniport st=0x00000000\\n\\nRLTK RtlInitialize\\nHCPTEST S0=00000000\\npost-Timer\\npost-PublishName\\nRLTK INIT DONE OK\\nHCPTEST object=00000000\\nHCPTEST S3=00000000\\nHCPTEST S0=00000000\\n\\nRLTK DriverEntry\\nRegisterMiniport st=0x00000000\\n\\nRLTK RtlInitialize\\nHCPTEST object=00000000\\nUSBNIC-INIT hardware 00000003\\nUSBNIC-INIT space 00000001\\nUSBNIC-INIT register 0000FBBC\\nUSBNIC-INIT operations 000001D8\\nUSBNIC-INIT delay-ms 00000009\\nNATIVE-INIT attach C0000001\\nRLTK INIT FAIL st=0xC000009A\\nHCPTEST S3=00000000\\n\\nRLTK DriverEntry\\nRegisterMiniport st=0x00000000\\n\\nRLTK RtlInitialize\\nHCPTEST S0=00000000\\npost-Timer\\npost-PublishName\\nRLTK INIT DONE OK\\nRXF\\n  filt FOUND\\nRXF\\nHCPTEST object=00000000\\nHCPTEST D3=00000000\\nHCPTEST D0=00000000\\n\\nRLTK DriverEntry\\nRegisterMiniport st=0x00000000\\n\\nRLTK RtlInitialize\\nHCPTEST object=00000000\\nUSBNIC-INIT hardware 00000003\\nUSBNIC-INIT space 00000001\\nUSBNIC-INIT register 0000FB54\\nUSBNIC-INIT operations 000001BE\\nUSBNIC-INIT delay-ms 00000009\\nNATIVE-INIT attach C0000001\\nRLTK INIT FAIL st=0xC000009A\\nHCPTEST S3=00000000\\n\\nRLTK DriverEntry\\nRegisterMiniport st=0x00000000\\n\\nRLTK RtlInitialize\\nHCPTEST S0=00000000\\n')",
+  "power_trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST object=00000000\nUSBNIC-INIT hardware 00000003\nUSBNIC-INIT space 00000001\nUSBNIC-INIT register 0000F97C\nUSBNIC-INIT operations 00000148\nUSBNIC-INIT delay-ms 00000009\nNATIVE-INIT attach C0000001\nRLTK INIT FAIL st=0xC000009A\nHCPTEST S3=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST S0=00000000\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\nHCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST object=00000000\nUSBNIC-INIT hardware 00000003\nUSBNIC-INIT space 00000001\nUSBNIC-INIT register 0000FBBC\nUSBNIC-INIT operations 000001D8\nUSBNIC-INIT delay-ms 00000009\nNATIVE-INIT attach C0000001\nRLTK INIT FAIL st=0xC000009A\nHCPTEST S3=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST S0=00000000\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\nRXF\n  filt FOUND\nRXF\nHCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST object=00000000\nUSBNIC-INIT hardware 00000003\nUSBNIC-INIT space 00000001\nUSBNIC-INIT register 0000FB54\nUSBNIC-INIT operations 000001BE\nUSBNIC-INIT delay-ms 00000009\nNATIVE-INIT attach C0000001\nRLTK INIT FAIL st=0xC000009A\nHCPTEST S3=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST S0=00000000\n",
+  "screenshot": "xp64-usbnet-hcpower-oldpdo-8127-oldpdo-burst-20261102-controller-power-screen.png"
+}

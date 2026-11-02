@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-01T20:46:00.928157+00:00",
+  "result": "PASS",
+  "scope": "NT3.51 SP5 actual additional-adapter OEM setup, System32 utility copy, normal shutdown/cold boot, USB plus native RTL8127 PCI traffic and four-model reinsert/carrier PCI-preservation matrix. Existing USBNT and TCP/IP; not a clean first-driver installation.",
+  "full_payload_replies": {
+    "initial_coldboot": 8,
+    "recovery_matrix_including_baseline": 104
+  },
+  "evidence": {
+    "nt351-ncpa-installed-offline-20261101/manifest.json": "45b40d747433b59fb7a82ac02b24b50f27657c011514e952396e8e2d9e08a10f",
+    "nt351-ncpa-installed-registry-20261101.json": "9834e8fb78e82764c7257f35c0f2b20a2ed0a910f8da2c46c29cb3312eb1b4b4",
+    "nt351-usbsetup-ncpa-reboot-8127-ncpa-coldboot-20261101.json": "4a503521b2e9677f6636de1ad6cfe4471234f3aab9f81575a33cfa7c75ffd7b0",
+    "nt351-usbsetup-ncpa-reboot-8127-setup-20261101-sibling-matrix.json": "6d99bb81c449078fa4bf35da674c4a3528f5d8b5f260c494f177a622b7d5f628"
+  }
+}

@@ -1,0 +1,95 @@
+In file included from /workspace/rltklant-work/validation/guest_pci_reset_driver.c:9:
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:783:14: error: redeclaration of ‘enum _NDIS_REQUEST_TYPE’
+  783 | typedef enum _NDIS_REQUEST_TYPE {
+      |              ^~~~~~~~~~~~~~~~~~
+In file included from /workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:47:
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:203:16: note: originally defined here
+  203 |   typedef enum _NDIS_REQUEST_TYPE {
+      |                ^~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:784:3: error: redeclaration of enumerator ‘NdisRequestQueryInformation’
+  784 |   NdisRequestQueryInformation,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:204:5: note: previous definition of ‘NdisRequestQueryInformation’ with type ‘enum _NDIS_REQUEST_TYPE’
+  204 |     NdisRequestQueryInformation,
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:785:3: error: redeclaration of enumerator ‘NdisRequestSetInformation’
+  785 |   NdisRequestSetInformation,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:205:5: note: previous definition of ‘NdisRequestSetInformation’ with type ‘enum _NDIS_REQUEST_TYPE’
+  205 |     NdisRequestSetInformation,
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:786:3: error: redeclaration of enumerator ‘NdisRequestQueryStatistics’
+  786 |   NdisRequestQueryStatistics,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:206:5: note: previous definition of ‘NdisRequestQueryStatistics’ with type ‘enum _NDIS_REQUEST_TYPE’
+  206 |     NdisRequestQueryStatistics,
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:787:3: error: redeclaration of enumerator ‘NdisRequestOpen’
+  787 |   NdisRequestOpen,
+      |   ^~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:207:5: note: previous definition of ‘NdisRequestOpen’ with type ‘enum _NDIS_REQUEST_TYPE’
+  207 |     NdisRequestOpen,
+      |     ^~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:788:3: error: redeclaration of enumerator ‘NdisRequestClose’
+  788 |   NdisRequestClose,
+      |   ^~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:208:5: note: previous definition of ‘NdisRequestClose’ with type ‘enum _NDIS_REQUEST_TYPE’
+  208 |     NdisRequestClose,
+      |     ^~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:789:3: error: redeclaration of enumerator ‘NdisRequestSend’
+  789 |   NdisRequestSend,
+      |   ^~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:209:5: note: previous definition of ‘NdisRequestSend’ with type ‘enum _NDIS_REQUEST_TYPE’
+  209 |     NdisRequestSend,
+      |     ^~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:790:3: error: redeclaration of enumerator ‘NdisRequestTransferData’
+  790 |   NdisRequestTransferData,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:210:5: note: previous definition of ‘NdisRequestTransferData’ with type ‘enum _NDIS_REQUEST_TYPE’
+  210 |     NdisRequestTransferData,
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:791:3: error: redeclaration of enumerator ‘NdisRequestReset’
+  791 |   NdisRequestReset,
+      |   ^~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:211:5: note: previous definition of ‘NdisRequestReset’ with type ‘enum _NDIS_REQUEST_TYPE’
+  211 |     NdisRequestReset,
+      |     ^~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:792:3: error: redeclaration of enumerator ‘NdisRequestGeneric1’
+  792 |   NdisRequestGeneric1,
+      |   ^~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:212:5: note: previous definition of ‘NdisRequestGeneric1’ with type ‘enum _NDIS_REQUEST_TYPE’
+  212 |     NdisRequestGeneric1,
+      |     ^~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:793:3: error: redeclaration of enumerator ‘NdisRequestGeneric2’
+  793 |   NdisRequestGeneric2,
+      |   ^~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:213:5: note: previous definition of ‘NdisRequestGeneric2’ with type ‘enum _NDIS_REQUEST_TYPE’
+  213 |     NdisRequestGeneric2,
+      |     ^~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:794:3: error: redeclaration of enumerator ‘NdisRequestGeneric3’
+  794 |   NdisRequestGeneric3,
+      |   ^~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:214:5: note: previous definition of ‘NdisRequestGeneric3’ with type ‘enum _NDIS_REQUEST_TYPE’
+  214 |     NdisRequestGeneric3,
+      |     ^~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:795:3: error: redeclaration of enumerator ‘NdisRequestGeneric4’
+  795 |   NdisRequestGeneric4,
+      |   ^~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:215:5: note: previous definition of ‘NdisRequestGeneric4’ with type ‘enum _NDIS_REQUEST_TYPE’
+  215 |     NdisRequestGeneric4
+      |     ^~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:1009:9: warning: "NDIS_PROTOCOL_ID_MAX" redefined
+ 1009 | #define NDIS_PROTOCOL_ID_MAX            0x0F
+      |         ^~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:1657:9: note: this is the location of the previous definition
+ 1657 | #define NDIS_PROTOCOL_ID_MAX 0x0f
+      |         ^~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:1010:9: warning: "NDIS_PROTOCOL_ID_MASK" redefined
+ 1010 | #define NDIS_PROTOCOL_ID_MASK           0x0F
+      |         ^~~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ntddndis.h:1658:9: note: this is the location of the previous definition
+ 1658 | #define NDIS_PROTOCOL_ID_MASK 0x0f
+      |         ^~~~~~~~~~~~~~~~~~~~~
+/workspace/rltklant-tools/root/usr/share/mingw-w64/include/ddk/ndis.h:4428:12: error: expected ‘;’, ‘,’ or ‘)’ before ‘NDIS_HANDLE’
+ 4428 |         IN NDIS_HANDLE  NdisLinkContext);
+      |            ^~~~~~~~~~~

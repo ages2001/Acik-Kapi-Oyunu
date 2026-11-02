@@ -1,0 +1,4 @@
+{'controller': 'qemu-xhci', 'exit_code': 0, 'log': 'usbnt-native-hotplug-qemu-xhci-20261102.log', 'result': 'PASS'}
+{'controller': 'usb-ehci', 'exit_code': 1, 'log': 'usbnt-native-hotplug-usb-ehci-20261102.log', 'result': 'FAIL'}
+{'controller': 'piix3-usb-uhci', 'exit_code': 0, 'log': 'usbnt-native-hotplug-piix3-usb-uhci-20261102.log', 'result': 'PASS'}
+{'controller': 'pci-ohci', 'exit_code': 0, 'log': 'usbnt-native-hotplug-pci-ohci-20261102.log', 'result': 'PASS'}

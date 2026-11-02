@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T16:11:17.727528+00:00",
+  "guest": "nt31-usbsetup-sleep-v3-rtl8117-8127",
+  "files": {
+    "WINNT31/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 419328,
+      "sha256": "20e0b4ba0c5a286826cc6736e8e5929fb92a7160308038a5216081cbfc7a95f6"
+    },
+    "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 538624,
+      "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+    }
+  }
+}

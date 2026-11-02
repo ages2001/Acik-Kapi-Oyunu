@@ -1,0 +1,10 @@
+{
+  "guest": "win2000-standard-usbnet-trace-legacyusb-8127",
+  "utc": "2026-10-29T20:50:02.582916+00:00",
+  "token": "ordered-native02",
+  "report": "TOKEN ordered-native02\r\nDEVICE USB\\VID_0BDA&PID_8150\\0000-0000:00:03.0-1\r\nNAME Realtek RTL8150 USB 10/100 Fast Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+  "peer": [
+    "127.0.0.1",
+    48935
+  ]
+}

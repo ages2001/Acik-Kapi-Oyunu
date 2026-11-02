@@ -1,0 +1,53 @@
+{
+  "utc": "2026-11-02T06:44:43.340899+00:00",
+  "guest": "win2000-standard-rtl8117-v2-multi-8127",
+  "safeoff_screenshot": "win2000-rtl8117-v2-safeoff-20261102.png",
+  "safeoff_sha256": "0a48d2055d8424eb171f92402d5bfab616993c504ac17896d3edf4a85261425d",
+  "files": {
+    "debug.log": {
+      "bytes": 7798,
+      "sha256": "b40b2664100c8af55c056edc260c4f704e2f9f7eadc2761460957d9eb08d3021"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 93,
+      "sha256": "362d0a13fc98dfbb9371656472334e527e9f9c53e2e37afa7065d84457a28076"
+    },
+    "launch.json": {
+      "bytes": 2854,
+      "sha256": "e6ea001d5444009ffe4aee0daea31ed973993f079ec7779565ed9b8acdeff327"
+    },
+    "process-exit.json": {
+      "bytes": 51,
+      "sha256": "0154d300d88cef61641daa5a17fd7ecc628f30175a0687f093aea0be99748a99"
+    },
+    "extra1.pcap": {
+      "bytes": 64048,
+      "sha256": "d123f066b41320bfead1e160ae3fc38f418fa40abacff562a9643eba9ef1ecc8"
+    },
+    "extra2.pcap": {
+      "bytes": 64020,
+      "sha256": "5b583ce2662575c3e0d4e7487f8e78269eb51724ea47ec63b99bc775ece2af5d"
+    },
+    "extra3.pcap": {
+      "bytes": 59790,
+      "sha256": "4bbfcf4ba5f78060b5340fc745ff59c1ea9e78eddabff0189a84fad93977795a"
+    },
+    "extra4.pcap": {
+      "bytes": 59255,
+      "sha256": "1e360bdbc0565355991efb5c49d6d55735d265cd0a4dc1aff722aa906a516d69"
+    },
+    "extra5.pcap": {
+      "bytes": 62831,
+      "sha256": "2bda232a3f4dcfccbe7ddaf5f572f7d369f25f97a796fbe9424cbf1361bcc60c"
+    },
+    "pci.pcap": {
+      "bytes": 62512,
+      "sha256": "4ab2fefb14449e3fcc2558c0fc55a901ae6bc95e648663592a30ceb7d2390f35"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

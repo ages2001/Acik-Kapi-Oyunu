@@ -1,0 +1,43 @@
+{
+  "guest": "nt31-usbsetup-capacity-rtl8117-8127",
+  "token": "capacity-v2-20261102-c1-reinsert",
+  "mask": 3,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T09:10:15.528943+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 57016,
+      "end_offset": 69256,
+      "capture_prefix_sha256": "9a77844d8a31c49a69392c95f0da39c085527a07cb599d001a881412c158f99b",
+      "screenshot": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c1-reinsert-usb.png",
+      "ocr": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c1-reinsert-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "e184af53ed551862c4f123d1a98b887270d320894d4ea4072fac34f7b21ab283"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 34453,
+      "end_offset": 46693,
+      "capture_prefix_sha256": "29944533875e5fe39c4d8350a6f64cc1b36f7711e48318fd3a7f8bb4fa2ad3e9",
+      "screenshot": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c1-reinsert-pci.png",
+      "ocr": "nt31-usbsetup-capacity-rtl8117-8127-capacity-v2-20261102-c1-reinsert-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "7f1e9a1a77aaa48a587247ecacaff741700bef8a217dabd0b4c9d08bbdadfb99"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T09:10:27.086163+00:00"
+}

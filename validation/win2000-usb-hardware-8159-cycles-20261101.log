@@ -1,0 +1,17 @@
+{}
+{}
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_report.py", line 10, in <module>
+    data,peer=s.recvfrom(16384);s.close();text=data.decode('ascii');print(text,flush=True)
+              ^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/native_usb_cycles.py", line 28, in <module>
+    if b[12:14]==b'\x08\x06' and b[28:32]==bytes([10,0,2,15]):
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/rltklant-work/validation/native_usb_cycles.py", line 13, in call
+    def call(script,*args):subprocess.run([sys.executable,str(here/script),*args],check=True)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '/workspace/rltklant-work/validation/native_report.py', 'win2000-standard-usbnet-hardware-ehci-8127', 'hardware-8159-native01', 'nprobe5.exe']' returned non-zero exit status 1.

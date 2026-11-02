@@ -1,0 +1,28 @@
+Formatting '/workspace/rltklant-vm/run/win2000-standard-management-v4-multi-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=1747006464 backing_file=/tmp/rltk-growing-fat-uc0_7h4s/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+43/26658 = 0.16% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 3145728
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/win2000-standard-management-v4-multi-8127.qcow2",
+  "sha256_before_boot": "507e2db84f8dc3f5c3ab52cecb9cca7dff6da770a1d643df0c60290a76defe94",
+  "files": [
+    {
+      "guest_path": "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis5/rltklant.sys",
+      "size": 555784,
+      "sha256": "428f94ea70e445a6ae974359d47fed8176e5cb50a13be3a1f124cb2a013a4cf6",
+      "old_size": 549641,
+      "old_sha256": "7c8f9db458130b8c75c8a3e61cba91773e5dd58ea7953c0a28e02cc96587d3d5"
+    },
+    {
+      "guest_path": "RLTTEST/PCNEW.EXE",
+      "source": "/workspace/rltklant-work/validation/pci-management-fixture-v1-20261102/PC32.EXE",
+      "size": 16319,
+      "sha256": "f9f0841ff5ff62a26ccfa4b46299fb92394dcd02fd9ca0d17a400c376f32d589",
+      "old_size": 16319,
+      "old_sha256": "a6b1e6fbad3bb189bf1cfa454f969e5bb52716abe5f7306b2d6474f837e65734"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

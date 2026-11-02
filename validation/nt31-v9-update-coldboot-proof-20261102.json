@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-01T22:32:09.419523+00:00",
+  "result": "PASS",
+  "scope": "NT3.1 cold boot after v9 NCPA Update and both Configure paths, one automatic PCI DHCP exchange, zero disabled USB DHCP packets, 8 inbox-confirmed and full-wire-payload-matched replies across USB/PCI",
+  "installer": "nt31-update-v9-20261102-proof.json",
+  "dhcp": "nt31-v9-reboot-dhcp-pcaps-20261102/manifest.json",
+  "traffic": "nt31-usbsetup-v9-reboot-8127-v9-post-update-receipt-20261102.json",
+  "traffic_captures": "nt31-v9-reboot-traffic-pcaps-20261102/manifest.json",
+  "limits": [
+    "Distinct preconfigured subnets only",
+    "OCR verifies only the fresh guest receipt count; exact addresses, identifier, sequence, checksum and all payload bytes are independently checked in PCAP",
+    "Earlier two OCR-address failures remain preserved; no packet loss was inferred from those OCR failures",
+    "Disable/remove and clean first installation remain separate"
+  ]
+}

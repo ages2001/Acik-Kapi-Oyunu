@@ -1,0 +1,5 @@
+{
+  "source": "nt31-cleanup.raw",
+  "sha256": "178e4281cc1e13b0cdbd1243a9fabff62029dbba464606e5ab4655ab813fb41e",
+  "target": "ndisnt31"
+}

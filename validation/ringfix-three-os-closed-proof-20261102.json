@@ -1,0 +1,40 @@
+{
+  "result": "PASS",
+  "utc": "2026-11-02T06:14:32.180295+00:00",
+  "rows": [
+    {
+      "guest": "win2000-standard-ringfix-multi-8127",
+      "target": "ndis5",
+      "sha256": "475411b4ed2c96009eda0be362a8ac041bed76c2d8dc0866b8b771519464da17",
+      "offline": "win2000-management-ringfix-offline-20261102/manifest.json",
+      "evidence": "win2000-management-ringfix-evidence-20261102/manifest.json",
+      "watchdog": "win2000-ringfix-watchdog-20261102.json",
+      "network": "win2000-standard-ringfix-multi-8127-ringfix-after-pnp-watchdog-20261102.json",
+      "pnp_transitions": 36,
+      "watchdog_cycles": 6
+    },
+    {
+      "guest": "xp64-management-ringfix-multi-8127",
+      "target": "ndis5x64",
+      "sha256": "094c0b99f7f8d470134ccaa445e07a2802bb378e77cbfc2ff6b14a7b383d15b1",
+      "offline": "xp64-management-ringfix-offline-20261102/manifest.json",
+      "evidence": "xp64-management-ringfix-evidence-20261102/manifest.json",
+      "watchdog": "xp64-management-ringfix-watchdog-20261102.json",
+      "network": "xp64-management-ringfix-multi-8127-ringfix-after-pnp-watchdog-20261102.json",
+      "pnp_transitions": 36,
+      "watchdog_cycles": 6
+    },
+    {
+      "guest": "nt4-ndis-management-ringfix-8127",
+      "target": "ndis3",
+      "sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0",
+      "offline": "nt4-management-ringfix-offline-20261102/manifest.json",
+      "evidence": "nt4-management-ringfix-evidence-20261102/manifest.json",
+      "watchdog": "nt4-management-ringfix-watchdog-20261102.json",
+      "network": "nt4-ndis-management-ringfix-8127-management-ringfix-after-watchdog-20261102.json",
+      "pnp_transitions": 0,
+      "watchdog_cycles": 3
+    }
+  ],
+  "scope": "Exact ring-fix miniport binaries. Windows 2000 AHCI, XP x64 IDE, NT4 IDE. Orderly PnP transitions are not physical PCI surprise removal."
+}

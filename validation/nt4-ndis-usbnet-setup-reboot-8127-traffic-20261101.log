@@ -1,0 +1,5 @@
+PASS {'cycle': 1, 'model': 'usb-rtl8153', 'requests': 4, 'matched_replies': 4, 'carrier_down_up': True, 'payload': 1472}
+PASS {'cycle': 2, 'model': 'usb-rtl8156', 'requests': 4, 'matched_replies': 4, 'carrier_down_up': True, 'payload': 1472}
+PASS {'cycle': 3, 'model': 'usb-rtl8157', 'requests': 4, 'matched_replies': 4, 'carrier_down_up': True, 'payload': 1472}
+PASS {'cycle': 4, 'model': 'usb-rtl8159', 'requests': 4, 'matched_replies': 4, 'carrier_down_up': True, 'payload': 1472}
+{'status': 'running', 'singlestep': False, 'running': True}

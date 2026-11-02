@@ -1,0 +1,36 @@
+{
+  "guest": "xp64-usbnet-resetsequence-8127",
+  "model": "usb-rtl8156",
+  "rx_stall_injected_before_each_remove": false,
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "xp64-usbnet-resetsequence-8127",
+      "utc": "2026-11-01T18:29:52.668788+00:00",
+      "token": "sequence-8156-native01",
+      "report": "TOKEN sequence-8156-native01\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:02.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        46217
+      ],
+      "network_readiness": {
+        "wait_seconds": 3.7201766100042732,
+        "evidence": "fresh assigned-source ARP"
+      }
+    },
+    {
+      "guest": "xp64-usbnet-resetsequence-8127",
+      "utc": "2026-11-01T18:30:07.236728+00:00",
+      "token": "sequence-8156-native02",
+      "report": "TOKEN sequence-8156-native02\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:02.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        46628
+      ],
+      "network_readiness": {
+        "wait_seconds": 4.021126189996721,
+        "evidence": "fresh assigned-source ARP"
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+PASS: rtl8168,chip-profile=8111dp,dash-enabled=on,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8168,chip-profile=8111dp,dash-enabled=on,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)
+PASS: rtl8168,chip-profile=8111dp,dash-enabled=off,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8168,chip-profile=8111dp,dash-enabled=off,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)
+PASS: rtl8168,chip-profile=8111dp-b,dash-enabled=on,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8168,chip-profile=8111dp-b,dash-enabled=on,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)
+PASS: rtl8168,chip-profile=8111dp-b,dash-enabled=off,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8168,chip-profile=8111dp-b,dash-enabled=off,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)
+PASS: rtl8168,chip-profile=8111ep,dash-enabled=on,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8168,chip-profile=8111ep,dash-enabled=on,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)
+PASS: rtl8168,chip-profile=8111ep,dash-enabled=off,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8168,chip-profile=8111ep,dash-enabled=off,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)
+PASS: rtl8168,chip-profile=8117,dash-enabled=on,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8168,chip-profile=8117,dash-enabled=on,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)
+PASS: rtl8168,chip-profile=8117,dash-enabled=off,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8168,chip-profile=8117,dash-enabled=off,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)
+PASS: rtl8125,chip-profile=8125bp,dash-enabled=on,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8125,chip-profile=8125bp,dash-enabled=on,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)
+PASS: rtl8125,chip-profile=8125bp,dash-enabled=off,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8125,chip-profile=8125bp,dash-enabled=off,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)
+PASS: rtl8127,chip-profile=8127bp,dash-enabled=on,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8127,chip-profile=8127bp,dash-enabled=on,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)
+PASS: rtl8127,chip-profile=8127bp,dash-enabled=off,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8127,chip-profile=8127bp,dash-enabled=off,io-bar=off PCIe slot removal/reinsert with armed DMA: 4 cycles (model only)

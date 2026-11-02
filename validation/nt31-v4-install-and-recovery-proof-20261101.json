@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-01T21:04:53.750124+00:00",
+  "result": "PASS",
+  "scope": "NT3.1 additional-adapter NCPA installation, exact utility copies, normal shutdown/cold boot, USB+RTL8127 PCIe traffic and four-model reinsert/carrier PCI preservation. Inbox ping receipt plus full wire payload matching, not a custom guest-side comparator. Not automatic DHCP renewal or multi-network DHCP validation.",
+  "initial_coldboot_replies": 8,
+  "matrix_replies_including_baseline": 104,
+  "evidence": {
+    "nt31-v4-installer-copy-proof-20261101.json": "ceb326b8022087d17b452f2ea477c98fcc073e90a66640a0e5b1a0ee39244309",
+    "nt31-usbsetup-ncpa-v4-reboot-8127-inbox-coldboot-20261101.json": "6bad07547efa4d8c0bd95c562cf9966a4fd61ca69af4a349e4a89649abe585b5",
+    "nt31-usbsetup-ncpa-v4-reboot-8127-setup-20261101-sibling-matrix.json": "44e2e1383dcf4f1f861058c92e485ac209e6a0caedfb4672db90728010a9a765"
+  }
+}

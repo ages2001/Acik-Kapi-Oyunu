@@ -1,0 +1,17 @@
+{
+  "scope": "Exact packet-capture prefixes recorded at successful matrix completion; trailing idle/shutdown traffic excluded",
+  "files": {
+    "usb.pcap": {
+      "bytes": 336399,
+      "sha256": "69cc886f19e2378f1a724e113feed95e2a8bd1323166fe44878a1f8f07ce105d"
+    },
+    "usb2.pcap": {
+      "bytes": 334855,
+      "sha256": "9e9917fa6be2e875553181762a276eb94753103c3818a0ddcc13876b2fc41495"
+    },
+    "pci.pcap": {
+      "bytes": 448234,
+      "sha256": "0955bec675f51fba463b49bc1d375dfa142270a05e095c024624de263cbd6518"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+[I 2026-10-29 20:06:11] concurrency model: async
+[I 2026-10-29 20:06:11] masquerade (NAT) address: None
+[I 2026-10-29 20:06:11] passive ports: None
+[I 2026-10-29 20:06:11] >>> starting FTP server on 127.0.0.1:2126, pid=143551 <<<
+[I 2026-10-29 20:06:17] 127.0.0.1:49004-[] FTP session opened (connect)
+[I 2026-10-29 20:06:22] 127.0.0.1:49004-[anonymous] USER 'anonymous' logged in.
+[I 2026-10-29 20:06:29] 127.0.0.1:49004-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/n32.sys completed=1 bytes=89540 seconds=0.032
+[I 2026-10-29 20:07:07] 127.0.0.1:49004-[anonymous] FTP session closed (disconnect).
+[E 2026-10-29 20:07:07] unhandled exception in instance <Handler(id=140566897605856, addr='127.0.0.1:49004', user='anonymous')>
+    Traceback (most recent call last):
+      File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/pyftpdlib/ioloop.py", line 251, in call
+        self._target(*self._args, **self._kwargs)
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 33, in on_disconnect
+        for p in self.forwards or []:self.monitor('hostfwd_remove '+netdev+' tcp:127.0.0.1:'+str(p))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 22, in monitor
+        if out:raise RuntimeError(out)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+    RuntimeError: host forwarding rule for tcp:127.0.0.1:31030 removed
+    
+[I 2026-10-29 20:21:56] 127.0.0.1:58984-[] FTP session opened (connect)
+[I 2026-10-29 20:22:00] 127.0.0.1:58984-[anonymous] USER 'anonymous' logged in.
+[I 2026-10-29 20:22:08] 127.0.0.1:58984-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/async32.sys completed=1 bytes=91217 seconds=0.026
+[I 2026-10-29 20:22:48] 127.0.0.1:58984-[anonymous] FTP session closed (disconnect).
+[E 2026-10-29 20:22:49] unhandled exception in instance <Handler(id=140566895880208, addr='127.0.0.1:58984', user='anonymous')>
+    Traceback (most recent call last):
+      File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/pyftpdlib/ioloop.py", line 251, in call
+        self._target(*self._args, **self._kwargs)
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 33, in on_disconnect
+        for p in self.forwards or []:self.monitor('hostfwd_remove '+netdev+' tcp:127.0.0.1:'+str(p))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 22, in monitor
+        if out and not (text.startswith('hostfwd_remove ') and out.startswith('host forwarding rule ') and ' removed' in out):raise RuntimeError(out)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+    RuntimeError: host forwarding rule for tcp:127.0.0.1:31039 removed
+    
+[I 2026-10-29 20:39:08] 127.0.0.1:48852-[] FTP session opened (connect)
+[I 2026-10-29 20:39:13] 127.0.0.1:48852-[anonymous] USER 'anonymous' logged in.
+[I 2026-10-29 20:39:21] 127.0.0.1:48852-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/reset32.sys completed=1 bytes=91286 seconds=0.028
+[I 2026-10-29 20:39:59] 127.0.0.1:48852-[anonymous] FTP session closed (disconnect).
+[E 2026-10-29 20:39:59] unhandled exception in instance <Handler(id=140566893575296, addr='127.0.0.1:48852', user='anonymous')>
+    Traceback (most recent call last):
+      File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/pyftpdlib/ioloop.py", line 251, in call
+        self._target(*self._args, **self._kwargs)
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 33, in on_disconnect
+        for p in self.forwards or []:self.monitor('hostfwd_remove '+netdev+' tcp:127.0.0.1:'+str(p))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 22, in monitor
+        if out and not (text.startswith('hostfwd_remove ') and out.startswith('host forwarding rule ') and ' removed' in out):raise RuntimeError(out)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+    RuntimeError: host forwarding rule for tcp:127.0.0.1:31058 removed
+    
+[I 2026-10-29 20:46:36] 127.0.0.1:45148-[] FTP session opened (connect)
+[I 2026-10-29 20:46:41] 127.0.0.1:45148-[anonymous] USER 'anonymous' logged in.
+[I 2026-10-29 20:46:49] 127.0.0.1:45148-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/order32.sys completed=1 bytes=91286 seconds=0.034
+[I 2026-10-29 20:47:58] 127.0.0.1:45148-[anonymous] FTP session closed (disconnect).
+[E 2026-10-29 20:47:58] unhandled exception in instance <Handler(id=140566892122944, addr='127.0.0.1:45148', user='anonymous')>
+    Traceback (most recent call last):
+      File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/pyftpdlib/ioloop.py", line 251, in call
+        self._target(*self._args, **self._kwargs)
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 33, in on_disconnect
+        for p in self.forwards or []:self.monitor('hostfwd_remove '+netdev+' tcp:127.0.0.1:'+str(p))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 22, in monitor
+        if out and not (text.startswith('hostfwd_remove ') and out.startswith('host forwarding rule ') and ' removed' in out):raise RuntimeError(out)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+    RuntimeError: host forwarding rule for tcp:127.0.0.1:31071 removed
+    
+[I 2026-10-29 21:20:28] 127.0.0.1:41626-[] FTP session opened (connect)
+[I 2026-10-29 21:20:32] 127.0.0.1:41626-[anonymous] USER 'anonymous' logged in.
+[I 2026-10-29 21:20:40] 127.0.0.1:41626-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/ustall32.sys completed=1 bytes=480768 seconds=0.036
+[I 2026-10-29 21:21:25] 127.0.0.1:41626-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/ureboot.exe completed=1 bytes=7506 seconds=0.028
+[I 2026-10-29 21:21:49] 127.0.0.1:41626-[anonymous] FTP session closed (disconnect).
+[E 2026-10-29 21:21:49] unhandled exception in instance <Handler(id=140566895769168, addr='127.0.0.1:41626', user='anonymous')>
+    Traceback (most recent call last):
+      File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/pyftpdlib/ioloop.py", line 251, in call
+        self._target(*self._args, **self._kwargs)
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 33, in on_disconnect
+        for p in self.forwards or []:self.monitor('hostfwd_remove '+netdev+' tcp:127.0.0.1:'+str(p))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 22, in monitor
+        if out and not (text.startswith('hostfwd_remove ') and out.startswith('host forwarding rule ') and ' removed' in out):raise RuntimeError(out)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+    RuntimeError: host forwarding rule for tcp:127.0.0.1:31094 removed
+    
+[I 2026-10-29 21:22:15] 127.0.0.1:40212-[] FTP session opened (connect)
+[I 2026-10-29 21:22:20] 127.0.0.1:40212-[anonymous] USER 'anonymous' logged in.
+[I 2026-10-29 21:22:28] 127.0.0.1:40212-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/stall32.sys completed=1 bytes=91798 seconds=0.028
+[I 2026-10-29 21:22:45] 127.0.0.1:40212-[anonymous] FTP session closed (disconnect).
+[E 2026-10-29 21:22:45] unhandled exception in instance <Handler(id=140566892509328, addr='127.0.0.1:40212', user='anonymous')>
+    Traceback (most recent call last):
+      File "/workspace/rltklant-tools/venv/lib/python3.12/site-packages/pyftpdlib/ioloop.py", line 251, in call
+        self._target(*self._args, **self._kwargs)
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 33, in on_disconnect
+        for p in self.forwards or []:self.monitor('hostfwd_remove '+netdev+' tcp:127.0.0.1:'+str(p))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/workspace/rltklant-work/validation/nt_ftp_fixture.py", line 22, in monitor
+        if out and not (text.startswith('hostfwd_remove ') and out.startswith('host forwarding rule ') and ' removed' in out):raise RuntimeError(out)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+    RuntimeError: host forwarding rule for tcp:127.0.0.1:31097 removed
+    

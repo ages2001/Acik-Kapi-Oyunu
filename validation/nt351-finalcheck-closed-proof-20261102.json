@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "guest": "nt351-usbsetup-rtl8139-finalcheck-8127",
+  "drivers": {
+    "USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 411648,
+      "sha256": "92b201af42e3ddc15a8fd46f88f0f28ffd337ae2ac0f04f74558f0abbd2bbcab"
+    },
+    "RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    }
+  },
+  "tcp_bytes_each_direction": 3145728,
+  "registered_mac_resets": 3,
+  "rx_watchdog_events": 0,
+  "usb_generic_attachment_cycles": 4,
+  "pci_full_payload_replies_during_usb_cycles": 68,
+  "evidence": {
+    "nt351-finalcheck-offline-20261102/manifest.json": "dbeb6bc3e0a622a8c77b01e76360d09c25fb69247c8e845a66823c6b8e338deb",
+    "nt351-finalcheck-evidence-20261102/manifest.json": "d897b87d5b091dcee2a010b1c2edd1582f8e7fdabaedf2c43d6ed34503e88000",
+    "nt351-finalcheck-tcp-wire-proof-20261102.json": "7d7253d148bb58624a17c56b4a10eb0e57bc5f96800f8cd8a5d7ba748301217d",
+    "nt351-finalcheck-registered-reset-20261102.json": "c21dc455510af5c07cc197303afad54915b04866068748e9d47a5591ccd619ec",
+    "nt351-usbsetup-rtl8139-finalcheck-8127-finalcheck-pci-20261102-sibling-matrix.json": "475dc551af74db365d23c6866f4661bb7e02b9afa9b394eb46f03d4286e7a008"
+  },
+  "scope": "Actual QEMU RTL8139 on NT3.51 IDE, exact latest diagnostic NDIS3 and legacy USBNT capacity candidate. TCP baseline, three registered resets, cable reconnection and PCI traffic during USB attachment/carrier cycles. Only PCI is network-bound. No USB TCP/IP, Internet, physical PCI hot-plug, or physical-silicon claim.",
+  "utc": "2026-11-02T09:02:23.192765+00:00"
+}

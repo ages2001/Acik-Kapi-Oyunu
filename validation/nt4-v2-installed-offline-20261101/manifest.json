@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "scope": "Actual additional-adapter OEM install copied exact RLTUSB into System32; existing shared driver retained unchanged. Read-only extraction after normal shutdown.",
+  "files": {
+    "SYSTEM": {
+      "guest_path": "WINNT4/system32/config/SYSTEM",
+      "size": 946176,
+      "sha256": "3ef29a3dbcb5eef65d7874c07f3860e9ea5c3932bf5fe4d844b42a510e817204"
+    },
+    "SOFTWARE": {
+      "guest_path": "WINNT4/system32/config/SOFTWARE",
+      "size": 598016,
+      "sha256": "4db591a6735a292cee2842d0241a72df8d69f13055379aca6be9c03ca242ea6d"
+    },
+    "RLTUSB.EXE": {
+      "guest_path": "WINNT4/system32/RLTUSB.EXE",
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    "RLTKLANT.SYS": {
+      "guest_path": "WINNT4/system32/drivers/RLTKLANT.SYS",
+      "size": 503183,
+      "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615"
+    }
+  }
+}

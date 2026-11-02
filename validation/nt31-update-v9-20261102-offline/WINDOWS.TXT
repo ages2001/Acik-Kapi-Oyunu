@@ -1,0 +1,68 @@
+TOP 00000026 hidden enabled #32768 | 
+TOP 000900f2 visible enabled ConsoleWindowClass | cmd - C:\RLTTEST\UIWIN.EXE
+TOP 00000056 visible enabled Progman | Program Manager - TEST-PC\test_user
+ child 00000058 visible enabled MDIClient | 
+ child 00000070 visible enabled PMGroup | Startup
+ child 0000006c visible enabled PMGroup | Main
+ child 0000006a visible enabled #32772 | 
+ child 00000068 visible enabled PMGroup | Accessories
+ child 00000066 visible enabled #32772 | 
+ child 00000064 visible enabled PMGroup | Administrative Tools
+ child 0000005e visible enabled #32772 | 
+ child 0000005a visible enabled PMGroup | Games
+ child 00000072 hidden enabled #32772 | 
+ child 0000006e hidden enabled #32772 | 
+TOP 001300de hidden enabled BltClWin | 
+TOP 00090030 visible enabled Stuff-Shell | TCP/IP Setup
+TOP 000400d2 visible disabled #32770 | Network Setup
+ child 000400d4 visible enabled Static | TCP/IP Protocol
+ child 000500d8 visible enabled Static | Network Setup is running the following file:
+ child 000700da visible enabled Static | 
+ child 000a00d6 visible enabled Static | 
+TOP 00070092 visible disabled #32770 | Network Settings
+ child 00130090 visible enabled Button | Network Software and Adapter Cards
+ child 000000a4 visible enabled Static | Installed Net&work Software:
+ child 000000a6 visible enabled ListBox | 
+ child 000000a8 visible enabled Static | Installed &Adapter Cards:
+ child 000000aa visible enabled ListBox | 
+ child 000000ac visible enabled Static | Descrip&tion:
+ child 000000ae visible enabled Edit | 
+ child 000000b0 visible enabled Button | Add &Software...
+ child 000000b2 visible enabled Button | Add Ada&pter...
+ child 000000b4 visible enabled Button | &Configure...
+ child 000000b6 visible enabled Button | &Update
+ child 000000b8 visible enabled Button | &Remove
+ child 000000ba visible enabled Button | OK
+ child 000000bc visible enabled Button | Close
+ child 000000be visible enabled Button | &Bindings...
+ child 000000c0 visible disabled Button | &Networks...
+ child 000000c2 visible enabled Button | &Help
+ child 000000c4 visible enabled Static | Computer Name:
+ child 000000c6 visible enabled Static | TEST-PC
+ child 000000c8 visible enabled Button | Chan&ge...
+ child 000000ca visible enabled Static | Workgroup:
+ child 000000cc visible enabled Static | WORKGROUP
+ child 000000ce visible enabled Button | Chang&e...
+ child 000000d0 hidden enabled Static | 
+TOP 0007008c hidden enabled BltClWin | 
+TOP 00050096 visible enabled ConsoleWindowClass | cmd
+TOP 00010014 hidden enabled WOWExecClass | WOW Exec
+TOP 00000074 hidden enabled TakoHachi | Task List
+ child 00000076 hidden enabled ListBox | 
+ child 00000078 hidden enabled Static | &New Task:
+ child 0000007a hidden enabled Edit | 
+ child 0000007c hidden disabled Button | &Run
+ child 0000007e hidden enabled Button | &Switch To
+ child 00000080 hidden enabled Button | &End Task
+ child 00000082 hidden enabled Button | Cancel
+ child 00000084 hidden enabled Static | 
+ child 00000086 hidden enabled Button | &Cascade
+ child 00000088 hidden enabled Button | &Tile
+ child 0000008a hidden enabled Button | &Arrange Icons
+TOP 00000060 hidden enabled ConsoleWindowClass | wowexec
+TOP 0000005c hidden enabled ConsoleWindowClass | 
+TOP 00010046 hidden enabled NDDEAgnt | NetDDE Agent
+TOP 00000040 hidden enabled DDEMLEvent | 
+TOP 0000003e hidden enabled DDEMLMom | DDEMLMom
+TOP 0000003c hidden enabled ClipSrvWClass | Hidden Data Server
+TOP 0000003a hidden enabled NetDDEMainWdw | NetDDE

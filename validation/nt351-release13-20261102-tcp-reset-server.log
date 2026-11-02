@@ -1,0 +1,2 @@
+READY loopback TCP port 18203
+PASS 1048576 bytes each direction; guest-side result must also be checked

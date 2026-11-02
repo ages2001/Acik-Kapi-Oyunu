@@ -1,0 +1,15 @@
+ninja: Entering directory `/workspace/rltklant-tools/qemu-src/build'
+[1/7] Generating qemu-version.h with a custom command (wrapped by meson to capture output)
+[2/4] Compiling C object libcommon.fa.p/hw_usb_dev-rtl8153.c.o
+FAILED: libcommon.fa.p/hw_usb_dev-rtl8153.c.o 
+cc -m64 -mcx16 -Ilibcommon.fa.p -Isubprojects/dtc/libfdt -I../../workspace/rltklant-tools/qemu-src/subprojects/dtc/libfdt -I/usr/include/p11-kit-1 -I/workspace/rltklant-tools/root/usr/include/pixman-1 -I/workspace/rltklant-tools/root/usr/include -I/workspace/rltklant-tools/root/usr/include/glib-2.0 -I/workspace/rltklant-tools/root/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/workspace/rltklant-tools/root/usr/include/sysprof-6 -I/usr/include/libmount -I/usr/include/blkid -I/workspace/rltklant-tools/root/usr/include/gio-unix-2.0 -I/workspace/rltklant-tools/root/usr/include/slirp -fdiagnostics-color=auto -Wall -Winvalid-pch -Werror -std=gnu11 -O2 -g -fstack-protector-strong -Wundef -Wwrite-strings -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wmissing-format-attribute -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -Wshadow=local -isystem /workspace/rltklant-tools/qemu-src/linux-headers -isystem linux-headers -iquote . -iquote /workspace/rltklant-tools/qemu-src -iquote /workspace/rltklant-tools/qemu-src/include -iquote /workspace/rltklant-tools/qemu-src/host/include/x86_64 -iquote /workspace/rltklant-tools/qemu-src/host/include/generic -iquote /workspace/rltklant-tools/qemu-src/tcg/i386 -pthread -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -fno-strict-aliasing -fno-common -fwrapv -fPIE -MD -MQ libcommon.fa.p/hw_usb_dev-rtl8153.c.o -MF libcommon.fa.p/hw_usb_dev-rtl8153.c.o.d -o libcommon.fa.p/hw_usb_dev-rtl8153.c.o -c ../../workspace/rltklant-tools/qemu-src/hw/usb/dev-rtl8153.c
+In file included from ../../workspace/rltklant-tools/qemu-src/hw/usb/dev-rtl8153.c:617:
+../../workspace/rltklant-tools/qemu-src/hw/usb/rtl8153-hid-test.h:27:33: error: ‘USB_DT_HID’ undeclared here (not in a function); did you mean ‘USB_DT_BOS’?
+   27 |         .data = (uint8_t[]) {9, USB_DT_HID, 0x11, 1, 0, 1,
+      |                                 ^~~~~~~~~~
+      |                                 USB_DT_BOS
+../../workspace/rltklant-tools/qemu-src/hw/usb/rtl8153-hid-test.h:28:29: error: ‘USB_DT_REPORT’ undeclared here (not in a function); did you mean ‘USB_DT_BOS’?
+   28 |                             USB_DT_REPORT, sizeof(mixed_report), 0},
+      |                             ^~~~~~~~~~~~~
+      |                             USB_DT_BOS
+ninja: build stopped: subcommand failed.

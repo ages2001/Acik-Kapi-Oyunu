@@ -1,0 +1,8 @@
+[I 2026-11-01 16:59:21] concurrency model: async
+[I 2026-11-01 16:59:21] masquerade (NAT) address: None
+[I 2026-11-01 16:59:21] passive ports: None
+[I 2026-11-01 16:59:21] >>> starting FTP server on 127.0.0.1:2122, pid=43274 <<<
+[I 2026-11-01 16:59:42] 127.0.0.1:36104-[] FTP session opened (connect)
+[I 2026-11-01 16:59:47] 127.0.0.1:36104-[anonymous] USER 'anonymous' logged in.
+[I 2026-11-01 16:59:54] 127.0.0.1:36104-[anonymous] RETR /workspace/rltklant-work/validation/ftp-fixture/ui64.exe completed=1 bytes=8471 seconds=0.076
+[I 2026-11-01 17:04:08] 127.0.0.1:36104-[anonymous] FTP session closed (disconnect).

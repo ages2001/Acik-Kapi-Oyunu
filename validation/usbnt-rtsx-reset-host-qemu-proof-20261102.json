@@ -1,0 +1,119 @@
+{
+  "utc": "2026-11-02T11:40:53.771792+00:00",
+  "result": "PASS_WITH_OPEN_RELEASE_WORK",
+  "snapshot": "frozen-builds/usbnt-rtsx-reset-v2-20261102",
+  "qemu_rows": [
+    {
+      "hc": "qemu-xhci",
+      "pid": "0129",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-qemu-xhci-0129-20261102.log",
+      "sha256": "039adc11d89e1d0df1709929a73978f6c1806373d94a06f5a424a7a4cb010a72"
+    },
+    {
+      "hc": "qemu-xhci",
+      "pid": "0139",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-qemu-xhci-0139-20261102.log",
+      "sha256": "3fd526840ccbce4e0ee719093e65c695cc75ecc3705040cdd948d6ebbbce1e50"
+    },
+    {
+      "hc": "qemu-xhci",
+      "pid": "0140",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-qemu-xhci-0140-20261102.log",
+      "sha256": "a459208f8898554bc14fcc6f7e32a84eda84903f8a58e8c6fc6f98c916a8b644"
+    },
+    {
+      "hc": "usb-ehci",
+      "pid": "0129",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-usb-ehci-0129-20261102.log",
+      "sha256": "6dfc34211643da1a98620dde1127ba19f95eff22b26471d31bf80533f68a4a97"
+    },
+    {
+      "hc": "usb-ehci",
+      "pid": "0139",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-usb-ehci-0139-20261102.log",
+      "sha256": "f1cb3a472b807fe532eb9df767ec91c7485a8be2117c19be2d6458e213cd1889"
+    },
+    {
+      "hc": "usb-ehci",
+      "pid": "0140",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-usb-ehci-0140-20261102.log",
+      "sha256": "8222fb452548351333760d81478b7ccba691dbf0b0415a8ff400c554705d9232"
+    },
+    {
+      "hc": "piix3-usb-uhci",
+      "pid": "0129",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-piix3-usb-uhci-0129-20261102.log",
+      "sha256": "2a5aa2547a43346338725532da5a9ad289608bcebeecbcbae4e5ba1331aed43e"
+    },
+    {
+      "hc": "piix3-usb-uhci",
+      "pid": "0139",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-piix3-usb-uhci-0139-20261102.log",
+      "sha256": "b504052873645d154a2aaa5ed9fb95755bf8abd680914eada40841b635553a06"
+    },
+    {
+      "hc": "piix3-usb-uhci",
+      "pid": "0140",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-piix3-usb-uhci-0140-20261102.log",
+      "sha256": "3b73cd0e36c4c51b1ecfc1ece246c38194b5b1a3a02e77dfec11abaf1d6b27d5"
+    },
+    {
+      "hc": "pci-ohci",
+      "pid": "0129",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-pci-ohci-0129-20261102.log",
+      "sha256": "f9af106825460be933eadf659cd99af4ed0d6d563ad39326f0e623673b06719c"
+    },
+    {
+      "hc": "pci-ohci",
+      "pid": "0139",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-pci-ohci-0139-20261102.log",
+      "sha256": "5984d84f76a5e159585de4c8181b41fbd826f08260b1a81bfefc615ae584c410"
+    },
+    {
+      "hc": "pci-ohci",
+      "pid": "0140",
+      "result": "PASS",
+      "physical_resets": 5,
+      "file": "usbnt-rtsx-reset-v2-pci-ohci-0140-20261102.log",
+      "sha256": "8ad202910faa65ad760fd4996d30fe65eb642f85a43cb24980fbcba871eff025"
+    }
+  ],
+  "host_evidence": {
+    "usbnt-rtsx-reset-host-v2-20261102.log": "6d6c8bc3495a5dd8cf2fae34f304cf8357a35894c8a5d69d3224eb8aac47e347",
+    "usbnt-rtsx-reset-orchestration-20261102.log": "08a80a84b25479fdfe852fe600188093021fca88e5a651a697963baf447339e3"
+  },
+  "test_inputs": {
+    "USBNT/test/trtsxreset.py": "f8208339afbc79f9e11a52b678e8effd78d16b872c18ee4193f2442d6645707b",
+    "USBNT/test/host/trtsxreset.py": "628975af7ce10d380510a10ece5f64bee86a1a320a91fa18d8678a55b1974c1d",
+    "USBNT/harness/main.c": "1e971e43e7fbe161a184eb401588ffef56968e45046d17211ff754e628a98bce",
+    "validation/test_usbdi_port_reset.py": "7f6e0f05b3ba2fef6beb763fc04cde361c2a212ff885051ac8c60700b960de35"
+  },
+  "limits": [
+    "Host fault tests compile production reset/SD admission functions; register and SD protocol calls are mocked.",
+    "Native QEMU exercises the actual reader transport/SD protocol and HCDs; no installed Windows test is claimed for this newer candidate.",
+    "Audio/video shared reset, identity-preserving controller sleep, exact latest-driver Windows regression and release media remain open.",
+    "No physical card-reader/silicon certification; USBNT 1.3 remains unreleased."
+  ]
+}

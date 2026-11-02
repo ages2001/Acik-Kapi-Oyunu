@@ -1,0 +1,10 @@
+/workspace/rltklant-tools/root/usr/bin/../lib/gcc/i686-w64-mingw32/14-win32/../../../../i686-w64-mingw32/bin/ld: error: out/usbtree.exe(.rsrc) is too large (0x1200 bytes)
+out/usbntcap.dll: 30208 bytes, imports OK on NT 3.1-4.0
+out/usbmon.exe: 33792 bytes, imports OK on NT 3.1-4.0
+out/usbtree.exe: 40448 bytes, imports OK on NT 3.1-4.0
+out/usbeject.exe: 12800 bytes, imports OK on NT 3.1-4.0
+out/usbinst.exe: 35328 bytes, imports OK on NT 3.1-4.0
+out/wheeltst.exe: 8704 bytes, imports OK on NT 3.1-4.0
+out/usbcam.exe: 47616 bytes, imports OK on NT 3.1-4.0
+out/fstest.exe: 17920 bytes, imports OK on NT 3.1-4.0
+out/inptest.exe: 5632 bytes, imports OK on NT 3.1-4.0

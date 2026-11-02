@@ -1,0 +1,1 @@
+rltk-test-mac-hardware: /workspace/rltklant-work/validation/test_mac_hardware.c:28: main: Assertion `result==RtlFwOk&&r.DashType==expected&&r.DashEnabled==(expected&&active)' failed.

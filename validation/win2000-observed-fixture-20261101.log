@@ -1,0 +1,36 @@
+Formatting '/workspace/rltklant-vm/run/win2000-standard-usbnet-observed-ehci-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=1747006464 backing_file=/tmp/rltk-growing-fat-9jdnvcdn/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+24/26658 = 0.09% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1900544
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/win2000-standard-usbnet-observed-ehci-8127.qcow2",
+  "sha256_before_boot": "5e45f18731f071ba8b5c4a4bc24de456af4772d68d3da73e1a0c5934145b2001",
+  "files": [
+    {
+      "guest_path": "WINNT/system32/drivers/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5.sys",
+      "size": 514013,
+      "sha256": "0f5c866ace9ce0b9929448aa961044cc9164068b94539f774c7fa6f0f4388ef4",
+      "old_size": 513928,
+      "old_sha256": "3c0af22af498405163e395473ac764023c0068ca94b8e7501f1e596c3f8d2f9e"
+    },
+    {
+      "guest_path": "rlttest/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5.sys",
+      "size": 514013,
+      "sha256": "0f5c866ace9ce0b9929448aa961044cc9164068b94539f774c7fa6f0f4388ef4",
+      "old_size": 513928,
+      "old_sha256": "3c0af22af498405163e395473ac764023c0068ca94b8e7501f1e596c3f8d2f9e"
+    },
+    {
+      "guest_path": "rlttest/i386/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/observed-reset-20261101/ndis5.sys",
+      "size": 514013,
+      "sha256": "0f5c866ace9ce0b9929448aa961044cc9164068b94539f774c7fa6f0f4388ef4",
+      "old_size": 513928,
+      "old_sha256": "3c0af22af498405163e395473ac764023c0068ca94b8e7501f1e596c3f8d2f9e"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

@@ -1,0 +1,14 @@
+{
+  "guest": "win2000-standard-usbnet-hcpower-release-8127",
+  "utc": "2026-11-02T08:05:41.664398+00:00",
+  "scope": "Test USBNT EHCI FDO power IRPs and subsequent real NIC traffic.\n\nHCPOWER targets the USBNT Intel 24CD EHCI FDO at DISPATCH_LEVEL.\nThree D3/D0 pairs and three S3/S0 IRP pairs exercise controller recovery and\nsystem-to-device mapping. This does not put the QEMU machine into ACPI S3.\nThe current path removes/re-enumerates children; it is not identity-preserving\nsuspend. Windows 2000's resulting unsafe-removal notices are retained.\n",
+  "result": "LIMITED_PASS",
+  "offset": 152,
+  "power_trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST D0=00000000\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\nHCPTEST D3=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST D0=00000000\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\nRXF\n  filt FOUND\nRXF\nHCPTEST D3=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST D0=00000000\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\nRXF\n  filt FOUND\nRXF\nHCPTEST S3=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST S0=00000000\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\nHCPTEST S3=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST S0=00000000\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\nHCPTEST S3=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\nHCPTEST S0=00000000\n",
+  "device_power_cycles": 3,
+  "system_irp_cycles": 3,
+  "notification_evidence": "win2000-standard-usbnet-hcpower-release-8127-hcd-release-20261102-notices.json",
+  "report": "win2000-standard-usbnet-hcpower-release-8127-hcd-release-20261102-after-power.json",
+  "report_sha256": "9777587c31f4c45266ab5de955e755fd8e447fd7a81aae3945f76e14299c85f1",
+  "screenshot": "win2000-standard-usbnet-hcpower-release-8127-hcd-release-20261102-controller-power-screen.png"
+}

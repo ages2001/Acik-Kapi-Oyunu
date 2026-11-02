@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-01T19:09:00.459756+00:00",
+  "files": [
+    {
+      "name": "RLTUSB.EXE",
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    {
+      "name": "build-rltusb.sh",
+      "size": 606,
+      "sha256": "708bbc3064b817cb1dd01080c108b5d7515852388adeb9d1fbce16b38337de9e"
+    },
+    {
+      "name": "rltusb.c",
+      "size": 7832,
+      "sha256": "0816d7c61728449fb880fbf7d3c1c8d6c9127bb10079643103f5ce52b08b531d"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "verified_utc": "2026-10-28T13:13:42.218468+00:00",
+  "guest": "nt4-ndis-legacyusb-8127",
+  "storage": "IDE",
+  "controller": "UHCI",
+  "rtl8150_cable_transitions": 10,
+  "rtl8150_detach_reinsert_cycles": 20,
+  "mixed_five_model_cycles": 25,
+  "driver_sha256": "0cccc0d2eb9493cbaa8f858cc62fcbe18f8c83f96ef11d1f006e71bc28c5e382",
+  "expected_read_failure_during_removal": "UNT-LINK up=0 status=C0000001 observed while old attachment was being removed; subsequent attach succeeded",
+  "scope": "USB transport and diagnostic carrier only; USB NDIS networking unfinished"
+}

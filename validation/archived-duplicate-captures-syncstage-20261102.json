@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-02T13:22:32.883250+00:00",
+  "scope": "Only stopped-run captures with exact uncompressed frozen evidence copies. No VM disk changed.",
+  "files": [
+    {
+      "original": "/workspace/rltklant-vm/run/nt351-usbsetup-newcompare-rtl8139-8127/pci.pcap",
+      "compressed": "/workspace/rltklant-vm/run/nt351-usbsetup-newcompare-rtl8139-8127/pci.pcap.gz",
+      "retained": "validation/nt351-newcompare-evidence-20261102/pci.pcap",
+      "bytes": 2600665,
+      "compressed_bytes": 106590,
+      "sha256": "c0d9dc26c9983c79f6f9f272e84eb856204a2ffbfe0ec8a2ae3c8cf4b4387974"
+    }
+  ]
+}

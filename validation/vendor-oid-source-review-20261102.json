@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-02T02:22:45.280939+00:00",
+  "reference_url": "https://raw.githubusercontent.com/MicrosoftDocs/windows-driver-docs/staging/windows-driver-docs-pr/network/oid-gen-vendor-id.md",
+  "contract": "Three bytes matching the beginning of the permanent hardware address, followed by a vendor-assigned byte (zero here); four output bytes on x86/x64",
+  "fix": "Replace NT3.1 PCI-like numeric value and miniport fixed/reversed numeric OUI; preserve actual permanent/OEM prefix and exclude configured current address",
+  "host_results": {
+    "miniport_queries": 7680,
+    "nt31_binding_schedules_with_query_and_short_buffer": 200
+  },
+  "files": {
+    "oid-gen-vendor-id-reference-20261102.md": "114a126f1689f75f59afc92663c86533529834639ab78e468308bf6a7bc4a58d",
+    "test_vendor_oid.py": "70d7327d61a2b350e02b3f9e23b2fa5395ab89787f4ea19bff940dd8b8eedb56",
+    "miniport-vendor-oid-host-20261102.log": "9f1bfb30549ca705280d641e5468eb92bcf4f49b881311f3f43cb6c32d8fc335",
+    "test_nt31_bindings.py": "c721d19180947a637d7ae9555f430ce6a5294c689ab3a01f655572dd2a2fd1dc",
+    "nt31-vendor-oid-host-v2-20261102.log": "3d80aef0a813493220fdce3055211d25fc67af35e00ff57c759ab9eb235f07b6"
+  }
+}

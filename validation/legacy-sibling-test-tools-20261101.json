@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-01T20:14:23.186253+00:00",
+  "scope": "Prepared diagnostics for guest-side full-payload checks and sibling preservation. Compilation/syntax checked; actual guest run pending.",
+  "files": {
+    "legacy_network_probe.c": {
+      "size": 3945,
+      "sha256": "4b02046a9015753235bf06f90fe27ce612c2f492afc991dbc16997ba910194e9"
+    },
+    "LNET.EXE": {
+      "size": 11159,
+      "sha256": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b"
+    },
+    "legacy_network_report.py": {
+      "size": 1576,
+      "sha256": "0efc3ba390915115448fc267ef516167d2c5dfaa3d138ed8a7ef58d00c7c2bf2"
+    },
+    "legacy_sibling_cycles.py": {
+      "size": 5509,
+      "sha256": "1b1f4ca26b6146e5281c69eec6ccb5c9d5ac669c44aec47504773d3136ee9c3f"
+    }
+  }
+}

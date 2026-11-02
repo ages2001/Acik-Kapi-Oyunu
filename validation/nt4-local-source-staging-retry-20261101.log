@@ -1,0 +1,52 @@
+Formatting '/workspace/rltklant-vm/run/nt4-ndis-setup-local-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-rfn2w4he/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+1518/6384 = 23.78% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 99811328
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt4-ndis-setup-local-8127.qcow2",
+  "sha256_before_boot": "640bb2fae5857e0a5322b1d59837bf951206a5d079d6f30ef681fb8ce1a53c1c",
+  "files": [
+    {
+      "guest_path": "RLTTEST/RLTUSB.EXE",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/rltusb/RLTUSB.EXE",
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "old_size": 12974,
+      "old_sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    {
+      "guest_path": "RLTSETUP/OEMSETUP.INF",
+      "source": "/workspace/rltklant-work/validation/legacy-setup-package-20261101/OEMSETUP.INF",
+      "size": 21583,
+      "sha256": "af5778612871656596f1513f28613842d6a9861bbf38e485b24a50a217d455a5",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTSETUP/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/legacy-setup-package-20261101/RLTKLANT.SYS",
+      "size": 503183,
+      "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTSETUP/RLTUSB.EXE",
+      "source": "/workspace/rltklant-work/validation/legacy-setup-package-20261101/RLTUSB.EXE",
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTSETUP/DISK1",
+      "source": "/workspace/rltklant-work/validation/legacy-setup-package-20261101/DISK1",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

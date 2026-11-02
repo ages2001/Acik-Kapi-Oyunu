@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-01T19:57:19.466830+00:00",
+  "result": "PASS",
+  "files": [
+    {
+      "path": "bin/NT31/OEMSETUP.INF",
+      "sha256": "73324ab7794994f3400f1cd638ee2551a86a7f1b05c13d6663cd29aa3531c31a"
+    },
+    {
+      "path": "bin/NT35x-4/OEMSETUP.INF",
+      "sha256": "e539130adb664ca220a7871bf42434df44dfcdfede78f8425eecc3d2b723727a"
+    }
+  ],
+  "scope": "Structural checks only; an additional-adapter install must still copy the exact utility in the actual guest."
+}

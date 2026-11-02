@@ -1,0 +1,101 @@
+{
+  "pci": {
+    "bytes": 43795,
+    "sha256": "ad38b2bf35840565fea6087a0b4b8d8381dcd1aa6b9861c0d08672dbcd65a67d",
+    "start_offset": 24,
+    "events": [
+      {
+        "offset": 24,
+        "timestamp": 1793577603.757494,
+        "source": "0.0.0.0",
+        "destination": "255.255.255.255",
+        "ports": [
+          68,
+          67
+        ],
+        "message_type": 1,
+        "xid": "c741e24a",
+        "mac": "525400123456",
+        "yiaddr": "0.0.0.0",
+        "options": {
+          "53": "01",
+          "61": "01525400123456",
+          "12": "544553542d504300"
+        }
+      },
+      {
+        "offset": 382,
+        "timestamp": 1793577603.757559,
+        "source": "10.0.3.2",
+        "destination": "255.255.255.255",
+        "ports": [
+          67,
+          68
+        ],
+        "message_type": 2,
+        "xid": "c741e24a",
+        "mac": "525400123456",
+        "yiaddr": "10.0.3.15",
+        "options": {
+          "53": "02",
+          "54": "0a000302",
+          "1": "ffffff00",
+          "3": "0a000302",
+          "6": "0a000303",
+          "51": "00015180"
+        }
+      },
+      {
+        "offset": 988,
+        "timestamp": 1793577603.792564,
+        "source": "0.0.0.0",
+        "destination": "255.255.255.255",
+        "ports": [
+          68,
+          67
+        ],
+        "message_type": 3,
+        "xid": "2416092a",
+        "mac": "525400123456",
+        "yiaddr": "0.0.0.0",
+        "options": {
+          "53": "03",
+          "61": "01525400123456",
+          "50": "0a00030f",
+          "54": "0a000302",
+          "12": "544553542d504300",
+          "55": "010f032c2e2f06"
+        }
+      },
+      {
+        "offset": 1346,
+        "timestamp": 1793577603.792588,
+        "source": "10.0.3.2",
+        "destination": "255.255.255.255",
+        "ports": [
+          67,
+          68
+        ],
+        "message_type": 5,
+        "xid": "2416092a",
+        "mac": "525400123456",
+        "yiaddr": "10.0.3.15",
+        "options": {
+          "53": "05",
+          "54": "0a000302",
+          "1": "ffffff00",
+          "3": "0a000302",
+          "6": "0a000303",
+          "51": "00015180"
+        }
+      }
+    ]
+  },
+  "usb": {
+    "bytes": 24,
+    "sha256": "653932defd05743054207942b60e946cfd591200e6ab808d058e382a8999d9fc",
+    "start_offset": 24,
+    "events": []
+  },
+  "scope": "Inbox DHCP uses separate matching transaction IDs for discovery and request pairs; one client MAC, selected server and offered/requested/acknowledged address verified."
+}

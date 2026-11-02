@@ -1,0 +1,137 @@
+{
+  "utc": "2026-11-02T02:05:41.830347+00:00",
+  "scope": "Test-only retained NT3.1 full-MAC callback dispatch diagnostic; not a release component or exported NdisReset test",
+  "imports": [
+    [
+      "N31RESET.SYS",
+      "hal.dll",
+      "WRITE_PORT_UCHAR"
+    ],
+    [
+      "N31RESET.SYS",
+      "ndis.sys",
+      "NdisCloseAdapter"
+    ],
+    [
+      "N31RESET.SYS",
+      "ndis.sys",
+      "NdisDeregisterProtocol"
+    ],
+    [
+      "N31RESET.SYS",
+      "ndis.sys",
+      "NdisOpenAdapter"
+    ],
+    [
+      "N31RESET.SYS",
+      "ndis.sys",
+      "NdisRegisterProtocol"
+    ],
+    [
+      "N31RESET.SYS",
+      "ntoskrnl.exe",
+      "KeInitializeEvent"
+    ],
+    [
+      "N31RESET.SYS",
+      "ntoskrnl.exe",
+      "KeResetEvent"
+    ],
+    [
+      "N31RESET.SYS",
+      "ntoskrnl.exe",
+      "KeSetEvent"
+    ],
+    [
+      "N31RESET.SYS",
+      "ntoskrnl.exe",
+      "KeWaitForSingleObject"
+    ],
+    [
+      "N31RESET.SYS",
+      "ntoskrnl.exe",
+      "MmAllocateContiguousMemory"
+    ],
+    [
+      "N31RESET.EXE",
+      "advapi32.dll",
+      "CloseServiceHandle"
+    ],
+    [
+      "N31RESET.EXE",
+      "advapi32.dll",
+      "CreateServiceA"
+    ],
+    [
+      "N31RESET.EXE",
+      "advapi32.dll",
+      "OpenSCManagerA"
+    ],
+    [
+      "N31RESET.EXE",
+      "advapi32.dll",
+      "StartServiceA"
+    ],
+    [
+      "N31RESET.EXE",
+      "kernel32.dll",
+      "ExitProcess"
+    ],
+    [
+      "N31RESET.EXE",
+      "kernel32.dll",
+      "GetLastError"
+    ],
+    [
+      "N31RESET.EXE",
+      "kernel32.dll",
+      "GetStdHandle"
+    ],
+    [
+      "N31RESET.EXE",
+      "kernel32.dll",
+      "WriteFile"
+    ],
+    [
+      "N31RESET.EXE",
+      "kernel32.dll",
+      "lstrlenA"
+    ]
+  ],
+  "files": {
+    "libhal.a": "f539baaa1294b0badc4539f2c7e9614d4a00800086780a26e84fa8759889d3ec",
+    "ntos.def": "932b76046d4722cfe7b67f966a3dde78967055f4b297a7f3e0a5f47112041c8a",
+    "hal.def": "c3c2845edf651813b544ad8074776cb2fb1df63bc5ab2e8d239e665a318f6eba",
+    "libndis.a": "bfa2cd119a7b42effba25acf345dfd265740d9b5b12407f9f13242f2ce98ebfb",
+    "ndis.def": "1eeed26e0a6f01c043851901e33af683144ac2d5d592f3f7e7ac45c68b7e45ed",
+    "driver.o": "4c402fc398dacf2d720ce40d32141ada48774bda6ccf69da20e0da61c4826149",
+    "N31RESET.EXE": "82b012793a677c8effee23948da10c06f0ac456f2db4a3893d403a1d13283877",
+    "libntos.a": "8f87db7cceb8f1f2b17fcf3a6bf46e3d6a14baada27db9e3b15b99ec44f1d427",
+    "N31RESET.SYS": "d81bb14ddffb649ddb52a317590ad9c12883f0c4d80d2bb3300c124ec560c37e"
+  },
+  "sources": {
+    "guest_nt31_reset_driver.c": "b63f4e7920f24b9cccd3af285f0413452c63f0a99d5167da74c213d5b40016fa",
+    "guest_nt31_reset_loader.c": "3a524e9f50ab9780077c1e3a1f9d226a013c7882d7d4dd07370b9f9bdbf57ad3",
+    "build_nt31_reset_probe.py": "6a8a05a2a46d8e72b2d00a61bba09357b580c264d7d1178735e1c952e3cfc40c"
+  },
+  "binding_dispatch_evidence": {
+    "binding_mac_handle": 0,
+    "binding_mac_context": 4,
+    "mac_characteristics": 24,
+    "mac_reset_handler": 48,
+    "mac_request_handler": 52,
+    "evidence": "NdisOpenAdapter at 0x12535 stores adapter->MacHandle at open+0; 0x1253d reads MAC SendHandler at +0x28, and calls OpenAdapterHandler at +0x20 in 0x125a2. NDIS_MAC_CHARACTERISTICS has Open/Close/Send/Transfer/Reset/Request at +8/+12/+16/+20/+24/+28. No later cached ResetHandler is assumed.",
+    "scope": "Bound registered full-MAC callback dispatch, not an NdisReset export or validated NT3.1 DDK macro definition",
+    "disassembly_sha256": "01646f7dbf7f80ceeb8846582187ccfd14c729e3f0470c4aef3d47973b35459d",
+    "register_mac": "NdisRegisterMac at 0x12770 copies the supplied 0x38-byte MAC characteristics to MAC block +0x18",
+    "register_mac_disassembly_sha256": "757fc385c442fc67dccffadf8223916653540f79a4e8990a44d5ba44f1a1f5df"
+  },
+  "vendor_guard": "Matches frozen NT3.1 value 0xEC10; does not assert standards compliance of that OID value",
+  "source_copy_sha256": {
+    "build_nt31_reset_probe.py": "6a8a05a2a46d8e72b2d00a61bba09357b580c264d7d1178735e1c952e3cfc40c",
+    "ndisnt31.h": "4c6e9adfa5c4c68d3840add9aa3273dd78bb1a8a0b7f3ae7ab3a1ff145bcc0cc",
+    "guest_nt31_reset_driver.c": "b63f4e7920f24b9cccd3af285f0413452c63f0a99d5167da74c213d5b40016fa",
+    "nt31ndisabi.h": "4b2d4d93aa24e1490c847d4f66ba6807ad9efc95822882807960ffa75eba07c5",
+    "guest_nt31_reset_loader.c": "3a524e9f50ab9780077c1e3a1f9d226a013c7882d7d4dd07370b9f9bdbf57ad3"
+  }
+}

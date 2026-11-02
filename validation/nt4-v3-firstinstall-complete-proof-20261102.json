@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-02T00:19:15.062983+00:00",
+  "result": "PASS",
+  "scope": "NT4 native first-driver-path Add Adapter, exact installed files/registrations, cold boot DHCP and guest payload comparison, observed normal safe-off",
+  "installation": "nt4-v3-firstinstall-20261102-proof.json",
+  "traffic": "nt4-ndis-v3-firstboot-8127-first-driver-20261102.json",
+  "full_payload_replies": 4,
+  "evidence": "nt4-v3-firstinstall-final-evidence-20261102/manifest.json",
+  "dhcp": "nt4-v3-firstinstall-final-evidence-20261102/dhcp-observed.json",
+  "limits": [
+    "Existing OS/protocol configuration and OEM cache retained; not pristine OS installation.",
+    "Inbox DHCP uses distinct DISCOVER/OFFER and REQUEST/ACK transaction IDs; identity is checked within each exchange."
+  ]
+}

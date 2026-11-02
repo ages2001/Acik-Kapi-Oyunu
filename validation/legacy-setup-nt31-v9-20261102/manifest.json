@@ -1,0 +1,30 @@
+{
+  "utc": "2026-11-01T22:16:00.558934+00:00",
+  "files": {
+    "DISK1": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "DHCPNT31.EXE": {
+      "bytes": 25911,
+      "sha256": "fd646d2021137fc60358b02a07fd5c76fc8326d43295fdb071053ce59f8326f3"
+    },
+    "RLTUSB.EXE": {
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    "OEMSETUP.INF": {
+      "bytes": 26457,
+      "sha256": "d11ec821127069c1778cd5dac7eff7d247d63da9b4e4f01652b44c669c7127e1"
+    },
+    "RLTKLANT.SYS": {
+      "bytes": 506368,
+      "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca"
+    },
+    "RLTSETUP.DLL": {
+      "bytes": 22451,
+      "sha256": "35094bec3a1cbb5d6e4f27b78a0706b038b9ceded88156eb6628ba03bd884f8d"
+    }
+  },
+  "scope": "v9 NT3.1 native installer candidate with frozen setup DLL v6; guest tests pending"
+}

@@ -1,0 +1,12 @@
+{
+  "guest": "win2000-standard-usbnet-hidreset-8127",
+  "utc": "2026-11-02T10:05:48.889000+00:00",
+  "scope": "Test USBNT PDO D3/D0 worker IRPs and subsequent real NIC traffic.\n\nUPOWER targets only USBNT, directly at the PDO, and forces DISPATCH_LEVEL.\nThis is lower-device function-idle fault injection, not full NDIS/system sleep.\nThe helper does three D3/D0 pairs and restores D0 even after a failed D3.\n",
+  "result": "PASS",
+  "offset": 1026,
+  "power_trace": "POWERTEST object=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\nPOWERTEST D3=00000000\nPOWERTEST D0=00000000\n",
+  "power_cycles": 3,
+  "report": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8157-after-power.json",
+  "report_sha256": "a546f8c6d6e442b4aa0a6cf1f4203b59273c88b7a59d2e955d3c3968d8a826b8",
+  "screenshot": "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-8157-function-power-screen.png"
+}

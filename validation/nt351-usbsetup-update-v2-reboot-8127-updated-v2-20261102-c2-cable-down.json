@@ -1,0 +1,11 @@
+{
+  "guest": "nt351-usbsetup-update-v2-reboot-8127",
+  "token": "updated-v2-20261102-c2-cable-down",
+  "mask": 2,
+  "utc": "2026-11-01T22:46:14.432019+00:00",
+  "peer": [
+    "127.0.0.1",
+    57635
+  ],
+  "report": "TOKEN updated-v2-20261102-c2-cable-down\r\nMASK 2\r\nPATH 10.0.3.2 REPLIES 4 PAYLOAD 1472\r\nTOTAL 4 EXPECTED 4\r\nPASS\r\n"
+}

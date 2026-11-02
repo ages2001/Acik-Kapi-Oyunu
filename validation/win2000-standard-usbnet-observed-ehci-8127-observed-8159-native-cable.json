@@ -1,0 +1,36 @@
+{
+  "guest": "win2000-standard-usbnet-observed-ehci-8127",
+  "model": "usb-rtl8159",
+  "rx_stall_injected_before_each_remove": false,
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-observed-ehci-8127",
+      "utc": "2026-11-01T18:55:54.419650+00:00",
+      "token": "observed-8159-cable01",
+      "report": "TOKEN observed-8159-cable01\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:03.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        46106
+      ],
+      "network_readiness": {
+        "evidence": "carrier cycle; existing IPv4 assignment",
+        "wait_seconds": 7
+      }
+    },
+    {
+      "guest": "win2000-standard-usbnet-observed-ehci-8127",
+      "utc": "2026-11-01T18:56:08.762871+00:00",
+      "token": "observed-8159-cable02",
+      "report": "TOKEN observed-8159-cable02\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:03.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        57965
+      ],
+      "network_readiness": {
+        "evidence": "carrier cycle; existing IPv4 assignment",
+        "wait_seconds": 7
+      }
+    }
+  ]
+}

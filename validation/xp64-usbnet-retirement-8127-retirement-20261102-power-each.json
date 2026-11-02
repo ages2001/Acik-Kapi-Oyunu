@@ -1,0 +1,231 @@
+{
+  "guest": "xp64-usbnet-retirement-8127",
+  "utc": "2026-11-02T08:42:48.960917+00:00",
+  "scope": "Observe every USBNT controller recovery before starting another transition.\n\nRequires the --single HCPOWER fixture. Each pair receives its own actual\nSetupAPI/name/problem-code and four full-MTU ICMP checks. Stops on the first\ninitialization failure, so a later successful transition cannot mask it.\nThese are injected controller IRPs, not whole-machine ACPI sleep. Children\ncurrently re-enumerate; success is explicitly limited to that recovery path.\n",
+  "result": "FAIL",
+  "cycles": [
+    {
+      "mode": "device",
+      "cycle": 1,
+      "offset": 152,
+      "result": "PASS",
+      "observed": [
+        {
+          "seconds": 6.972,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 6.972,
+          "line": "HCPTEST D3=00000000"
+        },
+        {
+          "seconds": 7.473,
+          "line": "HCPTEST D0=00000000"
+        },
+        {
+          "seconds": 9.883,
+          "line": ""
+        },
+        {
+          "seconds": 9.883,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 9.883,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 9.883,
+          "line": ""
+        },
+        {
+          "seconds": 9.883,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 11.388,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 11.388,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 11.388,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\n",
+      "report": "xp64-usbnet-retirement-8127-retirement-20261102-device-1.json",
+      "report_sha256": "dbd378bfd52be5d49626bf59c997d1d880a8bc380fc94d92c3b794ebca98e3f6",
+      "seconds": 22.54
+    },
+    {
+      "mode": "device",
+      "cycle": 2,
+      "offset": 368,
+      "result": "PASS",
+      "observed": [
+        {
+          "seconds": 6.967,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 6.967,
+          "line": "HCPTEST D3=00000000"
+        },
+        {
+          "seconds": 7.368,
+          "line": "HCPTEST D0=00000000"
+        },
+        {
+          "seconds": 9.574,
+          "line": ""
+        },
+        {
+          "seconds": 9.574,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 9.574,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 9.574,
+          "line": ""
+        },
+        {
+          "seconds": 9.574,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 11.079,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 11.079,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 11.079,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\n",
+      "report": "xp64-usbnet-retirement-8127-retirement-20261102-device-2.json",
+      "report_sha256": "82df3b75585a919afedc3696b85bf24ad6b3e9d6a1fef96b31892b68af57054e",
+      "seconds": 22.407
+    },
+    {
+      "mode": "device",
+      "cycle": 3,
+      "offset": 584,
+      "result": "PASS",
+      "observed": [
+        {
+          "seconds": 6.972,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 6.972,
+          "line": "HCPTEST D3=00000000"
+        },
+        {
+          "seconds": 7.473,
+          "line": "HCPTEST D0=00000000"
+        },
+        {
+          "seconds": 9.687,
+          "line": ""
+        },
+        {
+          "seconds": 9.687,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 9.687,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 9.687,
+          "line": ""
+        },
+        {
+          "seconds": 9.687,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 11.191,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 11.191,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 11.191,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST D3=00000000\nHCPTEST D0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\n",
+      "report": "xp64-usbnet-retirement-8127-retirement-20261102-device-3.json",
+      "report_sha256": "424323c5a2dda086a55082f0f418b1240eb11de7ed057c57af03bbb984e177b4",
+      "seconds": 22.352
+    },
+    {
+      "mode": "system",
+      "cycle": 1,
+      "offset": 800,
+      "result": "FAIL",
+      "observed": [
+        {
+          "seconds": 7.327,
+          "line": "HCPTEST object=00000000"
+        },
+        {
+          "seconds": 7.327,
+          "line": "HCPTEST S3=00000000"
+        },
+        {
+          "seconds": 7.828,
+          "line": "HCPTEST S0=00000000"
+        },
+        {
+          "seconds": 10.034,
+          "line": ""
+        },
+        {
+          "seconds": 10.034,
+          "line": "RLTK DriverEntry"
+        },
+        {
+          "seconds": 10.034,
+          "line": "RegisterMiniport st=0x00000000"
+        },
+        {
+          "seconds": 10.034,
+          "line": ""
+        },
+        {
+          "seconds": 10.034,
+          "line": "RLTK RtlInitialize"
+        },
+        {
+          "seconds": 11.538,
+          "line": "post-Timer"
+        },
+        {
+          "seconds": 11.538,
+          "line": "post-PublishName"
+        },
+        {
+          "seconds": 11.538,
+          "line": "RLTK INIT DONE OK"
+        }
+      ],
+      "trace": "HCPTEST object=00000000\nHCPTEST S3=00000000\nHCPTEST S0=00000000\n\nRLTK DriverEntry\nRegisterMiniport st=0x00000000\n\nRLTK RtlInitialize\npost-Timer\npost-PublishName\nRLTK INIT DONE OK\nRXF\n  filt FOUND\nRXF\nRXF\nRXF\nRXF\n"
+    }
+  ],
+  "error": "CalledProcessError(1, ['/workspace/rltklant-tools/venv/bin/python3', '/workspace/rltklant-work/validation/native_report.py', 'xp64-usbnet-retirement-8127', 'retirement-20261102-system-1', 'nprobe64.exe'])",
+  "screenshot": "xp64-usbnet-retirement-8127-retirement-20261102-power-each-screen.png"
+}

@@ -1,0 +1,1 @@
+PASS: 100000 NT3.1 full-MAC reset/status/status-complete macro calls preserve context, arguments and ESP on Pentium

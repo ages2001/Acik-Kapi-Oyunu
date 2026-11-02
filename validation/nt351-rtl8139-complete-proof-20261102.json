@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "utc": "2026-11-02T05:46:16.535411+00:00",
+  "guest": "nt351-usbsetup-rtl8139-fixed-8127",
+  "sha256": "36d0c0d800a8c60daacfada28b824db39c10b36671c7aa88a3f8452b0abac5b0",
+  "tcp_total_each_direction": 4194304,
+  "protocol_resets": 3,
+  "scope": "Exact development build 36d0c0d8: actual rtl8139, NT3.51, IDE. Baseline, after three NDIS-wrapper reset callbacks, after cable down/up, and fresh QEMU cold boot. Four complete TCP streams (4 MiB each direction) verified independently in guest logs, host server and PCI PCAP, including IP/TCP checksums. Both sessions normal safe-off/exact SYS readback. Not physical PCI hot-plug or universal hardware certification.",
+  "evidence": "nt351-rtl8139-fixed-evidence-20261102/manifest.json",
+  "offline": "nt351-rtl8139-fixed-offline-20261102/manifest.json",
+  "rx_watchdog_events": 1,
+  "cold_boot_guest": "nt351-usbsetup-rtl8139-cold-8127",
+  "wire_proof": "nt351-rtl8139-tcp-wire-proof-20261102.json",
+  "cold_offline": "nt351-rtl8139-cold-offline-20261102/manifest.json",
+  "cold_evidence": "nt351-rtl8139-cold-evidence-20261102/manifest.json"
+}

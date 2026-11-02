@@ -1,0 +1,2 @@
+PASS: RTL8139 four-slot delayed DMA/concurrent senders, single reuse, absent-device rejection; 
+PASS: NT3.1 C+ 100 concurrent schedules, delayed DMA ownership, full-ring backpressure and single-slot reuse

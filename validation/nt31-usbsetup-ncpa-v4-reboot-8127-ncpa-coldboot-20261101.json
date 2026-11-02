@@ -1,0 +1,11 @@
+{
+  "guest": "nt31-usbsetup-ncpa-v4-reboot-8127",
+  "token": "ncpa-coldboot-20261101",
+  "mask": 3,
+  "utc": "2026-11-01T20:56:48.126771+00:00",
+  "peer": [
+    "127.0.0.1",
+    52487
+  ],
+  "report": "TOKEN ncpa-coldboot-20261101\r\nMASK 3\r\nICMP_API FAIL\r\nTOTAL 0 EXPECTED 8\r\nFAIL\r\n"
+}

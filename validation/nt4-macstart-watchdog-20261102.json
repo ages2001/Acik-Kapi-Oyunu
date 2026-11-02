@@ -1,0 +1,28 @@
+{
+  "guest": "nt4-ndis-macstart-8127",
+  "utc": "2026-11-02T01:38:11.722694+00:00",
+  "result": "PASS",
+  "cycles": [
+    {
+      "cycle": 1,
+      "device": "pcinic",
+      "elapsed_seconds": 10.922,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 2,
+      "device": "pcinic",
+      "elapsed_seconds": 10.936,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 3,
+      "device": "pcinic",
+      "elapsed_seconds": 8.928,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    }
+  ]
+}

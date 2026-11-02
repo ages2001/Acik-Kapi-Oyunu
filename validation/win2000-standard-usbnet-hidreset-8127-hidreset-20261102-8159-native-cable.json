@@ -1,0 +1,22 @@
+{
+  "guest": "win2000-standard-usbnet-hidreset-8127",
+  "model": "usb-rtl8159",
+  "rx_stall_injected_before_each_remove": false,
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-hidreset-8127",
+      "utc": "2026-11-02T10:09:05.375495+00:00",
+      "token": "hidreset-20261102-8159-cable01",
+      "report": "TOKEN hidreset-20261102-8159-cable01\r\nDEVICE USB\\VID_0BDA&PID_8159\\0009-0000:00:03.0-1\r\nNAME Realtek RTL8159 USB 10G Ethernet (rev 2020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        59765
+      ],
+      "network_readiness": {
+        "evidence": "carrier cycle; existing IPv4 assignment",
+        "wait_seconds": 7
+      }
+    }
+  ]
+}

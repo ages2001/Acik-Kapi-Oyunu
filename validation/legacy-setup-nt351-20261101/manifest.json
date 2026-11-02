@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-01T20:21:00.027489+00:00",
+  "scope": "Current additional-adapter installer candidate; actual OS setup is pending.",
+  "files": {
+    "DISK1": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "RLTUSB.EXE": {
+      "size": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330"
+    },
+    "OEMSETUP.INF": {
+      "size": 22531,
+      "sha256": "8d02acf1c79b4ddcc0af2499a7bd23fef7fe1c08aecb82f1683c5931c7059513"
+    },
+    "RLTKLANT.SYS": {
+      "size": 503183,
+      "sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615"
+    }
+  }
+}

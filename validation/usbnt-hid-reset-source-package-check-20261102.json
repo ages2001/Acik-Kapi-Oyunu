@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-02T10:07:38.468105+00:00",
+  "result": "PASS",
+  "source_files": 285,
+  "archive_sha256": "8fa57227785df27983cf56cd71f26c1ec01c38d36283a0b510f9c57143b3f3f7",
+  "scope": "Current-source reproducibility and complete readback; includes HID reset/rundown and QEMU tests. Temporary development archives removed. No USBNT 1.3 release archive created."
+}

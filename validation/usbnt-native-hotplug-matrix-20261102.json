@@ -1,0 +1,30 @@
+{
+  "utc": "2026-11-02T07:47:07.101697+00:00",
+  "scope": "Bare-metal native USB storage and keyboard through a hub; retained media data and unaffected root-disk I/O. Not WDM power or generic client coverage.",
+  "rows": [
+    {
+      "controller": "qemu-xhci",
+      "exit_code": 0,
+      "log": "usbnt-native-hotplug-qemu-xhci-20261102.log",
+      "result": "PASS"
+    },
+    {
+      "controller": "usb-ehci",
+      "exit_code": 1,
+      "log": "usbnt-native-hotplug-usb-ehci-20261102.log",
+      "result": "FAIL"
+    },
+    {
+      "controller": "piix3-usb-uhci",
+      "exit_code": 0,
+      "log": "usbnt-native-hotplug-piix3-usb-uhci-20261102.log",
+      "result": "PASS"
+    },
+    {
+      "controller": "pci-ohci",
+      "exit_code": 0,
+      "log": "usbnt-native-hotplug-pci-ohci-20261102.log",
+      "result": "PASS"
+    }
+  ]
+}

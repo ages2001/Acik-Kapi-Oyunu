@@ -1,0 +1,25 @@
+wrote rltklant.cat (2556 bytes) + rltklant.cer
+  netrtlk.inf            sha1(authenticode/flat)=36f875295425919d48ea0e9e4dceaf7bc8e0f3d8
+  i386/RLTKLANT.SYS      sha1(authenticode/flat)=3d7c1dd2024e69195b96f6f37e205f746006f119
+  amd64/RLTKLANT.SYS     sha1(authenticode/flat)=69c3bd3f1e2d7f5eddd28d59e8f9c6ea363b14c5
+wrote rltklant.cat (2556 bytes) + rltklant.cer
+  netrtlk.inf            sha1(authenticode/flat)=36f875295425919d48ea0e9e4dceaf7bc8e0f3d8
+  amd64/RLTKLANT.SYS     sha1(authenticode/flat)=69c3bd3f1e2d7f5eddd28d59e8f9c6ea363b14c5
+  i386/RLTKLANT.SYS      sha1(authenticode/flat)=3d7c1dd2024e69195b96f6f37e205f746006f119
+wrote rltklant.cat (2556 bytes) + rltklant.cer
+  i386/RLTKLANT.SYS      sha1(authenticode/flat)=3d7c1dd2024e69195b96f6f37e205f746006f119
+  netrtlk.inf            sha1(authenticode/flat)=36f875295425919d48ea0e9e4dceaf7bc8e0f3d8
+  amd64/RLTKLANT.SYS     sha1(authenticode/flat)=69c3bd3f1e2d7f5eddd28d59e8f9c6ea363b14c5
+wrote rltklant.cat (2556 bytes) + rltklant.cer
+  i386/RLTKLANT.SYS      sha1(authenticode/flat)=3d7c1dd2024e69195b96f6f37e205f746006f119
+  amd64/RLTKLANT.SYS     sha1(authenticode/flat)=69c3bd3f1e2d7f5eddd28d59e8f9c6ea363b14c5
+  netrtlk.inf            sha1(authenticode/flat)=36f875295425919d48ea0e9e4dceaf7bc8e0f3d8
+wrote rltklant.cat (2556 bytes) + rltklant.cer
+  amd64/RLTKLANT.SYS     sha1(authenticode/flat)=69c3bd3f1e2d7f5eddd28d59e8f9c6ea363b14c5
+  netrtlk.inf            sha1(authenticode/flat)=36f875295425919d48ea0e9e4dceaf7bc8e0f3d8
+  i386/RLTKLANT.SYS      sha1(authenticode/flat)=3d7c1dd2024e69195b96f6f37e205f746006f119
+wrote rltklant.cat (2556 bytes) + rltklant.cer
+  amd64/RLTKLANT.SYS     sha1(authenticode/flat)=69c3bd3f1e2d7f5eddd28d59e8f9c6ea363b14c5
+  i386/RLTKLANT.SYS      sha1(authenticode/flat)=3d7c1dd2024e69195b96f6f37e205f746006f119
+  netrtlk.inf            sha1(authenticode/flat)=36f875295425919d48ea0e9e4dceaf7bc8e0f3d8
+PASS: Windows 2000/XP hash oracles, PE checksum/EOF/content mutations, malformed and unsupported input rejection, CTL encoding, certificate and message signatures, all six member-order permutations

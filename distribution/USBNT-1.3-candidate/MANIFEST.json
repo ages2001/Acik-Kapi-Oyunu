@@ -1,0 +1,166 @@
+{
+  "utc": "2026-11-02T19:22:03.922698+00:00",
+  "scope": "Exact 1.3.0.0 v2 candidate drivers/tools, OEM payloads and current English docs; bounded installed upgrade/regression proofs, with open release work",
+  "files": {
+    "2kxp/amd64/usbinst.exe": {
+      "bytes": 49152,
+      "sha256": "f1731981969f303170d7bcd8d6428ec249a76698a098b6becd88735854729ceb"
+    },
+    "2kxp/amd64/usbnt.sys": {
+      "bytes": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1"
+    },
+    "2kxp/amd64/usbntcap.dll": {
+      "bytes": 49152,
+      "sha256": "73d3f34cf0594b862d66c87a479ffa701de7414fd6d6b5ee80cb2f9c7bb4f3a3"
+    },
+    "2kxp/i386/usbnt.sys": {
+      "bytes": 516096,
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b"
+    },
+    "2kxp/usbnt.inf": {
+      "bytes": 39630,
+      "sha256": "4e669091e60be1df8a16f27966eae23964a1dbd52733c8583298555563f80cc8"
+    },
+    "2kxp/usbntkbd.inf": {
+      "bytes": 999,
+      "sha256": "a320986df38b5bb7b13845b95fbb8473f5697f0f2e5071e35ca113c11b655bf3"
+    },
+    "2kxp/usbntmou.inf": {
+      "bytes": 987,
+      "sha256": "e3d9affd44e3b845ed6a0fcecffbc2fc28225b7e6f9dcc6ffbd0afdd54a38550"
+    },
+    "CHANGELOG.md": {
+      "bytes": 19648,
+      "sha256": "372334ae2894293fd730fc182049f4650279650c89460e8d52b17f094ba6a7a4"
+    },
+    "LICENSE": {
+      "bytes": 35823,
+      "sha256": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809"
+    },
+    "OEMDISK/2KXP/README.TXT": {
+      "bytes": 929,
+      "sha256": "51de9a49eeb4aa8324d67bdb1cc6bd7bf686d74fd89337face3900cd14bbb810"
+    },
+    "OEMDISK/2KXP/TXTSETUP.OEM": {
+      "bytes": 6358,
+      "sha256": "ed3b886f5e50bd797dd5f7b4392f4daf50d1d70c15835edc127ecb0843ccd7bf"
+    },
+    "OEMDISK/2KXP/USBNT.INF": {
+      "bytes": 39619,
+      "sha256": "4e26c29ec3b97af7aeca162b00c192c1804be0b51f7205f91e5fc627afc8410f"
+    },
+    "OEMDISK/2KXP/USBNT.SYS": {
+      "bytes": 516096,
+      "sha256": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b"
+    },
+    "OEMDISK/2KXP/USBNT.TAG": {
+      "bytes": 52,
+      "sha256": "53b01c18449a73b26bd6fc17b33e3c35f181b34b8f5914b9057dcb95ff481546"
+    },
+    "OEMDISK/2KXP/USBNTKBD.INF": {
+      "bytes": 988,
+      "sha256": "8e2c8152747dddd4e56b2229a838d9865ab6e59b5c4f2cbc87db1c8941186f87"
+    },
+    "OEMDISK/2KXP/USBNTMOU.INF": {
+      "bytes": 976,
+      "sha256": "1b06b07ede69fb6264d82f771e8f12575caab25fcafc9bdecc0a67e5d60a1499"
+    },
+    "OEMDISK/NT/README.TXT": {
+      "bytes": 443,
+      "sha256": "aa289cfa8f2b9dc3023600dbb03e875a49d65ff8713f634bcc5368cc2f32ea3f"
+    },
+    "OEMDISK/NT/TXTSETUP.OEM": {
+      "bytes": 747,
+      "sha256": "08a0721700d0297cbfa8c2d88b8930742c02d2a8fab431352edcfb8c4ce49bf2"
+    },
+    "OEMDISK/NT/USBNT.SYS": {
+      "bytes": 434176,
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e"
+    },
+    "OEMDISK/NT/USBNT.TAG": {
+      "bytes": 43,
+      "sha256": "b71c2c329fbb4184bc93dacf5cc3d581b21bad96968309406d6eb301d97913a5"
+    },
+    "OEMDISK/XP64/README.TXT": {
+      "bytes": 917,
+      "sha256": "9516b0772a7f33a29b23768c910fd77f6de20a12e73e18b0b08ee267efffea2f"
+    },
+    "OEMDISK/XP64/TXTSETUP.OEM": {
+      "bytes": 6343,
+      "sha256": "7348d40285c441801428affdd07644fb298cf81934c4672735d39e60236afb27"
+    },
+    "OEMDISK/XP64/USBNT.INF": {
+      "bytes": 39619,
+      "sha256": "4e26c29ec3b97af7aeca162b00c192c1804be0b51f7205f91e5fc627afc8410f"
+    },
+    "OEMDISK/XP64/USBNT.SYS": {
+      "bytes": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1"
+    },
+    "OEMDISK/XP64/USBNT.TAG": {
+      "bytes": 43,
+      "sha256": "aa3a0666d6eb94252a69f9597dd658e98891c9a7e7cfc35b77e2aef919dd07c1"
+    },
+    "OEMDISK/XP64/USBNTKBD.INF": {
+      "bytes": 988,
+      "sha256": "8e2c8152747dddd4e56b2229a838d9865ab6e59b5c4f2cbc87db1c8941186f87"
+    },
+    "OEMDISK/XP64/USBNTMOU.INF": {
+      "bytes": 976,
+      "sha256": "1b06b07ede69fb6264d82f771e8f12575caab25fcafc9bdecc0a67e5d60a1499"
+    },
+    "README.md": {
+      "bytes": 87591,
+      "sha256": "05b2f4e155ff98597c59c16bdb58fcdcd670203626b55321341f9b6055ebf39f"
+    },
+    "RELEASE-1.3-STATUS.md": {
+      "bytes": 18121,
+      "sha256": "844334c961bc318fbf3f6fd98fb7a384c6af342b5093a7a7707285fa6748fdc5"
+    },
+    "USBNT2K.IMG": {
+      "bytes": 1474560,
+      "sha256": "eab2009361bea309c37d711f87c769860b927f2dabb2819c44592b5a7c255376"
+    },
+    "USBNT64.IMG": {
+      "bytes": 1474560,
+      "sha256": "654b297c00965c05a3fa1b53ef8b6b61f859e548097b0d90f94bf0e36b45ab7b"
+    },
+    "USBNTNT.IMG": {
+      "bytes": 1474560,
+      "sha256": "ca3fd9245874651ac524e10c7c2212b5fd4396ceec31e62c3731e68962f61f03"
+    },
+    "usbcam.exe": {
+      "bytes": 61440,
+      "sha256": "551a9cb25d4b7e06607a4a56beada4358694cd04de013c2532af7de2c6f98251"
+    },
+    "usbeject.exe": {
+      "bytes": 28672,
+      "sha256": "8633a07d0a6fdf75b5865a82c5ef3f7818bfd101135fce0d53ebce3137077eb0"
+    },
+    "usbinst.exe": {
+      "bytes": 45056,
+      "sha256": "102e16349209fd52ab2ca0ef4f92c72e46f763b437cacfe8ea8a0a348079f73e"
+    },
+    "usbmon.exe": {
+      "bytes": 49152,
+      "sha256": "e9e4f94035fc5d5d431b1b1f7be05bd53034d51b7fabd0f252080f799f65213a"
+    },
+    "usbnt.sys": {
+      "bytes": 434176,
+      "sha256": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e"
+    },
+    "usbntcap.dll": {
+      "bytes": 53248,
+      "sha256": "75c8e1955520c58fb464ba158472cbb0b2f730b039e739cc8919a473c3ba33fd"
+    },
+    "usbtree.exe": {
+      "bytes": 57344,
+      "sha256": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97"
+    },
+    "wheeltst.exe": {
+      "bytes": 24576,
+      "sha256": "1e94aef5306df6f95503a0c85ef3bd250bb84061defd60b0ee5d22fbeff74b9c"
+    }
+  }
+}

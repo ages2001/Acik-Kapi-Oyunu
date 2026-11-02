@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-01T21:31:07.468973+00:00",
+  "guest": "nt31-usbsetup-ncpa-v6-reboot-8127",
+  "parent": "nt31-usbsetup-ncpa-v6-8127.qcow2",
+  "installation_proof": "nt31-v6-installer-copy-startup-proof-20261101.json",
+  "procedure": "Cold boot and ordinary test_user logon only; do not manually invoke DHCPNT31",
+  "expected_enabled_service": "RLTKLANT02",
+  "expected_skipped_service": "RLTKLANT01",
+  "expected_pci_sequence": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "expected_usb_dhcp_packets": 0,
+  "baseline_log": "nt31-v6-installed-offline-20261101/DHCPNT31.LOG"
+}

@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/nt31-usbnet-unbound-unload-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=419010560 backing_file=/tmp/rltk-growing-fat-n5o78ko_/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+1/6394 = 0.02% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 393216
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt31-usbnet-unbound-unload-8127.qcow2",
+  "sha256_before_boot": "dfd78dc960a0bdeb003d03aca4eae7c80bf9cfbc24ba3f169aabc561b90cc9e4",
+  "files": [
+    {
+      "guest_path": "WINNT31/system32/config/system",
+      "source": "/workspace/rltklant-work/validation/nt31-unbound-system-20261101",
+      "size": 643072,
+      "sha256": "a613be0dd4fb281a99c608a0fb53f0d1bcf855d4e53101a814021c2a4c698972",
+      "old_size": 643072,
+      "old_sha256": "a613be0dd4fb281a99c608a0fb53f0d1bcf855d4e53101a814021c2a4c698972"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

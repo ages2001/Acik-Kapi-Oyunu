@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-01T21:09:52.252860+00:00",
+  "files": {
+    "DHCPNT31.EXE": {
+      "bytes": 25688,
+      "sha256": "56ef2db4720aae1f071cd155f7695f0f9a04fe25181df85d29333ae48accf67a"
+    },
+    "dhcpnt31.c": {
+      "bytes": 30999,
+      "sha256": "dec1e59af6e8ce2f7a1df26f71685c26826d084f70da5e9877dc9cbdafcbd022"
+    },
+    "test_dhcpnt31_routes.py": {
+      "bytes": 4350,
+      "sha256": "f7d9de9d97cf770bec8673254a444e02ef988318bb4d69f6549ef3eb99f8701e"
+    }
+  },
+  "scope": "Distinct configured-subnet route candidate and opt-in filter; sanitizer tests PASS, actual guest exchange pending; ambiguous/overlapping/unconfigured multiple networks are rejected"
+}

@@ -1,0 +1,8 @@
+/workspace/rltklant-work/validation/nt351-release13-20261102-tcp-baseline-screen.png
+PASS host TCP baseline; guest screen awaits inspection
+/workspace/rltklant-work/validation/nt351-release13-20261102-tcp-reset-screen.png
+PASS host TCP reset; guest screen awaits inspection
+{}
+{}
+/workspace/rltklant-work/validation/nt351-release13-20261102-tcp-cable-screen.png
+PASS host TCP cable; guest screen awaits inspection

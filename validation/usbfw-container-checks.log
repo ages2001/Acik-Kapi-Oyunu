@@ -1,0 +1,9 @@
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-2.fw version=4
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-3.fw version=5
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153a-4.fw version=6
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153b-2.fw version=9
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8153c-1.fw version=14
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156a-2.fw version=11
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156b-2.fw version=13
+VALID USB /workspace/rltklant-work/RLTKLANT/firmware/usb/rtl_nic/rtl8156b-2.fw version=15
+PASS: USB firmware real inputs, 23106 rehashed structural faults/truncations, checksum and unaligned reads

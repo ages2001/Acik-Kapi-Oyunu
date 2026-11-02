@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T18:26:24.032693+00:00",
+  "guest": "xp64-usbnet-mixed-release13-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1"
+    },
+    "RLTTEST/NATIVE.LOG": {
+      "file": "NATIVE.LOG",
+      "size": 58664,
+      "sha256": "8732d8af55963b191fb76ee572410ea82e9804259e612d5874792b4cb5cec840"
+    }
+  }
+}

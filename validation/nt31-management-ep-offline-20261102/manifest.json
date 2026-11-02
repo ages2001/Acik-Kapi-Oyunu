@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T05:26:14.236055+00:00",
+  "guest": "nt31-usbsetup-management-ep-v2-8127",
+  "files": {
+    "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 537600,
+      "sha256": "d23a13af7ee58381e37a409b7a51638b36b1e619db8f5bc2cb9f62a59d69fadc"
+    },
+    "N31TEST/N31RESET.SYS": {
+      "file": "N31RESET.SYS",
+      "size": 6144,
+      "sha256": "618dc162548343df7aecfcdab76cc1964920cc16d09e920527b89b2a72915fe4"
+    },
+    "N31TEST/N31RESET.EXE": {
+      "file": "N31RESET.EXE",
+      "size": 7828,
+      "sha256": "f419a466e5e8bbf69f9bc285ee53ffb22f7a14401d4321214c96a1170d68af46"
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "guest": "nt351-usbsetup-newcompare-rtl8139-8127",
+  "utc": "2026-11-02T12:55:48.906821+00:00",
+  "scope": "Measure attachment latency, preserving late recovery as a failed 30-second target.\n\nRequires an open CMD. Owns this guest's QMP for the entire diagnostic.\nThe observation window is 120 seconds; it does not change the existing matrix\nacceptance bound. Host monotonic time is not guest execution time.\n",
+  "target_seconds": 30,
+  "observation_seconds": 120,
+  "result": "PASS_30_SECOND_TARGET",
+  "rows": [
+    {
+      "cycle": 1,
+      "model": "usb-rtl8159",
+      "result": "PASS_30_SECOND_TARGET",
+      "removal_seconds": 5.042862337984843,
+      "removal_trace": "UNT-LINK id=00000001 up=00000000 status=C0000001\nUNT-DOWN id=00000001\n",
+      "add_utc": "2026-11-02T12:55:54.950369+00:00",
+      "qmp_add_seconds": 0.054155843012267724,
+      "attach_seconds": 3.683406720025232,
+      "attach_trace": "UNT-UP id=00000002 pid=00008159 status=00000000\nUNT-LINK id=00000002 up=00000000 status=00000000\n",
+      "carrier_seconds": 3.7337147120269947,
+      "carrier_trace": "UNT-UP id=00000002 pid=00008159 status=00000000\nUNT-LINK id=00000002 up=00000000 status=00000000\nUNT-LINK id=00000002 up=00000001 status=00000000\n",
+      "pci_report": {
+        "file": "nt351-usbsetup-newcompare-rtl8139-8127-nt351-newcompare-attach-20261102-c1.json",
+        "sha256": "aebb0989550e1c54670a9e61a66830b157ec798d8cbed14d1907ccd08d1ee692"
+      }
+    },
+    {
+      "cycle": 2,
+      "model": "usb-rtl8159",
+      "result": "PASS_30_SECOND_TARGET",
+      "removal_seconds": 5.035511930997018,
+      "removal_trace": "UNT-LINK id=00000002 up=00000000 status=C0000001\nUNT-DOWN id=00000002\n",
+      "add_utc": "2026-11-02T12:56:12.521509+00:00",
+      "qmp_add_seconds": 0.05266329800360836,
+      "attach_seconds": 3.73019134401693,
+      "attach_trace": "UNT-UP id=00000003 pid=00008159 status=00000000\nUNT-LINK id=00000003 up=00000000 status=00000000\n",
+      "carrier_seconds": 3.931400763016427,
+      "carrier_trace": "UNT-UP id=00000003 pid=00008159 status=00000000\nUNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "pci_report": {
+        "file": "nt351-usbsetup-newcompare-rtl8139-8127-nt351-newcompare-attach-20261102-c2.json",
+        "sha256": "95b10f94d34ec240b3a5510da09b57dc9bbba25ff5e42c45801e177464ddb007"
+      }
+    },
+    {
+      "cycle": 3,
+      "model": "usb-rtl8159",
+      "result": "PASS_30_SECOND_TARGET",
+      "removal_seconds": 5.039907732018037,
+      "removal_trace": "UNT-LINK id=00000003 up=00000000 status=C0000001\nUNT-DOWN id=00000003\n",
+      "add_utc": "2026-11-02T12:56:30.291601+00:00",
+      "qmp_add_seconds": 0.05292364797787741,
+      "attach_seconds": 3.730538097996032,
+      "attach_trace": "UNT-UP id=00000004 pid=00008159 status=00000000\nUNT-LINK id=00000004 up=00000000 status=00000000\n",
+      "carrier_seconds": 3.9320898489968386,
+      "carrier_trace": "UNT-UP id=00000004 pid=00008159 status=00000000\nUNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "pci_report": {
+        "file": "nt351-usbsetup-newcompare-rtl8139-8127-nt351-newcompare-attach-20261102-c3.json",
+        "sha256": "ebf5b7195b92088c769fa6bfb44dc39ba95b55fde40647680258a27d22efdff3"
+      }
+    }
+  ],
+  "source_sha256": "88acb022cecd7ca4253b04214265d4132ef568fbde76a7b47e46227c1d4b189b",
+  "launch": {
+    "started_at": 1793623859.6574526,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/nt351-usbsetup-newcompare-rtl8139-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/nt351-usbsetup-newcompare-rtl8139-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/nt351-usbsetup-newcompare-rtl8139-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/nt351-usbsetup-newcompare-rtl8139-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt351-usbsetup-newcompare-rtl8139-8127/usb.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0",
+      "-netdev",
+      "user,id=pci0,net=10.0.3.0/24",
+      "-device",
+      "rtl8139,id=pcinic,netdev=pci0",
+      "-object",
+      "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/nt351-usbsetup-newcompare-rtl8139-8127/pci.pcap"
+    ],
+    "qemu_sha256": "8de6bf9206c04b049be0f3b5692d535207143f8c99ee9c3d5825ae64b8d8e6b5"
+  },
+  "finished_utc": "2026-11-02T12:56:48.111776+00:00"
+}

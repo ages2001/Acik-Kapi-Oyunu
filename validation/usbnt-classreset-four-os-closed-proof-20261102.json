@@ -1,0 +1,119 @@
+{
+  "utc": "2026-11-02T12:42:35.769716+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "os": "nt31",
+      "guest": "nt31-usbsetup-classreset-rtl8117-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 418304,
+          "sha256": "d65acc8f8d9eb3abe0c7e03cd09c26e50d6101957a95f6a128d91166ae3d8080"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 538624,
+          "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+        }
+      },
+      "counts": {
+        "hotplug_cycles": 4,
+        "carrier_cycles": 4,
+        "full_payload_replies": 104
+      },
+      "evidence": {
+        "nt31-classreset-offline-20261102/manifest.json": "4bd64a9de58afdc9e8a5e1952c095616e843ff2b8b482d58d758f9603581ea4b",
+        "nt31-classreset-evidence-20261102/manifest.json": "780de328c9eb581f58af28a09a8225e937f81f180aa63011e5b641b272b0d8a1",
+        "nt31-usbsetup-classreset-rtl8117-8127-classreset-20261102-sibling-matrix.json": "97a9394e0f39905ceaffa2767235399bad38873e6e350789adfcff82bd81e2e7"
+      }
+    },
+    {
+      "os": "nt4",
+      "guest": "nt4-ndis-dual-classreset-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 418304,
+          "sha256": "d65acc8f8d9eb3abe0c7e03cd09c26e50d6101957a95f6a128d91166ae3d8080"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 540920,
+          "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+        }
+      },
+      "counts": {
+        "hotplug_cycles": 8,
+        "carrier_cycles": 8,
+        "full_payload_replies": 332
+      },
+      "evidence": {
+        "nt4-classreset-offline-20261102/manifest.json": "49264114cd6ea7d742eda422e56f3d0faed8e124eb6be0ad7efac63f3cd595ae",
+        "nt4-classreset-evidence-20261102/manifest.json": "9ca504c909e3c5eca4753f245d52867c1ccac24c5b413188910bc20d18774553",
+        "nt4-ndis-dual-classreset-8127-classreset-20261102-sibling-matrix.json": "b26b12fcee48b9c9c0bb6bc0a32f43554c4d7bf8a66ddd2e4985078dce8b509f"
+      }
+    },
+    {
+      "os": "win2000",
+      "guest": "win2000-standard-usbnet-classreset-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 495104,
+          "sha256": "c03e153f9964607ec064ae59ee8be4c08016e62854300a9a42af956f717ecf67"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 557016,
+          "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+        }
+      },
+      "counts": {
+        "function_power_pairs": 12,
+        "stalled_removals": 4,
+        "port_resets": 4,
+        "carrier_cycles": 4,
+        "full_mtu_replies": 64
+      },
+      "evidence": {
+        "win2000-classreset-offline-20261102/manifest.json": "53ca4e0253abb9cd80b4c9d3fdbf6154d924e15a3337dd3caa0062b7b8e044df",
+        "win2000-classreset-evidence-20261102/manifest.json": "631b4536896d8088f668e1796fc04b866bc2ef13e8892f4874e3fea592fc934d",
+        "win2000-standard-usbnet-classreset-8127-classreset-20261102-retirement-matrix.json": "e3e744a7c985566fb63aae1168144682b04d2ff5f1cf2cbd5f82143651c20789"
+      }
+    },
+    {
+      "os": "xp64",
+      "guest": "xp64-usbnet-classreset-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 534016,
+          "sha256": "1ded9e8d2972efb7f8d92827e6ec83863bb921c08fa73c40109bb71edf06d997"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 613306,
+          "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+        }
+      },
+      "counts": {
+        "function_power_pairs": 12,
+        "stalled_removals": 4,
+        "port_resets": 4,
+        "carrier_cycles": 4,
+        "full_mtu_replies": 64
+      },
+      "evidence": {
+        "xp64-classreset-offline-20261102/manifest.json": "89939608096adb3831572b2781d1209aed5ff525b686cca4a608492c32d4871e",
+        "xp64-classreset-evidence-20261102/manifest.json": "5cab23db67ffdae2134c7553c5ba5c31114e32c21d4cb9112bbc97605ee874cf",
+        "xp64-usbnet-classreset-8127-classreset-20261102-retirement-matrix.json": "966bbd503dc2b72586a6ddb6c2affd803ae1a09498e9e62142453bcd342f3dbb"
+      }
+    }
+  ],
+  "scope": "Exact installed development binaries after native HID/MSC/card-reader/video/audio callback rundown and shared port-reset support. Windows 2000 AHCI, all other guests IDE. Normal shutdown and stopped-disk readback. NT3.1 uses inbox receipt plus complete wire payload matching; NT4/NT5 use guest payload checks. Shared native-class + Windows reset coordination is host-tested; native class physical resets have separate QEMU evidence. These network tests do not establish system sleep, physical silicon, or a USBNT 1.3 release."
+}

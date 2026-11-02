@@ -1,0 +1,27 @@
+No errors were found on the image.
+45026/81920 = 54.96% allocated, 93.02% fragmented, 92.63% compressed clusters
+Image end offset: 1312489472
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/xp64-management-ringfix-multi-8127.qcow2",
+  "sha256_before_boot": "ac864fee78b1db331fc4305eebeb5add3aed971c8b0484a254475e42c0a9aac7",
+  "files": [
+    {
+      "guest_path": "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis5x64/rltklant.sys",
+      "size": 612079,
+      "sha256": "094c0b99f7f8d470134ccaa445e07a2802bb378e77cbfc2ff6b14a7b383d15b1",
+      "old_size": 606482,
+      "old_sha256": "0b8b984ecbaf42a390ab8a0c9a8d6c45a06ff9556732ab669888f16e481a8a0b"
+    },
+    {
+      "guest_path": "RLTTEST/PCNEW.EXE",
+      "source": "/workspace/rltklant-work/validation/rtl8139-fixed-native-fixture-20261102/PC64.EXE",
+      "size": 17123,
+      "sha256": "75a3e925cd49bc1de3e08417c27116c20b4e62c089bbeedbea4f14016012965c",
+      "old_size": 17123,
+      "old_sha256": "bfcc350c620d137ba1ad615e442636e5ab9f6c8e032e13e15d95bad0a7843d39"
+    }
+  ],
+  "scope": "New flattened image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

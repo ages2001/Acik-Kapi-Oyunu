@@ -1,0 +1,129 @@
+{
+  "utc": "2026-11-02T10:15:10.466789+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "os": "nt31",
+      "guest": "nt31-usbsetup-hidreset-rtl8117-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 412672,
+          "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 538624,
+          "sha256": "7f86394cb6d309f2bb2f7d8cadede373cf90ac21053de5c230017c8ee7aeed24"
+        }
+      },
+      "counts": {
+        "hotplug_cycles": 4,
+        "carrier_cycles": 4,
+        "full_payload_replies": 104
+      },
+      "evidence": {
+        "nt31-hidreset-offline-20261102/manifest.json": "e9ebbda2ff48e6177fcc48b92e60c5caf53d5731be755eeefd316d5bc40cc9c4",
+        "nt31-hidreset-evidence-20261102/manifest.json": "272de88715f935ee22495a2c68068ba62bed6e1bce57c1574b65928f3de604a7",
+        "nt31-usbsetup-hidreset-rtl8117-8127-hidreset-20261102-sibling-matrix.json": "3b88cc34a70fb5de32cf47f8b55e0cb75fb11567aad1095e3a5f5ab0baf88897"
+      }
+    },
+    {
+      "os": "nt4",
+      "guest": "nt4-ndis-dual-hidreset-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 412672,
+          "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 540920,
+          "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+        }
+      },
+      "counts": {
+        "hotplug_cycles": 8,
+        "carrier_cycles": 8,
+        "full_payload_replies": 332
+      },
+      "evidence": {
+        "nt4-hidreset-offline-20261102/manifest.json": "e8c5e4f19a8d3af8c940996fcb95fd6a6fa044965157f000a37062b86f02cc6c",
+        "nt4-hidreset-evidence-20261102/manifest.json": "337c907660465694bff7f7da8d3aecc3dc9e41328dc7472e3685db7e3c2460e5",
+        "nt4-ndis-dual-hidreset-8127-hidreset-20261102-sibling-matrix.json": "cbd8f14ebfba684e6c9a854b956352ed8cd198b19baf6cb6e4c137041df1bcac"
+      }
+    },
+    {
+      "os": "win2000",
+      "guest": "win2000-standard-usbnet-hidreset-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 488960,
+          "sha256": "3c9ae36eaeac2a3ff1c5e317ff8369560d57846c74f1a213f945971bf2518456"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 557016,
+          "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+        },
+        "NATIVE.LOG": {
+          "file": "NATIVE.LOG",
+          "size": 64049,
+          "sha256": "6189a074187327faa367aa3fd34c56885c6a30a793ccec895bb735f72b9ffe3f"
+        }
+      },
+      "counts": {
+        "function_power_pairs": 12,
+        "stalled_removals": 4,
+        "port_resets": 4,
+        "carrier_cycles": 4,
+        "full_mtu_replies": 64
+      },
+      "evidence": {
+        "win2000-hidreset-offline-20261102/manifest.json": "12fcafa57d93d18fc4d142e4cce70a04375c85cfacee84d55637bfb51fefe71c",
+        "win2000-hidreset-evidence-20261102/manifest.json": "bb190223833cb25f4cad3eda98b0a0d58aec8379cadbb7124a626203c40eaaa4",
+        "win2000-standard-usbnet-hidreset-8127-hidreset-20261102-retirement-matrix.json": "94f9275a603bd52bbe011b114f650f378f84534e8de9e22b865d6723adfc3bdb"
+      }
+    },
+    {
+      "os": "xp64",
+      "guest": "xp64-usbnet-hidreset-8127",
+      "result": "PASS",
+      "drivers": {
+        "USBNT.SYS": {
+          "file": "USBNT.SYS",
+          "size": 526848,
+          "sha256": "434f5b30b3d7a754ee58ca845f92f70ea5ded77e73c3c0f81ca22eb9b6d568eb"
+        },
+        "RLTKLANT.SYS": {
+          "file": "RLTKLANT.SYS",
+          "size": 613306,
+          "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+        },
+        "NATIVE.LOG": {
+          "file": "NATIVE.LOG",
+          "size": 43929,
+          "sha256": "026f198648341db7e04d37f69fb8480f7d53c472f771fcda4049d2667c4364e9"
+        }
+      },
+      "counts": {
+        "function_power_pairs": 12,
+        "stalled_removals": 4,
+        "port_resets": 4,
+        "carrier_cycles": 4,
+        "full_mtu_replies": 64
+      },
+      "evidence": {
+        "xp64-hidreset-offline-20261102/manifest.json": "23b2832ba4dddd7ed584eaab721ce97ddd7199f8027cd32dfa66645e3f4f3fb9",
+        "xp64-hidreset-evidence-20261102/manifest.json": "31a4c3f94ca0ab6ab58a013e4fa7023412f9967d6811e2e46f0a5b20e138321a",
+        "xp64-usbnet-hidreset-8127-hidreset-20261102-retirement-matrix.json": "aeea23c572490be9f162d3676f15bc5fd3b0428e2d0f8ace3a396a18c62fb1c7"
+      }
+    }
+  ],
+  "scope": "Exact installed development binaries after native HID callback/submit rundown and shared port-reset support. Windows 2000 AHCI, all other guests IDE. Normal shutdown and stopped-disk readback. NT3.1 uses inbox receipt plus complete wire payload matching; NT4/NT5 use guest payload checks. Shared native HID + Windows reset coordination is host-tested; native HID physical reset has separate four-HCD QEMU evidence. These network tests do not establish system sleep, physical silicon, or a USBNT 1.3 release."
+}

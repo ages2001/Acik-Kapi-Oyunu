@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-01T22:50:49.681818+00:00",
+  "result": "PASS_WITH_VISUAL_RECEIPT_REVIEW",
+  "scope": "Cold boot after PCI removal: surviving USB inbox receipt visually reviewed plus complete production PCAP payload/identifier/sequence/checksum match",
+  "guest": "nt31-usbsetup-v9-remove-last-8127",
+  "requests": 4,
+  "matched_replies": 4,
+  "payload_bytes": 1472,
+  "receipt_text": "Host 10.0.2.2 replied to all 4 of the 4 pings",
+  "receipt_method": "Assistant visual inspection of original screenshot; not an OCR pass",
+  "screenshot": "nt31-usbsetup-v9-remove-last-8127-pci-removed-usb-20261102-usb.png",
+  "screenshot_sha256": "c067776e2cef3e7f9828bccc2946b78925c39a31117557a1cd48cf000350d222",
+  "pcap": "nt31-v9-pci-removed-usb-packets-20261102.pcap",
+  "pcap_sha256": "2d5488805b6d9aee6ab033dff16b45d77a71e1c0790af8df9ed4ac1ebc3497e3",
+  "automated_ocr_failure_preserved": "nt31-usbsetup-v9-remove-last-8127-pci-removed-usb-20261102.json",
+  "reason": "OCR misread replied as weplied; original screenshot is readable",
+  "limits": [
+    "Four USB replies after a cold boot; no physical-silicon claim"
+  ]
+}

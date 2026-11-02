@@ -1,0 +1,23 @@
+LIBRARY NTOSKRNL.EXE
+EXPORTS
+ExQueueWorkItem@8
+IoGetDeviceObjectPointer@16
+KeCancelTimer@4
+KeDelayExecutionThread@12
+KeInitializeEvent@12
+KeResetEvent@4
+KeSetEvent@12
+KeWaitForSingleObject@20
+MmAllocateContiguousMemory@12
+MmFreeContiguousMemory@4
+MmGetPhysicalAddress@4
+MmMapIoSpace@16
+MmUnmapIoSpace@8
+NtWaitForSingleObject@12
+ObDereferenceObject@4
+ObReferenceObjectByHandle@24
+PsCreateSystemThread@28
+PsTerminateSystemThread@4
+ZwClose@4
+ZwOpenKey@12
+ZwSetValueKey@24

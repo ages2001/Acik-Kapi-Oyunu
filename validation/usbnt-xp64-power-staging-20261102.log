@@ -1,0 +1,36 @@
+Formatting '/workspace/rltklant-vm/run/xp64-usbnet-usbnt-power-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=5368709120 backing_file=/tmp/rltk-growing-fat-atzq4q14/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+28/81920 = 0.03% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 2162688
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/xp64-usbnet-usbnt-power-8127.qcow2",
+  "sha256_before_boot": "2a755a15fbdf638afdf8050abce9353e960d3a6a5064e4f1eaeaf9cc7b41c5a0",
+  "files": [
+    {
+      "guest_path": "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndis5x64/rltklant.sys",
+      "size": 612153,
+      "sha256": "c741f31533bdcc327f481cefee2d444fd1adf67e711a5b73c0d70980cc3470c2",
+      "old_size": 568707,
+      "old_sha256": "a0dbd8e0ca52d27c37c11871573c1e9ba71994fbd7d4053a72aa8f1f6bb22078"
+    },
+    {
+      "guest_path": "RLTTEST/UPOWER.SYS",
+      "source": "/workspace/rltklant-work/validation/usbnt-power-probe-amd64-fixed-20261102/UPOWER.SYS",
+      "size": 11207,
+      "sha256": "95924777530247f6583d28189e60d6035b2200ee5e2def58d9b1b5097c7735eb",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTTEST/UPOWER.EXE",
+      "source": "/workspace/rltklant-work/validation/usbnt-power-probe-amd64-fixed-20261102/UPOWER.EXE",
+      "size": 11554,
+      "sha256": "476cd2cb7cb8fce5578a476ba95a27abc55f63c09ef6a98dec15dc0fed7c96ab",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

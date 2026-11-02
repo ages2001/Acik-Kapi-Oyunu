@@ -1,0 +1,207 @@
+{
+  "guest": "xp64-usbnet-native-8127",
+  "model": "usb-rtl8153",
+  "scope": "Native NT5 USB PnP plus guest-observed full-MTU ICMP; QEMU protocol model, not silicon certification",
+  "cycles": [
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:52:48.281055+00:00",
+      "token": "native01",
+      "report": "TOKEN native01\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        35091
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:53:02.188825+00:00",
+      "token": "native02",
+      "report": "TOKEN native02\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        36173
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:53:16.140869+00:00",
+      "token": "native03",
+      "report": "TOKEN native03\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        50891
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:53:30.086078+00:00",
+      "token": "native04",
+      "report": "TOKEN native04\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        50093
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:53:44.074117+00:00",
+      "token": "native05",
+      "report": "TOKEN native05\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        53467
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:53:58.115534+00:00",
+      "token": "native06",
+      "report": "TOKEN native06\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        50199
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:54:12.117660+00:00",
+      "token": "native07",
+      "report": "TOKEN native07\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        50560
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:54:26.154191+00:00",
+      "token": "native08",
+      "report": "TOKEN native08\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        53646
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:54:40.312531+00:00",
+      "token": "native09",
+      "report": "TOKEN native09\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        48886
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:54:54.218608+00:00",
+      "token": "native10",
+      "report": "TOKEN native10\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        53751
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:55:08.175045+00:00",
+      "token": "native11",
+      "report": "TOKEN native11\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        46216
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:55:22.078114+00:00",
+      "token": "native12",
+      "report": "TOKEN native12\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        49900
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:55:36.126079+00:00",
+      "token": "native13",
+      "report": "TOKEN native13\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        58582
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:55:50.126867+00:00",
+      "token": "native14",
+      "report": "TOKEN native14\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        42848
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:56:04.093891+00:00",
+      "token": "native15",
+      "report": "TOKEN native15\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        41795
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:56:18.078904+00:00",
+      "token": "native16",
+      "report": "TOKEN native16\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        42571
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:56:32.007541+00:00",
+      "token": "native17",
+      "report": "TOKEN native17\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        34792
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:56:45.939507+00:00",
+      "token": "native18",
+      "report": "TOKEN native18\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        49475
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:56:59.828431+00:00",
+      "token": "native19",
+      "report": "TOKEN native19\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        44401
+      ]
+    },
+    {
+      "guest": "xp64-usbnet-native-8127",
+      "utc": "2026-10-29T19:57:13.751333+00:00",
+      "token": "native20",
+      "report": "TOKEN native20\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:02.0-1\r\nNAME Realtek RTL8153/8153B/C/D/E USB Gigabit Ethernet\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        51834
+      ]
+    }
+  ]
+}

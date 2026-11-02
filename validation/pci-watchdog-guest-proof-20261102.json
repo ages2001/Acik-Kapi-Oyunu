@@ -1,0 +1,23 @@
+{
+  "utc": "2026-11-02T01:31:55.291179+00:00",
+  "result": "PASS",
+  "scope": "Windows-initiated hang-check recovery from an explicitly injected model DMA stall; no private reset handler calls; six PCI functions per OS; not physical-silicon or surprise-removal proof",
+  "systems": {
+    "win2000": {
+      "reset_evidence": "win2000-watchdog-six-20261102.json",
+      "full_payload_replies": 24,
+      "driver_sha256": "9fbd52dd59bb43d5486543944782939b13ff309f9366e8d01a9c629907cd51db",
+      "traffic": "win2000-standard-watchdog-multi-8127-watchdog-after-six-20261102.json",
+      "offline": "validation/win2000-watchdog-offline-20261102/manifest.json",
+      "stopped": "win2000-watchdog-evidence-20261102/manifest.json"
+    },
+    "xp64": {
+      "reset_evidence": "xp64-watchdog-six-20261102.json",
+      "full_payload_replies": 24,
+      "driver_sha256": "23121df2ace22d0a070d76fd6b40d942f77b07e2bbd611dd91ee8b1ad74456e0",
+      "traffic": "xp64-watchdog-multi-8127-watchdog-after-six-20261102.json",
+      "offline": "validation/xp64-watchdog-offline-20261102/manifest.json",
+      "stopped": "xp64-watchdog-evidence-20261102/manifest.json"
+    }
+  }
+}

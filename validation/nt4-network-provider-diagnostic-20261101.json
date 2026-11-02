@@ -1,0 +1,49 @@
+{
+  "network_provider_members": [],
+  "services": [
+    {
+      "service": "LmHosts",
+      "values": {
+        "Type": 32,
+        "Start": 2,
+        "DependOnService": "",
+        "DependOnGroup": "NetworkProvider"
+      }
+    },
+    {
+      "service": "NetBT",
+      "values": {
+        "Type": 1,
+        "Start": 2,
+        "Group": "PNP_TDI",
+        "DependOnService": "Tcpip",
+        "DependOnGroup": ""
+      }
+    },
+    {
+      "service": "RLTKLANT",
+      "values": {
+        "Type": 1,
+        "Start": 2,
+        "Group": "NDIS"
+      }
+    },
+    {
+      "service": "Tcpip",
+      "values": {
+        "Type": 1,
+        "Start": 2,
+        "Group": "PNP_TDI"
+      }
+    },
+    {
+      "service": "usbnt",
+      "values": {
+        "Type": 1,
+        "Start": 0,
+        "Group": "SCSI miniport"
+      }
+    }
+  ],
+  "scope": "Read-only offline NT4 fixture service inventory; SCM Event ID 7002 corroborates LmHosts missing NetworkProvider group; no driver failure attributed"
+}

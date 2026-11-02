@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T12:33:20.733219+00:00",
+  "guest": "win2000-standard-usbnet-classreset-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 495104,
+      "sha256": "c03e153f9964607ec064ae59ee8be4c08016e62854300a9a42af956f717ecf67"
+    },
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 557016,
+      "sha256": "4ea548cf3c1f74d7d13d8643efe70fda78d04a9a415ab513459c20dfa1bd64c5"
+    }
+  }
+}

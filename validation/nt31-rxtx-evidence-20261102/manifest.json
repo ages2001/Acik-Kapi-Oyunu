@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-02T06:31:03.586070+00:00",
+  "guest": "nt31-usbsetup-rtl8139-rxtx-8127",
+  "safeoff_screenshot": "nt31-rxtx-safeoff-check-20261102.png",
+  "safeoff_sha256": "cdf04eb2677f986eea0bed71c4aad707e171a828db551c3c4aad4ef2aec963ec",
+  "files": {
+    "debug.log": {
+      "bytes": 3181,
+      "sha256": "61237a94f774bc63b227a111db34697eef3296848dc196a9b328796c18e70f7f"
+    },
+    "serial.log": {
+      "bytes": 12,
+      "sha256": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44"
+    },
+    "qemu.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "launch.json": {
+      "bytes": 1535,
+      "sha256": "adf781d2b8a3a808b7942a8d406a5c80cea2f3fd7775b3377f69503584916b6b"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "21731f9384e925314400de0e3af4590735808e26a2e4921f53d2cd1ccd50715e"
+    },
+    "pci.pcap": {
+      "bytes": 7087424,
+      "sha256": "6a7c660a93418d393b60eb2b5a838f27d6ded28315a2d14ffe6ec881927a5772"
+    },
+    "usb.pcap": {
+      "bytes": 151095,
+      "sha256": "4f3ce79df8dbed45af53da4e8d669ebda86b74edfdc25b5973d5528ac9736c40"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

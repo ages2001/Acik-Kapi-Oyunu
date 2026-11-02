@@ -1,0 +1,126 @@
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+RXF
+RXF
+RXF
+RXF
+HCPTEST object=00000000
+HCPTEST D3=00000000
+HCPTEST D0=00000000
+HCPTEST object=00000000
+HCPTEST D3=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+HCPTEST D0=00000000
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+RXF
+RXF
+RXF
+RXF
+HCPTEST object=00000000
+HCPTEST D3=00000000
+HCPTEST D0=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+RXF
+RXF
+RXF
+RXF
+HCPTEST object=00000000
+HCPTEST D3=00000000
+HCPTEST D0=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+RXF
+RXF
+RXF
+RXF
+HCPTEST object=00000000
+HCPTEST S3=00000000
+HCPTEST S0=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+RXF
+RXF
+RXF
+RXF
+HCPTEST object=00000000
+HCPTEST S3=00000000
+HCPTEST S0=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+RXF
+RXF
+RXF
+RXF
+HCPTEST object=00000000
+HCPTEST S3=00000000
+HCPTEST S0=00000000
+
+RLTK DriverEntry
+RegisterMiniport st=0x00000000
+
+RLTK RtlInitialize
+post-Timer
+post-PublishName
+RLTK INIT DONE OK
+RXF
+  filt FOUND
+RXF
+RXF
+RXF
+RXF
+RXF

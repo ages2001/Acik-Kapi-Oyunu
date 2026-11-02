@@ -1,0 +1,5 @@
+{
+  "result": "PASS",
+  "scope": "Temporary raw source released only after full logical comparison and durable packed parent rebase of every direct child.",
+  "compaction": "xp64-irq-multi-8127-durable-compaction-20261102.json"
+}

@@ -1,0 +1,16 @@
+[=] ema RE
+lo\usere\default>ping <n 4 -1 1472 10.0,2.2
+
+Pinging host 10-0:2-2 Cunnaned> : 10.0-3-2
+
+CHP Echo Reply:TiL 255
+
+icHP Echo Reply:TTL 255
+
+icHP Echo Reply:TTL 255
+
+icHP Echo Reply:TTL. 255
+
+lHost 10-0.2-2 weplied to all 4 of the 4 pings
+
+Jc:\userre\defaule>

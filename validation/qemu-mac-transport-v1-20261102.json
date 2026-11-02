@@ -1,0 +1,106 @@
+{
+  "utc": "2026-11-02T00:21:53.715891+00:00",
+  "scope": "Production MAC configuration through actual QEMU register transactions.\n\nThis is transport and source-order validation, not Windows lifecycle or\nPHY/MCU instruction execution. The model's completion flags are synthetic.\n",
+  "result": "PASS_TRANSPORT_ONLY",
+  "qemu_sha256": "efb4a87c7f37bdf16a5a19295bc5cac2d30cdbd1ba4211536c327f6cf8b7a555",
+  "sources": {
+    "/workspace/rltklant-work/RLTKLANT/qemu/hw-net/rtl8169.c": "7b3231fdc406104f4e1d8ad6dffa4379e3bc5abc2908e817c429902c72079207",
+    "/workspace/rltklant-work/RLTKLANT/src/macseq.c": "3582acee96d6519c0640b8b39de401a240b8301823e68c72c1446535b84352c6",
+    "/workspace/rltklant-work/validation/test_qemu_mac.py": "fe57211f3a382ffee615ef15ea41bbb96bd6437dd95c1638f757ee1eb8a3ac01"
+  },
+  "results": [
+    {
+      "model": "rtl8169",
+      "register_bytes": 4096,
+      "operations": 8,
+      "delay_us": 0,
+      "handshake_ports": []
+    },
+    {
+      "model": "rtl8168",
+      "register_bytes": 4096,
+      "operations": 7,
+      "delay_us": 0,
+      "handshake_ports": [],
+      "timeout_operations": 7,
+      "production_timeout_scope": "NO_POLLED_HANDSHAKE_IN_THIS_REVISION",
+      "timeout_then_reset_retry": "PASS"
+    },
+    {
+      "model": "rtl8125",
+      "register_bytes": 32768,
+      "operations": 271,
+      "delay_us": 121,
+      "handshake_ports": [
+        104,
+        128
+      ],
+      "timeout_operations": 281,
+      "production_timeout_scope": "POLLED_HANDSHAKE",
+      "timeout_then_reset_retry": "PASS"
+    },
+    {
+      "model": "rtl8126",
+      "register_bytes": 32768,
+      "operations": 176,
+      "delay_us": 1,
+      "handshake_ports": [
+        104
+      ],
+      "timeout_operations": 250,
+      "production_timeout_scope": "POLLED_HANDSHAKE",
+      "timeout_then_reset_retry": "PASS"
+    },
+    {
+      "model": "rtl8127",
+      "register_bytes": 32768,
+      "operations": 202,
+      "delay_us": 1,
+      "handshake_ports": [
+        104
+      ],
+      "timeout_operations": 282,
+      "production_timeout_scope": "POLLED_HANDSHAKE",
+      "timeout_then_reset_retry": "PASS"
+    },
+    {
+      "model": "rtl8125,pci-id-alias=0x3000",
+      "register_bytes": 32768,
+      "operations": 271,
+      "delay_us": 121,
+      "handshake_ports": [
+        104,
+        128
+      ],
+      "timeout_operations": 281,
+      "production_timeout_scope": "POLLED_HANDSHAKE",
+      "timeout_then_reset_retry": "PASS"
+    },
+    {
+      "model": "rtl8125,pci-id-alias=0x5000",
+      "register_bytes": 32768,
+      "operations": 271,
+      "delay_us": 121,
+      "handshake_ports": [
+        104,
+        128
+      ],
+      "timeout_operations": 281,
+      "production_timeout_scope": "POLLED_HANDSHAKE",
+      "timeout_then_reset_retry": "PASS"
+    },
+    {
+      "model": "rtl8125,pci-id-alias=0xe10",
+      "register_bytes": 32768,
+      "operations": 271,
+      "delay_us": 121,
+      "handshake_ports": [
+        104,
+        128
+      ],
+      "timeout_operations": 281,
+      "production_timeout_scope": "POLLED_HANDSHAKE",
+      "timeout_then_reset_retry": "PASS"
+    }
+  ]
+}

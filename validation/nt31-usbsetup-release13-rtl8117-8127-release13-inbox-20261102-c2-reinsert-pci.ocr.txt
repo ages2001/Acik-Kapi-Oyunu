@@ -1,0 +1,12 @@
+C:Nusers\default>ping -n 4 -1 1472 10.0.3.2
+Pinging host 10.0.3.2 (unnamed) : 10.0.3.2
+ICMP Echo Reply: TTL 255
+
+ICMP Echo Reply: TTL 255
+
+ICMP Echo Reply: TTL 255
+
+ICMP Echo Reply: TTL 255
+
+Host 10.0.3.2 replied to all 4 of the 4 pings
+C:Nusers\default>

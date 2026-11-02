@@ -1,0 +1,28 @@
+Formatting '/workspace/rltklant-vm/run/nt4-ndis-dual-usbnt-new-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=418381824 backing_file=/tmp/rltk-growing-fat-oxyixdxi/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+28/6384 = 0.44% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 2162688
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt4-ndis-dual-usbnt-new-8127.qcow2",
+  "sha256_before_boot": "36282af766bc3fdd6c5c7325cbf24c80ca3e3c2874e905c13904678d3ad3283f",
+  "files": [
+    {
+      "guest_path": "WINNT4/SYSTEM32/DRIVERS/USBNT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-reset-power-v1-20261102/legacy.sys",
+      "size": 410112,
+      "sha256": "f3a7e6e09ffec491d62cec183dba1b6aeb56f1f15c7b6e4a3a9a43f03d836f37",
+      "old_size": 408576,
+      "old_sha256": "40e31bf691585d43bc3b517e27a174bf1adb26e24d3e6b3351771fc4f86e1c4b"
+    },
+    {
+      "guest_path": "WINNT4/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/native-power-retry-v1-20261102/ndis3.sys",
+      "size": 540311,
+      "sha256": "d1703001357511d876fd293508ad2c7d761df33eca76a6493475e4cfb1e973e9",
+      "old_size": 503183,
+      "old_sha256": "7b70f5329cd243ffb52bd0305f5587b69d494cdec647ab25860751cd71140615"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

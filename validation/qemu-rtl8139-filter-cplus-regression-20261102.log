@@ -1,0 +1,9 @@
+PASS: rtl8169 PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8168 PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8125 PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8126 PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8127 PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8168 PCIe slot removal/reinsert with armed DMA: 50 cycles (model only)
+PASS: rtl8125 PCIe slot removal/reinsert with armed DMA: 50 cycles (model only)
+PASS: rtl8126 PCIe slot removal/reinsert with armed DMA: 50 cycles (model only)
+PASS: rtl8127 PCIe slot removal/reinsert with armed DMA: 50 cycles (model only)

@@ -1,0 +1,17 @@
+--- a/hw/net/rtl8139.c
++++ b/hw/net/rtl8139.c
+@@ -1730,8 +1730,12 @@
+ 
+     s->RxConfig = val;
+ 
+-    /* reset buffer size and read/write pointers */
+-    rtl8139_reset_rxring(s, 8192 << ((s->RxConfig >> 11) & 0x3));
++    /* A receive-filter update is legal while the engine is running. Keep
++     * producer/consumer positions unless the ring geometry changes. */
++    uint32_t buffer_size = 8192 << ((s->RxConfig >> 11) & 0x3);
++    if (buffer_size != s->RxBufferSize) {
++        rtl8139_reset_rxring(s, buffer_size);
++    }
+ 
+     DPRINTF("RxConfig write reset buffer size to %d\n", s->RxBufferSize);
+ }

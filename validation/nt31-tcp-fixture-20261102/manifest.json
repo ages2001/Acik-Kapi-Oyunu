@@ -1,0 +1,9 @@
+{
+  "exe_sha256": "e23a00ee62d2eea2ecf3f824e5ba15461664b1d9f8354685f046a6493307c5bd",
+  "source_sha256": "f2ee3e9277a2b26a86178d6895bcbaf62ba7437dad4aa65bfddaffbf07d7336d",
+  "nt31_imports": 19,
+  "references": {
+    "kernel32.dll": "640af46e83aafb1d75f6cd5de9a603fd1a9ac878e51f65586a706f6036ba156f",
+    "wsock32.dll": "8c830151ce69cab5f5cd160c5d3abf7edff89462c4a35a73de75ddf4cbd0ac03"
+  }
+}

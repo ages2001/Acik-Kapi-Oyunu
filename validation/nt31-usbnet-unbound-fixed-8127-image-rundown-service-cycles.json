@@ -1,0 +1,57 @@
+{
+  "guest": "nt31-usbnet-unbound-fixed-8127",
+  "utc": "2026-11-01T18:15:42.114749+00:00",
+  "scope": "Actual NT3.1 unbound service unload/reload and resident image reclamation; no TCP/IP binding or traffic claim",
+  "cycles": [
+    {
+      "cycle": 1,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE5B8000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE381E44 err=0x00000000 mac=0xFE6EBDA8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 2,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE375E44 err=0x00000000 mac=0xFE6B3228\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 3,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE378E44 err=0x00000000 mac=0xFE6B53E8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 4,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE37BE44 err=0x00000000 mac=0xFE6F9268\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 5,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE37EE44 err=0x00000000 mac=0xFE6B3148\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 6,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE381E44 err=0x00000000 mac=0xFE6F95E8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 7,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE375E44 err=0x00000000 mac=0xFE6F9268\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 8,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE378E44 err=0x00000000 mac=0xFE6B9AC8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 9,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE37BE44 err=0x00000000 mac=0xFE6C7DA8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    },
+    {
+      "cycle": 10,
+      "stop_trace": "UNT-DOWN id=00000001\nRECLAIM resident image\n",
+      "start_trace": "\nRLTKLANT NT3.1 DriverEntry\nimg start=0xFBCC0000 size=0x0007B600\nimg pool=0xFE636000\nADD begin\npre-reg\nRegisterAdapter=0x00000000\nio now=0x00000000\nhw ok, pre-filter\nMAC published for adapter instance\nfilter created\ntimer armed (pool dpc)\nADD ok\nRegisterMac st=0xFE37EE44 err=0x00000000 mac=0xFE6B53C8\nUNT: deferred USB worker registered\nDriverEntry ok\nUNT-UP id=00000001 pid=00008153 status=00000000\nUNT-LINK id=00000001 up=00000000 status=00000000\nUNT-LINK id=00000001 up=00000001 status=00000000\n"
+    }
+  ]
+}

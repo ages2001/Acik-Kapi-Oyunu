@@ -1,0 +1,67 @@
+{
+  "scope": "Isolated no-protocol unload fixture; not a networking configuration",
+  "source_sha256": "a613be0dd4fb281a99c608a0fb53f0d1bcf855d4e53101a814021c2a4c698972",
+  "output_sha256": "c8a0dc49e1deac9ead498c37bc1d35b678891a60f52bdcd8d1a64004492a78de",
+  "changes": [
+    {
+      "key": "ControlSet001\\Services\\Tcpip",
+      "offset": 351200,
+      "old": 3,
+      "new": 4
+    },
+    {
+      "key": "ControlSet001\\Services\\Nbf",
+      "offset": 125280,
+      "old": 3,
+      "new": 4
+    },
+    {
+      "key": "ControlSet001\\Services\\NetBIOS",
+      "offset": 360016,
+      "old": 2,
+      "new": 4
+    },
+    {
+      "key": "ControlSet001\\Services\\LanmanWorkstation",
+      "offset": 376352,
+      "old": 2,
+      "new": 4
+    },
+    {
+      "key": "ControlSet001\\Services\\LanmanServer",
+      "offset": 283568,
+      "old": 2,
+      "new": 4
+    },
+    {
+      "key": "ControlSet002\\Services\\Tcpip",
+      "offset": 174416,
+      "old": 3,
+      "new": 4
+    },
+    {
+      "key": "ControlSet002\\Services\\Nbf",
+      "offset": 225920,
+      "old": 3,
+      "new": 4
+    },
+    {
+      "key": "ControlSet002\\Services\\NetBIOS",
+      "offset": 219840,
+      "old": 2,
+      "new": 4
+    },
+    {
+      "key": "ControlSet002\\Services\\LanmanWorkstation",
+      "offset": 237616,
+      "old": 2,
+      "new": 4
+    },
+    {
+      "key": "ControlSet002\\Services\\LanmanServer",
+      "offset": 241920,
+      "old": 2,
+      "new": 4
+    }
+  ]
+}

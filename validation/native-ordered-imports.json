@@ -1,0 +1,12 @@
+[
+  {
+    "arch": "32",
+    "sha256": "d3698d9401c6e7d54d48ffaaebf42912fd9d99b42a1de3ebb589a3007a2dd143",
+    "imports_verified": 72
+  },
+  {
+    "arch": "64",
+    "sha256": "022c5b5284fd39ebd316d4148be8af7a2ada61737ccfdba195535e6a4b44c8fa",
+    "imports_verified": 65
+  }
+]

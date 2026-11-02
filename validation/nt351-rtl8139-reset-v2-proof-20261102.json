@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "guest": "nt351-usbsetup-rtl8139-proof-8127",
+  "utc": "2026-11-02T05:26:56.017550+00:00",
+  "counts": {
+    "reset-return=00000103": 3,
+    "reset-complete=00000000": 3,
+    "status=40010004": 3,
+    "status=40010005": 3
+  },
+  "debug_sha256": "e86779d095e693a94bcf2b922a4b8e359b7c2ecca7452b572ad2e6124e304f0a",
+  "scope": "Three pending/success bound MAC reset callbacks through the NT3.51 NDIS wrapper, exact RTL8139 description checked. Earlier wrong-binding probe retained separately."
+}

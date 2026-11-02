@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/nt31-usbsetup-rtl8139-ringfix-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=419010560 backing_file=/tmp/rltk-growing-fat-0_rzxgbf/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+2/6394 = 0.03% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 458752
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt31-usbsetup-rtl8139-ringfix-8127.qcow2",
+  "sha256_before_boot": "18bf6a5ea15635199bfdf92885f7a02d0527470586104e639dd9e5d3c64dbeaf",
+  "files": [
+    {
+      "guest_path": "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS",
+      "source": "/workspace/rltklant-work/RLTKLANT/build/ndisnt31/rltklant.sys",
+      "size": 537600,
+      "sha256": "307d4d7931599a77f46fd2d31d6f99e10f37cc19e2955b805e96d594eb8afbaf",
+      "old_size": 537600,
+      "old_sha256": "d23a13af7ee58381e37a409b7a51638b36b1e619db8f5bc2cb9f62a59d69fadc"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

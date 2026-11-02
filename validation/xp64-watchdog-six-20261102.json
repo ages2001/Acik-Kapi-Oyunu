@@ -1,0 +1,49 @@
+{
+  "guest": "xp64-watchdog-multi-8127",
+  "utc": "2026-11-02T01:27:28.207034+00:00",
+  "result": "PASS",
+  "cycles": [
+    {
+      "cycle": 1,
+      "device": "pcinic",
+      "elapsed_seconds": 7.898,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra1",
+      "elapsed_seconds": 9.398,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra2",
+      "elapsed_seconds": 8.9,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra3",
+      "elapsed_seconds": 10.391,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra4",
+      "elapsed_seconds": 9.396,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    },
+    {
+      "cycle": 1,
+      "device": "extra5",
+      "elapsed_seconds": 9.39,
+      "fault_cleared_by_mac_reset": true,
+      "watchdog_traces": 1
+    }
+  ]
+}

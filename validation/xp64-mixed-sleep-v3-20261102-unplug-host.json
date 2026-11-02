@@ -1,0 +1,25 @@
+{
+  "guest": "xp64-usbnet-mixed-sleep-v3-8127",
+  "utc": "2026-11-02T16:04:33.618168+00:00",
+  "result": "HOST_DEVICE_REMOVED_WHILE_CONTROLLER_D3",
+  "scope": "Remove the fictional mixed NIC/HID device while its EHCI parent is in D3.\n\nStop after D0 so the caller can inspect any legitimate Windows removal notice.\nThis does not assert that unplugging hardware preserves its old Windows PDO.\n",
+  "device_del": {},
+  "peripherals_while_d3": [
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "debugcon",
+      "type": "child<isa-debugcon>"
+    },
+    {
+      "name": "legacyide",
+      "type": "child<piix3-ide>"
+    },
+    {
+      "name": "ehci",
+      "type": "child<usb-ehci>"
+    }
+  ]
+}

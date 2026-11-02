@@ -1,0 +1,36 @@
+{
+  "utc": "2026-11-02T02:26:36.803451+00:00",
+  "result": "PASS",
+  "scope": "Actual protocol queries on six PCI profiles per OS; permanent-address prefix consistency, zero device problems/full names and traffic; no protocol resets requested by query-only probe",
+  "systems": {
+    "win2000": {
+      "driver": {
+        "file": "RLTKLANT.SYS",
+        "size": 549641,
+        "sha256": "7c8f9db458130b8c75c8a3e61cba91773e5dd58ea7953c0a28e02cc96587d3d5"
+      },
+      "oid_queries": 6,
+      "actual_vendor_oid": "0x00005452 (bytes 52 54 00 00)",
+      "reset_requests": 0,
+      "full_payload_replies": 24,
+      "traffic": "win2000-standard-vendor-oid-multi-8127-vendor-oid-traffic-20261102.json",
+      "stopped": "win2000-vendor-oid-evidence-20261102/manifest.json",
+      "offline": "win2000-vendor-oid-offline-20261102/manifest.json"
+    },
+    "xp64": {
+      "driver": {
+        "file": "RLTKLANT.SYS",
+        "size": 606482,
+        "sha256": "0b8b984ecbaf42a390ab8a0c9a8d6c45a06ff9556732ab669888f16e481a8a0b"
+      },
+      "oid_queries": 6,
+      "actual_vendor_oid": "0x00005452 (bytes 52 54 00 00)",
+      "reset_requests": 0,
+      "full_payload_replies": 24,
+      "traffic": "xp64-vendor-oid-multi-8127-vendor-oid-traffic-20261102.json",
+      "stopped": "xp64-vendor-oid-evidence-20261102/manifest.json",
+      "offline": "xp64-vendor-oid-offline-20261102/manifest.json"
+    }
+  },
+  "limit": "Frozen vendor-oid-v1 binaries, before subsequent permanent-address retention fix"
+}

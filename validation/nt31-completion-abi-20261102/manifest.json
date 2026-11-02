@@ -1,0 +1,36 @@
+{
+  "utc": "2026-11-02T01:39:46.517618+00:00",
+  "kernel": {
+    "path": "/workspace/rltklant-vm/install/nt31-exports/ndis.sys",
+    "sha256": "66cd1dde5910cd4f18ab017f8132a8bed004473996393536cb8cd15637eaf696"
+  },
+  "disassembly": {
+    "NdisCompleteOpenAdapter": {
+      "va": "0x136f0",
+      "sha256": "ec8a7fab20f972b388ff39968d6498ce9d5e5f26a79b1138ad116b3b1c4b184a"
+    },
+    "NdisCompleteCloseAdapter": {
+      "va": "0x13730",
+      "sha256": "f88bc5e6e920afe34b70e6231c30dab5cc5f93517dae4cab857868158b3f6ca1"
+    },
+    "NdisRegisterProtocol": {
+      "va": "0x12280",
+      "sha256": "c829079ffd5bdee6b8e224a25d75703fd74a472ef80fa4d8b7c25882260954c9"
+    }
+  },
+  "public_macro_source": {
+    "path": "validation/legacy-ndis-macro-review-20261102/ndis.h",
+    "sha256": "b21f08b5059d6e21e30187d20e2ec0f1fb57df77dd99ebcc2210aaf237d00253",
+    "url": "https://raw.githubusercontent.com/Paolo-Maffei/OpenNT/master/public/ddk/inc/ndis.h"
+  },
+  "production_header_sha256": "4b2d4d93aa24e1490c847d4f66ba6807ad9efc95822882807960ffa75eba07c5",
+  "verified_layout": {
+    "protocol_characteristics": 20,
+    "open_protocol": 12,
+    "open_protocol_context": 16,
+    "reset_complete": 44,
+    "status": 60,
+    "status_complete": 64
+  },
+  "scope": "Public full-MAC macro layout corroborated with supplied NT3.1 binary; not yet linked into production NT3.1 or exercised in a Windows callback"
+}

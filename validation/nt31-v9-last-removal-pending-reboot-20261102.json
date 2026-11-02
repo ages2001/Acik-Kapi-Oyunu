@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-01T22:58:51.895517+00:00",
+  "result": "PENDING_REBOOT",
+  "scope": "Last-adapter NCPA removal: all adapter/product keys removed; native SCM shared service remains marked DeleteFlag=1",
+  "original_strict_immediate_absence_check": "nt31-v9-last-removal-20261102-proof.json",
+  "checks": {
+    "pci_card_removed": true,
+    "pci_parameters_removed": true,
+    "owned_startup_removed": true,
+    "unrelated_startup_preserved": true,
+    "usb_parameters_removed": true,
+    "usb_card_removed": true,
+    "shared_service_removed": false,
+    "shared_product_removed": true
+  },
+  "interpretation": "Do not claim completed service deletion until a cold boot and stopped-hive readback prove it",
+  "next_guest": "nt31-usbsetup-v9-removed-boot-8127"
+}

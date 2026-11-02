@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T02:24:48.973527+00:00",
+  "guest": "win2000-standard-vendor-oid-multi-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 549641,
+      "sha256": "7c8f9db458130b8c75c8a3e61cba91773e5dd58ea7953c0a28e02cc96587d3d5"
+    },
+    "RLTTEST/VOID.LOG": {
+      "file": "VOID.LOG",
+      "size": 1139,
+      "sha256": "b84a2433f2952fbafeb116ad2afe104c40b5ac3b6c585ebbee15d4e8062dcc27"
+    },
+    "RLTTEST/PCRT.SYS": {
+      "file": "PCRT.SYS",
+      "size": 14793,
+      "sha256": "671758f48c7bf286597db08ff471ce2540fcd252c27a6174439d0885c3862d07"
+    }
+  }
+}

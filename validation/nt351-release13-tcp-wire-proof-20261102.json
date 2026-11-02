@@ -1,0 +1,45 @@
+{
+  "result": "PASS",
+  "scope": "Reassemble the closed RTL8139 TCP captures and compare every stream byte.",
+  "captures": [
+    {
+      "capture": "nt351-release13-evidence-20261102/pci.pcap",
+      "sha256": "a2285706dae86ee0b1c9534c108f396d34981dac477e1d893ce584efcb996e3a",
+      "connections": [
+        {
+          "client_port": 1025,
+          "tx": {
+            "stream_bytes": 1048584,
+            "sha256": "9d96c061d8a986c44c99ab66665fb4125e8729f25157a75c48a2fc7fbc7a8e11"
+          },
+          "rx": {
+            "stream_bytes": 1048584,
+            "sha256": "849c026515717608c4c08f9de2e85bc5f949f797323c111fc68323d28b3aedae"
+          }
+        },
+        {
+          "client_port": 1026,
+          "tx": {
+            "stream_bytes": 1048584,
+            "sha256": "9d96c061d8a986c44c99ab66665fb4125e8729f25157a75c48a2fc7fbc7a8e11"
+          },
+          "rx": {
+            "stream_bytes": 1048584,
+            "sha256": "849c026515717608c4c08f9de2e85bc5f949f797323c111fc68323d28b3aedae"
+          }
+        },
+        {
+          "client_port": 1027,
+          "tx": {
+            "stream_bytes": 1048584,
+            "sha256": "9d96c061d8a986c44c99ab66665fb4125e8729f25157a75c48a2fc7fbc7a8e11"
+          },
+          "rx": {
+            "stream_bytes": 1048584,
+            "sha256": "849c026515717608c4c08f9de2e85bc5f949f797323c111fc68323d28b3aedae"
+          }
+        }
+      ]
+    }
+  ]
+}

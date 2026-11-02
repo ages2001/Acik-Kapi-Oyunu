@@ -1,0 +1,44 @@
+[
+  {
+    "original": "/workspace/rltklant-tools/qemu-bin/before-mac-registers-20261102/qemu-system-i386",
+    "archive": "/workspace/rltklant-tools/qemu-bin/before-mac-registers-20261102/qemu-system-i386.gz",
+    "uncompressed_sha256": "d651fe629799661c2fda009bf67cc2ab52cb6e49499cac92604b38ceb854162f",
+    "original_bytes": 76386128,
+    "compressed_bytes": 26808751
+  },
+  {
+    "original": "/workspace/rltklant-tools/qemu-bin/before-mac-registers-20261102/qemu-system-x86_64",
+    "archive": "/workspace/rltklant-tools/qemu-bin/before-mac-registers-20261102/qemu-system-x86_64.gz",
+    "uncompressed_sha256": "207b16c3ce1959f07704336cb2cf6e5845f461800c50888d2b6ed06ab045f3df",
+    "original_bytes": 76589760,
+    "compressed_bytes": 26906033
+  },
+  {
+    "original": "/workspace/rltklant-tools/qemu-bin/before-pci-alias-20261102/qemu-system-i386",
+    "archive": "/workspace/rltklant-tools/qemu-bin/before-pci-alias-20261102/qemu-system-i386.gz",
+    "uncompressed_sha256": "30e07b65f60195b972b8bf40d7afafd8674df718d15db922dd662c93a6f41d7a",
+    "original_bytes": 76312800,
+    "compressed_bytes": 26806350
+  },
+  {
+    "original": "/workspace/rltklant-tools/qemu-bin/before-pci-alias-20261102/qemu-system-x86_64",
+    "archive": "/workspace/rltklant-tools/qemu-bin/before-pci-alias-20261102/qemu-system-x86_64.gz",
+    "uncompressed_sha256": "ce3a860c3b664dc5ee6e625b970ae87c9a29ffec789a3515005da7404968d9e5",
+    "original_bytes": 76516432,
+    "compressed_bytes": 26903453
+  },
+  {
+    "original": "/workspace/rltklant-tools/qemu-bin/before-watchdog-20261102/qemu-system-i386",
+    "archive": "/workspace/rltklant-tools/qemu-bin/before-watchdog-20261102/qemu-system-i386.gz",
+    "uncompressed_sha256": "efb4a87c7f37bdf16a5a19295bc5cac2d30cdbd1ba4211536c327f6cf8b7a555",
+    "original_bytes": 76396216,
+    "compressed_bytes": 26813785
+  },
+  {
+    "original": "/workspace/rltklant-tools/qemu-bin/before-watchdog-20261102/qemu-system-x86_64",
+    "archive": "/workspace/rltklant-tools/qemu-bin/before-watchdog-20261102/qemu-system-x86_64.gz",
+    "uncompressed_sha256": "0b28dba57820fa3ff74e9ad29d259ae46895c66c4b9a23e65c2305e2731c39b3",
+    "original_bytes": 76599840,
+    "compressed_bytes": 26909499
+  }
+]

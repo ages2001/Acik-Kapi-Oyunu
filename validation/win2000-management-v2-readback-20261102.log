@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/read_stopped_fat_files.py", line 22, in <module>
+    _, _, chain, size = image.find(name)
+                        ^^^^^^^^^^^^^^^^
+  File "/workspace/rltklant-work/validation/replace_fat_fixture.py", line 65, in find
+    assert entry,component+' missing'
+           ^^^^^
+AssertionError: PCI-PROOF.LOG missing

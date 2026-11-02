@@ -1,0 +1,30 @@
+
+RLTKLANT NT3.1 DriverEntry
+img start=0xFBCC0000 size=0x0007BA00
+img pool=0xFE6FA000
+ADD begin
+PCI dev=0x00003000 io=0xFBC13000 irq=0x0000000A bk=0x00000002
+cp dma ok txdesc=0x007C3100 rxdesc=0x007C3B00
+pre-reg
+RegisterAdapter=0x00000000
+io now=0xFBC13000
+PCI PHY result=0x00000000 commands=0x00000597
+CP id=0x00003000 MAC=0x000000520x000000540x000000000x000000120x000000340x00000056
+CP speed=0x017D7840
+hw ok, pre-filter
+MAC published for adapter instance
+filter created
+timer armed (pool dpc)
+ADD ok
+RegisterMac st=0xFE37BE44 err=0x00000000 mac=0xFE777B88
+UNT: deferred USB worker registered
+DriverEntry ok
+OPN arrsz=0x00000004
+open ok
+filt_change 0x00000003
+UNT-UP id=00000001 pid=00008153 status=00000000
+UNT-LINK id=00000001 up=00000000 status=00000000
+OPN arrsz=0x00000004
+open ok
+filt_change 0x0000000B
+UNT-LINK id=00000001 up=00000001 status=00000000

@@ -1,0 +1,117 @@
+{
+  "utc": "2026-11-02T05:21:37.274973+00:00",
+  "scope": "Test-only retained NT3.51 NDIS registered MAC callback dispatch diagnostic (including miniport wrapper); not a release component or exported NdisReset test",
+  "imports": [
+    [
+      "N35RESET.SYS",
+      "hal.dll",
+      "WRITE_PORT_UCHAR"
+    ],
+    [
+      "N35RESET.SYS",
+      "ndis.sys",
+      "NdisCloseAdapter"
+    ],
+    [
+      "N35RESET.SYS",
+      "ndis.sys",
+      "NdisDeregisterProtocol"
+    ],
+    [
+      "N35RESET.SYS",
+      "ndis.sys",
+      "NdisOpenAdapter"
+    ],
+    [
+      "N35RESET.SYS",
+      "ndis.sys",
+      "NdisRegisterProtocol"
+    ],
+    [
+      "N35RESET.SYS",
+      "ntoskrnl.exe",
+      "KeInitializeEvent"
+    ],
+    [
+      "N35RESET.SYS",
+      "ntoskrnl.exe",
+      "KeResetEvent"
+    ],
+    [
+      "N35RESET.SYS",
+      "ntoskrnl.exe",
+      "KeSetEvent"
+    ],
+    [
+      "N35RESET.SYS",
+      "ntoskrnl.exe",
+      "KeWaitForSingleObject"
+    ],
+    [
+      "N35RESET.SYS",
+      "ntoskrnl.exe",
+      "MmAllocateContiguousMemory"
+    ],
+    [
+      "N35RESET.EXE",
+      "advapi32.dll",
+      "CloseServiceHandle"
+    ],
+    [
+      "N35RESET.EXE",
+      "advapi32.dll",
+      "CreateServiceA"
+    ],
+    [
+      "N35RESET.EXE",
+      "advapi32.dll",
+      "OpenSCManagerA"
+    ],
+    [
+      "N35RESET.EXE",
+      "advapi32.dll",
+      "StartServiceA"
+    ],
+    [
+      "N35RESET.EXE",
+      "kernel32.dll",
+      "ExitProcess"
+    ],
+    [
+      "N35RESET.EXE",
+      "kernel32.dll",
+      "GetLastError"
+    ],
+    [
+      "N35RESET.EXE",
+      "kernel32.dll",
+      "GetStdHandle"
+    ],
+    [
+      "N35RESET.EXE",
+      "kernel32.dll",
+      "WriteFile"
+    ],
+    [
+      "N35RESET.EXE",
+      "kernel32.dll",
+      "lstrlenA"
+    ]
+  ],
+  "files": {
+    "N35RESET.EXE": "34e87bc00c5fcd1a56131849ddea472dfa2fb0f58b152a3e0d926d5fae696990",
+    "libhal.a": "f539baaa1294b0badc4539f2c7e9614d4a00800086780a26e84fa8759889d3ec",
+    "ntos.def": "932b76046d4722cfe7b67f966a3dde78967055f4b297a7f3e0a5f47112041c8a",
+    "N35RESET.SYS": "0f03f9d4aac88010abae14752f43f9a6a6ffe55f40b6a952d518b48ea5c9cfec",
+    "hal.def": "c3c2845edf651813b544ad8074776cb2fb1df63bc5ab2e8d239e665a318f6eba",
+    "libndis.a": "bfa2cd119a7b42effba25acf345dfd265740d9b5b12407f9f13242f2ce98ebfb",
+    "ndis.def": "1eeed26e0a6f01c043851901e33af683144ac2d5d592f3f7e7ac45c68b7e45ed",
+    "driver.o": "bfd9dd7c6a86e7863dc87cc173711ad5a34614ba887c1fb2b8d771449afa8d62",
+    "libntos.a": "8f87db7cceb8f1f2b17fcf3a6bf46e3d6a14baada27db9e3b15b99ec44f1d427"
+  },
+  "sources": {
+    "guest_nt351_reset_driver.c": "9c1f27943d7c85a8e5dc34c2bb83bb18c58c8f1ae223637bfbf5ee27aeccfc09",
+    "guest_nt351_reset_loader.c": "5c6b90f61637532275002cc85ccea871bb307097ba560cbaf8ca77fbc30c10dd",
+    "build_nt351_reset_probe.py": "2c34182155c74312726573ac11115986bacef23377c45091d2f67f4a5f7f3f2a"
+  }
+}

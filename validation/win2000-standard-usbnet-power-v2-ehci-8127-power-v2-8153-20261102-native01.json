@@ -1,0 +1,10 @@
+{
+  "guest": "win2000-standard-usbnet-power-v2-ehci-8127",
+  "utc": "2026-11-02T07:08:39.613999+00:00",
+  "token": "power-v2-8153-20261102-native01",
+  "report": "TOKEN power-v2-8153-20261102-native01\r\nDEVICE USB\\VID_0BDA&PID_8153\\0001-0000:00:03.0-1\r\nNAME Realtek RTL8153 USB Gigabit Ethernet (rev 5C10)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+  "peer": [
+    "127.0.0.1",
+    50158
+  ]
+}

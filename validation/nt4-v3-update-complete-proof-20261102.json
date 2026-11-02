@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-01T23:09:47.531235+00:00",
+  "result": "PASS",
+  "scope": "NT4 SP1 actual Update/Configure of three instances, cold boot and four USB models in each of two positions; other USB and PCI traffic preserved during each removal/carrier outage",
+  "install": "nt4-v3-update-20261102-proof.json",
+  "coldboot_traffic": "nt4-ndis-update-v3-reboot-8127-update-v3-three-paths-20261102.json",
+  "recovery": "nt4-ndis-update-v3-reboot-8127-updated-v3-20261102-sibling-matrix.json",
+  "recovery_sha256": "9fd7d00b62d835468856e9adb24babc13dfa6b7a109a09581bd97320a6183b96",
+  "recovery_replies": 332,
+  "initial_replies": 12,
+  "reinsert_scenarios": 8,
+  "carrier_scenarios": 8,
+  "limitations": [
+    "QEMU protocol models only",
+    "Removal and first-install are separate installer paths"
+  ]
+}

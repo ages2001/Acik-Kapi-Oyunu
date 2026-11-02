@@ -1,0 +1,55 @@
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : NT<=4: USBNT used on UHCI/OHCI/EHCI/xHCI/USB4
+ok  : 2000: UHCI -> in-box (not USBNT)
+ok  : 2000: OHCI -> in-box
+ok  : 2000: EHCI -> in-box
+ok  : 2000: xHCI (USB3) -> USBNT
+ok  : 2000: USB4 -> USBNT
+ok  : XP: EHCI -> in-box
+ok  : XP: xHCI (USB3) -> USBNT
+ok  : XP x64: xHCI (USB3) -> USBNT
+ok  : XP x64: EHCI -> in-box
+ok  : prog-if 0x30 -> xHCI
+ok  : prog-if 0x40 -> USB4
+ok  : prog-if 0x20 -> EHCI
+ok  : RTL8153 recognized
+ok  : RTL8154 (USB2.0 GbE) recognized
+ok  : RTL8157 recognized
+ok  : RTL8159 (USB 10G) recognized
+ok  : RTL8159 ceiling is 10G
+ok  : wrong vendor rejected
+ok  : legacy RTL8150 supported (own backend)
+ok  : RTL8150 marked USB 1.1
+ok  : attach RTL8153 on NT4 succeeds
+ok  : NT4 route = USBNT
+ok  : MAC read back from IDR
+ok  : reg write is a control transfer
+ok  : bmRequestType = host-to-device vendor
+ok  : bRequest = SET_REGS
+ok  : wValue = register offset (PLA_CR)
+ok  : wIndex = MCU_TYPE_PLA | byte-enable
+ok  : written byte reached the data stage
+ok  : read uses device-to-host vendor
+ok  : read returned register bytes
+ok  : TX on bulk-OUT
+ok  : TX length = desc + frame
+ok  : tx_desc opts1 low = frame len
+ok  : frame body copied after desc
+ok  : RX packet 1 parsed (len 20)
+ok  : RX next offset is 8-byte aligned (48)
+ok  : RX packet 2 parsed (len 14)
+ok  : RTL8150 recognized
+ok  : 8150 TX = frame length (no tx descriptor)
+ok  : 8150 TX copies raw frame
+ok  : 8150 TX pads a 64-byte multiple
+ok  : 8150 RX strips 4-byte status
+ok  : 8150 RX is one frame per buffer (no coalescing)
+FAIL: 8150 stuck reset fails without enabling traffic
+FAIL: 8153 stuck reset fails without enabling traffic
+ok  : 8150 attaches after reset clears
+ok  : 8150 detach clears running state
+FAIL: 8150 detach uses the legacy stop register
+
+TEST FAILED (3 failures)

@@ -1,0 +1,1567 @@
+[2026/10/02 12:51:04 92.12]
+Munged cmdline: setup -newsetup
+EXE name: C:\WINNT\system32\setup.exe
+Installing Device Class: {6BDD1FC1-810F-11D0-BEC7-08002BE2092F} 1394.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.15]
+Installing Device Class: {72631e54-78a4-11d0-bcf7-00aa00b7b32a} Battery.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.20]
+Installing Device Class: {4D36E965-E325-11CE-BFC1-08002BE10318} CDROM.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.23]
+Installing Device Class: {4D36E970-E325-11CE-BFC1-08002BE10318} MTD.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.25]
+Installing Device Class: {4D36E967-E325-11CE-BFC1-08002BE10318} DiskDrive.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.27]
+Installing Device Class: {4D36E968-E325-11CE-BFC1-08002BE10318} Display.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.29]
+Installing Device Class: {4D36E969-E325-11CE-BFC1-08002BE10318} fdc.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.31]
+Installing Device Class: {4D36E980-E325-11CE-BFC1-08002BE10318} FloppyDisk.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.33]
+Installing Device Class: {4D36E966-E325-11CE-BFC1-08002BE10318} Computer.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.35]
+Installing Device Class: {745a17a0-74d3-11d0-b6fe-00a0c90f57da} HIDClass.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.37]
+Installing Device Class: {4D36E96B-E325-11CE-BFC1-08002BE10318} Keyboard.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.39]
+Installing Device Class: {8ECC055D-047F-11D1-A537-0000F8753ED1} LegacyDriver.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.41]
+Installing Device Class: {4D36E97D-E325-11CE-BFC1-08002BE10318} System.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.43]
+Installing Device Class: {CE5939AE-EBDE-11d0-B181-0000F8753EC4} MediumChanger.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.45]
+Installing Device Class: {4D36E96D-E325-11CE-BFC1-08002BE10318} Modem.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.47]
+Installing Device Class: {4d36e971-e325-11ce-bfc1-08002be10318} MultiFunction.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.49]
+Installing Device Class: {4d36e96e-e325-11ce-bfc1-08002be10318} Monitor.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.51]
+Installing Device Class: {4D36E96A-E325-11CE-BFC1-08002BE10318} hdc.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.53]
+Installing Device Class: {4D36E96F-E325-11CE-BFC1-08002BE10318} Mouse.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.55]
+Installing Device Class: {4D36E978-E325-11CE-BFC1-08002BE10318} Ports.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.57]
+Installing Device Class: {50906CB8-BA12-11D1-BF5D-0000F805F530} MultiPortSerial.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.60]
+Installing Device Class: {d45b1c18-c8fa-11d1-9f77-0000f805f530} NtApm.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.62]
+Installing Device Class: {4d36e972-e325-11ce-bfc1-08002be10318} Net.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.64]
+Installing Device Class: {6bdd1fc5-810f-11d0-BEC7-08002BE2092F} Infrared.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.66]
+Installing Device Class: {4D36E979-E325-11CE-BFC1-08002BE10318} Printer.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.68]
+Installing Device Class: {4d36e977-e325-11ce-bfc1-08002be10318} PCMCIA.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.70]
+Installing Device Class: {4D36E97B-E325-11CE-BFC1-08002BE10318} SCSIAdapter.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.72]
+Installing Device Class: {50DD5230-BA8A-11D1-BF5D-0000F805F530} SmartCardReader.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.74]
+Installing Device Class: {6bdd1fc6-810f-11d0-bec7-08002be2092f} Image.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.76]
+Installing Device Class: {6D807884-7D21-11CF-801C-08002BE10318} TapeDrive.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.78]
+Installing Device Class: {36FC9E60-C465-11CF-8056-444553540000} USB.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.80]
+Installing Device Class: {4d36e96c-e325-11ce-bfc1-08002be10318} MEDIA.
+Class install completed with no errors.
+[2026/10/02 12:51:04 92.82]
+Installing Device Class: {71A27CDD-812A-11D0-BEC7-08002BE2092F} Volume.
+Class install completed with no errors.
+[2026/10/02 12:51:23 92.1343 Driver Install]
+Searching for hardware ID(s): composite_battery
+Enumerating files C:\WINNT\inf\*.inf
+Found COMPOSITE_BATTERY in C:\WINNT\inf\acpi.inf; Device: Microsoft Composite Battery; Driver: Microsoft Composite Battery; Provider: Microsoft; Mfg: Microsoft; Section: COMPBATT_Inst
+Decorated section name: COMPBATT_Inst.NT
+Selected driver installs from section COMPBATT_Inst in c:\winnt\inf\acpi.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Doing full install of ROOT\COMPOSITE_BATTERY\0000.
+Installing section COMPBATT_Inst.NT from c:\winnt\inf\acpi.inf.
+Device install finished successfully (ROOT\COMPOSITE_BATTERY\0000).
+[2026/10/02 12:51:23 92.1331 Driver Install]
+Searching for hardware ID(s): acpi\acpi0003,*acpi0003
+Enumerating files C:\WINNT\inf\*.inf
+Found ACPI\acpi0003 in C:\WINNT\inf\battery.inf; Device: Microsoft AC Adapter; Driver: Microsoft AC Adapter; Provider: Microsoft; Mfg: Microsoft; Section: AcAdapter_Inst
+Decorated section name: AcAdapter_Inst
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section AcAdapter_Inst in c:\winnt\inf\battery.inf.
+Changed class GUID of device to {72631E54-78A4-11D0-BCF7-00AA00B7B32A}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI\ACPI0003\0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section AcAdapter_Inst.Interfaces from c:\winnt\inf\battery.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI\ACPI0003\0.
+Device install finished successfully (ACPI\ACPI0003\0).
+[2026/10/02 12:51:23 92.1352 Driver Install]
+Searching for hardware ID(s): acpi\fixedbutton,*fixedbutton
+Enumerating files C:\WINNT\inf\*.inf
+Found ACPI\FixedButton in C:\WINNT\inf\machine.inf; Device: ACPI Fixed Feature Button; Driver: ACPI Fixed Feature Button; Provider: Microsoft; Mfg: (Standard system devices); Section: NO_DRV
+Decorated section name: NO_DRV
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section NO_DRV in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI\FIXEDBUTTON\2&DABA3FF&0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section NO_DRV.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI\FIXEDBUTTON\2&DABA3FF&0.
+Query-removal during install of ACPI\FIXEDBUTTON\2&DABA3FF&0 was vetoed by ACPI\FixedButton\2&daba3ff&0 (veto type 6)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (ACPI\FIXEDBUTTON\2&DABA3FF&0).
+[2026/10/02 12:51:23 92.1362 Driver Install]
+Searching for hardware ID(s): acpi\pnp0000,*pnp0000
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0000 in C:\WINNT\inf\machine.inf; Device: Programmable interrupt controller; Driver: Programmable interrupt controller; Provider: Microsoft; Mfg: (Standard system devices); Section: NO_DRV_PIC
+Decorated section name: NO_DRV_PIC
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section NO_DRV_PIC in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI\PNP0000\4&1D401FB5&0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section NO_DRV_PIC.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI\PNP0000\4&1D401FB5&0.
+Device install finished successfully (ACPI\PNP0000\4&1D401FB5&0).
+[2026/10/02 12:51:23 92.1372 Driver Install]
+Searching for hardware ID(s): acpi\pnp0100,*pnp0100
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0100 in C:\WINNT\inf\machine.inf; Device: System timer; Driver: System timer; Provider: Microsoft; Mfg: (Standard system devices); Section: NO_DRV_X
+Decorated section name: NO_DRV_X
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section NO_DRV_X in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI\PNP0100\4&1D401FB5&0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section NO_DRV_X.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI\PNP0100\4&1D401FB5&0.
+Device install finished successfully (ACPI\PNP0100\4&1D401FB5&0).
+[2026/10/02 12:51:23 92.1382 Driver Install]
+Searching for hardware ID(s): acpi\pnp0200,*pnp0200
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0200 in C:\WINNT\inf\machine.inf; Device: Direct memory access controller; Driver: Direct memory access controller; Provider: Microsoft; Mfg: (Standard system devices); Section: NO_DRV_X
+Decorated section name: NO_DRV_X
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section NO_DRV_X in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI\PNP0200\4&1D401FB5&0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section NO_DRV_X.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI\PNP0200\4&1D401FB5&0.
+Device install finished successfully (ACPI\PNP0200\4&1D401FB5&0).
+[2026/10/02 12:51:23 92.1392 Driver Install]
+Searching for hardware ID(s): acpi\pnp0303,*pnp0303
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0303 in C:\WINNT\inf\keyboard.inf; Device: Standard 101/102-Key or Microsoft Natural PS/2 Keyboard; Driver: Standard 101/102-Key or Microsoft Natural PS/2 Keyboard; Provider: Microsoft; Mfg: (Standard keyboards); Section: STANDARD_Inst
+Decorated section name: STANDARD_Inst
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section STANDARD_Inst in c:\winnt\inf\keyboard.inf.
+Changed class GUID of device to {4D36E96B-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Selected driver installs from section STANDARD_Inst in c:\winnt\inf\keyboard.inf.
+Changed class GUID of device to {4D36E96B-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI\PNP0303\4&1D401FB5&0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section STANDARD_Inst.Interfaces from c:\winnt\inf\keyboard.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI\PNP0303\4&1D401FB5&0.
+Query-removal during install of ACPI\PNP0303\4&1D401FB5&0 was vetoed by ACPI\PNP0303\4&1d401fb5&0 (veto type 6)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (ACPI\PNP0303\4&1D401FB5&0).
+[2026/10/02 12:51:23 92.1408 Driver Install]
+Searching for hardware ID(s): acpi\pnp0501,*pnp0501
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0501 in C:\WINNT\inf\msports.inf; Device: Communications Port; Driver: Communications Port; Provider: Microsoft; Mfg: (Standard port types); Section: ComPort
+Decorated section name: ComPort.NT
+Found *PNP0501 in C:\WINNT\inf\msports.inf; Device: Communications Port; Driver: Communications Port; Provider: Microsoft; Mfg: (Standard port types); Section: ComPort
+Decorated section name: ComPort.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section ComPort in c:\winnt\inf\msports.inf.
+Changed class GUID of device to {4D36E978-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI\PNP0501\1.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section ComPort.NT.Interfaces from c:\winnt\inf\msports.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI\PNP0501\1.
+Device install finished successfully (ACPI\PNP0501\1).
+[2026/10/02 12:51:24 92.1420 Driver Install]
+Searching for hardware ID(s): acpi\pnp0700,*pnp0700
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0700 in C:\WINNT\inf\fdc.inf; Device: Standard floppy disk controller; Driver: Standard floppy disk controller; Provider: Microsoft; Mfg: (Standard floppy disk controllers); Section: fdc_install
+Decorated section name: fdc_install.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section fdc_install in c:\winnt\inf\fdc.inf.
+Changed class GUID of device to {4D36E969-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI\PNP0700\4&1D401FB5&0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section fdc_install.NT.Interfaces from c:\winnt\inf\fdc.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI\PNP0700\4&1D401FB5&0.
+Device install finished successfully (ACPI\PNP0700\4&1D401FB5&0).
+[2026/10/02 12:51:25 92.1431 Driver Install]
+Searching for hardware ID(s): acpi\pnp0a03,*pnp0a03
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0A03 in C:\WINNT\inf\machine.inf; Device: PCI bus; Driver: PCI bus; Provider: Microsoft; Mfg: (Standard system devices); Section: PCI_DRV_ROOT
+Decorated section name: PCI_DRV_ROOT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section PCI_DRV_ROOT in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI\PNP0A03\0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section PCI_DRV_ROOT.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI\PNP0A03\0.
+Device install finished successfully (ACPI\PNP0A03\0).
+[2026/10/02 12:51:25 92.1442 Driver Install]
+Searching for hardware ID(s): acpi\pnp0c0a,*pnp0c0a
+Enumerating files C:\WINNT\inf\*.inf
+Found ACPI\pnp0C0A in C:\WINNT\inf\battery.inf; Device: Microsoft ACPI-Compliant Control Method Battery; Driver: Microsoft ACPI-Compliant Control Method Battery; Provider: Microsoft; Mfg: Microsoft; Section: CmBatt_Inst
+Decorated section name: CmBatt_Inst
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section CmBatt_Inst in c:\winnt\inf\battery.inf.
+Changed class GUID of device to {72631E54-78A4-11D0-BCF7-00AA00B7B32A}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI\PNP0C0A\0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section CmBatt_Inst.Interfaces from c:\winnt\inf\battery.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI\PNP0C0A\0.
+Device install finished successfully (ACPI\PNP0C0A\0).
+[2026/10/02 12:51:25 92.1455 Driver Install]
+Searching for hardware ID(s): acpi\pnp0f03,*pnp0f03
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0F03 in C:\WINNT\inf\msmouse.inf; Device: Microsoft PS/2 Mouse; Driver: Microsoft PS/2 Mouse; Provider: Microsoft; Mfg: Microsoft; Section: PS2_Inst
+Decorated section name: PS2_Inst
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section PS2_Inst in c:\winnt\inf\msmouse.inf.
+Changed class GUID of device to {4D36E96F-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Selected driver installs from section PS2_Inst in c:\winnt\inf\msmouse.inf.
+Changed class GUID of device to {4D36E96F-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI\PNP0F03\4&1D401FB5&0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section PS2_Inst.Interfaces from c:\winnt\inf\msmouse.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI\PNP0F03\4&1D401FB5&0.
+Query-removal during install of ACPI\PNP0F03\4&1D401FB5&0 was vetoed by ACPI\PNP0F03\4&1d401fb5&0 (veto type 6)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (ACPI\PNP0F03\4&1D401FB5&0).
+[2026/10/02 12:51:25 92.1471 Driver Install]
+Searching for hardware ID(s): acpi_hal\pnp0c08,*pnp0c08
+Enumerating files C:\WINNT\inf\*.inf
+Found *pnp0c08 in C:\WINNT\inf\acpi.inf; Device: Microsoft ACPI-Compliant System; Driver: Microsoft ACPI-Compliant System; Provider: Microsoft; Mfg: Microsoft; Section: ACPI_Inst
+Decorated section name: ACPI_Inst.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section ACPI_Inst in c:\winnt\inf\acpi.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ACPI_HAL\PNP0C08\0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section ACPI_Inst.NT.Interfaces from c:\winnt\inf\acpi.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ACPI_HAL\PNP0C08\0.
+Device required reboot: "Reboot" in section: ACPI_Inst.NT.
+Device install finished successfully (ACPI_HAL\PNP0C08\0).
+[2026/10/02 12:51:25 92.1482 Driver Install]
+Searching for hardware ID(s): fdc\generic_floppy_drive
+Searching for compatible ID(s): genfloppydisk
+Enumerating files C:\WINNT\inf\*.inf
+Found GenFloppyDisk in C:\WINNT\inf\flpydisk.inf; Device: Floppy disk drive; Driver: Floppy disk drive; Provider: Microsoft; Mfg: (Standard floppy disk drives); Section: floppy_install
+Decorated section name: floppy_install.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section floppy_install in c:\winnt\inf\flpydisk.inf.
+Changed class GUID of device to {4D36E980-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of FDC\GENERIC_FLOPPY_DRIVE\5&34923401&0&0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section floppy_install.NT.Interfaces from c:\winnt\inf\flpydisk.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of FDC\GENERIC_FLOPPY_DRIVE\5&34923401&0&0.
+Device install finished successfully (FDC\GENERIC_FLOPPY_DRIVE\5&34923401&0&0).
+[2026/10/02 12:51:25 92.1493 Driver Install]
+Searching for hardware ID(s): isapnp\readdataport
+Enumerating files C:\WINNT\inf\*.inf
+Found ISAPNP\ReadDataPort in C:\WINNT\inf\machine.inf; Device: ISAPNP Read Data Port; Driver: ISAPNP Read Data Port; Provider: Microsoft; Mfg: (Standard system devices); Section: NO_DRV
+Decorated section name: NO_DRV
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section NO_DRV in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ISAPNP\READDATAPORT\0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section NO_DRV.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ISAPNP\READDATAPORT\0.
+Device install finished successfully (ISAPNP\READDATAPORT\0).
+[2026/10/02 12:51:25 92.1503 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+Set selected driver.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for PCI\VEN_8086&DEV_100E&SUBSYS_001E8086&REV_02\3&267A616A&0&18.
+Device install finished with error Error 0xe0000219: The installation failed because a function driver was not specified for this device instance.
+Completed default installer, error: Error 0xe0000219: The installation failed because a function driver was not specified for this device instance.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for PCI\VEN_8086&DEV_100E&SUBSYS_001E8086&REV_02\3&267A616A&0&18.
+Device install finished successfully (PCI\VEN_8086&DEV_100E&SUBSYS_001E8086&REV_02\3&267A616A&0&18).
+[2026/10/02 12:51:26 92.1505 Driver Install]
+Searching for hardware ID(s): pci\ven_8086&dev_1237&subsys_00000000&rev_02,pci\ven_8086&dev_1237&subsys_00000000,pci\ven_8086&dev_1237&rev_02,pci\ven_8086&dev_1237,pci\ven_8086&dev_1237&cc_060000,pci\ven_8086&dev_1237&cc_0600
+Searching for compatible ID(s): pci\ven_8086&cc_060000,pci\ven_8086&cc_0600,pci\ven_8086,pci\cc_060000,pci\cc_0600
+Enumerating files C:\WINNT\inf\*.inf
+Found PCI\CC_0600 in C:\WINNT\inf\machine.inf; Device: PCI standard host CPU bridge; Driver: PCI standard host CPU bridge; Provider: Microsoft; Mfg: (Standard system devices); Section: NO_DRV
+Decorated section name: NO_DRV
+Found PCI\VEN_8086&DEV_1237 in C:\WINNT\inf\machine.inf; Device: Intel 82441FX Pentium(r) Pro Processor to PCI bridge; Driver: Intel 82441FX Pentium(r) Pro Processor to PCI bridge; Provider: Microsoft; Mfg: Intel; Section: NO_DRV
+Decorated section name: NO_DRV
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section NO_DRV in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of PCI\VEN_8086&DEV_1237&SUBSYS_00000000&REV_02\3&267A616A&0&00.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section NO_DRV.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of PCI\VEN_8086&DEV_1237&SUBSYS_00000000&REV_02\3&267A616A&0&00.
+Device install finished successfully (PCI\VEN_8086&DEV_1237&SUBSYS_00000000&REV_02\3&267A616A&0&00).
+[2026/10/02 12:51:26 92.1515 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+Set selected driver.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for PCI\VEN_8086&DEV_1E31&SUBSYS_00000000&REV_00\3&267A616A&0&60.
+Device install finished with error Error 0xe0000219: The installation failed because a function driver was not specified for this device instance.
+Completed default installer, error: Error 0xe0000219: The installation failed because a function driver was not specified for this device instance.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for PCI\VEN_8086&DEV_1E31&SUBSYS_00000000&REV_00\3&267A616A&0&60.
+Device install finished successfully (PCI\VEN_8086&DEV_1E31&SUBSYS_00000000&REV_00\3&267A616A&0&60).
+[2026/10/02 12:51:26 92.1517 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+Set selected driver.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for PCI\VEN_8086&DEV_2668&SUBSYS_76808384&REV_01\3&267A616A&0&28.
+Device install finished with error Error 0xe0000219: The installation failed because a function driver was not specified for this device instance.
+Completed default installer, error: Error 0xe0000219: The installation failed because a function driver was not specified for this device instance.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for PCI\VEN_8086&DEV_2668&SUBSYS_76808384&REV_01\3&267A616A&0&28.
+Device install finished successfully (PCI\VEN_8086&DEV_2668&SUBSYS_76808384&REV_01\3&267A616A&0&28).
+[2026/10/02 12:51:26 92.1519 Driver Install]
+Searching for hardware ID(s): pci\ven_8086&dev_2829&subsys_00000000&rev_02,pci\ven_8086&dev_2829&subsys_00000000,pci\ven_8086&dev_2829&rev_02,pci\ven_8086&dev_2829,pci\ven_8086&dev_2829&cc_010601,pci\ven_8086&dev_2829&cc_0106
+Searching for compatible ID(s): pci\ven_8086&cc_010601,pci\ven_8086&cc_0106,pci\ven_8086,pci\cc_010601,pci\cc_0106,gen_scsiadapter
+Enumerating files C:\WINNT\inf\*.inf
+The file (C:\WINNT\inf\oemscs01.inf) is not digitally signed, ignoring driver date.
+Found PCI\CC_010601 in C:\WINNT\inf\oemscs01.inf; Device: AHCINT SATA AHCI Storage Controller; Driver: AHCINT SATA AHCI Storage Controller; Provider: ages2001; Mfg: Standard SATA AHCI Controller; Section: Ahci_Inst
+Decorated section name: Ahci_Inst
+Found GEN_SCSIADAPTER in C:\WINNT\inf\scsi.inf; Device: SCSI/RAID Host Controller; Driver: SCSI/RAID Host Controller; Provider: Microsoft; Mfg: Unknown Manufacturer; Section: NODRV
+Decorated section name: NODRV
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section Ahci_Inst in c:\winnt\inf\oemscs01.inf.
+Changed class GUID of device to {4D36E97B-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of PCI\VEN_8086&DEV_2829&SUBSYS_00000000&REV_02\3&267A616A&0&68.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section Ahci_Inst.Interfaces from c:\winnt\inf\oemscs01.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of PCI\VEN_8086&DEV_2829&SUBSYS_00000000&REV_02\3&267A616A&0&68.
+Query-removal during install of PCI\VEN_8086&DEV_2829&SUBSYS_00000000&REV_02\3&267A616A&0&68 was vetoed by SCSI\Disk&Ven_VBOX_HAR&Prod_DDISK&Rev_1.0\4&2617aeae&0&000 (veto type 6)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (PCI\VEN_8086&DEV_2829&SUBSYS_00000000&REV_02\3&267A616A&0&68).
+[2026/10/02 12:51:27 92.1531 Driver Install]
+Searching for hardware ID(s): pci\ven_8086&dev_7000&subsys_00000000&rev_00,pci\ven_8086&dev_7000&subsys_00000000,pci\ven_8086&dev_7000&rev_00,pci\ven_8086&dev_7000,pci\ven_8086&dev_7000&cc_060100,pci\ven_8086&dev_7000&cc_0601
+Searching for compatible ID(s): pci\ven_8086&cc_060100,pci\ven_8086&cc_0601,pci\ven_8086,pci\cc_060100,pci\cc_0601
+Enumerating files C:\WINNT\inf\*.inf
+Found PCI\CC_0601 in C:\WINNT\inf\machine.inf; Device: PCI standard ISA bridge; Driver: PCI standard ISA bridge; Provider: Microsoft; Mfg: (Standard system devices); Section: ISAPNP_DRV
+Decorated section name: ISAPNP_DRV
+Found PCI\VEN_8086&DEV_7000 in C:\WINNT\inf\machine.inf; Device: Intel 82371SB PCI to ISA bridge; Driver: Intel 82371SB PCI to ISA bridge; Provider: Microsoft; Mfg: Intel; Section: ISAPNP_DRV
+Decorated section name: ISAPNP_DRV
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section ISAPNP_DRV in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of PCI\VEN_8086&DEV_7000&SUBSYS_00000000&REV_00\3&267A616A&0&08.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section ISAPNP_DRV.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of PCI\VEN_8086&DEV_7000&SUBSYS_00000000&REV_00\3&267A616A&0&08.
+Query-removal during install of PCI\VEN_8086&DEV_7000&SUBSYS_00000000&REV_00\3&267A616A&0&08 was vetoed by ACPI\PNP0F03\4&1d401fb5&0 (veto type 6)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (PCI\VEN_8086&DEV_7000&SUBSYS_00000000&REV_00\3&267A616A&0&08).
+[2026/10/02 12:51:27 92.1542 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+Set selected driver.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for PCI\VEN_80EE&DEV_BEEF&SUBSYS_040515AD&REV_00\3&267A616A&0&10.
+Device install finished with error Error 0xe0000219: The installation failed because a function driver was not specified for this device instance.
+Completed default installer, error: Error 0xe0000219: The installation failed because a function driver was not specified for this device instance.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for PCI\VEN_80EE&DEV_BEEF&SUBSYS_040515AD&REV_00\3&267A616A&0&10.
+Device install finished successfully (PCI\VEN_80EE&DEV_BEEF&SUBSYS_040515AD&REV_00\3&267A616A&0&10).
+[2026/10/02 12:51:27 92.1544 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+Set selected driver.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for PCI\VEN_80EE&DEV_CAFE&SUBSYS_00000000&REV_00\3&267A616A&0&20.
+Device install finished with error Error 0xe0000219: The installation failed because a function driver was not specified for this device instance.
+Completed default installer, error: Error 0xe0000219: The installation failed because a function driver was not specified for this device instance.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for PCI\VEN_80EE&DEV_CAFE&SUBSYS_00000000&REV_00\3&267A616A&0&20.
+Device install finished successfully (PCI\VEN_80EE&DEV_CAFE&SUBSYS_00000000&REV_00\3&267A616A&0&20).
+[2026/10/02 12:51:27 92.1546 Driver Install]
+Searching for hardware ID(s): acpiapic_mp
+Searching for compatible ID(s): detectedinternal\acpi_hal,detected\acpi_hal
+Enumerating files C:\WINNT\inf\*.inf
+Found ACPIAPIC_MP in C:\WINNT\inf\hal.inf; Device: ACPI Multiprocessor PC; Driver: ACPI Multiprocessor PC; Provider: Microsoft; Mfg: (Standard computers); Section: ACPIAPIC_MP_HAL
+Decorated section name: ACPIAPIC_MP_HAL
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section ACPIAPIC_MP_HAL in c:\winnt\inf\hal.inf.
+Changed class GUID of device to {4D36E966-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ROOT\ACPI_HAL\0000.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section ACPIAPIC_MP_HAL.Interfaces from c:\winnt\inf\hal.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\ACPI_HAL\0000.
+Device required reboot: "Reboot" in section: ACPIAPIC_MP_HAL.
+Device install finished successfully (ROOT\ACPI_HAL\0000).
+[2026/10/02 12:51:27 92.1558 Driver Install]
+Searching for hardware ID(s): root\dmio
+Searching for compatible ID(s): detectedinternal\dmio,detected\dmio
+Enumerating files C:\WINNT\inf\*.inf
+Found Root\DMIO in C:\WINNT\inf\machine.inf; Device: Logical Disk Manager; Driver: Logical Disk Manager; Provider: Microsoft; Mfg: (Standard system devices); Section: DMIO_DRV
+Decorated section name: DMIO_DRV
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section DMIO_DRV in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ROOT\DMIO\0000.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section DMIO_DRV.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\DMIO\0000.
+Query-removal during install of ROOT\DMIO\0000 was vetoed by Root\dmio\0000 (veto type 6)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (ROOT\DMIO\0000).
+[2026/10/02 12:51:27 92.1568 Driver Install]
+Searching for hardware ID(s): root\ftdisk
+Searching for compatible ID(s): detectedinternal\ftdisk,detected\ftdisk
+Enumerating files C:\WINNT\inf\*.inf
+Found Root\FTDISK in C:\WINNT\inf\machine.inf; Device: Volume Manager; Driver: Volume Manager; Provider: Microsoft; Mfg: (Standard system devices); Section: FTDISK_DRV
+Decorated section name: FTDISK_DRV
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section FTDISK_DRV in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ROOT\FTDISK\0000.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section FTDISK_DRV.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\FTDISK\0000.
+Device required reboot: "Reboot" in section: FTDISK_DRV.
+Device install finished successfully (ROOT\FTDISK\0000).
+[2026/10/02 12:51:27 92.1579 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+Set selected driver.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for ROOT\LEGACY_DMBOOT\0000.
+Query-removal during install of ROOT\LEGACY_DMBOOT\0000 was vetoed by Root\LEGACY_DMBOOT\0000 (veto type 1)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (ROOT\LEGACY_DMBOOT\0000).
+[2026/10/02 12:51:27 92.1581 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+Set selected driver.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for ROOT\LEGACY_DMLOAD\0000.
+Query-removal during install of ROOT\LEGACY_DMLOAD\0000 was vetoed by Root\LEGACY_DMLOAD\0000 (veto type 1)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (ROOT\LEGACY_DMLOAD\0000).
+[2026/10/02 12:51:27 92.1583 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+Set selected driver.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for ROOT\LEGACY_MOUNTMGR\0000.
+Query-removal during install of ROOT\LEGACY_MOUNTMGR\0000 was vetoed by Root\LEGACY_MOUNTMGR\0000 (veto type 1)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (ROOT\LEGACY_MOUNTMGR\0000).
+[2026/10/02 12:51:27 92.1585 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+Set selected driver.
+Device install function: DIF_INSTALLDEVICE.
+Installing NULL driver for ROOT\LEGACY_PARTMGR\0000.
+Query-removal during install of ROOT\LEGACY_PARTMGR\0000 was vetoed by Root\LEGACY_PARTMGR\0000 (veto type 1)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (ROOT\LEGACY_PARTMGR\0000).
+[2026/10/02 12:51:27 92.1587 Driver Install]
+Searching for hardware ID(s): root\swenum
+Enumerating files C:\WINNT\inf\*.inf
+Found ROOT\SWENUM in C:\WINNT\inf\machine.inf; Device: Plug and Play Software Device Enumerator; Driver: Plug and Play Software Device Enumerator; Provider: Microsoft; Mfg: (Standard system devices); Section: SWENUM
+Decorated section name: SWENUM
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section SWENUM in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ROOT\SYSTEM\0000.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section SWENUM.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\SYSTEM\0000.
+Device install finished successfully (ROOT\SYSTEM\0000).
+[2026/10/02 12:51:28 92.1598 Driver Install]
+Searching for hardware ID(s): root\update
+Enumerating files C:\WINNT\inf\*.inf
+Found ROOT\UPDATE in C:\WINNT\inf\machine.inf; Device: Microcode Update Device; Driver: Microcode Update Device; Provider: Microsoft; Mfg: (Standard system devices); Section: UPDATE_DRV
+Decorated section name: UPDATE_DRV
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section UPDATE_DRV in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of ROOT\SYSTEM\0001.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section UPDATE_DRV.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\SYSTEM\0001.
+Device install finished successfully (ROOT\SYSTEM\0001).
+[2026/10/02 12:51:28 92.1608 Driver Install]
+Searching for hardware ID(s): scsi\cdromvbox_cd-rom_____________1.0_,scsi\cdromvbox_cd-rom_____________,scsi\cdromvbox_cd-,scsi\vbox_cd-rom_____________1,vbox_cd-rom_____________1,gencdrom
+Searching for compatible ID(s): scsi\cdrom,scsi\raw
+Enumerating files C:\WINNT\inf\*.inf
+Found GenCdRom in C:\WINNT\inf\cdrom.inf; Device: CD-ROM Drive; Driver: CD-ROM Drive; Provider: Microsoft; Mfg: (Standard CD-ROM drives); Section: cdrom_install
+Decorated section name: cdrom_install
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section cdrom_install in c:\winnt\inf\cdrom.inf.
+Changed class GUID of device to {4D36E965-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of SCSI\CDROM&VEN_VBOX_CD-&PROD_ROM&REV_1.0\4&2617AEAE&0&010.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section cdrom_install.Interfaces from c:\winnt\inf\cdrom.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of SCSI\CDROM&VEN_VBOX_CD-&PROD_ROM&REV_1.0\4&2617AEAE&0&010.
+Query-removal during install of SCSI\CDROM&VEN_VBOX_CD-&PROD_ROM&REV_1.0\4&2617AEAE&0&010 was vetoed by SCSI\CdRom&Ven_VBOX_CD-&Prod_ROM&Rev_1.0\4&2617aeae&0&010 (veto type 5)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (SCSI\CDROM&VEN_VBOX_CD-&PROD_ROM&REV_1.0\4&2617AEAE&0&010).
+[2026/10/02 12:51:28 92.1622 Driver Install]
+Searching for hardware ID(s): scsi\diskvbox_harddisk___________1.0_,scsi\diskvbox_harddisk___________,scsi\diskvbox_har,scsi\vbox_harddisk___________1,vbox_harddisk___________1,gendisk
+Searching for compatible ID(s): scsi\disk,scsi\raw
+Enumerating files C:\WINNT\inf\*.inf
+Found GenDisk in C:\WINNT\inf\disk.inf; Device: Disk drive; Driver: Disk drive; Provider: Microsoft; Mfg: (Standard disk drives); Section: disk_install
+Decorated section name: disk_install.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section disk_install in c:\winnt\inf\disk.inf.
+Changed class GUID of device to {4D36E967-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of SCSI\DISK&VEN_VBOX_HAR&PROD_DDISK&REV_1.0\4&2617AEAE&0&000.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section disk_install.NT.Interfaces from c:\winnt\inf\disk.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of SCSI\DISK&VEN_VBOX_HAR&PROD_DDISK&REV_1.0\4&2617AEAE&0&000.
+Query-removal during install of SCSI\DISK&VEN_VBOX_HAR&PROD_DDISK&REV_1.0\4&2617AEAE&0&000 was vetoed by SCSI\Disk&Ven_VBOX_HAR&Prod_DDISK&Rev_1.0\4&2617aeae&0&000 (veto type 6)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (SCSI\DISK&VEN_VBOX_HAR&PROD_DDISK&REV_1.0\4&2617AEAE&0&000).
+[2026/10/02 12:51:28 92.1633 Driver Install]
+Searching for hardware ID(s): storage\volume
+Enumerating files C:\WINNT\inf\*.inf
+Found STORAGE\Volume in C:\WINNT\inf\volume.inf; Device: Generic volume; Driver: Generic volume; Provider: Microsoft; Mfg: Microsoft; Section: volume_install
+Decorated section name: volume_install
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section volume_install in c:\winnt\inf\volume.inf.
+Changed class GUID of device to {71A27CDD-812A-11D0-BEC7-08002BE2092F}.
+Set selected driver.
+Selected best compatible driver.
+Doing copy-only install of STORAGE\VOLUME\1&30A96598&0&SIGNATURE466B3103OFFSET7E00LENGTH67F90200.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section volume_install.Interfaces from c:\winnt\inf\volume.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of STORAGE\VOLUME\1&30A96598&0&SIGNATURE466B3103OFFSET7E00LENGTH67F90200.
+Query-removal during install of STORAGE\VOLUME\1&30A96598&0&SIGNATURE466B3103OFFSET7E00LENGTH67F90200 was vetoed by STORAGE\Volume\1&30a96598&0&Signature466B3103Offset7E00Length67F90200 (veto type 6)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (STORAGE\VOLUME\1&30A96598&0&SIGNATURE466B3103OFFSET7E00LENGTH67F90200).
+[2026/10/02 12:52:28 92.1646 Driver Install]
+Set selected driver.
+Set selected driver.
+Set selected driver.
+Set selected driver.
+Set selected driver.
+Set selected driver.
+Set selected driver.
+Set selected driver.
+[2026/10/02 12:52:56 92.1719 Driver Install]
+Searching for hardware ID(s): *pnp0501
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0501 in C:\WINNT\inf\msports.inf; Device: Communications Port; Driver: Communications Port; Provider: Microsoft; Mfg: (Standard port types); Section: ComPort
+Decorated section name: ComPort.NT
+Found *PNP0501 in C:\WINNT\inf\msports.inf; Device: Communications Port; Driver: Communications Port; Provider: Microsoft; Mfg: (Standard port types); Section: ComPort
+Decorated section name: ComPort.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section ComPort in c:\winnt\inf\msports.inf.
+Changed class GUID of device to {4D36E978-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_REGISTERDEVICE.
+Device removed.
+Completed class-installer, error: Error 0xe0000202: An existing device was found that is a duplicate of the device being manually installed.
+[2026/10/02 12:52:56 92.1766 Driver Install]
+Device install function: DIF_FIRSTTIMESETUP.
+Enumerating files C:\WINNT\inf\*.inf
+The file (C:\WINNT\inf\oemscs01.inf) is not digitally signed, ignoring driver date.
+[2026/10/02 12:52:33 92.1679 Driver Install]
+Searching for hardware ID(s): ms_mmmci
+Enumerating files C:\WINNT\inf\*.inf
+Found MS_MMMCI in C:\WINNT\inf\wave.inf; Device: Media Control Devices; Driver: Media Control Devices; Provider: Microsoft; Mfg: (Standard system devices); Section: MS_MMMCI
+Decorated section name: MS_MMMCI.NT
+Selected driver installs from section MS_MMMCI in c:\winnt\inf\wave.inf.
+Changed class GUID of device to {4D36E96C-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Doing copy-only install of ROOT\MEDIA\MS_MMMCI.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section MS_MMMCI.NT.Interfaces from c:\winnt\inf\wave.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\MEDIA\MS_MMMCI.
+Device install finished successfully (ROOT\MEDIA\MS_MMMCI).
+[2026/10/02 12:52:33 92.1681 Driver Install]
+Searching for hardware ID(s): ms_mmvid
+Enumerating files C:\WINNT\inf\*.inf
+Found MS_MMVID in C:\WINNT\inf\wave.inf; Device: Video Codecs; Driver: Video Codecs; Provider: Microsoft; Mfg: (Standard system devices); Section: MS_MMVID
+Decorated section name: MS_MMVID.NT
+Selected driver installs from section MS_MMVID in c:\winnt\inf\wave.inf.
+Changed class GUID of device to {4D36E96C-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Doing copy-only install of ROOT\MEDIA\MS_MMVID.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section MS_MMVID.NT.Interfaces from c:\winnt\inf\wave.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\MEDIA\MS_MMVID.
+Device install finished successfully (ROOT\MEDIA\MS_MMVID).
+[2026/10/02 12:52:33 92.1683 Driver Install]
+Searching for hardware ID(s): ms_mmacm
+Enumerating files C:\WINNT\inf\*.inf
+Found MS_MMACM in C:\WINNT\inf\wave.inf; Device: Audio Codecs; Driver: Audio Codecs; Provider: Microsoft; Mfg: (Standard system devices); Section: MS_MMACM
+Decorated section name: MS_MMACM.NT
+Selected driver installs from section MS_MMACM in c:\winnt\inf\wave.inf.
+Changed class GUID of device to {4D36E96C-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Doing copy-only install of ROOT\MEDIA\MS_MMACM.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section MS_MMACM.NT.Interfaces from c:\winnt\inf\wave.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\MEDIA\MS_MMACM.
+Device install finished successfully (ROOT\MEDIA\MS_MMACM).
+[2026/10/02 12:52:33 92.1685 Driver Install]
+Searching for hardware ID(s): ms_mmvcd
+Enumerating files C:\WINNT\inf\*.inf
+Found MS_MMVCD in C:\WINNT\inf\wave.inf; Device: Legacy Video Capture Devices; Driver: Legacy Video Capture Devices; Provider: Microsoft; Mfg: (Standard system devices); Section: MS_MMVCD
+Decorated section name: MS_MMVCD.NT
+Selected driver installs from section MS_MMVCD in c:\winnt\inf\wave.inf.
+Changed class GUID of device to {4D36E96C-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Doing copy-only install of ROOT\MEDIA\MS_MMVCD.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section MS_MMVCD.NT.Interfaces from c:\winnt\inf\wave.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\MEDIA\MS_MMVCD.
+Device install finished successfully (ROOT\MEDIA\MS_MMVCD).
+[2026/10/02 12:52:33 92.1687 Driver Install]
+Searching for hardware ID(s): ms_mmdrv
+Enumerating files C:\WINNT\inf\*.inf
+Found MS_MMDRV in C:\WINNT\inf\wave.inf; Device: Legacy Audio Drivers; Driver: Legacy Audio Drivers; Provider: Microsoft; Mfg: (Standard system devices); Section: MS_MMDRV
+Decorated section name: MS_MMDRV.NT
+Selected driver installs from section MS_MMDRV in c:\winnt\inf\wave.inf.
+Changed class GUID of device to {4D36E96C-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Doing copy-only install of ROOT\MEDIA\MS_MMDRV.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section MS_MMDRV.NT.Interfaces from c:\winnt\inf\wave.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\MEDIA\MS_MMDRV.
+Device install finished successfully (ROOT\MEDIA\MS_MMDRV).
+[2026/10/02 14:03:54 180.4 Driver Install]
+Munged cmdline: C:\WINNT\system32\services.exe
+EXE name: C:\WINNT\system32\services.exe
+Searching for hardware ID(s): sw\{eeab7790-c514-11d1-b42b-00805fc1270e}
+Enumerating files C:\WINNT\inf\*.inf
+Found SW\{eeab7790-c514-11d1-b42b-00805fc1270e} in C:\WINNT\inf\netrasa.inf; Device: RAS Async Adapter; Driver: RAS Async Adapter; Provider: Microsoft; Mfg: Microsoft; Section: Ndi-Mp-AsyncMac
+Decorated section name: Ndi-Mp-AsyncMac
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section Ndi-Mp-AsyncMac in c:\winnt\inf\netrasa.inf.
+Changed class GUID of device to {4D36E972-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of SW\{EEAB7790-C514-11D1-B42B-00805FC1270E}\ASYNCMAC.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section Ndi-Mp-AsyncMac.Interfaces from c:\winnt\inf\netrasa.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of SW\{EEAB7790-C514-11D1-B42B-00805FC1270E}\ASYNCMAC.
+Device install finished successfully (SW\{EEAB7790-C514-11D1-B42B-00805FC1270E}\ASYNCMAC).
+[2026/10/02 14:03:54 92.2102 Driver Install]
+Searching for hardware ID(s): ms_gpc
+Found ms_gpc in C:\WINNT\INF\netgpc.inf; Device: Generic Packet Classifier; Driver: Generic Packet Classifier; Provider: Microsoft; Mfg: Microsoft; Section: GPC.ndi
+Decorated section name: GPC.ndi
+Selected driver installs from section GPC.ndi in c:\winnt\inf\netgpc.inf.
+Changed class GUID of device to {4D36E974-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:54 92.2108 Driver Install]
+Searching for hardware ID(s): ms_tcpip
+Found MS_TCPIP in C:\WINNT\INF\nettcpip.inf; Device: Internet Protocol (TCP/IP); Driver: Internet Protocol (TCP/IP); Provider: Microsoft; Mfg: Microsoft; Section: MS_TCPIP.PrimaryInstall
+Decorated section name: MS_TCPIP.PrimaryInstall
+Selected driver installs from section MS_TCPIP.PrimaryInstall in c:\winnt\inf\nettcpip.inf.
+Changed class GUID of device to {4D36E975-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:54 92.2114 Driver Install]
+Searching for hardware ID(s): ms_netbt
+Found MS_NetBT in C:\WINNT\INF\nettcpip.inf; Device: WINS Client(TCP/IP) Protocol; Driver: WINS Client(TCP/IP) Protocol; Provider: Microsoft; Mfg: Microsoft; Section: MS_WINS.PrimaryInstall
+Decorated section name: MS_WINS.PrimaryInstall
+Selected driver installs from section MS_WINS.PrimaryInstall in c:\winnt\inf\nettcpip.inf.
+Changed class GUID of device to {4D36E975-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:54 92.2120 Driver Install]
+Searching for hardware ID(s): ms_netbt_smb
+Found MS_NETBT_SMB in C:\WINNT\INF\nettcpip.inf; Device: Message-oriented TCP/IP Protocol (SMB session); Driver: Message-oriented TCP/IP Protocol (SMB session); Provider: Microsoft; Mfg: Microsoft; Section: MS_NETBT_SMB.PrimaryInstall
+Decorated section name: MS_NETBT_SMB.PrimaryInstall
+Selected driver installs from section MS_NETBT_SMB.PrimaryInstall in c:\winnt\inf\nettcpip.inf.
+Changed class GUID of device to {4D36E975-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:54 92.2122]
+Could not locate section "MS_NETBT_SMB.PrimaryInstall.Services" (or the section is empty).
+[2026/10/02 14:03:54 92.2126 Driver Install]
+Searching for hardware ID(s): ms_rsvp
+Found MS_RSVP in C:\WINNT\INF\netrsvp.inf; Device: QoS RSVP; Driver: QoS RSVP; Provider: Microsoft; Mfg: Microsoft; Section: RSVP.ndi
+Decorated section name: RSVP.ndi
+Selected driver installs from section RSVP.ndi in c:\winnt\inf\netrsvp.inf.
+Changed class GUID of device to {4D36E974-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:55 92.2132 Driver Install]
+Searching for hardware ID(s): ms_msclient
+Found MS_MSCLIENT in C:\WINNT\INF\netmscli.inf; Device: Client for Microsoft Networks; Driver: Client for Microsoft Networks; Provider: Microsoft; Mfg: Microsoft; Section: MSClient.ndi
+Decorated section name: MSClient.ndi
+Selected driver installs from section MSClient.ndi in c:\winnt\inf\netmscli.inf.
+Changed class GUID of device to {4D36E973-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:55 92.2138 Driver Install]
+Searching for hardware ID(s): ms_netbios
+Found MS_NETBIOS in C:\WINNT\INF\netnb.inf; Device: NetBIOS Interface; Driver: NetBIOS Interface; Provider: Microsoft; Mfg: Microsoft; Section: NetBIOS.ndi
+Decorated section name: NetBIOS.ndi
+Selected driver installs from section NetBIOS.ndi in c:\winnt\inf\netnb.inf.
+Changed class GUID of device to {4D36E974-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:55 92.2144 Driver Install]
+Searching for hardware ID(s): ms_server
+Found MS_SERVER in C:\WINNT\INF\netserv.inf; Device: File and Printer Sharing for Microsoft Networks; Driver: File and Printer Sharing for Microsoft Networks; Provider: Microsoft; Mfg: Microsoft; Section: Install.ndi
+Decorated section name: Install.ndi
+Selected driver installs from section Install.ndi in c:\winnt\inf\netserv.inf.
+Changed class GUID of device to {4D36E974-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:55 92.2150 Driver Install]
+Searching for hardware ID(s): ms_rascli
+Found MS_RasCli in C:\WINNT\INF\netrass.inf; Device: Dial-Up Client; Driver: Dial-Up Client; Provider: Microsoft; Mfg: Microsoft; Section: Ndi-RasCli
+Decorated section name: Ndi-RasCli
+Selected driver installs from section Ndi-RasCli in c:\winnt\inf\netrass.inf.
+Changed class GUID of device to {4D36E974-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:55 92.2152]
+Could not locate section "Ndi-RasCli.Services" (or the section is empty).
+[2026/10/02 14:03:55 92.2156 Driver Install]
+Searching for hardware ID(s): ms_ndiswan
+Found MS_NdisWan in C:\WINNT\INF\netrast.inf; Device: Remote Access NDIS WAN Driver; Driver: Remote Access NDIS WAN Driver; Provider: Microsoft; Mfg: Microsoft; Section: Ndi-NdisWan
+Decorated section name: Ndi-NdisWan
+Selected driver installs from section Ndi-NdisWan in c:\winnt\inf\netrast.inf.
+Changed class GUID of device to {4D36E975-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:55 92.2162 Driver Install]
+Searching for hardware ID(s): ms_rasman
+Found MS_RasMan in C:\WINNT\INF\netrass.inf; Device: Remote Access Connection Manager; Driver: Remote Access Connection Manager; Provider: Microsoft; Mfg: Microsoft; Section: Ndi-RasMan
+Decorated section name: Ndi-RasMan
+Selected driver installs from section Ndi-RasMan in c:\winnt\inf\netrass.inf.
+Changed class GUID of device to {4D36E974-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:55 92.2168 Driver Install]
+Searching for hardware ID(s): ms_l2tp
+Found MS_L2TP in C:\WINNT\INF\netrast.inf; Device: Layer 2 Tunneling Protocol; Driver: Layer 2 Tunneling Protocol; Provider: Microsoft; Mfg: Microsoft; Section: Ndi-L2tpProtocol
+Decorated section name: Ndi-L2tpProtocol
+Selected driver installs from section Ndi-L2tpProtocol in c:\winnt\inf\netrast.inf.
+Changed class GUID of device to {4D36E975-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:55 92.2170]
+Could not locate section "Ndi-L2tpProtocol.Services" (or the section is empty).
+[2026/10/02 14:03:55 92.2174 Driver Install]
+Searching for hardware ID(s): ms_l2tpminiport
+Found MS_L2tpMiniport in C:\WINNT\INF\netrasa.inf; Device: WAN Miniport (L2TP); Driver: WAN Miniport (L2TP); Provider: Microsoft; Mfg: Microsoft; Section: Ndi-Mp-L2tp
+Decorated section name: Ndi-Mp-L2tp
+Selected driver installs from section Ndi-Mp-L2tp in c:\winnt\inf\netrasa.inf.
+Changed class GUID of device to {4D36E972-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section Ndi-Mp-L2tp.Interfaces from c:\winnt\inf\netrasa.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\MS_L2TPMINIPORT\0000.
+Device install finished successfully (ROOT\MS_L2TPMINIPORT\0000).
+[2026/10/02 14:03:55 92.2186 Driver Install]
+Searching for hardware ID(s): ms_pptp
+Found MS_PPTP in C:\WINNT\INF\netrast.inf; Device: Point to Point Tunneling Protocol; Driver: Point to Point Tunneling Protocol; Provider: Microsoft; Mfg: Microsoft; Section: Ndi-PptpProtocol
+Decorated section name: Ndi-PptpProtocol
+Selected driver installs from section Ndi-PptpProtocol in c:\winnt\inf\netrast.inf.
+Changed class GUID of device to {4D36E975-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:55 92.2188]
+Could not locate section "Ndi-PptpProtocol.Services" (or the section is empty).
+[2026/10/02 14:03:55 92.2192 Driver Install]
+Searching for hardware ID(s): ms_pptpminiport
+Found MS_PptpMiniport in C:\WINNT\INF\netrasa.inf; Device: WAN Miniport (PPTP); Driver: WAN Miniport (PPTP); Provider: Microsoft; Mfg: Microsoft; Section: Ndi-Mp-Pptp
+Decorated section name: Ndi-Mp-Pptp
+Selected driver installs from section Ndi-Mp-Pptp in c:\winnt\inf\netrasa.inf.
+Changed class GUID of device to {4D36E972-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section Ndi-Mp-Pptp.Interfaces from c:\winnt\inf\netrasa.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\MS_PPTPMINIPORT\0000.
+Device install finished successfully (ROOT\MS_PPTPMINIPORT\0000).
+[2026/10/02 14:03:55 92.2204 Driver Install]
+Searching for hardware ID(s): ms_ptiminiport
+Found MS_PtiMiniport in C:\WINNT\INF\netrasa.inf; Device: Direct Parallel; Driver: Direct Parallel; Provider: Microsoft; Mfg: Microsoft; Section: Ndi-Mp-Pti
+Decorated section name: Ndi-Mp-Pti
+Selected driver installs from section Ndi-Mp-Pti in c:\winnt\inf\netrasa.inf.
+Changed class GUID of device to {4D36E972-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section Ndi-Mp-Pti.Interfaces from c:\winnt\inf\netrasa.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\MS_PTIMINIPORT\0000.
+Device install finished successfully (ROOT\MS_PTIMINIPORT\0000).
+[2026/10/02 14:03:55 92.2216 Driver Install]
+Searching for hardware ID(s): ms_ndiswanip
+Found MS_NdisWanIp in C:\WINNT\INF\netrasa.inf; Device: WAN Miniport (IP); Driver: WAN Miniport (IP); Provider: Microsoft; Mfg: Microsoft; Section: Ndi-Mp-Ip
+Decorated section name: Ndi-Mp-Ip
+Selected driver installs from section Ndi-Mp-Ip in c:\winnt\inf\netrasa.inf.
+Changed class GUID of device to {4D36E972-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section Ndi-Mp-Ip.Interfaces from c:\winnt\inf\netrasa.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\MS_NDISWANIP\0000.
+Device install finished successfully (ROOT\MS_NDISWANIP\0000).
+[2026/10/02 14:03:55 92.2246 Driver Install]
+Searching for hardware ID(s): ms_rassrv
+Found MS_RasSrv in C:\WINNT\INF\netrass.inf; Device: Dial-Up Server; Driver: Dial-Up Server; Provider: Microsoft; Mfg: Microsoft; Section: Ndi-RasSrv
+Decorated section name: Ndi-RasSrv
+Selected driver installs from section Ndi-RasSrv in c:\winnt\inf\netrass.inf.
+Changed class GUID of device to {4D36E974-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:03:55 92.2248]
+Could not locate section "Ndi-RasSrv.Services" (or the section is empty).
+[2026/10/02 14:03:55 92.2252 Driver Install]
+Searching for hardware ID(s): ms_steelhead
+Found MS_Steelhead in C:\WINNT\INF\netrass.inf; Device: Steelhead; Driver: Steelhead; Provider: Microsoft; Mfg: Microsoft; Section: Ndi-Steelhead
+Decorated section name: Ndi-Steelhead
+Selected driver installs from section Ndi-Steelhead in c:\winnt\inf\netrass.inf.
+Changed class GUID of device to {4D36E974-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+[2026/10/02 14:04:27 180.32 Driver Install]
+Searching for hardware ID(s): sw\{97ebaacc-95bd-11d0-a3ea-00a0c9223196}
+Enumerating files C:\WINNT\inf\*.inf
+Found SW\{97ebaacc-95bd-11d0-a3ea-00a0c9223196} in C:\WINNT\inf\ksfilter.inf; Device: Microsoft Streaming Clock Proxy; Driver: Microsoft Streaming Clock Proxy; Provider: Microsoft; Mfg: Microsoft; Section: MSPCLOCK
+Decorated section name: MSPCLOCK.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section MSPCLOCK in c:\winnt\inf\ksfilter.inf.
+Changed class GUID of device to {4D36E96C-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of SW\{97EBAACC-95BD-11D0-A3EA-00A0C9223196}\{53172480-4791-11D0-A5D6-28DB04C10000}.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section MSPCLOCK.NT.Interfaces from c:\winnt\inf\ksfilter.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of SW\{97EBAACC-95BD-11D0-A3EA-00A0C9223196}\{53172480-4791-11D0-A5D6-28DB04C10000}.
+Device install finished successfully (SW\{97EBAACC-95BD-11D0-A3EA-00A0C9223196}\{53172480-4791-11D0-A5D6-28DB04C10000}).
+[2026/10/02 14:04:28 180.588 Driver Install]
+Searching for hardware ID(s): sw\{ddf4358e-bb2c-11d0-a42f-00a0c9223196}
+Enumerating files C:\WINNT\inf\*.inf
+Found SW\{DDF4358E-BB2C-11D0-A42F-00A0C9223196} in C:\WINNT\inf\ksfilter.inf; Device: Microsoft Streaming Quality Manager Proxy; Driver: Microsoft Streaming Quality Manager Proxy; Provider: Microsoft; Mfg: Microsoft; Section: MSPQM
+Decorated section name: MSPQM.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section MSPQM in c:\winnt\inf\ksfilter.inf.
+Changed class GUID of device to {4D36E96C-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of SW\{DDF4358E-BB2C-11D0-A42F-00A0C9223196}\{97EBAACB-95BD-11D0-A3EA-00A0C9223196}.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section MSPQM.NT.Interfaces from c:\winnt\inf\ksfilter.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of SW\{DDF4358E-BB2C-11D0-A42F-00A0C9223196}\{97EBAACB-95BD-11D0-A3EA-00A0C9223196}.
+Device install finished successfully (SW\{DDF4358E-BB2C-11D0-A42F-00A0C9223196}\{97EBAACB-95BD-11D0-A3EA-00A0C9223196}).
+[2026/10/02 14:04:29 180.603 Driver Install]
+Searching for hardware ID(s): sw\{96e080c7-143c-11d1-b40f-00a0c9223196}
+Enumerating files C:\WINNT\inf\*.inf
+Found SW\{96E080C7-143C-11D1-B40F-00A0C9223196} in C:\WINNT\inf\ksfilter.inf; Device: Microsoft Streaming Service Proxy; Driver: Microsoft Streaming Service Proxy; Provider: Microsoft; Mfg: Microsoft; Section: MSKSSRV
+Decorated section name: MSKSSRV.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section MSKSSRV in c:\winnt\inf\ksfilter.inf.
+Changed class GUID of device to {4D36E96C-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of SW\{96E080C7-143C-11D1-B40F-00A0C9223196}\{3C0D501A-140B-11D1-B40F-00A0C9223196}.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section MSKSSRV.NT.Interfaces from c:\winnt\inf\ksfilter.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of SW\{96E080C7-143C-11D1-B40F-00A0C9223196}\{3C0D501A-140B-11D1-B40F-00A0C9223196}.
+Device install finished successfully (SW\{96E080C7-143C-11D1-B40F-00A0C9223196}\{3C0D501A-140B-11D1-B40F-00A0C9223196}).
+[2026/10/02 14:04:29 180.618 Driver Install]
+Searching for hardware ID(s): sw\{c68127b1-9bea-11d0-8fa5-00c04fc324c1}
+Enumerating files C:\WINNT\inf\*.inf
+Found SW\{C68127B1-9BEA-11d0-8FA5-00C04FC324C1} in C:\WINNT\inf\ksfilter.inf; Device: Microsoft Streaming Network Raw Channel Access; Driver: Microsoft Streaming Network Raw Channel Access; Provider: Microsoft; Mfg: Microsoft; Section: RCA
+Decorated section name: RCA.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section RCA in c:\winnt\inf\ksfilter.inf.
+Changed class GUID of device to {4D36E96C-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of SW\{C68127B1-9BEA-11D0-8FA5-00C04FC324C1}\{65E8773D-8F56-11D0-A3B9-00A0C9223196}.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section RCA.NT.Interfaces from c:\winnt\inf\ksfilter.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of SW\{C68127B1-9BEA-11D0-8FA5-00C04FC324C1}\{65E8773D-8F56-11D0-A3B9-00A0C9223196}.
+Device install finished successfully (SW\{C68127B1-9BEA-11D0-8FA5-00C04FC324C1}\{65E8773D-8F56-11D0-A3B9-00A0C9223196}).
+[2026/10/02 14:04:29 180.633 Driver Install]
+Searching for hardware ID(s): sw\{c68127b1-9bea-11d0-8fa5-00c04fc324c1}
+Enumerating files C:\WINNT\inf\*.inf
+Found SW\{C68127B1-9BEA-11d0-8FA5-00C04FC324C1} in C:\WINNT\inf\ksfilter.inf; Device: Microsoft Streaming Network Raw Channel Access; Driver: Microsoft Streaming Network Raw Channel Access; Provider: Microsoft; Mfg: Microsoft; Section: RCA
+Decorated section name: RCA.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section RCA in c:\winnt\inf\ksfilter.inf.
+Changed class GUID of device to {4D36E96C-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of SW\{C68127B1-9BEA-11D0-8FA5-00C04FC324C1}\{65E8773E-8F56-11D0-A3B9-00A0C9223196}.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section RCA.NT.Interfaces from c:\winnt\inf\ksfilter.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of SW\{C68127B1-9BEA-11D0-8FA5-00C04FC324C1}\{65E8773E-8F56-11D0-A3B9-00A0C9223196}.
+Device install finished successfully (SW\{C68127B1-9BEA-11D0-8FA5-00C04FC324C1}\{65E8773E-8F56-11D0-A3B9-00A0C9223196}).
+[2026/10/02 14:04:29 180.648 Driver Install]
+Searching for hardware ID(s): sw\{c68127b1-9bea-11d0-8fa5-00c04fc324c1}
+Enumerating files C:\WINNT\inf\*.inf
+Found SW\{C68127B1-9BEA-11d0-8FA5-00C04FC324C1} in C:\WINNT\inf\ksfilter.inf; Device: Microsoft Streaming Network Raw Channel Access; Driver: Microsoft Streaming Network Raw Channel Access; Provider: Microsoft; Mfg: Microsoft; Section: RCA
+Decorated section name: RCA.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section RCA in c:\winnt\inf\ksfilter.inf.
+Changed class GUID of device to {4D36E96C-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of SW\{C68127B1-9BEA-11D0-8FA5-00C04FC324C1}\{085AFF00-62CE-11CF-A5D6-28DB04C10000}.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section RCA.NT.Interfaces from c:\winnt\inf\ksfilter.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of SW\{C68127B1-9BEA-11D0-8FA5-00C04FC324C1}\{085AFF00-62CE-11CF-A5D6-28DB04C10000}.
+Device install finished successfully (SW\{C68127B1-9BEA-11D0-8FA5-00C04FC324C1}\{085AFF00-62CE-11CF-A5D6-28DB04C10000}).
+[2026/10/28 08:11:13 212.3 Driver Install]
+Munged cmdline: C:\WINNT\system32\services.exe
+EXE name: C:\WINNT\system32\services.exe
+Searching for hardware ID(s): pci\ven_1013&dev_00b8&subsys_11001af4&rev_00,pci\ven_1013&dev_00b8&subsys_11001af4,pci\ven_1013&dev_00b8&cc_030000,pci\ven_1013&dev_00b8&cc_0300
+Searching for compatible ID(s): pci\ven_1013&dev_00b8&rev_00,pci\ven_1013&dev_00b8,pci\ven_1013&cc_030000,pci\ven_1013&cc_0300,pci\ven_1013,pci\cc_030000,pci\cc_0300
+Enumerating files C:\WINNT\inf\*.inf
+Found PCI\VEN_1013&DEV_00B8 in C:\WINNT\inf\display.inf; Device: Cirrus Logic 5446 Compatible Graphics Adapter; Driver: Cirrus Logic 5446 Compatible Graphics Adapter; Provider: Microsoft; Mfg: Cirrus Logic; Section: cirrus
+Decorated section name: cirrus
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section cirrus in c:\winnt\inf\display.inf.
+Changed class GUID of device to {4D36E968-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of PCI\VEN_1013&DEV_00B8&SUBSYS_11001AF4&REV_00\2&EBB567F&0&08.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section cirrus.Interfaces from c:\winnt\inf\display.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of PCI\VEN_1013&DEV_00B8&SUBSYS_11001AF4&REV_00\2&EBB567F&0&08.
+Device install finished successfully (PCI\VEN_1013&DEV_00B8&SUBSYS_11001AF4&REV_00\2&EBB567F&0&08).
+[2026/10/28 08:11:27 212.590 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+[2026/10/28 08:11:27 212.593 Driver Install]
+Searching for hardware ID(s): pci\ven_8086&dev_2918&subsys_00000000&rev_02,pci\ven_8086&dev_2918&subsys_00000000,pci\ven_8086&dev_2918&rev_02,pci\ven_8086&dev_2918,pci\ven_8086&dev_2918&cc_060100,pci\ven_8086&dev_2918&cc_0601
+Searching for compatible ID(s): pci\ven_8086&cc_060100,pci\ven_8086&cc_0601,pci\ven_8086,pci\cc_060100,pci\cc_0601
+Enumerating files C:\WINNT\inf\*.inf
+Found PCI\CC_0601 in C:\WINNT\inf\machine.inf; Device: PCI standard ISA bridge; Driver: PCI standard ISA bridge; Provider: Microsoft; Mfg: (Standard system devices); Section: ISAPNP_DRV
+Decorated section name: ISAPNP_DRV
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section ISAPNP_DRV in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of PCI\VEN_8086&DEV_2918&SUBSYS_00000000&REV_02\2&EBB567F&0&F8.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section ISAPNP_DRV.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of PCI\VEN_8086&DEV_2918&SUBSYS_00000000&REV_02\2&EBB567F&0&F8.
+Device install finished successfully (PCI\VEN_8086&DEV_2918&SUBSYS_00000000&REV_02\2&EBB567F&0&F8).
+[2026/10/28 08:11:28 212.606 Driver Install]
+Searching for hardware ID(s): pci\ven_8086&dev_2922&subsys_11001af4&rev_02,pci\ven_8086&dev_2922&subsys_11001af4,pci\ven_8086&dev_2922&cc_010601,pci\ven_8086&dev_2922&cc_0106
+Searching for compatible ID(s): pci\ven_8086&dev_2922&rev_02,pci\ven_8086&dev_2922,pci\ven_8086&cc_010601,pci\ven_8086&cc_0106,pci\ven_8086,pci\cc_010601,pci\cc_0106
+Enumerating files C:\WINNT\inf\*.inf
+The file (C:\WINNT\inf\oemscs01.inf) is not digitally signed, ignoring driver date.
+Found PCI\CC_010601 in C:\WINNT\inf\oemscs01.inf; Device: AHCINT SATA AHCI Storage Controller; Driver: AHCINT SATA AHCI Storage Controller; Provider: ages2001; Mfg: Standard SATA AHCI Controller; Section: Ahci_Inst
+Decorated section name: Ahci_Inst
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section Ahci_Inst in c:\winnt\inf\oemscs01.inf.
+Changed class GUID of device to {4D36E97B-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of PCI\VEN_8086&DEV_2922&SUBSYS_11001AF4&REV_02\2&EBB567F&0&10.
+Installing section Ahci_Inst from c:\winnt\inf\oemscs01.inf.
+Device install finished with error Error 0x800b0003: The form specified for the subject is not one supported or known by the specified trust provider.
+Completed default installer, error: Error 0x800b0003: The form specified for the subject is not one supported or known by the specified trust provider.
+[2026/10/28 08:11:28 212.616 Driver Install]
+Searching for hardware ID(s): pci\ven_8086&dev_2922&subsys_11001af4&rev_02,pci\ven_8086&dev_2922&subsys_11001af4,pci\ven_8086&dev_2922&cc_010601,pci\ven_8086&dev_2922&cc_0106
+Searching for compatible ID(s): pci\ven_8086&dev_2922&rev_02,pci\ven_8086&dev_2922,pci\ven_8086&cc_010601,pci\ven_8086&cc_0106,pci\ven_8086,pci\cc_010601,pci\cc_0106
+Enumerating files C:\WINNT\inf\*.inf
+The file (C:\WINNT\inf\oemscs01.inf) is not digitally signed, ignoring driver date.
+Found PCI\CC_010601 in C:\WINNT\inf\oemscs01.inf; Device: AHCINT SATA AHCI Storage Controller; Driver: AHCINT SATA AHCI Storage Controller; Provider: ages2001; Mfg: Standard SATA AHCI Controller; Section: Ahci_Inst
+Decorated section name: Ahci_Inst
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section Ahci_Inst in c:\winnt\inf\oemscs01.inf.
+Changed class GUID of device to {4D36E97B-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of PCI\VEN_8086&DEV_2922&SUBSYS_11001AF4&REV_02\2&EBB567F&0&FA.
+Installing section Ahci_Inst from c:\winnt\inf\oemscs01.inf.
+Device install finished with error Error 0x800b0003: The form specified for the subject is not one supported or known by the specified trust provider.
+Completed default installer, error: Error 0x800b0003: The form specified for the subject is not one supported or known by the specified trust provider.
+[2026/10/28 08:11:28 212.626 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+[2026/10/28 08:11:28 212.629 Driver Install]
+Searching for hardware ID(s): pci\ven_8086&dev_29c0&subsys_00000000&rev_00,pci\ven_8086&dev_29c0&subsys_00000000,pci\ven_8086&dev_29c0&rev_00,pci\ven_8086&dev_29c0,pci\ven_8086&dev_29c0&cc_060000,pci\ven_8086&dev_29c0&cc_0600
+Searching for compatible ID(s): pci\ven_8086&cc_060000,pci\ven_8086&cc_0600,pci\ven_8086,pci\cc_060000,pci\cc_0600
+Enumerating files C:\WINNT\inf\*.inf
+Found PCI\CC_0600 in C:\WINNT\inf\machine.inf; Device: PCI standard host CPU bridge; Driver: PCI standard host CPU bridge; Provider: Microsoft; Mfg: (Standard system devices); Section: NO_DRV
+Decorated section name: NO_DRV
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section NO_DRV in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of PCI\VEN_8086&DEV_29C0&SUBSYS_00000000&REV_00\2&EBB567F&0&00.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section NO_DRV.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of PCI\VEN_8086&DEV_29C0&SUBSYS_00000000&REV_00\2&EBB567F&0&00.
+Device install finished successfully (PCI\VEN_8086&DEV_29C0&SUBSYS_00000000&REV_00\2&EBB567F&0&00).
+[2026/10/28 08:11:29 212.641 Driver Install]
+Searching for hardware ID(s): pci_hal\pnp0a03
+Searching for compatible ID(s): *pnp0a03
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0A03 in C:\WINNT\inf\machine.inf; Device: PCI bus; Driver: PCI bus; Provider: Microsoft; Mfg: (Standard system devices); Section: PCI_DRV_ROOT
+Decorated section name: PCI_DRV_ROOT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section PCI_DRV_ROOT in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of PCI_HAL\PNP0A03\0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section PCI_DRV_ROOT.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of PCI_HAL\PNP0A03\0.
+Query-removal during install of PCI_HAL\PNP0A03\0 was vetoed by SCSI\Disk&Ven_QEMU_HAR&Prod_DDISK&Rev_2.5+\3&1a23430f&0&000 (veto type 6)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (PCI_HAL\PNP0A03\0).
+[2026/10/28 08:11:29 212.654 Driver Install]
+Searching for hardware ID(s): *pnp030b
+Searching for compatible ID(s): ps2_keyboard
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP030b in C:\WINNT\inf\keyboard.inf; Device: PC/AT Enhanced PS/2 Keyboard (101/102-Key); Driver: PC/AT Enhanced PS/2 Keyboard (101/102-Key); Provider: Microsoft; Mfg: (Standard keyboards); Section: STANDARD_Inst
+Decorated section name: STANDARD_Inst
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section STANDARD_Inst in c:\winnt\inf\keyboard.inf.
+Changed class GUID of device to {4D36E96B-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Selected driver installs from section STANDARD_Inst in c:\winnt\inf\keyboard.inf.
+Changed class GUID of device to {4D36E96B-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of ROOT\*PNP030B\1_0_22_0_32_0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section STANDARD_Inst.Interfaces from c:\winnt\inf\keyboard.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\*PNP030B\1_0_22_0_32_0.
+Device required reboot: Device has problem: 12.
+Device install finished successfully (ROOT\*PNP030B\1_0_22_0_32_0).
+[2026/10/28 08:11:29 212.672 Driver Install]
+Searching for hardware ID(s): *pnp0400
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0400 in C:\WINNT\inf\msports.inf; Device: Printer Port; Driver: Printer Port; Provider: Microsoft; Mfg: (Standard port types); Section: LptPort
+Decorated section name: LptPort.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section LptPort in c:\winnt\inf\msports.inf.
+Changed class GUID of device to {4D36E978-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of ROOT\*PNP0400\1_0_20_0_0_0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section LptPort.NT.Interfaces from c:\winnt\inf\msports.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\*PNP0400\1_0_20_0_0_0.
+Device install finished successfully (ROOT\*PNP0400\1_0_20_0_0_0).
+[2026/10/28 08:11:29 212.686 Driver Install]
+Searching for hardware ID(s): root\parallelclass
+Enumerating files C:\WINNT\inf\*.inf
+Found Root\ParallelClass in C:\WINNT\inf\machine.inf; Device: Parallel Class Enumerator; Driver: Parallel Class Enumerator; Provider: Microsoft; Mfg: (Standard system devices); Section: PARALLEL_DRV
+Decorated section name: PARALLEL_DRV
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section PARALLEL_DRV in c:\winnt\inf\machine.inf.
+Changed class GUID of device to {4D36E97D-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section PARALLEL_DRV.Interfaces from c:\winnt\inf\machine.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\PARALLELCLASS\0000.
+Device install finished successfully (ROOT\PARALLELCLASS\0000).
+[2026/10/28 08:11:30 212.692 Driver Install]
+Searching for hardware ID(s): *pnp0700
+Enumerating files C:\WINNT\inf\*.inf
+Found *PNP0700 in C:\WINNT\inf\fdc.inf; Device: Standard floppy disk controller; Driver: Standard floppy disk controller; Provider: Microsoft; Mfg: (Standard floppy disk controllers); Section: fdc_install
+Decorated section name: fdc_install.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section fdc_install in c:\winnt\inf\fdc.inf.
+Changed class GUID of device to {4D36E969-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of ROOT\*PNP0700\1_0_13_0_0_0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section fdc_install.NT.Interfaces from c:\winnt\inf\fdc.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\*PNP0700\1_0_13_0_0_0.
+Device required reboot: Device has problem: 10.
+Device install finished successfully (ROOT\*PNP0700\1_0_13_0_0_0).
+[2026/10/28 08:11:34 212.705 Driver Install]
+Searching for hardware ID(s): *pnp0f03
+Searching for compatible ID(s): ps2_mouse
+Enumerating files C:\WINNT\inf\*.inf
+Found PS2_MOUSE in C:\WINNT\inf\msmouse.inf; Device: Standard PS/2 Port Mouse; Driver: Standard PS/2 Port Mouse; Provider: Microsoft; Mfg: (Standard mouse types); Section: PS2_Inst
+Decorated section name: PS2_Inst
+Found *PNP0F03 in C:\WINNT\inf\msmouse.inf; Device: Microsoft PS/2 Mouse; Driver: Microsoft PS/2 Mouse; Provider: Microsoft; Mfg: Microsoft; Section: PS2_Inst
+Decorated section name: PS2_Inst
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section PS2_Inst in c:\winnt\inf\msmouse.inf.
+Changed class GUID of device to {4D36E96F-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Selected driver installs from section PS2_Inst in c:\winnt\inf\msmouse.inf.
+Changed class GUID of device to {4D36E96F-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of ROOT\*PNP0F03\1_0_21_0_31_0.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section PS2_Inst.Interfaces from c:\winnt\inf\msmouse.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\*PNP0F03\1_0_21_0_31_0.
+Query-removal during install of ROOT\*PNP0F03\1_0_21_0_31_0 was vetoed by Root\*PNP0F03\1_0_21_0_31_0 (veto type 6)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (ROOT\*PNP0F03\1_0_21_0_31_0).
+[2026/10/28 08:11:35 212.723 Driver Install]
+Searching for hardware ID(s): e_isa_up
+Searching for compatible ID(s): detectedinternal\pci_hal,detected\pci_hal
+Enumerating files C:\WINNT\inf\*.inf
+Found E_ISA_UP in C:\WINNT\inf\hal.inf; Device: Standard PC; Driver: Standard PC; Provider: Microsoft; Mfg: (Standard computers); Section: E_ISA_UP_HAL
+Decorated section name: E_ISA_UP_HAL
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section E_ISA_UP_HAL in c:\winnt\inf\hal.inf.
+Changed class GUID of device to {4D36E966-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of ROOT\PCI_HAL\0000.
+Installing section E_ISA_UP_HAL from c:\winnt\inf\hal.inf.
+Copying file C:\WINNT\System32\SET5.tmp to C:\WINNT\System32\hal.dll.
+A newer file (C:\WINNT\System32\hal.dll) was overwritten by an older (signed) file. Version of source file: 5.0.2168.1. Version of target file: 5.0.2171.1. The existing target file was signed. 
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section E_ISA_UP_HAL.Interfaces from c:\winnt\inf\hal.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of ROOT\PCI_HAL\0000.
+Device required reboot: "Reboot" in section: E_ISA_UP_HAL.
+Device install finished successfully (ROOT\PCI_HAL\0000).
+[2026/10/28 08:11:36 212.737 Driver Install]
+Searching for hardware ID(s): scsi\diskqemu_harddisk___________2.5+,scsi\diskqemu_harddisk___________,scsi\diskqemu_har,scsi\qemu_harddisk___________2,qemu_harddisk___________2,gendisk
+Searching for compatible ID(s): scsi\disk,scsi\raw
+Enumerating files C:\WINNT\inf\*.inf
+Found GenDisk in C:\WINNT\inf\disk.inf; Device: Disk drive; Driver: Disk drive; Provider: Microsoft; Mfg: (Standard disk drives); Section: disk_install
+Decorated section name: disk_install.NT
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section disk_install in c:\winnt\inf\disk.inf.
+Changed class GUID of device to {4D36E967-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of SCSI\DISK&VEN_QEMU_HAR&PROD_DDISK&REV_2.5+\3&1A23430F&0&000.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section disk_install.NT.Interfaces from c:\winnt\inf\disk.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of SCSI\DISK&VEN_QEMU_HAR&PROD_DDISK&REV_2.5+\3&1A23430F&0&000.
+Query-removal during install of SCSI\DISK&VEN_QEMU_HAR&PROD_DDISK&REV_2.5+\3&1A23430F&0&000 was vetoed by SCSI\Disk&Ven_QEMU_HAR&Prod_DDISK&Rev_2.5+\3&1a23430f&0&000 (veto type 6)
+Device required reboot: Query remove failed (install) CfgMgr32 code: 23.
+Device install finished successfully (SCSI\DISK&VEN_QEMU_HAR&PROD_DDISK&REV_2.5+\3&1A23430F&0&000).
+[2026/10/28 08:11:36 212.750 Driver Install]
+Searching for hardware ID(s): monitor\default_monitor
+Searching for compatible ID(s): *pnp09ff
+Enumerating files C:\WINNT\inf\*.inf
+Found Monitor\Default_Monitor in C:\WINNT\inf\monitor.inf; Device: Default Monitor; Driver: Default Monitor; Provider: Microsoft; Mfg: (Standard monitor types); Section: Unknown.Install
+Decorated section name: Unknown.Install
+Found *PNP09FF in C:\WINNT\inf\monitor.inf; Device: Plug and Play Monitor; Driver: Plug and Play Monitor; Provider: Microsoft; Mfg: (Standard monitor types); Section: VESADDC.Install
+Decorated section name: VESADDC.Install
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section Unknown.Install in c:\winnt\inf\monitor.inf.
+Changed class GUID of device to {4D36E96E-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of DISPLAY\DEFAULT_MONITOR\3&208D5F4A&0&11223344&00&01.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section Unknown.Install.Interfaces from c:\winnt\inf\monitor.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of DISPLAY\DEFAULT_MONITOR\3&208D5F4A&0&11223344&00&01.
+Device install finished successfully (DISPLAY\DEFAULT_MONITOR\3&208D5F4A&0&11223344&00&01).
+[2026/10/28 08:11:39 720.2]
+Munged cmdline: rundll32.exe newdev.dll,DevInstall PCI\VEN_10EC&DEV_8127&SUBSYS_11001AF4&REV_10\2&ebb567f&0&18
+EXE name: C:\WINNT\system32\rundll32.exe
+Set selected driver.
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+[2026/10/28 09:14:09 208.3 Driver Install]
+Munged cmdline: C:\WINNT\system32\services.exe
+EXE name: C:\WINNT\system32\services.exe
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+[2026/10/28 09:14:11 208.6 Driver Install]
+Searching for hardware ID(s): pci\ven_8086&dev_2922&subsys_11001af4&rev_02,pci\ven_8086&dev_2922&subsys_11001af4,pci\ven_8086&dev_2922&cc_010601,pci\ven_8086&dev_2922&cc_0106
+Searching for compatible ID(s): pci\ven_8086&dev_2922&rev_02,pci\ven_8086&dev_2922,pci\ven_8086&cc_010601,pci\ven_8086&cc_0106,pci\ven_8086,pci\cc_010601,pci\cc_0106
+Enumerating files C:\WINNT\inf\*.inf
+The file (C:\WINNT\inf\oemscs01.inf) is not digitally signed, ignoring driver date.
+Found PCI\CC_010601 in C:\WINNT\inf\oemscs01.inf; Device: AHCINT SATA AHCI Storage Controller; Driver: AHCINT SATA AHCI Storage Controller; Provider: ages2001; Mfg: Standard SATA AHCI Controller; Section: Ahci_Inst
+Decorated section name: Ahci_Inst
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section Ahci_Inst in c:\winnt\inf\oemscs01.inf.
+Changed class GUID of device to {4D36E97B-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of PCI\VEN_8086&DEV_2922&SUBSYS_11001AF4&REV_02\2&EBB567F&0&10.
+Installing section Ahci_Inst from c:\winnt\inf\oemscs01.inf.
+Device install finished with error Error 0x800b0003: The form specified for the subject is not one supported or known by the specified trust provider.
+Completed default installer, error: Error 0x800b0003: The form specified for the subject is not one supported or known by the specified trust provider.
+[2026/10/28 09:14:12 208.16 Driver Install]
+Searching for hardware ID(s): pci\ven_8086&dev_2922&subsys_11001af4&rev_02,pci\ven_8086&dev_2922&subsys_11001af4,pci\ven_8086&dev_2922&cc_010601,pci\ven_8086&dev_2922&cc_0106
+Searching for compatible ID(s): pci\ven_8086&dev_2922&rev_02,pci\ven_8086&dev_2922,pci\ven_8086&cc_010601,pci\ven_8086&cc_0106,pci\ven_8086,pci\cc_010601,pci\cc_0106
+Enumerating files C:\WINNT\inf\*.inf
+The file (C:\WINNT\inf\oemscs01.inf) is not digitally signed, ignoring driver date.
+Found PCI\CC_010601 in C:\WINNT\inf\oemscs01.inf; Device: AHCINT SATA AHCI Storage Controller; Driver: AHCINT SATA AHCI Storage Controller; Provider: ages2001; Mfg: Standard SATA AHCI Controller; Section: Ahci_Inst
+Decorated section name: Ahci_Inst
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section Ahci_Inst in c:\winnt\inf\oemscs01.inf.
+Changed class GUID of device to {4D36E97B-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of PCI\VEN_8086&DEV_2922&SUBSYS_11001AF4&REV_02\2&EBB567F&0&FA.
+Installing section Ahci_Inst from c:\winnt\inf\oemscs01.inf.
+Device install finished with error Error 0x800b0003: The form specified for the subject is not one supported or known by the specified trust provider.
+Completed default installer, error: Error 0x800b0003: The form specified for the subject is not one supported or known by the specified trust provider.
+[2026/10/28 09:14:12 208.26 Driver Install]
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+[2026/10/28 09:14:16 700.2]
+Munged cmdline: rundll32.exe newdev.dll,DevInstall PCI\VEN_10EC&DEV_8127&SUBSYS_11001AF4&REV_10\2&ebb567f&0&18
+EXE name: C:\WINNT\system32\rundll32.exe
+Set selected driver.
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selecting best compatible driver caused error: Error 0xe0000228: There are no compatible drivers for this device.
+Completed default installer, error: Error 0xe0000228: There are no compatible drivers for this device.
+[2026/10/28 09:15:45 764.129]
+Munged cmdline: C:\WINNT\system32\MMC.exe "C:\WINNT\System32\devmgmt.msc" 
+EXE name: C:\WINNT\system32\MMC.exe
+Set selected driver.
+Searching for hardware ID(s): pci\ven_10ec&dev_8127&subsys_11001af4&rev_10,pci\ven_10ec&dev_8127&subsys_11001af4,pci\ven_10ec&dev_8127&cc_020000,pci\ven_10ec&dev_8127&cc_0200
+Searching for compatible ID(s): pci\ven_10ec&dev_8127&rev_10,pci\ven_10ec&dev_8127,pci\ven_10ec&cc_020000,pci\ven_10ec&cc_0200,pci\ven_10ec,pci\cc_020000,pci\cc_0200
+Enumerating files c:\rlttest\*.inf
+The file (c:\rlttest\netrtlk.inf) is not digitally signed, ignoring driver date.
+Found PCI\VEN_10EC&DEV_8127 in c:\rlttest\netrtlk.inf; Device: Realtek RTL8127 10GbE Family Controller; Driver: Realtek RTL8127 10GbE Family Controller; Provider: ages2001; Mfg: Realtek; Section: RTL.ndi
+Decorated section name: RTL.ndi
+Device install function: DIF_SELECTBESTCOMPATDRV.
+Selected driver installs from section RTL.ndi in c:\rlttest\netrtlk.inf.
+Changed class GUID of device to {4D36E972-E325-11CE-BFC1-08002BE10318}.
+Set selected driver.
+Selected best compatible driver.
+Device install function: DIF_INSTALLDEVICEFILES.
+Doing copy-only install of PCI\VEN_10EC&DEV_8127&SUBSYS_11001AF4&REV_10\2&EBB567F&0&18.
+Installing section RTL.ndi from c:\rlttest\netrtlk.inf.
+An unsigned or incorrectly signed driver (c:\rlttest\netrtlk.inf) was installed for Realtek RTL8127 10GbE Family Controller. Error 0xe000022f: The third-party INF does not contain digital signature information.
+Copying file c:\rlttest\i386\rltklant.sys to C:\WINNT\System32\DRIVERS\rltklant.sys.
+An unsigned or incorrectly signed driver (c:\rlttest\netrtlk.inf) was installed for Realtek RTL8127 10GbE Family Controller. Error 0xe000022f: The third-party INF does not contain digital signature information.
+Device install function: DIF_REGISTER_COINSTALLERS.
+Co-Installers Registered.
+Device install function: DIF_INSTALLINTERFACES.
+Installing section RTL.ndi.Interfaces from c:\rlttest\netrtlk.inf.
+Interfaces installed.
+Device install function: DIF_INSTALLDEVICE.
+Doing full install of PCI\VEN_10EC&DEV_8127&SUBSYS_11001AF4&REV_10\2&EBB567F&0&18.
+An unsigned or incorrectly signed driver (c:\rlttest\netrtlk.inf) was installed for Realtek RTL8127 10GbE Family Controller. Error 0xe000022f: The third-party INF does not contain digital signature information.
+Device install finished successfully (PCI\VEN_10EC&DEV_8127&SUBSYS_11001AF4&REV_10\2&EBB567F&0&18).

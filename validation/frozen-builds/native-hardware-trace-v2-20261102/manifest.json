@@ -1,0 +1,21 @@
+{
+  "scope": "Diagnostic hardware-init failure report; behavior unchanged",
+  "files": {
+    "rltklant.sys": {
+      "size": 613306,
+      "sha256": "a18113e52ee38a2582af8b4f301c23d3c2e954e917fb5b9267a4434fa3640ca8"
+    },
+    "native_usb.c": {
+      "size": 2903,
+      "sha256": "8a691c6df2347c6ee159fa7e4384465731593aa6fedb5134ad700ae65364bd80"
+    },
+    "backend_usb.c": {
+      "size": 12442,
+      "sha256": "3b6b214ca7cb87e453f2a015b1569bf7ab0e3e48d720ff898eca93aeca357bce"
+    },
+    "usbnic.c": {
+      "size": 11079,
+      "sha256": "696e2c0b3a653aacdd7303912b3f10e802769792d6c27eec7b24340d78ff3375"
+    }
+  }
+}

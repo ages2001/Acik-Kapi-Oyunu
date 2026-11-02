@@ -1,0 +1,9 @@
+{
+  "guest": "xp64-usbnet-mixed-sleep-v3-8127",
+  "file": "MRESET64.EXE",
+  "sha256": "d2bf5b8a247418fbfe4a33d5522e4cc0626748c36e257bbdf160411458b1b8d3",
+  "bytes": 11606,
+  "time": 1793635688.618753,
+  "utc": "2026-11-02T16:08:08.618762+00:00",
+  "scope": "Server buffered bytes; guest byte count and ftp prompt still require visual verification"
+}

@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-01T17:49:49.833483+00:00",
+  "size": 505344,
+  "sha256": "a5a24ffea2c1c823cb353f4fe0bbbd5e924f3b6a8bf4a82ee3eb8b5b0e4824bc",
+  "sources": [
+    {
+      "file": "src/drvnt31.c",
+      "sha256": "af38027e93ddd8cb7f9a159796592caeec52a720e675e56f8c6c07bfd4827d37"
+    },
+    {
+      "file": "src/ndisnt31.h",
+      "sha256": "e312b66971efa2144ba10d7770829c74b7a8a151d6d48df5e99b0d81784d0dd6"
+    },
+    {
+      "file": "build/build-nt31.sh",
+      "sha256": "62f4b02836e7af96fb3e8e9eb99e1f1d40a6ddd63b68351a28adae59ab040fa8"
+    }
+  ],
+  "scope": "New NT3.1 image lifetime candidate, guest validation ongoing; prior DMA-only guest evidence is distinct"
+}

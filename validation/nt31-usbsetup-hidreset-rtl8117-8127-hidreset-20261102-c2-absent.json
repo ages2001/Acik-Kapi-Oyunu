@@ -1,0 +1,28 @@
+{
+  "guest": "nt31-usbsetup-hidreset-rtl8117-8127",
+  "token": "hidreset-20261102-c2-absent",
+  "mask": 2,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T10:09:07.017206+00:00",
+  "paths": [
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 71173,
+      "end_offset": 83413,
+      "capture_prefix_sha256": "d8c2bfcfa4709933a235f36e5cefa38e49435b1d73853cb41839ecbb6d11f9c9",
+      "screenshot": "nt31-usbsetup-hidreset-rtl8117-8127-hidreset-20261102-c2-absent-pci.png",
+      "ocr": "nt31-usbsetup-hidreset-rtl8117-8127-hidreset-20261102-c2-absent-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "c7e6d8753cf42edd40c6a1c6b086905af062b6444e6acd0fcde15f17314b1489"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 4,
+  "finished_utc": "2026-11-02T10:09:12.788482+00:00"
+}

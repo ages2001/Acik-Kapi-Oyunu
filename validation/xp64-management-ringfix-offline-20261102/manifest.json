@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T06:02:45.084556+00:00",
+  "guest": "xp64-management-ringfix-multi-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 612079,
+      "sha256": "094c0b99f7f8d470134ccaa445e07a2802bb378e77cbfc2ff6b14a7b383d15b1"
+    },
+    "RLTTEST/PCNEW.EXE": {
+      "file": "PCNEW.EXE",
+      "size": 17123,
+      "sha256": "75a3e925cd49bc1de3e08417c27116c20b4e62c089bbeedbea4f14016012965c"
+    },
+    "RLTTEST/RINGPNP.LOG": {
+      "file": "RINGPNP.LOG",
+      "size": 2151,
+      "sha256": "6a6c4a1682de68744df3816d43a5d3758dbcf423dcb4d28eea777e6c08b2832d"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+13:53:57.145308 IP 0.0.0.0.68 > 255.255.255.255.67: BOOTP/DHCP, Request from 52:54:00:12:34:56, length 319
+13:53:57.145379 IP 10.0.2.2.67 > 255.255.255.255.68: BOOTP/DHCP, Reply, length 548
+13:53:57.227888 ARP, Request who-has 10.0.2.15 tell 10.0.2.15, length 46
+13:53:57.232015 ARP, Request who-has 10.0.2.15 tell 10.0.2.15, length 46
+13:53:58.225330 ARP, Request who-has 10.0.2.15 tell 10.0.2.15, length 46
+13:53:59.295527 IP 10.0.2.15.137 > 10.0.2.255.137: UDP, length 68

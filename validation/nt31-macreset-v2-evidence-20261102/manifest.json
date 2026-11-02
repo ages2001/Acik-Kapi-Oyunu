@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-02T02:14:52.793771+00:00",
+  "guest": "nt31-usbsetup-macreset-v2-8127",
+  "safeoff_screenshot": "nt31-macreset-v2-safeoff-20261102.png",
+  "safeoff_sha256": "7081e89eeb91cd0a7f08e01700fd8bf684ae5923e1ce4132525380d7a35a1670",
+  "files": {
+    "debug.log": {
+      "bytes": 3532,
+      "sha256": "7b1a2fd5d4c54f670a5ba8a137df57bda5d1732a8f4cd636d485d72744229aaa"
+    },
+    "serial.log": {
+      "bytes": 12,
+      "sha256": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44"
+    },
+    "qemu.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "launch.json": {
+      "bytes": 1570,
+      "sha256": "fe2670e0eefe1d3b988b8d6a04c4c00ac5db47bc409f319f09be2f523c5757e4"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "c643047eacb54441083f4cc3f84bc66d03cb684c91f4abdb9eb61f402765f5a9"
+    },
+    "pci.pcap": {
+      "bytes": 231059,
+      "sha256": "e9e84ed19b8e54352c80f33847ba08d946bb93d8ca98f4f0901b4c7d6bc70beb"
+    },
+    "usb.pcap": {
+      "bytes": 160491,
+      "sha256": "845370223ae063315c5364335b7bc030288d0a52c678495ee5ed3814612f8d58"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

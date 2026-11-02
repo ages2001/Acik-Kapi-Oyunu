@@ -1,0 +1,34 @@
+{
+  "utc": "2026-11-01T22:43:40.190410+00:00",
+  "result": "PASS",
+  "scope": "Actual disabled cold boot and normal shutdown; disabled settings and unrelated Startup item preserved",
+  "parameters": {
+    "RLTKLANT01": {
+      "InterruptNumber": 10,
+      "BusType": 0,
+      "MediaType": 1,
+      "EnableDHCP": 0,
+      "IoBaseAddress": 768,
+      "UsbNtAdapter": 1,
+      "UsbPermanentAddress": "525400abcdef",
+      "DhcpHwAddress": "52:54:00:ab:cd:ef"
+    },
+    "RLTKLANT02": {
+      "InterruptNumber": 10,
+      "BusType": 5,
+      "MediaType": 1,
+      "EnableDHCP": 0,
+      "IoBaseAddress": 768,
+      "UsbNtAdapter": 0,
+      "DhcpHwAddress": "52:54:00:12:34:56"
+    }
+  },
+  "startup_owned_items": 0,
+  "startup_unrelated_items": 1,
+  "packet_proof": "nt31-v9-disabled-boot-pcaps-20261102/manifest.json",
+  "hives": {
+    "SYSTEM": "9590d18e870cbb02d4133f8ec027e7a67844f500ae7b04598944ae542f0582d2",
+    "SOFTWARE": "cb1dd349929053e35c9dee3a6acbd27f762c499fe713d6b197fb9a285339a329",
+    "TEST_000": "bf35605090a8d3836059fc07d7a24e92c64e919e261f5881afdd6dff6ae6d00e"
+  }
+}

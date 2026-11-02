@@ -1,0 +1,9 @@
+{
+  "guest": "nt31-usbsetup-v9-conflict-8127",
+  "file": "CFTEST.BAT",
+  "sha256": "bffd72e2557e4d420307a885cda63f289b296743a3bf48293ca768c4e3df2db3",
+  "bytes": 1230,
+  "time": 1793573837.035582,
+  "utc": "2026-11-01T22:57:17.035590+00:00",
+  "scope": "Server buffered bytes; guest byte count and ftp prompt still require visual verification"
+}

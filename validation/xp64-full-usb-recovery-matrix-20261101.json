@@ -1,0 +1,438 @@
+{
+  "utc": "2026-11-01T18:38:42.352320+00:00",
+  "guest": "xp64-usbnet-resetsequence-8127",
+  "storage": "IDE",
+  "cycles": 32,
+  "full_mtu_replies": 128,
+  "rows": [
+    {
+      "model": "8153",
+      "kind": "reinsert",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8153-native-hotplug.json",
+      "sha256": "e0d3c26439d4f3e44f726c8348347b7a7f7f15552df9c068f0b0e855f4f74ec9",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8153",
+      "kind": "carrier",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8153-native-cable.json",
+      "sha256": "3dd8ecf6b2e196f06fb738359df18548e25e853c243139e6c63f585401e8f156",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8153",
+      "kind": "stalled removal",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-stall-8153-native-hotplug.json",
+      "sha256": "a47a6c0a8592a420ae7865b7bdd996bd63fc08b4c347ed355705cd96cccfba2c",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8153",
+      "kind": "physical port reset",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8153-port-reset-cycles.json",
+      "sha256": "7020060aaad6d45b65aad044265bf74139075f9ca046a9d0c8c097fd542aea1c",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8156",
+      "kind": "reinsert",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8156-native-hotplug.json",
+      "sha256": "e5f5b2a7592a36a47dac913cd0de2ca5691b0384b30f87756bfc0105896a69b8",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8156",
+      "kind": "carrier",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8156-native-cable.json",
+      "sha256": "664672311aef7fbddc41b3626aa034aede86b15ac3e3a86b333e0aa87be385e3",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8156",
+      "kind": "stalled removal",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-stall-8156-native-hotplug.json",
+      "sha256": "6bbf7403e146dee43c56136f3fb6e901f9e732b2f9af68aced5bc483290544f2",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8156",
+      "kind": "physical port reset",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8156-port-reset-cycles.json",
+      "sha256": "9352c789c6b55911bd7993c3a82ce2d947a2203539e6d689a1616d584b836ab3",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8157",
+      "kind": "reinsert",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8157-native-hotplug.json",
+      "sha256": "7847c76efa4fce2eab016864f57ec2bb5f8efda5143c7756b3160bc71a32c817",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8157",
+      "kind": "carrier",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8157-native-cable.json",
+      "sha256": "6a878ae0b8b38b5554530cdd13fe8aeedc3c035acacb3c65a91d102f1ee6d84c",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8157",
+      "kind": "stalled removal",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-stall-8157-native-hotplug.json",
+      "sha256": "5ca46cba5af32767f58d995a9ed5bad510e1ab7d8f7cc35f3f6e58788875b4b8",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8157",
+      "kind": "physical port reset",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8157-port-reset-cycles.json",
+      "sha256": "d14550efd739bb0d47b3a1223fc5ea73b44ca38b0c70a59319006a752a417316",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8159",
+      "kind": "reinsert",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8159-native-hotplug.json",
+      "sha256": "d111a1ecd58db1adb0334518ea7d07b7ee326b4a852c6dfd506f1fe394a1a7e2",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8159",
+      "kind": "carrier",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8159-native-cable.json",
+      "sha256": "44dffbbfaeaf779b06f3277907f25b6d9eddb995c0f98ef7368fb310adb8a687",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8159",
+      "kind": "stalled removal",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-stall-8159-native-hotplug.json",
+      "sha256": "d28ca3b6a8e73cef96830c00f0a1cb6c4996e1e354b26783a3c02ef5788a8903",
+      "cycles": 2,
+      "replies": 8
+    },
+    {
+      "model": "8159",
+      "kind": "physical port reset",
+      "file": "xp64-usbnet-resetsequence-8127-sequence-8159-port-reset-cycles.json",
+      "sha256": "0b45b971d7c430219765841d42999c5d3f128096c2c380d95b886099defc6f28",
+      "cycles": 2,
+      "replies": 8
+    }
+  ],
+  "fixture": {
+    "utc": "2026-11-01T18:25:33.340527+00:00",
+    "parent": "/workspace/rltklant-vm/run/xp64-usbnet-piperecover-8127.qcow2",
+    "parent_chain": [
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 54853632,
+              "filename": "/workspace/rltklant-vm/run/xp64-usbnet-piperecover-8127.qcow2",
+              "format": "file",
+              "actual-size": 54796288,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 5368709120,
+        "filename": "/workspace/rltklant-vm/run/xp64-usbnet-piperecover-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 54796288,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-resettrace-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-resettrace-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 25559040,
+              "filename": "/workspace/rltklant-vm/run/xp64-usbnet-resettrace-8127.qcow2",
+              "format": "file",
+              "actual-size": 25501696,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 5368709120,
+        "filename": "/workspace/rltklant-vm/run/xp64-usbnet-resettrace-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 25501696,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-portrecover-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-portrecover-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 30670848,
+              "filename": "/workspace/rltklant-vm/run/xp64-usbnet-portrecover-8127.qcow2",
+              "format": "file",
+              "actual-size": 30613504,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 5368709120,
+        "filename": "/workspace/rltklant-vm/run/xp64-usbnet-portrecover-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 30613504,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 427819008,
+              "filename": "/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127.qcow2",
+              "format": "file",
+              "actual-size": 427827200,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "qcow2",
+        "virtual-size": 5368709120,
+        "filename": "/workspace/rltklant-vm/run/xp64-usbnet-hardware-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 427827200,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+        "backing-filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 26673152,
+              "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+              "format": "file",
+              "actual-size": 26615808,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "backing-filename-format": "raw",
+        "virtual-size": 5368709120,
+        "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.qcow2",
+        "cluster-size": 65536,
+        "format": "qcow2",
+        "actual-size": 26615808,
+        "format-specific": {
+          "type": "qcow2",
+          "data": {
+            "compat": "1.1",
+            "compression-type": "zlib",
+            "lazy-refcounts": false,
+            "refcount-bits": 16,
+            "corrupt": false,
+            "extended-l2": false
+          }
+        },
+        "full-backing-filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+        "backing-filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+        "dirty-flag": false
+      },
+      {
+        "children": [
+          {
+            "name": "file",
+            "info": {
+              "children": [],
+              "virtual-size": 5368709120,
+              "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+              "format": "file",
+              "actual-size": 2542632960,
+              "format-specific": {
+                "type": "file",
+                "data": {}
+              },
+              "dirty-flag": false
+            }
+          }
+        ],
+        "virtual-size": 5368709120,
+        "filename": "/workspace/rltklant-vm/run/xp64-irq-multi-8127.raw",
+        "format": "raw",
+        "actual-size": 2542632960,
+        "dirty-flag": false
+      }
+    ],
+    "image": "/workspace/rltklant-vm/run/xp64-usbnet-resetsequence-8127.qcow2",
+    "sha256_before_boot": "65da854a9e64760bd1de47b327ebaaeba935fcc8d62c8310267c3ab35c365cf8",
+    "files": [
+      {
+        "guest_path": "windows/system32/drivers/RLTKLANT.SYS",
+        "source": "/workspace/rltklant-work/validation/frozen-builds/pipe-reconfigure-sequence-20261101/ndis5x64.sys",
+        "size": 568624,
+        "sha256": "071dd1a73153e90f0b509fa7df194e6deef5e043f629b0d616edacd6412a271e",
+        "old_size": 568112,
+        "old_sha256": "56d8cea2ee795cef7a276bfc92f0bf65177c07c180dedf7ad89ba3257517da06"
+      },
+      {
+        "guest_path": "rlttest/RLTKLANT.SYS",
+        "source": "/workspace/rltklant-work/validation/frozen-builds/pipe-reconfigure-sequence-20261101/ndis5x64.sys",
+        "size": 568624,
+        "sha256": "071dd1a73153e90f0b509fa7df194e6deef5e043f629b0d616edacd6412a271e",
+        "old_size": 568112,
+        "old_sha256": "56d8cea2ee795cef7a276bfc92f0bf65177c07c180dedf7ad89ba3257517da06"
+      },
+      {
+        "guest_path": "rlttest/amd64/RLTKLANT.SYS",
+        "source": "/workspace/rltklant-work/validation/frozen-builds/pipe-reconfigure-sequence-20261101/ndis5x64.sys",
+        "size": 568624,
+        "sha256": "071dd1a73153e90f0b509fa7df194e6deef5e043f629b0d616edacd6412a271e",
+        "old_size": 568112,
+        "old_sha256": "56d8cea2ee795cef7a276bfc92f0bf65177c07c180dedf7ad89ba3257517da06"
+      }
+    ],
+    "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+  },
+  "launch": {
+    "started_at": 1793557553.5708032,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-x86_64",
+      "-machine",
+      "q35",
+      "-cpu",
+      "qemu64",
+      "-m",
+      "512",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/xp64-usbnet-resetsequence-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/xp64-usbnet-resetsequence-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/xp64-usbnet-resetsequence-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/xp64-usbnet-resetsequence-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/xp64-usbnet-resetsequence-8127/usb.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-global",
+      "q35-pcihost.pci-hole64-size=0",
+      "-no-hpet",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0,lcyls=652,lheads=255,lsecs=63"
+    ],
+    "qemu_sha256": "ce3a860c3b664dc5ee6e625b970ae87c9a29ffec789a3515005da7404968d9e5"
+  },
+  "scope": "Four native USB protocol models; actual guest names/problem codes and payload-checked ICMP; exact staged binary, no physical silicon or line-rate certification"
+}

@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T06:50:14.870972+00:00",
+  "guest": "xp64-management-rtl8117-v2-multi-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 612120,
+      "sha256": "d776ddf8189ff1aec1b95541ab1d24e707d7872dd3f17a458196e4c872babf36"
+    },
+    "RLTTEST/PCNEW.EXE": {
+      "file": "PCNEW.EXE",
+      "size": 17123,
+      "sha256": "d763571bec399e11bcde4f07575b2e0565f29a5fef1d07e31c7ff6c7194650e7"
+    },
+    "RLTTEST/R7PNP.LOG": {
+      "file": "R7PNP.LOG",
+      "size": 2151,
+      "sha256": "6a6c4a1682de68744df3816d43a5d3758dbcf423dcb4d28eea777e6c08b2832d"
+    }
+  }
+}

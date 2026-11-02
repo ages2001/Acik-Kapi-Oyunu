@@ -1,0 +1,2 @@
+PASS: independent USB/PLA banks, command side effects, first/middle/last byte enables and malformed transfers
+PASS: revision-specific PHY status, cable changes and reset preservation

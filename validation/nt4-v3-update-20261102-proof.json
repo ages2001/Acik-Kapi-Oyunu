@@ -1,0 +1,74 @@
+{
+  "utc": "2026-11-01T22:58:05.850839+00:00",
+  "guest": "nt4-ndis-update-v3-8127",
+  "result": "PASS",
+  "checks": {
+    "same_owned_instances": true,
+    "parameters_preserved": true,
+    "registrations_updated": true,
+    "exact_copies": true,
+    "providers_preserved": true
+  },
+  "parameter_changes": {
+    "3": {},
+    "2": {},
+    "1": {}
+  },
+  "registrations": {
+    "1": {
+      "InfName": "RLTKNT35.INF",
+      "type": "rltklant rltklantAdapter",
+      "bindform": "\"RLTKLANT1\" yes yes container",
+      "class": [
+        "rltklantAdapter basic"
+      ],
+      "InfOption": "RLTKLANT"
+    },
+    "2": {
+      "InfName": "RLTKNT35.INF",
+      "type": "rltklant rltklantAdapter",
+      "bindform": "\"RLTKLANT2\" yes yes container",
+      "class": [
+        "rltklantAdapter basic"
+      ],
+      "InfOption": "RLTKLANT"
+    },
+    "3": {
+      "InfName": "RLTKNT35.INF",
+      "type": "rltklant rltklantAdapter",
+      "bindform": "\"RLTKLANT3\" yes yes container",
+      "class": [
+        "rltklantAdapter basic"
+      ],
+      "InfOption": "RLTKLANT"
+    },
+    "software": {
+      "InfName": "RLTKNT35.INF",
+      "type": "rltklantSys ndisDriver rltklantDriver",
+      "use": "driver",
+      "bindform": "\"rltklantSys\" yes no container",
+      "class": [
+        "rltklantDriver basic"
+      ],
+      "bindable": [
+        "rltklantDriver rltklantAdapter non exclusive 100"
+      ],
+      "InfOption": "RLTKLANT"
+    }
+  },
+  "exact_copies": {
+    "RLTSETUP.DLL": true,
+    "RLTKNT35.INF": true,
+    "RLTUSB.EXE": true,
+    "RLTKLANT.SYS": true
+  },
+  "os_version": {
+    "CurrentVersion": "4.0",
+    "CurrentBuildNumber": "1381",
+    "CSDVersion": "Service Pack 1"
+  },
+  "scope": "Actual NCPA Update/Configure with native binding completion and normal shutdown readback",
+  "limitations": [
+    "Cold boot/traffic and removal require separate evidence"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "utc": "2026-11-02T01:10:11.789595+00:00",
+  "scope": "PCI passive reset candidate; Windows MAC subtree not integrated. Test helper source uses corrected NT5 PnP enumeration; helper v3 kernel and v4 invoker match live tests.",
+  "files": {
+    "RLTKLANT/build/ndis3/rltklant.sys": {
+      "size": 505229,
+      "sha256": "753fe7763295e6138da266ff9ed5c401f6a8070f50bd6a1fbd0c4e47c8cd13ba"
+    },
+    "RLTKLANT/build/ndis5/rltklant.sys": {
+      "size": 520469,
+      "sha256": "89340995b837ca23f3121eb8e2700b999cc3744feaa0296a8f8f41dcebe6f3d7"
+    },
+    "RLTKLANT/build/ndis5x64/rltklant.sys": {
+      "size": 576187,
+      "sha256": "1ffb0bbd1c683b2830890b16706f45af4f2018054078da7577ee500d55dfede4"
+    },
+    "RLTKLANT/src/pcirecovery.c": {
+      "size": 3858,
+      "sha256": "eda0e3bd6d4d67b7525cc6eb471a3608e9ab98ab751f7768a2bf43b5858a5f37"
+    },
+    "RLTKLANT/src/lifecycle.c": {
+      "size": 5046,
+      "sha256": "215ba5f84f0717301ccc94052a48815adb896cf73de7e5f2899214a9904b9547"
+    },
+    "RLTKLANT/src/init.c": {
+      "size": 23073,
+      "sha256": "f117e890c64ed1a85e76108d6a63cebf34f0ff1346123fe61b9835d2a654f5c2"
+    },
+    "RLTKLANT/src/datapath.c": {
+      "size": 9998,
+      "sha256": "890e87be3d1f85d8f4f40139e05441f85c041c5e3159ea9fb7ca892f1dbba32e"
+    },
+    "RLTKLANT/src/rltklant.h": {
+      "size": 9027,
+      "sha256": "cffe102f7d62f74a323b6f0300d9512d2177b822a38f477fd001975ad28dc90a"
+    },
+    "RLTKLANT/src/ndiskit.h": {
+      "size": 16162,
+      "sha256": "3a292d4c4de4ed781fa298a252cd60c623c4f8cac11d2fda6f9f879785127765"
+    },
+    "RLTKLANT/src/native_pci.c": {
+      "size": 3282,
+      "sha256": "fd0c76624af57480d2bfe3de1ac90ca1568d1b3b4c1bbc3628125a50acd930b1"
+    },
+    "RLTKLANT/src/native_pci.h": {
+      "size": 521,
+      "sha256": "b5d4ff8dd748a8f93f2744b41f22a48a653a6991cf94f8a89a2fa70eb6c43592"
+    },
+    "RLTKLANT/build/build.sh": {
+      "size": 5363,
+      "sha256": "8035439fbe551111bf85b4f91da8d0cc6a88e6e68f04c32e55e4174b27f4314e"
+    },
+    "validation/test_pci_recovery_worker.py": {
+      "size": 7919,
+      "sha256": "2cca85a09b704a39cf1e6a6bda1bf506e839b3b56a40f1dc50fa3c18aa0213b0"
+    },
+    "validation/test_pci_recovery_lifecycle.py": {
+      "size": 5775,
+      "sha256": "4059530b8f10d9178e041b6a1453bc86e5abdef0e4267c26a72c6981ec476335"
+    },
+    "validation/test_miniport_send.py": {
+      "size": 3998,
+      "sha256": "32f26b2a619cb2ff6e011493f30fb9c534ef2a9124b547f9f37adbb813882a01"
+    },
+    "validation/test_object_dereference_abi.py": {
+      "size": 3069,
+      "sha256": "8947da3fbd3c34fe3f81efa0f5a21d2b7780d659ae8b96d707b01624626e8a6e"
+    },
+    "validation/guest_pci_reset_driver.c": {
+      "size": 6728,
+      "sha256": "9c5cc0b62b6e5f48f499bfe30afe9dd998e0f3a30c1afb8383aebdcc40b244ae"
+    },
+    "validation/guest_pci_reset_probe.c": {
+      "size": 4468,
+      "sha256": "68aa95fc4f77c04d57b43bbca451db6fde1936dff5de2fcbb0c48031d5e240b1"
+    },
+    "validation/ndis3_protocol_test.h": {
+      "size": 2713,
+      "sha256": "4d3b42e7450e9aa8db300a41f4d7acf51913a518106a19a91630c84e5c832387"
+    }
+  }
+}

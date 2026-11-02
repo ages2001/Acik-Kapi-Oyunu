@@ -1,0 +1,9 @@
+{
+  "guest": "xp64-usbnet-hardware-8127",
+  "file": "ui64.exe",
+  "sha256": "ca946253045673e8336484015068d61e0c29f9e2a70a3fdf4391b2b446ee4f67",
+  "bytes": 8471,
+  "time": 1793552395.1038978,
+  "utc": "2026-11-01T16:59:55.103906+00:00",
+  "scope": "Server buffered bytes; guest byte count and ftp prompt still require visual verification"
+}

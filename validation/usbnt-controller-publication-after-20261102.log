@@ -1,0 +1,1 @@
+PASS: 100 actual controller table publication schedules; replacement waits for readers, retains slot count and publishes before retirement

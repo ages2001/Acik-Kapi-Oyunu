@@ -1,0 +1,7 @@
+test: /tmp/tmpi28b33pw/test.c:89: main: Assertion `reads==3' failed.
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_usbnt_sleep_companion.py", line 47, in <module>
+    subprocess.run([str(exe)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/tmpi28b33pw/test']' died with <Signals.SIGABRT: 6>.

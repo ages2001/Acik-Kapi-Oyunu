@@ -1,0 +1,12 @@
+{
+  "result": "PASS_COMPONENT_CHECKS",
+  "utc": "2026-11-02T06:27:48.516022+00:00",
+  "owner_logs": [
+    "rtl8117-integrated-owner-20261102.log",
+    "rtl8117-nt31-owner-20261102.log",
+    "rtl8117-waits-current-harness-20261102.log"
+  ],
+  "phy_transport_log": "rtl8117-integrated-phy-20261102.log",
+  "note": "The initial combined runner completed firmware/PHY/catalogue checks, then failed because its delay test extracted an obsolete function name. The updated test extracts the current microsecond and millisecond wrappers and passes separately. This summary does not rewrite the failed combined log.",
+  "model": "rtl8117-integrated-qemu-20261102.json"
+}

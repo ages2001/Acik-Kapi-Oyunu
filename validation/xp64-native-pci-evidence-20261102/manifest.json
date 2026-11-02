@@ -1,0 +1,51 @@
+{
+  "guest": "xp64-pciconfig-multi-8127",
+  "utc": "2026-11-02T00:53:46.067083+00:00",
+  "poweroff_proof": "xp64-native-pci-poweroff-20261102.json",
+  "files": {
+    "extra3.pcap": {
+      "bytes": 17720,
+      "sha256": "8b47e35a81737ae5ab46da4790bf6eab507b190e2e57a316e6cf15d78938bfc5"
+    },
+    "extra2.pcap": {
+      "bytes": 17720,
+      "sha256": "cd5d09c4f4d8841d469352bdb7dedd792f099538b19a11fd19a69d7ba54a963e"
+    },
+    "debug.log": {
+      "bytes": 2035,
+      "sha256": "dc30b08557800944b6abb7c8b84e0d4d3276b5286a76cbf27778c7ef7d348e01"
+    },
+    "pci.pcap": {
+      "bytes": 18109,
+      "sha256": "8c32811b397501303442f1e926618c761761e8d2cc1eafc4a1b2df33e47ab99b"
+    },
+    "extra4.pcap": {
+      "bytes": 17706,
+      "sha256": "2c8c6bcda9ba2f122cfe16e27f0d00b785995a737bde0bd302b354784e67c30a"
+    },
+    "launch.json": {
+      "bytes": 2585,
+      "sha256": "08e26af0e99fb4d2936c586e9519dbfaa2e49cb9dce0e50c6ec0c52670acef91"
+    },
+    "process-exit.json": {
+      "bytes": 52,
+      "sha256": "33603e1d736ad96bf278517fdd9f8a74bb2b4fd76306d0307ea6d0f22a3aaad2"
+    },
+    "serial.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qemu.log": {
+      "bytes": 95,
+      "sha256": "28c8b46daf4b31edc331222d779ff1fbc3f320b382692555d6474fc78f8e59f9"
+    },
+    "extra5.pcap": {
+      "bytes": 18238,
+      "sha256": "8eaf1175c9c53e9abd7081e835a04dfa031c903c86f9b90230ca32c210ee896a"
+    },
+    "extra1.pcap": {
+      "bytes": 17566,
+      "sha256": "eaf53c91cbbc44871c4ccd684662fd86c6f12c59ba6a37c331464cb0c4ed160d"
+    }
+  }
+}

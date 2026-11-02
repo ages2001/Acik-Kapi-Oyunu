@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T05:09:42.392881+00:00",
+  "guest": "nt351-usbsetup-macstart-8127",
+  "files": {
+    "WINNT351/SYSTEM32/KERNEL32.DLL": {
+      "file": "KERNEL32.DLL",
+      "size": 337696,
+      "sha256": "d4379506d34b8bbcc6eb08dc44b8a2ecd712c5593a0b5bb5d1cb38e11adf5314"
+    },
+    "WINNT351/SYSTEM32/ADVAPI32.DLL": {
+      "file": "ADVAPI32.DLL",
+      "size": 181504,
+      "sha256": "03edea5c5ed09b35add1f0cfac88dc8c38278cad23a38b52bc0702e4aa807c84"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "result": "FAIL",
+  "scope": "RCR receive-filter updates must not discard the RTL8139 DMA ring position.\n\nThe pinned Linux 8139too changes RxConfig filtering while running without\nresetting its software cursor (rtl8139_set_rx_mode). Test hardware semantics\nindependently of RLTKLANT; do not hide mismatches with driver workarounds.\n",
+  "qemu_sha256": "e296ab523280432e7768c7b6c9c36235c2c7fd90fa471d7f03385e3c1acbab84",
+  "before_filter": 72,
+  "after_filter": 0,
+  "error": "AssertionError('RCR filtering change reset DMA producer cursor')"
+}

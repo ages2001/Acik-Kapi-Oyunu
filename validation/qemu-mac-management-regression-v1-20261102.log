@@ -1,0 +1,8 @@
+{"model": "rtl8169", "register_bytes": 4096, "operations": 8, "delay_us": 0, "handshake_ports": []}
+{"model": "rtl8168", "register_bytes": 4096, "operations": 7, "delay_us": 0, "handshake_ports": [], "timeout_operations": 7, "production_timeout_scope": "NO_POLLED_HANDSHAKE_IN_THIS_REVISION", "timeout_then_reset_retry": "PASS"}
+{"model": "rtl8125", "register_bytes": 32768, "operations": 271, "delay_us": 121, "handshake_ports": [104, 128], "timeout_operations": 281, "production_timeout_scope": "POLLED_HANDSHAKE", "timeout_then_reset_retry": "PASS"}
+{"model": "rtl8126", "register_bytes": 32768, "operations": 176, "delay_us": 1, "handshake_ports": [104], "timeout_operations": 250, "production_timeout_scope": "POLLED_HANDSHAKE", "timeout_then_reset_retry": "PASS"}
+{"model": "rtl8127", "register_bytes": 32768, "operations": 202, "delay_us": 1, "handshake_ports": [104], "timeout_operations": 282, "production_timeout_scope": "POLLED_HANDSHAKE", "timeout_then_reset_retry": "PASS"}
+{"model": "rtl8125,pci-id-alias=0x3000", "register_bytes": 32768, "operations": 271, "delay_us": 121, "handshake_ports": [104, 128], "timeout_operations": 281, "production_timeout_scope": "POLLED_HANDSHAKE", "timeout_then_reset_retry": "PASS"}
+{"model": "rtl8125,pci-id-alias=0x5000", "register_bytes": 32768, "operations": 271, "delay_us": 121, "handshake_ports": [104, 128], "timeout_operations": 281, "production_timeout_scope": "POLLED_HANDSHAKE", "timeout_then_reset_retry": "PASS"}
+{"model": "rtl8125,pci-id-alias=0xe10", "register_bytes": 32768, "operations": 271, "delay_us": 121, "handshake_ports": [104, 128], "timeout_operations": 281, "production_timeout_scope": "POLLED_HANDSHAKE", "timeout_then_reset_retry": "PASS"}

@@ -1,0 +1,23 @@
+{
+  "utc": "2026-11-01T21:29:19.375346+00:00",
+  "status": "TESTED_ADDITIONAL_ADAPTER_PATH_PASS",
+  "guest": "nt31-usbsetup-ncpa-v6-8127",
+  "package": "legacy-setup-nt31-v6-20261101/manifest.json",
+  "source_directory": "C:\\RLTSET6",
+  "path": "additional adapter on an existing installation",
+  "observations": [
+    "Native DHCP Yes prompt selected",
+    "No absent-item removal error",
+    "Adapter02 created",
+    "TCP/IP configured for second subnet 10.0.3.15/24",
+    "Network Setup reached restart prompt"
+  ],
+  "screenshots": [
+    "nt31-v6-dhcp-prompt-20261101.png",
+    "nt31-v6-after-yes-20261101.png",
+    "nt31-v6-bindings-20261101.png"
+  ],
+  "pending": [],
+  "installed_proof": "nt31-v6-installer-copy-startup-proof-20261101.json",
+  "final_proof": "nt31-v6-auto-logon-proof-20261101.json"
+}

@@ -1,0 +1,42 @@
+{
+  "utc": "2026-11-02T09:38:16.567780+00:00",
+  "result": "PASS",
+  "guest": "nt351-usbsetup-rtl8139-hidcap-8127",
+  "drivers": {
+    "USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 411648,
+      "sha256": "92d6f836da50302b026ac16f1e02daba932dbebd3c233beab1a8eb4374b53d4c"
+    },
+    "RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 540920,
+      "sha256": "265fa3b0d489db67040d7ae20bed5a4947a73bd3659c835f38df22bb00c7a3cf"
+    },
+    "TCP35.LOG": {
+      "file": "TCP35.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    }
+  },
+  "tcp_bytes_each_direction": 3145728,
+  "registered_mac_resets": 3,
+  "rx_watchdog_events": 0,
+  "usb_generic_attachment_cycles": 4,
+  "pci_full_payload_replies_during_usb_cycles": 68,
+  "evidence": {
+    "nt351-hidcap-offline-20261102/manifest.json": "8ff5b8c48893b445cf64a1abf081d2fe3cb0221c93ee251c8a386f27cb4c30d0",
+    "nt351-hidcap-evidence-20261102/manifest.json": "5cf85baa5ac1bc19cbb64f799341d6a0f3b97fbcd6d94fdf7dd288ffaa85af31",
+    "nt351-hidcap-tcp-wire-proof-20261102.json": "9d0386b0c1c8d9e3565a62f791332cb94e1fec674ad57807e999fe311d6b19c4",
+    "nt351-hidcap-registered-reset-20261102.json": "e9568688ee910ed01c2bdd81e5c0f5c7ef32ef2274cda20386ff2d718d9dc7e9",
+    "nt351-usbsetup-rtl8139-hidcap-8127-hidcap-pci-20261102-sibling-matrix.json": "9c07417db50a0acdb3074e4ba23c05f91652a184472c35b7ad067058a94f5234",
+    "nt351-hidcap-tcp-baseline-20261102.json": "5534e0ffa1148d691c74916180510dd01666d5a51682615a41503463b8667636",
+    "nt351-hidcap-tcp-baseline-screen-20261102.png": "f5f4bea715ecb6ca52240c250a1b67358af7d6c62d1e9516f9ad855055db95d2",
+    "nt351-hidcap-tcp-reset-20261102.json": "6f832efd1179085d23da3c29a2e2164f46ced23983dbf114a41254078228f509",
+    "nt351-hidcap-tcp-reset-screen-20261102.png": "ff722d0c007120a501a7a12c637427e9071025842b9e5ec57f3728333882d8d7",
+    "nt351-hidcap-tcp-cable-20261102.json": "f24be7ed55bd59f8ef12231d25507ec7afe7afb9be9b57f0c460b2efc3f1c16c",
+    "nt351-hidcap-tcp-cable-screen-20261102.png": "049c0544d0024535b395d30135183d8dbd9d9e2bef936ecee7feffa6aa5d083e"
+  },
+  "scope": "Actual QEMU RTL8139 on NT3.51 IDE with latest legacy USBNT HID-capacity candidate. Baseline, registered resets and cable reconnection: guest PASS screens plus host comparison and full closed-PCAP byte/checksum reassembly. Four USB attachment/carrier cycles preserve PCI traffic. Only PCI is network-bound. Not physical silicon, Internet, USB TCP/IP or PCI surprise-removal proof.",
+  "guest_log_limit": "NT3.51 COPY does not accept the attempted /Y option. Failed copies are visible in the screenshots; inherited TCPBASE/TCPRST/TCPCABLE logs are excluded. Only the freshly written final TCP35.LOG, three fresh PASS screenshots, host reports and closed packet capture are credited."
+}

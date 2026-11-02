@@ -1,0 +1,23 @@
+In file included from /tmp/tmpztd9ckh1/test.c:9:
+/workspace/rltklant-work/RLTKLANT/src/rltkhw.h:229:14: error: unknown type name ‘ULONG’
+  229 |     volatile ULONG opts1; /* DMA ownership/status must be read each time */
+      |              ^~~~~
+/workspace/rltklant-work/RLTKLANT/src/rltkhw.h:230:5: error: unknown type name ‘ULONG’
+  230 |     ULONG   opts2;      /* vlan / checksum                              */
+      |     ^~~~~
+/workspace/rltklant-work/RLTKLANT/src/rltkhw.h:231:5: error: unknown type name ‘ULONG’
+  231 |     ULONG   addr_lo;    /* buffer physical address low                  */
+      |     ^~~~~
+/workspace/rltklant-work/RLTKLANT/src/rltkhw.h:232:5: error: unknown type name ‘ULONG’
+  232 |     ULONG   addr_hi;    /* buffer physical address high (64-bit DMA)    */
+      |     ^~~~~
+/tmp/tmpztd9ckh1/test.c: In function ‘main’:
+/tmp/tmpztd9ckh1/test.c:75:20: error: ‘RTL_PCI_ID’ {aka ‘const struct _RTL_PCI_ID’} has no member named ‘Flags’
+   75 |   expected_width=(p->Flags&RTL_F_8125REGS)?32:16;expected_gmii=p->MaxSpeed>=1000;
+      |                    ^~
+Traceback (most recent call last):
+  File "/workspace/rltklant-work/validation/test_nt31_phy_start.py", line 88, in <module>
+    subprocess.run(['gcc', '-std=c99', '-Wall', '-Wextra', '-Werror',
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['gcc', '-std=c99', '-Wall', '-Wextra', '-Werror', '-Wno-unused-function', '-fsanitize=address,undefined', '-I', '/workspace/rltklant-work/RLTKLANT/src', '/tmp/tmpztd9ckh1/test.c', '-o', '/tmp/tmpztd9ckh1/test']' returned non-zero exit status 1.

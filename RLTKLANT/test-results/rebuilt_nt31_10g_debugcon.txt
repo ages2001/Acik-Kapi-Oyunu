@@ -1,0 +1,27 @@
+
+RLTKLANT NT3.1 DriverEntry
+img start=0xFBCC0000 size=0x00004A00
+img pool=0xFE786000
+ADD begin
+PCI dev=0x00008127 io=0x0000C000 irq=0x0000000B bk=0x00000002
+cp dma ok txdesc=0x00812100 rxdesc=0x00812B00
+pre-reg
+RegisterAdapter=0x00000000
+io now=0x0000C000
+CP id=0x00008127 MAC=0x000000520x000000540x000000000x000000120x000000340x00000056
+CP speed=0x05F5E100
+hw ok, pre-filter
+filter created
+timer armed (pool dpc)
+ADD ok
+ADD begin
+PCI: no Realtek LAN found
+RegisterMac st=0x00000000 err=0x00000000 mac=0xFE78CC28
+DriverEntry ok
+OPN arrsz=0x00000004
+open ok
+filt_change 0x00000003
+OPN arrsz=0x00000004
+open ok
+filt_change 0x0000000B
+filt_change 0x00000003

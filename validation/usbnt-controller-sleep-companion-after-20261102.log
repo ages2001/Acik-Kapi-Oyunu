@@ -1,0 +1,1 @@
+PASS: actual port polling preserves live EHCI sleep ownership and resumes after EHCI removal; own sleep still blocks MMIO

@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-01T20:54:30.400469+00:00",
+  "result": "PASS",
+  "scope": "Exact package files after actual NT3.1 v4 additional-adapter install and normal shutdown; no offline registry edits",
+  "files": {
+    "SYSTEM": {
+      "bytes": 643072,
+      "sha256": "6520993eedd3b25cbba7cb59a3763a07daff589a992838a29bf47c0b97eb50aa"
+    },
+    "SOFTWARE": {
+      "bytes": 319488,
+      "sha256": "1fbd60594c7985e46cc3abc6a87bfe7c69765e41a6d2d8479df3e4efef41a336"
+    },
+    "RLTKLANT.SYS": {
+      "bytes": 506368,
+      "sha256": "b12e33a9399c6f9eec95f2a0ff529789ff04a1732acf62366483b55d901a10ca",
+      "matches_package": true
+    },
+    "RLTUSB.EXE": {
+      "bytes": 12974,
+      "sha256": "9523fada3b23ba58e91f1e5c98f5565698e87cf9cfa0006b7f4b15835999f330",
+      "matches_package": true
+    },
+    "DHCPNT31.EXE": {
+      "bytes": 23899,
+      "sha256": "166782ced1eff2d9a8c4363aa5ff17293e221d1fbf0e1409f1998eb28612f030",
+      "matches_package": true
+    },
+    "prior_log_present": true
+  }
+}

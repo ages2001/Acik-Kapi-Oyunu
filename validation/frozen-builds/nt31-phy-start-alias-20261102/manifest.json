@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-01T23:25:04.251903+00:00",
+  "scope": "NT3.1 pre-PHY IMR family fix for 3000/5000/0e10 aliases; 80 sanitized production-function schedules pass; guest validation pending",
+  "files": {
+    "rltklant.sys": {
+      "bytes": 506368,
+      "sha256": "d9624c6ffd75d32d7d22b6301f5a4a1676540bdba5c536a72aee461cd93c86ec"
+    },
+    "drvnt31.c": {
+      "bytes": 67780,
+      "sha256": "0d80286d3aceb2e150ece0b7e7f7f42443906d9f94bbc77e6b81b7ed4f1dcf0f"
+    },
+    "nt31-phy-start-alias-build-20261102.log": {
+      "bytes": 212,
+      "sha256": "e545687063761e1de4638b23cf42196bb29700fb37a10e6dad78f5d2b95ee518"
+    },
+    "test_nt31_phy_start.py": {
+      "bytes": 4179,
+      "sha256": "05df622ab4a97d28d621e9a10eda6fc46d775a609de5f338a304d625a32bc904"
+    },
+    "nt31-phy-start-alias-fixed-20261102.log": {
+      "bytes": 146,
+      "sha256": "3ed5d23519e1382f930900fb29bb4f0837a36b12eded48ba348cbb4f8f8be981"
+    }
+  }
+}

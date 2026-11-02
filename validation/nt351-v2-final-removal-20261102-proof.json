@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-01T23:47:03.515775+00:00",
+  "guest": "nt351-usbsetup-v2-remove-last-8127",
+  "result": "PASS_PENDING_REBOOT",
+  "scope": "Native NCPA removal and normal-shutdown registry readback",
+  "checks": {
+    "remaining_instances": true,
+    "remaining_parameters": true,
+    "removed_instance_services_absent": true,
+    "network_providers_preserved": true,
+    "shared_product_removed": true,
+    "shared_service_marked": true
+  },
+  "remaining": [],
+  "removed": {
+    "2": "RLTKLANT2",
+    "1": "RLTKLANT1"
+  },
+  "shared_service": {
+    "Type": 1,
+    "Start": 3,
+    "ErrorControl": 1,
+    "ImagePath": "\\SystemRoot\\System32\\drivers\\rltklant.sys",
+    "DisplayName": "Realtek RLTKLANT Adapter Driver",
+    "Group": "NDIS",
+    "DeleteFlag": 1
+  },
+  "shared_product": null,
+  "registry": "nt351-v2-final-removal-20261102-registry.json",
+  "files": {
+    "SYSTEM": "1f9ceef275fd95597fd3126c123f17cced9cb4f40c769d0bd24782a76ad666c1",
+    "SOFTWARE": "37244867e342a49b15fbca289e34c47bd6d6b3ea2fa8d8c464480300af136841"
+  },
+  "limits": [
+    "Cold boot and surviving-adapter traffic require separate evidence"
+  ]
+}

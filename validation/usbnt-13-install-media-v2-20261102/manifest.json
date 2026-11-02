@@ -1,0 +1,21 @@
+{
+  "2kxp/amd64/usbinst.exe": "f1731981969f303170d7bcd8d6428ec249a76698a098b6becd88735854729ceb",
+  "2kxp/amd64/usbnt.sys": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1",
+  "2kxp/amd64/usbntcap.dll": "73d3f34cf0594b862d66c87a479ffa701de7414fd6d6b5ee80cb2f9c7bb4f3a3",
+  "2kxp/i386/usbnt.sys": "0e259b6368bdf7307132d81204f1f87fa2875f51619dd5749dc5bba1f7419b3b",
+  "2kxp/usbnt.inf": "4e669091e60be1df8a16f27966eae23964a1dbd52733c8583298555563f80cc8",
+  "2kxp/usbntkbd.inf": "a320986df38b5bb7b13845b95fbb8473f5697f0f2e5071e35ca113c11b655bf3",
+  "2kxp/usbntmou.inf": "e3d9affd44e3b845ed6a0fcecffbc2fc28225b7e6f9dcc6ffbd0afdd54a38550",
+  "CHANGELOG.md": "d58643094a9786c0302d1d0cc334d28f0eecd171a3be9dfd3f02c862694312d9",
+  "LICENSE": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+  "README.md": "a117a44befd628358c3e09e23085bd028d1b3bb3c69c4d4ef5a5bd2f0a1991c7",
+  "RELEASE-1.3-STATUS.md": "5c0f45b8a4524e5d90d94043c37c85cfc87e24d6d7aa3c025257abb4baacb682",
+  "usbcam.exe": "551a9cb25d4b7e06607a4a56beada4358694cd04de013c2532af7de2c6f98251",
+  "usbeject.exe": "8633a07d0a6fdf75b5865a82c5ef3f7818bfd101135fce0d53ebce3137077eb0",
+  "usbinst.exe": "102e16349209fd52ab2ca0ef4f92c72e46f763b437cacfe8ea8a0a348079f73e",
+  "usbmon.exe": "e9e4f94035fc5d5d431b1b1f7be05bd53034d51b7fabd0f252080f799f65213a",
+  "usbnt.sys": "0ce8a357a44a0a7b4488c6238a2beb8dbfb8a2fc2e1ed3d03d148f9d50e36b7e",
+  "usbntcap.dll": "75c8e1955520c58fb464ba158472cbb0b2f730b039e739cc8919a473c3ba33fd",
+  "usbtree.exe": "48d867b5840b689ba0c50b1ed22168eae3b42346f7545357013140c493d5dc97",
+  "wheeltst.exe": "1e94aef5306df6f95503a0c85ef3bd250bb84061defd60b0ee5d22fbeff74b9c"
+}

@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-01T22:14:33.133060+00:00",
+  "result": "FAIL",
+  "guest": "nt31-usbsetup-update-v8b-8127",
+  "package": "legacy-setup-nt31-v8-20261102/manifest.json",
+  "scope": "Actual NCPA Update then Configure Yes, network bindings completion and normal shutdown readback",
+  "findings": [
+    "Installed RLTSETUP.DLL exactly matches v4 candidate",
+    "Both existing adapters and shared software retain old oemnad0/oemnad1 InfName values",
+    "Subsequent Configure therefore executes v6: BusType 5 to 1; two Startup items"
+  ],
+  "offline_files": "nt31-update-v8b-offline-20261102",
+  "remaining": "Install a persistent new INF and register every owned adapter and shared software before subsequent Configure/remove"
+}

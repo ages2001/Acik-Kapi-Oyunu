@@ -1,0 +1,25 @@
+{
+  "scope": "Diagnostic separation of spaced controller recovery and transitions interrupting PHY/register initialization. Not proof of all controller power behavior.",
+  "singletrace": {
+    "first_cycle": "FAIL: no INIT DONE within 60 seconds; later screenshot shows problem 31 and zero replies",
+    "retry": "Six individually observed pairs pass, 24 payload-checked replies; does not erase first failure",
+    "evidence": "xp64-hcd-singletrace-evidence-20261102/manifest.json",
+    "readback": "xp64-hcd-singletrace-offline-20261102/manifest.json"
+  },
+  "comparison": {
+    "oldpdo": {
+      "spaced_result": "LIMITED_PASS",
+      "completed_pairs": 6,
+      "spaced_report": "xp64-usbnet-hcpower-oldpdo-8127-oldpdo-20261102-power-each.json",
+      "after_burst_report": "xp64-usbnet-hcpower-oldpdo-8127-oldpdo-after-burst-20261102.json",
+      "burst_scope": "The ungrouped CMD loops executed 3 device pairs and 9 system pairs, not the intended 3+3; collector failed its sequence assertion. Preserve as test-setup failure. Hardware diagnostic reports I/O failure during a subsequent transition, not PHY timeout. Final network report passes, not every intermediate initialization."
+    },
+    "pdoidentity": {
+      "spaced_result": "LIMITED_PASS",
+      "completed_pairs": 6,
+      "spaced_report": "xp64-usbnet-hcpower-pdoidentity-8127-pdoidentity-20261102-power-each.json",
+      "after_burst_report": "xp64-usbnet-hcpower-pdoidentity-8127-pdoidentity-after-burst-20261102.json",
+      "burst_scope": "The ungrouped CMD loops executed 3 device pairs and 9 system pairs, not the intended 3+3; collector failed its sequence assertion. Preserve as test-setup failure. Hardware diagnostic reports I/O failure during a subsequent transition, not PHY timeout. Final network report passes, not every intermediate initialization."
+    }
+  }
+}

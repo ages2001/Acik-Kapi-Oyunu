@@ -1,0 +1,35 @@
+{
+  "files": {
+    "legacy": {
+      "size": 418816,
+      "sha256": "25325a56134639ce56caa547c4bae2a0e9189771783e55cd9e4406d700fc5ad7"
+    },
+    "i386": {
+      "size": 499712,
+      "sha256": "bd2d2f355a1c55a055dacaa20090faf604d7dc799d0b56fb504dd32735eab276"
+    },
+    "amd64": {
+      "size": 539648,
+      "sha256": "93ca706ef5564d09d3c8ebc2943fda1016cd28b45cea44c7aff0e77678213323"
+    },
+    "harness": {
+      "size": 1767204,
+      "sha256": "e2a7057f88ab459c3602fd5a85ce29c90670e9e15c90ad01f6ed5f9bcf763dbd"
+    }
+  },
+  "source_files": 69,
+  "imports": [
+    [
+      "legacy",
+      58
+    ],
+    [
+      "i386",
+      106
+    ],
+    [
+      "amd64",
+      95
+    ]
+  ]
+}

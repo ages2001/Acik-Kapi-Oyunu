@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "scope": "Reassemble the closed RTL8139 TCP captures and compare every stream byte.",
+  "captures": [
+    {
+      "capture": "nt351-newcompare-evidence-20261102/pci.pcap",
+      "sha256": "c0d9dc26c9983c79f6f9f272e84eb856204a2ffbfe0ec8a2ae3c8cf4b4387974",
+      "connections": [
+        {
+          "client_port": 1045,
+          "tx": {
+            "stream_bytes": 1048584,
+            "sha256": "9d96c061d8a986c44c99ab66665fb4125e8729f25157a75c48a2fc7fbc7a8e11"
+          },
+          "rx": {
+            "stream_bytes": 1048584,
+            "sha256": "849c026515717608c4c08f9de2e85bc5f949f797323c111fc68323d28b3aedae"
+          }
+        }
+      ]
+    }
+  ]
+}

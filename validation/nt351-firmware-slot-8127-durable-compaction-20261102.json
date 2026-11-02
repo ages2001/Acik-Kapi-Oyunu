@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-01T22:52:20.726101+00:00",
+  "result": "PASS",
+  "raw": "/workspace/rltklant-vm/run/nt351-firmware-slot-8127.raw",
+  "raw_sha256": "5711dc961fb5143c7685fe339cae6102a2b3d3b1342d11a2b4437848ea0cee54",
+  "packed": "/workspace/rltklant-vm/run/nt351-firmware-slot-8127.packed.qcow2",
+  "packed_sha256": "f438a9ad6bac7756729d73cce570b42e6f5a3f13af0d1e7b494fe5eb679edf86",
+  "children": [
+    {
+      "image": "/workspace/rltklant-vm/run/nt351-firmware-slot-8127.qcow2",
+      "before_sha256": "edd06aaba18a4cf00a1a2442fd756cf6cedeea830e11097cd038fb8266bf0524",
+      "after_sha256": "cfdf265498d72cf4f269ae6a3e05506453103e7092a0568205e0316aa8bd067a",
+      "logical_comparison": "identical"
+    }
+  ],
+  "scope": "Generated inactive raw checkpoint preserved losslessly in durable /workspace qcow2; every direct overlay compared before/after; no uploaded media changed"
+}

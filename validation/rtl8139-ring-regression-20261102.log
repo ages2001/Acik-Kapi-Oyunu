@@ -1,0 +1,1 @@
+PASS: 10000 exact payloads, 242 ring wraps, both driver configurations select 32 KiB/linear slack; four malformed headers defer reset without DMA APIs; incomplete DMA waits

@@ -1,0 +1,25 @@
+{
+  "utc": "2026-11-02T08:00:03.855667+00:00",
+  "scope": "Development candidate; private HCD release and controller start-status fixes. Not a release.",
+  "result": "PASS",
+  "files": [
+    {
+      "arch": "legacy",
+      "size": 411648,
+      "sha256": "c471feeb6536e981b681f8f2f34e08550f5472dd6399d58f1e260c1ce6a34a37",
+      "actual_imports": 58
+    },
+    {
+      "arch": "i386",
+      "size": 487424,
+      "sha256": "27ff9b1eb51c7e1cb5b3b49bcd1a3da6cd177c6f4adf44deed8678e5a5e074ee",
+      "actual_imports": 106
+    },
+    {
+      "arch": "amd64",
+      "size": 525312,
+      "sha256": "746574178357c8ba3a9b76da9bb9d68e9585355fcc86bb2682521bd02704e47c",
+      "actual_imports": 95
+    }
+  ]
+}

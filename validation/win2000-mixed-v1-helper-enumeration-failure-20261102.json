@@ -1,0 +1,10 @@
+{
+  "utc": "2026-11-02T13:56:26.059985+00:00",
+  "result": "FAILED_TEST_SETUP_BEFORE_RESET",
+  "failure": "The original helper enumerated all device classes and counted the network MI_00 PDO plus the native USBNT keyboard with the same VID/PID. It exited with COUNT 2; no RESETTEST trace or hardware reset followed.",
+  "evidence": [
+    "win2000-mixed-v1-reset-20261102.json",
+    "win2000-mixed-v1-reset-failure-20261102.png"
+  ],
+  "correction": "The helper now enumerates the Net class GUID and still requires exactly one matching VID. The new MRESET.EXE is used explicitly; the existing RRESET.EXE is retained. Test repeats use a new label."
+}

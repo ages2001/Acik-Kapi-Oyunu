@@ -1,0 +1,6 @@
+PASS: rtl8125,pci-id-alias=0x3000 PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8125,pci-id-alias=0x3000,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8125,pci-id-alias=0x5000 PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8125,pci-id-alias=0x5000,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8125,pci-id-alias=0xe10 PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset
+PASS: rtl8125,pci-id-alias=0xe10,io-bar=off PCI identity, MAC, PHY, XID, TX, RX, FCS, DMA bounds, link, reset

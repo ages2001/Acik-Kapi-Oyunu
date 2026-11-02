@@ -1,0 +1,69 @@
+{
+  "utc": "2026-11-01T22:27:15.616091+00:00",
+  "guest": "nt31-usbsetup-update-v9-8127",
+  "package": "legacy-setup-nt31-v9-20261102",
+  "result": "PASS",
+  "checks": {
+    "parameters_preserved": true,
+    "all_owned_inf_registered": true,
+    "files_exact": true,
+    "one_owned_startup": true,
+    "unrelated_item_preserved": true
+  },
+  "parameter_changes": {
+    "RLTKLANT01": {},
+    "RLTKLANT02": {}
+  },
+  "registrations": {
+    "01": {
+      "InfName": "RLTKNT31.INF",
+      "type": "rltklant rltklantAdapter",
+      "bindform": "\"RLTKLANT01\" yes yes container",
+      "class": [
+        "rltklantAdapter basic"
+      ],
+      "InfOption": "RLTKLANT"
+    },
+    "02": {
+      "InfName": "RLTKNT31.INF",
+      "type": "rltklant rltklantAdapter",
+      "bindform": "\"RLTKLANT02\" yes yes container",
+      "class": [
+        "rltklantAdapter basic"
+      ],
+      "InfOption": "RLTKLANT"
+    },
+    "software": {
+      "InfName": "RLTKNT31.INF",
+      "type": "rltklantSys ndisDriver rltklantDriver",
+      "use": "driver",
+      "bindform": "\"rltklantSys\" yes no container",
+      "class": [
+        "rltklantDriver basic"
+      ],
+      "bindable": [
+        "rltklantDriver rltklantAdapter non exclusive 100"
+      ],
+      "InfOption": "RLTKLANT"
+    }
+  },
+  "startup": {
+    "owned_titles": 1,
+    "owned_commands": 1,
+    "unrelated_titles": 1,
+    "unrelated_commands": 1,
+    "sha256": "6d286dfced75eb57ebd4a91089867564061defaf554762e594df975843b1c09c"
+  },
+  "exact_copies": {
+    "RLTSETUP.DLL": true,
+    "DHCPNT31.EXE": true,
+    "RLTUSB.EXE": true,
+    "RLTKLANT.SYS": true,
+    "RLTKNT31.INF": true
+  },
+  "scope": "Actual NCPA Update, Configure existing USB No and PCI Yes, normal network binding completion and normal shutdown readback. Same preference values requested; all existing Parameters must match baseline.",
+  "limits": [
+    "Cold boot and traffic not covered by this file",
+    "Disable/remove/conflict/clean first-install paths remain separate tests"
+  ]
+}

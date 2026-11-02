@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-02T18:11:44.203029+00:00",
+  "guest": "xp64-usbnet-mixed-install13-8127",
+  "files": {
+    "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 565248,
+      "sha256": "a131a3cc84fca73ca2f3ff4c0de90b27a1c106eee1cf3ff49763af567a8244c1"
+    },
+    "WINDOWS/SYSWOW64/USBTREE.EXE": {
+      "file": "USBTREE.EXE",
+      "size": 57344,
+      "sha256": "b22e077d03d9fe477cffd62e49b82cd39b8cd767aa0274f2dcb1058216e2064a"
+    },
+    "WINDOWS/SYSWOW64/USBINST.EXE": {
+      "file": "USBINST.EXE",
+      "size": 45056,
+      "sha256": "94574174a470c4221ad032ef436a2f51fe549faa7d5e37db8869f3e6b6db1c84"
+    },
+    "RLTTEST/INST13.LOG": {
+      "file": "INST13.LOG",
+      "size": 1190,
+      "sha256": "3d1a2de04d959afae61881965c8cbf4dbd13c96762fbec1a328518aa9560b273"
+    },
+    "RLTTEST/INST13.RC": {
+      "file": "INST13.RC",
+      "size": 4,
+      "sha256": "9aca8dfce962538fb8131d73f84cada05e4dc79f5a0d3612c511b1150f3e33e2"
+    }
+  }
+}

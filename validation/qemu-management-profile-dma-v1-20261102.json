@@ -1,0 +1,73 @@
+{
+  "utc": "2026-11-02T02:42:25.136831+00:00",
+  "result": "PASS_MODEL_ONLY",
+  "scope": "New management profiles: frame DMA and slot-controller removal/reinsert.\nThis is QEMU device testing, not Windows PnP/hot-plug evidence.\n",
+  "results": [
+    {
+      "profile": "rtl8168,chip-profile=8111dp,dash-enabled=on,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    },
+    {
+      "profile": "rtl8168,chip-profile=8111dp,dash-enabled=off,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    },
+    {
+      "profile": "rtl8168,chip-profile=8111dp-b,dash-enabled=on,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    },
+    {
+      "profile": "rtl8168,chip-profile=8111dp-b,dash-enabled=off,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    },
+    {
+      "profile": "rtl8168,chip-profile=8111ep,dash-enabled=on,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    },
+    {
+      "profile": "rtl8168,chip-profile=8111ep,dash-enabled=off,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    },
+    {
+      "profile": "rtl8168,chip-profile=8117,dash-enabled=on,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    },
+    {
+      "profile": "rtl8168,chip-profile=8117,dash-enabled=off,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    },
+    {
+      "profile": "rtl8125,chip-profile=8125bp,dash-enabled=on,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    },
+    {
+      "profile": "rtl8125,chip-profile=8125bp,dash-enabled=off,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    },
+    {
+      "profile": "rtl8127,chip-profile=8127bp,dash-enabled=on,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    },
+    {
+      "profile": "rtl8127,chip-profile=8127bp,dash-enabled=off,io-bar=off",
+      "dma": "PASS",
+      "slot_removal_reinsert_cycles": 4
+    }
+  ],
+  "sources": {
+    "/workspace/rltklant-work/validation/run_management_model_regressions.py": "9cd4531b5512e1295261ceca10b16e502a226f73ef9042a7140678c2c04c6c21",
+    "/workspace/rltklant-work/validation/test_pcie_model.py": "5a28354d98611a92319575f5e70f79bf1fbfb2dab271a5a4dcba42f849a65e71",
+    "/workspace/rltklant-work/RLTKLANT/qemu/hw-net/rtl8169.c": "90618db5468cb2f65788ba9d8002af94abb0c4607077f49e5691625088cf03f8"
+  },
+  "qemu_sha256": "e296ab523280432e7768c7b6c9c36235c2c7fd90fa471d7f03385e3c1acbab84"
+}

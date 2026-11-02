@@ -1,0 +1,1 @@
+PASS: 1000 stalled-engine detections; lifecycle/link/backend exclusions; idle/progress/counter wrap; RTL8139 malformed RX requires NDIS reset and honors stop/pending/failure gates

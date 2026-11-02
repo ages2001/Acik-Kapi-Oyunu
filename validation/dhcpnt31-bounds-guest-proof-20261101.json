@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-01T21:07:03.040719+00:00",
+  "result": "PASS",
+  "scope": "Actual NT3.1 explicit first-adapter DHCP exchange with bounded-parser candidate; no automatic execution or multi-interface routing claim",
+  "guest": "nt31-usbsetup-ncpa-v4-reboot-8127",
+  "candidate": "frozen-builds/dhcp-packet-bounds-20261101/manifest.json",
+  "sequence": [
+    "DISCOVER",
+    "OFFER",
+    "REQUEST",
+    "ACK"
+  ],
+  "client_mac": "525400abcdef",
+  "lease": {
+    "address": "10.0.2.15",
+    "mask": "255.255.255.0",
+    "gateway": "10.0.2.2",
+    "dns": "10.0.2.3",
+    "seconds": 86400
+  },
+  "applied_service": "RLTKLANT01",
+  "screenshot": "nt31-dhcp-bounds-exchange-20261101.png",
+  "pcaps": {
+    "usb.pcap": {
+      "file": "nt31-dhcp-bounds-usb.pcap",
+      "start_offset": 169900,
+      "bytes": 171740,
+      "sha256": "12f3c1218d5a90edaccde99b5b7283624f8661c429273f93cca1544611960e4d"
+    },
+    "pci.pcap": {
+      "file": "nt31-dhcp-bounds-pci.pcap",
+      "start_offset": 241033,
+      "bytes": 241033,
+      "sha256": "dbe5ccc9c36f8b2e5a2a85d7017f7cdef14b805b1b6ad9452769e74fefb62b0f"
+    }
+  }
+}

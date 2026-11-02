@@ -1,0 +1,20 @@
+Formatting '/workspace/rltklant-vm/run/nt31-usbsetup-hidreset-rtl8117-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=419010560 backing_file=/tmp/rltk-growing-fat-e9nwjlzq/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+10/6394 = 0.16% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 983040
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/nt31-usbsetup-hidreset-rtl8117-8127.qcow2",
+  "sha256_before_boot": "5f6ca4091f093c66e61f12fdc038135aacc76f54cdbfc268e8cb56794cd7b4ea",
+  "files": [
+    {
+      "guest_path": "WINNT31/system32/drivers/usbnt.sys",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-hid-reset-v1-20261102/legacy.sys",
+      "size": 412672,
+      "sha256": "71c0ee13ed626364823e5197111599e8f2bc76888b83bd74a9bba7e22f9cd241",
+      "old_size": 411648,
+      "old_sha256": "92d6f836da50302b026ac16f1e02daba932dbebd3c233beab1a8eb4374b53d4c"
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

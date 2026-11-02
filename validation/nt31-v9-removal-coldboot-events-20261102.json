@@ -1,0 +1,249 @@
+{
+  "before_max_record": 49,
+  "new_records": [
+    {
+      "offset": 7632,
+      "bytes": 172,
+      "record": 50,
+      "generated": 1793573925,
+      "generated_utc": "2026-11-01T22:58:45+00:00",
+      "written": 1793573925,
+      "event_id": 2147490648,
+      "code": 7000,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "NetBEUI Protocol",
+        "%%55"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 7804,
+      "bytes": 232,
+      "record": 51,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 4401,
+      "code": 4401,
+      "type": 1,
+      "category": 0,
+      "source": "NbtSvc",
+      "computer": "TEST-PC",
+      "strings": [
+        "\\Registry\\Machine\\System\\CurrentControlSet\\Services\\\\Parameters\\Tcpip"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 8036,
+      "bytes": 168,
+      "record": 52,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 2147490671,
+      "code": 7023,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "TCP/IP NetBIOS",
+        "%%87"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 8204,
+      "bytes": 172,
+      "record": 53,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 2147490650,
+      "code": 7002,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "NetBIOS Interface",
+        "TDI"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 8376,
+      "bytes": 196,
+      "record": 54,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 1074135042,
+      "code": 2,
+      "type": 4,
+      "category": 0,
+      "source": "Serial",
+      "computer": "TEST-PC",
+      "strings": [
+        "\\Device\\Serial0",
+        "COM1"
+      ],
+      "data": "000008000200560000000000020006400f0000000000000000000000000000000000000000000000f803000000000000"
+    },
+    {
+      "offset": 8572,
+      "bytes": 204,
+      "record": 55,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 2147490650,
+      "code": 7002,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "AFD Networking Support Environment",
+        "TDI"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 8776,
+      "bytes": 92,
+      "record": 56,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 204,
+      "code": 204,
+      "type": 1,
+      "category": 0,
+      "source": "NetDDE",
+      "computer": "TEST-PC",
+      "strings": [],
+      "data": ""
+    },
+    {
+      "offset": 8868,
+      "bytes": 108,
+      "record": 57,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 13,
+      "code": 13,
+      "type": 1,
+      "category": 0,
+      "source": "NetDDE",
+      "computer": "TEST-PC",
+      "strings": [
+        "NETBIOS"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 8976,
+      "bytes": 148,
+      "record": 58,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 2147490650,
+      "code": 7002,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "Server",
+        "TDI"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 9124,
+      "bytes": 160,
+      "record": 59,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 2147490650,
+      "code": 7002,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "Workstation",
+        "TDI"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 9284,
+      "bytes": 204,
+      "record": 60,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 2147490650,
+      "code": 7002,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "TCP/IP NetBIOS Helper",
+        "NetworkProvider"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 9488,
+      "bytes": 184,
+      "record": 61,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 2147490649,
+      "code": 7001,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "Messenger",
+        "Workstation",
+        "%%1068"
+      ],
+      "data": ""
+    },
+    {
+      "offset": 9672,
+      "bytes": 220,
+      "record": 62,
+      "generated": 1793573926,
+      "generated_utc": "2026-11-01T22:58:46+00:00",
+      "written": 1793573926,
+      "event_id": 2147490649,
+      "code": 7001,
+      "type": 1,
+      "category": 0,
+      "source": "Service Control Manager",
+      "computer": "TEST-PC",
+      "strings": [
+        "Computer Browser",
+        "TCP/IP NetBIOS Helper",
+        "%%1068"
+      ],
+      "data": ""
+    }
+  ]
+}

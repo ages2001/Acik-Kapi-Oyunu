@@ -1,0 +1,67 @@
+{
+  "utc": "2026-10-30T07:01:23.002561+00:00",
+  "pci": [
+    {
+      "guest": "nt351-firmware-slot-8127",
+      "driver": {
+        "utc": "2026-10-30T06:28:13.648671+00:00",
+        "guest": "nt351-firmware-slot-8127",
+        "source": "nt351-current.raw",
+        "sha256": "97b24feeee7affbb5c27d67ed8998217f1c26bdc143f1b1672ec2aa10088c568",
+        "size": 263900,
+        "scope": "IDE/native PCIe RTL8127; initial PCI PHY firmware integration"
+      },
+      "payload_bytes": 1472,
+      "matched": 4,
+      "pcap_sha256": "194e3c00c3934f30c0452dbbbd6c814ce7664c8a1e93c0ae1d998e6570f5cb28",
+      "guest_screenshot": "nt351-firmware-full-mtu.png",
+      "storage": "IDE"
+    },
+    {
+      "guest": "nt4-ndis-firmware-slot-8127",
+      "driver": {
+        "utc": "2026-10-30T06:28:13.925762+00:00",
+        "guest": "nt4-ndis-firmware-slot-8127",
+        "source": "nt4-carrier.raw",
+        "sha256": "97b24feeee7affbb5c27d67ed8998217f1c26bdc143f1b1672ec2aa10088c568",
+        "size": 263900,
+        "scope": "IDE/native PCIe RTL8127; initial PCI PHY firmware integration"
+      },
+      "payload_bytes": 1472,
+      "matched": 4,
+      "pcap_sha256": "dc54cac05c825c1f70a48e6ffb01d5f800a8b392d9d623b4548c8dbdc10442db",
+      "guest_screenshot": "nt4-firmware-full-mtu.png",
+      "storage": "IDE"
+    }
+  ],
+  "http": [
+    {
+      "guest": "xp64-usbnet-stall-8127",
+      "screenshot": "xp64-nousbd-http-count.png",
+      "screenshot_sha256": "baddd31382ad4df4474328db55082268f33b2770045378c0fe6bdd8b3750998f",
+      "driver_sha256": "4f1d1092f8c18b5d505cbe01720249dc64d4522185371b635c925a400fa4a472",
+      "observed_pass": 10,
+      "observed_fail": 0,
+      "device": "RTL8159 rev 2020",
+      "scope": "Visually verified guest FIND counts in fwnohttp.log for ten nt_internet_probe /proxy invocations. Proxy resolves DNS; no direct guest DNS or TLS claim."
+    },
+    {
+      "guest": "win2000-standard-usbnet-nousbd-ehci-8127",
+      "screenshot": "win2000-nousbd-http-count.png",
+      "screenshot_sha256": "bec0418b1aae52d707415b9a8093f196fd15e32a8c18102ad5e11a22dfd03350",
+      "driver_sha256": "d5f100af6d6dae6a73a86213a8aba1e2aff83eb486fb285d5087a6b854be2ffb",
+      "observed_pass": 10,
+      "observed_fail": 0,
+      "device": "RTL8159 rev 2020",
+      "scope": "Visually verified guest FIND counts in fwnohttp.log for ten nt_internet_probe /proxy invocations. Proxy resolves DNS; no direct guest DNS or TLS claim."
+    }
+  ],
+  "nt4_service_warning": {
+    "event_id": 7002,
+    "service": "TCP/IP NetBIOS Helper",
+    "detail": "No member of the NetworkProvider dependency group started.",
+    "screenshot": "nt4-firmware-service-error.png",
+    "status": "Identified, unresolved"
+  },
+  "scope": "Current fixture QEMU observations only; no physical silicon certification."
+}

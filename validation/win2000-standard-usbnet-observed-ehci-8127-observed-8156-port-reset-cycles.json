@@ -1,0 +1,53 @@
+{
+  "guest": "win2000-standard-usbnet-observed-ehci-8127",
+  "utc": "2026-11-01T18:47:15.309665+00:00",
+  "scope": "Actual guest internal USB RESET_PORT plus automatic driver recovery; no PnP disable/enable or guest restart; QEMU only",
+  "cycles": [
+    {
+      "guest": "win2000-standard-usbnet-observed-ehci-8127",
+      "utc": "2026-11-01T18:46:56.090880+00:00",
+      "token": "observed-8156-portreset01",
+      "report": "TOKEN observed-8156-portreset01\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:03.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        54410
+      ],
+      "reset_trace": "RESETTEST object=00000000\nRESETTEST ioctl=00000000\n",
+      "readiness": {
+        "ready": true,
+        "requests": 4,
+        "matched_replies": 4,
+        "unmatched_requests": 0,
+        "first_reply_seconds": 4.290194936009357,
+        "four_reply_seconds": 6.700243940009386,
+        "timeout_seconds": 60,
+        "scope": "End-to-end timing after helper completion and any requested cable restoration, including guest command dispatch and ping intervals; final guest probe required"
+      },
+      "cable_down_at_reset": false,
+      "elapsed_seconds": 19.280027889995836
+    },
+    {
+      "guest": "win2000-standard-usbnet-observed-ehci-8127",
+      "utc": "2026-11-01T18:47:15.302031+00:00",
+      "token": "observed-8156-portreset02",
+      "report": "TOKEN observed-8156-portreset02\r\nDEVICE USB\\VID_0BDA&PID_8156\\0006-0000:00:03.0-1\r\nNAME Realtek RTL8156 USB 2.5G Ethernet (rev 7020)\r\nPROBLEM 0 STATUS 25190410 CM 0\r\nUSB_DEVICES 1 PROBLEMS 0 ICMP_REPLIES 4 PAYLOAD 1472\r\nPASS\r\n",
+      "peer": [
+        "127.0.0.1",
+        39666
+      ],
+      "reset_trace": "RESETTEST object=00000000\nRESETTEST ioctl=00000000\n",
+      "readiness": {
+        "ready": true,
+        "requests": 4,
+        "matched_replies": 4,
+        "unmatched_requests": 0,
+        "first_reply_seconds": 4.330218748000334,
+        "four_reply_seconds": 6.741192575005698,
+        "timeout_seconds": 60,
+        "scope": "End-to-end timing after helper completion and any requested cable restoration, including guest command dispatch and ping intervals; final guest probe required"
+      },
+      "cable_down_at_reset": false,
+      "elapsed_seconds": 19.20980245899409
+    }
+  ]
+}

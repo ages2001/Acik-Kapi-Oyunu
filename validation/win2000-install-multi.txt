@@ -1,0 +1,5 @@
+update error=0x00000000 reboot=0x00000000
+update error=0x00000000 reboot=0x00000000
+update error=0x00000000 reboot=0x00000000
+update error=0x00000000 reboot=0x00000000
+update error=0x00000000 reboot=0x00000000

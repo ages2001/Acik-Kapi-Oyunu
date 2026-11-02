@@ -1,0 +1,38 @@
+{
+  "result": "PASS",
+  "utc": "2026-11-02T07:51:24.689581+00:00",
+  "scope": "Bare-metal native USB storage and keyboard through a hub; retained media data and unaffected root-disk I/O. Not WDM power or generic client coverage.",
+  "rows": [
+    {
+      "controller": "qemu-xhci",
+      "exit_code": 0,
+      "log": "usbnt-native-hotplug-qemu-xhci-20261102.log",
+      "result": "PASS",
+      "log_sha256": "da22bb58dec0bb6b0edc9588c6c1a62bcfefa6e6d5f34420d337d24dfcc97dcb"
+    },
+    {
+      "controller": "usb-ehci",
+      "exit_code": 0,
+      "log": "usbnt-native-hotplug-ehci-highspeed-hub-20261102.log",
+      "result": "PASS",
+      "hub": "high speed hs=on; includes full-speed keyboard split transfers",
+      "log_sha256": "7d7012ba05346ab0e9ecfd14498f0eac07f157e57247232627d652950e55665d"
+    },
+    {
+      "controller": "piix3-usb-uhci",
+      "exit_code": 0,
+      "log": "usbnt-native-hotplug-piix3-usb-uhci-20261102.log",
+      "result": "PASS",
+      "log_sha256": "2cf81ead46117f0e4159b699e7e5e639bad4d680d36e90b5f4855910c1afa013"
+    },
+    {
+      "controller": "pci-ohci",
+      "exit_code": 0,
+      "log": "usbnt-native-hotplug-pci-ohci-20261102.log",
+      "result": "PASS",
+      "log_sha256": "4fe1837dd16146e6a5c532f615feaf0c1a296de40a2de713f52dd82c1ff16f5f"
+    }
+  ],
+  "test_sha256": "344191359a57edc4c3011897be8410b0acd24f39907e93fdc65b59f46cbb8eba",
+  "earlier_failures": "Original EHCI full-speed hub topology rejected by QEMU; missing BIOS-path startup failure also preserved. Neither is a driver PASS."
+}

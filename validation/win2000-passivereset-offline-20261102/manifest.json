@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-02T01:23:05.433289+00:00",
+  "guest": "win2000-standard-passivereset-multi-8127",
+  "files": {
+    "WINNT/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 520469,
+      "sha256": "89340995b837ca23f3121eb8e2700b999cc3744feaa0296a8f8f41dcebe6f3d7"
+    },
+    "RLTTEST/PCRT4.LOG": {
+      "file": "PCRT4.LOG",
+      "size": 881,
+      "sha256": "2dbff44e0902ff798bf84b25f38c1d1c7dafdf6fea33dcada91bd3ea1245ee0e"
+    },
+    "RLTTEST/PCIPNP.LOG": {
+      "file": "PCIPNP.LOG",
+      "size": 2145,
+      "sha256": "f5b247c1c2b9f810ee33014b4f77c7c308eb55ab7df8a923c069414215c6bb1a"
+    }
+  }
+}

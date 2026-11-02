@@ -1,0 +1,408 @@
+{
+  "guest": "nt4-ndis-dual-classreset-8127",
+  "started_utc": "2026-11-02T12:25:16.626255+00:00",
+  "result": "PASS",
+  "rows": [
+    {
+      "cycle": 1,
+      "device": "usbnic",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c1-absent.json",
+          "sha256": "75af9c647cfee406890d279d2218c245d012ea4c8d05cbadce97bd0ab04c09f0",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c1-reinsert.json",
+          "sha256": "3c9d8ebe094bddfcda9ffb156df6ce69432aaa29ebf55d9030d180c02f20ccbd",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c1-cable-down.json",
+          "sha256": "c643912c14e3cca409a15cbe43cd8249c30bb5f9d336fc0b787ba8cce58d6b19",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c1-cable-up.json",
+          "sha256": "b36e9335ad5aa6072fa1b43ca3a401d8048fa42f4236a27a3a46e6359df6bfda",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000001 up=00000000 status=C0000001\nUNT-DOWN id=00000001\n",
+      "reinsert_trace": "UNT-UP id=00000003 pid=00008153 status=00000000\nUNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000003 up=00000000 status=00000000\nUNT-LINK id=00000003 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c1-passed.png",
+        "sha256": "a60a9fe651d58d2046285129ab6cda6b1331e3b847dcc36cba60b0e14e1c8c46"
+      }
+    },
+    {
+      "cycle": 2,
+      "device": "usbnic",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c2-absent.json",
+          "sha256": "e77315363e8c1febdd0de2ca8df3b32ef62526ffcdc3cf29f1ff17c9c8913a45",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c2-reinsert.json",
+          "sha256": "cb6db0e16a346c12b69318c0c24c29919f6617ad6c7dea637b1cae2369bc9515",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c2-cable-down.json",
+          "sha256": "73c563e27000eb624a2ba4f201aec994ee2f2767b0205f631932db683e55e24d",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c2-cable-up.json",
+          "sha256": "9d59b39eaf5877143008e6fad45704da67f6a90903fe3a18ad5dbb500932826a",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-DOWN id=00000003\n",
+      "reinsert_trace": "UNT-UP id=00000004 pid=00008156 status=00000000\nUNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000004 up=00000000 status=00000000\nUNT-LINK id=00000004 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c2-passed.png",
+        "sha256": "36c7b8c304eb65025edb9bc2ac1743fdb2856c15f53227d4113dedade1e156f6"
+      }
+    },
+    {
+      "cycle": 3,
+      "device": "usbnic",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c3-absent.json",
+          "sha256": "25dc1bf2d394a363b49942ee0f2db6f96b7c4d286360daa0af9e937dfb399ac0",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c3-reinsert.json",
+          "sha256": "5ac374d19922e78b4fca886a113c151cfe1bcb71375c0adf8ed9ccaf4907ade9",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c3-cable-down.json",
+          "sha256": "1cc9649ff1d4f5b632102378c3d524bd5ac58a8ddedd0ae197ba98c483f66c49",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c3-cable-up.json",
+          "sha256": "a6427aec925def2453512e4c3bebe3b56365b8b9974df2fe5dea3a3248013fff",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-DOWN id=00000004\n",
+      "reinsert_trace": "UNT-UP id=00000005 pid=00008157 status=00000000\nUNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000005 up=00000000 status=00000000\nUNT-LINK id=00000005 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c3-passed.png",
+        "sha256": "ef64eb294833696024bd94a2cb866585b371b6d5794efd5d5adc9fcd791988c5"
+      }
+    },
+    {
+      "cycle": 4,
+      "device": "usbnic",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c4-absent.json",
+          "sha256": "65a918969fe637a0ee1fc2d915c1ae3a7a63e4fe27a6b542a631d2cf0ae6fcfa",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c4-reinsert.json",
+          "sha256": "1c1bab6f51212363b960a17f9667ff7a6597c217b5347403bd2ba2396f7e692b",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c4-cable-down.json",
+          "sha256": "0978618503f8c8a48ab66fe179bb20d19a3d33ddc271737edac80b4e792bfb63",
+          "mask": 6,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c4-cable-up.json",
+          "sha256": "7a8571a209fa03911dbc8e785eb0c9cf0145dc0c38587d691aa66f010a69e1db",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000005 up=00000000 status=C0000001\nUNT-DOWN id=00000005\n",
+      "reinsert_trace": "UNT-UP id=00000006 pid=00008159 status=00000000\nUNT-LINK id=00000006 up=00000000 status=00000000\nUNT-LINK id=00000006 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000006 up=00000000 status=00000000\nUNT-LINK id=00000006 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c4-passed.png",
+        "sha256": "a804bf31bfcb5698d13a31f22cbe215fe55ba3accf8d4274c52a5b1bf237c04f"
+      }
+    },
+    {
+      "cycle": 5,
+      "device": "usbnic2",
+      "model": "usb-rtl8159",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c5-absent.json",
+          "sha256": "7fe9ff9b5ecc2307479088fbdf055472834fea690159a97d4ae95daab01775f6",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c5-reinsert.json",
+          "sha256": "70372b06ab11b31e60bba4cc5660e9f392b390cf725488b0ba677e8468f1667d",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c5-cable-down.json",
+          "sha256": "4929c99d9cb2799143f9e2466c2dfa8dc84cd915cc1b1f4ce3ff9cea27a7941c",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c5-cable-up.json",
+          "sha256": "bcd19cdc1a5bd2573638fdbd856b2c98fa89e8709a73ceb9e88dbe2539b4d704",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-DOWN id=00000002\n",
+      "reinsert_trace": "UNT-UP id=00000007 pid=00008159 status=00000000\nUNT-LINK id=00000007 up=00000000 status=00000000\nUNT-LINK id=00000007 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000007 up=00000000 status=00000000\nUNT-LINK id=00000007 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c5-passed.png",
+        "sha256": "a611821a9d09d70c480fb9d3b22050ac4045598655a589674bc17f4d2983ecd4"
+      }
+    },
+    {
+      "cycle": 6,
+      "device": "usbnic2",
+      "model": "usb-rtl8157",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c6-absent.json",
+          "sha256": "8332aa911566103066266e9c4adab39d08dbd4c194c62e0a3848f5259a1388d0",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c6-reinsert.json",
+          "sha256": "0ac495a5a1a591ab3b2ccf2206efda4a69c3df4350c82e309b1194a4d01c0023",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c6-cable-down.json",
+          "sha256": "d79386ede826ba60d275758ea42aec822f9883220bf16d53d32d3c3f70f8355f",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c6-cable-up.json",
+          "sha256": "0105ebe1e38eb6cbc707e970d46523de67471bad2860608b821005c3f6c6c06e",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000007 up=00000000 status=C0000001\nUNT-DOWN id=00000007\n",
+      "reinsert_trace": "UNT-UP id=00000008 pid=00008157 status=00000000\nUNT-LINK id=00000008 up=00000000 status=00000000\nUNT-LINK id=00000008 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000008 up=00000000 status=00000000\nUNT-LINK id=00000008 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c6-passed.png",
+        "sha256": "e6ee52434ebcd1a9cd2a81891e5311f2051189bd55939a334db0744bea25d4d4"
+      }
+    },
+    {
+      "cycle": 7,
+      "device": "usbnic2",
+      "model": "usb-rtl8156",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c7-absent.json",
+          "sha256": "3c8f05e6a7be813774dc067d3d5743353b076d77aa4728aea6bfd399c7ed4eae",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c7-reinsert.json",
+          "sha256": "6041d011b1a2d6df0e3d1707f56e3ec577cf5d025a58cab7b7eb8a7a12218ea3",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c7-cable-down.json",
+          "sha256": "f49577c7ef24d513798f6d2c78d0857c9b3a5308d005c91e1f503c35f97fc2f9",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c7-cable-up.json",
+          "sha256": "3b26f258ec4d15397b4a2233f9b7459d680cc6dcfb2cf0581a18c1ac012fd038",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000008 up=00000000 status=C0000001\nUNT-DOWN id=00000008\n",
+      "reinsert_trace": "UNT-UP id=00000009 pid=00008156 status=00000000\nUNT-LINK id=00000009 up=00000000 status=00000000\nUNT-LINK id=00000009 up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=00000009 up=00000000 status=00000000\nUNT-LINK id=00000009 up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c7-passed.png",
+        "sha256": "d965a4be048ec1d8ff926f6ac048f5ffdca7280214f25fa3e725090399695870"
+      }
+    },
+    {
+      "cycle": 8,
+      "device": "usbnic2",
+      "model": "usb-rtl8153",
+      "reports": [
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c8-absent.json",
+          "sha256": "b9f2dbbbf95e53c010c427ae6b0a888dbf60c46820dc074f7775851c20deada3",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c8-reinsert.json",
+          "sha256": "152e2582b363ff085c76d3e9e2b4388309a811664a2a9e74ab3142df79dbddf3",
+          "mask": 7,
+          "full_payload_replies": 12
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c8-cable-down.json",
+          "sha256": "8d813976f0c4763ec2099670da60864d3bc8eb3d187d55e8130dba7fc3d02142",
+          "mask": 3,
+          "full_payload_replies": 8
+        },
+        {
+          "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c8-cable-up.json",
+          "sha256": "971bfad638c1401a7b2aaa4caec7023fb4afad4b854f2f5045e244c1f1789667",
+          "mask": 7,
+          "full_payload_replies": 12
+        }
+      ],
+      "result": "PASS",
+      "absent_trace": "UNT-LINK id=00000009 up=00000000 status=C0000001\nUNT-DOWN id=00000009\n",
+      "reinsert_trace": "UNT-UP id=0000000A pid=00008153 status=00000000\nUNT-LINK id=0000000A up=00000000 status=00000000\nUNT-LINK id=0000000A up=00000001 status=00000000\n",
+      "carrier_trace": "UNT-LINK id=0000000A up=00000000 status=00000000\nUNT-LINK id=0000000A up=00000001 status=00000000\n",
+      "screenshot": {
+        "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-c8-passed.png",
+        "sha256": "e0d488cd5ec2977e7a3b91f645614f87fbf4888f5c4dfc0e3384ef60b8d7dafb"
+      }
+    }
+  ],
+  "scope": "Legacy persistent USBNT adapters in QEMU, two EHCI siblings plus native PCI/PCIe adapter recorded in the launch manifest; actual guest payload comparisons, not physical-silicon validation",
+  "tools_sha256": {
+    "legacy_network_probe.c": "4b02046a9015753235bf06f90fe27ce612c2f492afc991dbc16997ba910194e9",
+    "LNET.EXE": "4598bb7345abd2b5bb904031866bd7de8075e2aaa30c634c7ad7aa20b972331b",
+    "legacy_network_report.py": "0efc3ba390915115448fc267ef516167d2c5dfaa3d138ed8a7ef58d00c7c2bf2",
+    "legacy_sibling_cycles.py": "07f5ed93b85e35cbe54635b620bf3fd3fbca44d6e4bdfd9aace690aa33ec9673"
+  },
+  "launch": {
+    "started_at": 1793621811.942677,
+    "command": [
+      "/workspace/rltklant-tools/qemu-src/build/qemu-system-i386",
+      "-machine",
+      "q35",
+      "-cpu",
+      "pentium3",
+      "-m",
+      "128",
+      "-drive",
+      "file=/workspace/rltklant-vm/run/nt4-ndis-dual-classreset-8127.qcow2,format=qcow2,if=none,id=bootdisk",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-vga",
+      "cirrus",
+      "-qmp",
+      "unix:/workspace/rltklant-vm/run/nt4-ndis-dual-classreset-8127/qmp.sock,server=on,wait=off",
+      "-no-reboot",
+      "-no-shutdown",
+      "-debugcon",
+      "file:/workspace/rltklant-vm/run/nt4-ndis-dual-classreset-8127/debug.log",
+      "-serial",
+      "file:/workspace/rltklant-vm/run/nt4-ndis-dual-classreset-8127/serial.log",
+      "-device",
+      "usb-ehci,id=ehci",
+      "-netdev",
+      "user,id=n0",
+      "-device",
+      "usb-rtl8153,id=usbnic,bus=ehci.0,netdev=n0,mac=52:54:00:ab:cd:ef",
+      "-object",
+      "filter-dump,id=f0,netdev=n0,file=/workspace/rltklant-vm/run/nt4-ndis-dual-classreset-8127/usb.pcap",
+      "-netdev",
+      "user,id=n1,net=10.0.4.0/24",
+      "-device",
+      "usb-rtl8156,id=usbnic2,bus=ehci.0,netdev=n1,mac=52:54:00:ab:cd:ee",
+      "-object",
+      "filter-dump,id=f1,netdev=n1,file=/workspace/rltklant-vm/run/nt4-ndis-dual-classreset-8127/usb2.pcap",
+      "-global",
+      "ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off",
+      "-device",
+      "piix3-ide,id=legacyide",
+      "-device",
+      "ide-hd,drive=bootdisk,bus=legacyide.0,bootindex=0",
+      "-netdev",
+      "user,id=pci0,net=10.0.3.0/24",
+      "-device",
+      "rtl8127,id=pcinic,netdev=pci0",
+      "-object",
+      "filter-dump,id=pci_dump,netdev=pci0,file=/workspace/rltklant-vm/run/nt4-ndis-dual-classreset-8127/pci.pcap"
+    ],
+    "qemu_sha256": "8de6bf9206c04b049be0f3b5692d535207143f8c99ee9c3d5825ae64b8d8e6b5"
+  },
+  "baseline": {
+    "file": "nt4-ndis-dual-classreset-8127-classreset-20261102-baseline.json",
+    "sha256": "55342a3b7114499b6ef4ea79a92cd7e2024aaa946040ec545c8ba89e4c7cafbf",
+    "mask": 7,
+    "full_payload_replies": 12
+  },
+  "qmp_status": {
+    "status": "running",
+    "singlestep": false,
+    "running": true
+  },
+  "full_payload_replies": 332,
+  "pcaps": {
+    "usb.pcap": {
+      "bytes": 337582,
+      "sha256": "c7faa53b4c0904555ee3af377a57845c29f5dcecd6fed7eb57a44e7e9c3a4e44"
+    },
+    "usb2.pcap": {
+      "bytes": 336935,
+      "sha256": "7035fae9a3c83c22c53dd0c69e9022a72157585794b2bd28b4f502c1559b9c66"
+    },
+    "pci.pcap": {
+      "bytes": 446240,
+      "sha256": "e5d69e5342eb8276e798191f0f273c252942cac57f10783bb07c627d072e6a63"
+    }
+  },
+  "finished_utc": "2026-11-02T12:31:11.155016+00:00"
+}

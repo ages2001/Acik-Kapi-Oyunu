@@ -1,0 +1,54 @@
+{
+  "utc": "2026-11-02T15:17:56.432822+00:00",
+  "result": "PASS_HOST_ONLY",
+  "snapshot": "frozen-builds/usbnt-controller-sleep-v2-20261102",
+  "files": {
+    "legacy": {
+      "size": 418816,
+      "sha256": "25325a56134639ce56caa547c4bae2a0e9189771783e55cd9e4406d700fc5ad7"
+    },
+    "i386": {
+      "size": 499712,
+      "sha256": "bd2d2f355a1c55a055dacaa20090faf604d7dc799d0b56fb504dd32735eab276"
+    },
+    "amd64": {
+      "size": 539648,
+      "sha256": "93ca706ef5564d09d3c8ebc2943fda1016cd28b45cea44c7aff0e77678213323"
+    },
+    "harness": {
+      "size": 1767204,
+      "sha256": "e2a7057f88ab459c3602fd5a85ce29c90670e9e15c90ad01f6ed5f9bcf763dbd"
+    }
+  },
+  "evidence": {
+    "validation/usbnt-controller-sleep-power-host-v2-20261102.log": "1886926c521b9739691128f4fe8fdcd145e5d60375ae328809b145ef51551e16",
+    "validation/usbnt-controller-sleep-host-v3-20261102.log": "9a37206b8e69e403b3b44a8b794da7348453bae62022a06d219fade6f0ba589e",
+    "validation/usbnt-controller-sleep-identity-host-v1-20261102.log": "36d365a9b92dd42689f046c1dd51286b836a970c00f9e8c353ac1cab99b6e29f",
+    "validation/usbnt-controller-sleep-cli-host-v1-20261102.log": "fc4a8fe37629743b98dbb4c4b4777e6da890c8ef22482021758420f8d273736c",
+    "validation/usbnt-controller-sleep-port-reset-host-20261102.log": "c73bb3a94b25bcd5c075174296db7f7a00fd93850df18ca285edb8f4754e7a16",
+    "validation/usbnt-controller-sleep-function-power-host-v2-20261102.log": "7e27b0690f28518e06ecf9e478430bca44c4fdd456989a3348ef0b453ee8aa08",
+    "validation/usbnt-controller-sleep-companion-after-20261102.log": "984e293c7a640b926fd7151d733ae3c94103c7503ff32120815353f2435aab41",
+    "validation/usbnt-controller-sleep-companion-before-20261102.log": "5858bbc4e4486835f0ad4a291c499b91e0a69838dad35a3efe38f2e5b25e5766",
+    "validation/usbnt-controller-sleep-v2-actual-imports-20261102.json": "2e184c17dcc8cdc3c5dff7ff2efa95ac48769712f3827a1d584b8c8153687083",
+    "validation/frozen-builds/usbnt-controller-sleep-v2-20261102/manifest.json": "d6397f58f1efd824757e07bf8e5e6cc2126e6dcd0471251ad03a5925e4e93e03",
+    "validation/test_usbnt_controller_power.py": "fb9152e0b454cb5d87ce9d3c3ca4b04c65e5ce9a0fb9be4ecad16d5a54a79c42",
+    "validation/test_usbnt_sleep_identity.py": "800fc722e638362503d6016a68ba636567006ee60fa8924a430502705b479c71",
+    "validation/test_usbnt_sleep_companion.py": "5d3c60f22e56e8623cae5247c6453fd4ebab4629d64c8a4235e1e494585daf45",
+    "validation/test_usbdi_function_power.py": "1ef25661e64b34913dbae5fb8d02367a6e7ef104f9b37df2abe7480d71be5af7",
+    "validation/test_usbdi_port_reset.py": "87586f459b26efbc127ee5a88d1f541bb4b83b5d34905868124d473ce9e4859e",
+    "validation/ntcli/test_lifetime.c": "a438b5804581e31c0d55979bd01947c3266940094e940e017958ad6a45cf11bc",
+    "USBNT/test/host/tcontrollersleep.c": "5869bad982685e99828ea53e349fedf036336ad86f7506ba375b2f87424876e6",
+    "USBNT/test/host/tcontrollersleep.sh": "f07f5fbb5050fcabe4b341094bc89ec790dd70d87100c41e170ae97c67529a04"
+  },
+  "scope": "Actual production WDM power continuations, retained-root transaction, descriptor identity, root PDO relations, generic-client preflight rollback, companion polling and existing shared-reset/function-power regression. HCD/NT/class boundaries are mocked in these host tests.",
+  "limits": [
+    "Installed Windows evidence for the v2 hashes is pending; earlier v1 W2K live checks cannot substitute.",
+    "Hubs, unknown native owners, generic clients retaining state and active EHCI companions reject D3 before hardware mutation.",
+    "No actual machine ACPI S3, electrical PHY, physical silicon or every device/class combination is certified."
+  ],
+  "development_failures": [
+    "Initial sanitizer run was blocked by ptrace; rerun outside the sandbox retained ASan/UBSan/LeakSanitizer.",
+    "Two host mocks needed current production field types: ConfigLen and Sleeping; those failed builds are retained.",
+    "The v1 sleeping-EHCI removal guard failed the actual polling regression; v2 passes."
+  ]
+}

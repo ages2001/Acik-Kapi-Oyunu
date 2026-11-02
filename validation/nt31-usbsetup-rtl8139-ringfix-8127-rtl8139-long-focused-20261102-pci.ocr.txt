@@ -1,0 +1,24 @@
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+ICMP Echo Reply: TTL 255
+Host 10.0.3.2 replied to all 64 of the 64 pings
+C:\users\default>

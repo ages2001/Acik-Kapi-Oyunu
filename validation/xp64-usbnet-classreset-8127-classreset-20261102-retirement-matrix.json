@@ -1,0 +1,97 @@
+{
+  "guest": "xp64-usbnet-classreset-8127",
+  "utc": "2026-11-02T12:31:44.393348+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8153-native-hotplug.json",
+        "sha256": "73d0a61c052be004aca585b90e75ca0aa70894cb59a5417235632e0227ca6190"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8153-function-power.json",
+        "sha256": "7cd489f4498b3774ca1198ed334239160d6b6544fe4a83fc021b13a95388ed8a"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8153-port-reset-cycles.json",
+        "sha256": "096ef33a0275b80efadc9a377ca5926e4d6927490e12964398aca5db9a4f2612"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8153-native-cable.json",
+        "sha256": "aee4bdc13b243871ab3c5b3466d17247296756d8306331b32254ccc18a6e3673"
+      },
+      "seconds": 71.08
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8156-native-hotplug.json",
+        "sha256": "0f064ea1551d1edb57de0712bcbd0050e5a7023b0d269347039ab5604b00d746"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8156-function-power.json",
+        "sha256": "291bc159a472e49f1e0701ba0e315ce3cb5b9f89f7a620e95f6d5bdd862fcbe4"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8156-port-reset-cycles.json",
+        "sha256": "c3d6fa5319d33e3bdec28637a2824b1648b6bf6165d8365422d041867d690ad5"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8156-native-cable.json",
+        "sha256": "42418cdaebc2dca5714ec818d2b101140618c8839eb260fb85db609e53c605ca"
+      },
+      "seconds": 77.44
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8157-native-hotplug.json",
+        "sha256": "9fd2a4076349a514b1ad0279e2414e3290d7e4ef14f4342e15fce9889b03c911"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8157-function-power.json",
+        "sha256": "7deb80b328be4becb049e5ed43fde7607881ef296f581c7737e79b7d596f2a8b"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8157-port-reset-cycles.json",
+        "sha256": "ed9f2307b18326cec3c2d450f7f55a408705a1ebc0d0f86a847dd913110772b5"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8157-native-cable.json",
+        "sha256": "28fb2f19be26f8a5509b1ea1b74baf3a11cd1b03c734c1eb1d99452de33d638d"
+      },
+      "seconds": 91.35
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8159-native-hotplug.json",
+        "sha256": "e29d52312d1fe0b35d06074389c0bce17419b5e5dbaaf11382fa6ebe8a65bfc1"
+      },
+      "function_power": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8159-function-power.json",
+        "sha256": "69609cec0e077697f12db7d7c52a1a2926fe6334f46467499b9f2b152a639bbd"
+      },
+      "port_reset": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8159-port-reset-cycles.json",
+        "sha256": "854ad90248ba2a590378238a1a9c3a81336a48dfa83e2fd23efc0a1f23f53e4d"
+      },
+      "carrier": {
+        "file": "xp64-usbnet-classreset-8127-classreset-20261102-8159-native-cable.json",
+        "sha256": "9d74ac256719da1097468c695c321567fc39702d37946d9015a332a4d6bbe5e3"
+      },
+      "seconds": 95.05
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

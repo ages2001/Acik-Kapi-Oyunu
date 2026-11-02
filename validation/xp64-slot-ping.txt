@@ -1,0 +1,231 @@
+
+Pinging 10.0.2.2 with 32 bytes of data:
+
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time=2ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Destination host unreachable.
+Destination host unreachable.
+Destination host unreachable.
+Reply from 10.0.2.2: bytes=32 time=1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Destination host unreachable.
+Destination host unreachable.
+Destination host unreachable.
+Reply from 10.0.2.2: bytes=32 time=1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Destination host unreachable.
+Destination host unreachable.
+Destination host unreachable.
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Destination host unreachable.
+Destination host unreachable.
+Destination host unreachable.
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Destination host unreachable.
+Destination host unreachable.
+Destination host unreachable.
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Destination host unreachable.
+Destination host unreachable.
+Destination host unreachable.
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Destination host unreachable.
+Destination host unreachable.
+Destination host unreachable.
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Destination host unreachable.
+Destination host unreachable.
+Destination host unreachable.
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Destination host unreachable.
+Destination host unreachable.
+Destination host unreachable.
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Destination host unreachable.
+Destination host unreachable.
+Destination host unreachable.
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time=1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time=1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+Reply from 10.0.2.2: bytes=32 time<1ms TTL=255
+
+Ping statistics for 10.0.2.2:
+    Packets: Sent = 222, Received = 192, Lost = 30 (13% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 2ms, Average = 0ms
+Control-C

@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-01T21:30:54.953801+00:00",
+  "result": "PASS",
+  "scope": "Actual NT3.1 additional-adapter NCPA installation, synchronized file/hive readback; automatic execution still pending",
+  "package": "legacy-setup-nt31-v6-20261101/manifest.json",
+  "files": "nt31-v6-installed-offline-20261101/manifest.json",
+  "registry": "nt31-v6-installed-registry-20261101.json",
+  "startup_group": "Startup",
+  "startup_title_count": 1,
+  "startup_command_count": 1,
+  "startup_blob_sha256": "67517fd1922914c031c327f9a466a46aef0b54753eeb87929e7351579187c861",
+  "old_run_value": null,
+  "baseline_log": "DHCP applied: IP=10.0.2.15 GW=10.0.2.2\nDHCP applied: IP=10.0.2.15 GW=10.0.2.2\n"
+}

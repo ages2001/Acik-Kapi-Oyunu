@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-01T15:41:38.645601+00:00",
+  "targets": [
+    {
+      "target": "ndisnt31",
+      "size": 237056,
+      "sha256": "d716ee3cb2cc7ecf592e4addf395641caad8c644fbdc3df2a6058ee3032fb44a"
+    },
+    {
+      "target": "ndis3",
+      "size": 263900,
+      "sha256": "6c7d75c70149a3ab00d5263b9f10bcfcf3fae391c3f2f7932b823d9a8a3f00dc"
+    },
+    {
+      "target": "ndis5",
+      "size": 276525,
+      "sha256": "4d27a11fd90d3551c52f27cc5344ce285e6a0fc5f06196abd27bc5605858789d"
+    },
+    {
+      "target": "ndis5x64",
+      "size": 283963,
+      "sha256": "a237e6986638f2e0fe358a15f3a852654276e1567e551e0eda5973df9a99b871"
+    }
+  ],
+  "scope": "PCI package guard change; USB firmware executor/binding are standalone and NOT linked/called by these binaries. NT3.1 current guest validation underway."
+}

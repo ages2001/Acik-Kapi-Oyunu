@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "utc": "2026-11-02T07:37:58.934008+00:00",
+  "guest": "nt31-usbsetup-usbnt-new-rtl8117-8127",
+  "drivers": {
+    "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 538112,
+      "sha256": "3e6e3d0e406850e579692e89c08cc8e6d3ac6c06620f8cfaac3a87d42f5254e2"
+    },
+    "WINNT31/SYSTEM32/DRIVERS/USBNT.SYS": {
+      "file": "USBNT.SYS",
+      "size": 410112,
+      "sha256": "f3a7e6e09ffec491d62cec183dba1b6aeb56f1f15c7b6e4a3a9a43f03d836f37"
+    }
+  },
+  "usb_hotplug_cycles": 4,
+  "usb_cable_cycles": 4,
+  "full_payload_replies": 104,
+  "evidence": {
+    "validation/nt31-usbsetup-usbnt-new-rtl8117-8127-usbnt-new-20261102-sibling-matrix.json": "74fd14d2b194e344ccbde32e23e5907d543766d0bf7475f33d5e00051555beac",
+    "validation/nt31-usbnt-new-offline-20261102/manifest.json": "0f9016238706215711cba22719a77695eeba908d7956968d04966d3451040cc8",
+    "validation/nt31-usbnt-new-evidence-20261102/manifest.json": "b2cdba8cc2d704fb61bb8f68f3360913b0c1a5b52d8f1c87d1d4a6cae3fc09ad"
+  },
+  "scope": "NT3.1 IDE; current USBNT legacy candidate. USB network and RTL8117 PCIe sibling preservation; inbox ping receipt plus full 1472-byte packet-capture comparison. Clean shutdown and exact binary readback. No physical-silicon or WDM controller-power claim."
+}

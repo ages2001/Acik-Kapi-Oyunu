@@ -1,0 +1,107 @@
+  harness: start
+  usbnt: found xHCI at 00:02.0 (1b36:000d) irq 10 mem febfc000
+  usbnt: xhci: 8 ports, 64 slots, ctx 32, scratch 0, version 100
+  usbnt: acpi: 5 tables (RSDT at 0ffe1c17)
+  usbnt: aml: 337 named objects from the ACPI tables
+  usbnt: device 0: 46f4:0103 class ef, high speed, xHCI port 5 depth 0, addr 1
+  usbnt: device 0: QEMU QEMU UVC Test Camera
+  usbnt: device 0: video camera, UVC 1.10, 2 format(s), 5 iso setting(s)
+  usbnt:   format 1: YUY2, 3 frame size(s), first 160x120
+  usbnt:   format 2: MJPG, 2 frame size(s), first 320x240
+  harness: client arrival notification 0
+  harness: ready
+  CAM id=100 dev=0 uvc=10 formats=2 controls=5fc streaming=0 name=QEMU UVC Test Camera
+  VFMT 0 YUY2 bpp=16 frames=3: 160x120/333333/3 320x240/333333/3 640x480/333333/3
+  VFMT 1 MJPG bpp=0 frames=2: 320x240/333333/2 640x480/333333/2
+  VLS count=1
+ok   camera found
+ok   formats YUY2 + MJPG
+ok   frame sizes
+ok   processing unit controls
+ok   name
+  usbnt: video 0: 320x240 YUY2 every 33.3333 ms, setting 3 (1024 bytes), payload 736, frame 153600
+  VSTART r=0 YUY2 320x240 max=153600 interval=333333
+ok   start YUY2
+  VFRAME seq=1 bytes=153600 YUY2 320x240 flags=0
+  VBARS 235 210 170 145 106 81 41 16 box=0
+  VFRAME seq=2 bytes=153600 YUY2 320x240 flags=0
+  VFRAME seq=3 bytes=153600 YUY2 320x240 flags=0
+  VFRAME seq=4 bytes=153600 YUY2 320x240 flags=0
+  VFRAME seq=5 bytes=153600 YUY2 320x240 flags=0
+  VFRAME seq=6 bytes=153600 YUY2 320x240 flags=0
+  VFRAME seq=7 bytes=153600 YUY2 320x240 flags=0
+  VFRAME seq=8 bytes=153600 YUY2 320x240 flags=0
+  VBARS 235 210 170 145 106 81 41 16 box=7
+  VGRAB frames=8 errors=0 seqspan=7 ms=232
+ok   YUY2 frames
+ok   YUY2 frames complete
+ok   colour bars [235, 210, 170, 145, 106, 81, 41, 16]
+ok   picture moves (['0', '7'])
+  fps 30.2
+ok   frame rate
+  VCTL r=0 sel=2 value=0 min=-64 max=64 def=0 res=1
+ok   brightness range
+  VCTL r=0 sel=2 value=40 min=-64 max=64 def=0 res=1
+  VCTL r=0 sel=2 value=40 min=-64 max=64 def=0 res=1
+ok   brightness set
+  VFRAME seq=9 bytes=153600 YUY2 320x240 flags=0
+  VBARS 255 250 210 185 146 121 81 56 box=0
+  VFRAME seq=10 bytes=153600 YUY2 320x240 flags=0
+  VFRAME seq=11 bytes=153600 YUY2 320x240 flags=0
+  VBARS 255 250 210 185 146 121 81 56 box=2
+  VGRAB frames=3 errors=0 seqspan=2 ms=66
+ok   brighter picture (black bar 56)
+  VCTL r=0 sel=2 value=0 min=-64 max=64 def=0 res=1
+  VSTOP r=0
+  usbnt: video 0: 640x480 MJPG every 33.3333 ms, setting 1 (128 bytes), payload 63, frame 372736
+  VSTART r=0 MJPG 640x480 max=372736 interval=333333
+ok   start MJPEG
+  VFRAME seq=12 bytes=9124 MJPG 640x480 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=9124
+  VFRAME seq=13 bytes=9110 MJPG 640x480 flags=0
+  VFRAME seq=14 bytes=9103 MJPG 640x480 flags=0
+  VFRAME seq=15 bytes=9111 MJPG 640x480 flags=0
+  VFRAME seq=16 bytes=8693 MJPG 640x480 flags=0
+  VFRAME seq=17 bytes=8693 MJPG 640x480 flags=0
+  VFRAME seq=18 bytes=9144 MJPG 640x480 flags=0
+  VFRAME seq=19 bytes=9100 MJPG 640x480 flags=0
+  VFRAME seq=20 bytes=9124 MJPG 640x480 flags=0
+  VFRAME seq=21 bytes=9110 MJPG 640x480 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=9110
+  VGRAB frames=10 errors=0 seqspan=9 ms=297
+ok   MJPEG frames
+ok   whole JPEG frames
+ok   DHT as the camera sends it
+  fps 30.3
+ok   MJPEG frame rate
+  usbnt: video 0: 320x240 MJPG every 66.6666 ms, setting 1 (128 bytes), payload 30, frame 142336
+  VSTART r=0 MJPG 320x240 max=142336 interval=666666
+ok   restart 320x240 15 fps
+  VFRAME seq=22 bytes=5048 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=5048
+  VFRAME seq=23 bytes=5069 MJPG 320x240 flags=0
+  VFRAME seq=24 bytes=4957 MJPG 320x240 flags=0
+  VFRAME seq=25 bytes=4966 MJPG 320x240 flags=0
+  VJPEG soi=1 eoi=1 sof=1 dht=0 bytes=4966
+  VGRAB frames=4 errors=0 seqspan=3 ms=199
+ok   frames after restart
+  VFRAME none r=0
+  VGRAB frames=0 errors=0 seqspan=0 ms=0
+  usbnt: device 0: removed
+  harness: client removal notification 0
+  usbnt: device 0: video camera removed
+  VLS count=0
+ok   camera gone after unplug
+  uvc: SET commit fmt 2 frame 2 interval 333333 -> frame 10168 payload 63 (len 34)
+  uvc: set_interface if=1 alt=1
+  uvc: stream on (alt): MJPG 640x480 interval 333333
+  uvc: stats alt=1 frames=11 payloads=1672 idle=1056 brightness=0
+  uvc: set_interface if=1 alt=0
+  uvc: stats alt=0 frames=21 payloads=2454 idle=2743 brightness=0
+  uvc: SET probe fmt 2 frame 1 interval 666666 -> frame 6093 payload 30 (len 34)
+  uvc: SET commit fmt 2 frame 1 interval 666666 -> frame 6093 payload 30 (len 34)
+  uvc: set_interface if=1 alt=1
+  uvc: stream on (alt): MJPG 320x240 interval 666666
+  uvc: stats alt=1 frames=21 payloads=2454 idle=2743 brightness=0
+  uvc: stats alt=1 frames=25 payloads=2628 idle=4240 brightness=0
+RESULT uvc xhci PASS

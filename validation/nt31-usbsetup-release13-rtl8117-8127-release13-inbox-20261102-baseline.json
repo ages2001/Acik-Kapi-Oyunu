@@ -1,0 +1,43 @@
+{
+  "guest": "nt31-usbsetup-release13-rtl8117-8127",
+  "token": "release13-inbox-20261102-baseline",
+  "mask": 3,
+  "requested_count": 4,
+  "result": "PASS",
+  "utc": "2026-11-02T17:54:42.039630+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 27251,
+      "end_offset": 39491,
+      "capture_prefix_sha256": "a632282bf512861832b87e5bc063680372da59ee41dbcaf08982f296e8c34b02",
+      "screenshot": "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-baseline-usb.png",
+      "ocr": "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-baseline-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "e184af53ed551862c4f123d1a98b887270d320894d4ea4072fac34f7b21ab283"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all 4 received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 10020,
+      "end_offset": 22416,
+      "capture_prefix_sha256": "1ac78c3f72cf3842b22c431e4e1d4fb13df3a5cb0eb6f807f29834e10df1b779",
+      "screenshot": "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-baseline-pci.png",
+      "ocr": "nt31-usbsetup-release13-rtl8117-8127-release13-inbox-20261102-baseline-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "7f1e9a1a77aaa48a587247ecacaff741700bef8a217dabd0b4c9d08bbdadfb99"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T17:54:53.607392+00:00"
+}

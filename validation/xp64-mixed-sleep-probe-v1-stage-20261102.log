@@ -1,0 +1,36 @@
+Formatting '/workspace/rltklant-vm/run/xp64-usbnet-mixed-sleep-probe-v1-8127.building.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=5368709120 backing_file=/tmp/rltk-growing-fat-dcmhd2u5/copy.raw backing_fmt=raw lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+14/81920 = 0.02% allocated, 0.00% fragmented, 0.00% compressed clusters
+Image end offset: 1310720
+Images are identical.
+{
+  "image": "/workspace/rltklant-vm/run/xp64-usbnet-mixed-sleep-probe-v1-8127.qcow2",
+  "sha256_before_boot": "adcb1c292d1b15e1a2b059620d66f1e500e1e2d6a87d426d80fb792c8183e694",
+  "files": [
+    {
+      "guest_path": "WINDOWS/SYSTEM32/DRIVERS/USBNT.SYS",
+      "source": "/workspace/rltklant-work/validation/frozen-builds/usbnt-controller-sleep-v1-20261102/amd64.sys",
+      "size": 539648,
+      "sha256": "20b6ea186a86740e3aea741cfc3790b93ce66b39e80baf2f3a6fc2402faa2dca",
+      "old_size": 539648,
+      "old_sha256": "20b6ea186a86740e3aea741cfc3790b93ce66b39e80baf2f3a6fc2402faa2dca"
+    },
+    {
+      "guest_path": "RLTTEST/SLPTEST.EXE",
+      "source": "/workspace/rltklant-work/validation/usbnt-sleep-probe-amd64-20261102/SLPTEST.EXE",
+      "size": 11931,
+      "sha256": "d549ed45ecfcdcabdc23fc5dcf54b2c356d7775e3c549a3002c8311057cb639b",
+      "old_size": null,
+      "old_sha256": null
+    },
+    {
+      "guest_path": "RLTTEST/SLPTEST.SYS",
+      "source": "/workspace/rltklant-work/validation/usbnt-sleep-probe-amd64-20261102/SLPTEST.SYS",
+      "size": 11187,
+      "sha256": "dc47f439966d814f932747b08a8599bc16e87c2f90e1209e76d21ffbbb36312e",
+      "old_size": null,
+      "old_sha256": null
+    }
+  ],
+  "scope": "New durable parent-backed image; parent unmodified; mtools allocated FAT clusters; full driver readback and whole-image comparison verified; no temporary backing dependency."
+}

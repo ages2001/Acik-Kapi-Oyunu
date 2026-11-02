@@ -1,0 +1,93 @@
+{
+  "utc": "2026-11-01T21:21:08.060170+00:00",
+  "result": "PASS",
+  "scope": "Actual NT3.1 auto opt-in with two distinct configured IPv4 subnets; only PCI adapter 02 enabled. Guest reports registry application, confirmed by read-only hive/log inspection after normal shutdown. This does not prove unconfigured/overlapping networks, logon execution or live lease renewal.",
+  "candidate": "frozen-builds/dhcp-interface-bind-20261101/manifest.json",
+  "start_record": "dhcpnt31-bind-guest-start-20261101.json",
+  "screenshot": "nt31-dhcp-bind-auto-result-20261101.png",
+  "pcaps": {
+    "usb.pcap": {
+      "file": "nt31-dhcp-bind-usb.pcap",
+      "bytes": 279431,
+      "sha256": "4be070d69d6e7f34e61586d53b2c3e3e2b0eb8abba0ca2bbf6f5bbd31ede0e69",
+      "start_offset": 279431,
+      "dhcp_events": []
+    },
+    "pci.pcap": {
+      "file": "nt31-dhcp-bind-pci.pcap",
+      "bytes": 248643,
+      "sha256": "53e2bdc44d7fbcd142ee9b81cb83aa354b1cefafba8060b1505f8812eea6f246",
+      "start_offset": 246803,
+      "dhcp_events": [
+        {
+          "source": "10.0.3.15",
+          "destination": "255.255.255.255",
+          "type": 1,
+          "xid": "ed251700",
+          "mac": "525400123456",
+          "yiaddr": "0.0.0.0",
+          "options": {
+            "53": "01",
+            "55": "01030633"
+          }
+        },
+        {
+          "source": "10.0.3.2",
+          "destination": "255.255.255.255",
+          "type": 2,
+          "xid": "ed251700",
+          "mac": "525400123456",
+          "yiaddr": "10.0.3.15",
+          "options": {
+            "53": "02",
+            "54": "0a000302",
+            "1": "ffffff00",
+            "3": "0a000302",
+            "6": "0a000303",
+            "51": "00015180"
+          }
+        },
+        {
+          "source": "10.0.3.15",
+          "destination": "255.255.255.255",
+          "type": 3,
+          "xid": "ed251700",
+          "mac": "525400123456",
+          "yiaddr": "0.0.0.0",
+          "options": {
+            "53": "03",
+            "50": "0a00030f",
+            "54": "0a000302",
+            "55": "01030633"
+          }
+        },
+        {
+          "source": "10.0.3.2",
+          "destination": "255.255.255.255",
+          "type": 5,
+          "xid": "ed251700",
+          "mac": "525400123456",
+          "yiaddr": "10.0.3.15",
+          "options": {
+            "53": "05",
+            "54": "0a000302",
+            "1": "ffffff00",
+            "3": "0a000302",
+            "6": "0a000303",
+            "51": "00015180"
+          }
+        }
+      ]
+    }
+  },
+  "applied_service_reported": "RLTKLANT02",
+  "lease": {
+    "address": "10.0.3.15",
+    "mask": "255.255.255.0",
+    "gateway": "10.0.3.2",
+    "dns": "10.0.3.3",
+    "seconds": 86400
+  },
+  "offline_registry_readback": "nt31-v4-dhcp-final-registry-20261101.json",
+  "offline_log": "nt31-v4-dhcp-final-offline-20261101/DHCPNT31.LOG"
+}

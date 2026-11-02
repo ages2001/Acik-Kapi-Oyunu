@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-01T22:53:10.629685+00:00",
+  "result": "PASS",
+  "raw": "/workspace/rltklant-vm/run/nt351-current.raw",
+  "raw_sha256": "9026485eaf97f861ebecdb4c46a1325381174e22c4eed273d12161df3c2c51af",
+  "packed": "/workspace/rltklant-vm/run/nt351-current.packed.qcow2",
+  "packed_sha256": "812af4a622e47b0776351d00b8904c9c67c72eda0dc0e116d993a790e4ed0bd2",
+  "children": [
+    {
+      "image": "/workspace/rltklant-vm/run/nt351-current-slot-8127.qcow2",
+      "before_sha256": "aa223c1ea74cb01574b0209a28834a24cf19b9cbc5b3542c32d576f0921b92b6",
+      "after_sha256": "7ce79ec3cde59373e72f543da868710e79d48e87f3713e4690eb1d327df75879",
+      "logical_comparison": "identical"
+    }
+  ],
+  "scope": "Generated inactive raw checkpoint preserved losslessly in durable /workspace qcow2; every direct overlay compared before/after; no uploaded media changed"
+}

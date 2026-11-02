@@ -1,0 +1,1 @@
+PASS: production HAL PCI discovery across buses/functions, independent claims, high BDF bounds, BAR sizing/restoration and >4GB rejection

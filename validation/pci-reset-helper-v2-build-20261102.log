@@ -1,0 +1,99 @@
+In file included from /workspace/rltklant-work/validation/guest_pci_reset_driver.c:9:
+/workspace/rltklant-work/validation/ndis3_protocol_test.h:21:59: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   21 |     UCHAR MajorNdisVersion,MinorNdisVersion;USHORT Filler;UINT Reserved;
+      |                                                           ^~~~
+      |                                                           INT
+/workspace/rltklant-work/validation/ndis3_protocol_test.h:25:84: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   25 |     VOID (NTAPI *TransferDataCompleteHandler)(NDIS_HANDLE,PNDIS_PACKET,NDIS_STATUS,UINT);
+      |                                                                                    ^~~~
+      |                                                                                    INT
+/workspace/rltklant-work/validation/ndis3_protocol_test.h:28:71: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   28 |     NDIS_STATUS (NTAPI *ReceiveHandler)(NDIS_HANDLE,NDIS_HANDLE,PVOID,UINT,PVOID,UINT,UINT);
+      |                                                                       ^~~~
+      |                                                                       INT
+/workspace/rltklant-work/validation/ndis3_protocol_test.h:28:82: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   28 |     NDIS_STATUS (NTAPI *ReceiveHandler)(NDIS_HANDLE,NDIS_HANDLE,PVOID,UINT,PVOID,UINT,UINT);
+      |                                                                                  ^~~~
+      |                                                                                  INT
+/workspace/rltklant-work/validation/ndis3_protocol_test.h:28:87: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   28 |     NDIS_STATUS (NTAPI *ReceiveHandler)(NDIS_HANDLE,NDIS_HANDLE,PVOID,UINT,PVOID,UINT,UINT);
+      |                                                                                       ^~~~
+      |                                                                                       INT
+/workspace/rltklant-work/validation/ndis3_protocol_test.h:30:63: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   30 |     VOID (NTAPI *StatusHandler)(NDIS_HANDLE,NDIS_STATUS,PVOID,UINT);
+      |                                                               ^~~~
+      |                                                               INT
+/workspace/rltklant-work/validation/ndis3_protocol_test.h:34:14: error: size of array ‘CheckProtocolSize’ is negative
+   34 | typedef char CheckProtocolSize[sizeof(NDIS30_PROTOCOL_CHARACTERISTICS)==(sizeof(PVOID)==8?104:56)?1:-1];
+      |              ^~~~~~~~~~~~~~~~~
+/workspace/rltklant-work/validation/ndis3_protocol_test.h:36:112: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   36 | __declspec(dllimport) VOID NTAPI NdisRegisterProtocol(PNDIS_STATUS,NDIS_HANDLE*,PNDIS_PROTOCOL_CHARACTERISTICS,UINT);
+      |                                                                                                                ^~~~
+      |                                                                                                                INT
+/workspace/rltklant-work/validation/ndis3_protocol_test.h:38:89: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   38 | __declspec(dllimport) VOID NTAPI NdisOpenAdapter(PNDIS_STATUS,PNDIS_STATUS,NDIS_HANDLE*,UINT*,NDIS_MEDIUM*,UINT,NDIS_HANDLE,NDIS_HANDLE,NDIS_STRING*,UINT,PSTRING);
+      |                                                                                         ^~~~
+      |                                                                                         INT
+/workspace/rltklant-work/validation/ndis3_protocol_test.h:38:108: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   38 | __declspec(dllimport) VOID NTAPI NdisOpenAdapter(PNDIS_STATUS,PNDIS_STATUS,NDIS_HANDLE*,UINT*,NDIS_MEDIUM*,UINT,NDIS_HANDLE,NDIS_HANDLE,NDIS_STRING*,UINT,PSTRING);
+      |                                                                                                            ^~~~
+      |                                                                                                            INT
+/workspace/rltklant-work/validation/ndis3_protocol_test.h:38:150: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   38 | __declspec(dllimport) VOID NTAPI NdisOpenAdapter(PNDIS_STATUS,PNDIS_STATUS,NDIS_HANDLE*,UINT*,NDIS_MEDIUM*,UINT,NDIS_HANDLE,NDIS_HANDLE,NDIS_STRING*,UINT,PSTRING);
+      |                                                                                                                                                      ^~~~
+      |                                                                                                                                                      INT
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:26:79: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   26 | static VOID NTAPI TransferComplete(NDIS_HANDLE c,PNDIS_PACKET p,NDIS_STATUS s,UINT n)
+      |                                                                               ^~~~
+      |                                                                               INT
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:28:70: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   28 | static NDIS_STATUS NTAPI Receive(NDIS_HANDLE c,NDIS_HANDLE r,PVOID h,UINT hn,PVOID l,UINT ln,UINT n)
+      |                                                                      ^~~~
+      |                                                                      INT
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:28:86: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   28 | static NDIS_STATUS NTAPI Receive(NDIS_HANDLE c,NDIS_HANDLE r,PVOID h,UINT hn,PVOID l,UINT ln,UINT n)
+      |                                                                                      ^~~~
+      |                                                                                      INT
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:28:94: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   28 | static NDIS_STATUS NTAPI Receive(NDIS_HANDLE c,NDIS_HANDLE r,PVOID h,UINT hn,PVOID l,UINT ln,UINT n)
+      |                                                                                              ^~~~
+      |                                                                                              INT
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:31:62: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   31 | static VOID NTAPI Status(NDIS_HANDLE c,NDIS_STATUS s,PVOID p,UINT n)
+      |                                                              ^~~~
+      |                                                              INT
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c: In function ‘Reset’:
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:42:32: error: unknown type name ‘UINT’; did you mean ‘INT’?
+   42 |     UNICODE_STRING name,prefix;UINT selected;ULONG i;NDIS_REQUEST query;ULONG vendor=0;
+      |                                ^~~~
+      |                                INT
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:48:5: error: implicit declaration of function ‘NdisOpenAdapter’; did you mean ‘NdisCloseAdapter’? [-Wimplicit-function-declaration]
+   48 |     NdisOpenAdapter(&status,&error,&adapter,&selected,&medium,1,protocol,&b,&name,0,NULL);
+      |     ^~~~~~~~~~~~~~~
+      |     NdisCloseAdapter
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c: In function ‘DriverEntry’:
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:89:42: error: ‘NDIS30_PROTOCOL_CHARACTERISTICS’ has no member named ‘TransferDataCompleteHandler’; did you mean ‘ResetCompleteHandler’?
+   89 |     c.SendCompleteHandler=SendComplete;c.TransferDataCompleteHandler=TransferComplete;
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                          ResetCompleteHandler
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:89:70: error: ‘TransferComplete’ undeclared (first use in this function)
+   89 |     c.SendCompleteHandler=SendComplete;c.TransferDataCompleteHandler=TransferComplete;
+      |                                                                      ^~~~~~~~~~~~~~~~
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:89:70: note: each undeclared identifier is reported only once for each function it appears in
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:91:6: error: ‘NDIS30_PROTOCOL_CHARACTERISTICS’ has no member named ‘ReceiveHandler’
+   91 |     c.ReceiveHandler=Receive;c.ReceiveCompleteHandler=Notify;c.StatusHandler=Status;c.StatusCompleteHandler=Notify;
+      |      ^
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:91:22: error: ‘Receive’ undeclared (first use in this function)
+   91 |     c.ReceiveHandler=Receive;c.ReceiveCompleteHandler=Notify;c.StatusHandler=Status;c.StatusCompleteHandler=Notify;
+      |                      ^~~~~~~
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:91:63: error: ‘NDIS30_PROTOCOL_CHARACTERISTICS’ has no member named ‘StatusHandler’
+   91 |     c.ReceiveHandler=Receive;c.ReceiveCompleteHandler=Notify;c.StatusHandler=Status;c.StatusCompleteHandler=Notify;
+      |                                                               ^
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:91:78: error: ‘Status’ undeclared (first use in this function); did you mean ‘status’?
+   91 |     c.ReceiveHandler=Receive;c.ReceiveCompleteHandler=Notify;c.StatusHandler=Status;c.StatusCompleteHandler=Notify;
+      |                                                                              ^~~~~~
+      |                                                                              status
+/workspace/rltklant-work/validation/guest_pci_reset_driver.c:93:5: error: implicit declaration of function ‘NdisRegisterProtocol’; did you mean ‘NdisDeregisterProtocol’? [-Wimplicit-function-declaration]
+   93 |     NdisRegisterProtocol(&status,&protocol,(PNDIS_PROTOCOL_CHARACTERISTICS)&c,sizeof(c));
+      |     ^~~~~~~~~~~~~~~~~~~~
+      |     NdisDeregisterProtocol

@@ -1,0 +1,9 @@
+{
+  "guest": "xp64-usbnet-native-8127",
+  "file": "stall64.sys",
+  "sha256": "b23fd46b56a5ef55deebbb17a9cf00390c67c47b713d9e094a2a0f192dfadd20",
+  "bytes": 93177,
+  "time": 1793308435.0692692,
+  "utc": "2026-10-29T21:13:55.069462+00:00",
+  "scope": "Server buffered bytes; guest byte count and ftp prompt still require visual verification"
+}

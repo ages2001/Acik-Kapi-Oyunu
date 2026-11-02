@@ -1,0 +1,97 @@
+{
+  "guest": "win2000-standard-usbnet-hidcap-8127",
+  "utc": "2026-11-02T09:21:47.147753+00:00",
+  "scope": "Four-model guest regression for deferred USB function retirement.\n\nTests actual USBNT via its previously installed UPOWER/RRESET fixtures.\nEach attachment is removed with RX halted before reinsertion, followed by\nfunction-idle, port reset, and carrier recovery. Guest ICMP validates payloads.\nThis establishes QEMU behavior only, not physical silicon or system sleep.\n",
+  "result": "PASS",
+  "models": [
+    {
+      "model": "8153",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8153-native-hotplug.json",
+        "sha256": "d25e9d7b91c53557ef27696e63a0f9262bbb24f10e013f8e5e599a18c987d13d"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8153-function-power.json",
+        "sha256": "286886084950001e4642491de161508147e2221548a8b5e40156c05950e929e3"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8153-port-reset-cycles.json",
+        "sha256": "1f2c32c743968ff88721a111da21ff18e3f33fd16cd0eec6ae9459e67b5180e4"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8153-native-cable.json",
+        "sha256": "e046e0fcf840d7deeddfe69360684ecf074b311525e375b540fb7e8118d389b2"
+      },
+      "seconds": 72.03
+    },
+    {
+      "model": "8156",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8156-native-hotplug.json",
+        "sha256": "60a5ee7c3d225344c433db44b713c5fd3781af012668e669b3f8f163baa88f7e"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8156-function-power.json",
+        "sha256": "e26ab3f21e1ef289f0b9f8b3fd261ea5c78a049a48dde8d53c02d0e59b2d516b"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8156-port-reset-cycles.json",
+        "sha256": "3c2d1bc0b7ed35f74ad2249684a6d6bd94667db29cd3b3e36f82ffdce8fbd001"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8156-native-cable.json",
+        "sha256": "8043a63d1ec4007d66800fc87e2c16d95eaf76c28c2dfcd10f7e19e840e8a138"
+      },
+      "seconds": 74.89
+    },
+    {
+      "model": "8157",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8157-native-hotplug.json",
+        "sha256": "108a7a0531ab14e4d5210a4e9d57af1334cc2be1c5ab7ec18a587b56372240a5"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8157-function-power.json",
+        "sha256": "1554d35885770c068e8f4e2119c47f2417a936a36d798c27fb219617d29b2cd4"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8157-port-reset-cycles.json",
+        "sha256": "7aec982309303b20781b5bcb36b194e636b548e1c8c70bf08791142f6a46910e"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8157-native-cable.json",
+        "sha256": "fa5daeb520c16ff25cb55c9340c94c9ad26fa46264965d9a1aa10df230292d06"
+      },
+      "seconds": 91.58
+    },
+    {
+      "model": "8159",
+      "result": "PASS",
+      "stalled_removal": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8159-native-hotplug.json",
+        "sha256": "e99d4da5f636ecc0e84f5017388892c6bcc86a2ec44e3a9c6bc13a00780ac382"
+      },
+      "function_power": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8159-function-power.json",
+        "sha256": "6d08eb7dc89a13b15f19dcd9d350a11f5f8352f439595687e7053f30960b1e95"
+      },
+      "port_reset": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8159-port-reset-cycles.json",
+        "sha256": "cc1d34c3f1a1c3fe3924d45fca05bd5a2dd363e1914f175287cfe869e7e2f970"
+      },
+      "carrier": {
+        "file": "win2000-standard-usbnet-hidcap-8127-hidcap-20261102-8159-native-cable.json",
+        "sha256": "496a376d0dbbab7fb910ac3e4e8aec52b86a34a8d7b24279615e69d9b5fc6f63"
+      },
+      "seconds": 124.17
+    }
+  ],
+  "function_power_pairs": 12,
+  "stalled_removals": 4,
+  "port_resets": 4,
+  "carrier_cycles": 4,
+  "full_mtu_replies": 64
+}

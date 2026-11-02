@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-02T06:31:04.537033+00:00",
+  "guest": "nt31-usbsetup-rtl8139-rxtx-8127",
+  "files": {
+    "WINNT31/SYSTEM32/DRIVERS/RLTKLANT.SYS": {
+      "file": "RLTKLANT.SYS",
+      "size": 538112,
+      "sha256": "64facff9e68e18ef665ed0086e529feb67bd274da299bd53b0e9d324fd460449"
+    },
+    "RLTTEST/TCPFAULT.LOG": {
+      "file": "TCPFAULT.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    },
+    "RLTTEST/TCPRESET.LOG": {
+      "file": "TCPRESET.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    },
+    "RLTTEST/TCPCABLE.LOG": {
+      "file": "TCPCABLE.LOG",
+      "size": 620,
+      "sha256": "69170014ef12661a8e950596fb81448c80c23ecc1022483a79dfbee1167419fa"
+    },
+    "RLTTEST/TCP31.EXE": {
+      "file": "TCP31.EXE",
+      "size": 12024,
+      "sha256": "e23a00ee62d2eea2ecf3f824e5ba15461664b1d9f8354685f046a6493307c5bd"
+    }
+  }
+}

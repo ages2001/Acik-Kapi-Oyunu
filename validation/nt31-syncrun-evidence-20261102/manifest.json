@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-02T13:44:54.160024+00:00",
+  "guest": "nt31-usbsetup-syncrun-rtl8117-8127",
+  "safeoff_screenshot": "nt31-syncrun-safeoff-20261102.png",
+  "safeoff_sha256": "cdf04eb2677f986eea0bed71c4aad707e171a828db551c3c4aad4ef2aec963ec",
+  "files": {
+    "debug.log": {
+      "bytes": 2308,
+      "sha256": "625f7b027a71fb8657376f7b487a1b0392190054ca64b505dfee0f62fb241d22"
+    },
+    "serial.log": {
+      "bytes": 12,
+      "sha256": "11c585087db218efeb332e1775a1bf4237bcb592bb6b0312425f47ca2810cb44"
+    },
+    "qemu.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "launch.json": {
+      "bytes": 1641,
+      "sha256": "4e6f1f237f5120220f469c8c80dd7382ba57b5b5f6204d518c3b8620e4f2a5e8"
+    },
+    "process-exit.json": {
+      "bytes": 51,
+      "sha256": "c243ec7f48e5fd65058e2e956a843abd904d8df1f1a1680818a24e166a4f53b5"
+    },
+    "pci.pcap": {
+      "bytes": 219022,
+      "sha256": "659cca919bb0ea6b5c9e643dedb64c092185f848630a8c870feec496ae7a18d6"
+    },
+    "usb.pcap": {
+      "bytes": 145312,
+      "sha256": "a1107aa8690cebe6c22b4f0c7d49db71cd5373bb6a86a142fbfe4ab037ced325"
+    }
+  },
+  "shutdown_evidence": "Visually confirmed safe-off screen"
+}

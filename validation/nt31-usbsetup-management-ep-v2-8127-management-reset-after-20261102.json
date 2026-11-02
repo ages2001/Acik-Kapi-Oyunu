@@ -1,0 +1,42 @@
+{
+  "guest": "nt31-usbsetup-management-ep-v2-8127",
+  "token": "management-reset-after-20261102",
+  "mask": 3,
+  "result": "PASS",
+  "utc": "2026-11-02T05:11:54.682842+00:00",
+  "paths": [
+    {
+      "destination": "10.0.2.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "usb.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 29094,
+      "end_offset": 41334,
+      "capture_prefix_sha256": "f7e7d99cae82e97a4b8fc717c5cc104badfb28a9bb3451259905ee8443b836d4",
+      "screenshot": "nt31-usbsetup-management-ep-v2-8127-management-reset-after-20261102-usb.png",
+      "ocr": "nt31-usbsetup-management-ep-v2-8127-management-reset-after-20261102-usb.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "17618c9605ab0f37d4c486b30db6c85b7aefb5f38536b2aa8e2937a755c1c9af"
+    },
+    {
+      "destination": "10.0.3.2",
+      "requests": 4,
+      "matched_replies": 4,
+      "payload_bytes": 1472,
+      "pcap": "pci.pcap",
+      "receipt_check": "Fresh cleared console: all four received; exact destination/identifier/sequence/payload verified independently in PCAP",
+      "start_offset": 9691,
+      "end_offset": 22087,
+      "capture_prefix_sha256": "eca905ebd2aad2ea96ebb82b94a258c15781302226345990441ad1f7ba315416",
+      "screenshot": "nt31-usbsetup-management-ep-v2-8127-management-reset-after-20261102-pci.png",
+      "ocr": "nt31-usbsetup-management-ep-v2-8127-management-reset-after-20261102-pci.ocr.txt",
+      "receipt_ocr_mode": 6,
+      "screenshot_sha256": "405a9e9235d31411bddfa8144b60c200cbe2984b7f5a747e6b3f49f4aec0df13"
+    }
+  ],
+  "scope": "NT3.1 inbox ping confirms guest receipt; host matches all 1472 wire payload bytes and ICMP identifier/sequence. This is not the LNET guest-side payload comparator.",
+  "full_payload_replies": 8,
+  "finished_utc": "2026-11-02T05:12:06.268543+00:00"
+}

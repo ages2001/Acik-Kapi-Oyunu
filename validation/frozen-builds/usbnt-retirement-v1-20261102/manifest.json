@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-02T08:34:38.870195+00:00",
+  "scope": "Unreleased: delayed same-instance PDO admission and deferred function retirement; guest validation pending",
+  "files": {
+    "i386": {
+      "size": 488448,
+      "sha256": "1c62f19cca8768180a69ebda123f20dba853bb9bab6aa0357cfb923c47b47c30"
+    },
+    "amd64": {
+      "size": 525824,
+      "sha256": "413582844bb4a3c538e6d57f252b44c9674a06edead28a7977588c8c8fbd8a43"
+    }
+  }
+}
