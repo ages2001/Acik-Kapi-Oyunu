@@ -1,0 +1,21 @@
+SC manager 1256368
+Afd
+Open service error 1060
+Tcpip
+Open service error 1060
+Streams
+Open service error 1060
+NetBT
+Open service error 1060
+C:\winnt31\system32\drivers\afd.sys
+Attributes 32
+File error 1060
+C:\winnt31\system32\drivers\tcpip.sys
+Attributes 4294967295
+File error 2
+C:\winnt31\system32\drivers\streams.sys
+Attributes 32
+File error 2
+C:\winnt31\system32\wshtcpip.dll
+Attributes 4294967295
+File error 2

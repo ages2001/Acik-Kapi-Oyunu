@@ -1,0 +1,26 @@
+Production Internet proxy loads 1
+InternetOpenA 1
+InternetConnectA 1
+HttpOpenRequestA 1
+HttpSendRequestA 1
+HttpQueryInfoA 1
+InternetReadFile 1
+InternetCloseHandle 1
+ANSI format adapters resolve 1
+Native date format through ANSI adapter 1
+Native time query length 13
+Native time query error 87
+Native time direct length 13
+Native time direct error 87
+Last error 87
+Native time format through ANSI adapter 0
+ANSI format size query 1
+Short ANSI format output unchanged 1
+Native Winsock startup 1
+Winsock socket error 2
+Last error 2
+Create loopback listener 0
+Checks 15
+Failures 2
+Server errors 0
+Server requests 0

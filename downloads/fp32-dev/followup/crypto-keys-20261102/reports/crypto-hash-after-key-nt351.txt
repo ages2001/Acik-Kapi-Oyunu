@@ -1,0 +1,49 @@
+Production CSP adapter loads 1
+All hash exports resolve 1
+Acquire original NT4 RSA provider 1
+NULL hash output rejected 1
+Unsupported algorithm fails without a handle 1
+Invalid creation flags rejected 1
+Create MD5 hash 1
+Hash data in two chunks 1
+Empty input is accepted 1
+Algorithm identifier preserved 1
+Hash size parameter preserved 1
+Digest size query 1
+Short digest buffer reports required size 1
+Short output remains untouched 1
+RFC MD5 abc known answer 1
+Digest write preserves trailing guards 1
+Finalized hash rejects additional data 1
+NULL size output rejected 1
+NULL hash value rejected 1
+Destroy hash 1
+Destroyed handle rejected 1
+Invalid pointer handle rejected safely 1
+Create empty SHA1 hash 1
+SHA1 empty known answer 1
+Destroy empty hash 1
+Create explicit-value SHA1 hash 1
+Set explicit hash value 1
+Explicit hash value readback 1
+Destroy explicit-value hash 1
+Create child before provider release 1
+Rejected provider release preserves context 1
+Child remains valid after rejected release 1
+Release provider with child 1
+Released provider invalidates bridge child 1
+Concurrent worker started 1
+Concurrent worker started 1
+Concurrent worker started 1
+Concurrent worker started 1
+Concurrent worker completed 1
+Concurrent SHA1 known answers 1
+Concurrent worker completed 1
+Concurrent SHA1 known answers 1
+Concurrent worker completed 1
+Concurrent SHA1 known answers 1
+Concurrent worker completed 1
+Concurrent SHA1 known answers 1
+Checks 46
+Failures 0
+Concurrent hash cycles 256

@@ -1,0 +1,67 @@
+Production key adapter loads 1
+CryptAcquireContextA 1
+CryptAcquireContextW 1
+CryptReleaseContext 1
+CryptImportKey 1
+CryptExportKey 1
+CryptGetUserKey 1
+CryptDestroyKey 1
+CryptSetKeyParam 1
+CryptGetProvParam 1
+CryptEncrypt 1
+CryptDecrypt 1
+CryptSignHashW 1
+CryptEnumProvidersW 1
+CryptCreateHash 1
+CryptHashData 1
+CryptGetHashParam 1
+CryptDestroyHash 1
+Provider size query in bytes 1
+Short provider buffer unchanged 1
+Supported provider enumeration 1
+Enumeration terminates 1
+Reserved enumeration parameter rejected 1
+Create disposable Unicode-named container 1
+Provider name from original CSP 1
+Provider type for packaged CSP 1
+Provider type size query 1
+Short provider type output unchanged 1
+Invalid provider rejected by type query 1
+Absent signature key reported 1
+Truncated BLOB header rejected 1
+Truncated public modulus rejected 1
+Truncated private components rejected 1
+Import RSA public key 1
+Public export size 1
+Public export exact bytes 1
+Destroy public key 1
+Destroyed key rejected 1
+Import exportable RSA private key 1
+Private export exact CRT components 1
+Get stored exchange key 1
+Destroy retrieved key handle 1
+Truncated encrypted session key rejected 1
+Import RSA-wrapped RC4 key 1
+Set explicit RC4 salt 1
+Encrypt RC4 plaintext 1
+RC4 output matches independent fixture 1
+Import independent decrypt key 1
+Decrypt RC4 ciphertext 1
+RC4 plaintext restored 1
+Independent ephemeral provider 1
+Hash on independent provider 1
+Cross-provider hash and key rejected 1
+Import RSA-wrapped RC2 key 1
+Create native keyed MAC 1
+Keyed MAC produces a native block 1
+Import RSA signature key 1
+RSA SHA1 signature matches independent PKCS1 fixture 1
+Release provider with child keys 1
+Released provider invalidates key handles 1
+Reopen named container 1
+Signature key persists after reopen 1
+Reopened key produces the same independent signature 1
+Delete only the disposable container 1
+Deleted container cannot be reopened 1
+Checks 65
+Failures 0

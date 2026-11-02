@@ -1,0 +1,40 @@
+{
+  "scope": "Public 512-bit RSA and 40-bit RC4/RC2 fixtures for legacy NT4 compatibility tests only.",
+  "rsa_public_modulus_hex": "0xe0e1802751f29774c7584fe5f349306ecde2e08d3a1264a3558576d57552ab0d70f05a5e0af9b8f7245847a6db5433beac42aea4379fe1ec8737ff4e7b8791d9",
+  "rsa_public_exponent": 65537,
+  "sha1_abc": "a9993e364706816aba3e25717850c26c9cd0d89d",
+  "fixtures": {
+    "private_exchange": {
+      "bytes": 308,
+      "sha256": "22e07abad081cb766522ef09c33bde95c37c0a22f5249f7aad4823f347099790"
+    },
+    "private_signature": {
+      "bytes": 308,
+      "sha256": "fb33cd959cc4ba2ac97b0a7f3e02c8dbf3ec9548816b2de527c2f5e88ad4ab5b"
+    },
+    "public_exchange": {
+      "bytes": 84,
+      "sha256": "f15d26345272754c1732291d0a72cb276ead5ab7e7728478c634130abcd99eae"
+    },
+    "public_signature": {
+      "bytes": 84,
+      "sha256": "e2c3e1d6342f9b15d8f1480c338dea39d22574e6c99410cb7f7e0ce57cc67782"
+    },
+    "simple_rc4": {
+      "bytes": 76,
+      "sha256": "75d8f218d15bc09e0fc14d64c90da23fb1d398891c1b8ebc50b71b61251a2263"
+    },
+    "simple_rc2": {
+      "bytes": 76,
+      "sha256": "61c7d2ae45b9120dc4909e84ca61d2151d8ccdf9fa9bf1745b36194758934e53"
+    },
+    "sha1_signature_abc": {
+      "bytes": 64,
+      "sha256": "9fef451f63f57449027fd777a059371e30a35e9bc7ade8b7c0527fc15a9eece6"
+    },
+    "rc4_salted_zeros": {
+      "bytes": 32,
+      "sha256": "e170b8d5003b9ce1811c1a5df83cbb461e98754c934455c0b0e341a20eee0a71"
+    }
+  }
+}

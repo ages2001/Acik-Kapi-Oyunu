@@ -803,10 +803,10 @@
   "development_gap_audit": {
     "counts": {
       "FP10": 61,
-      "FP32": 111
+      "FP32": 101
     },
     "scope": "Current linked NT3.1 development DLLs, not immutable published installers.",
-    "evidence": "followup/crypto-hash-20261102/reports/player-gap-audit.json",
+    "evidence": "followup/crypto-keys-20261102/reports/player-gap-audit.json",
     "excludes": [
       "Partially implemented behavior",
       "Unavailable dynamic APIs",
@@ -846,5 +846,22 @@
     "evidence": "followup/crypto-hash-20261102/README.md",
     "archive": "followup/FP32-HASH-20261102-COMPONENTS.zip",
     "sha256": "71633f30923f5f1d05a391d2fc391223fd0c5c2fcfe3e40c600a05e292975438"
+  },
+  "crypto_keys_followup": {
+    "native_key_checks_per_os": 65,
+    "native_hash_checks_per_os": 46,
+    "native_rng_checks_per_os": 17,
+    "native_failures": 0,
+    "os": [
+      "NT3.1 UP",
+      "NT3.51 UP"
+    ],
+    "named_container_reopen_tested": true,
+    "named_container_windows_restart_tested": false,
+    "independent_rsa_rc4_known_answers": true,
+    "full_port_complete": false,
+    "evidence": "followup/crypto-keys-20261102/README.md",
+    "archive": "followup/FP32-KEYS-20261102-COMPONENTS.zip",
+    "sha256": "9b0cd1bb1d6dcf82cde0b8143cd490a267e8f9cb8539c2db61b67f6fa698e753"
   }
 }
