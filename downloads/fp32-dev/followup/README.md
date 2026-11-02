@@ -31,3 +31,7 @@ not a new R4 installer, MP gameplay or other-OS pass.
 ## 2026-11-02: shared disk, thread and Automation adapters
 
 [Source, component DLLs and native evidence](shared-adapters-20261102/README.md): 100 native checks pass on each of NT3.1 and NT3.51. Current development stub counts are FP10 61 and FP32 117. Published installers are unchanged.
+
+## 2026-11-02: full-width system memory query
+
+[Source and evidence](system-memory-20261102/README.md): FP32 GlobalMemoryStatusEx passes 31 native checks on each of NT3.1 and NT3.51 plus 24 modeled-provider cases. The latest development counts are FP10 61 and FP32 116; these are not full-port completion metrics.

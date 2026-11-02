@@ -1,0 +1,33 @@
+{
+  "dll": "fp32/build/F32K.DLL",
+  "sha256": "e550b808465e2e134db752a74dcf307cebf8697f9287fa6bc9bd3583666b36fd",
+  "cases": [
+    "Eight-GiB physical and twelve-GiB commit",
+    "Finite process quota in bytes",
+    "Exhausted process quota",
+    "Exhausted system commit",
+    "No physical pages available",
+    "All physical pages available",
+    "Exhausted virtual address range",
+    "Native export preferred",
+    "null",
+    "bad-size",
+    "no-nt",
+    "no-provider",
+    "denied-basic",
+    "short-basic",
+    "denied-performance",
+    "short-performance",
+    "denied-quota",
+    "short-quota",
+    "denied-vm",
+    "short-vm",
+    "Zero page size",
+    "Zero physical pages",
+    "Inverted virtual range",
+    "Available exceeds total"
+  ],
+  "case_count": 24,
+  "failures": 0,
+  "scope": "Linked x86 export with modeled native providers, not native large-memory/quota/modern-OS validation."
+}

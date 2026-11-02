@@ -1,0 +1,35 @@
+Production kernel adapter loads 1
+GlobalMemoryStatusEx resolves 1
+NULL output rejected 1
+Wrong structure length rejected 1
+Failed call leaves output and guards unchanged 1
+Valid output structure accepted 1
+Successful call preserves output guards 1
+Memory load is a percentage 1
+Physical memory bounds 1
+Commit memory bounds 1
+Virtual address bounds 1
+Reserved field is zero 1
+Physical total matches native legacy query 1
+Available physical matches native query within sampling tolerance 1
+Commit total matches native legacy query 1
+Available commit matches native query within sampling tolerance 1
+Virtual total matches native address range 1
+Free virtual matches native query 1
+Physical total low 66650112
+Physical total high 0
+Reserve sixteen MiB 1
+Query after reservation 1
+Reservation removes exactly sixteen MiB of virtual space 1
+Reservation does not consume sixteen MiB of commit 1
+Commit reserved memory 1
+Query after commitment 1
+Commitment consumes sixteen MiB within sampling tolerance 1
+Commitment does not reserve more address space 1
+Release reservation and commitment 1
+Query after release 1
+Released virtual space restored exactly 1
+Released commit restored within sampling tolerance 1
+Totals remain stable 1
+Checks 31
+Failures 0

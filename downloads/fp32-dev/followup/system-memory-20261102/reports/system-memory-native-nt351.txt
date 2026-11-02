@@ -1,0 +1,166 @@
+Phase 0
+Basic status 0
+Basic length 44
+Basic 0
+Basic 156250
+Basic 4096
+Basic 16205
+Basic 1
+Basic 16351
+Basic 65536
+Basic 65536
+Basic 2147418111
+Basic 1
+Basic 3435973633
+Basic 3435973836
+Performance status 0
+Performance length 312
+Performance 3639193316
+Performance 4
+Performance 1074191
+Performance 0
+Performance 1022509
+Performance 0
+Performance 52927
+Performance 0
+Performance 1141
+Performance 499
+Performance 2985
+Performance 12553
+Performance 2825
+Performance 33187
+Performance 3410
+Performance 10516
+Performance guard 3435973836
+Quota status 0
+Quota length 32
+Quota 524288
+Quota 65536
+Quota 204800
+Quota 1413120
+Quota 4294967295
+Quota 3775291053
+Quota 4294967295
+Quota 4294967295
+Quota 3435973836
+VM status 0
+VM length 44
+Virtual size 6590464
+Private commit 159744
+Old physical total 66375680
+Old physical available 51417088
+Old pagefile total 135933952
+Old pagefile available 124362752
+Old virtual total 2147352576
+Old virtual available 2140762112
+Allocation 4259840
+Phase 1
+Basic status 0
+Basic length 44
+Basic 0
+Basic 156250
+Basic 4096
+Basic 16205
+Basic 1
+Basic 16351
+Basic 65536
+Basic 65536
+Basic 2147418111
+Basic 1
+Basic 3435973633
+Basic 3435973836
+Performance status 0
+Performance length 312
+Performance 3639193316
+Performance 4
+Performance 1074191
+Performance 0
+Performance 1022509
+Performance 0
+Performance 52927
+Performance 0
+Performance 1141
+Performance 499
+Performance 2985
+Performance 12553
+Performance 6925
+Performance 33187
+Performance 6925
+Performance 10516
+Performance guard 3435973836
+Quota status 0
+Quota length 32
+Quota 524288
+Quota 65536
+Quota 204800
+Quota 1413120
+Quota 4294967295
+Quota 3775291053
+Quota 4294967295
+Quota 4294967295
+Quota 3435973836
+VM status 0
+VM length 44
+Virtual size 23367680
+Private commit 16953344
+Old physical total 66375680
+Old physical available 51417088
+Old pagefile total 135933952
+Old pagefile available 107569152
+Old virtual total 2147352576
+Old virtual available 2123984896
+Phase 2
+Basic status 0
+Basic length 44
+Basic 0
+Basic 156250
+Basic 4096
+Basic 16205
+Basic 1
+Basic 16351
+Basic 65536
+Basic 65536
+Basic 2147418111
+Basic 1
+Basic 3435973633
+Basic 3435973836
+Performance status 0
+Performance length 312
+Performance 3639193316
+Performance 4
+Performance 1074191
+Performance 0
+Performance 1022509
+Performance 0
+Performance 52927
+Performance 0
+Performance 1141
+Performance 499
+Performance 2985
+Performance 12553
+Performance 2825
+Performance 33187
+Performance 6925
+Performance 10516
+Performance guard 3435973836
+Quota status 0
+Quota length 32
+Quota 524288
+Quota 65536
+Quota 204800
+Quota 1413120
+Quota 4294967295
+Quota 3775291053
+Quota 4294967295
+Quota 4294967295
+Quota 3435973836
+VM status 0
+VM length 44
+Virtual size 6590464
+Private commit 159744
+Old physical total 66375680
+Old physical available 51417088
+Old pagefile total 135933952
+Old pagefile available 124362752
+Old virtual total 2147352576
+Old virtual available 2140762112

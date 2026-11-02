@@ -798,5 +798,34 @@
     "evidence": "followup/shared-adapters-20261102/README.md",
     "archive": "followup/FP10-FP32-SHARED-20261102-COMPONENTS.zip",
     "sha256": "ca9ee7d6f25d820dec110315b743a7c6437541727519c7f931069d1095dccf55"
+  },
+  "required_imports_remaining_unimplemented_scope": "Immutable published FP32 R4 installer; use development_gap_audit for current linked development builds.",
+  "development_gap_audit": {
+    "counts": {
+      "FP10": 61,
+      "FP32": 116
+    },
+    "scope": "Current linked NT3.1 development DLLs, not immutable published installers.",
+    "evidence": "followup/system-memory-20261102/reports/player-gap-audit.json",
+    "excludes": [
+      "Partially implemented behavior",
+      "Unavailable dynamic APIs",
+      "Untested OS compatibility"
+    ]
+  },
+  "system_memory_followup": {
+    "native_checks_per_os": 31,
+    "native_failures": 0,
+    "os": [
+      "NT3.1 UP",
+      "NT3.51 UP"
+    ],
+    "model_provider_cases": 24,
+    "model_provider_failures": 0,
+    "full_port_complete": false,
+    "published_installers_changed": false,
+    "evidence": "followup/system-memory-20261102/README.md",
+    "archive": "followup/FP32-SYSTEM-MEMORY-20261102-COMPONENTS.zip",
+    "sha256": "a2657b250a183558fc59c72f0e31ac0a040cbc1d715aca67e3f6831043c2f6f3"
   }
 }
