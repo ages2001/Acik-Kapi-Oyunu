@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-02",
+  "actual_game_first_save_verified": true,
+  "actual_game_player_reopen_verified": true,
+  "actual_game_os_reboot_verified": false,
+  "old_player_pid": 60,
+  "new_player_pid": 81,
+  "launcher_pid_is_not_engine_pid": true,
+  "observed_loaded_location": "Castle Grounds: Outside of the Castle",
+  "observed_loaded_shines": 1,
+  "saves": {
+    "before-pipe": {
+      "bytes": 5478,
+      "sha256": "38e06e31d9d3312f04d49fccf72ebfc758e405a8de7bb5197fd6bea410345e71",
+      "FileAStar_39": false,
+      "FileExists": null
+    },
+    "first-shine": {
+      "bytes": 5730,
+      "sha256": "e0196be29bc0a2f365eba522008c6290cbdd616929ca5c387d129cd590efd240",
+      "FileAStar_39": true,
+      "FileExists": true
+    },
+    "after-save-button": {
+      "bytes": 5730,
+      "sha256": "e0196be29bc0a2f365eba522008c6290cbdd616929ca5c387d129cd590efd240",
+      "FileAStar_39": true,
+      "FileExists": true
+    },
+    "after-reopen": {
+      "bytes": 5730,
+      "sha256": "e0196be29bc0a2f365eba522008c6290cbdd616929ca5c387d129cd590efd240",
+      "FileAStar_39": true,
+      "FileExists": true
+    }
+  },
+  "scope": "NT3.1 UP, QEMU TCG Pentium III + SSE2, 512 MiB, standard VGA 800x600 4bpp, AC97; existing research XMM guard and diagnostic CPU-reporting gameplay candidate.",
+  "swf_sha256": "6f8dc22d74963cb75928fcac6ad67769384c3088bb419f9995e24b81d8411e1c",
+  "swf_or_save_contents_modified_by_test": false,
+  "vm_snapshot_restore_used_to_prove_save": false,
+  "full_r4_installer_test": false,
+  "full_gameplay_pass": false,
+  "other_os_pass": false,
+  "performance_certified": false,
+  "runtime_fingerprints": "sm63-game-runtime-fingerprint.json"
+}

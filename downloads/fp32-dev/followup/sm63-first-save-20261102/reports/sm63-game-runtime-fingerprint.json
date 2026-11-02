@@ -1,0 +1,98 @@
+{
+  "APP/FP32.EXE": {
+    "bytes": 16998400,
+    "sha256": "2f09f7eecabc16e56cfa9c1f6c5ba06b63cce8d0c9cda1591b41c7a5bf02a136"
+  },
+  "F32A.DLL": {
+    "bytes": 20480,
+    "sha256": "833a550f0ded84280ced3859f59bfae5ab55becd11b6575cfa8086b6dd5ee359"
+  },
+  "F32C.DLL": {
+    "bytes": 20480,
+    "sha256": "929691eb97ad41deb9f51360d59796a586ddf5c34a33e5a849cef5de1ca46836"
+  },
+  "F32CD.DLL": {
+    "bytes": 20480,
+    "sha256": "0a6b998c4a4f0925c18c58302da26d9a95ca590676803e8e498321c0aa31427b"
+  },
+  "F32CM.DLL": {
+    "bytes": 20480,
+    "sha256": "9e0dbdf0a913d6d6b8f70a3d00704b01f44de9a2801523f8b9081c81d3ab0ed8"
+  },
+  "F32D.DLL": {
+    "bytes": 20480,
+    "sha256": "da04c44d2c73ec31f114add8cb32c42675b33e3926e29840452b057f1fd105e1"
+  },
+  "F32G.DLL": {
+    "bytes": 28672,
+    "sha256": "4b7411f6a8987f9564ac0fdb420583ee4001787558910e6157d5fd335aa5a52b"
+  },
+  "F32I.DLL": {
+    "bytes": 20480,
+    "sha256": "e248e4b69bea217e09e525be08eb8daa56ff3a9b3113744e8f92f7dc65c95852"
+  },
+  "F32K.DLL": {
+    "bytes": 45056,
+    "sha256": "07cc5b4737a96168954ede26b5ac0e95b09149eb1874b25c0e653666a7745736"
+  },
+  "F32M.DLL": {
+    "bytes": 20480,
+    "sha256": "0c689f722a58ddc0bfa85357a4e37dae47ec7d209e63e54550363fb614e2fa27"
+  },
+  "F32O.DLL": {
+    "bytes": 20480,
+    "sha256": "3a2fcfb5c75917ebb5ee97931e642404f92237991dec5acc72c9cdabf8ca715b"
+  },
+  "F32OA.DLL": {
+    "bytes": 20480,
+    "sha256": "026b42bfe678ebb6a3261e3aec3da4527544d01f6b23d950dc66d464187d06a4"
+  },
+  "F32P.DLL": {
+    "bytes": 20480,
+    "sha256": "9316819c41720010e96cb4f8396283d3a4b4d380394a5cb04063019e5816e318"
+  },
+  "F32R.DLL": {
+    "bytes": 20480,
+    "sha256": "c6c6901a4a6974757ef00b16d7792eaf0826e061af087ebe71ed371d5b404fb6"
+  },
+  "F32S.DLL": {
+    "bytes": 20480,
+    "sha256": "8f2ae35949158b05ffca96f7b0e3c585744c3bdfee7b5ea12c263a82be93565d"
+  },
+  "F32SH.DLL": {
+    "bytes": 20480,
+    "sha256": "dbfb94763579f96c9933ddb7291fbb50bd9de9061a6cd49dd5eeecff9d227c51"
+  },
+  "F32U.DLL": {
+    "bytes": 323584,
+    "sha256": "d0bad25b19caba9c46074ac7eeb82f9b65c57ebcaca78682f3b6aa1bc1a71dcf"
+  },
+  "F32V.DLL": {
+    "bytes": 20480,
+    "sha256": "4578ed2f42165ea8cd217cb3ce441fc6b42b6d5050d6a9a5aa451adec7e6fa1f"
+  },
+  "F32W.DLL": {
+    "bytes": 20480,
+    "sha256": "289a0a691bab50b5f5014f6870dafe3571502186b319754a6cd96ac02effd308"
+  },
+  "FP32.EXE": {
+    "bytes": 315392,
+    "sha256": "fb6b0d197ec600fec0697d83d428f4f438f90feefa4beaef37421862f4ce3794"
+  },
+  "FPCPU.DLL": {
+    "bytes": 16384,
+    "sha256": "3099e33c3269d074c9242b32b32421f4a77f1628e0595d66b469402013760aca"
+  },
+  "FPCRK.DLL": {
+    "bytes": 16384,
+    "sha256": "c49ad33713e694d4bbf1ef6d591fbfd9a88ac7a0cea40d052fb85edd08e0fea5"
+  },
+  "FPRSA.DLL": {
+    "bytes": 77824,
+    "sha256": "b4d79155da34e35551f5a5ec52fdf22c9bae478b167a87cd965396ec1a6e9a1c"
+  },
+  "SM63OK.SWF": {
+    "bytes": 15302634,
+    "sha256": "6f8dc22d74963cb75928fcac6ad67769384c3088bb419f9995e24b81d8411e1c"
+  }
+}

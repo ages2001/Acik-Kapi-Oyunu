@@ -19,3 +19,11 @@ The [SM63 serialization fixture](sm63-serialization/README.md) passed 26 checks 
 ## 2026-11-02: native version reporting and NT3.51 upload
 
 [Source and evidence](version-20261102/README.md): 18 version checks pass on NT3.1, NT3.51, Win95 and Win32s; the linked NT3.1 proxy passes 19. A separate VHD made from the new NT3.51 upload boots with standard VGA and passes the file/core component probes. This does not complete the player port or SM63 gameplay-save test. R4 downloads are unchanged.
+
+## 2026-11-02: actual SM63 first save and player reopen
+
+[Native gameplay evidence](sm63-first-save-20261102/README.md) supersedes the
+earlier pending-save notes above: the first Shine was delivered, the actual
+Save button was clicked, and File A loaded into Castle Grounds with one Shine
+in a new player process. This is the separate NT3.1 UP diagnostic candidate,
+not a new R4 installer, MP gameplay or other-OS pass.
