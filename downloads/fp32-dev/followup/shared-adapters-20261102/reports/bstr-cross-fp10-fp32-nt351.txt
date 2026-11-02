@@ -1,0 +1,31 @@
+Native process counter provider 1
+Production adapters load 1
+Producer name, consumer ordinal and thread export resolve 1
+NULL release returns 1
+NULL source remains NULL 1
+Empty BSTR layout 1
+Commit before large allocation 1
+One MiB BSTR contents and length 1
+Large allocation increases native commit 1
+Cross-player release returns committed memory 1
+Commit before 1445888
+Commit during 2498560
+Commit after 1445888
+Worker with NULL thread-ID output 1
+Worker with thread-ID output 1
+Thread ID returned 1
+Worker with NULL thread-ID output 1
+Worker with thread-ID output 1
+Thread ID returned 1
+Worker completed 1
+Worker exit code preserved 1
+Worker completed 1
+Worker exit code preserved 1
+Worker completed 1
+Worker exit code preserved 1
+Worker completed 1
+Worker exit code preserved 1
+4000 Unicode cross-player allocation/free cycles 1
+Checks 25
+Failures 0
+Worker errors 0

@@ -1,0 +1,17 @@
+{
+  "results": [
+    {
+      "dll": "build/fp10-dynamic/FPS.DLL",
+      "sha256": "5e5123d33a049827b985507fd406215c6675e89bc32923f03bc41ed201ad83de",
+      "cases": 56,
+      "failures": 0
+    },
+    {
+      "dll": "fp32/build/F32S.DLL",
+      "sha256": "82b170b0a40ccde7467da1b003bebcd018a2634be5732e7c1cc31dca4e95d726",
+      "cases": 56,
+      "failures": 0
+    }
+  ],
+  "scope": "Actual x86 adapter instructions; modeled Windows/NT calls. Native behavior and file-system access tests are separate."
+}

@@ -779,5 +779,24 @@
     "uninstaller_removed_after_reboot": true,
     "archive": "../fp10-dynamic/FP10-AUTOCPU-20261102-R2-DEV.zip",
     "evidence": "../fp10-dynamic/installer-20261102/README.md"
+  },
+  "shared_adapters_followup": {
+    "development_missing_imported_pairs": {
+      "FP10": 61,
+      "FP32": 117
+    },
+    "native_checks_per_os": 100,
+    "native_failures": 0,
+    "os": [
+      "NT3.1 UP",
+      "NT3.51 UP"
+    ],
+    "model_provider_checks": 112,
+    "model_provider_failures": 0,
+    "full_port_complete": false,
+    "published_installers_changed": false,
+    "evidence": "followup/shared-adapters-20261102/README.md",
+    "archive": "followup/FP10-FP32-SHARED-20261102-COMPONENTS.zip",
+    "sha256": "ca9ee7d6f25d820dec110315b743a7c6437541727519c7f931069d1095dccf55"
   }
 }

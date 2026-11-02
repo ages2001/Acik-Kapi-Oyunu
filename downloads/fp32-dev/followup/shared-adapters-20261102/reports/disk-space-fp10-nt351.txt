@@ -1,0 +1,27 @@
+Linked DLL loaded 1
+Export resolved 1
+Root query 1
+Legacy no-quota counters 1
+Independent native cluster query 1
+Total matches native allocation units 1
+Free bytes match live native query 1
+Existing subdirectory without trailing slash 1
+Existing subdirectory with trailing slash 1
+All optional outputs omitted 1
+Available output alone 1
+Free output alone 1
+Select known current drive 1
+NULL uses current drive 1
+Relative directory 1
+Missing directory native error 2
+Missing directory fails 1
+Failed query leaves all outputs unchanged 1
+Empty path rejected 1
+Fresh regular file created 1
+Real 64 KiB allocation 1
+Allocated file reduces free space 1
+Regular file is not a directory 1
+Test file removed 1
+Deletion releases allocation 1
+Checks 24
+Failures 0

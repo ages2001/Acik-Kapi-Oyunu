@@ -27,3 +27,7 @@ earlier pending-save notes above: the first Shine was delivered, the actual
 Save button was clicked, and File A loaded into Castle Grounds with one Shine
 in a new player process. This is the separate NT3.1 UP diagnostic candidate,
 not a new R4 installer, MP gameplay or other-OS pass.
+
+## 2026-11-02: shared disk, thread and Automation adapters
+
+[Source, component DLLs and native evidence](shared-adapters-20261102/README.md): 100 native checks pass on each of NT3.1 and NT3.51. Current development stub counts are FP10 61 and FP32 117. Published installers are unchanged.
