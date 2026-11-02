@@ -1,0 +1,16 @@
+{
+  "README.md": "1e8745f75cb34e83fc5611318cb3e87252271126df458b4e953312d90498881e",
+  "reports/build-manifest.json": "d3433f9f0ae2df167e11f9a3102017c0ae5b60e4a54ae8eaf8cd05db0cc280a9",
+  "reports/build-proxies.json": "9ec7abc859861dadfe76d58d406fb9d30ea9d56e811edb20a90eed691c9f21a6",
+  "reports/rea-nt351-GetProcessAffinityMask.json": "6e47544311ef56017de089dfece65a3c012de34910ea24f09be385755353ac3b",
+  "reports/rea-nt351-SetThreadAffinityMask.json": "642888ca517960fdff81f6236e7b26c8d63d4611271b9dac32d5acd179f38c24",
+  "reports/thread-affinity-native.json": "e37082c08853940ba74538fa92a0e61c4469f7cb3e1bfb950fdf1438b38b5b1f",
+  "reports/thread-affinity-nt31-mp.txt": "eaa5867d6814b9331d952e80db772b4c9d64ec3654cfde808a46134f0dbadc49",
+  "reports/thread-affinity-nt31-up.txt": "109189b5caa06988d16a6b6841e88fd0a9039f429af9d248d621b324c067e83f",
+  "source/fp32/analysis/build_affinity_test.py": "fb4228cba412aabe43d51f1c57597aa3b616d7fba8cacb93b15a090ea84cf29a",
+  "source/fp32/analysis/build_nt31.py": "f3770d396541acd8c570b2eb53cd14541f974e6d74913617fd9d271dd0c5386d",
+  "source/fp32/compat/thread_affinity.c": "35fd79aca9becfa84d149456ce3e27223c9d14549ce8a4d67fff880a51921f5b",
+  "source/fp32/compat/thread_affinity_test.c": "4979d01c2496386c3e6dfc1f182ca9b680dd076f18afc980e51650e7947f9bf5",
+  "test-binaries/AFFINITY.EXE": "294342fd0994064eaf8010e0c0a1950a47125e4389eee10a6d62a714075aced1",
+  "test-binaries/F32K.DLL": "1f116e6b77fdfc6d3496ee067b45385cc55bd4540df9a04e6fbcd3e78dd80184"
+}

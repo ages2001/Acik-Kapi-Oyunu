@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-02",
+  "apis": [
+    "OpenThread",
+    "GetProcessAffinityMask",
+    "SetThreadAffinityMask"
+  ],
+  "native_tests": [
+    {
+      "os": "Windows NT 3.1 UP",
+      "cpus": 1,
+      "checks": 27,
+      "failures": 0
+    },
+    {
+      "os": "Windows NT 3.1 patched MP",
+      "cpus": 4,
+      "checks": 33,
+      "failures": 0
+    }
+  ],
+  "cpu_execution_evidence": "CPUID APIC IDs 0, 1, 2 and 3 observed after selecting each single-CPU affinity mask on the four-CPU QEMU guest.",
+  "unimplemented_nt31_api_pairs_before": 121,
+  "unimplemented_nt31_api_pairs_after": 118,
+  "full_port_complete": false,
+  "other_os_validation": false,
+  "tested_dll_sha256": "1f116e6b77fdfc6d3496ee067b45385cc55bd4540df9a04e6fbcd3e78dd80184"
+}

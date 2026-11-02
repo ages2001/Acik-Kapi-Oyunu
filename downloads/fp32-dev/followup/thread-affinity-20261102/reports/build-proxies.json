@@ -1,0 +1,241 @@
+[
+  {
+    "kind": "load",
+    "original": "kernel32.dll",
+    "proxy": "F32K.DLL",
+    "unimplemented_calls_abort": [
+      "HeapWalk",
+      "QueueUserAPC",
+      "GetModuleHandleExW",
+      "CreateWaitableTimerW",
+      "EnumSystemLocalesW",
+      "FindFirstFileExA",
+      "SwitchToFiber",
+      "DeleteFiber",
+      "CreateFiber",
+      "ConvertFiberToThread",
+      "ConvertThreadToFiber",
+      "GlobalMemoryStatusEx",
+      "CreateWaitableTimerA",
+      "SetWaitableTimer",
+      "CancelWaitableTimer",
+      "VerifyVersionInfoA",
+      "GetNumberFormatW",
+      "GetCurrencyFormatW",
+      "SystemTimeToTzSpecificLocalTime",
+      "FreeLibraryAndExitThread",
+      "CreateTimerQueueTimer",
+      "DeleteTimerQueueTimer"
+    ]
+  },
+  {
+    "kind": "load",
+    "original": "advapi32.dll",
+    "proxy": "F32A.DLL",
+    "unimplemented_calls_abort": [
+      "CryptHashData",
+      "CryptImportKey",
+      "CryptGetHashParam",
+      "CryptSetKeyParam",
+      "CryptEnumProvidersW",
+      "CryptSignHashW",
+      "CryptDestroyHash",
+      "CryptCreateHash",
+      "CryptDecrypt",
+      "CryptExportKey",
+      "CryptGetUserKey",
+      "CryptGetProvParam",
+      "CryptSetHashParam",
+      "CryptDestroyKey",
+      "CryptEncrypt"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "oleaut32.dll",
+    "proxy": "F32OA.DLL",
+    "unimplemented_calls_abort": []
+  },
+  {
+    "kind": "delay",
+    "original": "user32.dll",
+    "proxy": "F32U.DLL",
+    "unimplemented_calls_abort": [
+      "RegisterClassExA",
+      "SendInput",
+      "GetWindowInfo",
+      "ShowWindowAsync",
+      "FlashWindowEx",
+      "EnumDisplaySettingsW",
+      "UpdateLayeredWindow",
+      "InsertMenuItemW",
+      "GetMenuItemInfoW",
+      "SetMenuItemInfoW",
+      "GetKeyboardLayout",
+      "SetMenuInfo",
+      "GetUserObjectInformationW"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "gdi32.dll",
+    "proxy": "F32G.DLL",
+    "unimplemented_calls_abort": [
+      "GdiAlphaBlend",
+      "GetICMProfileA",
+      "EnumFontFamiliesExW"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "comdlg32.dll",
+    "proxy": "F32CD.DLL",
+    "unimplemented_calls_abort": []
+  },
+  {
+    "kind": "delay",
+    "original": "shell32.dll",
+    "proxy": "F32S.DLL",
+    "unimplemented_calls_abort": [
+      "SHAppBarMessage",
+      "SHGetFolderPathW",
+      "SHGetSettings",
+      "SHGetDiskFreeSpaceExW",
+      "SHBrowseForFolderW",
+      "SHGetFolderPathA",
+      "SHGetFolderLocation",
+      "SHGetPathFromIDListW",
+      "SHGetSpecialFolderPathW"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "ole32.dll",
+    "proxy": "F32O.DLL",
+    "unimplemented_calls_abort": [
+      "OleSetClipboard",
+      "CoSetProxyBlanket",
+      "PropVariantClear",
+      "OleGetClipboard",
+      "OleFlushClipboard",
+      "OleIsCurrentClipboard",
+      "ReleaseStgMedium",
+      "CoInitializeEx",
+      "MkParseDisplayName",
+      "CreateBindCtx"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "ws2_32.dll",
+    "proxy": "F32W.DLL",
+    "unimplemented_calls_abort": [
+      "WSACloseEvent",
+      "WSACreateEvent",
+      "WSAEnumNetworkEvents",
+      "WSASocketW",
+      "WSAIoctl",
+      "WSAAddressToStringA",
+      "getaddrinfo",
+      "freeaddrinfo",
+      "getnameinfo",
+      "WSASocketA",
+      "WSAEventSelect"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "shlwapi.dll",
+    "proxy": "F32SH.DLL",
+    "unimplemented_calls_abort": []
+  },
+  {
+    "kind": "delay",
+    "original": "mscms.dll",
+    "proxy": "F32CM.DLL",
+    "unimplemented_calls_abort": [
+      "CloseColorProfile",
+      "OpenColorProfileW",
+      "DeleteColorTransform",
+      "TranslateBitmapBits",
+      "CreateColorTransformW"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "wininet.dll",
+    "proxy": "F32I.DLL",
+    "unimplemented_calls_abort": [
+      "HttpOpenRequestA",
+      "HttpSendRequestA",
+      "HttpQueryInfoA",
+      "InternetReadFile",
+      "InternetConnectA",
+      "InternetCloseHandle",
+      "InternetOpenA"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "crypt32.dll",
+    "proxy": "F32C.DLL",
+    "unimplemented_calls_abort": [
+      "CertDuplicateCertificateContext",
+      "CertGetCertificateContextProperty",
+      "CertFindCertificateInStore",
+      "CertVerifySubjectCertificateContext",
+      "CertFreeCertificateContext",
+      "CertCompareCertificate",
+      "CryptVerifyMessageSignature",
+      "CryptGetMessageCertificates",
+      "CertOpenStore",
+      "CertEnumCertificatesInStore",
+      "CertCloseStore",
+      "CertCreateCertificateContext"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "urlmon.dll",
+    "proxy": "F32R.DLL",
+    "unimplemented_calls_abort": [
+      "CopyStgMedium"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "version.dll",
+    "proxy": "F32V.DLL",
+    "unimplemented_calls_abort": []
+  },
+  {
+    "kind": "delay",
+    "original": "winmm.dll",
+    "proxy": "F32M.DLL",
+    "unimplemented_calls_abort": [
+      "mixerGetControlDetailsA",
+      "mixerGetLineControlsA",
+      "mixerGetLineInfoA",
+      "mixerSetControlDetails",
+      "mixerClose",
+      "mixerOpen",
+      "mixerGetDevCapsA",
+      "mixerGetID"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "dsound.dll",
+    "proxy": "F32D.DLL",
+    "unimplemented_calls_abort": [
+      "#1",
+      "#8"
+    ]
+  },
+  {
+    "kind": "delay",
+    "original": "psapi.dll",
+    "proxy": "F32P.DLL",
+    "unimplemented_calls_abort": []
+  }
+]

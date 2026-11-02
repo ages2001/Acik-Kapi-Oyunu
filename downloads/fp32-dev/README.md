@@ -46,7 +46,10 @@ remain. This is research code, not a universal or production SIMD driver.
 - Native 4bpp GDI dark red appears pink in both QEMU VGA models tested. The
   independent native color probe reproduces it outside Flash. The icon source
   is unchanged; final VGA color validation remains open.
-- Another 123 required imports remain unimplemented. Full Win9x, Win32s,
+- R4 has 123 unimplemented imports. The later component development tree has
+  118 after the [memory/GUID](followup/memory-guid-20261102/README.md) and
+  [thread/affinity](followup/thread-affinity-20261102/README.md) follow-ups.
+  Full Win9x, Win32s,
   NT3.5x/NT4 integration, Win32s threading, universal installation, full game,
   menu and media coverage, GPU acceleration and YMM/ZMM preservation are open.
 

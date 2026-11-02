@@ -1,0 +1,37 @@
+DLL loaded 1
+All exports found 1
+Processor count 1
+Current process query 1
+Process mask 1
+System mask 1
+Native system and process masks 1
+Invalid process handle 1
+Failed query leaves output untouched 1
+Real process query handle 1
+Process query rights enforced 1
+Pin current thread 1
+Previous affinity returned 1
+Pinned APIC ID 0
+Execution moved to selected QEMU CPU 1
+All allowed QEMU CPUs exercised 1
+Zero affinity rejected 1
+Rejected mask preserves affinity 1
+Unavailable CPU rejected 1
+Original affinity restored 1
+Invalid thread handle 1
+Invalid thread ID 1
+Suspended worker created 1
+Open worker by thread ID 1
+Object basic status 0
+Object handle attributes 2
+Inheritable handle attribute 1
+Set affinity through opened handle 1
+Open query-only worker handle 1
+Object basic status 0
+Object handle attributes 0
+Non-inheritable handle attribute 1
+Thread set rights enforced 1
+Worker completed 1
+Worker exit code preserved 1
+Checks 27
+Failures 0
