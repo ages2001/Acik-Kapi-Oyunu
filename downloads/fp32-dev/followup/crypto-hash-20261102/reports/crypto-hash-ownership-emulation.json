@@ -1,0 +1,30 @@
+{
+  "dll": "fp32/build/F32A.DLL",
+  "sha256": "fd334eb213db9e4735292e7835c2b2dd273078c876b154d7ce6cfba0c63d2d8f",
+  "checks": [
+    "First hash created",
+    "Second hash created",
+    "Independent provider hash created",
+    "Invalid flags rejected before cleanup",
+    "Rejected release preserves all resources",
+    "Explicit destroy releases native and bridge objects",
+    "Release destroys remaining native children before provider",
+    "Other provider remains owned",
+    "Other provider hash remains usable",
+    "Released child rejected without native dispatch",
+    "All resources released",
+    "Bridge allocation failure is atomic",
+    "Native hash creation failure frees bridge allocation",
+    "Hash created for cleanup failure test",
+    "Native child cleanup failure returned",
+    "Failed child cleanup retains live provider and child",
+    "Child usable after failed cleanup",
+    "Cleanup can be retried",
+    "Provider release error preserved",
+    "Children already destroyed before provider release failure",
+    "Provider release can be retried"
+  ],
+  "check_count": 21,
+  "failures": 0,
+  "scope": "Linked x86 bridge with modeled CSP ownership and failures, not cryptographic algorithm validation."
+}

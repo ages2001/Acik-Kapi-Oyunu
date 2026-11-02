@@ -1,0 +1,9 @@
+{
+  "source_sha256": "2ecf09e64b95d30f9ab578ff41c274db2844790a0713689c72ece9349f16e349",
+  "provider_executable_sections_unchanged": true,
+  "changes": "KERNEL32 import redirected; loader headers and raw section padding adapted.",
+  "sha256": {
+    "FPRSA.DLL": "b4d79155da34e35551f5a5ec52fdf22c9bae478b167a87cd965396ec1a6e9a1c",
+    "FPCRK.DLL": "c49ad33713e694d4bbf1ef6d591fbfd9a88ac7a0cea40d052fb85edd08e0fea5"
+  }
+}

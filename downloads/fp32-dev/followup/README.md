@@ -35,3 +35,7 @@ not a new R4 installer, MP gameplay or other-OS pass.
 ## 2026-11-02: full-width system memory query
 
 [Source and evidence](system-memory-20261102/README.md): FP32 GlobalMemoryStatusEx passes 31 native checks on each of NT3.1 and NT3.51 plus 24 modeled-provider cases. The latest development counts are FP10 61 and FP32 116; these are not full-port completion metrics.
+
+## 2026-11-02: original-provider unkeyed hashes
+
+[Source and evidence](crypto-hash-20261102/README.md): 46 hash and 17 RNG checks pass on each of NT3.1 and NT3.51; 21 modeled ownership checks pass. Latest development counts: FP10 61, FP32 111. Keyed hashes and newer algorithms remain unsupported.

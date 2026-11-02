@@ -1,0 +1,12 @@
+{
+  "tested_sha256": "e550b808465e2e134db752a74dcf307cebf8697f9287fa6bc9bd3583666b36fd",
+  "rebuilt_sha256": "fd4f8196575afb65baef72c914aa6d1f7cebec5353e6184a9059d4b170895eb2",
+  "every_section_identical": true,
+  "only_differences": "PE timestamp and checksum",
+  "changed_offsets": [
+    128,
+    129,
+    208,
+    209
+  ]
+}
