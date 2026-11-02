@@ -1,0 +1,1 @@
+OK helper_pid=88 hwnd=0 cursor_x=373 cursor_y=289 foreground=94 tick=1613610 

@@ -1,0 +1,13 @@
+{
+  "capture_start_byte": 120578048,
+  "excerpt_start_byte": 125781848,
+  "frames": 44100,
+  "rms": [
+    7910.972906218626,
+    7637.516331395672
+  ],
+  "peak": 24416,
+  "sha256": "59bfadb470b66322c3e77398a5e58b87a4639e5d3d059420c4d80fd5689a340b",
+  "selection": "Maximum-energy one-second window after the recorded gameplay offset. A preceding check of the final second during pause found silence; not counted as sound playback.",
+  "scope": "Real QEMU AC97 PCM from the D-root original SM63 session. Not every soundtrack/effect, video or A/V synchronization tested."
+}

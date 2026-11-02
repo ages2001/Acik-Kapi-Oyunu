@@ -4,7 +4,7 @@
   "completed_port": false,
   "fp32_player_window_reached": true,
   "fp32_swf_playback_verified": true,
-  "last_guest_cpu": "QEMU TCG Pentium III + SSE2, one CPU, 512 MiB with supplied NTLDR/NTDETECT, WINVBE 800x600x32, AC97; WINSIMD plus XMM guard",
+  "last_guest_cpu": "QEMU TCG Pentium III + SSE2, one CPU, 512 MiB, AC97; existing query-aware XMM guard. Initial WINVBE 800x600x32, then native Vga 640x480x4 after an orderly Windows reboot.",
   "passed_checks": {
     "file_adapter": {
       "nt31": 12,
@@ -719,7 +719,7 @@
         "FileExists": true
       }
     },
-    "scope": "NT3.1 UP, QEMU TCG Pentium III + SSE2, 512 MiB, standard VGA 800x600 4bpp, AC97; existing research XMM guard and diagnostic CPU-reporting gameplay candidate.",
+    "scope": "NT3.1 UP, QEMU TCG Pentium III + SSE2, 512 MiB, AC97; existing research XMM guard and diagnostic CPU-reporting gameplay candidate. The earlier claim of native 800x600 4bpp VGA was not measured and is withdrawn; the same disk later reported WINVBE 800x600x32 before an explicit driver change.",
     "swf_sha256": "6f8dc22d74963cb75928fcac6ad67769384c3088bb419f9995e24b81d8411e1c",
     "swf_or_save_contents_modified_by_test": false,
     "vm_snapshot_restore_used_to_prove_save": false,
@@ -735,7 +735,8 @@
       "channels": 2,
       "full_sound_correctness_certified": false
     },
-    "evidence": "followup/sm63-first-save-20261102/README.md"
+    "evidence": "followup/sm63-first-save-20261102/README.md",
+    "display_correction": "See followup/sm63-mixer-regression-20261102/native-display.txt and native-display-classic-vga.txt for separate native driver and bit-depth measurements. Save results are unchanged."
   },
   "fp10_installer_followup": {
     "payload_count": 15,
@@ -921,5 +922,49 @@
     "native_failures": 0,
     "completed_port": false,
     "evidence": "followup/version-ansi-20261102/README.md"
+  },
+  "runtime_20261102": {
+    "archive": "FP10-FP32-20261102-RUNTIME-DEV.zip",
+    "bytes": 12192983,
+    "sha256": "5e853cff3cfe21ac52808df604a2469ff5df99bf9d808b078b3d7832e856dca4",
+    "completed_port": false,
+    "universal_installer": false,
+    "runtime_files": {
+      "FP10": 18,
+      "FP32": 26
+    },
+    "evidence": "followup/sm63-mixer-regression-20261102/README.md",
+    "published_installers_changed": false
+  },
+  "sm63_mixer_regression": {
+    "date": "2026-11-02",
+    "completed_port": false,
+    "engine": "Original Adobe Flash Player 32.0.0.465 with current compatibility DLLs",
+    "cpu": "QEMU TCG pentium3,+sse2; one CPU; 512 MiB; NT3.1 UP with query-aware research XMM guard",
+    "swf_sha256": "6f8dc22d74963cb75928fcac6ad67769384c3088bb419f9995e24b81d8411e1c",
+    "initial_display": "Native WINVBE 800x600x32",
+    "after_reboot_display": "Native Vga 640x480x4, 16 colors",
+    "game_copy_A_to_B": true,
+    "FileA_unchanged": true,
+    "FileB_equals_FileA": true,
+    "player_reopen_loaded_B_one_Shine": true,
+    "normal_Windows_reboot_loaded_B_one_Shine": true,
+    "save_sha256_after_copy": "4f45ad24ed6aaf89f5c6b879550a2f00ace9203043fc28db673de4af1e979c5b",
+    "save_bytes": 5730,
+    "save_unchanged_after_player_and_OS_restart": true,
+    "untouched_original_save_backing": true,
+    "saved_game_or_SWF_modified_by_test": false,
+    "loaded_location": "Castle Grounds: Outside of the Castle",
+    "native_PCM_nonzero": true,
+    "vm_snapshot_restore_used_to_prove_save": false,
+    "all_games_or_all_menus_passed": false,
+    "performance_goal_met": false,
+    "GPU_acceleration": false,
+    "other_OS_passed": false,
+    "current_gap_counts": {
+      "FP10": 53,
+      "FP32": 87
+    },
+    "evidence": "followup/sm63-mixer-regression-20261102/README.md"
   }
 }

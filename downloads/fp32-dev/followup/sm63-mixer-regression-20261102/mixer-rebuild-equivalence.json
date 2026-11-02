@@ -1,0 +1,37 @@
+{
+  "F32M.DLL": {
+    "same_function_and_import_bytes": true,
+    "differences_limited_to_PE_timestamp_and_checksum": true,
+    "changed_file_offsets": [
+      128,
+      129,
+      208,
+      209
+    ]
+  },
+  "FPNTM.DLL": {
+    "same_function_and_import_bytes": true,
+    "differences_limited_to_PE_timestamp_and_checksum": true,
+    "changed_file_offsets": [
+      128,
+      129,
+      208,
+      209
+    ]
+  },
+  "FPMK.DLL": {
+    "same_function_and_import_bytes": true,
+    "differences_limited_to_PE_timestamp_and_checksum": true,
+    "changed_file_offsets": [
+      128,
+      129,
+      208,
+      209
+    ]
+  },
+  "FPMM.DLL": {
+    "same_function_and_import_bytes": true,
+    "differences_limited_to_PE_timestamp_and_checksum": true,
+    "changed_file_offsets": []
+  }
+}

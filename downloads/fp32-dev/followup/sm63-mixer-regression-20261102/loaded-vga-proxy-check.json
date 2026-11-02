@@ -1,0 +1,60 @@
+{
+  "matched_loaded_proxy_files": [
+    {
+      "name": "F32K.DLL",
+      "loaded_path": "D:\\F32K.DLL",
+      "crc32": "5C20243F",
+      "sha256": "1b54cfe272e05669837512da998cc81f2a1c968e967c3181be2f3d45ed48a6a8"
+    },
+    {
+      "name": "F32A.DLL",
+      "loaded_path": "D:\\F32A.DLL",
+      "crc32": "C55BCE60",
+      "sha256": "3254ef53974afcb695285e9c4e255de2a0be900f30a768c699ee45bdb7df870d"
+    },
+    {
+      "name": "F32S.DLL",
+      "loaded_path": "D:\\F32S.DLL",
+      "crc32": "2042686A",
+      "sha256": "8cac1cd24f901cce882faf8c8aca19a090e3806f303b2d6433390a15535583ab"
+    },
+    {
+      "name": "F32U.DLL",
+      "loaded_path": "D:\\F32U.DLL",
+      "crc32": "0E1C5DFD",
+      "sha256": "3baab575440e03577dd516e4d4c5ab56a2a984c7666d9fcbd28455c18b0df2b2"
+    },
+    {
+      "name": "F32O.DLL",
+      "loaded_path": "D:\\F32O.DLL",
+      "crc32": "F387DD05",
+      "sha256": "4d4081cc550e40e2d1c1033b9851db5338262985c277f48dfbfd08f4f387e350"
+    },
+    {
+      "name": "F32M.DLL",
+      "loaded_path": "D:\\F32M.DLL",
+      "crc32": "942E0FD4",
+      "sha256": "813931faee93a9e7ef02e5322910ac8ca2dd2f2b6b8a298f16c4443770977e26"
+    },
+    {
+      "name": "F32G.DLL",
+      "loaded_path": "D:\\F32G.DLL",
+      "crc32": "9FC59B98",
+      "sha256": "b621eff41753d554e054906583b6dfcb1c262066f9b4992826d10b997db7bb7a"
+    },
+    {
+      "name": "F32W.DLL",
+      "loaded_path": "D:\\F32W.DLL",
+      "crc32": "73CA5C65",
+      "sha256": "b0f5d7240f164739e4a4fc8653c2f2c242f10cc603c3d764b57fae4db48f7749"
+    },
+    {
+      "name": "F32SH.DLL",
+      "loaded_path": "D:\\F32SH.DLL",
+      "crc32": "0567D4CA",
+      "sha256": "3e3da4da4e6fd973ca96368919b5c271d6dee0a1e40ae0f3279eb0e52a1b5baf"
+    }
+  ],
+  "player_pid": 83,
+  "scope": "Actual loaded D-root proxies after normal reboot into native classic VGA. Unique MODVGA.LOG avoids reading stale MODULES.LOG from the previous boot."
+}

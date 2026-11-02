@@ -1,5 +1,13 @@
 # FP32 legacy-port development checkpoint
 
+[Download the latest combined FP10 + FP32 runtime/source ZIP](FP10-FP32-20261102-RUNTIME-DEV.zip?raw=true) (12,192,983 bytes). This development package contains both complete runtime directories, sources and native test evidence. It is **not a finished port or universal installer**. Current diagnostic API gaps: **FP10 53 / FP32 87**.
+
+SM63 copied File A to B and loaded B after player restart and normal Windows reboot with the accumulated FP32 components. The reboot also verified actual classic VGA (640x480, 4bpp). Classic VGA colors remain wrong and gameplay remains slow. [Screenshots, save hashes, driver measurements and limitations](followup/sm63-mixer-regression-20261102/README.md).
+
+ZIP SHA-256: `5e853cff3cfe21ac52808df604a2469ff5df99bf9d808b078b3d7832e856dca4`. All 44 runtime files and all payload hashes were verified.
+
+## Historical R4 installer checkpoint
+
 [Download the complete R4 ZIP](FP32DEV-20261101-R4.zip?raw=true), including
 source and the required XMM-query research driver. The
 [NT 3.1 development installer](SETUP32-20261101-R4.EXE?raw=true) is also available.

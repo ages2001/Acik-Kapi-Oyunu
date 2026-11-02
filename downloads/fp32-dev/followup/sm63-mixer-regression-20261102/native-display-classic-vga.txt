@@ -1,0 +1,6 @@
+Native BITSPIXEL 4
+Native PLANES 1
+Native NUMCOLORS 16
+Native HORZRES 640
+Native VERTRES 480
+\REGISTRY\Machine\System\ControlSet001\Services\Vga\Device0

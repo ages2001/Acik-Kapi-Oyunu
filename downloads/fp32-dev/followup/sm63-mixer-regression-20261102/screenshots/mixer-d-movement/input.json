@@ -1,0 +1,30 @@
+{
+  "arguments": {
+    "name": "mixer-d-movement",
+    "repeat": 2,
+    "hold": 2.0,
+    "release": 0.3,
+    "pulse_all": false,
+    "pause_after": false,
+    "resume_before": false,
+    "resume_delay": 3,
+    "suspend_vm": false,
+    "carry_direction": false,
+    "keys": [
+      "right",
+      "up"
+    ]
+  },
+  "previous_direction": null,
+  "kept_direction": null,
+  "frames": [
+    {
+      "elapsed_seconds": 2.34847787200124,
+      "screenshot": "00.png"
+    },
+    {
+      "elapsed_seconds": 4.676207032011007,
+      "screenshot": "01.png"
+    }
+  ]
+}

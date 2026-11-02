@@ -1,0 +1,6 @@
+Native BITSPIXEL 32
+Native PLANES 1
+Native NUMCOLORS 4294967295
+Native HORZRES 800
+Native VERTRES 600
+\REGISTRY\Machine\System\ControlSet001\Services\winvbe\Device0

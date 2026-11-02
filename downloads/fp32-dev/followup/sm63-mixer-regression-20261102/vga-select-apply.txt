@@ -1,0 +1,8 @@
+Vga read error 0
+Vga original Start 1
+winvbe read error 0
+winvbe original Start 1
+Vga enable error 0
+winvbe disable error 0
+Readback error 0
+Final error 0

@@ -1,0 +1,1 @@
+OK helper_pid=88 hwnd=196762 pid=135 width=450 height=300 client_x=202 client_y=231 cursor_x=557 cursor_y=326 foreground=196762 tick=1919685 

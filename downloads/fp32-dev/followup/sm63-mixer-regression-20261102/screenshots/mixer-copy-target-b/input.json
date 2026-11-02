@@ -1,0 +1,23 @@
+{
+  "arguments": {
+    "name": "mixer-copy-target-b",
+    "repeat": 1,
+    "hold": 6.0,
+    "release": 0.0,
+    "pulse_all": false,
+    "pause_after": false,
+    "resume_before": false,
+    "resume_delay": 3,
+    "suspend_vm": false,
+    "carry_direction": false,
+    "keys": []
+  },
+  "previous_direction": null,
+  "kept_direction": null,
+  "frames": [
+    {
+      "elapsed_seconds": 6.035118830011925,
+      "screenshot": "00.png"
+    }
+  ]
+}

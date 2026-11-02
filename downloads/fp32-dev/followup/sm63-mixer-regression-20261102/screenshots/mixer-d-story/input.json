@@ -1,0 +1,23 @@
+{
+  "arguments": {
+    "name": "mixer-d-story",
+    "repeat": 1,
+    "hold": 8.0,
+    "release": 0.0,
+    "pulse_all": false,
+    "pause_after": false,
+    "resume_before": false,
+    "resume_delay": 3,
+    "suspend_vm": false,
+    "carry_direction": false,
+    "keys": []
+  },
+  "previous_direction": null,
+  "kept_direction": null,
+  "frames": [
+    {
+      "elapsed_seconds": 8.031764963001478,
+      "screenshot": "00.png"
+    }
+  ]
+}
