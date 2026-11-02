@@ -1,0 +1,37 @@
+LIBRARY FPW.DLL
+EXPORTS
+recv=wsock32.recv @16 NONAME
+setsockopt=wsock32.setsockopt @21 NONAME
+WSAStartup=wsock32.WSAStartup @115 NONAME
+WSASocketW=fn3
+socket=wsock32.socket @23 NONAME
+WSAIoctl=fn5
+WSAGetLastError=wsock32.WSAGetLastError @111 NONAME
+WSAAsyncSelect=wsock32.WSAAsyncSelect @101 NONAME
+closesocket=wsock32.closesocket @3 NONAME
+WSACleanup=wsock32.WSACleanup @116 NONAME
+send=wsock32.send @19 NONAME
+ntohs=wsock32.ntohs @15 NONAME
+htons=wsock32.htons @9 NONAME
+WSACloseEvent=fn13
+inet_addr=wsock32.inet_addr @11 NONAME
+gethostbyname=wsock32.gethostbyname @52 NONAME
+inet_ntoa=wsock32.inet_ntoa @12 NONAME
+htonl=wsock32.htonl @8 NONAME
+getservbyname=wsock32.getservbyname @55 NONAME
+gethostbyaddr=wsock32.gethostbyaddr @51 NONAME
+getservbyport=wsock32.getservbyport @56 NONAME
+WSASetLastError=wsock32.WSASetLastError @112 NONAME
+recvfrom=wsock32.recvfrom @17 NONAME
+sendto=wsock32.sendto @20 NONAME
+bind=wsock32.bind @2 NONAME
+WSAAddressToStringA=fn25
+WSACreateEvent=fn26
+WSAEventSelect=fn27
+WSAEnumNetworkEvents=fn28
+ioctlsocket=wsock32.ioctlsocket @10 NONAME
+connect=wsock32.connect @4 NONAME
+ntohl=wsock32.ntohl @14 NONAME
+select=wsock32.select @18 NONAME
+getsockname=wsock32.getsockname @6 NONAME
+gethostname=wsock32.gethostname @57 NONAME

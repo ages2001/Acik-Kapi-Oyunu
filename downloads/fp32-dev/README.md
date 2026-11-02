@@ -82,3 +82,5 @@ and [R3 follow-up](R3-FOLLOWUP.md) remain available unchanged. Separate packages
 ## Mixer component follow-up (2026-11-02)
 
 [Download the FP10/FP32 mixer component and source ZIP](followup/FP10-FP32-MIXER-20261102-COMPONENTS.zip?raw=true). Eight mixer imports per player now pass 40 native checks each on NT3.1 and NT3.51. The current development counts are **FP10 53 / FP32 88**; neither port is complete. The original DirectSound PCM experiment is included separately and stays disabled. [Evidence and limitations](followup/mixer-20261102/README.md). Published full installers remain unchanged.
+
+[ANSI version verification component/source ZIP](followup/FP32-VERSION-ANSI-20261102-COMPONENTS.zip?raw=true): 20 native checks per NT3.1/NT3.51, zero failures. Current counts are **FP10 53 / FP32 87**. [Details](followup/version-ansi-20261102/README.md).

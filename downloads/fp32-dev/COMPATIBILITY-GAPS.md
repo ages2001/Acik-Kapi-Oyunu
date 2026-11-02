@@ -7,7 +7,7 @@
 | crypt32.dll | 7 | 12 |
 | dsound.dll | 1 | 2 |
 | gdi32.dll | 2 | 2 |
-| kernel32.dll | 7 | 19 |
+| kernel32.dll | 7 | 18 |
 | mscms.dll | 5 | 5 |
 | ole32.dll | 7 | 10 |
 | shell32.dll | 6 | 8 |
@@ -15,9 +15,9 @@
 | user32.dll | 10 | 13 |
 | wininet.dll | 0 | 7 |
 | ws2_32.dll | 7 | 9 |
-| **Total** | **53** | **88** |
+| **Total** | **53** | **87** |
 
-[Exact remaining imports, partial-support notes and binary hashes](followup/mixer-20261102/reports/player-gap-audit.json). [Latest native tests and limitations](followup/mixer-20261102/README.md).
+[Exact remaining imports, partial-support notes and binary hashes](followup/version-ansi-20261102/reports/player-gap-audit.json). [Latest native tests and limitations](followup/mixer-20261102/README.md).
 
 ## Gameplay impact and remaining priorities
 
@@ -29,3 +29,5 @@
 These are potential effects inferred from API responsibilities, not proof that every listed API is reached by SM63 or every SWF. REA confirms a real per-pixel GdiAlphaBlend call in the original FP32 executable. Its new software implementation passes the documented RGB DIB/VGA tests; native untracked per-pixel alpha bitmaps and other alpha formats remain unsupported.
 
 Published FP10 R2 and FP32 R4 installers remain unchanged at 65 and 123 stubs. Actual SM63 gameplay/save/reboot evidence belongs to the separately fingerprinted gameplay candidate, not to these newly compiled components or all operating systems. The next integration must preserve that distinction and rerun relevant gameplay/save tests.
+
+VerifyVersionInfoA is also implemented; its exact kernel proxy passed 20 native checks per OS. [Version verification evidence](followup/version-ansi-20261102/README.md).

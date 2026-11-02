@@ -1,0 +1,72 @@
+[
+  {
+    "path": "/workspace/fp10-port/compat/FPTRACE.EXE",
+    "old_size": 6828544,
+    "new_size": 6942720
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPRG.DLL",
+    "old_size": 4608,
+    "new_size": 16384
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPK.DLL",
+    "old_size": 19456,
+    "new_size": 32768
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPU.DLL",
+    "old_size": 16384,
+    "new_size": 32768
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPG.DLL",
+    "old_size": 14848,
+    "new_size": 28672
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPS.DLL",
+    "old_size": 4608,
+    "new_size": 16384
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPM.DLL",
+    "old_size": 6656,
+    "new_size": 20480
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPC.DLL",
+    "old_size": 3584,
+    "new_size": 16384
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPR.DLL",
+    "old_size": 2560,
+    "new_size": 16384
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPA.DLL",
+    "old_size": 3584,
+    "new_size": 20480
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPD.DLL",
+    "old_size": 2560,
+    "new_size": 16384
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPO.DLL",
+    "old_size": 5632,
+    "new_size": 20480
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPCLR.DLL",
+    "old_size": 3072,
+    "new_size": 16384
+  },
+  {
+    "path": "/workspace/fp10-port/compat/FPW.DLL",
+    "old_size": 4608,
+    "new_size": 16384
+  }
+]

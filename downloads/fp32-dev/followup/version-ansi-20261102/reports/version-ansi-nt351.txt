@@ -1,0 +1,22 @@
+Production kernel proxy loads 1
+Version query and verification exports resolve 1
+Actual extended OS version queried 1
+Version agrees with native GetVersion 1
+Exact current numeric version matches 1
+Ignored CSD bytes and caller structure remain untouched 1
+Future major version fails with OLD_WIN_VERSION 1
+Major version takes precedence over minor version 1
+Lower current build satisfies LESS 1
+Different platform is rejected 1
+Future service pack is rejected 1
+Different product type is rejected 1
+Empty AND suite requirement succeeds 1
+Empty OR suite requirement fails 1
+ANSI and Unicode agree for current version 1
+Null ANSI structure is rejected 1
+Nonextended ANSI size is rejected 1
+Empty type mask is rejected 1
+Unknown type bit is rejected 1
+Missing comparison operator is rejected 1
+Checks 20
+Failures 0

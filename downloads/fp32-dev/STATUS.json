@@ -803,10 +803,10 @@
   "development_gap_audit": {
     "counts": {
       "FP10": 53,
-      "FP32": 88
+      "FP32": 87
     },
     "scope": "Current linked NT3.1 development DLLs, not immutable published installers.",
-    "evidence": "followup/mixer-20261102/reports/player-gap-audit.json",
+    "evidence": "followup/version-ansi-20261102/reports/player-gap-audit.json",
     "excludes": [
       "Partially implemented behavior",
       "Unavailable dynamic APIs",
@@ -912,5 +912,14 @@
     "directsound_enabled": false,
     "full_gameplay_retested": false,
     "published_installers_changed": false
+  },
+  "version_ansi_followup": {
+    "archive": "followup/FP32-VERSION-ANSI-20261102-COMPONENTS.zip",
+    "bytes": 483992,
+    "sha256": "5c801923ba2864d2d2b3373ac79d41df7b451041dea15161e17c59b147e36426",
+    "checks_per_os": 20,
+    "native_failures": 0,
+    "completed_port": false,
+    "evidence": "followup/version-ansi-20261102/README.md"
   }
 }
