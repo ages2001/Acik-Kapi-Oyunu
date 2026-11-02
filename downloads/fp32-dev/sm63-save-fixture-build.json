@@ -1,0 +1,14 @@
+{
+  "copied_functions": [
+    "SaveFile",
+    "LoadFile",
+    "CalculateStars",
+    "CalculateStarCoins",
+    "CalculateFilesInfo",
+    "deepObjectCopy"
+  ],
+  "original_functions_sha256": "a3b7971d83bf75479ee9c0515263c060aca8fc7847d432010cb8697e4ece8622",
+  "only_copied_function_change": "Isolated SharedObject name",
+  "fixture_sha256": "f83b763bba65bf44cb164d178d6f6502afdfb3489eae1e6ed31ac1a71e41b7ac",
+  "scope": "Synthetic serialization fixture; not real gameplay progress."
+}

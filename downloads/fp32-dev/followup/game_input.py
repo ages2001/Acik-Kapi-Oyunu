@@ -23,7 +23,7 @@ p.add_argument('--resume-delay', type=float, default=3,
                help='Delay after releasing P; use 0 for already airborne movement')
 p.add_argument('--suspend-vm', action='store_true',
                help='Resume QEMU before input and stop it afterwards, avoiding repeated game pause animations')
-p.add_argument('keys', nargs='+')
+p.add_argument('keys', nargs='*', help='Omit keys for an input-free observation segment')
 a = p.parse_args()
 assert 0 < a.repeat <= 20 and 0 < a.hold <= 20 and 0 <= a.release <= 5
 assert 0 <= a.resume_delay <= 10
@@ -66,7 +66,7 @@ try:
         # SM63 animates its pause panel before restoring gameplay controls.
         # At the current 5–6 FPS, a one-second delay loses initial key presses.
         time.sleep(a.resume_delay)
-    if not a.pulse_all:
+    if a.keys and not a.pulse_all:
         key(a.keys[0], True)
     pulsed=a.keys if a.pulse_all else a.keys[1:]
     for i in range(a.repeat):

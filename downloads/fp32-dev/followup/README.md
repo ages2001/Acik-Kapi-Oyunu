@@ -9,3 +9,9 @@ Native execution of this helper reached 79 ordinary coins in the unchanged SM63 
 The main gameplay lab still uses the diagnostic CPU-feature DLL with an existing XMM guard. The installed query-aware R4 build was separately tested on the four-CPU lab through Start and Story, plus an AS2 save fixture across Windows restart. Do not treat these different scopes as one complete gameplay pass.
 
 The helper passed Python compilation and native QEMU execution. Its host elapsed times include screenshot/VM suspension time and must not be used as gameplay FPS measurements. No SWF code, game variables or saved progression was modified.
+
+## 2026-11-02
+
+The helper now accepts no keys for an input-free observation interval. Do not use Shift as an idle key: SM63 assigns it to switching FLUDD nozzles. This mode was exercised with the native paused-game menu.
+
+The [SM63 serialization fixture](sm63-serialization/README.md) passed 26 checks after player reopening and Windows restart. It uses isolated synthetic data with the game's exported persistence functions; actual SM63 checkpoint/reopen testing remains incomplete. The latest gameplay counter is 91, with no Shine collected.

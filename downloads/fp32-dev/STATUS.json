@@ -333,7 +333,7 @@
   "sm63_current_investigation": {
     "coin_cause": "R3 incorrectly hides PF6/PF10 even with XMM preservation active; original FP32 CRT selects a path that accepts non-finite shape hits in negative-origin geometry.",
     "fix_status": "Query-based PF6/PF10 implementation built. Native NT31 driver status, FP32 startup gate and shape fixtures pass. Full SM63 save/reopen/performance remains unfinished.",
-    "diagnostic_gameplay": "Untouched SM63 reached fourth tutorial area; 79 ordinary coins, jumping, ground pound, water traversal and hover FLUDD observed. No real progression save checkpoint reached.",
+    "diagnostic_gameplay": "Untouched SM63 reached upper cloud route, then returned through previous area to fourth tutorial lower ground; 91 ordinary coins, no stars. Actual checkpoint/reopen not passed.",
     "performance": "Approximately 5\u20136 FPS in QEMU TCG; not an acceptable-speed completion.",
     "public_zip_fix_included": true
   },
@@ -345,8 +345,8 @@
     "contains": "Complete source, validated NT31 UP/MP XMM guard, loader, binaries, tests, English changelog. Excludes the new readiness-query candidate."
   },
   "active_lab_resume": {
-    "game": "Untouched D:\\SM63OK.SWF, fourth tutorial area, back on lower ground after upper platform attempts; hover FLUDD, 79 ordinary coins, zero shines/star coins.",
-    "state": "Main QEMU is QMP-stopped, native game active. Continue with game_input.py --suspend-vm, without --resume-before. MP query lab shut down.",
+    "game": "Untouched D:\\SM63OK.SWF, fourth tutorial area lower ground, 91 ordinary coins. Returned from upper cloud route through previous area. FLUDD menu currently shows no collected nozzle; reacquisition is needed.",
+    "state": "Main QEMU stopped, native game paused in the FLUDD submenu. MP query lab shut down cleanly after serialization/reboot checks.",
     "engine": "D:\\APP\\FP32.EXE final WinINet guard; D:\\F32K.DLL still hardware-only diagnostic F32KCPU.DLL; prior XMM guard loaded.",
     "query_lab": "MP query protocol, four-worker/181-affinity-round and 640-worker-lifetime tests passed. Installed query-aware FP32 passed Start/Story and AS2 persistence across restart. Standard VGA reproduced native palette discrepancy.",
     "new_sources": "Query-aware DLL/driver are included in published R4. Main gameplay VM still uses the hardware-only diagnostic DLL. Later input-helper changes are separate follow-up source."
@@ -356,10 +356,10 @@
     "native_input_only": true,
     "triple_jump_ledge_passed": true,
     "tutorial_area": 4,
-    "ordinary_coins": 79,
+    "ordinary_coins": 91,
     "shines": 0,
     "star_coins": 0,
-    "real_save_reopen": "pending",
+    "real_save_reopen": "pending; isolated serialization fixture now passes 26 checks across Windows reboot",
     "evidence": [
       "captures/sm63-running-up-pulses/12.png",
       "screenshots/793-sm63-after-triple.png",
@@ -375,7 +375,8 @@
       "object_name": "SuperMarioSunshine128SavedFile",
       "FileA_true_stars": [],
       "decoded_report": "sm63-before-shine-decoded.json"
-    }
+    },
+    "hover_fludd_currently_equipped": false
   },
   "nt31_mp_patch_delivery": {
     "url": "https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/fp32-dev-2026-10-30/downloads/ntcpupae-2026-10-30/NTCPUPAE-NT31-FIX-r2.zip",
@@ -481,5 +482,44 @@
       }
     ],
     "zip_crc_verified": true
+  },
+  "sm63_serialization_fixture": {
+    "date": "2026-11-02",
+    "os": "Windows NT 3.1, tested patched MP kernel, four CPUs, 512 MiB",
+    "player": "Installed FP32 R4 at C:\\F32TEST, query-aware XMM guard loaded after each boot",
+    "fixture": "C:\\FP32\\SM63SAVE.SWF",
+    "shared_object": "Ages2001SM63SerializationProbeV1",
+    "scope": "Isolated synthetic-data fixture with recompiled exported SM63 persistence functions; not untouched SM63 gameplay progress.",
+    "checks_per_run": 26,
+    "failures_per_run": 0,
+    "write_flush": true,
+    "independent_player_reopen_passed": true,
+    "native_windows_restart_passed": true,
+    "old_player_window_absent_before_reopen": true,
+    "native_sol_bytes": 5550,
+    "native_sol_crc32": "D78FA87E",
+    "native_sol_sha256": "2a4c40634e74a4b2c37184f99eba26cf65f202affdb8f4fa8ffb93fed2fb0085",
+    "native_sol_unchanged_after_windows_restart": true,
+    "independent_amf_decode_passed": true,
+    "tested_fields": [
+      "Four distinct star arrays",
+      "Star coin flags",
+      "Nested FLUDD arrays",
+      "Three key flags",
+      "Door flags",
+      "High score values",
+      "Deep-copy isolation"
+    ],
+    "real_game_save_untouched": "Separate SharedObject name and SWF URL; actual game SOL remained 5478 bytes / CRC32 F2CCA231 in the MP tree.",
+    "screenshots": [
+      "825-sm63-save-fixture-write.png",
+      "826-sm63-save-fixture-reopen.png",
+      "827-sm63-save-fixture-reboot.png"
+    ],
+    "limitations": [
+      "No actual SM63 checkpoint/reopen pass.",
+      "NT31 only; no Win9x or Win32s persistence pass.",
+      "No performance completion."
+    ]
   }
 }
