@@ -1,0 +1,6 @@
+Raw GetVersion: 04213303
+Native GetVersionExA available: 1
+OS: 3.51 build 1057 platform 2
+Adapter: 3.51 build 1057 platform 2
+Checks: 18
+Errors: 0

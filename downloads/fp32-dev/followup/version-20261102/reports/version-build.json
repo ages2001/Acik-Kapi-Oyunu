@@ -1,0 +1,7 @@
+{
+  "test_executable": "VERFINAL.EXE",
+  "sha256": "f9797d4ee45639dccd869aac38647cc8dbb8011e632b6ac388be9c03286e2723",
+  "integrated_proxy": "F32K.DLL",
+  "integrated_proxy_sha256": "981b188b2d844d122ed3f763a29b58794eb56bd32e1521f584b11c2cdf977968",
+  "new_imports": []
+}

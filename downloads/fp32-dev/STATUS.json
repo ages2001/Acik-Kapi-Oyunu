@@ -9,11 +9,13 @@
     "file_adapter": {
       "nt31": 12,
       "windows95_rtm": 12,
-      "windows31_win32s130c": 12
+      "windows31_win32s130c": 12,
+      "nt351": 12
     },
     "core_adapter": {
       "nt31": 7,
-      "windows95_rtm": 7
+      "windows95_rtm": 7,
+      "nt351": 7
     },
     "lfence_trampoline_emulator": 512,
     "command_line_adapter": {
@@ -159,6 +161,15 @@
         "0x14000000"
       ],
       "scope": "Register/flags/stack/displaced-instruction and relocated relative-branch contracts only. Native game verification is separate."
+    },
+    "version_adapter": {
+      "nt31": 18,
+      "windows95_rtm": 18,
+      "nt351": 18,
+      "windows31_win32s130c": 18,
+      "nt31_linked_F32K_proxy": 19,
+      "errors": 0,
+      "scope": "Native API parity, structure sizes and invalid arguments. Not complete player tests."
     }
   },
   "native_probe": {
@@ -523,5 +534,21 @@
       "NT31 only; no Win9x or Win32s persistence pass.",
       "No performance completion."
     ]
+  },
+  "nt351_uploaded_disk_test": {
+    "date": "2026-11-02",
+    "source_zip_sha256": "504f93b5d8811042ed7cc4ad285f6255f8b64e8fa470496856f0d6d7d754a47e",
+    "disk": "nt351/NT351-UPLOAD-TEST.vhd",
+    "base": "copy of offline NT3.1 baseline FAT16 disk",
+    "copied": "Uploaded WINNT351, NTLDR and NTDETECT.COM; boot.ini selects unmodified standard NT3.51 kernel/HAL",
+    "cpu": "QEMU TCG Pentium II, one CPU, 64 MiB",
+    "display": "standard VGA, 640x480, 16 colors",
+    "desktop_boot": true,
+    "clean_restart": true,
+    "version_checks": 18,
+    "file_checks": 12,
+    "core_checks": 7,
+    "player_tested": false,
+    "audio_tested": false
   }
 }

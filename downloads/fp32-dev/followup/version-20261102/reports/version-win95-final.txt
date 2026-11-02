@@ -1,0 +1,6 @@
+Raw GetVersion: C0000004
+Native GetVersionExA available: 1
+OS: 4.0 build 67109814 platform 1
+Adapter: 4.0 build 67109814 platform 1
+Checks: 18
+Errors: 0

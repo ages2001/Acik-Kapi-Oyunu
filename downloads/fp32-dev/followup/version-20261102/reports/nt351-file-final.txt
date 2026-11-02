@@ -1,0 +1,12 @@
+PASS adapter exports
+PASS create new Unicode path
+PASS write bytes
+PASS seek
+PASS read exact bytes
+PASS deny incompatible sharing
+PASS attributes
+PASS CREATE_NEW preserves existing file
+PASS delete
+PASS missing file error
+PASS reject unrepresentable name
+PASS null path error

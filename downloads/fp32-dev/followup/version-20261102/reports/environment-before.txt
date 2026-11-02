@@ -1,0 +1,7 @@
+FAIL: native Unicode control (error 0)
+Native test-value length: 11; code units: 0043 003A 005C 0044 0061 0074 0061 005C 003F 005C 004F
+FAIL: Unicode value survives snapshot (error 0)
+FAIL: Unicode name survives snapshot (error 0)
+FAIL: old snapshot remains unchanged (error 0)
+Checks: 49
+Errors: 4

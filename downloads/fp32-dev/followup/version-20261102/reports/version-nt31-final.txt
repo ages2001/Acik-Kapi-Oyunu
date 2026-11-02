@@ -1,0 +1,6 @@
+Raw GetVersion: 02100A03
+Native GetVersionExA available: 0
+OS: 3.10 build 528 platform 2
+Adapter: 3.10 build 528 platform 2
+Checks: 18
+Errors: 0

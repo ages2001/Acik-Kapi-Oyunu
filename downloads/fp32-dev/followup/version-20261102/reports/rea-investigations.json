@@ -1,0 +1,17 @@
+{
+  "provider": "REA with Ghidra",
+  "input_sha256": "7896b84445d58a9d1cb18043a89b029f3901f53d37fba9f70437b65fe9501c94",
+  "functions": [
+    {
+      "name": "RtlAllocateHeap",
+      "address": "0x771B5700",
+      "finding": "Separate NtAllocateVirtualMemory branch for large allocations; no ownership insertion into segment list identified. HeapWalk remains incomplete."
+    },
+    {
+      "name": "RtlCreateEnvironment",
+      "address": "0x771BBA70",
+      "finding": "Native environment copying does not establish a UTF-16 block; independent native control already loses test characters on NT3.1."
+    }
+  ],
+  "scope": "Read-only analysis; original OS binary unchanged; no speculative implementation integrated."
+}

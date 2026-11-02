@@ -1,0 +1,7 @@
+PASS empty list initialized
+PASS push returns previous head and updates depth
+PASS pop preserves LIFO and emptiness
+PASS four producer threads and concurrent pointer round trips
+PASS all concurrent pushes counted
+PASS all 2048 nodes returned exactly once
+PASS null and full-width pointer round trips

@@ -1,0 +1,6 @@
+Raw GetVersion: 80AC0A03
+Native GetVersionExA available: 1
+OS: 1.30 build 172 platform 0
+Adapter: 1.30 build 172 platform 0
+Checks: 18
+Errors: 0

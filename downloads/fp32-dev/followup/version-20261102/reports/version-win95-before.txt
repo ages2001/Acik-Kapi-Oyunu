@@ -1,0 +1,11 @@
+FAIL: ANSI platform matches OS (error 0)
+FAIL: Unicode platform matches OS (error 0)
+FAIL: build number matches OS (error 0)
+FAIL: extended platform (error 0)
+FAIL: extended build (error 0)
+Raw GetVersion: C0000004
+Native GetVersionExA available: 1
+OS: 4.0 build 67109814 platform 1
+Adapter: 4.0 build 49152 platform 2
+Checks: 18
+Errors: 5
