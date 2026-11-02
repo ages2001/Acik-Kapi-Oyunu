@@ -1,0 +1,24 @@
+DLL loaded 1
+Export found 1
+Basic query 1
+Basic output size 1
+Basic buffer bounds 1
+Extended query 1
+Extended size and working set 1
+Commit counters 1
+Short buffer error 1
+Short buffer untouched 1
+Invalid handle translated 1
+Failed query output untouched 1
+Real process handle 1
+Insufficient process rights 1
+16 MiB allocation 1
+Query after commit 1
+Private bytes before 114688
+Private bytes committed 16908288
+Committed bytes increased 1
+Query after release 1
+Private bytes released 114688
+Released bytes decreased 1
+Checks 19
+Failures 0

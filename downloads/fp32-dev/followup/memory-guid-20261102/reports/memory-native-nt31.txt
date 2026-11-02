@@ -1,0 +1,47 @@
+Page size 4096
+Phase 0
+NTSTATUS 0
+Returned bytes 44
+PeakVirtualSize 5410816
+VirtualSize 5410816
+PageFaultCount 103
+PeakWorkingSetSize 438272
+WorkingSetSize 438272
+QuotaPeakPagedPoolUsage 28813
+QuotaPagedPoolUsage 28813
+QuotaPeakNonPagedPoolUsage 13600
+QuotaNonPagedPoolUsage 11656
+PagefileUsage 118784
+PeakPagefileUsage 118784
+Canary 3435973836
+Allocation 4259840
+Phase 1
+NTSTATUS 0
+Returned bytes 44
+PeakVirtualSize 22188032
+VirtualSize 22188032
+PageFaultCount 4210
+PeakWorkingSetSize 17260544
+WorkingSetSize 17260544
+QuotaPeakPagedPoolUsage 28813
+QuotaPagedPoolUsage 28813
+QuotaPeakNonPagedPoolUsage 13600
+QuotaNonPagedPoolUsage 11700
+PagefileUsage 16912384
+PeakPagefileUsage 16912384
+Canary 3435973836
+Phase 2
+NTSTATUS 0
+Returned bytes 44
+PeakVirtualSize 22188032
+VirtualSize 5410816
+PageFaultCount 4210
+PeakWorkingSetSize 17260544
+WorkingSetSize 466944
+QuotaPeakPagedPoolUsage 28813
+QuotaPagedPoolUsage 28813
+QuotaPeakNonPagedPoolUsage 13600
+QuotaNonPagedPoolUsage 11656
+PagefileUsage 122880
+PeakPagefileUsage 16912384
+Canary 3435973836

@@ -629,5 +629,23 @@
     "latest_progress": "Fourth tutorial area, rotating platforms and second static cloud; 94 ordinary coins, zero shines.",
     "retry_checkpoints_are_not_game_saves": true,
     "evidence": "followup/sm63-first-save-research-20261102/README.md"
+  },
+  "memory_guid_followup": {
+    "date": "2026-11-02",
+    "process_memory_checks_per_os": 19,
+    "guid_format_checks_per_os": 9,
+    "failures": 0,
+    "native_os": [
+      "Windows NT 3.1",
+      "Windows NT 3.51 from uploaded files"
+    ],
+    "unimplemented_nt31_api_pairs_before": 123,
+    "unimplemented_nt31_api_pairs_after": 121,
+    "scope": "Component DLLs only; no full runtime, installer or gameplay completion.",
+    "evidence": "followup/memory-guid-20261102/README.md",
+    "tested_dll_sha256": {
+      "F32O.DLL": "054287994cbabece9c3d73556762851309d5d2e73e5f1d4e64cf3fc3edd5c545",
+      "F32P.DLL": "230e76620b39b7de2f248e4e72b2d62311b777f566e35740394f48e709a1d2e0"
+    }
   }
 }

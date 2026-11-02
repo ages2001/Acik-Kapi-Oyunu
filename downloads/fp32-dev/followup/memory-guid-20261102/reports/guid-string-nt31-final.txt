@@ -1,0 +1,11 @@
+DLL loaded 1
+Export found 1
+Exact capacity returns 39 1
+Canonical text and byte order 1
+Guard characters preserved 1
+Short capacity fails 1
+Short output untouched 1
+Zero GUID and larger buffer 1
+Invalid capacities rejected 1
+Checks 9
+Failures 0
