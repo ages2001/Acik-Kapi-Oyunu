@@ -1,0 +1,3 @@
+Recorded NT3.1 locale inputs 1
+Checks 1350
+Failures 0

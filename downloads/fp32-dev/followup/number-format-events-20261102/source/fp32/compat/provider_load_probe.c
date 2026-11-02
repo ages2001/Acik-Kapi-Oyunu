@@ -1,0 +1,7 @@
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+typedef struct {USHORT Length,MaximumLength;WCHAR *Buffer;}USTR;
+void WINAPI entry(void){const WCHAR*names[]={L"C:\\FP32\\FPDK.DLL",L"C:\\FP32\\FPMK.DLL",L"C:\\FP32\\FPNTM.DLL",L"C:\\FP32\\FPMM.DLL",L"C:\\FP32\\FPDSND.DLL"};UINT i;HANDLE logh;char text[180];DWORD w,error;HMODULE m;USTR name;LONG status;LONG(WINAPI*load)(WCHAR*,ULONG*,USTR*,HMODULE*);
+logh=CreateFileA("C:\\FP32\\LOADPROB.LOG",GENERIC_WRITE,FILE_SHARE_READ,0,CREATE_ALWAYS,0,0);if(logh==INVALID_HANDLE_VALUE)ExitProcess(1);load=(void*)GetProcAddress(GetModuleHandleA("NTDLL.DLL"),"LdrLoadDll");
+for(i=0;i<5;i++){SetLastError(0);m=LoadLibraryW(names[i]);error=GetLastError();wsprintfA(text,"Case %u LoadLibrary %08lx error %lu\r\n",i,m,error);WriteFile(logh,text,lstrlenA(text),&w,0);FlushFileBuffers(logh);if(m){FARPROC f;SetLastError(0);f=GetProcAddress(m,i==0?"GetCurrentThreadId":i==1?"GetCurrentThreadId":"NtClose");wsprintfA(text,"Case %u forwarded export %08lx error %lu\r\n",i,f,GetLastError());WriteFile(logh,text,lstrlenA(text),&w,0);FlushFileBuffers(logh);FreeLibrary(m);}if(load){name.Buffer=(WCHAR*)names[i];name.Length=lstrlenW(names[i])*2;name.MaximumLength=name.Length+2;m=0;status=load(0,0,&name,&m);wsprintfA(text,"Case %u LdrLoadDll %08lx status %08lx\r\n",i,m,status);WriteFile(logh,text,lstrlenA(text),&w,0);FlushFileBuffers(logh);if(m)FreeLibrary(m);}}
+CloseHandle(logh);ExitProcess(0);}

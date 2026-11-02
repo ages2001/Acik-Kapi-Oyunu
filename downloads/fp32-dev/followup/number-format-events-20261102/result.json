@@ -1,0 +1,37 @@
+{
+  "completed_port": false,
+  "missing_imported_pairs": {
+    "FP10": 49,
+    "FP32": 85
+  },
+  "implemented": {
+    "FP10": [
+      "GetNumberFormatW",
+      "GetCurrencyFormatW",
+      "WSACreateEvent",
+      "WSACloseEvent"
+    ],
+    "FP32": [
+      "GetNumberFormatW",
+      "GetCurrencyFormatW"
+    ]
+  },
+  "native_reference_comparisons_per_player_per_os": 1350,
+  "contract_checks_per_player": {
+    "NT3.1": 25,
+    "NT3.51": 19
+  },
+  "FP10_event_checks_per_os": 19,
+  "native_failures": 0,
+  "os": [
+    "NT3.1 UP",
+    "NT3.51 UP"
+  ],
+  "sm63_replayed_with_latest_three_DLLs": false,
+  "published_installers_changed": false,
+  "tested_aliases": {
+    "NF10K.DLL": "5698b63e0932d1fc6d601319dca042e40be2dfc2dca1f475ec54d89b005a551b",
+    "NF32K.DLL": "a36dcff960801432ecdc2dd1adbe200a133515545d463b1025ef514b75d0719c",
+    "E10W.DLL": "bf44da7ebbe4dbf8ab03466343ad93cfa096baa18699ffaaf058863646bedd22"
+  }
+}

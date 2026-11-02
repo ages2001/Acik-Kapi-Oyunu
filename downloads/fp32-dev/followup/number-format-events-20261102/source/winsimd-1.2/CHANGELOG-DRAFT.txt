@@ -1,0 +1,16 @@
+Changelog:
+
+Version 1.2 - readiness-query development candidate
+
+- Added a versioned read-only XMM/MXCSR readiness query for legacy applications.
+- Validated output sizes, request input, ABI fields and unsupported requests.
+- Bounded dispatch-table writes by the native NT 3.1 driver-object size.
+- Adapted the NT 3.1 completion-routine import and recomputed the PE checksum.
+- Passed four native query checks on NT 3.1 UP and four-CPU MP systems.
+- Passed four workers and 181 affinity rounds with zero XMM/MXCSR/x87 errors
+  on the patched NT 3.1 MP kernel.
+- Passed 640 worker lifetimes with zero errors using the query-bearing driver.
+- Retained the existing exact-kernel, 512-entry and installation-rendezvous
+  limitations. No YMM/ZMM preservation or broader OS support is added.
+
+See CHANGELOG.txt for the unchanged published R2 development checkpoint.

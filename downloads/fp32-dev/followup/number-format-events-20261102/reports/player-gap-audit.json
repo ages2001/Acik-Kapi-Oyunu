@@ -1,0 +1,1007 @@
+{
+  "scope": "Current linked NT3.1 development DLLs, not immutable published installers.",
+  "completed_port": false,
+  "known_partial_adapters_non_exhaustive": {
+    "FP10/FP32 GetNumberFormatW/GetCurrencyFormatW": "Native provider or decimal-string NT3.1 fallback. NT3.1 missing negative-number defaults are measured for the supplied English NT3.51 locale set; unknown locale defaults are rejected instead of guessed. Native locale data remains OS-specific. Win9x/Win32s and all localized NT distributions are not certified.",
+    "FP10/FP32 mixer APIs": "Native later-NT mixer or adapted original NT3.51 provider on NT3.1. AUDIONT 1.1 AC97 playback controls, callbacks and native wave-output handle translation tested. Capture/MIDI devices, other drivers, Win9x and Win32s remain untested.",
+    "FP32 DirectSound": "Original NT4 playback provider is experimental and excluded from the default build: modern buffer descriptors, GLOBALFOCUS and capture remain unresolved.",
+    "FP32 GdiAlphaBlend": "Software RGB DIB per-pixel/constant alpha and native constant-alpha sources tested on NT3.1/3.51 VGA. Native untracked per-pixel alpha bitmaps and non-RGB DIB alpha formats remain unsupported; no GPU acceleration or all-game validation.",
+    "FP32 CryptAcquireContextA/W": "Original NT4 PROV_RSA_FULL provider only. Ephemeral contexts and named registry key containers tested on NT3.1/3.51; no modern AES providers.",
+    "FP32 CryptCreateHash": "Original NT4 provider algorithms, including native keyed MAC; SHA256 is unavailable.",
+    "FP32 CryptImportKey": "Legacy RSA public/private BLOBs and container-key SIMPLEBLOBs tested. Original NT4 restrictions on explicit parent keys and unsupported modern BLOB formats remain.",
+    "FP32 GlobalMemoryStatusEx": "Native legacy NT fallback; no Win9x/Win32s fallback in this change.",
+    "FP10/FP32 SHGetDiskFreeSpaceExW": "Legacy NT filesystem query or later native export; no Win9x fallback in this change.",
+    "FP10/FP32 OpenThread and SetThreadAffinityMask": "Legacy NT fallback or later native exports; not a Win32s threading implementation."
+  },
+  "limitations": [
+    "Counts cover diagnostic stubs reached by original static/delay imports only.",
+    "Implemented adapters may have unsupported behaviors; dynamic APIs and other OSes need separate tests."
+  ],
+  "FP10": {
+    "original_sha256": "c72b5cf816033bb63ab56a5508f372b11672379d5fe537d9aef7cc4cd00565ed",
+    "proxy_imports_examined": 536,
+    "missing_imported_pairs": 49,
+    "missing": [
+      {
+        "library": "crypt32.dll",
+        "api": "CryptGetMessageCertificates",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPC.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertCreateCertificateContext",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPC.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertFindCertificateInStore",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPC.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertVerifySubjectCertificateContext",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPC.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertFreeCertificateContext",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPC.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertCloseStore",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPC.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CryptVerifyMessageSignature",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPC.DLL"
+      },
+      {
+        "library": "urlmon.dll",
+        "api": "CopyStgMedium",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPR.DLL"
+      },
+      {
+        "library": "dsound.dll",
+        "api": "#8",
+        "ordinal": 8,
+        "kind": "load",
+        "proxy": "FPD.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "QueueUserAPC",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPK.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "EnumSystemLocalesW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPK.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "CancelWaitableTimer",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPK.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "SetWaitableTimer",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPK.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "CreateWaitableTimerA",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPK.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "GetMenuItemInfoW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPU.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "SetMenuItemInfoW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPU.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "InsertMenuItemW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPU.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "SetMenuInfo",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPU.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "ShowWindowAsync",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPU.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "EnumDisplaySettingsW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPU.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "FlashWindowEx",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPU.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "SendInput",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPU.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "GetKeyboardLayout",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPU.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "UpdateLayeredWindow",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPU.DLL"
+      },
+      {
+        "library": "gdi32.dll",
+        "api": "GetICMProfileA",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPG.DLL"
+      },
+      {
+        "library": "gdi32.dll",
+        "api": "EnumFontFamiliesExW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPG.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHGetFolderPathW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPS.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHGetSpecialFolderLocation",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPS.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHAppBarMessage",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPS.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHBrowseForFolderW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPS.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHGetPathFromIDListW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPS.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHGetFolderPathA",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPS.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "OleFlushClipboard",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPO.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "OleIsCurrentClipboard",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPO.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "OleSetClipboard",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPO.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "ReleaseStgMedium",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPO.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "CreateBindCtx",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPO.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "OleGetClipboard",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPO.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "PropVariantClear",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPO.DLL"
+      },
+      {
+        "library": "mscms.dll",
+        "api": "CreateColorTransformW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPCLR.DLL"
+      },
+      {
+        "library": "mscms.dll",
+        "api": "CloseColorProfile",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPCLR.DLL"
+      },
+      {
+        "library": "mscms.dll",
+        "api": "TranslateBitmapBits",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPCLR.DLL"
+      },
+      {
+        "library": "mscms.dll",
+        "api": "DeleteColorTransform",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPCLR.DLL"
+      },
+      {
+        "library": "mscms.dll",
+        "api": "OpenColorProfileW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPCLR.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "WSASocketW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPW.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "WSAIoctl",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPW.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "WSAAddressToStringA",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPW.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "WSAEventSelect",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPW.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "WSAEnumNetworkEvents",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "FPW.DLL"
+      }
+    ],
+    "proxy_sha256": {
+      "FPA.DLL": "410dc697af82dd1f4e157807df4c7f7130b1cb7256919a81787fe59b2da80aa2",
+      "FPC.DLL": "61e58c9850a7aa953374f50073a20979715611056ba1a150d42624b774b5b0e5",
+      "FPCLR.DLL": "bb6aab266528fe31351bbc83c2980c088c09afc6c7233f2c11e31b5968dea0e6",
+      "FPD.DLL": "43ab1b7ff1e7b991e2f34a53598a8196a6279279ca9c2c6a4a7269e42e58e04f",
+      "FPG.DLL": "53987f9381e8d4abe2448e8a0195d0fa095d008f3b068be55d9dbc6f860b7351",
+      "FPK.DLL": "5698b63e0932d1fc6d601319dca042e40be2dfc2dca1f475ec54d89b005a551b",
+      "FPM.DLL": "605c312d23132fcd21f13ce29a19288a799e9f509b4a5baadbdb2312c31c83c9",
+      "FPO.DLL": "21cd8d30873347be8cf0dcad33b6deabdb55bf50e95887d25671874b0c229c1e",
+      "FPR.DLL": "8fc77ca0823453c3b1377b8eb7522fb034e0456ce0453373d65cd070f2943a91",
+      "FPRG.DLL": "3ecd3a6a41cd82441ea28c94813880bfc1ef845a2ee603ec7cdf3d9a60dc1744",
+      "FPS.DLL": "8a5ac0990b92624dc554474f378f4fd01b4070ba4e1a983383fe54f138403c3c",
+      "FPU.DLL": "2f687db7ad5006293a9ba8c76cd310af166212cd4ae598f87116d8a0c4816e4b",
+      "FPW.DLL": "bf44da7ebbe4dbf8ab03466343ad93cfa096baa18699ffaaf058863646bedd22"
+    }
+  },
+  "FP32": {
+    "original_sha256": "a4b333ac1da12026989549015303d82231982838bccfb544ba5fd188746066f0",
+    "proxy_imports_examined": 651,
+    "missing_imported_pairs": 85,
+    "missing": [
+      {
+        "library": "kernel32.dll",
+        "api": "HeapWalk",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "QueueUserAPC",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "GetModuleHandleExW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "CreateWaitableTimerW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "EnumSystemLocalesW",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "FindFirstFileExA",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "SwitchToFiber",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "DeleteFiber",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "CreateFiber",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "ConvertFiberToThread",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "ConvertThreadToFiber",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "CreateWaitableTimerA",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "SetWaitableTimer",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "CancelWaitableTimer",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "CreateTimerQueueTimer",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "kernel32.dll",
+        "api": "DeleteTimerQueueTimer",
+        "ordinal": null,
+        "kind": "load",
+        "proxy": "F32K.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "RegisterClassExA",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "SendInput",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "GetWindowInfo",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "ShowWindowAsync",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "FlashWindowEx",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "EnumDisplaySettingsW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "UpdateLayeredWindow",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "InsertMenuItemW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "GetMenuItemInfoW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "SetMenuItemInfoW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "GetKeyboardLayout",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "SetMenuInfo",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "user32.dll",
+        "api": "GetUserObjectInformationW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32U.DLL"
+      },
+      {
+        "library": "gdi32.dll",
+        "api": "GetICMProfileA",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32G.DLL"
+      },
+      {
+        "library": "gdi32.dll",
+        "api": "EnumFontFamiliesExW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32G.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHAppBarMessage",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32S.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHGetFolderPathW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32S.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHGetSettings",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32S.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHBrowseForFolderW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32S.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHGetFolderPathA",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32S.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHGetFolderLocation",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32S.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHGetPathFromIDListW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32S.DLL"
+      },
+      {
+        "library": "shell32.dll",
+        "api": "SHGetSpecialFolderPathW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32S.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "OleSetClipboard",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32O.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "CoSetProxyBlanket",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32O.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "PropVariantClear",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32O.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "OleGetClipboard",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32O.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "OleFlushClipboard",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32O.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "OleIsCurrentClipboard",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32O.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "ReleaseStgMedium",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32O.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "CoInitializeEx",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32O.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "MkParseDisplayName",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32O.DLL"
+      },
+      {
+        "library": "ole32.dll",
+        "api": "CreateBindCtx",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32O.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "WSAEnumNetworkEvents",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32W.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "WSASocketW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32W.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "WSAIoctl",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32W.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "WSAAddressToStringA",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32W.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "getaddrinfo",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32W.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "freeaddrinfo",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32W.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "getnameinfo",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32W.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "WSASocketA",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32W.DLL"
+      },
+      {
+        "library": "ws2_32.dll",
+        "api": "WSAEventSelect",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32W.DLL"
+      },
+      {
+        "library": "mscms.dll",
+        "api": "CloseColorProfile",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32CM.DLL"
+      },
+      {
+        "library": "mscms.dll",
+        "api": "OpenColorProfileW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32CM.DLL"
+      },
+      {
+        "library": "mscms.dll",
+        "api": "DeleteColorTransform",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32CM.DLL"
+      },
+      {
+        "library": "mscms.dll",
+        "api": "TranslateBitmapBits",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32CM.DLL"
+      },
+      {
+        "library": "mscms.dll",
+        "api": "CreateColorTransformW",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32CM.DLL"
+      },
+      {
+        "library": "wininet.dll",
+        "api": "HttpOpenRequestA",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32I.DLL"
+      },
+      {
+        "library": "wininet.dll",
+        "api": "HttpSendRequestA",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32I.DLL"
+      },
+      {
+        "library": "wininet.dll",
+        "api": "HttpQueryInfoA",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32I.DLL"
+      },
+      {
+        "library": "wininet.dll",
+        "api": "InternetReadFile",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32I.DLL"
+      },
+      {
+        "library": "wininet.dll",
+        "api": "InternetConnectA",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32I.DLL"
+      },
+      {
+        "library": "wininet.dll",
+        "api": "InternetCloseHandle",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32I.DLL"
+      },
+      {
+        "library": "wininet.dll",
+        "api": "InternetOpenA",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32I.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertDuplicateCertificateContext",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertGetCertificateContextProperty",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertFindCertificateInStore",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertVerifySubjectCertificateContext",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertFreeCertificateContext",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertCompareCertificate",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CryptVerifyMessageSignature",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CryptGetMessageCertificates",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertOpenStore",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertEnumCertificatesInStore",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertCloseStore",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "crypt32.dll",
+        "api": "CertCreateCertificateContext",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32C.DLL"
+      },
+      {
+        "library": "urlmon.dll",
+        "api": "CopyStgMedium",
+        "ordinal": null,
+        "kind": "delay",
+        "proxy": "F32R.DLL"
+      },
+      {
+        "library": "dsound.dll",
+        "api": "#1",
+        "ordinal": 1,
+        "kind": "delay",
+        "proxy": "F32D.DLL"
+      },
+      {
+        "library": "dsound.dll",
+        "api": "#8",
+        "ordinal": 8,
+        "kind": "delay",
+        "proxy": "F32D.DLL"
+      }
+    ],
+    "proxy_sha256": {
+      "F32A.DLL": "abad34e8decd38d4daa72a798e2bdb3a3622b4c7f525e7dde5cdf5f8ba8b3f87",
+      "F32C.DLL": "80c864d6c95d2d985e1dd5d6dd5b69f68f5a2d31f4315b73059bf814a71b36d7",
+      "F32CD.DLL": "069ab0af9d31a636ac9e3d678fa97240e59787b0edabdf6eaf8b697da1bd552a",
+      "F32CM.DLL": "21366151cb7c268785d5dd1d69d3ca3c831539c66fd9bc40e29f2ad41da9d761",
+      "F32D.DLL": "846ace40df1916ed29cca193547af9b71b9d228d4c0d375291ec63e7bfe9887d",
+      "F32G.DLL": "ca39d89defdc925523cea3e4202fd07ded11b62a525ff04be34c7f86c11c09c5",
+      "F32I.DLL": "b0780f48ca72a80eb0240d5bf7e72fe727ca0acf58b8e2d2e7e0b1617d05e56e",
+      "F32K.DLL": "a36dcff960801432ecdc2dd1adbe200a133515545d463b1025ef514b75d0719c",
+      "F32M.DLL": "9d5d0ba45fe1a8039e69dd5cad5f1189fad76fe3eb6af13e57df07418a5fbc9a",
+      "F32O.DLL": "7063d2f0f1d690967e45a2a2917d66932bd8f77f9bdc65dfe82d8e58e7a9178d",
+      "F32OA.DLL": "095e4729d9a456262b7e2f95cb4d6303745e9e28bf90e04f1c86d6328064ff7e",
+      "F32P.DLL": "38faa782b74cd26d5d596db3b9b645cd42424edbb81743f21cc646ad373d0ac0",
+      "F32R.DLL": "0997717b945979d8564ea6f6f2595eccd82f16e43b6fd6be279f15af7ed9504d",
+      "F32S.DLL": "dbfca24eb09f142c38ee81b3a17dcdcc9465266d43d09bc1315bd75272842744",
+      "F32SH.DLL": "1a58eb7fd3355a71cb8ee38646a085d4f9a1b75d559ac57a5aad918b08935765",
+      "F32U.DLL": "4f69755abf87a51590df736f9da4733d401c6e6ca931eee9a26a98520106ce22",
+      "F32V.DLL": "7b1d68e55788a2a7a1c4a73511415230d12bbffd61d40fdd782aad11e2db1ed5",
+      "F32W.DLL": "163c76d3bebb20fa478a01fee553f3bd210ae9cd34e811248411d39dc275d7f6"
+    }
+  }
+}

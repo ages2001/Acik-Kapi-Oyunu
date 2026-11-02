@@ -1,0 +1,14 @@
+LIBRARY FPRG.DLL
+EXPORTS
+RegOpenKeyExA=advapi32.RegOpenKeyExA
+RegQueryValueExW=advapi32.RegQueryValueExW
+RegSetValueExW=advapi32.RegSetValueExW
+RegCreateKeyExW=_fp_RegCreateKeyExW@36
+RegOpenKeyExW=advapi32.RegOpenKeyExW
+RegCloseKey=advapi32.RegCloseKey
+RegQueryValueExA=advapi32.RegQueryValueExA
+RegSetValueExA=advapi32.RegSetValueExA
+RegCreateKeyExA=_fp_RegCreateKeyExA@36
+RegOpenKeyA=advapi32.RegOpenKeyA
+SetSecurityDescriptorDacl=advapi32.SetSecurityDescriptorDacl
+InitializeSecurityDescriptor=advapi32.InitializeSecurityDescriptor

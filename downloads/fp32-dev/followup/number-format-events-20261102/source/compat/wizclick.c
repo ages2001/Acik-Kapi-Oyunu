@@ -1,0 +1,3 @@
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+void WINAPI entry(void){char*s=GetCommandLineA();DWORD id=0;HWND w=FindWindowA("FP10SetupWizard",0),b;RECT r;int x,y;if(!w)ExitProcess(1);if(*s=='"'){s++;while(*s&&*s!='"')s++;if(*s)s++;}else while(*s&&*s!=' ')s++;while(*s==' ')s++;while(*s>='0'&&*s<='9')id=id*10+*s++-'0';b=GetDlgItem(w,id);if(!b||!IsWindowVisible(b)||!IsWindowEnabled(b))ExitProcess(2);GetWindowRect(b,&r);x=(r.left+r.right)/2;y=(r.top+r.bottom)/2;SetForegroundWindow(w);mouse_event(MOUSEEVENTF_MOVE|MOUSEEVENTF_ABSOLUTE,x*65535/(GetSystemMetrics(SM_CXSCREEN)-1),y*65535/(GetSystemMetrics(SM_CYSCREEN)-1),0,0);Sleep(150);mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);Sleep(100);mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);ExitProcess(0);}

@@ -1,0 +1,4 @@
+/* Pointer-free native NLS inputs for comparison with the original NT3.51 API. */
+typedef struct {DWORD locale;UINT ndigits,nleading,ngroup,nnegative,cdigits,cleading,cgroup,cnegative,cpositive;WCHAR ndecimal[32],nthousand[32],cdecimal[32],cthousand[32],symbol[64];} FormatLocaleFixture;
+static void number_fixture(const FormatLocaleFixture *v,NUMBERFMTW *f){f->NumDigits=v->ndigits;f->LeadingZero=v->nleading;f->Grouping=v->ngroup;f->NegativeOrder=v->nnegative;f->lpDecimalSep=(WCHAR*)v->ndecimal;f->lpThousandSep=(WCHAR*)v->nthousand;}
+static void currency_fixture(const FormatLocaleFixture *v,CURRENCYFMTW *f){f->NumDigits=v->cdigits;f->LeadingZero=v->cleading;f->Grouping=v->cgroup;f->NegativeOrder=v->cnegative;f->PositiveOrder=v->cpositive;f->lpDecimalSep=(WCHAR*)v->cdecimal;f->lpThousandSep=(WCHAR*)v->cthousand;f->lpCurrencySymbol=(WCHAR*)v->symbol;}

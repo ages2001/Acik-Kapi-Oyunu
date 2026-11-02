@@ -803,11 +803,11 @@
   "required_imports_remaining_unimplemented_scope": "Immutable published FP32 R4 installer; use development_gap_audit for current linked development builds.",
   "development_gap_audit": {
     "counts": {
-      "FP10": 53,
-      "FP32": 87
+      "FP10": 49,
+      "FP32": 85
     },
     "scope": "Current linked NT3.1 development DLLs, not immutable published installers.",
-    "evidence": "followup/version-ansi-20261102/reports/player-gap-audit.json",
+    "evidence": "followup/number-format-events-20261102/reports/player-gap-audit.json",
     "excludes": [
       "Partially implemented behavior",
       "Unavailable dynamic APIs",
@@ -966,5 +966,59 @@
       "FP32": 87
     },
     "evidence": "followup/sm63-mixer-regression-20261102/README.md"
+  },
+  "runtime_20261102_r2": {
+    "archive": "FP10-FP32-20261102-R2-RUNTIME-DEV.zip",
+    "bytes": 12300559,
+    "sha256": "4230b1835696a843c5c7c0edc2922cb6a186825e5972eb3610de4d788336c743",
+    "completed_port": false,
+    "universal_installer": false,
+    "runtime_files": {
+      "FP10": 18,
+      "FP32": 26
+    },
+    "missing_imported_pairs": {
+      "FP10": 49,
+      "FP32": 85
+    },
+    "evidence": "followup/number-format-events-20261102/README.md",
+    "published_installers_changed": false
+  },
+  "number_format_events_followup": {
+    "completed_port": false,
+    "missing_imported_pairs": {
+      "FP10": 49,
+      "FP32": 85
+    },
+    "implemented": {
+      "FP10": [
+        "GetNumberFormatW",
+        "GetCurrencyFormatW",
+        "WSACreateEvent",
+        "WSACloseEvent"
+      ],
+      "FP32": [
+        "GetNumberFormatW",
+        "GetCurrencyFormatW"
+      ]
+    },
+    "native_reference_comparisons_per_player_per_os": 1350,
+    "contract_checks_per_player": {
+      "NT3.1": 25,
+      "NT3.51": 19
+    },
+    "FP10_event_checks_per_os": 19,
+    "native_failures": 0,
+    "os": [
+      "NT3.1 UP",
+      "NT3.51 UP"
+    ],
+    "sm63_replayed_with_latest_three_DLLs": false,
+    "published_installers_changed": false,
+    "tested_aliases": {
+      "NF10K.DLL": "5698b63e0932d1fc6d601319dca042e40be2dfc2dca1f475ec54d89b005a551b",
+      "NF32K.DLL": "a36dcff960801432ecdc2dd1adbe200a133515545d463b1025ef514b75d0719c",
+      "E10W.DLL": "bf44da7ebbe4dbf8ab03466343ad93cfa096baa18699ffaaf058863646bedd22"
+    }
   }
 }

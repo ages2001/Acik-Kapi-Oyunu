@@ -1,0 +1,12 @@
+Production kernel proxy loads 1
+Number and currency exports resolve 1
+Modern grouping repeats final group 1
+Terminal zero stops further grouping 1
+Single nonrepeating group 1
+Zero grouping has no separators 1
+Long decimal rounds without floating point loss 1
+Leading zero can be omitted 1
+Rounded zero has no negative sign 1
+Fraction carry propagates into grouped integer 1
+Size query includes terminator 1
+Short output buffer is rejected 1

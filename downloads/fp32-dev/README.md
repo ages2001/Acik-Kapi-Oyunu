@@ -1,10 +1,12 @@
 # FP32 legacy-port development checkpoint
 
-[Download the latest combined FP10 + FP32 runtime/source ZIP](FP10-FP32-20261102-RUNTIME-DEV.zip?raw=true) (12,192,983 bytes). This development package contains both complete runtime directories, sources and native test evidence. It is **not a finished port or universal installer**. Current diagnostic API gaps: **FP10 53 / FP32 87**.
+[Download the latest combined FP10 + FP32 R2 runtime/source ZIP](FP10-FP32-20261102-R2-RUNTIME-DEV.zip?raw=true) (12,300,559 bytes). Both complete runtime directories, sources and native test evidence are included. This remains **a development build, not a finished port or universal installer**. Current diagnostic API gaps: **FP10 49 / FP32 85**.
 
-SM63 copied File A to B and loaded B after player restart and normal Windows reboot with the accumulated FP32 components. The reboot also verified actual classic VGA (640x480, 4bpp). Classic VGA colors remain wrong and gameplay remains slow. [Screenshots, save hashes, driver measurements and limitations](followup/sm63-mixer-regression-20261102/README.md).
+R2 adds Unicode number/currency formatting to both players and Winsock create/close events to FP10. Each kernel DLL passes 1,350 reference comparisons per NT3.1/NT3.51 plus 25/19 contract checks; FP10 events pass 19 checks per OS. [Sources, exact checks and limitations](followup/number-format-events-20261102/README.md).
 
-ZIP SHA-256: `5e853cff3cfe21ac52808df604a2469ff5df99bf9d808b078b3d7832e856dca4`. All 44 runtime files and all payload hashes were verified.
+The [preceding combined runtime](FP10-FP32-20261102-RUNTIME-DEV.zip?raw=true) passed SM63 File A-to-B copying and loading after player and Windows restart. Native classic VGA was measured at 640x480x4, but colors remain wrong and gameplay is slow. [Screenshots and save evidence](followup/sm63-mixer-regression-20261102/README.md). SM63 has not been replayed with the latest three functional DLL changes; other runtime differences are PE timestamps/checksums only.
+
+R2 ZIP SHA-256: `4230b1835696a843c5c7c0edc2922cb6a186825e5972eb3610de4d788336c743`. All 44 runtime files and payload hashes were verified.
 
 ## Historical R4 installer checkpoint
 
@@ -89,6 +91,6 @@ and [R3 follow-up](R3-FOLLOWUP.md) remain available unchanged. Separate packages
 
 ## Mixer component follow-up (2026-11-02)
 
-[Download the FP10/FP32 mixer component and source ZIP](followup/FP10-FP32-MIXER-20261102-COMPONENTS.zip?raw=true). Eight mixer imports per player now pass 40 native checks each on NT3.1 and NT3.51. The current development counts are **FP10 53 / FP32 88**; neither port is complete. The original DirectSound PCM experiment is included separately and stays disabled. [Evidence and limitations](followup/mixer-20261102/README.md). Published full installers remain unchanged.
+[Download the FP10/FP32 mixer component and source ZIP](followup/FP10-FP32-MIXER-20261102-COMPONENTS.zip?raw=true). Eight mixer imports per player now pass 40 native checks each on NT3.1 and NT3.51. At that checkpoint the development counts were **FP10 53 / FP32 88**; neither port is complete. The original DirectSound PCM experiment is included separately and stays disabled. [Evidence and limitations](followup/mixer-20261102/README.md). Published full installers remain unchanged.
 
-[ANSI version verification component/source ZIP](followup/FP32-VERSION-ANSI-20261102-COMPONENTS.zip?raw=true): 20 native checks per NT3.1/NT3.51, zero failures. Current counts are **FP10 53 / FP32 87**. [Details](followup/version-ansi-20261102/README.md).
+[ANSI version verification component/source ZIP](followup/FP32-VERSION-ANSI-20261102-COMPONENTS.zip?raw=true): 20 native checks per NT3.1/NT3.51, zero failures. At that checkpoint the counts were **FP10 53 / FP32 87**. [Details](followup/version-ansi-20261102/README.md).

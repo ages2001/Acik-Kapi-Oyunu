@@ -1,0 +1,21 @@
+Production kernel proxy loads 1
+Number and currency exports resolve 1
+Modern grouping repeats final group 1
+Terminal zero stops further grouping 1
+Single nonrepeating group 1
+Zero grouping has no separators 1
+Long decimal rounds without floating point loss 1
+Leading zero can be omitted 1
+Rounded zero has no negative sign 1
+Fraction carry propagates into grouped integer 1
+Size query includes terminator 1
+Short output buffer is rejected 1
+Null numeric input is rejected 1
+Null nonempty output buffer is rejected 1
+Negative capacity is rejected 1
+Interior zero grouping is rejected 1
+Unicode currency symbol and modern grouping 1
+Currency nonrepeating groups and symbol placement 1
+Null currency symbol is rejected 1
+Checks 19
+Failures 0

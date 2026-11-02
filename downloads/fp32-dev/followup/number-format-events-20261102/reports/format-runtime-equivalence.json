@@ -1,0 +1,401 @@
+{
+  "files": [
+    {
+      "player": "FP10",
+      "file": "FPD.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "77187e4c594538e67a5139a8664c6e1d0825517b8c559e2886ca6bcc6d0685c7",
+      "new_sha256": "43ab1b7ff1e7b991e2f34a53598a8196a6279279ca9c2c6a4a7269e42e58e04f"
+    },
+    {
+      "player": "FP10",
+      "file": "FPG.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "1f04800208b245bfa71b85ce12a4fb96bfd9a6c57f896bc85d2b8dd169a7c445",
+      "new_sha256": "53987f9381e8d4abe2448e8a0195d0fa095d008f3b068be55d9dbc6f860b7351"
+    },
+    {
+      "player": "FP10",
+      "file": "FPA.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "ac0a2e75ada88c8c9cf6a1cd051a43419229fd08a009fa26b9f11051c80ae53f",
+      "new_sha256": "410dc697af82dd1f4e157807df4c7f7130b1cb7256919a81787fe59b2da80aa2"
+    },
+    {
+      "player": "FP10",
+      "file": "FPK.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": false,
+      "intentional_function_change": true,
+      "old_sha256": "35d7e8717b5655fd4a9a9e10136abb21994727fadab58153ad25d01ade90186d",
+      "new_sha256": "5698b63e0932d1fc6d601319dca042e40be2dfc2dca1f475ec54d89b005a551b"
+    },
+    {
+      "player": "FP10",
+      "file": "FPMM.DLL",
+      "same_bytes": true,
+      "only_PE_timestamp_or_checksum_changed": false,
+      "intentional_function_change": false,
+      "old_sha256": "d76fd887832875e528d2e2625b2d11d3a954a2881db3b9bd9ee707b723fdb642",
+      "new_sha256": "d76fd887832875e528d2e2625b2d11d3a954a2881db3b9bd9ee707b723fdb642"
+    },
+    {
+      "player": "FP10",
+      "file": "FPMK.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "bc3fd5a20c428d9e9c16d33349c53adad2ad2aae3988146a5e7dc0df51af00d4",
+      "new_sha256": "50c0480b28ef82a2096067be3ef391adfd3c472f59dc3d7788bc1db57ece3db6"
+    },
+    {
+      "player": "FP10",
+      "file": "FPW.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": false,
+      "intentional_function_change": true,
+      "old_sha256": "7677eed9a35827aa1ea27177515211e4c594bd41569f7831f656362c8bd3b718",
+      "new_sha256": "bf44da7ebbe4dbf8ab03466343ad93cfa096baa18699ffaaf058863646bedd22"
+    },
+    {
+      "player": "FP10",
+      "file": "FP10.EXE",
+      "same_bytes": true,
+      "only_PE_timestamp_or_checksum_changed": false,
+      "intentional_function_change": false,
+      "old_sha256": "23ccdc79a85d953129ddf0bb8ab6bfabfbb6810c678e68a0902609fe2b4ca358",
+      "new_sha256": "23ccdc79a85d953129ddf0bb8ab6bfabfbb6810c678e68a0902609fe2b4ca358"
+    },
+    {
+      "player": "FP10",
+      "file": "FPU.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "2fba9eef7cf92bef35930aa794a1af31c0f9bf78086a1a8651734f5ea51b79a7",
+      "new_sha256": "2f687db7ad5006293a9ba8c76cd310af166212cd4ae598f87116d8a0c4816e4b"
+    },
+    {
+      "player": "FP10",
+      "file": "FPRG.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "7503ac3978e0ac67d7956455dbf6f41b43236d886db52d28eca06bfbc7bde447",
+      "new_sha256": "3ecd3a6a41cd82441ea28c94813880bfc1ef845a2ee603ec7cdf3d9a60dc1744"
+    },
+    {
+      "player": "FP10",
+      "file": "FPM.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "04a62999393218c75d791718c0fccd507d0949c2d128374032e5f26768e62f84",
+      "new_sha256": "605c312d23132fcd21f13ce29a19288a799e9f509b4a5baadbdb2312c31c83c9"
+    },
+    {
+      "player": "FP10",
+      "file": "FPS.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "54c39446e530b125b45746b004760a8868a57f432aa3f666cc1f5ec3fd55eeb6",
+      "new_sha256": "8a5ac0990b92624dc554474f378f4fd01b4070ba4e1a983383fe54f138403c3c"
+    },
+    {
+      "player": "FP10",
+      "file": "FPR.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "1c017c16e9f6b6f310b765ee7ba2250d54cbf15480c723401cc793018f229374",
+      "new_sha256": "8fc77ca0823453c3b1377b8eb7522fb034e0456ce0453373d65cd070f2943a91"
+    },
+    {
+      "player": "FP10",
+      "file": "FPC.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "ce81f75deb06bdcab50054a30130853e9a0de51204fd4fc3fb831a63818618c5",
+      "new_sha256": "61e58c9850a7aa953374f50073a20979715611056ba1a150d42624b774b5b0e5"
+    },
+    {
+      "player": "FP10",
+      "file": "FPNTM.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "de5417090d3bba96b4ce0303a0f0a92bbdb4fa75132403172d938502072e98a9",
+      "new_sha256": "08afa63a2842b23d0ae7c48692ae325a346d837cd4874c139ef0570f7ac58ab0"
+    },
+    {
+      "player": "FP10",
+      "file": "FP10CPU.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "b9bd4b1d88c04064ef04953e651af603fc505514008a23fa415fbb331b5315f2",
+      "new_sha256": "c3e7ab1fcbab2628deb07de7e738e3b6def4ed806e9cb126745db510858a9afc"
+    },
+    {
+      "player": "FP10",
+      "file": "FPO.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "54a140c5258bbb67cb874669676eee36ca4bcf4045d8cb698e56f5a63d5ba66d",
+      "new_sha256": "21cd8d30873347be8cf0dcad33b6deabdb55bf50e95887d25671874b0c229c1e"
+    },
+    {
+      "player": "FP10",
+      "file": "FPCLR.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "1af2c64bd3ebf0b769f627c79fa58e568b81406f16282ee9a2d72843be4e6c09",
+      "new_sha256": "bb6aab266528fe31351bbc83c2980c088c09afc6c7233f2c11e31b5968dea0e6"
+    },
+    {
+      "player": "FP32",
+      "file": "F32V.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "110b205634371fb09241165650c7c81231bf843a5b8e621d932a4704c01a924e",
+      "new_sha256": "7b1d68e55788a2a7a1c4a73511415230d12bbffd61d40fdd782aad11e2db1ed5"
+    },
+    {
+      "player": "FP32",
+      "file": "F32CD.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "8cea1b3bc1edbe5f6d1784dc474391e23d977c2eb21bca66c6974c02462ced60",
+      "new_sha256": "069ab0af9d31a636ac9e3d678fa97240e59787b0edabdf6eaf8b697da1bd552a"
+    },
+    {
+      "player": "FP32",
+      "file": "F32OA.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "d209738d25428008ee93218e5b21122233441557a5366c78fae7d344dabe0f77",
+      "new_sha256": "095e4729d9a456262b7e2f95cb4d6303745e9e28bf90e04f1c86d6328064ff7e"
+    },
+    {
+      "player": "FP32",
+      "file": "FP32.EXE",
+      "same_bytes": true,
+      "only_PE_timestamp_or_checksum_changed": false,
+      "intentional_function_change": false,
+      "old_sha256": "fb6b0d197ec600fec0697d83d428f4f438f90feefa4beaef37421862f4ce3794",
+      "new_sha256": "fb6b0d197ec600fec0697d83d428f4f438f90feefa4beaef37421862f4ce3794"
+    },
+    {
+      "player": "FP32",
+      "file": "FPCRK.DLL",
+      "same_bytes": true,
+      "only_PE_timestamp_or_checksum_changed": false,
+      "intentional_function_change": false,
+      "old_sha256": "c49ad33713e694d4bbf1ef6d591fbfd9a88ac7a0cea40d052fb85edd08e0fea5",
+      "new_sha256": "c49ad33713e694d4bbf1ef6d591fbfd9a88ac7a0cea40d052fb85edd08e0fea5"
+    },
+    {
+      "player": "FP32",
+      "file": "F32P.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "fb3454444498774fbadeba83818df5ee5029ee3433ab1cfabfdce94534761cac",
+      "new_sha256": "38faa782b74cd26d5d596db3b9b645cd42424edbb81743f21cc646ad373d0ac0"
+    },
+    {
+      "player": "FP32",
+      "file": "FPMM.DLL",
+      "same_bytes": true,
+      "only_PE_timestamp_or_checksum_changed": false,
+      "intentional_function_change": false,
+      "old_sha256": "d76fd887832875e528d2e2625b2d11d3a954a2881db3b9bd9ee707b723fdb642",
+      "new_sha256": "d76fd887832875e528d2e2625b2d11d3a954a2881db3b9bd9ee707b723fdb642"
+    },
+    {
+      "player": "FP32",
+      "file": "F32O.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "4d4081cc550e40e2d1c1033b9851db5338262985c277f48dfbfd08f4f387e350",
+      "new_sha256": "7063d2f0f1d690967e45a2a2917d66932bd8f77f9bdc65dfe82d8e58e7a9178d"
+    },
+    {
+      "player": "FP32",
+      "file": "F32M.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "813931faee93a9e7ef02e5322910ac8ca2dd2f2b6b8a298f16c4443770977e26",
+      "new_sha256": "9d5d0ba45fe1a8039e69dd5cad5f1189fad76fe3eb6af13e57df07418a5fbc9a"
+    },
+    {
+      "player": "FP32",
+      "file": "FPMK.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "402e8c4286037ffc016b1ddcc3295a505e4994e5ead571c5040db27986ab393d",
+      "new_sha256": "61990af1e4421e8b2c6a5ac74349b2df421f02f0afef4a123b71933cc0a5303e"
+    },
+    {
+      "player": "FP32",
+      "file": "F32U.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "3baab575440e03577dd516e4d4c5ab56a2a984c7666d9fcbd28455c18b0df2b2",
+      "new_sha256": "4f69755abf87a51590df736f9da4733d401c6e6ca931eee9a26a98520106ce22"
+    },
+    {
+      "player": "FP32",
+      "file": "FPRSA.DLL",
+      "same_bytes": true,
+      "only_PE_timestamp_or_checksum_changed": false,
+      "intentional_function_change": false,
+      "old_sha256": "b4d79155da34e35551f5a5ec52fdf22c9bae478b167a87cd965396ec1a6e9a1c",
+      "new_sha256": "b4d79155da34e35551f5a5ec52fdf22c9bae478b167a87cd965396ec1a6e9a1c"
+    },
+    {
+      "player": "FP32",
+      "file": "F32CM.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "8b597cdcedf139e1aed7179bc0563bbbc00c7befae1bd2a42e3722913c835608",
+      "new_sha256": "21366151cb7c268785d5dd1d69d3ca3c831539c66fd9bc40e29f2ad41da9d761"
+    },
+    {
+      "player": "FP32",
+      "file": "F32K.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": false,
+      "intentional_function_change": true,
+      "old_sha256": "1b54cfe272e05669837512da998cc81f2a1c968e967c3181be2f3d45ed48a6a8",
+      "new_sha256": "a36dcff960801432ecdc2dd1adbe200a133515545d463b1025ef514b75d0719c"
+    },
+    {
+      "player": "FP32",
+      "file": "F32W.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "b0f5d7240f164739e4a4fc8653c2f2c242f10cc603c3d764b57fae4db48f7749",
+      "new_sha256": "163c76d3bebb20fa478a01fee553f3bd210ae9cd34e811248411d39dc275d7f6"
+    },
+    {
+      "player": "FP32",
+      "file": "F32C.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "96216afa6a9a8b2a726deb850a9c39289661b9795a715db3c8d13b6f6678c135",
+      "new_sha256": "80c864d6c95d2d985e1dd5d6dd5b69f68f5a2d31f4315b73059bf814a71b36d7"
+    },
+    {
+      "player": "FP32",
+      "file": "FPCPU.DLL",
+      "same_bytes": true,
+      "only_PE_timestamp_or_checksum_changed": false,
+      "intentional_function_change": false,
+      "old_sha256": "dd7354e4fd16efb905454e3483c0d3fd86d15f89d66b765691e7da6d10105c00",
+      "new_sha256": "dd7354e4fd16efb905454e3483c0d3fd86d15f89d66b765691e7da6d10105c00"
+    },
+    {
+      "player": "FP32",
+      "file": "F32I.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "dbef3e009a7022bc7d76c8475a3b90fb00b72b4581d750a8cdaa4d956a436c04",
+      "new_sha256": "b0780f48ca72a80eb0240d5bf7e72fe727ca0acf58b8e2d2e7e0b1617d05e56e"
+    },
+    {
+      "player": "FP32",
+      "file": "F32R.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "58adc377f6e6401ec1feb47fea25f2e131c2a400e7f426f7c4343d730c451f30",
+      "new_sha256": "0997717b945979d8564ea6f6f2595eccd82f16e43b6fd6be279f15af7ed9504d"
+    },
+    {
+      "player": "FP32",
+      "file": "F32D.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "2a1b0a6a37a118d338b503b68507dad4b8db7fdbf6d0345f4c7f59da3a8ec981",
+      "new_sha256": "846ace40df1916ed29cca193547af9b71b9d228d4c0d375291ec63e7bfe9887d"
+    },
+    {
+      "player": "FP32",
+      "file": "F32SH.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "3e3da4da4e6fd973ca96368919b5c271d6dee0a1e40ae0f3279eb0e52a1b5baf",
+      "new_sha256": "1a58eb7fd3355a71cb8ee38646a085d4f9a1b75d559ac57a5aad918b08935765"
+    },
+    {
+      "player": "FP32",
+      "file": "FPNTM.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "41f6cc282274410d88b66b9442cfb92b94d139135315e22417e43e9472708b02",
+      "new_sha256": "30ef5525c47d3c22e37911c32181e4b67172dc4b3a758aeefc54be8aa4de6226"
+    },
+    {
+      "player": "FP32",
+      "file": "F32S.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "8cac1cd24f901cce882faf8c8aca19a090e3806f303b2d6433390a15535583ab",
+      "new_sha256": "dbfca24eb09f142c38ee81b3a17dcdcc9465266d43d09bc1315bd75272842744"
+    },
+    {
+      "player": "FP32",
+      "file": "F32A.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "3254ef53974afcb695285e9c4e255de2a0be900f30a768c699ee45bdb7df870d",
+      "new_sha256": "abad34e8decd38d4daa72a798e2bdb3a3622b4c7f525e7dde5cdf5f8ba8b3f87"
+    },
+    {
+      "player": "FP32",
+      "file": "F32G.DLL",
+      "same_bytes": false,
+      "only_PE_timestamp_or_checksum_changed": true,
+      "intentional_function_change": false,
+      "old_sha256": "b621eff41753d554e054906583b6dfcb1c262066f9b4992826d10b997db7bb7a",
+      "new_sha256": "ca39d89defdc925523cea3e4202fd07ded11b62a525ff04be34c7f86c11c09c5"
+    },
+    {
+      "player": "FP32",
+      "file": "APP/FP32.EXE",
+      "same_bytes": true,
+      "only_PE_timestamp_or_checksum_changed": false,
+      "intentional_function_change": false,
+      "old_sha256": "2f09f7eecabc16e56cfa9c1f6c5ba06b63cce8d0c9cda1591b41c7a5bf02a136",
+      "new_sha256": "2f09f7eecabc16e56cfa9c1f6c5ba06b63cce8d0c9cda1591b41c7a5bf02a136"
+    }
+  ],
+  "scope": "Compared with the published SM63-tested runtime. Exactly three DLLs have functional changes; other differences are PE timestamps/checksums only."
+}

@@ -1,0 +1,10 @@
+Mismatch 1319 actual 9/0 [-1,23457] native 0/87 []
+Mismatch 1321 actual 13/0 [-1,234abcd57] native 0/87 []
+Mismatch 1322 actual 14/0 [-1,234abcde57] native 0/87 []
+Mismatch 1325 actual 12/0 [-1123234.57] native 0/87 []
+Mismatch 1326 actual 14/0 [-1abcde234.57] native 0/87 []
+Mismatch 1340 actual 16/0 [-abcdef1,234.57] native 0/87 []
+Mismatch 1341 actual 17/0 [-abcdefg1,234.57] native 0/87 []
+Mismatch 1342 actual 13/0 [-1231,234.57] native 0/87 []
+Checks 1350
+Failures 8
