@@ -1,0 +1,16 @@
+{
+  "archive": "FP10-FP32-WINSIMD-NTCPUPAE-20261102-ALL-FILES.zip",
+  "created_at": "2026-11-02T23:28:21+03:00",
+  "bytes": 86645466,
+  "payload_files": 20255,
+  "uncompressed_payload_bytes": 219401548,
+  "sha256": "94b6856cce6dd7fa0dc245088088d0a31cebe561c6750c11f4faf6c3cd736138",
+  "missing_imported_pairs": {
+    "FP10": 49,
+    "FP32": 85
+  },
+  "completed_port": false,
+  "installer_payloads_verified": true,
+  "installer_native_GUI_retested": false,
+  "base_player_commit": "2ba00915385dd9db985c58210e524f36e9fb0f54"
+}
