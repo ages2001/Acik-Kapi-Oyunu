@@ -1,0 +1,87 @@
+{
+  "status": "experimental; application launch blocked by missing NT3.1 APIs",
+  "source_sha256": "c72b5cf816033bb63ab56a5508f372b11672379d5fe537d9aef7cc4cd00565ed",
+  "output_sha256": "401d18481104281c004edad22514c9515d0c56727dbeb3e61baf19d66011f1f5",
+  "patches": [
+    {
+      "site": "0x596797",
+      "original": "0fa2568d75e8",
+      "stub_va": "0xa9e000",
+      "stub_size": 68,
+      "return_va": "0x59679d"
+    },
+    {
+      "site": "0x5967d4",
+      "original": "0fa28906895e04",
+      "stub_va": "0xa9e044",
+      "stub_size": 69,
+      "return_va": "0x5967db"
+    },
+    {
+      "site": "0x5967fc",
+      "original": "0fa28906895e04",
+      "stub_va": "0xa9e089",
+      "stub_size": 69,
+      "return_va": "0x596803"
+    },
+    {
+      "site": "0x596818",
+      "original": "0fa28906895e04",
+      "stub_va": "0xa9e0ce",
+      "stub_size": 69,
+      "return_va": "0x59681f"
+    },
+    {
+      "site": "0x59b7bb",
+      "original": "0fa28b75cc",
+      "stub_va": "0xa9e113",
+      "stub_size": 67,
+      "return_va": "0x59b7c0"
+    },
+    {
+      "site": "0x59b7cd",
+      "original": "0fa28945d8",
+      "stub_va": "0xa9e156",
+      "stub_size": 67,
+      "return_va": "0x59b7d2"
+    },
+    {
+      "site": "0x6a006e",
+      "original": "0fa28955fc",
+      "stub_va": "0xa9e199",
+      "stub_size": 67,
+      "return_va": "0x6a0073"
+    },
+    {
+      "site": "0x6b0d8d",
+      "original": "0fa28945fc",
+      "stub_va": "0xa9e1dc",
+      "stub_size": 67,
+      "return_va": "0x6b0d92"
+    },
+    {
+      "site": "0x7ed522",
+      "original": "0fa28954242c",
+      "stub_va": "0xa9e21f",
+      "stub_size": 68,
+      "return_va": "0x7ed528"
+    },
+    {
+      "site": "0x8206e3",
+      "original": "0fa28945f4",
+      "stub_va": "0xa9e263",
+      "stub_size": 67,
+      "return_va": "0x8206e8"
+    },
+    {
+      "site": "0x8206f6",
+      "original": "0fa28955fc",
+      "stub_va": "0xa9e2a6",
+      "stub_size": 67,
+      "return_va": "0x8206fb"
+    }
+  ],
+  "scope": "Direct CPUID feature filtering only; no guarantee that all SIMD/JIT/dynamic-library paths are disabled. Original signature no longer applies; modified copy has certificate directory cleared.",
+  "guest_copy_sha256": "401d18481104281c004edad22514c9515d0c56727dbeb3e61baf19d66011f1f5",
+  "guest_test_result": "NT 3.1 Pentium II: CRYPT32.dll missing, then 0xc0000135; no playback."
+}

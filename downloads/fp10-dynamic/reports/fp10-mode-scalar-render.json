@@ -1,0 +1,20 @@
+{
+  "863-fp10-scalar-action": {
+    "red_pixels": 2500,
+    "bounds": [
+      360,
+      268,
+      409,
+      317
+    ]
+  },
+  "864-fp10-scalar-action2": {
+    "red_pixels": 2450,
+    "bounds": [
+      373,
+      268,
+      421,
+      317
+    ]
+  }
+}

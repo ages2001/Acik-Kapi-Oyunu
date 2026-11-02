@@ -1,0 +1,12 @@
+LIBRARY FPS.DLL
+EXPORTS
+DragQueryFileA=shell32.DragQueryFileA
+DragAcceptFiles=shell32.DragAcceptFiles
+SHGetDiskFreeSpaceExW=fn2
+SHGetFolderPathW=fn3
+SHGetSpecialFolderLocation=fn4
+SHAppBarMessage=fn5
+SHBrowseForFolderW=fn6
+SHGetPathFromIDListW=fn7
+SHGetFolderPathA=fn8
+DragQueryFileW=shell32.DragQueryFileW

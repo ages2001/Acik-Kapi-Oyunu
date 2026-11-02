@@ -574,5 +574,60 @@
     "fps_observed": "Approximately 4-6 during this gameplay segment",
     "performance_scope": "TCG without KVM and software rendering. No matched baseline measurement; cannot attribute this FPS to compatibility overhead alone.",
     "guest_final_state": "Game paused, QEMU stopped; NT351, Win95 and Win31 test VMs shut down"
+  },
+  "fp10_automatic_cpu_followup": {
+    "date": "2026-11-02",
+    "completed_port": false,
+    "target": "Original Adobe Flash Player 10.3.183.90 debug projector",
+    "single_executable_sha256": "23ccdc79a85d953129ddf0bb8ab6bfabfbb6810c678e68a0902609fe2b4ca358",
+    "same_executable_for_all_modes": true,
+    "environment": "NT 3.1 UP, QEMU TCG, 512 MiB, standard VGA 640x480x4bpp, AC97",
+    "native_cases": [
+      {
+        "hardware": "Pentium II, no SSE/SSE2",
+        "expected_sse2": false,
+        "checks": 14,
+        "failures": 0,
+        "report": "fp10-mode-pentium2-final.txt"
+      },
+      {
+        "hardware": "Pentium III + SSE2, no XMM guard loaded",
+        "expected_sse2": false,
+        "checks": 14,
+        "failures": 0,
+        "report": "fp10-mode-sse2-no-guard.txt"
+      },
+      {
+        "hardware": "Pentium III + SSE2, query-aware NT31 XMM guard loaded",
+        "expected_sse2": true,
+        "checks": 14,
+        "failures": 0,
+        "report": "fp10-mode-sse2-guard.txt"
+      }
+    ],
+    "about_labels_observed": [
+      "non-SSE2",
+      "SSE2"
+    ],
+    "action_vector_changes_verified_in_both_modes": true,
+    "pcm_440_hz_fixture_tone_detected_in_both_modes": true,
+    "limitations": [
+      "Small AS2 vector and PCM fixtures only; no all-game or video decoder pass.",
+      "No Win9x, Win32s or other NT version playback pass for this build.",
+      "This is a runtime development archive, not a new universal installer.",
+      "Research XMM guard still has its documented production/SMP limitations.",
+      "Actual SM63 first checkpoint and save/reopen remain unverified."
+    ],
+    "archive": "../fp10-dynamic/FP10-AUTOCPU-20261102-DEV.zip"
+  },
+  "sm63_first_save_research": {
+    "first_save_trigger_confirmed_in_original_as2": true,
+    "pipe_key": "Down",
+    "trigger": "First C-Opening -> Intro2 sprite 1954 frame 117 -> Star[39]=true -> SaveFile()",
+    "actual_exit_pipe_reached": false,
+    "actual_game_save_reopen_verified": false,
+    "latest_progress": "Fourth tutorial area, rotating platforms and second static cloud; 94 ordinary coins, zero shines.",
+    "retry_checkpoints_are_not_game_saves": true,
+    "evidence": "followup/sm63-first-save-research-20261102/README.md"
   }
 }

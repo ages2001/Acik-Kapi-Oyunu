@@ -1,0 +1,28 @@
+{
+  "trampoline_cases": 660,
+  "failures": 0,
+  "modes": [
+    "non-SSE2",
+    "SSE2"
+  ],
+  "startup_policy_cases": [
+    "NT31 absent guard",
+    "NT31 queried guard",
+    "No hardware SSE2 despite guard",
+    "No hardware FXSR despite guard",
+    "No hardware SSE despite guard",
+    "Unknown guard flags",
+    "Invalid guard kernel",
+    "Invalid guard ABI",
+    "Invalid guard processor count",
+    "NT5 native context",
+    "NT5 no native context",
+    "Win95 no context adapter",
+    "Win32s no context adapter"
+  ],
+  "load_addresses": [
+    "preferred",
+    "rebased +0x100000"
+  ],
+  "scope": "Actual filter DLL and patched instructions, modeled Windows capability calls; not native playback."
+}

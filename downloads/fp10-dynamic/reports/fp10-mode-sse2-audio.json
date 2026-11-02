@@ -1,0 +1,344 @@
+{
+  "sample_rate": 44100,
+  "start_offset": 745472,
+  "end_offset": 8638464,
+  "duration_seconds": 44.74485260770975,
+  "tone_windows": [
+    {
+      "seconds_after_start": 0.0,
+      "rms": 5068.6,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 0.5,
+      "rms": 5262.6,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 1.0,
+      "rms": 1419.6,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 2.0,
+      "rms": 4550.5,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 2.5,
+      "rms": 5262.6,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 3.0,
+      "rms": 2643.5,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 4.0,
+      "rms": 4279.3,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 4.5,
+      "rms": 5263.3,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 5.0,
+      "rms": 3064.2,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 6.0,
+      "rms": 4586.7,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 6.5,
+      "rms": 5263.4,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 7.0,
+      "rms": 2581.9,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 8.0,
+      "rms": 4316.7,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 8.5,
+      "rms": 5262.8,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 9.0,
+      "rms": 3010.5,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 10.0,
+      "rms": 4338.1,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 10.5,
+      "rms": 5262.7,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 11.0,
+      "rms": 2979.4,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 12.0,
+      "rms": 4358.2,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 12.5,
+      "rms": 5263.8,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 13.0,
+      "rms": 2951.9,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 14.0,
+      "rms": 4375.9,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 14.5,
+      "rms": 5263.4,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 15.0,
+      "rms": 2924.9,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 16.0,
+      "rms": 4395.7,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 16.5,
+      "rms": 5262.4,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 17.0,
+      "rms": 2893.3,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 18.0,
+      "rms": 4416.8,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 18.5,
+      "rms": 5263.3,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 19.0,
+      "rms": 2862.5,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 20.0,
+      "rms": 4435.0,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 20.5,
+      "rms": 5263.9,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 21.0,
+      "rms": 2835.4,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 22.0,
+      "rms": 4453.0,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 22.5,
+      "rms": 5262.8,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 23.0,
+      "rms": 2804.9,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 24.0,
+      "rms": 4473.8,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 24.5,
+      "rms": 5262.7,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 25.0,
+      "rms": 2771.5,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 26.0,
+      "rms": 4493.3,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 26.5,
+      "rms": 5263.8,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 27.0,
+      "rms": 2742.0,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 28.0,
+      "rms": 4510.4,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 28.5,
+      "rms": 5263.4,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 29.0,
+      "rms": 2712.8,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 30.0,
+      "rms": 4529.7,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 30.5,
+      "rms": 5262.5,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 31.0,
+      "rms": 2678.6,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 32.0,
+      "rms": 4257.5,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 32.5,
+      "rms": 5262.7,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 33.0,
+      "rms": 3093.5,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 34.0,
+      "rms": 4567.7,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 34.5,
+      "rms": 5263.9,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 35.0,
+      "rms": 2616.1,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 36.0,
+      "rms": 4585.3,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 36.5,
+      "rms": 5262.8,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 37.0,
+      "rms": 2582.9,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 38.0,
+      "rms": 4316.3,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 38.5,
+      "rms": 5262.5,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 39.0,
+      "rms": 3010.5,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 40.0,
+      "rms": 4337.6,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 40.5,
+      "rms": 5263.3,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 41.0,
+      "rms": 2981.2,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 42.0,
+      "rms": 4356.0,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 42.5,
+      "rms": 5263.8,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 43.0,
+      "rms": 2955.2,
+      "dominant_tested_hz": 440
+    },
+    {
+      "seconds_after_start": 44.0,
+      "rms": 4374.5,
+      "dominant_tested_hz": 440
+    }
+  ],
+  "scope": "Only the AC97 bytes captured after starting AVTEST.SWF in the SSE2-selected FP10 process."
+}

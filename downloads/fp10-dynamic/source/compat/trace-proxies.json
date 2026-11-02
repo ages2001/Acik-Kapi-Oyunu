@@ -1,0 +1,67 @@
+[
+  {
+    "original": "CRYPT32.dll",
+    "proxy": "FPC.DLL",
+    "fail_fast_exports": 7
+  },
+  {
+    "original": "urlmon.dll",
+    "proxy": "FPR.DLL",
+    "fail_fast_exports": 1
+  },
+  {
+    "original": "WINMM.dll",
+    "proxy": "FPM.DLL",
+    "fail_fast_exports": 8
+  },
+  {
+    "original": "OLEAUT32.dll",
+    "proxy": "FPA.DLL",
+    "fail_fast_exports": 1
+  },
+  {
+    "original": "DSOUND.dll",
+    "proxy": "FPD.DLL",
+    "fail_fast_exports": 1
+  },
+  {
+    "original": "KERNEL32.dll",
+    "proxy": "FPK.DLL",
+    "fail_fast_exports": 9
+  },
+  {
+    "original": "USER32.dll",
+    "proxy": "FPU.DLL",
+    "fail_fast_exports": 10
+  },
+  {
+    "original": "GDI32.dll",
+    "proxy": "FPG.DLL",
+    "fail_fast_exports": 2
+  },
+  {
+    "original": "ADVAPI32.dll",
+    "proxy": "FPRG.DLL",
+    "fail_fast_exports": 0
+  },
+  {
+    "original": "SHELL32.dll",
+    "proxy": "FPS.DLL",
+    "fail_fast_exports": 7
+  },
+  {
+    "original": "ole32.dll",
+    "proxy": "FPO.DLL",
+    "fail_fast_exports": 7
+  },
+  {
+    "original": "mscms.dll",
+    "proxy": "FPCLR.DLL",
+    "fail_fast_exports": 5
+  },
+  {
+    "original": "WS2_32.dll",
+    "proxy": "FPW.DLL",
+    "fail_fast_exports": 7
+  }
+]

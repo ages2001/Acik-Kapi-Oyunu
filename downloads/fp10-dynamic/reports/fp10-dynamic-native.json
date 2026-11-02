@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-02",
+  "completed_port": false,
+  "target": "Original Adobe Flash Player 10.3.183.90 debug projector",
+  "single_executable_sha256": "23ccdc79a85d953129ddf0bb8ab6bfabfbb6810c678e68a0902609fe2b4ca358",
+  "same_executable_for_all_modes": true,
+  "environment": "NT 3.1 UP, QEMU TCG, 512 MiB, standard VGA 640x480x4bpp, AC97",
+  "native_cases": [
+    {
+      "hardware": "Pentium II, no SSE/SSE2",
+      "expected_sse2": false,
+      "checks": 14,
+      "failures": 0,
+      "report": "fp10-mode-pentium2-final.txt"
+    },
+    {
+      "hardware": "Pentium III + SSE2, no XMM guard loaded",
+      "expected_sse2": false,
+      "checks": 14,
+      "failures": 0,
+      "report": "fp10-mode-sse2-no-guard.txt"
+    },
+    {
+      "hardware": "Pentium III + SSE2, query-aware NT31 XMM guard loaded",
+      "expected_sse2": true,
+      "checks": 14,
+      "failures": 0,
+      "report": "fp10-mode-sse2-guard.txt"
+    }
+  ],
+  "about_labels_observed": [
+    "non-SSE2",
+    "SSE2"
+  ],
+  "action_vector_changes_verified_in_both_modes": true,
+  "pcm_440_hz_fixture_tone_detected_in_both_modes": true,
+  "limitations": [
+    "Small AS2 vector and PCM fixtures only; no all-game or video decoder pass.",
+    "No Win9x, Win32s or other NT version playback pass for this build.",
+    "This is a runtime development archive, not a new universal installer.",
+    "Research XMM guard still has its documented production/SMP limitations.",
+    "Actual SM63 first checkpoint and save/reopen remain unverified."
+  ]
+}

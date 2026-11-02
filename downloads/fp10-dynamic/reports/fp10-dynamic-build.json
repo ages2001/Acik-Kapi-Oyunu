@@ -1,0 +1,111 @@
+{
+  "experimental": true,
+  "original_sha256": "c72b5cf816033bb63ab56a5508f372b11672379d5fe537d9aef7cc4cd00565ed",
+  "input_sha256": "a32c52f8f8de1d0558fbb1f4d0a3fd02948d8857b0dab1b4c9f986ddcdd85a70",
+  "entry": "0xa9f300",
+  "old_entry": "0x81dbbb",
+  "iat_rva": 6943392,
+  "patches": [
+    {
+      "site": "0x596797",
+      "original": "0fa2568d75e8",
+      "stub_va": "0xa9f315",
+      "stub_size": 37,
+      "return_va": "0x59679d"
+    },
+    {
+      "site": "0x5967d4",
+      "original": "0fa28906895e04",
+      "stub_va": "0xa9f33a",
+      "stub_size": 38,
+      "return_va": "0x5967db"
+    },
+    {
+      "site": "0x5967fc",
+      "original": "0fa28906895e04",
+      "stub_va": "0xa9f360",
+      "stub_size": 38,
+      "return_va": "0x596803"
+    },
+    {
+      "site": "0x596818",
+      "original": "0fa28906895e04",
+      "stub_va": "0xa9f386",
+      "stub_size": 38,
+      "return_va": "0x59681f"
+    },
+    {
+      "site": "0x59b7bb",
+      "original": "0fa28b75cc",
+      "stub_va": "0xa9f3ac",
+      "stub_size": 36,
+      "return_va": "0x59b7c0"
+    },
+    {
+      "site": "0x59b7cd",
+      "original": "0fa28945d8",
+      "stub_va": "0xa9f3d0",
+      "stub_size": 36,
+      "return_va": "0x59b7d2"
+    },
+    {
+      "site": "0x6a006e",
+      "original": "0fa28955fc",
+      "stub_va": "0xa9f3f4",
+      "stub_size": 36,
+      "return_va": "0x6a0073"
+    },
+    {
+      "site": "0x6b0d8d",
+      "original": "0fa28945fc",
+      "stub_va": "0xa9f418",
+      "stub_size": 36,
+      "return_va": "0x6b0d92"
+    },
+    {
+      "site": "0x7ed522",
+      "original": "0fa28954242c",
+      "stub_va": "0xa9f43c",
+      "stub_size": 37,
+      "return_va": "0x7ed528"
+    },
+    {
+      "site": "0x8206e3",
+      "original": "0fa28945f4",
+      "stub_va": "0xa9f461",
+      "stub_size": 36,
+      "return_va": "0x8206e8"
+    },
+    {
+      "site": "0x8206f6",
+      "original": "0fa28955fc",
+      "stub_va": "0xa9f485",
+      "stub_size": 36,
+      "return_va": "0x8206fb"
+    }
+  ],
+  "mode_policy": "SSE2 only with FXSR/SSE/SSE2 and native NT5+ context support or the validated NT31 XMM guard query; otherwise non-SSE2.",
+  "limitations": [
+    "CPU dispatch adaptation only; original SSE2 code paths still require playback testing.",
+    "No Win9x or Win32s runtime completion. Missing API diagnostics remain.",
+    "Post-SSE2 capabilities are always hidden; no AVX/YMM/ZMM support."
+  ],
+  "sha256": {
+    "FPD.DLL": "952d67c0b8b7e19ada2fa465d44875ecae747d1356edc8807b48dba0354b994e",
+    "FPG.DLL": "c700035aac8be177a52f2aa6c0d95b3dc8ec2ea862dec19cdcc237fc94efd45d",
+    "FPA.DLL": "6a9888a8ac138eedf32c6047d142cbae334c4613137c36f5807ccc88e2a9c37a",
+    "FPK.DLL": "2c0f00d6860711afcc9a2a6cd44fbdcdffd595d15d0a1dbb0db30c20955bb414",
+    "MODETEST.EXE": "6499206a716385b73e802d33acd1da2069965d9730f89292525077a426d7c61c",
+    "FPW.DLL": "44d124792c1f2ddd9933a1a85203a4b60a89c46905d8d0f4ed5dc4269d053577",
+    "FP10.EXE": "23ccdc79a85d953129ddf0bb8ab6bfabfbb6810c678e68a0902609fe2b4ca358",
+    "FPU.DLL": "7cf4e6d2fd557dc676be092b46095ede6e097558640d92c8d85d98dfe12ab1df",
+    "FPRG.DLL": "189d69ba4a940672068ddfb8dc7c9d8277d16c4b0198de78832f307e145b01ea",
+    "FPM.DLL": "4fd6423aa3f520ff31cad880653e76d5eba0ddf04867acb343ede3511cc264b3",
+    "FPS.DLL": "040971eb1b3a3f41d9d5f0babf273b8b4f39ba17f299ada1c4f430e31b7a687b",
+    "FPR.DLL": "cfa3c0c2a2eb672b032b48ed1d54c3ff3dd6a49f29393f384649395b29e61a1f",
+    "FPC.DLL": "3943a409f9cf6e0591decaab5a836f8105035f7250087b223db13fba8a1cf6e3",
+    "FP10CPU.DLL": "215312b6937f7f915043b25859316a814726d4b27c889ffa84adfcfd06976e74",
+    "FPO.DLL": "c2740583b6fe6bbb864f7967be98aacb52e9456c7c8777fe0a49444bdc9725c4",
+    "FPCLR.DLL": "1c93ed39b70313db4a3090ebed2af2632b07d8f89ab3c0b2ccc2af467e5db512"
+  }
+}

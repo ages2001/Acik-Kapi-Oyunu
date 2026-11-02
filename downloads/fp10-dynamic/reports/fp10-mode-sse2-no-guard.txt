@@ -1,0 +1,19 @@
+Expected argument valid 1
+Hardware SSE2 1
+Context ready 0
+Mode DLL loaded 1
+Mode exports present 1
+Safe before initialization 1
+Selected SSE2 0
+Expected mode selected 1
+Initialization stable 1
+CPUID SSE bits 1
+CPUID newer features hidden 1
+Other registers retained 1
+Leaf 7 hidden 1
+Kernel adapter loaded 1
+Feature export present 1
+SSE feature agrees 1
+SSE2 feature agrees 1
+Checks 14
+Failures 0
