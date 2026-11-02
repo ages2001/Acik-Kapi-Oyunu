@@ -1,0 +1,17 @@
+SWF class: PASS
+SWF open command: PASS
+SWF icon: PASS
+DDE initialized: PASS
+Program Manager connected: PASS
+Installed group read: PASS
+"Flash Player 10 - ages2001",Flash Player 10 - ages2001,2,1
+"Uninstall Flash Player 10","C:\F10TEST\UNINST.EXE /uninstall",C:\F10TEST,C:\F10TEST\UNINST.EXE,96,0,1,0,0
+"Flash Player 10","C:\F10TEST\FP10.EXE",C:\F10TEST,C:\F10TEST\FP10.EXE,21,0,0,0,0
+
+Exactly two shortcuts: PASS
+Player shortcut path: PASS
+Uninstall shortcut path: PASS
+Show installed shortcuts: PASS
+Native SWF association launch: PASS
+Checks 11
+Failures 0

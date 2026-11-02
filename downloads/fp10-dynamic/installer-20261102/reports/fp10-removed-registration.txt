@@ -1,0 +1,27 @@
+Original association backup read: PASS
+Previous SWF association restored byte for byte: PASS
+Product class removed: PASS
+FP10.EXE: PASS
+FPA.DLL: PASS
+FPC.DLL: PASS
+FPCLR.DLL: PASS
+FPD.DLL: PASS
+FPG.DLL: PASS
+FPK.DLL: PASS
+FPM.DLL: PASS
+FPO.DLL: PASS
+FPR.DLL: PASS
+FPRG.DLL: PASS
+FPS.DLL: PASS
+FPU.DLL: PASS
+FPW.DLL: PASS
+FP10CPU.DLL: PASS
+INSTALL.DAT: PASS
+Unrelated executable preserved: PASS
+Unrelated log preserved: PASS
+DDE initialized: PASS
+Program Manager connected: PASS
+Group list read: PASS
+Player group removed: PASS
+Checks 25
+Failures 0

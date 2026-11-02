@@ -1,0 +1,3 @@
+usage: build.py [-h] [--payload-dir PAYLOAD_DIR] [--product {10,32}]
+build.py: error: The selected FP10.EXE requires FP10CPU.DLL beside it
+Existing setup unchanged: true
