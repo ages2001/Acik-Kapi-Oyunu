@@ -1,0 +1,2 @@
+# Preserve native Windows report bytes; CRLF is intentional evidence.
+reports/*.txt -text whitespace=cr-at-eol
