@@ -1,2 +1,2 @@
-reports/*.txt -text
+reports/*.txt -text whitespace=cr-at-eol
 *.zip -text
