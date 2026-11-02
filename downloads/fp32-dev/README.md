@@ -11,8 +11,9 @@ actual OS context readiness. The newly installed four-CPU NT 3.1 build reaches
 the normal menu after Start and file selection after Story. The separate UP
 gameplay experiment has now completed the tutorial, delivered the first Shine
 in the castle Orb room, saved, closed the player and loaded File A in a new
-engine process. Castle Grounds loads with one Shine, and the native SOL bytes
-are unchanged after reopening. See [actual SM63 save evidence](followup/sm63-first-save-20261102/README.md).
+engine process. The same save also loaded after an orderly Windows restart
+and normal cold boot. Castle Grounds loads with one Shine, and the native SOL
+bytes are unchanged after both restarts. See [actual SM63 save evidence](followup/sm63-first-save-20261102/README.md).
 This session used the diagnostic CPU-feature DLL and existing XMM guard;
 it was not a full R4 installer test. Adequate speed remains unverified:
 observed UP gameplay was roughly 3-8 FPS.

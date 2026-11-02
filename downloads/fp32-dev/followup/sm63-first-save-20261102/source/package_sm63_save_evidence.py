@@ -13,7 +13,11 @@ for name in ('reports', 'screenshots', 'source'):
 from inspect_sol import inspect
 
 rows = {}
-for phase in ('before-pipe', 'first-shine', 'after-save-button', 'after-reopen'):
+phases = ['before-pipe', 'first-shine', 'after-save-button', 'after-reopen']
+reboot = (reports / 'sm63-after-reboot-native.sol').exists()
+if reboot:
+    phases.append('after-reboot')
+for phase in phases:
     name = f'sm63-{phase}-native'
     source = reports / (name + '.sol')
     result = inspect(source)
@@ -29,6 +33,8 @@ for phase in ('first-shine', 'after-save-button', 'after-reopen'):
     assert rows[phase]['FileAStar_39'] is True
     assert rows[phase]['FileExists'] is True
 assert rows['first-shine'] == rows['after-save-button'] == rows['after-reopen']
+if reboot:
+    assert rows['after-reboot'] == rows['after-reopen']
 
 logs = ('sm63-before-close-status.txt', 'sm63-close-command.txt',
         'sm63-after-close-status.txt', 'sm63-reopen-command.txt', 'sm63-reopen-status.txt')
@@ -42,6 +48,12 @@ shutil.copy2(reports / 'sm63-game-runtime-fingerprint.json', dest / 'reports')
 captures = {'sm63-orb-eddie-dialogs': '05', 'sm63-save-button-hover': '00',
             'sm63-save-confirmed-ui': '00', 'sm63-player-closed-after-save': '00',
             'sm63-reopen-story': '00', 'sm63-reopen-play-saved': '00'}
+if reboot:
+    captures.update({'sm63-cold-player-loading': '01', 'sm63-cold-story': '00',
+                     'sm63-cold-loaded': '00'})
+    for name in ('sm63-cold-boot-command.json', 'sm63-cold-guard-load.txt',
+                 'sm63-cold-player-launch.txt', 'sm63-cold-player-status.txt'):
+        shutil.copy2(reports / name, dest / 'reports' / name)
 for name, frame in captures.items():
     shutil.copy2(root / 'fp32/captures' / name / (frame + '.png'),
                  dest / 'screenshots' / (name + '.png'))
@@ -49,7 +61,7 @@ for name in ('inspect_sol.py', 'read_guest_file.py', 'game_input.py', Path(__fil
     shutil.copy2(Path(__file__).parent / name, dest / 'source' / name)
 result = {
     'date': '2026-11-02', 'actual_game_first_save_verified': True,
-    'actual_game_player_reopen_verified': True, 'actual_game_os_reboot_verified': False,
+    'actual_game_player_reopen_verified': True, 'actual_game_os_reboot_verified': reboot,
     'old_player_pid': old, 'new_player_pid': new,
     'launcher_pid_is_not_engine_pid': True,
     'observed_loaded_location': 'Castle Grounds: Outside of the Castle',

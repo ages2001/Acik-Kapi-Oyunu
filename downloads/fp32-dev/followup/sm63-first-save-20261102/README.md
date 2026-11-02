@@ -1,7 +1,7 @@
 # Actual SM63 first save and player reopen
 
 The untouched user-supplied Super Mario 63 game saved its first Shine and loaded
-that progress after closing and restarting the original Adobe FP32 engine on
+that progress after restarting both the player and Windows on
 the NT3.1 UP gameplay candidate. This is an actual game test, not the earlier
 synthetic serialization fixture.
 
@@ -16,13 +16,19 @@ The later Save prompt was also clicked and dismissed successfully.
 | After delivering the first Shine | 5730 | true | true |
 | After clicking Save | 5730 | true | true |
 | After reopening and loading File A | 5730 | true | true |
+| After restarting Windows and loading File A | 5730 | true | true |
 
-All three post-save files have SHA-256
+All four post-save files have SHA-256
 `e0196be29bc0a2f365eba522008c6290cbdd616929ca5c387d129cd590efd240`.
 The player window disappeared after closing engine PID 60. The launcher then
 started a new engine, PID 81 (the launcher's own PID was 51). The new game
 displayed one Shine in File A and loaded **Castle Grounds: Outside of the Castle**
 with one Shine. No VM snapshot was restored to establish this persistence.
+
+A later orderly Windows reboot exited the old QEMU process. A normal boot of
+the same disks, without a migration stream, reached the NT3.1 logon screen.
+After starting the existing XMM guard again, the original player loaded File A
+with one Shine in Castle Grounds. The native SOL bytes still match exactly.
 
 ![Saved slot after reopening](screenshots/sm63-reopen-story.png)
 ![Loaded game after reopening](screenshots/sm63-reopen-play-saved.png)
@@ -41,8 +47,8 @@ The SWF SHA-256 matched the original upload:
   DLL hashes are in `reports/sm63-game-runtime-fingerprint.json`.
 - The current component-development DLLs and the query-aware R4 installer were
   not substituted during this test. The R4 downloads are unchanged.
-- This verifies the first real save and **player restart**. Actual-game Windows
-  reboot persistence, other accounts, other OSes, every save slot and complete
+- This verifies the first real save, **player restart and Windows restart**.
+  Other accounts, other OSes, every save slot and complete
   gameplay remain unverified. The earlier fixture reboot pass is separate.
 - Observed gameplay is still roughly 3-8 FPS. No satisfactory performance,
   complete sound/video correctness or GPU acceleration claim is made.
@@ -50,3 +56,14 @@ The SWF SHA-256 matched the original upload:
 Back up the entire UserData tree, including its mapping files. Individual SOL
 files here are evidence, not an installable save backup or a player package.
 No OS disks, migration RAM, or complete SWF are distributed in this evidence.
+
+## Windows restart and Runouw audio follow-up
+
+![Loaded game after Windows restart](screenshots/sm63-cold-loaded.png)
+
+The [three-second native AC97 recording](audio/runouw-logo-end.wav) begins on
+the Runouw logo and ends after its fade to black. It contains nonzero stereo
+PCM (44.1 kHz). This confirms output during that transition, not complete or
+perceptually validated sound coverage. The report contains sample counts and
+levels. The first evidence ZIP remains unchanged; the R2 ZIP includes this
+Windows-restart and audio follow-up.

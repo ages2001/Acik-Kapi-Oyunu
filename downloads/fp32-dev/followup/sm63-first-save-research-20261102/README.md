@@ -31,7 +31,8 @@ before the pipe contained 5,478 bytes, FileAStar[39] false and FileExists absent
 After the first Shine, the 5,730-byte SOL contains both flags true. A new player
 process loaded File A into Castle Grounds with one Shine. The SOL remained
 byte-for-byte identical after loading. No SWF variables or save-file contents
-were modified. This is player-reopen evidence, not an OS reboot test.
+were modified. A subsequent normal Windows reboot also loaded the same save successfully;
+see the native-results follow-up for the distinct reboot evidence.
 
 The input helper now carries a direction between stopped-VM calls to avoid
 unintended repeated-press running. Its first held key remains down during

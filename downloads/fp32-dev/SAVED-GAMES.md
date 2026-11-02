@@ -58,3 +58,14 @@ sizes and CRC32 values for all 37 private storage files immediately after
 uninstall. The former SWF association was restored. After Windows restart and
 reinstallation of the same R3 package, original FP32 loaded counter 1 from
 the same SAVETEST.SWF. See reports/r3-save-uninstall.json and screenshot 678.
+
+## Actual SM63 first-save follow-up (2026-11-02)
+
+The untouched Super Mario 63 SWF completed its tutorial and delivered the first
+Shine to Eddie in the castle Orb room on the separate NT3.1 UP gameplay candidate.
+File A loaded with one Shine after both player restart and normal Windows reboot.
+The native 5730-byte SOL remained byte-for-byte identical across both restarts.
+This is a real game result, separate from the earlier serialization fixture.
+It does not validate every save slot, account, game or other OS, nor the R4
+installer/MP gameplay configuration. Exact hashes and screenshots are in
+followup/sm63-first-save-20261102 in the published development repository.

@@ -681,7 +681,7 @@
     "date": "2026-11-02",
     "actual_game_first_save_verified": true,
     "actual_game_player_reopen_verified": true,
-    "actual_game_os_reboot_verified": false,
+    "actual_game_os_reboot_verified": true,
     "old_player_pid": 60,
     "new_player_pid": 81,
     "launcher_pid_is_not_engine_pid": true,
@@ -711,6 +711,12 @@
         "sha256": "e0196be29bc0a2f365eba522008c6290cbdd616929ca5c387d129cd590efd240",
         "FileAStar_39": true,
         "FileExists": true
+      },
+      "after-reboot": {
+        "bytes": 5730,
+        "sha256": "e0196be29bc0a2f365eba522008c6290cbdd616929ca5c387d129cd590efd240",
+        "FileAStar_39": true,
+        "FileExists": true
       }
     },
     "scope": "NT3.1 UP, QEMU TCG Pentium III + SSE2, 512 MiB, standard VGA 800x600 4bpp, AC97; existing research XMM guard and diagnostic CPU-reporting gameplay candidate.",
@@ -722,6 +728,13 @@
     "other_os_pass": false,
     "performance_certified": false,
     "runtime_fingerprints": "sm63-game-runtime-fingerprint.json",
+    "reboot_scope": "Orderly ExitWindowsEx(EWX_REBOOT), old QEMU process exited, normal cold boot with the same disks and no incoming migration stream; existing XMM guard started again before FP32.",
+    "runouw_logo_end_audio": {
+      "native_output_nonzero": true,
+      "sample_rate": 44100,
+      "channels": 2,
+      "full_sound_correctness_certified": false
+    },
     "evidence": "followup/sm63-first-save-20261102/README.md"
   }
 }

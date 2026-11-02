@@ -1,0 +1,11 @@
+{
+  "start_offset": 6455296,
+  "end_offset": 6983680,
+  "sample_rate": 44100,
+  "channels": 2,
+  "samples": 264192,
+  "nonzero_samples": 263778,
+  "peak": 7282,
+  "rms": 1188.397229504458,
+  "scope": "Native QEMU AC97 output sampled from paused Runouw logo; inspect the ending screenshot to bound the scene. Nonzero PCM alone is not perceptual correctness."
+}
