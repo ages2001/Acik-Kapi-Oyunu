@@ -1,0 +1,16 @@
+GitHub download packaging adjustment (2026-11-02)
+
+The delivery snapshot contains the original verified file payloads. GitHub's
+archive export initially applied USBNT/.gitattributes CRLF conversion to 24
+text files. The delivery-only override now preserves exact source/doc bytes.
+
+Only USBNT/.gitattributes differs from the original flat ZIP. Its original bytes
+are retained in packaging-reference/USBNT.gitattributes.original. This note and
+that reference are added, and MANIFEST.json records the updated packaging files.
+Driver binaries, source code, USBNT-1.3.zip and original test evidence are
+unchanged. The original flat ZIP SHA-256 is:
+685d665b4a1bf18e809d1a5c2e09844c7bcee4fdd017b64bb0c6fbe1a2781c0b
+
+GitHub adds a containing folder and regenerates ZIP compression. Verify file
+payloads against MANIFEST.json; do not compare a GitHub-generated ZIP's archive
+hash to the original flat ZIP's hash.

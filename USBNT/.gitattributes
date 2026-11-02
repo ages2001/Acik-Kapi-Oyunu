@@ -19,3 +19,6 @@
 *.iso  binary
 *.zip  binary
 *.7z   binary
+
+# Delivery snapshot: preserve the verified bytes in GitHub-generated ZIPs.
+* -text -filter -ident -export-ignore -export-subst

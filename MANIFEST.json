@@ -1339,8 +1339,8 @@
       "sha256": "80ac19a1614627de122440cb2f388ead28789815b201665a56dec88c90a9c383"
     },
     "USBNT/.gitattributes": {
-      "bytes": 436,
-      "sha256": "08b03fcc770ae4d0316423ce4041e1f94bb4edd208f2657a9cd7c34aef2fad15"
+      "bytes": 564,
+      "sha256": "d99bf60e45e8b639c8746796a7fe4068ae50d8824fa35cf06337d2070a35ce89"
     },
     "USBNT/.gitignore": {
       "bytes": 137,
@@ -103816,6 +103816,15 @@
     "README-FIRST.txt": {
       "bytes": 4473,
       "sha256": "eda3de439b0383dacdce6a6eda0d15e961a66c1903e52ba0931b1521dd8224f1"
+    },
+    "packaging-reference/USBNT.gitattributes.original": {
+      "bytes": 436,
+      "sha256": "08b03fcc770ae4d0316423ce4041e1f94bb4edd208f2657a9cd7c34aef2fad15"
+    },
+    "PACKAGING-NOTES.txt": {
+      "bytes": 905,
+      "sha256": "b3d99be8962c0d62810fe82460180601c21e0d8af22ac5a0e451e57a02ffcee2"
     }
-  }
+  },
+  "packaging_adjustment": "See PACKAGING-NOTES.txt; one archive attribute file changed, two packaging reference/note files added. All original source/driver/evidence payloads unchanged."
 }
