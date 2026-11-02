@@ -1,0 +1,4 @@
+/* Test-only WINVBE depth configuration for the isolated NT 3.1 guest. */
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+void WINAPI entry(void){HKEY k;DWORD type,size=4,old=0,depth=32,verify=0;LONG r;HANDLE f;DWORD n;const char*key="SYSTEM\\CurrentControlSet\\Services\\winvbe\\Device0";const char*value="DefaultSettings.BitsPerPel";r=RegOpenKeyExA(HKEY_LOCAL_MACHINE,key,0,KEY_READ|KEY_WRITE,&k);if(r)ExitProcess(r);r=RegQueryValueExA(k,value,0,&type,(BYTE*)&old,&size);if(r||type!=REG_DWORD||size!=4||old!=16){RegCloseKey(k);ExitProcess(2);}f=CreateFileA("C:\\FP10\\DEPTHBAK.DAT",GENERIC_WRITE,0,0,CREATE_ALWAYS,0,0);if(f==INVALID_HANDLE_VALUE){RegCloseKey(k);ExitProcess(3);}WriteFile(f,&old,4,&n,0);FlushFileBuffers(f);CloseHandle(f);if(n!=4){RegCloseKey(k);ExitProcess(4);}r=RegSetValueExA(k,value,0,REG_DWORD,(BYTE*)&depth,4);if(!r){size=4;r=RegQueryValueExA(k,value,0,&type,(BYTE*)&verify,&size);if(!r&&verify!=32)r=5;}RegCloseKey(k);ExitProcess(r);}

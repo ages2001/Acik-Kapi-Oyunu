@@ -1,0 +1,20 @@
+Production kernel proxy loads 1
+Conversion export resolves 1
+Independent IANA vectors 1891
+Vector mismatches 0
+Daily and exact DST-boundary oracle results 1
+Input and output may alias 1
+No-DST timezone ignores seasonal biases 1
+Absolute transition date at spring boundary 1
+Absolute transition date at fall boundary 1
+Nonzero standard bias is applied 1
+NULL input rejected without output mutation 1
+NULL output rejected 1
+Invalid calendar date rejected 1
+Invalid recurring week rejected 1
+Incomplete seasonal rule rejected 1
+Invalid recurring weekday rejected 1
+FILETIME epoch underflow rejected 1
+NULL timezone uses native system configuration 1
+Checks 16
+Failures 0

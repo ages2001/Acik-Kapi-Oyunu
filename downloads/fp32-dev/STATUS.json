@@ -803,10 +803,10 @@
   "development_gap_audit": {
     "counts": {
       "FP10": 61,
-      "FP32": 100
+      "FP32": 96
     },
     "scope": "Current linked NT3.1 development DLLs, not immutable published installers.",
-    "evidence": "followup/library-exit-20261102/reports/player-gap-audit.json",
+    "evidence": "followup/alpha-time-events-20261102/reports/player-gap-audit.json",
     "excludes": [
       "Partially implemented behavior",
       "Unavailable dynamic APIs",
@@ -874,5 +874,21 @@
     "full_port_complete": false,
     "archive": "followup/FP32-LIBRARY-EXIT-20261102-COMPONENTS.zip",
     "sha256": "f509bd252ddbc8503bc92039bb58195fe24ff938139652fcaedde99321a71f6a"
+  },
+  "alpha_time_events_followup": {
+    "checks_per_os": 168,
+    "timezone_vectors_per_os": 1891,
+    "native_failures": 0,
+    "unavailable_native_ddb_alpha_cases_per_os": 2,
+    "os": [
+      "NT3.1 UP classic VGA",
+      "NT3.51 UP classic VGA"
+    ],
+    "full_port_complete": false,
+    "gpu_acceleration": false,
+    "full_gameplay_retested": false,
+    "archive": "followup/FP32-ALPHA-TIME-EVENTS-20261102-COMPONENTS.zip",
+    "sha256": "74004be1bd01b410ff8d53da806a4dfd28f72dcba41c1ce5d3ac298167c07299",
+    "evidence": "followup/alpha-time-events-20261102/README.md"
   }
 }

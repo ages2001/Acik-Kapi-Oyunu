@@ -1,0 +1,29 @@
+PASS allocate two top-down 32-bit sections
+PASS DIBSECTION metadata
+PASS select software sections into DCs
+PASS copy DIB pixels through native GDI
+PASS pixel values and top-down orientation preserved
+PASS native GDI pixel operation
+PASS GDI writes visible in CPU memory
+PASS flush software pixels
+PASS stretch bitmap through GDI
+PASS stretched pixels visible in CPU memory
+PASS upload asymmetric top-down RGB bitmap
+PASS native presentation preserves top and bottom rows
+PASS repeated unchanged bitmap stays correct
+PASS direct pixel edit after cached upload is presented
+PASS native line drawing into emulated DIB
+PASS download preserves native drawing and row direction
+PASS native transfer does not mutate DIB orientation metadata
+PASS native drawing survives the next cached presentation
+PASS copy through disjoint clipping rectangles
+PASS pixels outside a complex clip remain untouched
+PASS copy with viewport offset and intersected meta clipping
+PASS cached clipping matches native PtVisible with meta region and viewport
+PASS copy with empty clipping region succeeds
+PASS empty clipping leaves every pixel untouched
+PASS release DIB resources
+PASS DIB created using default monochrome memory DC
+PASS indexed DIB copied to native color bitmap
+PASS native bitmap receives red instead of monochrome black
+Checks: 28; failures: 0

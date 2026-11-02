@@ -1,0 +1,3 @@
+LIBRARY FPA.DLL
+EXPORTS
+SysFreeString=_fp_SysFreeString@4 @6 NONAME

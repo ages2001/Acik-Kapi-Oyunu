@@ -1,0 +1,10 @@
+Production kernel proxy loads 1
+Conversion export resolves 1
+Independent IANA vectors 1891
+Vector mismatches 0
+Daily and exact DST-boundary oracle results 1
+Input and output may alias 1
+No-DST timezone ignores seasonal biases 1
+Absolute transition date at spring boundary 0
+Absolute transition date at fall boundary 0
+Nonzero standard bias is applied 1

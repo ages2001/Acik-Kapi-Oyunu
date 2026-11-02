@@ -47,3 +47,7 @@ not a new R4 installer, MP gameplay or other-OS pass.
 ## 2026-11-02: unload and thread exit
 
 [Source and native evidence](library-exit-20261102/README.md): 19 checks pass per OS on NT3.1/NT3.51. Development counts: FP10 61, FP32 100.
+
+## 2026-11-02: software alpha, time conversion and Winsock events
+
+[Source, components and native evidence](alpha-time-events-20261102/README.md): 168 checks and 1,891 timezone vectors pass per OS on NT3.1/NT3.51. Two native-DDB alpha cases are unavailable under VGA and excluded. Counts: FP10 61, FP32 96. Full gameplay and installer integration remain pending.

@@ -1,0 +1,21 @@
+Production proxy and observer load 1
+Exit API and observer resolve 1
+Separate unload target loads 1
+Worker starts 1
+Worker exits 1
+Requested thread exit code preserved 1
+Native thread detach notifications delivered 1
+Separate target unloaded 1
+Proxy retained after other-module unload 1
+Worker starts 1
+Worker exits 1
+Requested thread exit code preserved 1
+Native thread detach notifications delivered 1
+Failed unload still exits thread without unloading proxy 1
+Worker starts 1
+Worker exits 1
+Requested thread exit code preserved 1
+Native thread detach notifications delivered 1
+Proxy itself unloaded before thread exit 1
+Checks 19
+Failures 0

@@ -1,0 +1,90 @@
+Production GDI proxy loads 1
+All tested exports resolve 1
+Top/bottom-up source and 24/32-bit destination created 1
+Premultiplied pixels and nearest-neighbor scaling 1
+Complex destination clip preserves holes 1
+Per-pixel and constant alpha combine 1
+Constant-only alpha ignores source alpha byte 1
+Zero constant alpha leaves destination intact 1
+Source and destination viewport origins honored 1
+Off-surface destination clips without shifting sample 1
+Top/bottom-up source and 24/32-bit destination created 1
+Premultiplied pixels and nearest-neighbor scaling 1
+Complex destination clip preserves holes 1
+Per-pixel and constant alpha combine 1
+Constant-only alpha ignores source alpha byte 1
+Zero constant alpha leaves destination intact 1
+Source and destination viewport origins honored 1
+Off-surface destination clips without shifting sample 1
+Top/bottom-up source and 24/32-bit destination created 1
+Premultiplied pixels and nearest-neighbor scaling 1
+Complex destination clip preserves holes 1
+Per-pixel and constant alpha combine 1
+Constant-only alpha ignores source alpha byte 1
+Zero constant alpha leaves destination intact 1
+Source and destination viewport origins honored 1
+Off-surface destination clips without shifting sample 1
+Top/bottom-up source and 24/32-bit destination created 1
+Premultiplied pixels and nearest-neighbor scaling 1
+Complex destination clip preserves holes 1
+Per-pixel and constant alpha combine 1
+Constant-only alpha ignores source alpha byte 1
+Zero constant alpha leaves destination intact 1
+Source and destination viewport origins honored 1
+Off-surface destination clips without shifting sample 1
+Top/bottom-up source and 24/32-bit destination created 1
+Premultiplied pixels and nearest-neighbor scaling 1
+Complex destination clip preserves holes 1
+Per-pixel and constant alpha combine 1
+Constant-only alpha ignores source alpha byte 1
+Zero constant alpha leaves destination intact 1
+Source and destination viewport origins honored 1
+Off-surface destination clips without shifting sample 1
+Top/bottom-up source and 24/32-bit destination created 1
+Premultiplied pixels and nearest-neighbor scaling 1
+Complex destination clip preserves holes 1
+Per-pixel and constant alpha combine 1
+Constant-only alpha ignores source alpha byte 1
+Zero constant alpha leaves destination intact 1
+Source and destination viewport origins honored 1
+Off-surface destination clips without shifting sample 1
+Top/bottom-up source and 24/32-bit destination created 1
+Premultiplied pixels and nearest-neighbor scaling 1
+Complex destination clip preserves holes 1
+Per-pixel and constant alpha combine 1
+Constant-only alpha ignores source alpha byte 1
+Zero constant alpha leaves destination intact 1
+Source and destination viewport origins honored 1
+Off-surface destination clips without shifting sample 1
+Top/bottom-up source and 24/32-bit destination created 1
+Premultiplied pixels and nearest-neighbor scaling 1
+Complex destination clip preserves holes 1
+Per-pixel and constant alpha combine 1
+Constant-only alpha ignores source alpha byte 1
+Zero constant alpha leaves destination intact 1
+Source and destination viewport origins honored 1
+Off-surface destination clips without shifting sample 1
+Validation surfaces created 1
+Destination alpha uses source-over composition 1
+Meta and application clips match native visibility with viewport offset 1
+Axis-aligned destination mapping scales to device pixels 1
+Empty clip succeeds without changing pixels 0
+Unsupported blend operation rejected 1
+Reserved blend flags rejected 1
+Invalid alpha format rejected 1
+Negative destination extent rejected 1
+Zero source extent rejected 1
+Out-of-bitmap source rejected 1
+Overlapping same-surface operation rejected 1
+Coordinate overflow rejected 1
+Invalid destination DC rejected 1
+Native 32-bit DDB blend cases unavailable on this VGA driver 2
+CPU alpha presents to native VGA bitmap 1
+Native VGA bitmap supplies constant-alpha source 1
+Native presentation honors clip 1
+Native presentation preserves pixels outside clip 1
+Large render surfaces created 1
+Eight full-frame software blends complete 1
+Eight 640x480 blends milliseconds 495
+Checks 86
+Failures 1

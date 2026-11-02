@@ -1,0 +1,3 @@
+CreateBitmap 00010012 GetObject 24 bpp 32 planes 1
+GetBitmapBits 16 pixel 80800000
+GetDIBits 0 pixel 000d0004 error 0

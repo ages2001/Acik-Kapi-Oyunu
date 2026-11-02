@@ -1,0 +1,21 @@
+Native Winsock initializes 1
+Production proxy loads 1
+Event exports resolve 1
+Two independent events created 1
+Initial state is nonsignaled 1
+Native event signaling succeeds 1
+Signaled event is waitable 1
+Manual-reset signal persists after wait 1
+Other event remains nonsignaled 1
+Wait-all requires both signals 1
+Wait-all succeeds when both signal 1
+Explicit reset clears signal 1
+Native handle duplication succeeds 1
+Winsock close releases original handle 1
+Duplicate retains shared event state 1
+Winsock close accepts duplicated event 1
+NULL event is rejected 1
+Failure uses native Winsock last-error slot 1
+Remaining event closes 1
+Checks 19
+Failures 0

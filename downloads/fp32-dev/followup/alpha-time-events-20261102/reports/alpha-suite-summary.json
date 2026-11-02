@@ -1,0 +1,57 @@
+{
+  "alpha-nt31": {
+    "checks": 86,
+    "failures": 0,
+    "sha256": "c567ec25c9ff0bc495448fd9a6021530641b959375de4446c91d57c77eccb81b",
+    "unavailable_native_ddb_cases": 2,
+    "eight_640x480_blends_milliseconds": 645
+  },
+  "gdi-after-alpha-nt31": {
+    "checks": 28,
+    "failures": 0,
+    "sha256": "7feb81f319ff82adc795e5d1ccc5698dbd3730e5950b3ff62f60360e1bc98308"
+  },
+  "timezone-nt31": {
+    "checks": 16,
+    "failures": 0,
+    "sha256": "d411ed32d73a5ffe8b5df3609c29a4d244df221b48513f210ee6d23be3c6a794"
+  },
+  "winsock-events-nt31": {
+    "checks": 19,
+    "failures": 0,
+    "sha256": "2947e25bd67c7993cc18b5c55f6070e62bd8f9b1db3d68bf4cac4126e70201cb"
+  },
+  "library-exit-after-alpha-nt31": {
+    "checks": 19,
+    "failures": 0,
+    "sha256": "d2b619e1f5f4ffdecbf636a54d029a95c63fb61bca30c3e7b85b7f598aee6ebd"
+  },
+  "alpha-nt351": {
+    "checks": 86,
+    "failures": 0,
+    "sha256": "8735ce6737c9dc14f5bf95a6260576096e91557b28385eac48cb7fdbef9390db",
+    "unavailable_native_ddb_cases": 2,
+    "eight_640x480_blends_milliseconds": 468
+  },
+  "gdi-after-alpha-nt351": {
+    "checks": 28,
+    "failures": 0,
+    "sha256": "7feb81f319ff82adc795e5d1ccc5698dbd3730e5950b3ff62f60360e1bc98308"
+  },
+  "timezone-nt351": {
+    "checks": 16,
+    "failures": 0,
+    "sha256": "d411ed32d73a5ffe8b5df3609c29a4d244df221b48513f210ee6d23be3c6a794"
+  },
+  "winsock-events-nt351": {
+    "checks": 19,
+    "failures": 0,
+    "sha256": "2947e25bd67c7993cc18b5c55f6070e62bd8f9b1db3d68bf4cac4126e70201cb"
+  },
+  "library-exit-after-alpha-nt351": {
+    "checks": 19,
+    "failures": 0,
+    "sha256": "d2b619e1f5f4ffdecbf636a54d029a95c63fb61bca30c3e7b85b7f598aee6ebd"
+  },
+  "scope": "Component probes on NT3.1 UP and NT3.51 UP, classic VGA. Not a full player/installer or all-OS validation."
+}

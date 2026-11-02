@@ -1,0 +1,12 @@
+{
+  "InitializeSListHead": 4,
+  "InterlockedPushEntrySList": 8,
+  "InterlockedPopEntrySList": 4,
+  "EncodePointer": 4,
+  "DecodePointer": 4,
+  "CreateThread": 24,
+  "GetSystemWow64DirectoryW": 8,
+  "TryEnterCriticalSection": 4,
+  "HeapLock": 4,
+  "HeapUnlock": 4
+}
