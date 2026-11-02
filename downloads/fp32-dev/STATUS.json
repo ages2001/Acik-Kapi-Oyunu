@@ -802,11 +802,11 @@
   "required_imports_remaining_unimplemented_scope": "Immutable published FP32 R4 installer; use development_gap_audit for current linked development builds.",
   "development_gap_audit": {
     "counts": {
-      "FP10": 61,
-      "FP32": 96
+      "FP10": 53,
+      "FP32": 88
     },
     "scope": "Current linked NT3.1 development DLLs, not immutable published installers.",
-    "evidence": "followup/alpha-time-events-20261102/reports/player-gap-audit.json",
+    "evidence": "followup/mixer-20261102/reports/player-gap-audit.json",
     "excludes": [
       "Partially implemented behavior",
       "Unavailable dynamic APIs",
@@ -890,5 +890,27 @@
     "archive": "followup/FP32-ALPHA-TIME-EVENTS-20261102-COMPONENTS.zip",
     "sha256": "74004be1bd01b410ff8d53da806a4dfd28f72dcba41c1ce5d3ac298167c07299",
     "evidence": "followup/alpha-time-events-20261102/README.md"
+  },
+  "mixer_followup": {
+    "archive": "followup/FP10-FP32-MIXER-20261102-COMPONENTS.zip",
+    "sha256": "d9da3da7e840a6ee11e974977aefcbdbbc01e92ac717e82d52a246ef15592b86",
+    "bytes": 707505,
+    "completed_port": false,
+    "evidence": "followup/mixer-20261102/README.md",
+    "checks": {
+      "FP10_mixer_per_os": 40,
+      "FP32_mixer_per_os": 40,
+      "timer_nt31": 18,
+      "timer_nt351": 17,
+      "experimental_dsound_per_os": 16
+    },
+    "native_failures": 0,
+    "os": [
+      "NT3.1 UP classic VGA / AUDIONT 1.1 AC97",
+      "NT3.51 UP classic VGA / AUDIONT 1.1 AC97"
+    ],
+    "directsound_enabled": false,
+    "full_gameplay_retested": false,
+    "published_installers_changed": false
   }
 }

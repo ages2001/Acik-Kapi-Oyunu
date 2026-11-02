@@ -1,0 +1,48 @@
+Production mixer proxy loads 1
+mixerGetNumDevs resolves 1
+mixerGetDevCapsA resolves 1
+mixerGetID resolves 1
+mixerOpen resolves 1
+mixerClose resolves 1
+mixerGetLineInfoA resolves 1
+mixerGetLineControlsA resolves 1
+mixerGetControlDetailsA resolves 1
+mixerSetControlDetails resolves 1
+Concurrent first-use start event created 1
+Four concurrent first-use workers created 1
+128 concurrent device queries and mixer lifetimes complete 1
+Mixer devices 1
+Real mixer device enumerated 1
+Caps result 0
+ANSI device capabilities and name returned 1
+Numeric mixer identity resolved 1
+Open result 0
+Mixer opens with window callback 1
+Open handle identity resolved 1
+Line result 0
+Destination line topology returned 1
+Destination controls 2
+Destination channels 2
+All destination controls returned 1
+Volume control found by type 1
+Volume identity matches enumerated controls 1
+Control lookup by ID matches 1
+Current volume values read 1
+Real mixer volume updated 1
+Changed mixer values read back 1
+Native driver control-change callback delivered 1
+Original volume restored 1
+Restored volume verified 1
+Native wave handle opens outside mixer provider 1
+Native wave handle maps to mixer without crossing provider heaps 1
+Line query accepts native wave handle 1
+Control query accepts native wave handle 1
+Value query accepts native wave handle 1
+Value assignment accepts native wave handle 1
+Mixer opens from native wave handle 1
+Wave-selected mixer closes 1
+Native wave handle closes 1
+Mixer handle closes 1
+Closed handle rejected 1
+Checks 40
+Failures 0

@@ -1,0 +1,21 @@
+Native multimedia import bridge loads 1
+Timer imports resolve 1
+Resolution bounds are consistent 1
+Minimum resolution 100ns 156250
+Maximum resolution 100ns 10000
+Current resolution 100ns 156250
+Resolution request status 0
+Actual requested resolution 9766
+Resolution request returns actual supported value 0
+Resolution request released 1
+Original three-argument timer creation adapts 1
+One-shot timer arms with correct native ABI 1
+Native timer really expires 1
+Armed timer cancels 1
+Canceled timer stays nonsignaled 1
+Original timer APC arms 1
+APC receives context on the requesting thread 1
+Later native periodic timer arms 0
+Later native periodic APC repeats 0
+Checks 14
+Failures 3

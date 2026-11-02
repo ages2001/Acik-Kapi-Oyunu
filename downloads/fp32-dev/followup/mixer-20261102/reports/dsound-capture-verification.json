@@ -1,0 +1,50 @@
+{
+  "nt31": {
+    "capture": "fp32/guard-query-ac97.wav",
+    "run_start_byte": 4972544,
+    "selected_byte": 5307704,
+    "sample_frames": 22050,
+    "sample_rate": 44100,
+    "channels": 2,
+    "rms": [
+      2183.0998138399923,
+      1047.4527924355123
+    ],
+    "spectral_magnitude": [
+      {
+        "441": 1397.4688138256367,
+        "630": 2.841277225570914
+      },
+      {
+        "441": 2.6232336188837087,
+        "630": 667.922867555444
+      }
+    ],
+    "wav_sha256": "7e395b07bbb535f763463c83294a54ef5d695de9adf5bc52ebfea088020ae04b",
+    "scope": "Original NT4 DirectSound foreground PCM probe via AUDIONT 1.1 AC97. Not Flash game audio, capture input, or GLOBALFOCUS support."
+  },
+  "nt351": {
+    "capture": "nt351/upload-ac97.wav",
+    "run_start_byte": 2867200,
+    "selected_byte": 3008320,
+    "sample_frames": 22050,
+    "sample_rate": 44100,
+    "channels": 2,
+    "rms": [
+      2183.0733718425663,
+      1047.4421932972339
+    ],
+    "spectral_magnitude": [
+      {
+        "441": 1397.4637682979644,
+        "630": 3.4175501277634113
+      },
+      {
+        "441": 2.0676359642462216,
+        "630": 667.9141404715518
+      }
+    ],
+    "wav_sha256": "bfaa5581f4dd540e425ba91c0317ee9034fb8cb1b522c3484a9581e995f8eaf3",
+    "scope": "Original NT4 DirectSound foreground PCM probe via AUDIONT 1.1 AC97. Not Flash game audio, capture input, or GLOBALFOCUS support."
+  }
+}

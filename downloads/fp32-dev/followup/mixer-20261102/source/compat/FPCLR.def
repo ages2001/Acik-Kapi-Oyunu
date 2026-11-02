@@ -1,0 +1,7 @@
+LIBRARY FPCLR.DLL
+EXPORTS
+CreateColorTransformW=fn0
+CloseColorProfile=fn1
+TranslateBitmapBits=fn2
+DeleteColorTransform=fn3
+OpenColorProfileW=fn4

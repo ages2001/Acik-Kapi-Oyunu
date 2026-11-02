@@ -1,0 +1,3 @@
+LIBRARY FPR.DLL
+EXPORTS
+CopyStgMedium=fn0

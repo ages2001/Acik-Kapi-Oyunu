@@ -1,0 +1,16 @@
+{
+  "FP10": {
+    "payload_count": 18,
+    "crc_checks": 18,
+    "mixer_dependencies_present": true,
+    "native_installer_retested": false,
+    "sha256": "9b627088808cc55a70a7007f732bf33a2506cf5cb0e13e41981496eb07ee8677"
+  },
+  "FP32": {
+    "payload_count": 26,
+    "crc_checks": 26,
+    "mixer_dependencies_present": true,
+    "native_installer_retested": false,
+    "sha256": "d683ecd84b69b591698e9af0f13ab2a604b387952e12d21e2353d8ae25422557"
+  }
+}

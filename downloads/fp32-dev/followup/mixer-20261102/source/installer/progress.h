@@ -1,0 +1,16 @@
+/* Native controls and GDI only: no common-controls or DirectX dependency. */
+static HWND progress_window,progress_status;
+static DWORD progress_value,progress_written,progress_total;
+static HBRUSH progress_background;
+static DWORD progress_scale(DWORD done,DWORD total,DWORD span){DWORD q,r;if(!total)return span;__asm__ volatile("mull %3; divl %4":"=&a"(q),"=&d"(r):"0"(done),"r"(span),"r"(total):"cc");return q;}
+static LRESULT CALLBACK progress_proc(HWND w,UINT m,WPARAM a,LPARAM b){
+ if(m==WM_CTLCOLORSTATIC){SetBkColor((HDC)a,GetSysColor(COLOR_BTNFACE));SetTextColor((HDC)a,GetSysColor(COLOR_BTNTEXT));return (LRESULT)progress_background;}
+ if(m==WM_CLOSE)return 0;
+ if(m==WM_ERASEBKGND)return 1;
+ if(m==WM_PAINT){PAINTSTRUCT ps;HDC dc=BeginPaint(w,&ps);RECT all,bar,fill;HBRUSH blue;char label[8];DWORD v=progress_value,n=0;GetClientRect(w,&all);FillRect(dc,&all,progress_background);bar.left=20;bar.top=65;bar.right=420;bar.bottom=91;FillRect(dc,&bar,(HBRUSH)GetStockObject(WHITE_BRUSH));FrameRect(dc,&bar,(HBRUSH)GetStockObject(BLACK_BRUSH));fill=bar;fill.left++;fill.top++;fill.bottom--;fill.right=fill.left+progress_scale(progress_value,100,398);blue=CreateSolidBrush(RGB(0,0,128));FillRect(dc,&fill,blue);DeleteObject(blue);if(v==100){label[n++]='1';label[n++]='0';label[n++]='0';}else{if(v>=10)label[n++]='0'+v/10;label[n++]='0'+v%10;}label[n++]='%';label[n]=0;SetBkMode(dc,TRANSPARENT);SetTextColor(dc,RGB(0,0,0));bar.top=100;bar.bottom=121;DrawTextA(dc,label,-1,&bar,DT_CENTER|DT_SINGLELINE);EndPaint(w,&ps);return 0;}
+ return DefWindowProcA(w,m,a,b);
+}
+static int progress_begin(int removing){WNDCLASSA c;DWORD i;HINSTANCE inst=GetModuleHandleA(0);for(i=0;i<sizeof(c);i++)((BYTE*)&c)[i]=0;progress_background=CreateSolidBrush(GetSysColor(COLOR_BTNFACE));c.lpfnWndProc=progress_proc;c.hInstance=inst;c.hCursor=LoadCursorA(0,IDC_ARROW);c.hIcon=LoadIconA(inst,MAKEINTRESOURCEA(removing?102:101));c.lpszClassName="FP10SetupProgress";if(!RegisterClassA(&c))return 0;progress_window=CreateWindowExA(WS_EX_DLGMODALFRAME,c.lpszClassName,removing?"Removing " PRODUCT "":"Installing " PRODUCT "",WS_CAPTION|WS_SYSMENU|WS_VISIBLE|WS_CLIPCHILDREN,(GetSystemMetrics(SM_CXSCREEN)-448)/2,(GetSystemMetrics(SM_CYSCREEN)-164)/2,448,164,0,0,inst,0);if(!progress_window)return 0;EnableMenuItem(GetSystemMenu(progress_window,FALSE),SC_CLOSE,MF_BYCOMMAND|MF_GRAYED);progress_status=CreateWindowA("STATIC","Preparing...",WS_CHILD|WS_VISIBLE,20,18,400,36,progress_window,0,inst,0);ShowWindow(progress_window,SW_SHOW);UpdateWindow(progress_window);return progress_status!=0;}
+static void progress_update(DWORD value,const char*status){MSG m;RECT r;if(!progress_window)return;if(value>100)value=100;progress_value=value;if(status)SetWindowTextA(progress_status,status);r.left=20;r.top=65;r.right=421;r.bottom=123;InvalidateRect(progress_window,&r,FALSE);UpdateWindow(progress_window);while(PeekMessageA(&m,0,0,0,PM_REMOVE)){TranslateMessage(&m);DispatchMessageA(&m);}}
+static void progress_file(DWORD value,const char*phase,const char*name){char s[128];copy(s,phase);cat(s,name);progress_update(value,s);}
+static void progress_end(void){if(progress_window)DestroyWindow(progress_window);progress_window=0;if(progress_background)DeleteObject(progress_background);progress_background=0;}

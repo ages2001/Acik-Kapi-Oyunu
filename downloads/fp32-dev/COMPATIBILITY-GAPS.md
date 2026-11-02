@@ -14,16 +14,15 @@
 | urlmon.dll | 1 | 1 |
 | user32.dll | 10 | 13 |
 | wininet.dll | 0 | 7 |
-| winmm.dll | 8 | 8 |
 | ws2_32.dll | 7 | 9 |
-| **Total** | **61** | **96** |
+| **Total** | **53** | **88** |
 
-[Exact remaining imports, partial-support notes and binary hashes](followup/alpha-time-events-20261102/reports/player-gap-audit.json). [Latest native tests and limitations](followup/alpha-time-events-20261102/README.md).
+[Exact remaining imports, partial-support notes and binary hashes](followup/mixer-20261102/reports/player-gap-audit.json). [Latest native tests and limitations](followup/mixer-20261102/README.md).
 
 ## Gameplay impact and remaining priorities
 
 - Window/input/menu operations, timer/fiber scheduling and font enumeration can affect controls, timing, rendering and application UI.
-- DirectSound capture/playback and mixer operations can affect sound paths that differ from the tested AC97/SM63 path.
+- DirectSound capture/playback can affect sound paths that differ from the tested AC97/SM63 path. Eight mixer imports are now implemented and pass native component checks in both players; capture/MIDI devices and other sound drivers remain untested. The original DirectSound PCM experiment is still disabled in the player because modern buffer options and capture remain unresolved.
 - Winsock/WinInet/URL and certificate functions can affect external loading, online features and signed content. The optional WinInet experiment is disabled; HTTP tests have not passed.
 - Clipboard/OLE, shell integration and color-management functions affect content or features that request them. They cannot all be assumed unused.
 

@@ -1,0 +1,101 @@
+{
+  "source_sha256": "280572dff0969ee37c162b47e778c36176aba45f648108b5e2cbfcc5aacc325f",
+  "provider_function_bytes_unchanged": true,
+  "executable_section_changes_limited_to_import_data": [
+    {
+      "rva": 69608,
+      "before": "ntdll.dll",
+      "after": "FPNTM.DLL",
+      "length": 10
+    },
+    {
+      "rva": 71284,
+      "before": "KERNEL32.dll",
+      "after": "FPMK.DLL",
+      "length": 13
+    },
+    {
+      "rva": 4512,
+      "length": 148,
+      "kind": "restore unbound IAT from original name thunks"
+    },
+    {
+      "rva": 68374,
+      "length": 8,
+      "kind": "clear binding timestamp and forwarder chain"
+    },
+    {
+      "rva": 4400,
+      "length": 112,
+      "kind": "restore unbound IAT from original name thunks"
+    },
+    {
+      "rva": 68394,
+      "length": 8,
+      "kind": "clear binding timestamp and forwarder chain"
+    },
+    {
+      "rva": 4104,
+      "length": 12,
+      "kind": "restore unbound IAT from original name thunks"
+    },
+    {
+      "rva": 68414,
+      "length": 8,
+      "kind": "clear binding timestamp and forwarder chain"
+    },
+    {
+      "rva": 4096,
+      "length": 8,
+      "kind": "restore unbound IAT from original name thunks"
+    },
+    {
+      "rva": 68434,
+      "length": 8,
+      "kind": "clear binding timestamp and forwarder chain"
+    },
+    {
+      "rva": 4116,
+      "length": 284,
+      "kind": "restore unbound IAT from original name thunks"
+    },
+    {
+      "rva": 68454,
+      "length": 8,
+      "kind": "clear binding timestamp and forwarder chain"
+    }
+  ],
+  "bridge_implemented": {
+    "DisableThreadLibraryCalls": 4,
+    "NtCreateTimer": 12,
+    "NtSetTimer": 24,
+    "NtSetTimerResolution": 12,
+    "NtQueryTimerResolution": 12
+  },
+  "original_crtdll_forwarders": [
+    "wcsncpy",
+    "memmove",
+    "wcsrchr",
+    "wcschr",
+    "towlower",
+    "isdigit",
+    "wcscpy",
+    "wcscat",
+    "wcslen",
+    "strncpy",
+    "strspn",
+    "strncmp",
+    "strstr",
+    "atoi"
+  ],
+  "limitations": [
+    "NT3.1 reports only its actual fixed kernel clock resolution.",
+    "Periodic native timer requests remain unsupported on NT3.1.",
+    "This experiment is not yet enabled in the default build."
+  ],
+  "sha256": {
+    "FPNTM.DLL": "84dad3aa5f5081916257946ea9e506886d00bd86d0d3005ff5b7a4cb98a24ef0",
+    "FPMK.DLL": "939063030f736c02b296b9a336d871e139858d2cf4add826cbbfda21124d6b89",
+    "FPMM.DLL": "d76fd887832875e528d2e2625b2d11d3a954a2881db3b9bd9ee707b723fdb642"
+  }
+}

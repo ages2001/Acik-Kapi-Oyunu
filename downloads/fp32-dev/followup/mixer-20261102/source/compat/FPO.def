@@ -1,0 +1,16 @@
+LIBRARY FPO.DLL
+EXPORTS
+OleFlushClipboard=fn0
+OleIsCurrentClipboard=fn1
+OleSetClipboard=fn2
+OleUninitialize=_fp_OleUninitialize@0
+OleInitialize=_fp_OleInitialize@4
+CoInitialize=_fp_CoInitialize@4
+CoUninitialize=_fp_CoUninitialize@0
+ReleaseStgMedium=fn7
+CreateBindCtx=fn8
+CoTaskMemFree=_fp_CoTaskMemFree@4
+CoTaskMemAlloc=_fp_CoTaskMemAlloc@4
+OleGetClipboard=fn11
+CoCreateInstance=_fp_CoCreateInstance@20
+PropVariantClear=fn13

@@ -1,0 +1,4 @@
+Original adapted multimedia provider loads 0
+Load error 123
+Checks 1
+Failures 1

@@ -1,0 +1,36 @@
+Original adapted multimedia provider loads 1
+mixerGetNumDevs resolves 1
+mixerGetDevCapsA resolves 1
+mixerGetID resolves 1
+mixerOpen resolves 1
+mixerClose resolves 1
+mixerGetLineInfoA resolves 1
+mixerGetLineControlsA resolves 1
+mixerGetControlDetailsA resolves 1
+mixerSetControlDetails resolves 1
+Mixer devices 1
+Real mixer device enumerated 1
+Caps result 0
+ANSI device capabilities and name returned 1
+Numeric mixer identity resolved 1
+Open result 0
+Mixer opens with window callback 1
+Open handle identity resolved 1
+Line result 0
+Destination line topology returned 1
+Destination controls 2
+Destination channels 2
+All destination controls returned 1
+Volume control found by type 1
+Volume identity matches enumerated controls 1
+Control lookup by ID matches 1
+Current volume values read 1
+Real mixer volume updated 1
+Changed mixer values read back 1
+Native driver control-change callback delivered 1
+Original volume restored 1
+Restored volume verified 1
+Mixer handle closes 1
+Closed handle rejected 1
+Checks 28
+Failures 0

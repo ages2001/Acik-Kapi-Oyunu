@@ -1,0 +1,9 @@
+LIBRARY FPC.DLL
+EXPORTS
+CryptGetMessageCertificates=fn0
+CertCreateCertificateContext=fn1
+CertFindCertificateInStore=fn2
+CertVerifySubjectCertificateContext=fn3
+CertFreeCertificateContext=fn4
+CertCloseStore=fn5
+CryptVerifyMessageSignature=fn6

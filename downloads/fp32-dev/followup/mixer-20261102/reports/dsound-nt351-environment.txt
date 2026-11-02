@@ -1,0 +1,8 @@
+Native wave output devices 1 (0x00000001)
+Native wave caps result 0 (0x00000000)
+Native wave supported formats 4095 (0x00000fff)
+Native wave support flags 44 (0x0000002c)
+Original adapted DirectSound loads 0 (0x00000000)
+Load error 123 (0x0000007b)
+Checks 1 (0x00000001)
+Failures 1 (0x00000001)

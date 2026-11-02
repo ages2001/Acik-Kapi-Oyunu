@@ -78,3 +78,7 @@ Installer SHA-256: `107efab3e1e8d296b6f1a722b9188a5250b2e42540e6ad4276e963be603c
 and [R3 follow-up](R3-FOLLOWUP.md) remain available unchanged. Separate packages:
 [WINSIMD R2 research checkpoint](../winsimd-1.2-dev/README.md) and
 [NT 3.1 MP patch r2 with source](../ntcpupae-2026-10-30/NTCPUPAE-NT31-FIX-r2.zip?raw=true).
+
+## Mixer component follow-up (2026-11-02)
+
+[Download the FP10/FP32 mixer component and source ZIP](followup/FP10-FP32-MIXER-20261102-COMPONENTS.zip?raw=true). Eight mixer imports per player now pass 40 native checks each on NT3.1 and NT3.51. The current development counts are **FP10 53 / FP32 88**; neither port is complete. The original DirectSound PCM experiment is included separately and stays disabled. [Evidence and limitations](followup/mixer-20261102/README.md). Published full installers remain unchanged.

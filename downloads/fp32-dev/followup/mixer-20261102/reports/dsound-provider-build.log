@@ -1,0 +1,67 @@
+{
+  "source_sha256": "c8d8c5f21e37451416fe05f8088e46856047697ed9b1342ac1d106e37c1bd805",
+  "provider_executable_sections_unchanged": true,
+  "changes": "KERNEL32 import redirection, minimum loader versions and legacy section padding.",
+  "bridge_implemented": {
+    "FreeEnvironmentStringsA": 4,
+    "FreeEnvironmentStringsW": 4,
+    "GetEnvironmentStringsW": 0
+  },
+  "stale_import_bindings_cleared": [
+    {
+      "rva": 73744,
+      "length": 280,
+      "kind": "restore unbound IAT from original name thunks"
+    },
+    {
+      "rva": 76716,
+      "length": 8,
+      "kind": "clear binding timestamp and forwarder chain"
+    },
+    {
+      "rva": 74076,
+      "length": 72,
+      "kind": "restore unbound IAT from original name thunks"
+    },
+    {
+      "rva": 76736,
+      "length": 8,
+      "kind": "clear binding timestamp and forwarder chain"
+    },
+    {
+      "rva": 74024,
+      "length": 36,
+      "kind": "restore unbound IAT from original name thunks"
+    },
+    {
+      "rva": 76756,
+      "length": 8,
+      "kind": "clear binding timestamp and forwarder chain"
+    },
+    {
+      "rva": 74060,
+      "length": 16,
+      "kind": "restore unbound IAT from original name thunks"
+    },
+    {
+      "rva": 76776,
+      "length": 8,
+      "kind": "clear binding timestamp and forwarder chain"
+    },
+    {
+      "rva": 73728,
+      "length": 16,
+      "kind": "restore unbound IAT from original name thunks"
+    },
+    {
+      "rva": 76796,
+      "length": 8,
+      "kind": "clear binding timestamp and forwarder chain"
+    }
+  ],
+  "sha256": {
+    "FPDK.DLL": "6ff7d6474619e6f1771f1d440af1ee024bf38d5b4795b2b155f49298bbd0574d",
+    "FPDSND.DLL": "23f5a7176aabd4abd0d8ea4a8902894628bd608930e6997dc474e82d204e5b30"
+  },
+  "native_audio_tests_passed": false
+}
