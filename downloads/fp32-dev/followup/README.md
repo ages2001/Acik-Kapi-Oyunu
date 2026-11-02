@@ -43,3 +43,7 @@ not a new R4 installer, MP gameplay or other-OS pass.
 ## 2026-11-02: original-provider keys and containers
 
 [Source and native evidence](crypto-keys-20261102/README.md): 65 key/provider, 46 hash and 17 RNG checks pass per OS on NT3.1/NT3.51. Default development counts: FP10 61, FP32 101. The WinInet experiment remains disabled and unverified.
+
+## 2026-11-02: unload and thread exit
+
+[Source and native evidence](library-exit-20261102/README.md): 19 checks pass per OS on NT3.1/NT3.51. Development counts: FP10 61, FP32 100.

@@ -1,0 +1,17 @@
+{
+  "README.md": "4a33fab067e36502a1cc09b68121afccfc3e52229684ce770617ca3143b60f20",
+  "nt31.png": "1aae70e9a5137c1770ae81d5b1a2e330b2504659effc982a7eda9aec51c34adb",
+  "reports/library-exit-nt31.txt": "d2b619e1f5f4ffdecbf636a54d029a95c63fb61bca30c3e7b85b7f598aee6ebd",
+  "reports/library-exit-nt351.txt": "d2b619e1f5f4ffdecbf636a54d029a95c63fb61bca30c3e7b85b7f598aee6ebd",
+  "reports/player-gap-audit.json": "4a60a4426d40d61b179188db3b87d0da01d23d014670be94f7ecfef668bcabf1",
+  "source/analysis/build_library_exit_tests.py": "b04a17523c797313041bb3c1ecee89fc1e4c7a3d101680498d7d0c65dee8b2a9",
+  "source/analysis/package_library_exit.py": "f1d4ee64255d6b354a86adba54b29d0bb3adf773f8584074f4c47d93806e10af",
+  "source/fp32/analysis/build_nt31.py": "38133615d752776db408fb541feac601fb60866124e5096c90ad600a61e10218",
+  "source/fp32/compat/library_exit.c": "88e8b54d0f2795a56487da15b908741b1fdd00fd08594f5c67d45c35c56fce41",
+  "source/fp32/compat/library_exit_observer.c": "b7aeb3f2c824f7cad5d41b7fc1b3c2b8b3f78b97ca1099a041b61feca6de07cc",
+  "source/fp32/compat/library_exit_test.c": "8f5539d011c07e7e4dc3912914d866086eef19ac27c1325ca4e57132cb2c5031",
+  "test-binaries/EXITDROP.DLL": "2a0eedfa134da210df063141589671719801b38930657ab9b84a45988db21c2f",
+  "test-binaries/EXITOBS.DLL": "e2cae1fe6d6191d19baf2607d3d54a56c603ec132e0691eb8e4af862fb6b17ad",
+  "test-binaries/LIBEXIT.EXE": "00d3f48c3e895b57aea488effd1700f6084c15a5e7646c62a4d713af78eb0181",
+  "test-binaries/X32K.DLL": "f6e18683ee8672815a9155394655b7459e338bb9c0dcbbdd7ffc538ed8b85e41"
+}

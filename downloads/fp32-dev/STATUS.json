@@ -803,10 +803,10 @@
   "development_gap_audit": {
     "counts": {
       "FP10": 61,
-      "FP32": 101
+      "FP32": 100
     },
     "scope": "Current linked NT3.1 development DLLs, not immutable published installers.",
-    "evidence": "followup/crypto-keys-20261102/reports/player-gap-audit.json",
+    "evidence": "followup/library-exit-20261102/reports/player-gap-audit.json",
     "excludes": [
       "Partially implemented behavior",
       "Unavailable dynamic APIs",
@@ -863,5 +863,16 @@
     "evidence": "followup/crypto-keys-20261102/README.md",
     "archive": "followup/FP32-KEYS-20261102-COMPONENTS.zip",
     "sha256": "9b0cd1bb1d6dcf82cde0b8143cd490a267e8f9cb8539c2db61b67f6fa698e753"
+  },
+  "library_exit_followup": {
+    "native_checks_per_os": 19,
+    "native_failures": 0,
+    "os": [
+      "NT3.1 UP",
+      "NT3.51 UP"
+    ],
+    "full_port_complete": false,
+    "archive": "followup/FP32-LIBRARY-EXIT-20261102-COMPONENTS.zip",
+    "sha256": "f509bd252ddbc8503bc92039bb58195fe24ff938139652fcaedde99321a71f6a"
   }
 }
