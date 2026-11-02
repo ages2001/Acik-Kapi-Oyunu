@@ -333,7 +333,7 @@
   "sm63_current_investigation": {
     "coin_cause": "R3 incorrectly hides PF6/PF10 even with XMM preservation active; original FP32 CRT selects a path that accepts non-finite shape hits in negative-origin geometry.",
     "fix_status": "Query-based PF6/PF10 implementation built. Native NT31 driver status, FP32 startup gate and shape fixtures pass. Full SM63 save/reopen/performance remains unfinished.",
-    "diagnostic_gameplay": "Untouched SM63 reached upper cloud route, then returned through previous area to fourth tutorial lower ground; 91 ordinary coins, no stars. Actual checkpoint/reopen not passed.",
+    "diagnostic_gameplay": "Untouched SM63 reached the left arrow-cloud route; 92 ordinary coins and successful native FLUDD-menu selection. No real checkpoint/reopen pass. Isolated persistence-code fixture passes 26 checks across Windows restart.",
     "performance": "Approximately 5\u20136 FPS in QEMU TCG; not an acceptable-speed completion.",
     "public_zip_fix_included": true
   },
@@ -345,8 +345,8 @@
     "contains": "Complete source, validated NT31 UP/MP XMM guard, loader, binaries, tests, English changelog. Excludes the new readiness-query candidate."
   },
   "active_lab_resume": {
-    "game": "Untouched D:\\SM63OK.SWF, fourth tutorial area lower ground, 91 ordinary coins. Returned from upper cloud route through previous area. FLUDD menu currently shows no collected nozzle; reacquisition is needed.",
-    "state": "Main QEMU stopped, native game paused in the FLUDD submenu. MP query lab shut down cleanly after serialization/reboot checks.",
+    "game": "Untouched D:\\SM63OK.SWF, 92 ordinary coins, zero shines. Reached left arrow-cloud route twice but fell below it; possible return-area transition pending. Hover selected successfully from pause menu, water 97, game zoom 50%. Latest image: captures/sm63-nov2-cloud-correct/00.png.",
+    "state": "Main QEMU stopped, native game active (not P-paused). MP query lab shut down cleanly. Continue with --suspend-vm, without --resume-before.",
     "engine": "D:\\APP\\FP32.EXE final WinINet guard; D:\\F32K.DLL still hardware-only diagnostic F32KCPU.DLL; prior XMM guard loaded.",
     "query_lab": "MP query protocol, four-worker/181-affinity-round and 640-worker-lifetime tests passed. Installed query-aware FP32 passed Start/Story and AS2 persistence across restart. Standard VGA reproduced native palette discrepancy.",
     "new_sources": "Query-aware DLL/driver are included in published R4. Main gameplay VM still uses the hardware-only diagnostic DLL. Later input-helper changes are separate follow-up source."
@@ -356,7 +356,7 @@
     "native_input_only": true,
     "triple_jump_ledge_passed": true,
     "tutorial_area": 4,
-    "ordinary_coins": 91,
+    "ordinary_coins": 92,
     "shines": 0,
     "star_coins": 0,
     "real_save_reopen": "pending; isolated serialization fixture now passes 26 checks across Windows reboot",
@@ -376,7 +376,9 @@
       "FileA_true_stars": [],
       "decoded_report": "sm63-before-shine-decoded.json"
     },
-    "hover_fludd_currently_equipped": false
+    "hover_fludd_currently_equipped": true,
+    "zoom_percent": 50,
+    "fludd_menu_selection_verified": true
   },
   "nt31_mp_patch_delivery": {
     "url": "https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/fp32-dev-2026-10-30/downloads/ntcpupae-2026-10-30/NTCPUPAE-NT31-FIX-r2.zip",

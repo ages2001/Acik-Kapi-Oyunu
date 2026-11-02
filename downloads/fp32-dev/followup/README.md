@@ -14,4 +14,4 @@ The helper passed Python compilation and native QEMU execution. Its host elapsed
 
 The helper now accepts no keys for an input-free observation interval. Do not use Shift as an idle key: SM63 assigns it to switching FLUDD nozzles. This mode was exercised with the native paused-game menu.
 
-The [SM63 serialization fixture](sm63-serialization/README.md) passed 26 checks after player reopening and Windows restart. It uses isolated synthetic data with the game's exported persistence functions; actual SM63 checkpoint/reopen testing remains incomplete. The latest gameplay counter is 91, with no Shine collected.
+The [SM63 serialization fixture](sm63-serialization/README.md) passed 26 checks after player reopening and Windows restart. It uses isolated synthetic data with the game's exported persistence functions; actual SM63 checkpoint/reopen testing remains incomplete. The latest gameplay counter is 92, with no Shine collected. Hover FLUDD was successfully reselected through the native pause menu; the earlier assumption that reacquisition was required was incorrect. The arrow-cloud route was reached, but a subsequent fall left real checkpoint/reopen testing pending.
