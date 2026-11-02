@@ -550,5 +550,29 @@
     "core_checks": 7,
     "player_tested": false,
     "audio_tested": false
+  },
+  "sm63_latest_gameplay_followup": {
+    "date": "2026-11-02",
+    "os": "NT3.1 UP, existing original-FP32 gameplay lab, standard VGA",
+    "scope": "Physical QEMU keyboard/mouse only; original SM63 SWF and game save not edited",
+    "normal_coins_before": 92,
+    "normal_coins_after": 94,
+    "star_coins_after": 0,
+    "shines_after": 0,
+    "fludd_hover_key": "C (or Space), confirmed against exported original AS2 control code",
+    "gameplay_observations": [
+      "Movement, jump, hover and water use observed",
+      "Reached upper rotating platforms and left-side log route",
+      "Fell through lower boundary and returned to previous tutorial area"
+    ],
+    "actual_checkpoint_completed": false,
+    "actual_save_reopen_verified": false,
+    "native_sol_bytes": 5478,
+    "native_sol_crc32": "F2CCA231",
+    "native_sol_sha256": "38e06e31d9d3312f04d49fccf72ebfc758e405a8de7bb5197fd6bea410345e71",
+    "native_sol_matches_pre_checkpoint_baseline": true,
+    "fps_observed": "Approximately 4-6 during this gameplay segment",
+    "performance_scope": "TCG without KVM and software rendering. No matched baseline measurement; cannot attribute this FPS to compatibility overhead alone.",
+    "guest_final_state": "Game paused, QEMU stopped; NT351, Win95 and Win31 test VMs shut down"
   }
 }
