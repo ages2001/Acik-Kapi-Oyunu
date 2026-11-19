@@ -1,0 +1,34 @@
+name: Attach WINPOWER v1.0 release files
+on:
+  push:
+    branches: [winpower-release-v1-0-39fbae66]
+permissions:
+  contents: write
+jobs:
+  attach:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify the draft and attach its checked files
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP"
+          release="repos/$GITHUB_REPOSITORY/releases/451908937"
+          gh api "$release" | jq -e '.tag_name == "winpower-v1.0" and .draft == true' >/dev/null
+          while read -r name blob checksum; do
+            gh api "repos/$GITHUB_REPOSITORY/git/blobs/$blob" --jq .content | base64 --decode > "$name"
+            printf '%s  %s\n' "$checksum" "$name" | sha256sum --check -
+            existing=$(gh api "$release/assets" | jq -r --arg n "$name" '.[] | select(.name == $n) | .digest')
+            if [[ -n "$existing" ]]; then
+              [[ "$existing" == "sha256:$checksum" ]]
+            else
+              gh release upload winpower-v1.0 "$name" --repo "$GITHUB_REPOSITORY"
+            fi
+          done <<'ASSETS'
+          WPSLEEP.ZIP 395b11bff9ec4960f25761101c74148d98a123e1 39fbae66a5d39cf3b0526afc983dc9af805b246eb05a293fa348309259ce4126
+          SLPHASH.TXT 90ba6176dc55430a86cc85eeb1cbdbe20244895a 8e2a8c2116a18bf0a92e4a67cb9ac31f3269d6f7870fc6c2c006eb6abacdd6b8
+          VGATEST.TXT 31ea66e93024392057503630c312739add5a0684 42c2b72a62b87266345f0077ee938059983f452a9a92eb3e344833dcc756e5f9
+          ASSETS

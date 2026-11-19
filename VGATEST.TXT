@@ -1,0 +1,72 @@
+WINPOWER v1.0 power-state qualification
+
+QEMU with guest system disks on IDE except Windows 2000 on ICH9 AHCI.
+Standard VGA is identified from inside each installed operating system.
+The following observations concern the particular builds and hardware.
+
+Windows 98 Second Edition, S3, PASS
+The active Standard PCI Graphics Adapter (VGA) used the Microsoft display
+binding and pnpdrvr.drv. Windows offered S3. QEMU reported SUSPEND and
+WAKEUP. The firmware waking vector was 0x9C018. The original process
+4294037021 returned with RAM checksum EDBF416E and received F8 at 640x480.
+
+Windows 98 First Edition, S3, failed to restore the session
+Windows offered S3 using Standard PCI Graphics Adapter (VGA). Hardware
+entered suspend and woke up. The machine then booted Windows again. The
+new Explorer desktop had zero original marker windows. A repeat with
+SeaBIOS VGA reinitialization disabled yielded the same result. During
+suspend the firmware waking vector was 0x18. SeaBIOS logged its jump to
+that address, followed by a hard reboot. The same FE disk also gave a
+wake vector of 0x18 and a hard reboot with pc-i440fx-5.2, a Pentium II
+and 256 MiB, matching the main chipset/CPU/RAM choices in the passing
+Second Edition run. The release leaves Windows wake vectors untouched.
+
+Windows Me, standby, vetoed
+Windows advertised S1. Its registry contained the Standard Display Adapter
+(VGA) binding. The active adapter name was unavailable. The documented
+transition returned Windows error 1140. No hardware sleep was observed.
+On a separate cold start the Me disk also ran ScanDisk after a historical
+shutdown test whose two FAT clean bits had been set. The bits alone do
+not establish that the OS considers the previous shutdown clean.
+
+Windows 2000 x86 and XP SP3 x86
+On the tested Windows 2000 multiprocessor AHCI installation the active
+display was VGA (vga). On XP x86 the active module was vga. Neither OS
+exposed a usable suspend or hibernate operation on these installations.
+
+Windows XP Professional x64, S4, PASS
+The active Standard VGA service ran vgapnp.sys 5.2.3790.1830. Windows
+initially reported S4 hardware support with no available session action.
+In the private test installation, enabling hibernation with the native
+powercfg /hibernate on command made full hibernation available. The x64
+GUI entered S4, QEMU reported SUSPEND_DISK, and the FAT32 hiberfil.sys
+contained the hibr signature. A fresh emulator process booted the same
+IDE disk. The original PID 548 retained RAM checksum DA0B9CA2 and
+received F8. Windows kept S1, S2 and S3 unavailable on this installation.
+
+Windows Vista SP2 x86, S4, PASS
+The Standard VGA Graphics Adapter ran vgapnp.sys 6.0.6001.18000. Windows
+created an HIBR image and QEMU reported SUSPEND_DISK. A fresh QEMU
+process cold-booted the same IDE disk. The guest restored its application
+and issued a resume notification. After another hibernation and cold
+start, the original PID 3684 received F8 at 800x600 with checksum C51A80AC.
+Windows did not expose S1, S2 or S3 in this configuration.
+
+Windows 7 SP1 x86, S4, PASS
+The Standard VGA Graphics Adapter service was running vgapnp.sys
+6.1.7600.16385. QEMU reported SUSPEND_DISK. The first page of hiberfil.sys
+had an HIBR signature. With the old emulator terminated, a new QEMU
+process booted the same IDE disk. PID 1624 retained checksum C923A7A3,
+redrew the window at 800x600 and accepted F8. Windows powercfg reported
+that VGAPNP.SYS does not support standby on this installation.
+
+The verified S4 cases used the guest hibernation file. The host supplied
+no saved RAM or virtual-machine snapshot. Firmware advertisements and
+synthetic register tests do not qualify an unobserved resume. Physical
+machines, S1, S2, Modern Standby and every combination of Windows and
+firmware remain outside the end-to-end sleep evidence. Win16 and NT3/4
+still require a platform-specific sleep/resume implementation. The Windows
+98 FE session-loss case remains open. The handoff matrix for native
+shutdown and restart is in the original first-phase release. Windows 98
+and Me preserve Windows-managed restart. Vista and newer use the Windows
+power manager. Firmware references and platform limits are in FIRMWARE.TXT.
