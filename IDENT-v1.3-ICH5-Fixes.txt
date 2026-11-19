@@ -1,0 +1,59 @@
+IDENT v1.3 - ICH5 PATA boot fixes (issue #4)
+Windows NT 3.51 SP5 | Release notes | 19 November 2026
+
+The reporter confirmed that NT 3.51 boots from the primary PATA SSD on
+the ANOVO AIMB-865 in Enhanced Mode and sees all disks. The same build
+also booted on the ASUS P8B75-M with no apparent regression.
+
+AIMB-865 boot failure and fix
+----------------------------
+IDENT found the primary PATA channel at 0x1F0. The NT hardware
+abstraction layer could not map its PCI bus-master registers at 0xFC00
+through the EISA bus. IDENT fell back to PIO but still reported the
+unmapped range to ScsiPort. The PCI scan ended with configuration error
+0xC0040003. IDENT had already marked the primary channel as claimed,
+so the ISA scan skipped the boot SSD. Only the secondary channel at
+0x170 started, leaving NT to stop with INACCESSIBLE_BOOT_DEVICE (0x7B).
+
+IDENT now checks the bus-master mapping before registering the adapter.
+If the mapping fails, it registers the usable command ports, control
+port and IRQ on the ISA bus and operates the channel in PIO. PCI
+enumeration can then continue to the other PATA and SATA channels.
+IDENT marks the ICH5 compatibility channel as claimed when ScsiPort
+calls HwInitialize, allowing the ISA scan to retry it if registration
+fails before that point.
+
+Related changes included in v1.3
+--------------------------------
+- Channel detection honors the firmware's enable and routing settings
+  in ICH5 Enhanced and Combined modes. Native IDE ports are relocated
+  only when their addresses overlap another IDE channel. This also
+  addresses a port allocation problem on the B75.
+- After an ICH5 PATA software reset, IDENT retries empty or floating
+  status for up to 150 ms. A ready disk proceeds immediately.
+- Before polling a new ATA command or PIO phase, the NT driver reads
+  alternate status and waits one microsecond. This prevents a stale
+  status from making IDENTIFY appear complete before the data is ready.
+- On ICH5 PATA, the host's cable indication determines whether modes
+  above UDMA 2 are allowed. A 40-conductor indication caps the channel
+  at UDMA 2. A usable bus-master mapping permits DMA when the drive and
+  cable support it.
+- bin/NT/diagnostic/ident.sys shows PCI resources, IRQs, disk detection
+  and transfer modes on the NT boot screen. bin/NT/ident.sys is the
+  regular driver.
+
+Verification
+------------
+In QEMU 10.0.13 with NT 3.51 SP5, denying the EISA mapping for
+0xFC00-0xFC0F reproduced the earlier driver's PCI error and STOP 0x7B.
+With the same failure, the updated driver reached logon from the primary
+PATA disk and enumerated both native SATA channels. With the mapping
+available, the primary disk ran at UDMA 5. The physical board report
+confirms boot and disk visibility. Its transfer mode and throughput
+were not reported.
+
+Hardware trace
+https://github.com/ages2001/IDENT/issues/4#issuecomment-6981935099
+
+Physical board retest
+https://github.com/ages2001/IDENT/issues/4#issuecomment-6987581366
