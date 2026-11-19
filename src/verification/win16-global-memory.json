@@ -1,0 +1,1086 @@
+{
+  "qemu": "QEMU i386, TCG, 486, 4032 MiB, max-ram-below-4g=4G, single guest CPU",
+  "installer_sha256": "1e85f229b4a1e64f97cb0104854295b6b653538c4794a679e41034dc628691bc",
+  "screenshot_sha256": "4d6372a8c04191426f9465a3de0a4f3a54d780cae159ee23d08fd23188a1e63e",
+  "probes": {
+    "taskexit.c": "2ef635e90852a700a59b6d014e9819e709927bfc3d0b90a475d9d2ce3b9f521c",
+    "globallock.c": "e977a43cbfe18edc017904652b34d14dc760810ae1e13a688497e2641658bb41",
+    "globalmem.c": "cc258a8f63b8bcf2ac62045456e2432ad52c32b67a2edfbd776c1d1cd6286136"
+  },
+  "profiles": {
+    "Windows 1.01": {
+      "runs": [
+        {
+          "block_kib": 32,
+          "requested_blocks": 1024,
+          "held_kib": 32768,
+          "written": 1024,
+          "verified": 1024,
+          "released": 1024,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=32",
+            "Requested blocks=1024",
+            "Written KiB=8192",
+            "Written KiB=16384",
+            "Written KiB=24576",
+            "Written KiB=32768",
+            "Simultaneously held KiB=32768",
+            "Written blocks=1024",
+            "Verified blocks=1024",
+            "Released blocks=1024",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        },
+        {
+          "block_kib": 128,
+          "requested_blocks": 2048,
+          "held_kib": 262144,
+          "written": 2048,
+          "verified": 2048,
+          "released": 2048,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=128",
+            "Requested blocks=2048",
+            "Written KiB=32768",
+            "Written KiB=65536",
+            "Written KiB=98304",
+            "Written KiB=131072",
+            "Written KiB=163840",
+            "Written KiB=196608",
+            "Written KiB=229376",
+            "Written KiB=262144",
+            "Simultaneously held KiB=262144",
+            "Written blocks=2048",
+            "Verified blocks=2048",
+            "Released blocks=2048",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        },
+        {
+          "block_kib": 128,
+          "requested_blocks": 8192,
+          "held_kib": 361600,
+          "written": 2825,
+          "verified": 2825,
+          "released": 2825,
+          "next_allocation_refused": true,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=128",
+            "Requested blocks=8192",
+            "Written KiB=32768",
+            "Written KiB=65536",
+            "Written KiB=98304",
+            "Written KiB=131072",
+            "Written KiB=163840",
+            "Written KiB=196608",
+            "Written KiB=229376",
+            "Written KiB=262144",
+            "Written KiB=294912",
+            "Written KiB=327680",
+            "Written KiB=360448",
+            "Allocator refused the next block",
+            "Simultaneously held KiB=361600",
+            "Written blocks=2825",
+            "Verified blocks=2825",
+            "Released blocks=2825",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        }
+      ],
+      "lock_contract": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Lock contract PASS",
+        "LOCK TEST END"
+      ]
+    },
+    "Windows 2.03": {
+      "runs": [
+        {
+          "block_kib": 32,
+          "requested_blocks": 1024,
+          "held_kib": 32768,
+          "written": 1024,
+          "verified": 1024,
+          "released": 1024,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=32",
+            "Requested blocks=1024",
+            "Written KiB=8192",
+            "Written KiB=16384",
+            "Written KiB=24576",
+            "Written KiB=32768",
+            "Simultaneously held KiB=32768",
+            "Written blocks=1024",
+            "Verified blocks=1024",
+            "Released blocks=1024",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        },
+        {
+          "block_kib": 128,
+          "requested_blocks": 2048,
+          "held_kib": 262144,
+          "written": 2048,
+          "verified": 2048,
+          "released": 2048,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=128",
+            "Requested blocks=2048",
+            "Written KiB=32768",
+            "Written KiB=65536",
+            "Written KiB=98304",
+            "Written KiB=131072",
+            "Written KiB=163840",
+            "Written KiB=196608",
+            "Written KiB=229376",
+            "Written KiB=262144",
+            "Simultaneously held KiB=262144",
+            "Written blocks=2048",
+            "Verified blocks=2048",
+            "Released blocks=2048",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        },
+        {
+          "block_kib": 128,
+          "requested_blocks": 8192,
+          "held_kib": 289152,
+          "written": 2259,
+          "verified": 2259,
+          "released": 2259,
+          "next_allocation_refused": true,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=128",
+            "Requested blocks=8192",
+            "Written KiB=32768",
+            "Written KiB=65536",
+            "Written KiB=98304",
+            "Written KiB=131072",
+            "Written KiB=163840",
+            "Written KiB=196608",
+            "Written KiB=229376",
+            "Written KiB=262144",
+            "Allocator refused the next block",
+            "Simultaneously held KiB=289152",
+            "Written blocks=2259",
+            "Verified blocks=2259",
+            "Released blocks=2259",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        }
+      ],
+      "lock_contract": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Lock contract PASS",
+        "LOCK TEST END"
+      ]
+    },
+    "Windows/286 2.11": {
+      "runs": [
+        {
+          "block_kib": 32,
+          "requested_blocks": 1024,
+          "held_kib": 32768,
+          "written": 1024,
+          "verified": 1024,
+          "released": 1024,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=32",
+            "Requested blocks=1024",
+            "Written KiB=8192",
+            "Written KiB=16384",
+            "Written KiB=24576",
+            "Written KiB=32768",
+            "Simultaneously held KiB=32768",
+            "Written blocks=1024",
+            "Verified blocks=1024",
+            "Released blocks=1024",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        },
+        {
+          "block_kib": 128,
+          "requested_blocks": 2048,
+          "held_kib": 262144,
+          "written": 2048,
+          "verified": 2048,
+          "released": 2048,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=128",
+            "Requested blocks=2048",
+            "Written KiB=32768",
+            "Written KiB=65536",
+            "Written KiB=98304",
+            "Written KiB=131072",
+            "Written KiB=163840",
+            "Written KiB=196608",
+            "Written KiB=229376",
+            "Written KiB=262144",
+            "Simultaneously held KiB=262144",
+            "Written blocks=2048",
+            "Verified blocks=2048",
+            "Released blocks=2048",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        }
+      ],
+      "lock_contract": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Lock contract PASS",
+        "LOCK TEST END"
+      ]
+    },
+    "Windows/386 2.11": {
+      "runs": [
+        {
+          "block_kib": 32,
+          "requested_blocks": 1024,
+          "held_kib": 32768,
+          "written": 1024,
+          "verified": 1024,
+          "released": 1024,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "Windows/386 activated SETVER 3.40",
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=32",
+            "Requested blocks=1024",
+            "Written KiB=8192",
+            "Written KiB=16384",
+            "Written KiB=24576",
+            "Written KiB=32768",
+            "Simultaneously held KiB=32768",
+            "Written blocks=1024",
+            "Verified blocks=1024",
+            "Released blocks=1024",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        },
+        {
+          "block_kib": 64,
+          "requested_blocks": 4096,
+          "held_kib": 52096,
+          "written": 814,
+          "verified": 814,
+          "released": 814,
+          "next_allocation_refused": true,
+          "integrity": true,
+          "guest_output": [
+            "Windows/386 activated SETVER 3.40",
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=64",
+            "Requested blocks=4096",
+            "Written KiB=16384",
+            "Written KiB=32768",
+            "Written KiB=49152",
+            "Allocator refused the next block",
+            "Simultaneously held KiB=52096",
+            "Written blocks=814",
+            "Verified blocks=814",
+            "Released blocks=814",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        },
+        {
+          "block_kib": 128,
+          "requested_blocks": 2048,
+          "held_kib": 0,
+          "written": 0,
+          "verified": 0,
+          "released": 0,
+          "next_allocation_refused": true,
+          "integrity": false,
+          "guest_output": [
+            "Windows/386 activated SETVER 3.40",
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=128",
+            "Requested blocks=2048",
+            "Allocator refused the next block",
+            "Simultaneously held KiB=0",
+            "Written blocks=0",
+            "Verified blocks=0",
+            "Released blocks=0",
+            "Integrity FAIL",
+            "GLOBALMEM END"
+          ]
+        }
+      ],
+      "lock_contract": [
+        "Windows/386 activated SETVER 3.40",
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Lock contract PASS",
+        "LOCK TEST END"
+      ]
+    },
+    "Windows 3.0a Real": {
+      "runs": [
+        {
+          "block_kib": 32,
+          "requested_blocks": 1024,
+          "held_kib": 32768,
+          "written": 1024,
+          "verified": 1024,
+          "released": 1024,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=32",
+            "Requested blocks=1024",
+            "Written KiB=8192",
+            "Written KiB=16384",
+            "Written KiB=24576",
+            "Written KiB=32768",
+            "Simultaneously held KiB=32768",
+            "Written blocks=1024",
+            "Verified blocks=1024",
+            "Released blocks=1024",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        },
+        {
+          "block_kib": 128,
+          "requested_blocks": 2048,
+          "held_kib": 262144,
+          "written": 2048,
+          "verified": 2048,
+          "released": 2048,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=128",
+            "Requested blocks=2048",
+            "Written KiB=32768",
+            "Written KiB=65536",
+            "Written KiB=98304",
+            "Written KiB=131072",
+            "Written KiB=163840",
+            "Written KiB=196608",
+            "Written KiB=229376",
+            "Written KiB=262144",
+            "Simultaneously held KiB=262144",
+            "Written blocks=2048",
+            "Verified blocks=2048",
+            "Released blocks=2048",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        }
+      ],
+      "lock_contract": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Lock contract PASS",
+        "LOCK TEST END"
+      ]
+    },
+    "Windows 3.0a Standard": {
+      "runs": [
+        {
+          "block_kib": 768,
+          "requested_blocks": 5140,
+          "held_kib": 2816256,
+          "written": 3667,
+          "verified": 3667,
+          "released": 3667,
+          "next_allocation_refused": true,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=768",
+            "Requested blocks=5140",
+            "Written KiB=196608",
+            "Written KiB=393216",
+            "Written KiB=589824",
+            "Written KiB=786432",
+            "Written KiB=983040",
+            "Written KiB=1179648",
+            "Written KiB=1376256",
+            "Written KiB=1572864",
+            "Written KiB=1769472",
+            "Written KiB=1966080",
+            "Written KiB=2162688",
+            "Written KiB=2359296",
+            "Written KiB=2555904",
+            "Written KiB=2752512",
+            "Allocator refused the next block",
+            "Simultaneously held KiB=2816256",
+            "Written blocks=3667",
+            "Verified blocks=3667",
+            "Released blocks=3667",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        },
+        {
+          "block_kib": 992,
+          "requested_blocks": 4160,
+          "held_kib": 3636672,
+          "written": 3666,
+          "verified": 3666,
+          "released": 3666,
+          "next_allocation_refused": true,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=992",
+            "Requested blocks=4160",
+            "Written KiB=253952",
+            "Written KiB=507904",
+            "Written KiB=761856",
+            "Written KiB=1015808",
+            "Written KiB=1269760",
+            "Written KiB=1523712",
+            "Written KiB=1777664",
+            "Written KiB=2031616",
+            "Written KiB=2285568",
+            "Written KiB=2539520",
+            "Written KiB=2793472",
+            "Written KiB=3047424",
+            "Written KiB=3301376",
+            "Written KiB=3555328",
+            "Allocator refused the next block",
+            "Simultaneously held KiB=3636672",
+            "Written blocks=3666",
+            "Verified blocks=3666",
+            "Released blocks=3666",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        }
+      ],
+      "lock_contract": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Lock contract PASS",
+        "LOCK TEST END"
+      ]
+    },
+    "Windows 3.0a 386 Enhanced": {
+      "runs": [
+        {
+          "block_kib": 512,
+          "requested_blocks": 1024,
+          "held_kib": 524288,
+          "written": 1024,
+          "verified": 1024,
+          "released": 1024,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "VWINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=512",
+            "Requested blocks=1024",
+            "Written KiB=131072",
+            "Written KiB=262144",
+            "Written KiB=393216",
+            "Written KiB=524288",
+            "Simultaneously held KiB=524288",
+            "Written blocks=1024",
+            "Verified blocks=1024",
+            "Released blocks=1024",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        },
+        {
+          "block_kib": 768,
+          "requested_blocks": 5140,
+          "held_kib": 3947520,
+          "written": 5140,
+          "verified": 5140,
+          "released": 5140,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "VWINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=768",
+            "Requested blocks=5140",
+            "Written KiB=196608",
+            "Written KiB=393216",
+            "Written KiB=589824",
+            "Written KiB=786432",
+            "Written KiB=983040",
+            "Written KiB=1179648",
+            "Written KiB=1376256",
+            "Written KiB=1572864",
+            "Written KiB=1769472",
+            "Written KiB=1966080",
+            "Written KiB=2162688",
+            "Written KiB=2359296",
+            "Written KiB=2555904",
+            "Written KiB=2752512",
+            "Written KiB=2949120",
+            "Written KiB=3145728",
+            "Written KiB=3342336",
+            "Written KiB=3538944",
+            "Written KiB=3735552",
+            "Written KiB=3932160",
+            "Simultaneously held KiB=3947520",
+            "Written blocks=5140",
+            "Verified blocks=5140",
+            "Released blocks=5140",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        }
+      ],
+      "lock_contract": [
+        "VWINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Lock contract PASS",
+        "LOCK TEST END"
+      ]
+    },
+    "Windows 3.1 Standard": {
+      "runs": [
+        {
+          "block_kib": 768,
+          "requested_blocks": 5140,
+          "held_kib": 3947520,
+          "written": 5140,
+          "verified": 5140,
+          "released": 5140,
+          "next_allocation_refused": false,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=768",
+            "Requested blocks=5140",
+            "Written KiB=196608",
+            "Written KiB=393216",
+            "Written KiB=589824",
+            "Written KiB=786432",
+            "Written KiB=983040",
+            "Written KiB=1179648",
+            "Written KiB=1376256",
+            "Written KiB=1572864",
+            "Written KiB=1769472",
+            "Written KiB=1966080",
+            "Written KiB=2162688",
+            "Written KiB=2359296",
+            "Written KiB=2555904",
+            "Written KiB=2752512",
+            "Written KiB=2949120",
+            "Written KiB=3145728",
+            "Written KiB=3342336",
+            "Written KiB=3538944",
+            "Written KiB=3735552",
+            "Written KiB=3932160",
+            "Simultaneously held KiB=3947520",
+            "Written blocks=5140",
+            "Verified blocks=5140",
+            "Released blocks=5140",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        }
+      ],
+      "lock_contract": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Lock contract PASS",
+        "LOCK TEST END"
+      ]
+    },
+    "Windows 3.1 386 Enhanced": {
+      "runs": [
+        {
+          "block_kib": 4096,
+          "requested_blocks": 960,
+          "held_kib": 3850240,
+          "written": 940,
+          "verified": 940,
+          "released": 940,
+          "next_allocation_refused": true,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=4096",
+            "Requested blocks=960",
+            "Written KiB=1048576",
+            "Written KiB=2097152",
+            "Written KiB=3145728",
+            "Allocator refused the next block",
+            "Simultaneously held KiB=3850240",
+            "Written blocks=940",
+            "Verified blocks=940",
+            "Released blocks=940",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        }
+      ],
+      "lock_contract": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Lock contract PASS",
+        "LOCK TEST END"
+      ]
+    },
+    "Windows for Workgroups 3.11": {
+      "runs": [
+        {
+          "block_kib": 4096,
+          "requested_blocks": 960,
+          "held_kib": 3850240,
+          "written": 940,
+          "verified": 940,
+          "released": 940,
+          "next_allocation_refused": true,
+          "integrity": true,
+          "guest_output": [
+            "WINRAM memory service started",
+            "WINRAM global memory service ready",
+            "WINRAM memory display ready",
+            "Block KiB=4096",
+            "Requested blocks=960",
+            "Written KiB=1048576",
+            "Written KiB=2097152",
+            "Written KiB=3145728",
+            "Allocator refused the next block",
+            "Simultaneously held KiB=3850240",
+            "Written blocks=940",
+            "Verified blocks=940",
+            "Released blocks=940",
+            "Integrity PASS",
+            "GLOBALMEM END"
+          ]
+        }
+      ],
+      "lock_contract": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Lock contract PASS",
+        "LOCK TEST END"
+      ]
+    }
+  },
+  "installer_roundtrips": {
+    "w101": {
+      "profile": "w101",
+      "checksummed_restore": [
+        "WIN100.BIN",
+        "WIN100.OVL",
+        "WIN.INI"
+      ],
+      "session": {
+        "INSTALL": "WINRAM 1.0\r\nMicrosoft Windows 1.01\r\nD:\\WINDOWS\r\nInstalled. Restart the target system.",
+        "VERIFY": "WINRAM 1.0\r\nMicrosoft Windows 1.01\r\nD:\\WINDOWS\r\nInstallation verified.",
+        "REMOVE": "WINRAM 1.0\r\nMicrosoft Windows 1.01\r\nD:\\WINDOWS\r\nUninstalled. Original backups retained."
+      }
+    },
+    "w203": {
+      "profile": "w203",
+      "checksummed_restore": [
+        "WIN200.BIN",
+        "WIN200.OVL",
+        "WIN.INI"
+      ],
+      "session": {
+        "INSTALL": "WINRAM 1.0\r\nMicrosoft Windows 2.03\r\nD:\\WINDOWS\r\nInstalled. Restart the target system.",
+        "VERIFY": "WINRAM 1.0\r\nMicrosoft Windows 2.03\r\nD:\\WINDOWS\r\nInstallation verified.",
+        "REMOVE": "WINRAM 1.0\r\nMicrosoft Windows 2.03\r\nD:\\WINDOWS\r\nUninstalled. Original backups retained."
+      }
+    },
+    "w286": {
+      "profile": "w286",
+      "checksummed_restore": [
+        "WIN200.BIN",
+        "WIN200.OVL",
+        "WIN.INI"
+      ],
+      "session": {
+        "INSTALL": "WINRAM 1.0\r\nMicrosoft Windows/286 2.11\r\nD:\\WINDOWS\r\nInstalled. Restart the target system.",
+        "VERIFY": "WINRAM 1.0\r\nMicrosoft Windows/286 2.11\r\nD:\\WINDOWS\r\nInstallation verified.",
+        "REMOVE": "WINRAM 1.0\r\nMicrosoft Windows/286 2.11\r\nD:\\WINDOWS\r\nUninstalled. Original backups retained."
+      }
+    },
+    "w30": {
+      "profile": "w30",
+      "checksummed_restore": [
+        "SYSTEM/USER.EXE",
+        "SYSTEM/GDI.EXE",
+        "SYSTEM/KRNL386.EXE",
+        "SYSTEM/KRNL286.EXE",
+        "SYSTEM/KERNEL.EXE",
+        "WIN.INI"
+      ],
+      "session": {
+        "INSTALL": "WINRAM 1.0\r\nMicrosoft Windows 3.0a\r\nD:\\WINDOWS\r\nInstalled. Restart the target system.",
+        "VERIFY": "WINRAM 1.0\r\nMicrosoft Windows 3.0a\r\nD:\\WINDOWS\r\nInstallation verified.",
+        "REMOVE": "WINRAM 1.0\r\nMicrosoft Windows 3.0a\r\nD:\\WINDOWS\r\nUninstalled. Original backups retained."
+      }
+    },
+    "w31": {
+      "profile": "w31",
+      "checksummed_restore": [
+        "SYSTEM/USER.EXE",
+        "SYSTEM/GDI.EXE",
+        "SYSTEM/KRNL386.EXE",
+        "SYSTEM/KRNL286.EXE",
+        "WIN.INI"
+      ],
+      "session": {
+        "INSTALL": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\WINDOWS\r\nInstalled. Restart the target system.",
+        "VERIFY": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\WINDOWS\r\nInstallation verified.",
+        "REMOVE": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\WINDOWS\r\nUninstalled. Original backups retained."
+      }
+    },
+    "w386": {
+      "profile": "w386",
+      "checksummed_restore": [
+        "WIN200.BIN",
+        "WIN200.OVL",
+        "WIN.INI"
+      ],
+      "session": {
+        "INSTALL": "WINRAM 1.0\r\nMicrosoft Windows/386 2.11\r\nD:\\WIN386\r\nInstalled. Restart the target system.",
+        "VERIFY": "WINRAM 1.0\r\nMicrosoft Windows/386 2.11\r\nD:\\WIN386\r\nInstallation verified.",
+        "REMOVE": "WINRAM 1.0\r\nMicrosoft Windows/386 2.11\r\nD:\\WIN386\r\nUninstalled. Original backups retained."
+      }
+    },
+    "wfw": {
+      "profile": "wfw",
+      "checksummed_restore": [
+        "SYSTEM/USER.EXE",
+        "SYSTEM/GDI.EXE",
+        "SYSTEM/KRNL386.EXE",
+        "WIN.INI"
+      ],
+      "session": {
+        "INSTALL": "WINRAM 1.0\r\nWindows for Workgroups 3.11\r\nD:\\WINDOWS\r\nInstalled. Restart the target system.",
+        "VERIFY": "WINRAM 1.0\r\nWindows for Workgroups 3.11\r\nD:\\WINDOWS\r\nInstallation verified.",
+        "REMOVE": "WINRAM 1.0\r\nWindows for Workgroups 3.11\r\nD:\\WINDOWS\r\nUninstalled. Original backups retained."
+      }
+    }
+  },
+  "microsoft_himem_395": {
+    "31e": {
+      "block_kib": 128,
+      "requested_blocks": 512,
+      "held_kib": 65536,
+      "written": 512,
+      "verified": 512,
+      "released": 512,
+      "next_allocation_refused": false,
+      "integrity": true,
+      "guest_output": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Block KiB=128",
+        "Requested blocks=512",
+        "Written KiB=32768",
+        "Written KiB=65536",
+        "Simultaneously held KiB=65536",
+        "Written blocks=512",
+        "Verified blocks=512",
+        "Released blocks=512",
+        "Integrity PASS",
+        "GLOBALMEM END"
+      ]
+    },
+    "30s": {
+      "block_kib": 128,
+      "requested_blocks": 512,
+      "held_kib": 65536,
+      "written": 512,
+      "verified": 512,
+      "released": 512,
+      "next_allocation_refused": false,
+      "integrity": true,
+      "guest_output": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Block KiB=128",
+        "Requested blocks=512",
+        "Written KiB=32768",
+        "Written KiB=65536",
+        "Simultaneously held KiB=65536",
+        "Written blocks=512",
+        "Verified blocks=512",
+        "Released blocks=512",
+        "Integrity PASS",
+        "GLOBALMEM END"
+      ]
+    },
+    "30r": {
+      "block_kib": 128,
+      "requested_blocks": 512,
+      "held_kib": 65536,
+      "written": 512,
+      "verified": 512,
+      "released": 512,
+      "next_allocation_refused": false,
+      "integrity": true,
+      "guest_output": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Block KiB=128",
+        "Requested blocks=512",
+        "Written KiB=32768",
+        "Written KiB=65536",
+        "Simultaneously held KiB=65536",
+        "Written blocks=512",
+        "Verified blocks=512",
+        "Released blocks=512",
+        "Integrity PASS",
+        "GLOBALMEM END"
+      ]
+    }
+  },
+  "task_exit": {
+    "30r": [
+      "WINRAM memory service started",
+      "WINRAM global memory service ready",
+      "WINRAM memory display ready",
+      "Before task KiB=4126656",
+      "Abandoned objects=256",
+      "While task holds objects KiB=4057024",
+      "After task exit and collection KiB=4126656",
+      "TASK EXIT END"
+    ],
+    "30s": [
+      "WINRAM memory service started",
+      "WINRAM global memory service ready",
+      "WINRAM memory display ready",
+      "Before task KiB=4115392",
+      "Abandoned objects=256",
+      "While task holds objects KiB=4115392",
+      "After task exit and collection KiB=4115392",
+      "TASK EXIT END"
+    ],
+    "w101": [
+      "WINRAM memory service started",
+      "WINRAM global memory service ready",
+      "WINRAM memory display ready",
+      "Before task KiB=4127680",
+      "Abandoned objects=256",
+      "While task holds objects KiB=4058048",
+      "After task exit and collection KiB=4127680",
+      "TASK EXIT END"
+    ],
+    "w386": [
+      "Windows/386 activated SETVER 3.40",
+      "WINRAM memory service started",
+      "WINRAM global memory service ready",
+      "WINRAM memory display ready",
+      "Before task KiB=4094912",
+      "Abandoned objects=256",
+      "While task holds objects KiB=4086720",
+      "After task exit and collection KiB=4094912",
+      "TASK EXIT END"
+    ]
+  },
+  "win9x_native_controls": {
+    "Windows 98 SE": {
+      "block_kib": 4096,
+      "requested_blocks": 320,
+      "held_kib": 450560,
+      "written": 110,
+      "verified": 110,
+      "released": 110,
+      "next_allocation_refused": true,
+      "integrity": true,
+      "guest_output": [
+        "Block KiB=4096",
+        "Requested blocks=320",
+        "Allocator refused the next block",
+        "Simultaneously held KiB=450560",
+        "Written blocks=110",
+        "Verified blocks=110",
+        "Released blocks=110",
+        "Integrity PASS",
+        "GLOBALMEM END"
+      ]
+    },
+    "Windows 95 OSR2": {
+      "block_kib": 4096,
+      "requested_blocks": 256,
+      "held_kib": 466944,
+      "written": 114,
+      "verified": 114,
+      "released": 114,
+      "next_allocation_refused": true,
+      "integrity": true,
+      "guest_output": [
+        "Block KiB=4096",
+        "Requested blocks=256",
+        "Allocator refused the next block",
+        "Simultaneously held KiB=466944",
+        "Written blocks=114",
+        "Verified blocks=114",
+        "Released blocks=114",
+        "Integrity PASS",
+        "GLOBALMEM END"
+      ]
+    },
+    "Windows Me": {
+      "block_kib": 4096,
+      "requested_blocks": 256,
+      "held_kib": 454656,
+      "written": 111,
+      "verified": 111,
+      "released": 111,
+      "next_allocation_refused": true,
+      "integrity": true,
+      "guest_output": [
+        "Block KiB=4096",
+        "Requested blocks=256",
+        "Allocator refused the next block",
+        "Simultaneously held KiB=454656",
+        "Written blocks=111",
+        "Verified blocks=111",
+        "Released blocks=111",
+        "Integrity PASS",
+        "GLOBALMEM END"
+      ]
+    }
+  },
+  "paging_disabled": {
+    "Windows 3.1 Enhanced": {
+      "block_kib": 4096,
+      "requested_blocks": 960,
+      "held_kib": 3850240,
+      "written": 940,
+      "verified": 940,
+      "released": 940,
+      "next_allocation_refused": true,
+      "integrity": true,
+      "guest_output": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Block KiB=4096",
+        "Requested blocks=960",
+        "Written KiB=1048576",
+        "Written KiB=2097152",
+        "Written KiB=3145728",
+        "Allocator refused the next block",
+        "Simultaneously held KiB=3850240",
+        "Written blocks=940",
+        "Verified blocks=940",
+        "Released blocks=940",
+        "Integrity PASS",
+        "GLOBALMEM END"
+      ]
+    },
+    "WfW 3.11 Enhanced": {
+      "block_kib": 4096,
+      "requested_blocks": 960,
+      "held_kib": 3850240,
+      "written": 940,
+      "verified": 940,
+      "released": 940,
+      "next_allocation_refused": true,
+      "integrity": true,
+      "guest_output": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Block KiB=4096",
+        "Requested blocks=960",
+        "Written KiB=1048576",
+        "Written KiB=2097152",
+        "Written KiB=3145728",
+        "Allocator refused the next block",
+        "Simultaneously held KiB=3850240",
+        "Written blocks=940",
+        "Verified blocks=940",
+        "Released blocks=940",
+        "Integrity PASS",
+        "GLOBALMEM END"
+      ]
+    }
+  }
+}

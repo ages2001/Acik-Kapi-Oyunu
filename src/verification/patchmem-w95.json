@@ -1,0 +1,46 @@
+{
+  "DEFAULT": {
+    "options": "/I /M",
+    "files": {
+      "VMM32": {
+        "equal": true,
+        "reference_sha256": "4c479f19450077d0c1d6488b417560eed3ae6854f1b537cb80d3b19d9b94dc07",
+        "output_sha256": "4c479f19450077d0c1d6488b417560eed3ae6854f1b537cb80d3b19d9b94dc07"
+      },
+      "VMM": {
+        "equal": true,
+        "reference_sha256": "b3273c9a45738112a11f1ccc98ec7374f44bce872b8f28fbf8482a0470f3cf9b",
+        "output_sha256": "b3273c9a45738112a11f1ccc98ec7374f44bce872b8f28fbf8482a0470f3cf9b"
+      },
+      "VCACHE": {
+        "equal": true,
+        "reference_sha256": "a2e57150037aa965b60156f9f95a4b31ff16427a4f5ea4d4f87909ed4e1ea0a6",
+        "output_sha256": "a2e57150037aa965b60156f9f95a4b31ff16427a4f5ea4d4f87909ed4e1ea0a6"
+      }
+    },
+    "installer_log": "WINRAM 1.0\r\nWindows 95 OSR2 (4.00.1111)\r\nD:\\ARCHIVE\\W95\r\n\r\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\r\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\r\n\r\nVMM File Extracted\r\nVCACHE File Extracted\r\nVMM32 Patched\r\nVMM Patched\r\nVCACHE Patched\r\n\r\nPatch Installed Successfully\r\n\r\nInstalled. Restart the target system.\r\nWINRAM 1.0\r\nWindows 95 OSR2 (4.00.1111)\r\nD:\\ARCHIVE\\W95\r\nInstallation verified.\r\nWINRAM 1.0\r\nWindows 95 OSR2 (4.00.1111)\r\nD:\\ARCHIVE\\W95\r\nUninstalled. Original backups retained.\r\n",
+    "reference_log": "\r\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\r\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\r\n\r\nVMM File Extracted\r\nVCACHE File Extracted\r\nVMM32 Patched\r\nVMM Patched\r\nVCACHE Patched\r\n\r\nPatch Installed Successfully\r\n\r\n"
+  },
+  "OPTIONS": {
+    "options": "/I /A /M /P /C:256",
+    "files": {
+      "VMM32": {
+        "equal": true,
+        "reference_sha256": "4c479f19450077d0c1d6488b417560eed3ae6854f1b537cb80d3b19d9b94dc07",
+        "output_sha256": "4c479f19450077d0c1d6488b417560eed3ae6854f1b537cb80d3b19d9b94dc07"
+      },
+      "VMM": {
+        "equal": true,
+        "reference_sha256": "21e6af787403a8e44889909b7ab934b2d033e388e8442bda83eb0f69f6ea7f5b",
+        "output_sha256": "21e6af787403a8e44889909b7ab934b2d033e388e8442bda83eb0f69f6ea7f5b"
+      },
+      "VCACHE": {
+        "equal": true,
+        "reference_sha256": "4d8a1eb83b8e4a4be6b037c18281d9787efbb6750bfd598c36220cc5f5974d48",
+        "output_sha256": "4d8a1eb83b8e4a4be6b037c18281d9787efbb6750bfd598c36220cc5f5974d48"
+      }
+    },
+    "installer_log": "WINRAM 1.0\r\nWindows 95 OSR2 (4.00.1111)\r\nD:\\ARCHIVE\\W95\r\n\r\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\r\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\r\n\r\nVMM File Extracted\r\nVCACHE File Extracted\r\nVMM32 Patched\r\nVMM Patched\r\nVCACHE Patched\r\n\r\nPatch Installed Successfully\r\n\r\nInstalled. Restart the target system.\r\nWINRAM 1.0\r\nWindows 95 OSR2 (4.00.1111)\r\nD:\\ARCHIVE\\W95\r\nInstallation verified.\r\nWINRAM 1.0\r\nWindows 95 OSR2 (4.00.1111)\r\nD:\\ARCHIVE\\W95\r\nUninstalled. Original backups retained.\r\n",
+    "reference_log": "\r\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\r\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\r\n\r\nVMM File Extracted\r\nVCACHE File Extracted\r\nVMM32 Patched\r\nVMM Patched\r\nVCACHE Patched\r\n\r\nPatch Installed Successfully\r\n\r\n"
+  }
+}

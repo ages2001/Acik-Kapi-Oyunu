@@ -1,0 +1,14 @@
+Image PATCHMEM.EXE in x86:LE:16:Real Mode
+Recovered functions 93
+Move AGP  1000:6434
+Absolute Max File Cache  1000:647d
+Install Only  1000:64bc
+Move VXD Data  1000:64da
+Install PROTHOOK  1000:6504
+VMM File Extracted  1000:6eaa
+VCACHE File Extracted  1000:6efe
+Unknown, Invalid or Uncompressed VMM32 File  1000:6e33
+VMM32 Patched  1000:6ff5
+VCACHE Patched  1000:70dd
+Dispatcher candidate 1000:0ef4 body 4146 decoded calls 82
+Dispatcher candidate 1000:274f body 5691 decoded calls 197

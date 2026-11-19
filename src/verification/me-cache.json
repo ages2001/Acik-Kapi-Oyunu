@@ -1,0 +1,7 @@
+{
+  "option": "/C:256",
+  "native_maxfilecache_kib": 262144,
+  "patched_vcache_sha256": "551d38e0c62137e061b235d6a34042f3cd279e752c0016c6dd4d896a59a9c833",
+  "reference_sha256": "551d38e0c62137e061b235d6a34042f3cd279e752c0016c6dd4d896a59a9c833",
+  "log": "WINRAM 1.0\r\nWindows Millennium Edition (4.90.3000)\r\nD:\\ARCHIVE\\WME\r\n\r\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\r\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\r\n\r\nVMM File Extracted\r\nVCACHE File Extracted\r\nVMM32 Patched\r\nVMM Patched\r\nVCACHE Patched\r\n\r\nPatch Installed Successfully\r\n\r\nInstalled. Restart the target system.\r\nWINRAM 1.0\r\nWindows Millennium Edition (4.90.3000)\r\nD:\\ARCHIVE\\WME\r\nUninstalled. Original backups retained.\r\n"
+}

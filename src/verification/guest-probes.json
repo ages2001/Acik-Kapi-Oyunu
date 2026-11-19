@@ -1,0 +1,391 @@
+{
+  "final31-stress": [
+    "W31PROBE begin",
+    "windows=0a03 flags=00000429",
+    "before pages=1031024 free=1018167 linear=972124 linear_free=964257 swap=0",
+    "written_mib=256",
+    "written_mib=512",
+    "written_mib=768",
+    "written_mib=1024",
+    "written_mib=1280",
+    "written_mib=1536",
+    "written_mib=1792",
+    "written_mib=2048",
+    "written_mib=2304",
+    "written_mib=2560",
+    "written_mib=2816",
+    "written_mib=3072",
+    "written_mib=3328",
+    "written_mib=3584",
+    "resident_mib=3744 first_linear=0dd60000 last_linear=f7d5f000",
+    "resident pages=1031024 free=59702 linear=972124 linear_free=5793 swap=0",
+    "after pages=1031024 free=1018167 linear=972124 linear_free=964257 swap=0",
+    "result=PASS target_mib=3744 checked_mib=3744 reason=",
+    "W31PROBE end"
+  ],
+  "wfw-stress": [
+    "W31PROBE begin",
+    "windows=0a03 flags=00000429",
+    "before pages=1031024 free=1018153 linear=972124 linear_free=964254 swap=0",
+    "written_mib=256",
+    "written_mib=512",
+    "written_mib=768",
+    "written_mib=1024",
+    "written_mib=1280",
+    "written_mib=1536",
+    "written_mib=1792",
+    "written_mib=2048",
+    "written_mib=2304",
+    "written_mib=2560",
+    "written_mib=2816",
+    "written_mib=3072",
+    "written_mib=3328",
+    "written_mib=3584",
+    "resident_mib=3744 first_linear=0dd7a000 last_linear=f7d79000",
+    "resident pages=1031024 free=59686 linear=972124 linear_free=5790 swap=0",
+    "after pages=1031024 free=1018150 linear=972124 linear_free=964254 swap=0",
+    "result=PASS target_mib=3744 checked_mib=3744 reason=",
+    "W31PROBE end"
+  ],
+  "early101-setver-xms": [
+    "W31PROBE begin",
+    "query XMS",
+    "DOS reported by INT 21h/30h = 3.30",
+    "XMS version = 3.0",
+    "XMS free KiB = 4127680",
+    "Native Win16 XMS test",
+    "",
+    "XMS free before allocation: 4127680 KiB",
+    "Simultaneously allocated: 4127680 KiB",
+    "Highest locked physical byte: 4227858431",
+    "Every 4 KiB page verified.",
+    "result=PASS",
+    "W31PROBE end"
+  ],
+  "early203-setver-xms": [
+    "W31PROBE begin",
+    "query XMS",
+    "DOS reported by INT 21h/30h = 3.40",
+    "XMS version = 3.0",
+    "XMS free KiB = 4127680",
+    "Native Win16 XMS test",
+    "",
+    "XMS free before allocation: 4127680 KiB",
+    "Simultaneously allocated: 4127680 KiB",
+    "Highest locked physical byte: 4227858431",
+    "Every 4 KiB page verified.",
+    "result=PASS",
+    "W31PROBE end"
+  ],
+  "early286-setver-xms": [
+    "W31PROBE begin",
+    "query XMS",
+    "DOS reported by INT 21h/30h = 3.40",
+    "XMS version = 3.0",
+    "XMS free KiB = 4127680",
+    "Native Win16 XMS test",
+    "",
+    "XMS free before allocation: 4127680 KiB",
+    "Simultaneously allocated: 4127680 KiB",
+    "Highest locked physical byte: 4227858431",
+    "Every 4 KiB page verified.",
+    "result=PASS",
+    "W31PROBE end"
+  ],
+  "early386-native-bank-B": [
+    "Windows/386 activated SETVER 3.40",
+    "Windows/386 activated SETVER 3.40",
+    "W31PROBE begin",
+    "Shared XMS bank KiB=4094912",
+    "transfer buffer selector or segment=3672 offset=585",
+    "result=PASS all bank pages",
+    "W31PROBE end"
+  ],
+  "win30r-xms": [
+    "W31PROBE begin",
+    "query XMS",
+    "Windows 3.0",
+    "GetFreeSpace bytes = 383712",
+    "GetWinFlags = 1032",
+    "XMS version = 3.0",
+    "XMS free KiB = 4126656",
+    "Native Win16 XMS test",
+    "",
+    "XMS free before allocation: 4126656 KiB",
+    "Simultaneously allocated: 4126656 KiB",
+    "Highest locked physical byte: 4227858431",
+    "Every 4 KiB page verified.",
+    "result=PASS",
+    "W31PROBE end"
+  ],
+  "win30s-bank-full": [
+    "W31PROBE begin",
+    "Shared XMS bank KiB=4115392",
+    "transfer buffer selector or segment=4213 offset=524",
+    "result=PASS all bank pages",
+    "W31PROBE end"
+  ],
+  "win30-enhanced-vxd-B": [
+    "VW31PROBE begin",
+    "Shared XMS bank KiB=4115392",
+    "transfer buffer selector or segment=4181 offset=583",
+    "result=PASS all bank pages",
+    "W31PROBE end"
+  ],
+  "win31s-bank-full": [
+    "W31PROBE begin",
+    "Shared XMS bank KiB=4115392",
+    "transfer buffer selector or segment=519 offset=524",
+    "result=PASS all bank pages",
+    "W31PROBE end"
+  ],
+  "res31-baseline": [
+    "W31PROBE begin",
+    "start USER=95 GDI=88 system=88 user_selector=07b7 gdi_selector=060f",
+    "menus USER=9 GDI=88 system=9 user_selector=07b7 gdi_selector=060f",
+    "menus simultaneous=2296 released=2296 before_percent=95 low_percent=9 after_percent=95",
+    "brushes USER=95 GDI=9 system=9 user_selector=07b7 gdi_selector=060f",
+    "brushes simultaneous=1328 released=1328 before_percent=88 low_percent=9 after_percent=78",
+    "end USER=95 GDI=78 system=78 user_selector=07b7 gdi_selector=060f",
+    "W31PROBE end"
+  ],
+  "res31-pool-drawing": [
+    "W31PROBE begin",
+    "start USER=95 GDI=88 system=88 user_selector=079f gdi_selector=05ff",
+    "menus USER=9 GDI=88 system=9 user_selector=079f gdi_selector=05ff",
+    "menus simultaneous=2960 released=2960 before_percent=95 low_percent=9 after_percent=95",
+    "brushes USER=95 GDI=9 system=9 user_selector=079f gdi_selector=05ff",
+    "brushes simultaneous=1672 released=1672 before_percent=88 low_percent=9 after_percent=88",
+    "end USER=95 GDI=88 system=88 user_selector=079f gdi_selector=05ff",
+    "result=PASS menus and GDI drawing",
+    "W31PROBE end"
+  ],
+  "reswfw-baseline": [
+    "W31PROBE begin",
+    "start USER=95 GDI=88 system=88 user_selector=180f gdi_selector=06af",
+    "menus USER=9 GDI=88 system=9 user_selector=180f gdi_selector=06af",
+    "menus simultaneous=2296 released=2296 before_percent=95 low_percent=9 after_percent=95",
+    "brushes USER=95 GDI=9 system=9 user_selector=180f gdi_selector=06af",
+    "brushes simultaneous=1328 released=1328 before_percent=88 low_percent=9 after_percent=78",
+    "end USER=95 GDI=78 system=78 user_selector=180f gdi_selector=06af",
+    "W31PROBE end"
+  ],
+  "reswfw-pool-drawing": [
+    "W31PROBE begin",
+    "start USER=95 GDI=88 system=88 user_selector=1827 gdi_selector=069f",
+    "menus USER=9 GDI=88 system=9 user_selector=1827 gdi_selector=069f",
+    "menus simultaneous=2960 released=2960 before_percent=95 low_percent=9 after_percent=95",
+    "brushes USER=95 GDI=9 system=9 user_selector=1827 gdi_selector=069f",
+    "brushes simultaneous=1672 released=1672 before_percent=88 low_percent=9 after_percent=86",
+    "end USER=95 GDI=86 system=86 user_selector=1827 gdi_selector=069f",
+    "result=PASS menus and GDI drawing",
+    "W31PROBE end"
+  ],
+  "early101-menus-base": [
+    "W31PROBE begin",
+    "menus=1482 released=1482",
+    "brushes=1866 released=1866",
+    "result=PASS resource allocation and reuse",
+    "W31PROBE end"
+  ],
+  "early101-menus-pool": [
+    "W31PROBE begin",
+    "menus=2451 released=2451",
+    "brushes=1866 released=1866",
+    "result=PASS resource allocation and reuse",
+    "W31PROBE end"
+  ],
+  "early203-dos3-menus-pool": [
+    "W31PROBE begin",
+    "menus=2420 released=2420",
+    "brushes=1783 released=1783",
+    "result=PASS resource allocation and reuse",
+    "W31PROBE end"
+  ],
+  "early286-menus-pool": [
+    "W31PROBE begin",
+    "menus=2420 released=2420",
+    "brushes=1783 released=1783",
+    "result=PASS resource allocation and reuse",
+    "W31PROBE end"
+  ],
+  "early386-menus-pool": [
+    "W31PROBE begin",
+    "menus=2420 released=2420",
+    "brushes=1783 released=1783",
+    "result=PASS resource allocation and reuse",
+    "W31PROBE end"
+  ],
+  "win30-real-pool": [
+    "W31PROBE begin",
+    "menus=2142 released=2142",
+    "brushes=1967 released=1967",
+    "result=PASS resource allocation and reuse",
+    "W31PROBE end"
+  ],
+  "win30-standard-pool": [
+    "W31PROBE begin",
+    "menus=2142 released=2142",
+    "brushes=1967 released=1967",
+    "result=PASS resource allocation and reuse",
+    "W31PROBE end"
+  ],
+  "win30-enhanced-pool": [
+    "W31PROBE begin",
+    "menus=2142 released=2142",
+    "brushes=1973 released=1973",
+    "result=PASS resource allocation and reuse",
+    "W31PROBE end"
+  ],
+  "dos5-handles": [
+    "Additional simultaneous DOS file handles = 250",
+    "W31PROBE begin",
+    "DOS 5.0",
+    "XMS free before allocation: 4127680 KiB",
+    "Simultaneously allocated: 4127680 KiB",
+    "Highest locked physical byte: 4227858431",
+    "Every 4 KiB page verified.",
+    "result=PASS",
+    "W31PROBE end"
+  ],
+  "dos5-xms": [
+    "W31PROBE begin",
+    "DOS 5.0",
+    "XMS free before allocation: 4127680 KiB",
+    "Simultaneously allocated: 4127680 KiB",
+    "Highest locked physical byte: 4227858431",
+    "Every 4 KiB page verified.",
+    "result=PASS",
+    "W31PROBE end"
+  ],
+  "dos6-handles": [
+    "Additional simultaneous DOS file handles = 250",
+    "W31PROBE begin",
+    "DOS 6.22",
+    "XMS free before allocation: 4127680 KiB",
+    "Simultaneously allocated: 4127680 KiB",
+    "Highest locked physical byte: 4227858431",
+    "Every 4 KiB page verified.",
+    "result=PASS",
+    "W31PROBE end"
+  ],
+  "dos6-xms": [
+    "W31PROBE begin",
+    "DOS 6.22",
+    "XMS free before allocation: 4127680 KiB",
+    "Simultaneously allocated: 4127680 KiB",
+    "Highest locked physical byte: 4227858431",
+    "Every 4 KiB page verified.",
+    "result=PASS",
+    "W31PROBE end"
+  ],
+  "dos7-handles": [
+    "Additional simultaneous DOS file handles = 250",
+    "W31PROBE begin",
+    "DOS 7.10",
+    "XMS free before allocation: 4127680 KiB",
+    "Simultaneously allocated: 4127680 KiB",
+    "Highest locked physical byte: 4227858431",
+    "Every 4 KiB page verified.",
+    "result=PASS",
+    "W31PROBE end"
+  ],
+  "dos7-xms": [
+    "W31PROBE begin",
+    "DOS 7.10",
+    "XMS free before allocation: 4127680 KiB",
+    "Simultaneously allocated: 4127680 KiB",
+    "Highest locked physical byte: 4227858431",
+    "Every 4 KiB page verified.",
+    "result=PASS",
+    "W31PROBE end"
+  ],
+  "dos8-handles": [
+    "Additional simultaneous DOS file handles = 250",
+    "W31PROBE begin",
+    "DOS 8.0",
+    "XMS free before allocation: 4127680 KiB",
+    "Simultaneously allocated: 4127680 KiB",
+    "Highest locked physical byte: 4227858431"
+  ],
+  "dos8-xms": [
+    "W31PROBE begin",
+    "DOS 8.0",
+    "XMS free before allocation: 4127680 KiB",
+    "Simultaneously allocated: 4127680 KiB",
+    "Highest locked physical byte: 4227858431",
+    "Every 4 KiB page verified.",
+    "result=PASS",
+    "W31PROBE end"
+  ],
+  "win95-4032-heap-large": [
+    "W31PROBE begin",
+    "USER reserved=33554432 committed=33554432 free=33551260 handles_free=16350",
+    "GDI reserved=33554432 committed=33554432 free=33546600 handles_free=16287",
+    "menus=6500 items=208000 all_released=1",
+    "W31PROBE end"
+  ],
+  "win95-4032-heap-base": [
+    "W31PROBE begin",
+    "USER reserved=2097152 committed=2097152 free=2095900 handles_free=16350",
+    "GDI reserved=2097152 committed=2097152 free=2091240 handles_free=16287",
+    "menus=629 items=20126 all_released=1",
+    "W31PROBE end"
+  ],
+  "win98-4032-heap-large": [
+    "W31PROBE begin",
+    "USER reserved=33554432 committed=33554432 free=33550576 handles_free=16349",
+    "GDI reserved=33554432 committed=33554432 free=33545688 handles_free=16281",
+    "menus=6500 items=208000 all_released=1",
+    "W31PROBE end"
+  ],
+  "win98-4032-heap-base": [
+    "W31PROBE begin",
+    "USER reserved=2097152 committed=2097152 free=2095216 handles_free=16349",
+    "GDI reserved=2097152 committed=2097152 free=2090328 handles_free=16281",
+    "menus=575 items=18378 all_released=1",
+    "W31PROBE end"
+  ],
+  "winme-4032-heap-large": [
+    "W31PROBE begin",
+    "USER reserved=33554432 committed=33554432 free=33551108 handles_free=2014",
+    "GDI reserved=33554432 committed=33554432 free=33544296 handles_free=1916",
+    "menus=6500 items=208000 all_released=1",
+    "W31PROBE end"
+  ],
+  "winme-4032-heap-base": [
+    "W31PROBE begin",
+    "USER reserved=2097152 committed=2097152 free=2095748 handles_free=2014",
+    "GDI reserved=2097152 committed=2097152 free=2088936 handles_free=1916",
+    "menus=575 items=18378 all_released=1",
+    "W31PROBE end"
+  ],
+  "winme-4032-3360": [
+    "W9X begin",
+    "Windows 4.90 build 3000 reported physical bytes=4227321856 free=3636744192",
+    "Simultaneously resident target MiB=3360 workers_ready=1 free bytes=101740544",
+    "worker 0 state 1",
+    "worker 1 state 1",
+    "worker 2 state 1",
+    "worker 3 state 1",
+    "worker 4 state 1",
+    "worker 5 state 1",
+    "worker 6 state 1",
+    "result=PASS every 4 KiB page verified",
+    "W9X end"
+  ],
+  "win95-physical-memory": [
+    "W9X begin",
+    "Windows 4.0 build 1111 reported physical bytes=4226125824 free=4168237056",
+    "Simultaneously resident target MiB=3500 workers_ready=1 free bytes=485265408",
+    "result=PASS every 4 KiB page verified",
+    "W9X end"
+  ],
+  "win98-physical-memory": [
+    "W9X begin",
+    "Windows 4.10 build 2222 reported physical bytes=4227362816 free=4165541888",
+    "Simultaneously resident target MiB=3500 workers_ready=1 free bytes=481931264",
+    "result=PASS every 4 KiB page verified",
+    "W9X end"
+  ]
+}

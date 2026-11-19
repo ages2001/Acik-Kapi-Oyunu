@@ -1,0 +1,9 @@
+{
+  "install": "WINRAM 1.0\r\nWindows for Workgroups 3.11\r\nD:\\WINDOWS\r\nInstalled. Restart the target system.\r\nWINRAM 1.0\r\nWindows for Workgroups 3.11\r\nD:\\WINDOWS\r\nInstallation verified.\r\n",
+  "about": {
+    "enhanced": {
+      "debug": "WINRAM memory service started\nWINRAM memory display ready\nPhysical RAM free: 4,072,576 KiB\n",
+      "screen_sha256": "d564634b3ae5f3de71692bc43d13646dbcc6b70fb1effd281a0313f4a6916b9c"
+    }
+  }
+}

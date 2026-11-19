@@ -1,0 +1,9 @@
+{
+  "install": "WINRAM 1.0\r\nMicrosoft Windows/286 2.11\r\nD:\\WINDOWS\r\nInstalled. Restart the target system.\r\nWINRAM 1.0\r\nMicrosoft Windows/286 2.11\r\nD:\\WINDOWS\r\nInstallation verified.\r\n",
+  "about": {
+    "desktop": {
+      "debug": "WINRAM memory service started\nWINRAM memory display ready\nXMS free: 4,127,680 KiB\n",
+      "screen_sha256": "fe73ba98eb46cae60d4a98945ac196ebe7ab2d4f1a40376e68953c42814d1c6b"
+    }
+  }
+}

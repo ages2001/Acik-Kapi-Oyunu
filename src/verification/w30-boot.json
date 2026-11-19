@@ -1,0 +1,29 @@
+{
+  "install": "WINRAM 1.0\r\nMicrosoft Windows 3.0a\r\nD:\\WINDOWS\r\nInstalled. Restart the target system.\r\nWINRAM 1.0\r\nMicrosoft Windows 3.0a\r\nD:\\WINDOWS\r\nInstallation verified.\r\n",
+  "about": {
+    "real": {
+      "debug": "WINRAM memory service started\nWINRAM memory display ready\nXMS free: 4,126,656 KiB\n",
+      "screen_sha256": "cd3d4c38620a2fcd17c78877e90316d4f22f60d2aee65d27acf2a59bfbe71ea9"
+    },
+    "standard": {
+      "debug": "WINRAM memory service started\nWINRAM memory display ready\nBank free: 4,115,392 KiB\n",
+      "screen_sha256": "573d9e03969883c34124065bb50b9500145cbab0f3b9ed4bcff31d28cd0743fd"
+    },
+    "enhanced": {
+      "debug": "VWINRAM memory service started\nWINRAM memory display ready\nBank free: 4,115,392 KiB\n",
+      "screen_sha256": "01dc12fe1263c4190ce85e617aedf6c1bc917aaba1878d5cdbd3fa0f2afeb8d6"
+    },
+    "real-file": {
+      "debug": "WINRAM memory service started\nWINRAM memory display ready\nXMS free: 4,126,656 KiB\n",
+      "screen_sha256": "1e3142575d9cdeae61f249449919274d588c7f994a6fd5efd5a401497d60538e"
+    },
+    "standard-file": {
+      "debug": "WINRAM memory service started\nWINRAM memory display ready\nBank free: 4,115,392 KiB\n",
+      "screen_sha256": "734f8528b985bf9d798f64073fad929ac9daceffae1988ef35295ed6d75a6889"
+    },
+    "enhanced-file": {
+      "debug": "VWINRAM memory service started\nWINRAM memory display ready\nBank free: 4,115,392 KiB\n",
+      "screen_sha256": "c39e8454a70031089f5a4894954b0be9e8afb35c96af26205a4d630593414d9d"
+    }
+  }
+}

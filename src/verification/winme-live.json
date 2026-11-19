@@ -1,0 +1,16 @@
+{
+  "guest_transcript": "WINRAM 1.0\nRunning inside Windows.\nWindows Millennium Edition (4.90.3000)\nC:\\WINDOWS\n\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\n\nVMM File Extracted\nVCACHE File Extracted\nVMM32 Patched\nVMM Patched\nVCACHE Patched\n\nPatch Installed Successfully\n\nOperation queued for the next Windows boot.\n\n\n[Rename]\nC:\\WINDOWS\\SYSTEM\\KERNEL32.DLL=C:\\WINDOWS\\WRMSTATE\\S0000.NEW\nC:\\WINDOWS\\SYSTEM\\USER.EXE=C:\\WINDOWS\\WRMSTATE\\S0001.NEW\nC:\\WINDOWS\\SYSTEM\\SYSDM.CPL=C:\\WINDOWS\\WRMSTATE\\S0002.NEW\nC:\\WINDOWS\\SYSTEM\\VMM32.VXD=C:\\WINDOWS\\WRMSTATE\\S0003.NEW\nC:\\WINDOWS\\SYSTEM\\VMM32\\VMM.VXD=C:\\WINDOWS\\WRMSTATE\\S0004.NEW\nC:\\WINDOWS\\SYSTEM\\VMM32\\VCACHE.VXD=C:\\WINDOWS\\WRMSTATE\\S0005.NEW\nC:\\WINDOWS\\SYSTEM.INI=C:\\WINDOWS\\WRMSTATE\\S0006.NEW\nC:\\WINDOWS\\WRMSTATE\\ACTIVE.DAT=C:\\WINDOWS\\WRMSTATE\\TXN.DAT\n\n",
+  "source": "Win16 application read the installer log and WININIT.INI from the active guest before requesting a reboot.",
+  "original_core_files": {
+    "WINDOWS/SYSTEM/KERNEL32.DLL": "8fa6c29b7977af9f1b6c350de0fcd40be6da8e8a5ddefe6ea61dde76eb9888ff",
+    "WINDOWS/SYSTEM/USER.EXE": "cd931e9175d44cab5ffc39e33322cc4a26b17b3b36f0732f38698d81026d7ab4",
+    "WINDOWS/SYSTEM/SYSDM.CPL": "53ae48ec56ffe55a0d1af41090e64e704ed725d0d26bd9704d7360df06d2ba8f",
+    "WINDOWS/SYSTEM/VMM32.VXD": "708efcfefe357749d8e7839ecbf8e36c072b666beef1c565b4f288dfdb046ed4"
+  },
+  "active_record_after_reboot": true,
+  "vxd_hashes_after_reboot": {
+    "VMM32": "de1eab1a9802376f5b090d5c7ed4c030a395e28929b15eb0e9643729b6e7e8d6",
+    "VMM": "e8f431ac38f44c3d8bb9f93ffd2a22febed473a5e91b1ab1477159a547bb06d6",
+    "VCACHE": "2834b886538f53fa60b6f5532eba36c23be63b3010e125137ed52f338374f222"
+  }
+}

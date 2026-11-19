@@ -1,0 +1,8 @@
+{
+  "install": "WINRAM 1.0\r\nMicrosoft MS-DOS 8.00\r\nA:\\\r\nInstalled. Restart the target system.\r\n",
+  "verify": "WINRAM 1.0\r\nMicrosoft MS-DOS 8.00\r\nA:\\\r\nInstallation verified.\r\n",
+  "dos_mem": "BIOS conventional memory: 639 KiB\r\nLargest free DOS block: 595248 bytes\r\nFree extended memory (XMS 3): 4127680 KiB\r\nLargest free XMS block: 4127680 KiB\r\nHighest XMS physical byte address: unreported by XMS driver\r\nBIOS E820 usable RAM (type 1): 4128383 KiB\r\n",
+  "uninstall": "WINRAM 1.0\r\nMicrosoft MS-DOS 8.00\r\nA:\\\r\nUninstalled. Original backups retained.\r\n",
+  "config_restored": true,
+  "scan": "WINRAM 1.0\r\n1  Microsoft MS-DOS 8.00  A:\\\r\n2  Microsoft MS-DOS 6.22  C:\\\r\n3  Microsoft Windows 3.1  C:\\WINDOWS\r\n3 installation(s).\r\n"
+}

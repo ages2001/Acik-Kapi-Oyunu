@@ -1,0 +1,6 @@
+format windows vxd
+option quiet
+option version=3.0
+name BANKWIN.386
+file bankvxd.obj
+export BANKWIN_DDB.1

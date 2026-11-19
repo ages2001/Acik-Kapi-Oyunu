@@ -1,0 +1,12 @@
+{
+  "job": "::/WRMQUEUE/Q0001.JOB",
+  "active_after_reboot": false,
+  "autoexec_restored": true,
+  "backups": [
+    "::/WINDOWS/WRMSTATE/B0001.BKP",
+    "::/WINDOWS/WRMSTATE/B0002.BKP",
+    "::/WINDOWS/WRMSTATE/B0003.BKP",
+    "::/WINDOWS/WRMSTATE/B0004.BKP",
+    "::/WINDOWS/WRMSTATE/B0005.BKP"
+  ]
+}

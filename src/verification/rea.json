@@ -1,0 +1,36 @@
+{
+  "evidence_id": "ev_fe728fa88ff0203878c56229f9a235aff9c928992a1df979d1f6f30dd63ea64a",
+  "provider": {
+    "id": "rea-workflow",
+    "name": "REA composed investigation workflow",
+    "version": "1"
+  },
+  "operation": "binary_overview",
+  "subject": {
+    "name": "PATCHMEM.EXE",
+    "digest": {
+      "sha256": "754c581923e05e5770c78ba2965a947d340887c5ea5bb0a30b60a1a4e879dcd7"
+    },
+    "format": "dos-mz",
+    "architecture": "x86"
+  },
+  "inventory": {
+    "image_base": "0x0",
+    "segment_count": 4,
+    "procedure_count": 93,
+    "string_count": 122
+  },
+  "decompilation": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.2"
+    },
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "file-offset:0x294f"
+    },
+    "signature": "undefined2 FUN_1000_274f(int param_1,int param_2)",
+    "pseudocode_sha256": "ccc826ebdf8f83b1959994f18472435c766f9796f2573e0942f9061fc8a7e578"
+  }
+}

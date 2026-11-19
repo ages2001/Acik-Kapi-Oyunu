@@ -1,0 +1,8 @@
+{
+  "pif": "WINRAM 1.0\r\nCreated WINRAM.PIF beside the executable.\r\nWINRAM 1.0\r\nWINRAM.PIF already exists.\r\n",
+  "matches_published_pif": true,
+  "splitter_startup": "@\\ARCHIVE\\W95\\WINRAM.EXE /LOWMEM\r\n",
+  "installed_helper_equals_public_executable": true,
+  "original_startup_restored": true,
+  "installer_log": "WINRAM 1.0\r\nWindows 95 OSR2 (4.00.1111)\r\nD:\\ARCHIVE\\W95\r\n\r\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\r\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\r\n\r\nVMM File Extracted\r\nVCACHE File Extracted\r\nVMM32 Patched\r\nVMM Patched\r\nVCACHE Patched\r\n\r\nPatch Installed Successfully\r\n\r\nInstalled. Restart the target system.\r\nWINRAM 1.0\r\nWindows 95 OSR2 (4.00.1111)\r\nD:\\ARCHIVE\\W95\r\nInstallation verified.\r\nWINRAM 1.0\r\nWindows 95 OSR2 (4.00.1111)\r\nD:\\ARCHIVE\\W95\r\nUninstalled. Original backups retained.\r\n"
+}

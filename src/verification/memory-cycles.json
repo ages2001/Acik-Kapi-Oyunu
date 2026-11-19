@@ -1,0 +1,140 @@
+{
+  "101": {
+    "before_kib": 4127680,
+    "during_kib": 4111296,
+    "after_release_kib": 4127680,
+    "debug_port_log": [
+      "WINRAM memory service started",
+      "WINRAM memory display ready",
+      "XMS free: 4,127,680 KiB",
+      "PROBE allocated 16384 KiB",
+      "XMS free: 4,111,296 KiB",
+      "PROBE released 16384 KiB",
+      "XMS free: 4,127,680 KiB"
+    ]
+  },
+  "203": {
+    "before_kib": 4127680,
+    "during_kib": 4111296,
+    "after_release_kib": 4127680,
+    "debug_port_log": [
+      "WINRAM memory service started",
+      "WINRAM memory display ready",
+      "XMS free: 4,127,680 KiB",
+      "PROBE allocated 16384 KiB",
+      "XMS free: 4,111,296 KiB",
+      "PROBE released 16384 KiB",
+      "XMS free: 4,127,680 KiB"
+    ]
+  },
+  "286": {
+    "before_kib": 4127680,
+    "during_kib": 4111296,
+    "after_release_kib": 4127680,
+    "debug_port_log": [
+      "WINRAM memory service started",
+      "WINRAM memory display ready",
+      "XMS free: 4,127,680 KiB",
+      "PROBE allocated 16384 KiB",
+      "XMS free: 4,111,296 KiB",
+      "PROBE released 16384 KiB",
+      "XMS free: 4,127,680 KiB"
+    ]
+  },
+  "30-enhanced": {
+    "before_kib": 4115392,
+    "during_kib": 4099008,
+    "after_release_kib": 4115392,
+    "debug_port_log": [
+      "VWINRAM memory display ready",
+      "Bank free: 4,115,392 KiB",
+      "PROBE allocated 16384 KiB",
+      "Bank free: 4,099,008 KiB",
+      "PROBE released 16384 KiB",
+      "Bank free: 4,115,392 KiB"
+    ]
+  },
+  "30-real": {
+    "before_kib": 4126656,
+    "during_kib": 4110272,
+    "after_release_kib": 4126656,
+    "debug_port_log": [
+      "WINRAM memory display ready",
+      "XMS free: 4,126,656 KiB",
+      "PROBE allocated 16384 KiB",
+      "XMS free: 4,110,272 KiB",
+      "PROBE released 16384 KiB",
+      "XMS free: 4,126,656 KiB"
+    ]
+  },
+  "30-standard": {
+    "before_kib": 4115392,
+    "during_kib": 4099008,
+    "after_release_kib": 4115392,
+    "debug_port_log": [
+      "WINRAM memory display ready",
+      "Bank free: 4,115,392 KiB",
+      "PROBE allocated 16384 KiB",
+      "Bank free: 4,099,008 KiB",
+      "PROBE released 16384 KiB",
+      "Bank free: 4,115,392 KiB"
+    ]
+  },
+  "31-enhanced": {
+    "before_kib": 4072656,
+    "during_kib": 4056272,
+    "after_release_kib": 4072656,
+    "debug_port_log": [
+      "WINRAM memory service started",
+      "WINRAM memory display ready",
+      "Physical RAM free: 4,072,656 KiB",
+      "PROBE allocated 16384 KiB",
+      "Physical RAM free: 4,056,272 KiB",
+      "PROBE released 16384 KiB",
+      "Physical RAM free: 4,072,656 KiB"
+    ]
+  },
+  "31-standard": {
+    "before_kib": 4115392,
+    "during_kib": 4099008,
+    "after_release_kib": 4115392,
+    "debug_port_log": [
+      "WINRAM memory display ready",
+      "Bank free: 4,115,392 KiB",
+      "PROBE allocated 16384 KiB",
+      "Bank free: 4,099,008 KiB",
+      "PROBE released 16384 KiB",
+      "Bank free: 4,115,392 KiB"
+    ]
+  },
+  "386": {
+    "before_kib": 4094912,
+    "during_kib": 4078528,
+    "after_release_kib": 4094912,
+    "debug_port_log": [
+      "Windows/386 activated SETVER 3.40",
+      "WINRAM memory service started",
+      "WINRAM memory display ready",
+      "Bank free: 4,094,912 KiB",
+      "PROBE allocated 16384 KiB",
+      "Bank free: 4,078,528 KiB",
+      "PROBE released 16384 KiB",
+      "Bank free: 4,094,912 KiB"
+    ]
+  },
+  "wfw": {
+    "before_kib": 4072576,
+    "during_kib": 4056192,
+    "after_release_kib": 4072576,
+    "debug_port_log": [
+      "WINRAM memory service started",
+      "WINRAM memory display ready",
+      "Physical RAM free: 4,072,464 KiB",
+      "Physical RAM free: 4,072,576 KiB",
+      "PROBE allocated 16384 KiB",
+      "Physical RAM free: 4,056,192 KiB",
+      "PROBE released 16384 KiB",
+      "Physical RAM free: 4,072,576 KiB"
+    ]
+  }
+}

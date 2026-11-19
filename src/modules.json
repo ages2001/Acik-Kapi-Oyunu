@@ -1,0 +1,20 @@
+[
+  {
+    "name": "HIMEMX.EXE",
+    "offset": 0,
+    "length": 6100,
+    "sha256": "cdaedc0c5482d7d916069f953d119f3018964838c5f751600a8cbceebe10cb53"
+  },
+  {
+    "name": "PATCHMEM.EXE",
+    "offset": 6100,
+    "length": 30362,
+    "sha256": "754c581923e05e5770c78ba2965a947d340887c5ea5bb0a30b60a1a4e879dcd7"
+  },
+  {
+    "name": "SPLIT8MB.EXE",
+    "offset": 36462,
+    "length": 7246,
+    "sha256": "549402506b14ec43b0b539d77e26f57a5f250a5b500af62028b4af63f40c5634"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "install": "WINRAM 1.0\r\nMicrosoft Windows/386 2.11\r\nD:\\WIN386\r\nInstalled. Restart the target system.\r\nWINRAM 1.0\r\nMicrosoft Windows/386 2.11\r\nD:\\WIN386\r\nInstallation verified.\r\n",
+  "about": {
+    "desktop": {
+      "debug": "Windows/386 activated SETVER 3.40\nWINRAM memory service started\nWINRAM memory display ready\nBank free: 4,094,912 KiB\n",
+      "screen_sha256": "b034aa3f872c1f1cff76d70401cc00226142d56a71efa4392ea4d48489ba608e"
+    }
+  }
+}

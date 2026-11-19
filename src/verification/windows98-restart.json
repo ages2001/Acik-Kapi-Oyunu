@@ -1,0 +1,15 @@
+{
+  "install_from_windows": "WINRAM 1.0\r\nRunning inside Windows.\r\nWindows 98 Second Edition (4.10.2222)\r\nC:\\WINDOWS\r\n\r\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\r\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\r\n\r\nVMM File Extracted\r\nVCACHE File Extracted\r\nVMM32 Patched\r\nVMM Patched\r\nVCACHE Patched\r\n\r\nPatch Installed Successfully\r\n\r\nOperation queued for the next Windows boot.\r\nCOMPLETE \r\n",
+  "rename_queue": "\r\n[Rename]\r\nC:\\WINDOWS\\SYSTEM\\KERNEL32.DLL=C:\\WINDOWS\\WRMSTATE\\S0000.NEW\r\nC:\\WINDOWS\\SYSTEM\\USER.EXE=C:\\WINDOWS\\WRMSTATE\\S0001.NEW\r\nC:\\WINDOWS\\SYSTEM\\SYSDM.CPL=C:\\WINDOWS\\WRMSTATE\\S0002.NEW\r\nC:\\WINDOWS\\SYSTEM\\VMM32.VXD=C:\\WINDOWS\\WRMSTATE\\S0003.NEW\r\nC:\\WINDOWS\\SYSTEM\\VMM32\\VMM.VXD=C:\\WINDOWS\\WRMSTATE\\S0004.NEW\r\nC:\\WINDOWS\\SYSTEM\\VMM32\\VCACHE.VXD=C:\\WINDOWS\\WRMSTATE\\S0005.NEW\r\nC:\\WINDOWS\\SYSTEM.INI=C:\\WINDOWS\\WRMSTATE\\S0006.NEW\r\nC:\\WINDOWS\\WRMSTATE\\ACTIVE.DAT=C:\\WINDOWS\\WRMSTATE\\TXN.DAT\r\n",
+  "record_after_reboot": true,
+  "verify_after_reboot": "WINRAM 1.0\r\nRunning inside Windows.\r\nWindows 98 Second Edition (4.10.2222)\r\nC:\\WINDOWS\r\nInstallation verified.\r\n",
+  "uninstall_from_windows": "WINRAM 1.0\r\nRunning inside Windows.\r\nWindows 98 Second Edition (4.10.2222)\r\nC:\\WINDOWS\r\nOperation queued for the next Windows boot.\r\n",
+  "restored_after_uninstall": {
+    "WINDOWS/SYSTEM/KERNEL32.DLL": "9c8d574f84bfbbb6521dac54d0bfaf7a4c8fee07e468525cdb9da7db418e6c7e",
+    "WINDOWS/SYSTEM/USER.EXE": "6e262ede0ac7ba75abc43e3f45bbbc6bd2eb5ddd6731f3e8ab53475be4fa5e1b",
+    "WINDOWS/SYSTEM/SYSDM.CPL": "644a554ca105959c1f92facbd0cfdcc7f7d7b5e2e75781aff6bf2f17e52fb140",
+    "WINDOWS/SYSTEM/VMM32.VXD": "4c9fc0ff27b22cde359288c49a975b19d12d5080f0837f02383c789c0798708a"
+  },
+  "removed_new_loose_vxd": true,
+  "active_record_removed": true
+}

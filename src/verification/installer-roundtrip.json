@@ -1,0 +1,45 @@
+{
+  "listing": "WINRAM 1.0\r\n1  Microsoft MS-DOS 6.22  C:\\\r\n2  Microsoft Windows 3.1  C:\\WINDOWS\r\n3  Microsoft Windows 1.01  D:\\ARCHIVE\\W101\r\n4  Microsoft Windows 2.03  D:\\ARCHIVE\\W203\r\n5  Microsoft Windows/286 2.11  D:\\ARCHIVE\\W286\r\n6  Microsoft Windows/386 2.11  D:\\ARCHIVE\\W386\r\n7  Microsoft Windows 3.0a  D:\\ARCHIVE\\W30\r\n8  Microsoft Windows 3.1  D:\\ARCHIVE\\W31\r\n9  Windows for Workgroups 3.11  D:\\ARCHIVE\\WFW\r\n10  Windows 95 OSR2 (4.00.1111)  D:\\ARCHIVE\\W95\r\n11  Windows 98 Second Edition (4.10.2222)  D:\\ARCHIVE\\W98\r\n12  Windows Millennium Edition (4.90.3000)  D:\\ARCHIVE\\WME\r\n12 installation(s).\r\n",
+  "selected_number": "8",
+  "operations": {
+    "NUMBER": "WINRAM 1.0\r\n  1  Microsoft MS-DOS 6.22  C:\\\r\n  2  Microsoft Windows 3.1  C:\\WINDOWS\r\n  3  Microsoft Windows 1.01  D:\\ARCHIVE\\W101\r\n  4  Microsoft Windows 2.03  D:\\ARCHIVE\\W203\r\n  5  Microsoft Windows/286 2.11  D:\\ARCHIVE\\W286\r\n  6  Microsoft Windows/386 2.11  D:\\ARCHIVE\\W386\r\n  7  Microsoft Windows 3.0a  D:\\ARCHIVE\\W30\r\n  8  Microsoft Windows 3.1  D:\\ARCHIVE\\W31\r\n  9  Windows for Workgroups 3.11  D:\\ARCHIVE\\WFW\r\n 10  Windows 95 OSR2 (4.00.1111)  D:\\ARCHIVE\\W95\r\n 11  Windows 98 Second Edition (4.10.2222)  D:\\ARCHIVE\\W98\r\n 12  Windows Millennium Edition (4.90.3000)  D:\\ARCHIVE\\WME\r\nSystem number or path (0 to exit): Microsoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nInstalled. Restart the target system.\r\n",
+    "NO": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nAlready installed. Uninstall? [y/N] Kept installed.\r\n",
+    "VERIFY": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nInstallation verified.\r\n",
+    "NEIGHBOR": "WINRAM 1.0\r\nMicrosoft Windows 1.01\r\nD:\\ARCHIVE\\W101\r\nInstalled. Restart the target system.\r\n",
+    "YES": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nAlready installed. Uninstall? [y/N] Uninstalled. Original backups retained.\r\n",
+    "MIXED": "WINRAM 1.0\r\nMicrosoft Windows 1.01\r\nD:\\ARCHIVE\\W101\r\nInstallation verified.\r\n",
+    "RESTORE": "WINRAM 1.0\r\nMicrosoft Windows 1.01\r\nD:\\ARCHIVE\\W101\r\nUninstalled. Original backups retained.\r\n"
+  },
+  "original_sha256": {
+    "SYSTEM/WIN386.EXE": "6006860ae1003114583d70a1c6447247e1280a99633202912092a5f06a0c22a5",
+    "SYSTEM/KRNL386.EXE": "fbeaf672ee9e917318ce8fcd1d560db805dbfadf4777039abbaaff1a9c75b980",
+    "SYSTEM/USER.EXE": "741d0191bf267726aaa1fd78127bd9ecae637deb512f1cf9608ca81860188b4c",
+    "SYSTEM/GDI.EXE": "6d28146961ab4733e167b1657289206ce16a856e431f843e4ee3d504836dfb6f",
+    "SYSTEM/SHELL.DLL": "667422428e0934d947c9b56d622cffe6acd576f8014ca3692d7639d5457044d6",
+    "WIN.COM": "0e34b06601b2c9056186c937e2baa8adf14bd572fd15bc72b8b7fff679aa2e47",
+    "SYSTEM.INI": "895ea61e51cd71f43c830c2254a9800347ada5ea06f9ad884b0f3649671aa426",
+    "WIN.INI": "214dbc9ae576175109c1c3064fd25a52ad5acba0d758ebdda2c5e5c3f87bdd2a"
+  },
+  "restored_sha256": {
+    "SYSTEM/WIN386.EXE": "6006860ae1003114583d70a1c6447247e1280a99633202912092a5f06a0c22a5",
+    "SYSTEM/KRNL386.EXE": "fbeaf672ee9e917318ce8fcd1d560db805dbfadf4777039abbaaff1a9c75b980",
+    "SYSTEM/USER.EXE": "741d0191bf267726aaa1fd78127bd9ecae637deb512f1cf9608ca81860188b4c",
+    "SYSTEM/GDI.EXE": "6d28146961ab4733e167b1657289206ce16a856e431f843e4ee3d504836dfb6f",
+    "SYSTEM/SHELL.DLL": "667422428e0934d947c9b56d622cffe6acd576f8014ca3692d7639d5457044d6",
+    "WIN.COM": "0e34b06601b2c9056186c937e2baa8adf14bd572fd15bc72b8b7fff679aa2e47",
+    "SYSTEM.INI": "895ea61e51cd71f43c830c2254a9800347ada5ea06f9ad884b0f3649671aa426",
+    "WIN.INI": "214dbc9ae576175109c1c3064fd25a52ad5acba0d758ebdda2c5e5c3f87bdd2a"
+  },
+  "retained_backup_files": [
+    "::/ARCHIVE/W31/WRMSTATE/B0001.BKP",
+    "::/ARCHIVE/W31/WRMSTATE/B0002.BKP",
+    "::/ARCHIVE/W31/WRMSTATE/B0003.BKP",
+    "::/ARCHIVE/W31/WRMSTATE/B0004.BKP",
+    "::/ARCHIVE/W31/WRMSTATE/B0005.BKP",
+    "::/ARCHIVE/W31/WRMSTATE/B0006.BKP",
+    "::/ARCHIVE/W31/WRMSTATE/B0008.BKP",
+    "::/ARCHIVE/W31/WRMSTATE/B0007.BKP"
+  ],
+  "boot_file_restored": true,
+  "modified_input_rejected_without_replacing_other_files": true
+}

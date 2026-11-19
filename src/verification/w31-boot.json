@@ -1,0 +1,13 @@
+{
+  "install": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\WINDOWS\r\nInstalled. Restart the target system.\r\nWINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\WINDOWS\r\nInstallation verified.\r\n",
+  "about": {
+    "enhanced": {
+      "debug": "WINRAM memory service started\nWINRAM memory display ready\nPhysical RAM free: 4,072,656 KiB\n",
+      "screen_sha256": "7162ac87b0a5e7fb77d1a53823fa81d43e73d6bac312ceda56935d26deb5652f"
+    },
+    "standard": {
+      "debug": "WINRAM memory service started\nWINRAM memory display ready\nBank free: 4,115,392 KiB\n",
+      "screen_sha256": "1414a1957a91ff5a00a4c28d8233926db0bc9e62d8544aa3a4b423ddcec96a75"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "DEFAULT": {
+    "options": "/I",
+    "files": {
+      "VMM32": {
+        "equal": true,
+        "reference_sha256": "de1eab1a9802376f5b090d5c7ed4c030a395e28929b15eb0e9643729b6e7e8d6",
+        "output_sha256": "de1eab1a9802376f5b090d5c7ed4c030a395e28929b15eb0e9643729b6e7e8d6"
+      },
+      "VMM": {
+        "equal": true,
+        "reference_sha256": "e8f431ac38f44c3d8bb9f93ffd2a22febed473a5e91b1ab1477159a547bb06d6",
+        "output_sha256": "e8f431ac38f44c3d8bb9f93ffd2a22febed473a5e91b1ab1477159a547bb06d6"
+      },
+      "VCACHE": {
+        "equal": true,
+        "reference_sha256": "2834b886538f53fa60b6f5532eba36c23be63b3010e125137ed52f338374f222",
+        "output_sha256": "2834b886538f53fa60b6f5532eba36c23be63b3010e125137ed52f338374f222"
+      }
+    },
+    "installer_log": "WINRAM 1.0\r\nWindows Millennium Edition (4.90.3000)\r\nD:\\ARCHIVE\\WME\r\n\r\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\r\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\r\n\r\nVMM File Extracted\r\nVCACHE File Extracted\r\nVMM32 Patched\r\nVMM Patched\r\nVCACHE Patched\r\n\r\nPatch Installed Successfully\r\n\r\nInstalled. Restart the target system.\r\nWINRAM 1.0\r\nWindows Millennium Edition (4.90.3000)\r\nD:\\ARCHIVE\\WME\r\nInstallation verified.\r\nWINRAM 1.0\r\nWindows Millennium Edition (4.90.3000)\r\nD:\\ARCHIVE\\WME\r\nUninstalled. Original backups retained.\r\n",
+    "reference_log": "\r\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\r\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\r\n\r\nVMM File Extracted\r\nVCACHE File Extracted\r\nVMM32 Patched\r\nVMM Patched\r\nVCACHE Patched\r\n\r\nPatch Installed Successfully\r\n\r\n"
+  },
+  "OPTIONS": {
+    "options": "/I /A /M /P /C:256",
+    "files": {
+      "VMM32": {
+        "equal": true,
+        "reference_sha256": "65fa1c0f02e49f0e8742505f09036c3f1328cee1076609ae27472e9715c72cfa",
+        "output_sha256": "65fa1c0f02e49f0e8742505f09036c3f1328cee1076609ae27472e9715c72cfa"
+      },
+      "VMM": {
+        "equal": true,
+        "reference_sha256": "50ca59706f74eda88bceffa76f340b7735c290eb37e65bf2aa4ac50e5dfe8f20",
+        "output_sha256": "50ca59706f74eda88bceffa76f340b7735c290eb37e65bf2aa4ac50e5dfe8f20"
+      },
+      "VCACHE": {
+        "equal": true,
+        "reference_sha256": "551d38e0c62137e061b235d6a34042f3cd279e752c0016c6dd4d896a59a9c833",
+        "output_sha256": "551d38e0c62137e061b235d6a34042f3cd279e752c0016c6dd4d896a59a9c833"
+      }
+    },
+    "installer_log": "WINRAM 1.0\r\nWindows Millennium Edition (4.90.3000)\r\nD:\\ARCHIVE\\WME\r\n\r\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\r\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\r\n\r\nVMM File Extracted\r\nVCACHE File Extracted\r\nVMM32 Patched\r\nVMM Patched\r\nVCACHE Patched\r\n\r\nPatch Installed Successfully\r\n\r\nInstalled. Restart the target system.\r\nWINRAM 1.0\r\nWindows Millennium Edition (4.90.3000)\r\nD:\\ARCHIVE\\WME\r\nInstallation verified.\r\nWINRAM 1.0\r\nWindows Millennium Edition (4.90.3000)\r\nD:\\ARCHIVE\\WME\r\nUninstalled. Original backups retained.\r\n",
+    "reference_log": "\r\nWindows 95/98/SE/ME RAM Limitation Patch  Version 7.2\r\nCopyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.\r\n\r\nVMM File Extracted\r\nVCACHE File Extracted\r\nVMM32 Patched\r\nVMM Patched\r\nVCACHE Patched\r\n\r\nPatch Installed Successfully\r\n\r\n"
+  }
+}
