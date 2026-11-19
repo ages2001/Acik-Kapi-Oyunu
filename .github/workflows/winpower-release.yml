@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Verify the draft and attach its checked files
+      - name: Verify the release and attach its checked files
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -17,7 +17,7 @@ jobs:
           set -euo pipefail
           cd "$RUNNER_TEMP"
           release="repos/$GITHUB_REPOSITORY/releases/451908937"
-          gh api "$release" | jq -e '.tag_name == "winpower-v1.0" and .draft == true' >/dev/null
+          gh api "$release" | jq -e '.tag_name == "winpower-v1.0" and .draft == false' >/dev/null
           while read -r name blob checksum; do
             gh api "repos/$GITHUB_REPOSITORY/git/blobs/$blob" --jq .content | base64 --decode > "$name"
             printf '%s  %s\n' "$checksum" "$name" | sha256sum --check -
@@ -28,7 +28,8 @@ jobs:
               gh release upload winpower-v1.0 "$name" --repo "$GITHUB_REPOSITORY"
             fi
           done <<'ASSETS'
-          WPSLEEP.ZIP 395b11bff9ec4960f25761101c74148d98a123e1 39fbae66a5d39cf3b0526afc983dc9af805b246eb05a293fa348309259ce4126
-          SLPHASH.TXT 90ba6176dc55430a86cc85eeb1cbdbe20244895a 8e2a8c2116a18bf0a92e4a67cb9ac31f3269d6f7870fc6c2c006eb6abacdd6b8
-          VGATEST.TXT 31ea66e93024392057503630c312739add5a0684 42c2b72a62b87266345f0077ee938059983f452a9a92eb3e344833dcc756e5f9
+          WINPOWER.ZIP 134328a7d7a6d0959927f4666b22c58765c0bd8a 465d2c55ed688d524e77a5678aa12c6cea30311d42d70584f8a86993d49f1401
+          UIVIEW.PNG 23b2b083ab0edf92726f1a0d771a188e1c2f7983 9bba56cb587037e980a8e5967b4a9f7efd448d60932298e7f4610d19c2e224ff
+          UITEST.TXT 571031f449377c1557a3a7fd928136f7f3f41268 dc26a8aefde2938ed3421554a4372613810bf6f717aece50eb3d10c420cb973b
+          WINHASH.TXT 0f7fb95403e8dfb084c7bed139fb99ac89e0fe01 6225d1fd4733b14cf97a3b6eb6daf6da5e786000a6e252bfcd0fa40f9eb8e9ba
           ASSETS

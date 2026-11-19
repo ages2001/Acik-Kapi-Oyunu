@@ -1,0 +1,119 @@
+WINPOWER v1.0
+Power Center, shutdown ownership and session qualification
+
+Using the controls
+
+Power Center shows the Windows release, OS and application architecture,
+firmware revisions, AC supply, battery and remaining runtime. The Time
+left row uses an original 16-color hourglass with a transparent background.
+It remains visible when the runtime is unknown. On Win16, APM 1.1 and 1.2
+provide seconds or minutes. APM 1.0 and absent batteries have no estimate.
+Power off, Restart, Sleep and battery status have their own artwork.
+
+The main Control row applies to shutdown and restart. On the Sleep page,
+Suspend and Hibernate have separate preferences where the OS or installed
+backend offers the action. Each row explains its status. Selecting a
+standby row chooses its minimum on systems exposing that Windows interface.
+The OS can pick a deeper level. S0 is already active. S4 uses Hibernate.
+S5 uses Power off. APM supplies firmware standby and suspend requests
+without numbered S levels. An explicit unavailable choice stays
+unavailable until the user selects another available owner.
+
+What was measured
+
+  DOS 6.22, IDE. On two separately built SeaBIOS profiles, DOS produced a
+  physical guest power-off and a guest reset both with ACPI alone and with
+  APM alone. On a third board an APM BIOS was present but lacked a working
+  power rail. That case could reset, but could not power the board off.
+
+  Windows 1.01 and 2.03, IDE. The supervised Windows 1.01 session powered
+  off an ACPI-only machine. Windows 2.03 on the APM-only machine both
+  restarted and powered off. Windows 1.01, 2.03, Windows/386 2.11 and 3.1
+  have native screenshots of the Power Center and Sleep screens.
+
+  Windows 95 RTM, IDE. Driver can hand a native power-off request to its
+  resident real-mode APM component after the Windows exit broadcast. Its
+  BIOS path needs no ACPI table or VPOWERD battery-status reply. GUI and
+  native restart use the PC reset path on the tested APM-only board.
+  ACPI-only power-off uses S5. W95FINAL.JSN in test/SLEEP identifies
+  the eight successful Driver actions and four Windows handback trials.
+  Windows 95 itself stopped at its safe-to-turn-off message on ACPI alone.
+  Each record identifies the firmware, ownership, command, QEMU result
+  and exact binary digests for each final-build trial. An event named
+  SHUTDOWN with reason guest-reset under QEMU -no-reboot is a restart.
+  The earlier T95A case missed the firmware revision. A subsequent
+  protected-mode VPOWERD power-off attempt unexpectedly reset the machine.
+  The released code arms the real-mode helper at the last handoff.
+
+  Both FAT16 mirrors remained clean in all 12 Windows 95 trials. A separate
+  fresh installation loaded the DOS helper from AUTOEXEC.BAT at the next
+  boot and performed native APM power-off. Running the installed uninstaller
+  removed the helper and preserved the original startup batch contents.
+  See test/SLEEP/SETTEST.TXT, SET95PWR.TXT, SET95OFF.JSN and REMTEST.TXT.
+
+  Windows 98 FE/SE and Me. Driver can own native power-off on the verified
+  ACPI configurations. The final reset remains with Windows so VFAT can
+  finish its writes. The earlier FAT clean-bit and shell-dialog evidence
+  is in test/HANDOFF/W9FINAL.TXT. Native Windows Me boot does not load
+  the DOS APM helper through AUTOEXEC.BAT.
+
+  NT 3.1, 3.50, 3.51 and 4.0. The installed legacy package offers switchable
+  native shutdown ownership on recognized configurations. The package
+  preserves the on-disk HAL. NT 3.50 build 807 also ran the current UI on
+  a 640 by 400 desktop. The compact Sleep dialog keeps the action buttons
+  within that screen. Earlier shutdown tests are in test/HANDOFF.
+
+  Windows 2000 x86 (AHCI), XP x86 and XP x64 (IDE). The uploaded build
+  turned native Restart into Power off in Driver mode on all three.
+  The three corrected installations produced 18 distinct outcomes covering
+  native and GUI Driver requests and both native actions after handback.
+  test/HANDOFF/NT5LAST.TXT identifies the tested binaries and QEMU events.
+  XP x64 uses ACPI and PC reset. It cannot enter a 16-bit APM BIOS from
+  the native x64 kernel.
+
+  Sleep with Standard VGA. Windows 98 SE returned from S3 through Driver
+  with the original process, checksum and working keyboard and display.
+  Windows XP x64 restored S4 through Driver from a genuine hibernation
+  file after a cold QEMU start. Earlier Vista SP2 and Windows 7 SP1 x86
+  tests restored the original Standard VGA sessions from S4. Windows
+  98 FE rebooted instead of restoring S3, including in a Windows-only
+  control experiment. Me vetoed standby. The installed Windows 2000 and
+  XP x86 Standard VGA configurations did not offer suspend or hibernate.
+
+  Windows 7 SP1 x86 on QXL also resumed S3. Suspend and Hibernate owners
+  were independently changed, read from a relaunched application and
+  handed back. Windows 98 SE and XP x64 performed the same checks for
+  their available actions. Hybrid sleep uses the active Windows power
+  policy, a usable standby path and a full hibernation image. On two
+  Windows 7 QEMU CPU profiles, FastSystemS4 was zero even with S3 and S4
+  available. The current GUI correctly disabled Hybrid sleep. An earlier
+  trial woke from RAM with an empty on-disk signature. A hybrid recovery
+  after complete power loss has not been qualified.
+
+Coverage limits
+
+  Firmware tests include APM 1.0, 1.1 and 1.2, classic and hardware-reduced
+  ACPI, published layouts through ACPI 6.6 and read-only OEM tables.
+  Reading a revision, an OS advertising a sleep state, physically entering
+  the state and returning to the same session are separate observations.
+  An unsupported AML operation, unavailable OS facility, driver veto or
+  missing platform power rail may make a requested action unavailable.
+
+  Vista/7 and later use Windows for final machine shutdown and restart.
+  The NT5/NT6 sleep driver submits cooperative requests to the Windows
+  power manager. The WINPOWER sleep preferences apply to WINPOWER buttons.
+  There is no global takeover of Windows sleep commands, independent
+  session-image writer on NT3/4 or Win16, or exact S1/S2 selector on APM.
+  Signed-driver enforcement also applies on x64 systems. Real hardware,
+  every OS and firmware pairing, and S1/S2 resume remain unqualified.
+  Windows 8 and newer were outside this guest test round.
+
+Files
+
+  bin holds the 70 ready files, src the sources, and test the host tests,
+  real guest evidence and original machine-readable shutdown records.
+  Windows installation media and private guest disks are separate.
+  test/UI contains true native client captures from ten installations and
+  individual pixel comparisons of the hourglass and the Sleep title icon.
+  test/SLEEP/BUILD.JSN gives the independent byte-for-byte rebuild.
+  UIVIEW.PNG shows both windows on the Windows 7 QXL guest.
