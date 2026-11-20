@@ -1,0 +1,202 @@
+--- a/src/gallium/drivers/llvmpipe/lp_screen.h
++++ b/src/gallium/drivers/llvmpipe/lp_screen.h
+@@ -66,6 +66,7 @@
+ 
+    mtx_t late_mutex;
+    bool late_init_done;
++   unsigned live_contexts;
+ 
+    char renderer_string[100];
+ 
+@@ -81,7 +82,8 @@
+                                  struct lp_cached_code *cache,
+                                  unsigned char ir_sha1_cache_key[20]);
+ 
+-bool llvmpipe_screen_late_init(struct llvmpipe_screen *screen);
++bool llvmpipe_screen_acquire_context(struct llvmpipe_screen *screen);
++void llvmpipe_screen_release_context(struct llvmpipe_screen *screen);
+ 
+ static inline struct llvmpipe_screen *
+ llvmpipe_screen( struct pipe_screen *pipe )
+--- a/src/gallium/drivers/llvmpipe/lp_screen.c
++++ b/src/gallium/drivers/llvmpipe/lp_screen.c
+@@ -852,6 +852,7 @@
+ 
+    mtx_destroy(&screen->rast_mutex);
+    mtx_destroy(&screen->cs_mutex);
++   mtx_destroy(&screen->late_mutex);
+    FREE(screen);
+ }
+ 
+@@ -975,12 +976,12 @@
+ }
+ 
+ bool
+-llvmpipe_screen_late_init(struct llvmpipe_screen *screen)
++llvmpipe_screen_acquire_context(struct llvmpipe_screen *screen)
+ {
+    bool ret = true;
+    mtx_lock(&screen->late_mutex);
+ 
+-   if (screen->late_init_done)
++   if (screen->live_contexts)
+       goto out;
+ 
+    screen->rast = lp_rast_create(screen->num_threads);
+@@ -992,15 +993,44 @@
+    screen->cs_tpool = lp_cs_tpool_create(screen->num_threads);
+    if (!screen->cs_tpool) {
+       lp_rast_destroy(screen->rast);
++      screen->rast = NULL;
+       ret = false;
+       goto out;
+    }
+ 
+-   lp_disk_cache_create(screen);
+-   screen->late_init_done = true;
++   if (!screen->late_init_done) {
++      lp_disk_cache_create(screen);
++      screen->late_init_done = true;
++   }
+ out:
++   if (ret)
++      ++screen->live_contexts;
+    mtx_unlock(&screen->late_mutex);
+    return ret;
++}
++
++/* Join the workers outside the Windows loader lock. The device and its
++ * disk cache can survive the last context and be reused by a later one. */
++void
++llvmpipe_screen_release_context(struct llvmpipe_screen *screen)
++{
++   struct lp_cs_tpool *compute = NULL;
++   struct lp_rasterizer *rasterizer = NULL;
++
++   mtx_lock(&screen->late_mutex);
++   assert(screen->live_contexts);
++   if (!--screen->live_contexts) {
++      compute = screen->cs_tpool;
++      screen->cs_tpool = NULL;
++      rasterizer = screen->rast;
++      screen->rast = NULL;
++   }
++   mtx_unlock(&screen->late_mutex);
++
++   if (compute)
++      lp_cs_tpool_destroy(compute);
++   if (rasterizer)
++      lp_rast_destroy(rasterizer);
+ }
+ 
+ /**
+--- a/src/gallium/drivers/llvmpipe/lp_context.c
++++ b/src/gallium/drivers/llvmpipe/lp_context.c
+@@ -107,6 +107,7 @@
+ #endif
+    llvmpipe->context = NULL;
+ 
++   llvmpipe_screen_release_context(llvmpipe_screen(pipe->screen));
+    align_free( llvmpipe );
+ }
+ 
+@@ -179,12 +180,14 @@
+ {
+    struct llvmpipe_context *llvmpipe;
+ 
+-   if (!llvmpipe_screen_late_init(llvmpipe_screen(screen)))
+-      return NULL;
+-
+    llvmpipe = align_malloc(sizeof(struct llvmpipe_context), 16);
+    if (!llvmpipe)
+       return NULL;
++
++   if (!llvmpipe_screen_acquire_context(llvmpipe_screen(screen))) {
++      align_free(llvmpipe);
++      return NULL;
++   }
+ 
+    memset(llvmpipe, 0, sizeof *llvmpipe);
+ 
+--- a/src/gallium/drivers/llvmpipe/lp_rast.c
++++ b/src/gallium/drivers/llvmpipe/lp_rast.c
+@@ -1348,7 +1348,7 @@
+ 
+ /* Shutdown:
+  */
+-void lp_rast_destroy( struct lp_rasterizer *rast )
++void lp_rast_destroy(struct lp_rasterizer *rast, bool join_workers)
+ {
+    unsigned i;
+ 
+@@ -1361,20 +1361,19 @@
+       pipe_semaphore_signal(&rast->tasks[i].work_ready);
+    }
+ 
+-   /* Wait for threads to terminate before cleaning up per-thread data.
+-    * We don't actually call pipe_thread_wait to avoid dead lock on Windows
+-    * per https://bugs.freedesktop.org/show_bug.cgi?id=76252 */
++   /* During normal context teardown the threads can be joined. A screen
++    * destroyed by Windows DLL detachment holds the loader lock. */
+    for (i = 0; i < rast->num_threads; i++) {
+ #ifdef _WIN32
+-      /* Threads might already be dead - Windows apparently terminates other threads when
+-       * returning from main.
+-       */
+-      DWORD exit_code = STILL_ACTIVE;
+-      if (GetExitCodeThread(rast->threads[i], &exit_code) && exit_code == STILL_ACTIVE)
+-         pipe_semaphore_wait(&rast->tasks[i].work_done);
+-#else
++      if (!join_workers) {
++         DWORD code;
++         if (GetExitCodeThread(rast->threads[i], &code) && code == STILL_ACTIVE)
++            pipe_semaphore_wait(&rast->tasks[i].work_done);
++         thrd_detach(rast->threads[i]);
++         continue;
++      }
++#endif
+       thrd_join(rast->threads[i], NULL);
+-#endif
+    }
+ 
+    /* Clean up per-thread data */
+--- a/src/gallium/drivers/llvmpipe/lp_rast.h
++++ b/src/gallium/drivers/llvmpipe/lp_rast.h
+@@ -199,7 +199,7 @@
+ lp_rast_create( unsigned num_threads );
+ 
+ void
+-lp_rast_destroy( struct lp_rasterizer * );
++lp_rast_destroy(struct lp_rasterizer *, bool join_workers);
+ 
+ void 
+ lp_rast_queue_scene( struct lp_rasterizer *rast,
+--- a/src/gallium/drivers/llvmpipe/lp_screen.c
++++ b/src/gallium/drivers/llvmpipe/lp_screen.c
+@@ -837,7 +837,7 @@
+       lp_cs_tpool_destroy(screen->cs_tpool);
+ 
+    if (screen->rast)
+-      lp_rast_destroy(screen->rast);
++      lp_rast_destroy(screen->rast, false);
+ 
+    lp_jit_screen_cleanup(screen);
+ 
+@@ -992,7 +992,7 @@
+ 
+    screen->cs_tpool = lp_cs_tpool_create(screen->num_threads);
+    if (!screen->cs_tpool) {
+-      lp_rast_destroy(screen->rast);
++      lp_rast_destroy(screen->rast, true);
+       screen->rast = NULL;
+       ret = false;
+       goto out;
+@@ -1030,7 +1030,7 @@
+    if (compute)
+       lp_cs_tpool_destroy(compute);
+    if (rasterizer)
+-      lp_rast_destroy(rasterizer);
++      lp_rast_destroy(rasterizer, true);
+ }
+ 
+ /**

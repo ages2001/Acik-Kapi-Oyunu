@@ -1,0 +1,799 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -9,10 +9,7 @@
+ set(FREEOCL_MAINTAINER_CONTACT "FreeOCL developers <zuzuf86@gmail.com>")
+ 
+ set(CMAKE_THREAD_PREFER_PTHREAD pthread)
+-include(FindThreads)
+-if(NOT CMAKE_THREAD_LIBS_INIT AND NOT CMAKE_HAVE_THREADS_LIBRARY)
+-	message(FATAL_ERROR "thread library not found")
+-endif(NOT CMAKE_THREAD_LIBS_INIT AND NOT CMAKE_HAVE_THREADS_LIBRARY)
++find_package(Threads REQUIRED)
+ 
+ # Default is debug build
+ if(NOT CMAKE_BUILD_TYPE)
+@@ -68,12 +65,13 @@
+ 
+ option(FREEOCL_RUN_GDB_ON_CRASH "run gdb on crash")
+ option(FREEOCL_ALWAYS_LOAD_FREEOCL "always try to load FreeOCL even though it's not registered on the system" OFF)
+-configure_file(config.h.cmake ${FreeOCL_SOURCE_DIR}/include/FreeOCL/config.h)
++configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/generated/FreeOCL/config.h)
++include_directories(BEFORE ${CMAKE_CURRENT_BINARY_DIR}/generated)
+ 
+ include_directories(.)
+ include_directories(include)
+ include_directories(src)
+-link_libraries(${CMAKE_THREAD_LIBS_INIT})
++link_libraries(Threads::Threads)
+ find_library(LIBDL dl)
+ find_library(LIBRT rt)
+ if(LIBDL)
+--- a/config.h.cmake
++++ b/config.h.cmake
+@@ -18,7 +18,7 @@
+ #ifndef __FREEOCL_CONFIG_H__
+ #define __FREEOCL_CONFIG_H__
+ 
+-#define FREEOCL_CXX_COMPILER	"@CMAKE_CXX_COMPILER@"
++#define FREEOCL_CXX_COMPILER	"g++.exe"
+ 
+ #cmakedefine CMAKE_INSTALL_PREFIX
+ #define FREEOCL_INSTALL_PREFIX "@CMAKE_INSTALL_PREFIX@"
+@@ -29,16 +29,8 @@
+ #endif
+ 
+ #if defined (FREEOCL_OS_WINDOWS)
+-#define FREEOCL_CXX_FLAGS_COMMON " " \
+-        " -shared -pipe" /* -Wall*/ \
+-        " -static-libgcc -static-libstdc++" \
+-        " -g -O3" \
+-        " -fomit-frame-pointer -ftree-vectorize -funroll-loops" \
+-        " -fno-math-errno -fno-trapping-math" \
+-        " -fno-exceptions -fno-rtti" \
+-        " -x c++ " \
+-        " -Wall -Wextra "\
+-        " -Wno-non-pod-varargs"
++#define FREEOCL_CXX_FLAGS " -shared -std=gnu++11 -O1 -static-libgcc -static-libstdc++" \
++        " -fno-use-linker-plugin -fno-exceptions -fno-rtti -x c++ "
+ #else
+ #define FREEOCL_CXX_FLAGS_COMMON " " \
+         " -shared -fpic -pipe" /* -Wall*/ \
+@@ -53,7 +45,9 @@
+         " -Wno-non-pod-varargs"
+ #endif
+ 
+-#if defined (FREEOCL_ARCH_i386)
++#if defined (FREEOCL_OS_WINDOWS)
++/* The chosen native compiler already targets the device architecture. */
++#elif defined (FREEOCL_ARCH_i386)
+ #define FREEOCL_CXX_FLAGS FREEOCL_CXX_FLAGS_COMMON \
+ 		" -m32 -march=native -mtune=native"
+ #elif defined (FREEOCL_ARCH_amd64)
+--- a/src/utils/threadpool.cpp
++++ b/src/utils/threadpool.cpp
+@@ -19,9 +19,6 @@
+ #include <FreeOCL/config.h>
+ #include <sched.h>
+ #include <cstdlib>
+-#ifndef __GNUC__
+-#include <atomic_ops.h>
+-#endif
+ #include <utils/time.h>
+ #ifdef __SSE__
+ #include <xmmintrin.h>
+@@ -99,7 +96,7 @@
+     {
+         if (stack_data)
+ #ifdef FREEOCL_OS_WINDOWS
+-            _aligned_free(stack_data);
++            __mingw_aligned_free(stack_data);
+ #else
+             free(stack_data);
+ #endif
+@@ -129,11 +126,7 @@
+ 
+ 	inline unsigned int threadpool::get_next_workgroup()
+ 	{
+-#ifdef __GNUC__
+-		return __sync_fetch_and_add(&next_workgroup, 1);
+-#else
+-		return AO_int_fetch_and_add_full(&next_workgroup, 1);
+-#endif
++        return __atomic_fetch_add(&next_workgroup, 1u, __ATOMIC_SEQ_CST);
+ 	}
+ 
+ 	void threadpool::worker::work()
+@@ -149,7 +142,7 @@
+ 											 (gid / pool->num_groups[0]) % pool->num_groups[1],
+ 											 gid / pool->num_groups[0] / pool->num_groups[1] };
+ 				pool->setwg(local_memory, group_id, NULL, NULL);
+-#ifdef FREEOCL_OS_WINDOWS
++#if defined(FREEOCL_OS_WINDOWS) && defined(FREEOCL_ARCH_amd64)
+                 if (pool->b_require_sync)
+                     pool->kernel(0,0,0,0,0);
+                 else
+@@ -172,8 +165,8 @@
+                 {
+                     if (stack_data)
+ #ifdef FREEOCL_OS_WINDOWS
+-                        _aligned_free(stack_data);
+-                    stack_data = _aligned_malloc(STACK_SIZE * l_size, 64);
++                        __mingw_aligned_free(stack_data);
++                    stack_data = __mingw_aligned_malloc(STACK_SIZE * l_size, 64);
+ #else
+                         free(stack_data);
+                     stack_data = malloc(STACK_SIZE * l_size);
+--- a/include/FreeOCL/atomic.h
++++ b/include/FreeOCL/atomic.h
+@@ -19,23 +19,19 @@
+ #define __FREEOCL_OPENCL_C_PREINCLUDE_ATOMIC_H__
+ 
+ #include "FreeOCL/config.h"
+-#include "atomic_ops.h"
+ 
+ static volatile __uint __atomic_mutex = 0;
+ 
+ static inline void __atomic_lock()
+ {
+-	while(true)
+-	{
+-		if (__atomic_mutex == 0)
+-			if (!AO_int_fetch_and_add1(&__atomic_mutex))
+-				return;
+-	}
++    while (__atomic_exchange_n(&__atomic_mutex, 1u, __ATOMIC_ACQUIRE)) {
++        while (__atomic_load_n(&__atomic_mutex, __ATOMIC_RELAXED)) {}
++    }
+ }
+ 
+ static inline void __atomic_unlock()
+ {
+-	AO_int_store(&__atomic_mutex, 0);
++	__atomic_store_n(&__atomic_mutex, 0u, __ATOMIC_RELEASE);
+ }
+ 
+ // Built-in atomic functions
+--- a/include/FreeOCL/memfence.h
++++ b/include/FreeOCL/memfence.h
+@@ -19,23 +19,22 @@
+ #define __FREEOCL_OPENCL_C_PREINCLUDE_MEMFENCE_H__
+ 
+ #include "sync.h"
+-#include "atomic_ops.h"
+ 
+ // Built-in memory fence functions
+ 
+ static inline void mem_fence(cl_mem_fence_flags /*flags*/)
+ {
+-	AO_nop_full();
++	__atomic_thread_fence(__ATOMIC_SEQ_CST);
+ }
+ 
+ static inline void read_mem_fence(cl_mem_fence_flags /*flags*/)
+ {
+-	AO_nop_read();
++	__atomic_thread_fence(__ATOMIC_ACQUIRE);
+ }
+ 
+ static inline void write_mem_fence(cl_mem_fence_flags /*flags*/)
+ {
+-	AO_nop_write();
++	__atomic_thread_fence(__ATOMIC_RELEASE);
+ }
+ 
+ #endif
+--- a/src/device.cpp
++++ b/src/device.cpp
+@@ -15,6 +15,7 @@
+ 	You should have received a copy of the GNU Lesser General Public License
+ 	along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
++#include "prototypes.h"
+ #include "device.h"
+ #include "platform.h"
+ #include <cstring>
+@@ -294,6 +295,7 @@
+ 	device_profile("FULL_PROFILE"),
+ 	opencl_c_version("OpenCL C 1.2"),
+ 	extensions("cl_khr_icd" SEP
++               "cl_khr_suggested_local_work_size" SEP
+ 			   "cl_khr_global_int32_base_atomics" SEP
+ 			   "cl_khr_global_int32_extended_atomics" SEP
+ 			   "cl_khr_local_int32_base_atomics" SEP
+@@ -408,12 +410,26 @@
+ #ifdef FREEOCL_OS_WINDOWS
+     else if (ostype == "Windows")
+     {
+-        cpu_cores = strtol(getenv("NUMBER_OF_PROCESSORS"), NULL, 10);
+-        MEMORYSTATUSEX statex;
+-        statex.dwLength = sizeof (statex);
+-        GlobalMemoryStatusEx (&statex);
+-        memsize = statex.ullTotalPhys;
+-        freememsize = statex.ullAvailPhys;
++        SYSTEM_INFO info;
++        GetSystemInfo(&info);
++        cpu_cores = info.dwNumberOfProcessors ? info.dwNumberOfProcessors : 1;
++        MEMORYSTATUSEX extended = {};
++        extended.dwLength = sizeof(extended);
++        typedef BOOL (WINAPI *MemoryStatusEx)(LPMEMORYSTATUSEX);
++        MemoryStatusEx get_extended = (MemoryStatusEx)GetProcAddress(GetModuleHandleA("kernel32.dll"), "GlobalMemoryStatusEx");
++        if (get_extended && get_extended(&extended))
++        {
++            memsize = extended.ullTotalPhys;
++            freememsize = extended.ullAvailPhys;
++        }
++        else
++        {
++            MEMORYSTATUS status = {};
++            status.dwLength = sizeof(status);
++            GlobalMemoryStatus(&status);
++            memsize = status.dwTotalPhys;
++            freememsize = status.dwAvailPhys;
++        }
+ 
+         const char *cpu_id = getenv("PROCESSOR_IDENTIFIER");
+         name = cpu_id ? cpu_id : "Unknown";
+--- a/include/FreeOCL/opencl_c.h
++++ b/include/FreeOCL/opencl_c.h
+@@ -20,6 +20,9 @@
+ 
+ #include "FreeOCL/config.h"
+ #include <cstddef>
++#ifdef _WIN32
++#include "win_kernel_tls.h"
++#endif
+ 
+ #define __OPENCL_VERSION__	120
+ #define CL_VERSION_1_0		100
+@@ -102,7 +105,7 @@
+ typedef double          __double   __attribute__((aligned(8)));
+ 
+ typedef bool			__bool;
+-typedef __ulong			__size_t;
++typedef size_t          __size_t;
+ 
+ #elif defined __x86_64__
+ #include <stdint.h>
+@@ -119,7 +122,7 @@
+ typedef double          __double   __attribute__((aligned(8)));
+ 
+ typedef bool			__bool;
+-typedef __ulong			__size_t;
++typedef size_t          __size_t;
+ 
+ #elif defined __arm__
+ #include <stdint.h>
+@@ -136,7 +139,7 @@
+ typedef double          __double   __attribute__((aligned(8)));
+ 
+ typedef bool			__bool;
+-typedef __ulong			__size_t;
++typedef size_t          __size_t;
+ 
+ 
+ #else
+@@ -151,7 +154,7 @@
+ typedef unsigned long	__ulong;
+ typedef float			__float;
+ typedef double			__double;
+-typedef __ulong			__size_t;
++typedef size_t          __size_t;
+ #endif
+ 
+ #else
+@@ -166,7 +169,7 @@
+ typedef unsigned long	__ulong;
+ typedef float			__float;
+ typedef double			__double;
+-typedef __ulong			__size_t;
++typedef size_t          __size_t;
+ #endif
+ 
+ // MinGW defines these types but they conflict with FreeOCL vectors
+@@ -273,13 +276,17 @@
+ template<typename T, int Id>
+ static inline T &__create_local()
+ {
+-	static __thread T v;
+-	return v;
++#ifdef _WIN32
++    return FreeOCL::kernel_local_value<T, Id>();
++#else
++    static __thread T v;
++    return v;
++#endif
+ }
+ template<typename T, int Id>
+ static inline T &__create_local(const T &init)
+ {
+-	static __thread T v;
++	T &v = __create_local<T, Id>();
+ 	memcpy(&v, &init, sizeof(T));
+ 	return v;
+ }
+--- a/include/FreeOCL/workitem.h
++++ b/include/FreeOCL/workitem.h
+@@ -27,16 +27,26 @@
+ namespace FreeOCL
+ {
+ 	static const void *args;
+-	static __thread char *local_memory;
+-	static __thread ucontext_t *scheduler;
+-	static __thread ucontext_t *threads;
++    struct WorkItem {
++        char *local_memory;
++        ucontext_t *scheduler;
++        ucontext_t *threads;
++        __size_t group_id[3];
++        __size_t thread_num;
++    };
++    static inline WorkItem &work_item() {
++#ifdef _WIN32
++        return kernel_local_value<WorkItem, 0>();
++#else
++        static __thread WorkItem item;
++        return item;
++#endif
++    }
+ 	static __uint dim;
+ 	static __size_t global_size[3];
+ 	static __size_t global_offset[3];
+ 	static __size_t local_size[3];
+-	static __thread __size_t group_id[3];
+ 	static __size_t num_groups[3];
+-	static __thread __size_t thread_num;
+ }
+ 
+ // Built-in work-item functions
+@@ -53,7 +63,7 @@
+ static inline __size_t get_local_id(__uint dimindx);
+ static inline __size_t get_global_id(__uint dimindx)
+ {
+-	return dimindx < FreeOCL::dim ? FreeOCL::group_id[dimindx] * FreeOCL::local_size[dimindx] + get_local_id(dimindx) + FreeOCL::global_offset[dimindx] : 0;
++	return dimindx < FreeOCL::dim ? FreeOCL::work_item().group_id[dimindx] * FreeOCL::local_size[dimindx] + get_local_id(dimindx) + FreeOCL::global_offset[dimindx] : 0;
+ }
+ 
+ static inline __size_t get_local_size(__uint dimindx)
+@@ -83,7 +93,7 @@
+ 
+ static inline __size_t get_group_id(__uint dimindx)
+ {
+-	return FreeOCL::group_id[dimindx];
++	return FreeOCL::work_item().group_id[dimindx];
+ }
+ 
+ static inline __size_t get_global_offset(__uint dimindx)
+@@ -93,6 +103,6 @@
+ 
+ static inline __size_t get_thread_num()
+ {
+-	return FreeOCL::thread_num;
++	return FreeOCL::work_item().thread_num;
+ }
+ #endif
+--- a/include/FreeOCL/sync.h
++++ b/include/FreeOCL/sync.h
+@@ -28,15 +28,15 @@
+ static inline void barrier(cl_mem_fence_flags /*flags*/)
+ {
+ 	// If there is only a single thread, there is no need for sync
+-	if (!FreeOCL::threads)
++	if (!FreeOCL::work_item().threads)
+ 		return;
+ 
+-	const __size_t thread_num = FreeOCL::thread_num;
+-	ucontext_t *next = FreeOCL::threads[thread_num].uc_link;
+-	if (next == FreeOCL::scheduler)
+-		next = &(FreeOCL::threads[0]);
+-	swapcontext(&(FreeOCL::threads[thread_num]), next);
+-	FreeOCL::thread_num = thread_num;
++	const __size_t thread_num = FreeOCL::work_item().thread_num;
++	ucontext_t *next = FreeOCL::work_item().threads[thread_num].uc_link;
++	if (next == FreeOCL::work_item().scheduler)
++		next = &(FreeOCL::work_item().threads[0]);
++	swapcontext(&(FreeOCL::work_item().threads[thread_num]), next);
++	FreeOCL::work_item().thread_num = thread_num;
+ }
+ 
+ #endif
+--- a/include/FreeOCL/asyncmemop.h
++++ b/include/FreeOCL/asyncmemop.h
+@@ -29,7 +29,7 @@
+ 											 __size_t num_gentypes,
+ 											 event_t event)
+ {
+-	if (FreeOCL::thread_num == 0)
++	if (FreeOCL::work_item().thread_num == 0)
+ 	{
+ 		if (event != 0)
+ 			barrier(0);
+@@ -45,7 +45,7 @@
+ 													 __size_t src_stride,
+ 													 event_t event)
+ {
+-	if (FreeOCL::thread_num == 0)
++	if (FreeOCL::work_item().thread_num == 0)
+ 	{
+ 		if (event != 0)
+ 			barrier(0);
+--- a/include/FreeOCL/math.h
++++ b/include/FreeOCL/math.h
+@@ -19,7 +19,14 @@
+ #define __FREEOCL_OPENCL_C_PREINCLUDE_MATH_H__
+ #include "vectors.h"
+ 
++/* The OpenCL float overloads share names with the C++ standard library. */
++#if defined(__GLIBCXX__) && !defined(_GLIBCXX_INCLUDE_NEXT_C_HEADERS)
++#define _GLIBCXX_INCLUDE_NEXT_C_HEADERS
+ #include <math.h>
++#undef _GLIBCXX_INCLUDE_NEXT_C_HEADERS
++#else
++#include <math.h>
++#endif
+ 
+ // Built-in math functions
+ // for double
+--- a/src/codebuilder.cpp
++++ b/src/codebuilder.cpp
+@@ -34,7 +34,7 @@
+ #include <utility>
+ #include <algorithm>
+ #ifdef FREEOCL_OS_WINDOWS
+-#include <windows.h>
++#include "win_kernel_compiler.h"
+ #endif
+ 
+ namespace FreeOCL
+@@ -57,8 +57,13 @@
+ 			RUNTIME_FREEOCL_CXX_COMPILER = env_FREEOCL_CXX_COMPILER;
+ 		if (env_FREEOCL_CXX_FLAGS)
+ 			RUNTIME_FREEOCL_CXX_FLAGS = env_FREEOCL_CXX_FLAGS;
++#ifdef FREEOCL_OS_WINDOWS
++        RUNTIME_FREEOCL_CXX_INCLUDE = "-I" + windows_quote(env_FREEOCL_CXX_INCLUDE ?
++                env_FREEOCL_CXX_INCLUDE : windows_kernel_include());
++#else
+ 		if (env_FREEOCL_CXX_INCLUDE)
+ 			RUNTIME_FREEOCL_CXX_INCLUDE = std::string("-I") + env_FREEOCL_CXX_INCLUDE;
++#endif
+ 	}
+ 
+ 	std::string build_program(const std::string &options,
+@@ -205,17 +210,17 @@
+ 		if (validated_code.empty())
+ 			return std::string();
+ 
++#ifdef FREEOCL_OS_WINDOWS
++        return windows_build_kernel(validated_code, RUNTIME_FREEOCL_CXX_COMPILER,
++                RUNTIME_FREEOCL_CXX_FLAGS + " " + RUNTIME_FREEOCL_CXX_INCLUDE + compiler_extra_args,
++                b_compile_only, temporary_filename, log);
++#else
+ 		char buf[1024];		// Buffer for tmpnam (to make it thread safe)
+ 		int fd_in = -1;
+ 		int fd_out = -1;
+ 		std::string filename_in;
+ 		std::string filename_out;
+ 
+-#ifdef FREEOCL_OS_WINDOWS
+-        char tmp_dir[MAX_PATH + 1];
+-        memset(tmp_dir, 0, sizeof(tmp_dir));
+-        GetTempPathA(sizeof(tmp_dir) - 1, tmp_dir);
+-#endif
+ 
+ 		// Open a unique temporary file to write the code
+ 		size_t n = 0;
+@@ -228,10 +233,6 @@
+ 				return filename_out;
+ 			}
+ 			filename_in = tmpnam(buf);
+-#ifdef FREEOCL_OS_WINDOWS
+-            filename_in = tmp_dir + filename_in;
+-            log << filename_in << std::endl;
+-#endif
+ 			fd_in = open(filename_in.c_str(), O_EXCL | O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR);
+ 		}
+ 
+@@ -254,12 +255,7 @@
+ 				return filename_out;
+ 			}
+ 			filename_out = tmpnam(buf);
+-#ifdef FREEOCL_OS_WINDOWS
+-            filename_out = tmp_dir + filename_out;
+-            filename_out += b_compile_only ? ".obj" : ".dll";
+-#else
+             filename_out += b_compile_only ? ".o" : ".so";
+-#endif
+ 			fd_out = open(filename_out.c_str(), O_EXCL | O_CREAT | O_RDONLY, S_IWUSR | S_IRUSR | S_IXUSR);
+ 		}
+ 
+@@ -288,6 +284,7 @@
+ 			filename_out.clear();
+ 		}
+ 		return filename_out;
++#endif
+ 	}
+ 
+ 	std::string preprocess_code(const std::string &code,
+@@ -567,12 +564,12 @@
+ 
+ 			gen << "extern \"C\" void __FCL_setwg_" << i->first << "(char * const local_memory, const size_t * const thread_group_id, ucontext_t *scheduler, ucontext_t *threads)" << std::endl
+ 				<< "{" << std::endl
+-				<< "\tFreeOCL::local_memory = local_memory;" << std::endl
+-				<< "\tFreeOCL::group_id[0] = thread_group_id[0];" << std::endl
+-				<< "\tFreeOCL::group_id[1] = thread_group_id[1];" << std::endl
+-				<< "\tFreeOCL::group_id[2] = thread_group_id[2];" << std::endl
+-				<< "\tFreeOCL::scheduler = scheduler;" << std::endl
+-				<< "\tFreeOCL::threads = threads;" << std::endl
++				<< "\tFreeOCL::work_item().local_memory = local_memory;" << std::endl
++				<< "\tFreeOCL::work_item().group_id[0] = thread_group_id[0];" << std::endl
++				<< "\tFreeOCL::work_item().group_id[1] = thread_group_id[1];" << std::endl
++				<< "\tFreeOCL::work_item().group_id[2] = thread_group_id[2];" << std::endl
++				<< "\tFreeOCL::work_item().scheduler = scheduler;" << std::endl
++				<< "\tFreeOCL::work_item().threads = threads;" << std::endl
+ 				<< "}" << std::endl
+ 				<< std::endl;
+ 
+@@ -607,15 +604,15 @@
+ 					_cat << " + sizeof(" << *(p_type) << ")";
+ 			}
+ 
+-			gen << "\tchar * const local_memory = FreeOCL::local_memory;" << std::endl;
++			gen << "\tchar * const local_memory = FreeOCL::work_item().local_memory;" << std::endl;
+ 
+ 			if (b_needs_sync)
+-				gen	<< "\tFreeOCL::thread_num = thread_id;" << std::endl;
++				gen	<< "\tFreeOCL::work_item().thread_num = thread_id;" << std::endl;
+ 			else
+ 			{
+ 				gen	<< "\tfor(int i = 0 ; i < thread_id ; ++i)" << std::endl
+ 					<< "\t{" << std::endl
+-					<< "\t\tFreeOCL::thread_num = i;" << std::endl;
++					<< "\t\tFreeOCL::work_item().thread_num = i;" << std::endl;
+ 			}
+ 			gen	<< "\t" << node::wrap_reserved(i->first) << "(";
+ 			std::stringstream cat;
+@@ -697,6 +694,22 @@
+ 			}
+ 		}
+ 
++#ifdef FREEOCL_OS_WINDOWS
++        std::string filename_out = windows_temp_file(b_library ? ".a" : ".dll");
++        if (filename_out.empty()) { log << "Cannot create linker output.\n"; return filename_out; }
++        if (b_library) {
++            std::ofstream archive(filename_out.c_str(), std::ios::binary);
++            archive << "!<arch>\n";
++            archive.close();
++            if (!archive) { DeleteFileA(filename_out.c_str()); return std::string(); }
++        }
++        std::string command = b_library ? "ar rcs " : windows_quote(RUNTIME_FREEOCL_CXX_COMPILER) + " " +
++                RUNTIME_FREEOCL_CXX_FLAGS + " " + compiler_extra_args + " -x none -o ";
++        command += windows_quote(filename_out);
++        for (size_t i = 0; i < files_to_link.size(); ++i) command += " " + windows_quote(files_to_link[i]);
++        if (!windows_run_tool(b_library ? "ar" : RUNTIME_FREEOCL_CXX_COMPILER, command, log)) { DeleteFileA(filename_out.c_str()); filename_out.clear(); }
++        return filename_out;
++#else
+ 		char buf[1024];		// Buffer for tmpnam (to make it thread safe)
+ 		int fd_out = -1;
+ 		std::string filename_out;
+@@ -744,5 +757,6 @@
+ 			filename_out.clear();
+ 		}
+ 		return filename_out;
++#endif
+ 	}
+ }
+--- a/src/program.cpp
++++ b/src/program.cpp
+@@ -15,6 +15,7 @@
+ 	You should have received a copy of the GNU Lesser General Public License
+ 	along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
++#include "prototypes.h"
+ #include "program.h"
+ #include "context.h"
+ #include <cstring>
+--- a/src/event.cpp
++++ b/src/event.cpp
+@@ -15,6 +15,7 @@
+ 	You should have received a copy of the GNU Lesser General Public License
+ 	along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
++#include "prototypes.h"
+ #include "event.h"
+ #include "context.h"
+ #include "utils/commandqueue.h"
+--- a/src/sampler.cpp
++++ b/src/sampler.cpp
+@@ -15,6 +15,7 @@
+ 	You should have received a copy of the GNU Lesser General Public License
+ 	along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
++#include "prototypes.h"
+ #include "sampler.h"
+ #include "context.h"
+ 
+--- a/src/freeocl.cpp
++++ b/src/freeocl.cpp
+@@ -257,7 +257,7 @@
+ 		sigaction(SIGSEGV, &s, NULL);
+ #endif
+ 
+-		_cl_icd_dispatch table;
++		_cl_icd_dispatch table = {};
+ 		table.clGetPlatformIDs = clIcdGetPlatformIDsKHR;
+ 		table.clGetPlatformInfo = clGetPlatformInfoFCL;
+ 		table.clGetDeviceIDs = clGetDeviceIDsFCL;
+@@ -441,6 +441,7 @@
+ 	#define ADD(name)	if (strcmp(funcname, #name) == 0)	return (void*)name
+ 
+ 		ADD(clIcdGetPlatformIDsKHR);
++		ADD(clGetKernelSuggestedLocalWorkSizeKHR);
+ 
+ 		return NULL;
+ 	}
+--- a/src/kernel.h
++++ b/src/kernel.h
+@@ -41,6 +41,7 @@
+     {
+         size_t size;
+         size_t offset;
++        bool was_set;
+         int type;
+         std::string name;
+         std::string type_name;
+--- a/src/kernel.cpp
++++ b/src/kernel.cpp
+@@ -224,6 +224,7 @@
+             _cl_kernel::arg_info_t arg_info;
+             arg_info.size = s;
+             arg_info.offset = offset;
++            arg_info.was_set = false;
+             arg_info.type = type;
+             arg_info.access_qualifier = type_access_qualifier;
+             arg_info.qualifier = type_qualifier;
+@@ -550,6 +551,7 @@
+             memcpy(&(kernel->args_buffer[kernel->args[arg_index].offset]), arg_value, arg_size);
+ 		}
+ 
++		kernel->args[arg_index].was_set = true;
+ 		return CL_SUCCESS;
+ 	}
+ 
+@@ -653,6 +655,44 @@
+ 
+ 		return CL_SUCCESS;
+ 	}
++
++    static cl_int validate_range(cl_command_queue queue, cl_kernel kernel, cl_uint dimensions,
++                                 const size_t *offset, const size_t *global)
++    {
++        if (kernel->program->context != queue->context) return CL_INVALID_CONTEXT;
++        if (kernel->program->build_status != CL_BUILD_SUCCESS) return CL_INVALID_PROGRAM_EXECUTABLE;
++        if (!dimensions || dimensions > 3) return CL_INVALID_WORK_DIMENSION;
++        if (!global) return CL_INVALID_GLOBAL_WORK_SIZE;
++        for (cl_uint i = 0; i < dimensions; ++i) {
++            if (!global[i]) return CL_INVALID_GLOBAL_WORK_SIZE;
++            if (offset && offset[i] > static_cast<size_t>(-1) - global[i])
++                return CL_INVALID_GLOBAL_OFFSET;
++        }
++        for (size_t i = 0; i < kernel->args.size(); ++i)
++            if (!kernel->args[i].was_set) return CL_INVALID_KERNEL_ARGS;
++        return CL_SUCCESS;
++    }
++
++    static void default_local_size(cl_uint dimensions, size_t *local)
++    {
++        // FreeOCL schedules one work-item per group for an automatic local size.
++        for (cl_uint i = 0; i < dimensions; ++i) local[i] = 1;
++    }
++
++    CL_API_ENTRY cl_int CL_API_CALL clGetKernelSuggestedLocalWorkSizeKHR(
++            cl_command_queue queue, cl_kernel kernel, cl_uint dimensions,
++            const size_t *offset, const size_t *global, size_t *suggested)
++    {
++        FreeOCL::unlocker unlock;
++        if (!FreeOCL::is_valid(queue)) return CL_INVALID_COMMAND_QUEUE;
++        unlock.handle(queue);
++        if (!FreeOCL::is_valid(kernel)) return CL_INVALID_KERNEL;
++        unlock.handle(kernel);
++        if (!suggested) return CL_INVALID_VALUE;
++        cl_int status = validate_range(queue, kernel, dimensions, offset, global);
++        if (status == CL_SUCCESS) default_local_size(dimensions, suggested);
++        return status;
++    }
+ 
+ 	cl_int clEnqueueNDRangeKernelFCL (cl_command_queue command_queue,
+ 								   cl_kernel kernel,
+@@ -685,12 +725,12 @@
+ 			return CL_INVALID_KERNEL;
+ 		unlock.handle(kernel);
+ 
++        cl_int status = validate_range(command_queue, kernel, work_dim, global_work_offset, global_work_size);
++        if (status != CL_SUCCESS) return status;
+ 		size_t p_local_work_size[3];
+ 		if (local_work_size == NULL)
+ 		{
+-			p_local_work_size[0] = 1;
+-			p_local_work_size[1] = 1;
+-			p_local_work_size[2] = 1;
++            default_local_size(work_dim, p_local_work_size);
+ 			local_work_size = p_local_work_size;
+ 		}
+ 
+--- a/src/prototypes.h
++++ b/src/prototypes.h
+@@ -22,6 +22,9 @@
+ 
+ extern "C"
+ {
++
++    CL_API_ENTRY cl_int CL_API_CALL clGetKernelSuggestedLocalWorkSizeKHR(
++            cl_command_queue, cl_kernel, cl_uint, const size_t *, const size_t *, size_t *);
+ 
+ 	/* Platform API */
+ 	CL_API_ENTRY cl_int CL_API_CALL
+--- a/src/platform.cpp
++++ b/src/platform.cpp
+@@ -31,7 +31,7 @@
+ 	const char *version = "OpenCL 1.2 FreeOCL-" FREEOCL_VERSION_STRING;
+ 	const char *name = "FreeOCL";
+ 	const char *vendor = FREEOCL_VENDOR;
+-	const char *extensions = "cl_khr_icd cl_freeocl_debug";
++	const char *extensions = "cl_khr_icd cl_khr_suggested_local_work_size cl_freeocl_debug";
+ 	const char *vendor_suffix = "FCL";
+ }
+ 
+--- a/include/FreeOCL/converters.h
++++ b/include/FreeOCL/converters.h
+@@ -18,6 +18,10 @@
+ #ifndef __FREEOCL_OPENCL_C_PREINCLUDE_CONVERTERS_H__
+ #define __FREEOCL_OPENCL_C_PREINCLUDE_CONVERTERS_H__
+ 
++/* MinGW.org ships the C99 routines, even with libstdc++ configured without fenv.h. */
++#if defined(__MINGW32__) && !defined(__MINGW64_VERSION_MAJOR) && defined(__GLIBCXX__) && !defined(_GLIBCXX_HAVE_FENV_H)
++#define _GLIBCXX_HAVE_FENV_H 1
++#endif
+ #include <fenv.h>
+ 
+ template<class T> struct __type_range;
+--- a/include/FreeOCL/printf.h
++++ b/include/FreeOCL/printf.h
+@@ -18,7 +18,12 @@
+ #ifndef __FREEOCL_OPENCL_C_PREINCLUDE_PRINTF_H__
+ #define __FREEOCL_OPENCL_C_PREINCLUDE_PRINTF_H__
+ 
++#if defined(_WIN32)
++#include <io.h>
++/* File descriptor 1 is standard output in the Windows CRT. */
++#else
+ #include <unistd.h>
++#endif
+ #include <cstdarg>
+ #include "atomic.h"
+ 
+@@ -49,7 +54,11 @@
+ 
+ static inline void __print_char(char c)
+ {
+-	write(STDOUT_FILENO, &c, 1);
++	#if defined(_WIN32)
++    _write(1, &c, 1);
++#else
++    write(STDOUT_FILENO, &c, 1);
++#endif
+ }
+ 
+ static void __print_uint(unsigned long i, int base, int field_width, char padding_char, bool b_upper_case)
+--- a/src/program.cpp
++++ b/src/program.cpp
+@@ -307,6 +307,11 @@
+ 		program->handle = dlopen(binary_file.c_str(), RTLD_NOW | RTLD_LOCAL);
+ 		if (!program->handle)
+ 		{
++            const char *detail = dlerror();
++            program->build_log += "\nCannot load compiled kernel ";
++            program->build_log += binary_file;
++            if (detail) { program->build_log += " ("; program->build_log += detail; program->build_log += ")"; }
++            program->build_log += "\n";
+ 			// In case of error do not delete temporary code file
+ 			program->temporary_file.clear();
+ 			remove(program->binary_file.c_str());

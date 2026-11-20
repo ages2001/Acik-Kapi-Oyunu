@@ -1,0 +1,211 @@
+--- a/include/vkd3d_types.h
++++ b/include/vkd3d_types.h
+@@ -65,8 +65,8 @@
+ 
+ typedef void (*PFN_vkd3d_log)(const char *format, va_list args);
+ 
+-#ifdef WINDX_SHADER_DLL
+-/* The combined compiler DLL has an explicit export list. */
++#if defined(WINDX_SHADER_DLL) || defined(WINDX_D3D12_RUNTIME)
++/* Both standalone DLLs have explicit export lists. */
+ # define VKD3D_IMPORT
+ # define VKD3D_EXPORT
+ #elif defined(_WIN32)
+--- a/libs/vkd3d/device.c
++++ b/libs/vkd3d/device.c
+@@ -487,13 +487,24 @@
+ 
+     if (!vkGetInstanceProcAddr)
+     {
+-        if (!(instance->libvulkan = vkd3d_dlopen(SONAME_LIBVULKAN)))
++        const char *vulkan_library = SONAME_LIBVULKAN;
++#ifdef WINDX_D3D12_RUNTIME
++        const char *override = getenv("WINDX_VULKAN_LIBRARY");
++        if (override && *override) vulkan_library = override;
++#endif
++        if (!(instance->libvulkan = vkd3d_dlopen(vulkan_library)))
+         {
+             ERR("Failed to load libvulkan: %s.\n", vkd3d_dlerror());
+             return E_FAIL;
+         }
+ 
+-        if (!(vkGetInstanceProcAddr = vkd3d_dlsym(instance->libvulkan, "vkGetInstanceProcAddr")))
++        vkGetInstanceProcAddr = vkd3d_dlsym(instance->libvulkan, "vkGetInstanceProcAddr");
++#ifdef WINDX_D3D12_RUNTIME
++        /* Standalone Mesa ICDs export the loader-facing entry point. */
++        if (!vkGetInstanceProcAddr && override && *override)
++            vkGetInstanceProcAddr = vkd3d_dlsym(instance->libvulkan, "vk_icdGetInstanceProcAddr");
++#endif
++        if (!vkGetInstanceProcAddr)
+         {
+             ERR("Could not load function pointer for vkGetInstanceProcAddr().\n");
+             vkd3d_dlclose(instance->libvulkan);
+--- a/libs/vkd3d-utils/vkd3d_utils_main.c
++++ b/libs/vkd3d-utils/vkd3d_utils_main.c
+@@ -19,7 +19,7 @@
+ #include "vkd3d_utils_private.h"
+ #undef D3D12CreateDevice
+ 
+-#ifndef WINDX_SHADER_DLL
++#if !defined(WINDX_SHADER_DLL) && !defined(WINDX_D3D12_RUNTIME)
+ VKD3D_DEBUG_ENV_NAME("VKD3D_DEBUG");
+ #endif
+ 
+--- a/libs/vkd3d-shader/vkd3d_shader_main.c
++++ b/libs/vkd3d-shader/vkd3d_shader_main.c
+@@ -23,7 +23,9 @@
+ #include <stdio.h>
+ #include <math.h>
+ 
++#ifndef WINDX_D3D12_RUNTIME
+ VKD3D_DEBUG_ENV_NAME("VKD3D_SHADER_DEBUG");
++#endif
+ 
+ static inline int char_to_int(char c)
+ {
+--- a/include/private/vkd3d_common.h
++++ b/include/private/vkd3d_common.h
+@@ -30,7 +30,7 @@
+ #include <stdint.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#ifndef _WIN32
++#if !defined(_WIN32) || defined(WINDX_D3D12_RUNTIME)
+ #include <pthread.h>
+ #endif
+ 
+@@ -542,14 +542,14 @@
+ 
+ struct vkd3d_mutex
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+     CRITICAL_SECTION lock;
+ #else
+     pthread_mutex_t lock;
+ #endif
+ };
+ 
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+ #define VKD3D_MUTEX_INITIALIZER {{NULL, -1, 0, 0, 0, 0}}
+ #else
+ #define VKD3D_MUTEX_INITIALIZER PTHREAD_MUTEX_INITIALIZER
+@@ -557,7 +557,7 @@
+ 
+ static inline void vkd3d_mutex_init(struct vkd3d_mutex *lock)
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+     InitializeCriticalSection(&lock->lock);
+ #else
+     int ret;
+@@ -569,7 +569,7 @@
+ 
+ static inline void vkd3d_mutex_lock(struct vkd3d_mutex *lock)
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+     EnterCriticalSection(&lock->lock);
+ #else
+     int ret;
+@@ -581,7 +581,7 @@
+ 
+ static inline void vkd3d_mutex_unlock(struct vkd3d_mutex *lock)
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+     LeaveCriticalSection(&lock->lock);
+ #else
+     int ret;
+@@ -593,7 +593,7 @@
+ 
+ static inline void vkd3d_mutex_destroy(struct vkd3d_mutex *lock)
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+     DeleteCriticalSection(&lock->lock);
+ #else
+     int ret;
+@@ -605,7 +605,7 @@
+ 
+ struct vkd3d_cond
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+     CONDITION_VARIABLE cond;
+ #else
+     pthread_cond_t cond;
+@@ -614,7 +614,7 @@
+ 
+ static inline void vkd3d_cond_init(struct vkd3d_cond *cond)
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+     InitializeConditionVariable(&cond->cond);
+ #else
+     int ret;
+@@ -626,7 +626,7 @@
+ 
+ static inline void vkd3d_cond_signal(struct vkd3d_cond *cond)
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+     WakeConditionVariable(&cond->cond);
+ #else
+     int ret;
+@@ -638,7 +638,7 @@
+ 
+ static inline void vkd3d_cond_broadcast(struct vkd3d_cond *cond)
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+     WakeAllConditionVariable(&cond->cond);
+ #else
+     int ret;
+@@ -650,7 +650,7 @@
+ 
+ static inline void vkd3d_cond_wait(struct vkd3d_cond *cond, struct vkd3d_mutex *lock)
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+     if (!SleepConditionVariableCS(&cond->cond, &lock->lock, INFINITE))
+         ERR("Failed to wait on the condition variable, error %lu.\n", GetLastError());
+ #else
+@@ -663,7 +663,7 @@
+ 
+ static inline void vkd3d_cond_destroy(struct vkd3d_cond *cond)
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+     /* Nothing to do. */
+ #else
+     int ret;
+--- a/libs/vkd3d-common/debug.c
++++ b/libs/vkd3d-common/debug.c
+@@ -423,7 +423,14 @@
+     WCHAR *wname;
+     int ret;
+ 
++#ifdef WINDX_D3D12_RUNTIME
++    BOOL (WINAPI *init_once_fn)(PINIT_ONCE, PINIT_ONCE_FN, PVOID, PVOID *) =
++            (void *)GetProcAddress(GetModuleHandleA("kernel32.dll"), "InitOnceExecuteOnce");
++    if (!init_once_fn) return;
++    init_once_fn(&init_once, resolve_SetThreadDescription, NULL, NULL);
++#else
+     InitOnceExecuteOnce(&init_once, resolve_SetThreadDescription, NULL, NULL);
++#endif
+     if (!pfn_SetThreadDescription)
+         return;
+ 
+--- a/include/private/vkd3d_common.h
++++ b/include/private/vkd3d_common.h
+@@ -551,6 +551,8 @@
+ 
+ #if defined(_WIN32) && !defined(WINDX_D3D12_RUNTIME)
+ #define VKD3D_MUTEX_INITIALIZER {{NULL, -1, 0, 0, 0, 0}}
++#elif defined(WINDX_D3D12_RUNTIME)
++#define VKD3D_MUTEX_INITIALIZER {PTHREAD_MUTEX_INITIALIZER}
+ #else
+ #define VKD3D_MUTEX_INITIALIZER PTHREAD_MUTEX_INITIALIZER
+ #endif

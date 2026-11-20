@@ -1,0 +1,445 @@
+--- a/include/llvm/Support/Signals.h
++++ b/include/llvm/Support/Signals.h
+@@ -14,6 +14,7 @@
+ #ifndef LLVM_SUPPORT_SIGNALS_H
+ #define LLVM_SUPPORT_SIGNALS_H
+ 
++#include <cstdint>
+ #include <string>
+ 
+ namespace llvm {
+--- a/lib/Support/Errno.cpp
++++ b/lib/Support/Errno.cpp
+@@ -37,7 +37,7 @@
+   std::string str;
+   if (errnum == 0)
+     return str;
+-#if defined(HAVE_STRERROR_R) || HAVE_DECL_STRERROR_S
++#if defined(HAVE_STRERROR_R) || (HAVE_DECL_STRERROR_S && !defined(__MINGW32__))
+   const int MaxErrStrLen = 2000;
+   char buffer[MaxErrStrLen];
+   buffer[0] = '\0';
+@@ -53,7 +53,7 @@
+   strerror_r(errnum, buffer, MaxErrStrLen - 1);
+   str = buffer;
+ #endif
+-#elif HAVE_DECL_STRERROR_S // "Windows Secure API"
++#elif HAVE_DECL_STRERROR_S && !defined(__MINGW32__) // "Windows Secure API"
+   strerror_s(buffer, MaxErrStrLen - 1, errnum);
+   str = buffer;
+ #elif defined(HAVE_STRERROR)
+--- a/lib/Support/Windows/Path.inc
++++ b/lib/Support/Windows/Path.inc
+@@ -27,6 +27,7 @@
+ #include "llvm/Support/Windows/WindowsSupport.h"
+ #include <shellapi.h>
+ #include <shlobj.h>
++#include <winternl.h>
+ 
+ #undef max
+ 
+@@ -350,13 +351,61 @@
+ 
+ static std::error_code realPathFromHandle(HANDLE H,
+                                           SmallVectorImpl<wchar_t> &Buffer) {
+-  DWORD CountChars = ::GetFinalPathNameByHandleW(
++  auto FinalPath = reinterpret_cast<decltype(&::GetFinalPathNameByHandleW)>(
++      GetProcAddress(GetModuleHandleW(L"kernel32.dll"), "GetFinalPathNameByHandleW"));
++  if (!FinalPath) {
++    HMODULE Nt = GetModuleHandleW(L"ntdll.dll");
++    auto Query = reinterpret_cast<decltype(&NtQueryObject)>(
++        GetProcAddress(Nt, "NtQueryObject"));
++    auto ToError = reinterpret_cast<decltype(&RtlNtStatusToDosError)>(
++        GetProcAddress(Nt, "RtlNtStatusToDosError"));
++    if (!Query || !ToError)
++      return mapWindowsError(ERROR_CALL_NOT_IMPLEMENTED);
++    ULONG Needed = 0;
++    Query(H, ObjectNameInformation, nullptr, 0, &Needed);
++    if (!Needed)
++      return mapWindowsError(ERROR_PATH_NOT_FOUND);
++    std::vector<unsigned char> Info(Needed);
++    NTSTATUS Status = Query(H, ObjectNameInformation, Info.data(), Needed, &Needed);
++    if (Status < 0)
++      return mapWindowsError(ToError(Status));
++    const auto &Name = reinterpret_cast<OBJECT_NAME_INFORMATION *>(Info.data())->Name;
++    std::wstring Native(Name.Buffer, Name.Length / sizeof(wchar_t)), Dos;
++    const std::wstring UncPrefix = L"\\Device\\Mup\\";
++    if (!Native.compare(0, UncPrefix.size(), UncPrefix)) {
++      Dos = L"\\\\?\\UNC\\" + Native.substr(UncPrefix.size());
++    } else {
++      DWORD Drives = GetLogicalDrives();
++      std::vector<wchar_t> Target(32768);
++      wchar_t Drive[] = L"A:";
++      for (unsigned I = 0; I != 26; ++I) {
++        if (!(Drives & (1u << I)))
++          continue;
++        Drive[0] = static_cast<wchar_t>(L'A' + I);
++        if (!QueryDosDeviceW(Drive, Target.data(), Target.size()))
++          continue;
++        size_t Length = wcslen(Target.data());
++        if (Native.size() >= Length && !_wcsnicmp(Native.c_str(), Target.data(), Length) &&
++            (Native.size() == Length || Native[Length] == L'\\')) {
++          Dos = std::wstring(L"\\\\?\\") + Drive + Native.substr(Length);
++          break;
++        }
++      }
++    }
++    if (Dos.empty())
++      return mapWindowsError(ERROR_PATH_NOT_FOUND);
++    Buffer.assign(Dos.begin(), Dos.end());
++    Buffer.push_back(0);
++    Buffer.pop_back();
++    return std::error_code();
++  }
++  DWORD CountChars = FinalPath(
+       H, Buffer.begin(), Buffer.capacity(), FILE_NAME_NORMALIZED);
+   if (CountChars && CountChars >= Buffer.capacity()) {
+     // The buffer wasn't big enough, try again.  In this case the return value
+     // *does* indicate the size of the null terminator.
+     Buffer.reserve(CountChars);
+-    CountChars = ::GetFinalPathNameByHandleW(
++    CountChars = FinalPath(
+         H, Buffer.begin(), Buffer.capacity(), FILE_NAME_NORMALIZED);
+   }
+   if (CountChars == 0)
+@@ -402,13 +451,29 @@
+ }
+ 
+ static std::error_code setDeleteDisposition(HANDLE Handle, bool Delete) {
++  auto SetInfo = reinterpret_cast<decltype(&SetFileInformationByHandle)>(
++      GetProcAddress(GetModuleHandleW(L"kernel32.dll"), "SetFileInformationByHandle"));
++  if (!SetInfo) {
++    HMODULE Nt = GetModuleHandleW(L"ntdll.dll");
++    auto SetNative = reinterpret_cast<decltype(&NtSetInformationFile)>(
++        GetProcAddress(Nt, "NtSetInformationFile"));
++    auto ToError = reinterpret_cast<decltype(&RtlNtStatusToDosError)>(
++        GetProcAddress(Nt, "RtlNtStatusToDosError"));
++    if (!SetNative || !ToError)
++      return mapWindowsError(ERROR_CALL_NOT_IMPLEMENTED);
++    IO_STATUS_BLOCK Io = {};
++    FILE_DISPOSITION_INFORMATION Disposition = {static_cast<BOOLEAN>(Delete)};
++    NTSTATUS Status = SetNative(Handle, &Io, &Disposition, sizeof(Disposition),
++                                FileDispositionInformation);
++    return Status < 0 ? mapWindowsError(ToError(Status)) : std::error_code();
++  }
+   // Clear the FILE_DISPOSITION_INFO flag first, before checking if it's a
+   // network file. On Windows 7 the function realPathFromHandle() below fails
+   // if the FILE_DISPOSITION_INFO flag was already set to 'DeleteFile = true' by
+   // a prior call.
+   FILE_DISPOSITION_INFO Disposition;
+   Disposition.DeleteFile = false;
+-  if (!SetFileInformationByHandle(Handle, FileDispositionInfo, &Disposition,
++  if (!SetInfo(Handle, FileDispositionInfo, &Disposition,
+                                   sizeof(Disposition)))
+     return mapWindowsError(::GetLastError());
+   if (!Delete)
+@@ -432,7 +497,7 @@
+   // The file is on a local drive, we can safely set FILE_DISPOSITION_INFO's
+   // flag.
+   Disposition.DeleteFile = true;
+-  if (!SetFileInformationByHandle(Handle, FileDispositionInfo, &Disposition,
++  if (!SetInfo(Handle, FileDispositionInfo, &Disposition,
+                                   sizeof(Disposition)))
+     return mapWindowsError(::GetLastError());
+   return std::error_code();
+@@ -453,8 +518,12 @@
+   RenameInfo.FileNameLength = ToWide.size() * sizeof(wchar_t);
+   std::copy(ToWide.begin(), ToWide.end(), &RenameInfo.FileName[0]);
+ 
++  auto SetInfo = reinterpret_cast<decltype(&SetFileInformationByHandle)>(
++      GetProcAddress(GetModuleHandleW(L"kernel32.dll"), "SetFileInformationByHandle"));
++  if (!SetInfo)
++    return std::error_code(ERROR_CALL_NOT_IMPLEMENTED, std::system_category());
+   SetLastError(ERROR_SUCCESS);
+-  if (!SetFileInformationByHandle(FromHandle, FileRenameInfo, &RenameInfo,
++  if (!SetInfo(FromHandle, FileRenameInfo, &RenameInfo,
+                                   RenameInfoBuf.size())) {
+     unsigned Error = GetLastError();
+     if (Error == ERROR_SUCCESS)
+@@ -595,12 +664,18 @@
+ }
+ 
+ std::error_code resize_file(int FD, uint64_t Size) {
+-#ifdef HAVE__CHSIZE_S
+-  errno_t error = ::_chsize_s(FD, Size);
+-#else
+-  errno_t error = ::_chsize(FD, Size);
+-#endif
+-  return std::error_code(error, std::generic_category());
++  if (Size > INT64_MAX)
++    return make_error_code(errc::file_too_large);
++  HANDLE H = reinterpret_cast<HANDLE>(_get_osfhandle(FD));
++  LARGE_INTEGER Zero = {}, Original, End;
++  End.QuadPart = Size;
++  if (!SetFilePointerEx(H, Zero, &Original, FILE_CURRENT) ||
++      !SetFilePointerEx(H, End, nullptr, FILE_BEGIN))
++    return mapWindowsError(GetLastError());
++  DWORD Error = SetEndOfFile(H) ? ERROR_SUCCESS : GetLastError();
++  if (!SetFilePointerEx(H, Original, nullptr, FILE_BEGIN) && !Error)
++    Error = GetLastError();
++  return mapWindowsError(Error);
+ }
+ 
+ std::error_code access(const Twine &Path, AccessMode Mode) {
+@@ -1421,29 +1496,26 @@
+ } // end namespace fs
+ 
+ namespace path {
+-static bool getKnownFolderPath(KNOWNFOLDERID folderId,
+-                               SmallVectorImpl<char> &result) {
+-  wchar_t *path = nullptr;
+-  if (::SHGetKnownFolderPath(folderId, KF_FLAG_CREATE, nullptr, &path) != S_OK)
++static bool getKnownFolderPath(int Folder, SmallVectorImpl<char> &Result) {
++  wchar_t Path[MAX_PATH];
++  if (FAILED(SHGetFolderPathW(nullptr, Folder | CSIDL_FLAG_CREATE, nullptr,
++                              SHGFP_TYPE_CURRENT, Path)))
+     return false;
+-
+-  bool ok = !UTF16ToUTF8(path, ::wcslen(path), result);
+-  ::CoTaskMemFree(path);
+-  return ok;
++  return !UTF16ToUTF8(Path, wcslen(Path), Result);
+ }
+ 
+ bool home_directory(SmallVectorImpl<char> &result) {
+-  return getKnownFolderPath(FOLDERID_Profile, result);
++  return getKnownFolderPath(CSIDL_PROFILE, result);
+ }
+ 
+ bool user_config_directory(SmallVectorImpl<char> &result) {
+   // Either local or roaming appdata may be suitable in some cases, depending
+   // on the data. Local is more conservative, Roaming may not always be correct.
+-  return getKnownFolderPath(FOLDERID_LocalAppData, result);
++  return getKnownFolderPath(CSIDL_LOCAL_APPDATA, result);
+ }
+ 
+ bool cache_directory(SmallVectorImpl<char> &result) {
+-  return getKnownFolderPath(FOLDERID_LocalAppData, result);
++  return getKnownFolderPath(CSIDL_LOCAL_APPDATA, result);
+ }
+ 
+ static bool getTempDirEnvVar(const wchar_t *Var, SmallVectorImpl<char> &Res) {
+--- a/lib/Support/Windows/Threading.inc
++++ b/lib/Support/Windows/Threading.inc
+@@ -139,13 +139,17 @@
+ 
+ template <typename F>
+ static bool IterateProcInfo(LOGICAL_PROCESSOR_RELATIONSHIP Relationship, F Fn) {
++  auto Query = reinterpret_cast<decltype(&GetLogicalProcessorInformationEx)>(
++      GetProcAddress(GetModuleHandleW(L"kernel32.dll"), "GetLogicalProcessorInformationEx"));
++  if (!Query)
++    return false;
+   DWORD Len = 0;
+-  BOOL R = ::GetLogicalProcessorInformationEx(Relationship, NULL, &Len);
++  BOOL R = Query(Relationship, NULL, &Len);
+   if (R || GetLastError() != ERROR_INSUFFICIENT_BUFFER) {
+     return false;
+   }
+   auto *Info = (SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX *)calloc(1, Len);
+-  R = ::GetLogicalProcessorInformationEx(Relationship, Info, &Len);
++  R = Query(Relationship, Info, &Len);
+   if (R) {
+     auto *End =
+         (SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX *)((uint8_t *)Info + Len);
+@@ -158,7 +162,7 @@
+     }
+   }
+   free(Info);
+-  return true;
++  return R != FALSE;
+ }
+ 
+ static ArrayRef<ProcessorGroup> getProcessorGroups() {
+@@ -168,7 +172,8 @@
+     auto HandleGroup = [&](SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX *ProcInfo) {
+       GROUP_RELATIONSHIP &El = ProcInfo->Group;
+       for (unsigned J = 0; J < El.ActiveGroupCount; ++J) {
+-        ProcessorGroup G;
++        ProcessorGroup G{};
++        G.ThreadsPerCore = 1;
+         G.ID = Groups.size();
+         G.AllThreads = El.GroupInfo[J].MaximumProcessorCount;
+         G.UsableThreads = El.GroupInfo[J].ActiveProcessorCount;
+@@ -178,8 +183,18 @@
+       }
+     };
+ 
+-    if (!IterateProcInfo(RelationGroup, HandleGroup))
+-      return std::vector<ProcessorGroup>();
++    if (!IterateProcInfo(RelationGroup, HandleGroup) || Groups.empty()) {
++      DWORD_PTR Process, System;
++      if (!GetProcessAffinityMask(GetCurrentProcess(), &Process, &System)) {
++        SYSTEM_INFO Info;
++        GetSystemInfo(&Info);
++        Process = System = Info.dwActiveProcessorMask;
++      }
++      if (!Process || !System)
++        Process = System = 1;
++      const unsigned Width = sizeof(System) * 8 - countLeadingZeros(System);
++      return std::vector<ProcessorGroup>{{0, Width, countPopulation(Process), 1, Process}};
++    }
+ 
+     auto HandleProc = [&](SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX *ProcInfo) {
+       PROCESSOR_RELATIONSHIP &El = ProcInfo->Processor;
+@@ -205,7 +220,9 @@
+       // We don't expect more that 4 CPU groups on Windows (256 processors).
+       USHORT GroupCount = 4;
+       USHORT GroupArray[4]{};
+-      if (::GetProcessGroupAffinity(GetCurrentProcess(), &GroupCount,
++      auto QueryGroup = reinterpret_cast<decltype(&GetProcessGroupAffinity)>(
++          GetProcAddress(GetModuleHandleW(L"kernel32.dll"), "GetProcessGroupAffinity"));
++      if (QueryGroup && QueryGroup(GetCurrentProcess(), &GroupCount,
+                                     GroupArray)) {
+         assert(GroupCount == 1 &&
+                "On startup, a program is expected to be assigned only to "
+@@ -283,12 +300,21 @@
+   GROUP_AFFINITY Affinity{};
+   Affinity.Group = Groups[*Socket].ID;
+   Affinity.Mask = Groups[*Socket].Affinity;
+-  SetThreadGroupAffinity(GetCurrentThread(), &Affinity, nullptr);
++  auto SetGroup = reinterpret_cast<decltype(&SetThreadGroupAffinity)>(
++      GetProcAddress(GetModuleHandleW(L"kernel32.dll"), "SetThreadGroupAffinity"));
++  if (SetGroup)
++    SetGroup(GetCurrentThread(), &Affinity, nullptr);
+ }
+ 
+ llvm::BitVector llvm::get_thread_affinity_mask() {
+   GROUP_AFFINITY Affinity{};
+-  GetThreadGroupAffinity(GetCurrentThread(), &Affinity);
++  auto GetGroup = reinterpret_cast<decltype(&GetThreadGroupAffinity)>(
++      GetProcAddress(GetModuleHandleW(L"kernel32.dll"), "GetThreadGroupAffinity"));
++  if (!GetGroup || !GetGroup(GetCurrentThread(), &Affinity)) {
++    DWORD_PTR System;
++    if (!GetProcessAffinityMask(GetCurrentProcess(), &Affinity.Mask, &System))
++      Affinity.Mask = 1;
++  }
+ 
+   static unsigned All =
+       aggregate(getProcessorGroups(),
+--- a/lib/Support/Windows/DynamicLibrary.inc
++++ b/lib/Support/Windows/DynamicLibrary.inc
+@@ -14,6 +14,7 @@
+ #include "llvm/Support/ConvertUTF.h"
+ #include "llvm/Support/raw_ostream.h"
+ 
++#define PSAPI_VERSION 1
+ #include <psapi.h>
+ 
+ //===----------------------------------------------------------------------===//
+@@ -70,14 +71,8 @@
+ 
+ static bool GetProcessModules(HANDLE H, DWORD &Bytes, HMODULE *Data = nullptr) {
+   // EnumProcessModules will fail on Windows 64 while some versions of
+-  // MingW-32 don't have EnumProcessModulesEx.
+-  if (
+-#ifdef _WIN64
+-      !EnumProcessModulesEx(H, Data, Bytes, &Bytes, LIST_MODULES_64BIT)
+-#else
+-      !EnumProcessModules(H, Data, Bytes, &Bytes)
+-#endif
+-     ) {
++  // Enumerate modules in this process using the XP PSAPI interface.
++  if (!EnumProcessModules(H, Data, Bytes, &Bytes)) {
+     std::string Err;
+     if (MakeErrMsg(&Err, "EnumProcessModules failure"))
+       llvm::errs() << Err << "\n";
+--- a/lib/Support/Windows/Program.inc
++++ b/lib/Support/Windows/Program.inc
+@@ -18,6 +18,7 @@
+ #include "llvm/Support/Windows/WindowsSupport.h"
+ #include "llvm/Support/WindowsError.h"
+ #include "llvm/Support/raw_ostream.h"
++#define PSAPI_VERSION 1
+ #include <psapi.h>
+ #include <cstdio>
+ #include <fcntl.h>
+--- a/lib/Support/Windows/Process.inc
++++ b/lib/Support/Windows/Process.inc
+@@ -23,6 +23,7 @@
+ 
+ #include <direct.h>
+ #include <io.h>
++#define PSAPI_VERSION 1
+ #include <psapi.h>
+ #include <shellapi.h>
+ 
+@@ -56,7 +57,12 @@
+   // GetNativeSystemInfo() provides the physical page size which may differ
+   // from GetSystemInfo() in 32-bit applications running under WOW64.
+   SYSTEM_INFO info;
+-  GetNativeSystemInfo(&info);
++  auto NativeSystemInfo = reinterpret_cast<decltype(&GetNativeSystemInfo)>(
++      GetProcAddress(GetModuleHandleA("kernel32.dll"), "GetNativeSystemInfo"));
++  if (NativeSystemInfo)
++    NativeSystemInfo(&info);
++  else
++    GetSystemInfo(&info);
+   // FIXME: FileOffset in MapViewOfFile() should be aligned to not dwPageSize,
+   // but dwAllocationGranularity.
+   return static_cast<unsigned>(info.dwPageSize);
+--- a/lib/Support/Windows/Memory.inc
++++ b/lib/Support/Windows/Memory.inc
+@@ -63,7 +63,11 @@
+ // sucessfull, we return the minimal large memory page size.
+ static size_t enableProcessLargePages() {
+   HANDLE Token = 0;
+-  size_t LargePageMin = GetLargePageMinimum();
++  auto LargePageMinimum = reinterpret_cast<decltype(&GetLargePageMinimum)>(
++      GetProcAddress(GetModuleHandleA("kernel32.dll"), "GetLargePageMinimum"));
++  if (!LargePageMinimum)
++    return 0;
++  size_t LargePageMin = LargePageMinimum();
+   if (LargePageMin)
+     OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY,
+                      &Token);
+--- a/lib/Support/Windows/Signals.inc
++++ b/lib/Support/Windows/Signals.inc
+@@ -630,6 +630,14 @@
+   return Key;
+ }
+ 
++// Windows Error Reporting registry settings are optional on earlier systems.
++static LONG readDumpValue(HKEY key, LPCWSTR subkey, LPCWSTR name, DWORD flags,
++                          LPDWORD type, PVOID data, LPDWORD size) {
++  auto getValue = reinterpret_cast<decltype(&RegGetValueW)>(
++      GetProcAddress(GetModuleHandleA("advapi32.dll"), "RegGetValueW"));
++  return getValue ? getValue(key, subkey, name, flags, type, data, size) : ERROR_FILE_NOT_FOUND;
++}
++
+ /// Populate ResultDirectory with the value for "DumpFolder" for a given
+ /// Windows Registry key.
+ ///
+@@ -643,13 +651,13 @@
+ 
+   DWORD BufferLengthBytes = 0;
+ 
+-  if (ERROR_SUCCESS != ::RegGetValueW(Key, 0, L"DumpFolder", REG_EXPAND_SZ,
++  if (ERROR_SUCCESS != readDumpValue(Key, 0, L"DumpFolder", REG_EXPAND_SZ,
+                                       NULL, NULL, &BufferLengthBytes))
+     return false;
+ 
+   SmallVector<wchar_t, MAX_PATH> Buffer(BufferLengthBytes);
+ 
+-  if (ERROR_SUCCESS != ::RegGetValueW(Key, 0, L"DumpFolder", REG_EXPAND_SZ,
++  if (ERROR_SUCCESS != readDumpValue(Key, 0, L"DumpFolder", REG_EXPAND_SZ,
+                                       NULL, Buffer.data(), &BufferLengthBytes))
+     return false;
+ 
+@@ -690,7 +698,7 @@
+ 
+   DWORD DumpType;
+   DWORD TypeSize = sizeof(DumpType);
+-  if (ERROR_SUCCESS != ::RegGetValueW(Key, NULL, L"DumpType", RRF_RT_REG_DWORD,
++  if (ERROR_SUCCESS != readDumpValue(Key, NULL, L"DumpType", RRF_RT_REG_DWORD,
+                                       NULL, &DumpType,
+                                       &TypeSize))
+     return false;
+@@ -698,7 +706,7 @@
+   switch (DumpType) {
+   case 0: {
+     DWORD Flags = 0;
+-    if (ERROR_SUCCESS != ::RegGetValueW(Key, NULL, L"CustomDumpFlags",
++    if (ERROR_SUCCESS != readDumpValue(Key, NULL, L"CustomDumpFlags",
+                                         RRF_RT_REG_DWORD, NULL, &Flags,
+                                         &TypeSize))
+       return false;

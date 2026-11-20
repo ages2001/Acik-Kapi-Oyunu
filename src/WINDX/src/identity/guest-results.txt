@@ -1,0 +1,70 @@
+Windows NT 3.1 build 528, native x86 reader
+========================================
+QEMU PC with one virtual Pentium II, 1024 MiB RAM and IDE. Its processor has no extended CPUID brand and Windows supplied no nominal clock. The hardware registry exports the platform and BIOS date. The configured SeaBIOS firmware image also contains the date 06/23/99 at offset 262133.
+
+Operating system: Windows NT 3.1 (3.10, Build 528)
+Processor: Intel Pentium II-class (GenuineIntel, Family 6 Model 5 Stepping 2), 1 logical processor
+System manufacturer: Not reported by firmware or Windows
+System model: AT/AT COMPATIBLE (Windows platform identifier)
+BIOS: ROM BIOS dated 06/23/99
+Registry product name: 
+CPUID vendor: GenuineIntel
+CPUID signature: 00000652
+CPUID or registry brand:
+Process result PASS
+
+Windows XP Professional SP3 x86, native processor and SMBIOS
+============================================================
+QEMU PC with one virtual Pentium III and 384 MiB RAM. Windows reported its processor clock in the hardware registry. Its SMBIOS service exposed the type 0 BIOS description and type 1 system information.
+
+Operating system: Microsoft Windows XP Professional (5.1, Build 2600) Service Pack 3
+Processor: Intel Pentium III-class (GenuineIntel, Family 6 Model 7 Stepping 3), 1 logical processor, ~2596 MHz
+System manufacturer: QEMU
+System model: Standard PC (i440FX + PIIX, 1996)
+BIOS: SeaBIOS 1.16.3-debian-1.16.3-2, 04/01/2014
+Registry product name: Microsoft Windows XP
+CPUID vendor: GenuineIntel
+CPUID signature: 00000673
+CPUID or registry brand:
+
+DxDiag system information through the Wine 2.0.5 provider
+--------------------------------------------------------
+Module D:\V2\dxdiagn.dll
+DxDiag operating system: Microsoft Windows XP Professional (5.1, Build 2600) Service Pack 3
+DxDiag processor: Intel Pentium III-class (GenuineIntel, Family 6 Model 7 Stepping 3), 1 logical processor, ~2596 MHz
+DxDiag system manufacturer: QEMU
+DxDiag system model: Standard PC (i440FX + PIIX, 1996)
+DxDiag BIOS: SeaBIOS 1.16.3-debian-1.16.3-2, 04/01/2014
+DxDiag executable version: 5.03.2600.5512
+DxDiag DirectX inventory: DirectX 9.0c (4.09.00.0904)
+DxDiag root containers 0000000a
+DxDiag COM system information matches the running OS PASS
+Process exit 0
+
+DxDiag system information through the Wine 3.0.5 provider
+--------------------------------------------------------
+Module D:\V3\dxdiagn.dll
+DxDiag operating system: Microsoft Windows XP Professional (5.1, Build 2600) Service Pack 3
+DxDiag processor: Intel Pentium III-class (GenuineIntel, Family 6 Model 7 Stepping 3), 1 logical processor, ~2596 MHz
+DxDiag system manufacturer: QEMU
+DxDiag system model: Standard PC (i440FX + PIIX, 1996)
+DxDiag BIOS: SeaBIOS 1.16.3-debian-1.16.3-2, 04/01/2014
+DxDiag executable version: 5.03.2600.5512
+DxDiag DirectX inventory: DirectX 9.0c (4.09.00.0904)
+DxDiag root containers 0000000a
+DxDiag COM system information matches the running OS PASS
+Process exit 0
+
+Microsoft Windows XP SP3 system provider on the same guest
+---------------------------------------------------------
+Module C:\WINDOWS\system32\dxdiagn.dll
+DxDiag operating system: Windows XP Professional (5.1, Build 2600) Service Pack 3 (2600.xpsp.080413-2111)
+DxDiag processor: Intel Pentium III, ~2.6GHz
+DxDiag system manufacturer: QEMU
+DxDiag system model: Standard PC (i440FX + PIIX, 1996)
+DxDiag BIOS: Default System BIOS
+DxDiag executable version: 5.03.2600.5512
+DxDiag DirectX inventory: DirectX 9.0c (4.09.0000.0904)
+DxDiag root containers 0000000a
+DxDiag COM system information matches the running OS PASS
+Process exit 0

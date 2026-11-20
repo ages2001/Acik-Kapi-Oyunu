@@ -1,0 +1,139 @@
+Windows 95 OSR2, softpipe
+=========================
+Cannot load app-local OpenGL, error 00000485
+
+OpenGL library unavailable
+
+Windows 98 Second Edition, softpipe
+===================================
+OpenGL module D:\GL\OPENGL32.DLL
+GL renderer softpipe
+GL version 3.3 (Compatibility Profile) Mesa 21.3.9
+WGL clear/readback PASS
+
+Bootstrap GL 3.3 (Compatibility Profile) Mesa 21.3.9
+Renderer softpipe
+OpenGL 4.6 core context unavailable
+
+Windows Me, softpipe
+====================
+OpenGL module C:\WINOGL\OPENGL32.DLL
+GL renderer softpipe
+GL version 3.3 (Compatibility Profile) Mesa 21.3.9
+WGL clear/readback PASS
+
+Bootstrap GL 3.3 (Compatibility Profile) Mesa 21.3.9
+Renderer softpipe
+OpenGL 4.6 core context unavailable
+
+Windows NT 3.1, softpipe
+========================
+Cannot load app-local OpenGL, error 0000007e
+
+Windows NT 3.5 SP3, softpipe
+============================
+Cannot load app-local OpenGL, error 0000007e
+
+Windows NT 3.51, softpipe
+=========================
+OpenGL module C:\WINOGL\opengl32.dll
+GL renderer softpipe
+GL version 3.3 (Compatibility Profile) Mesa 21.3.9
+WGL clear/readback PASS
+
+Bootstrap GL 3.3 (Compatibility Profile) Mesa 21.3.9
+Renderer softpipe
+OpenGL 4.6 core context unavailable
+
+Windows 2000 SP4, softpipe
+==========================
+OpenGL module C:\WINOGL\opengl32.dll
+GL renderer softpipe
+GL version 3.3 (Compatibility Profile) Mesa 21.3.9
+WGL clear/readback PASS
+
+Bootstrap GL 3.3 (Compatibility Profile) Mesa 21.3.9
+Renderer softpipe
+OpenGL 4.6 core context unavailable
+
+Windows XP Professional x64 SP2, native AMD64 softpipe
+======================================================
+OpenGL module C:\WINOGL\opengl32.dll
+GL renderer softpipe
+GL version 3.3 (Compatibility Profile) Mesa 21.3.9
+WGL clear/readback PASS
+
+Bootstrap GL 3.3 (Compatibility Profile) Mesa 21.3.9
+Renderer softpipe
+OpenGL 4.6 core context unavailable
+
+Windows XP Professional x64 SP2, native AMD64 llvmpipe (two worker threads)
+===========================================================================
+OpenGL module C:\WOGLTHRD\opengl32.dll
+GL renderer llvmpipe (LLVM 12.0.1, 128 bits)
+GL version 4.6 (Compatibility Profile) Mesa 21.3.9
+WGL clear/readback PASS
+
+Bootstrap GL 4.6 (Compatibility Profile) Mesa 21.3.9
+Renderer llvmpipe (LLVM 12.0.1, 128 bits)
+Core GL 4.6 (Core Profile) Mesa 21.3.9
+GLSL 4.60
+OpenGL 4.5 GLSL compute/readback PASS
+
+Bootstrap GL 4.6 (Compatibility Profile) Mesa 21.3.9
+Renderer llvmpipe (LLVM 12.0.1, 128 bits)
+Core GL 4.6 (Core Profile) Mesa 21.3.9
+GLSL 4.60
+OpenGL 4.6 GLSL compute/readback PASS
+OpenGL 4.6 SPIR-V specialization/readback PASS
+
+Started 
+base 0 
+gl45 0 
+gl46 0 
+cs 1 
+draw11 0 
+draw9 0
+
+Windows XP Professional SP3, native x86 llvmpipe (QEMU qemu32, two workers)
+===========================================================================
+OpenGL module C:\WXFULL\opengl32.dll
+GL renderer llvmpipe (LLVM 12.0.1, 128 bits)
+GL version 4.6 (Compatibility Profile) Mesa 21.3.9
+WGL clear/readback PASS
+
+Bootstrap GL 4.6 (Compatibility Profile) Mesa 21.3.9
+Renderer llvmpipe (LLVM 12.0.1, 128 bits)
+Core GL 4.6 (Core Profile) Mesa 21.3.9
+GLSL 4.60
+OpenGL 4.5 GLSL compute/readback PASS
+
+Bootstrap GL 4.6 (Compatibility Profile) Mesa 21.3.9
+Renderer llvmpipe (LLVM 12.0.1, 128 bits)
+Core GL 4.6 (Core Profile) Mesa 21.3.9
+GLSL 4.60
+OpenGL 4.6 GLSL compute/readback PASS
+OpenGL 4.6 SPIR-V specialization/readback PASS
+
+CRTDLL deployment on classic NT
+===============================
+
+Windows NT 3.1
+OpenGL module C:\WXCLASS\opengl32.dll
+GL renderer softpipe
+GL version 3.3 (Compatibility Profile) Mesa 21.3.9
+WGL clear/readback PASS
+
+Windows NT 3.5 SP3
+OpenGL module D:\WXCLASS\opengl32.dll
+GL renderer softpipe
+GL version 3.3 (Compatibility Profile) Mesa 21.3.9
+WGL clear/readback PASS
+
+Windows 95 OSR2, explicit WGL DLL loading
+=========================================
+
+OpenGL module C:\WX95PORT\OPENGL32.DLL
+GL renderer softpipe
+GL version 3.3 (Compatibility Profile) Mesa 21.3.9
+WGL clear/readback PASS

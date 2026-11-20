@@ -1,0 +1,3884 @@
+--- a/dlls/dxgi/dxgi_main.c
++++ b/dlls/dxgi/dxgi_main.c
+@@ -99,16 +99,20 @@
+         HRESULT hr;
+         HRESULT (WINAPI *d3d11core_register_layers)(void);
+         HMODULE mod;
+-        BOOL ret;
+-
+-        if (!(ret = GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS, (const char *)d3d10core, &mod)))
++        MEMORY_BASIC_INFORMATION info;
++        char path[MAX_PATH];
++        DWORD length;
++
++        if (!VirtualQuery(d3d10core, &info, sizeof(info))
++                || !(length = GetModuleFileNameA(info.AllocationBase, path, sizeof(path)))
++                || length >= sizeof(path) || !(mod = LoadLibraryA(path)))
+         {
+             wined3d_mutex_unlock();
+             return E_FAIL;
+         }
+ 
+         d3d11core_register_layers = (void *)GetProcAddress(mod, "D3D11CoreRegisterLayers");
+-        hr = d3d11core_register_layers();
++        hr = d3d11core_register_layers ? d3d11core_register_layers() : E_NOINTERFACE;
+         if (FAILED(hr))
+         {
+             ERR("Failed to register d3d11 layers, returning %#x.\n", hr);
+--- a/dlls/wined3d/wined3d_gl.h
++++ b/dlls/wined3d/wined3d_gl.h
+@@ -29,8 +29,8 @@
+ 
+ #define GL_COMPRESSED_LUMINANCE_ALPHA_3DC_ATI 0x8837  /* not in the gl spec */
+ 
+-void (WINE_GLAPI *glDisableWINE)(GLenum cap) DECLSPEC_HIDDEN;
+-void (WINE_GLAPI *glEnableWINE)(GLenum cap) DECLSPEC_HIDDEN;
++extern void (WINE_GLAPI *glDisableWINE)(GLenum cap) DECLSPEC_HIDDEN;
++extern void (WINE_GLAPI *glEnableWINE)(GLenum cap) DECLSPEC_HIDDEN;
+ 
+ /* OpenGL extensions. */
+ enum wined3d_gl_extension
+--- a/dlls/wined3d/wined3d_private.h
++++ b/dlls/wined3d/wined3d_private.h
+@@ -25,6 +25,11 @@
+ #ifndef __WINE_WINED3D_PRIVATE_H
+ #define __WINE_WINED3D_PRIVATE_H
+ 
++/* Use the Windows OpenGL DLL for both system ICDs and app-local Mesa. */
++#if defined(__MINGW32__) && !defined(USE_WIN32_OPENGL)
++#define USE_WIN32_OPENGL
++#endif
++
+ #ifdef USE_WIN32_OPENGL
+ #define WINE_GLAPI __stdcall
+ #else
+@@ -55,6 +60,39 @@
+ #include "wine/list.h"
+ #include "wine/rbtree.h"
+ #include "wine/wgl_driver.h"
++
++#ifdef USE_WIN32_OPENGL
++/* Use one pixel format namespace for the entire lifetime of each DC.
++ * System OpenGL can use the GDI API, while Mesa owns its WGL pixel formats. */
++static inline int windx_choose_pixel_format(HDC dc, const PIXELFORMATDESCRIPTOR *pfd)
++{
++    int (WINAPI *choose)(HDC, const PIXELFORMATDESCRIPTOR *) = (void *)
++            GetProcAddress(GetModuleHandleA("opengl32.dll"), "wglChoosePixelFormat");
++    return choose ? choose(dc, pfd) : ChoosePixelFormat(dc, pfd);
++}
++
++static inline int windx_describe_pixel_format(HDC dc, int format, UINT size, PIXELFORMATDESCRIPTOR *pfd)
++{
++    int (WINAPI *describe)(HDC, int, UINT, PIXELFORMATDESCRIPTOR *) = (void *)
++            GetProcAddress(GetModuleHandleA("opengl32.dll"), "wglDescribePixelFormat");
++    return describe ? describe(dc, format, size, pfd) : DescribePixelFormat(dc, format, size, pfd);
++}
++
++static inline BOOL windx_set_pixel_format(HDC dc, int format, const PIXELFORMATDESCRIPTOR *pfd)
++{
++    PIXELFORMATDESCRIPTOR description;
++    BOOL (WINAPI *set)(HDC, int, const PIXELFORMATDESCRIPTOR *) = (void *)
++            GetProcAddress(GetModuleHandleA("opengl32.dll"), "wglSetPixelFormat");
++    if (!pfd && windx_describe_pixel_format(dc, format, sizeof(description), &description))
++        pfd = &description;
++    return set ? set(dc, format, pfd) : SetPixelFormat(dc, format, pfd);
++}
++#else
++#define windx_choose_pixel_format ChoosePixelFormat
++#define windx_describe_pixel_format DescribePixelFormat
++#define windx_set_pixel_format SetPixelFormat
++#endif
++
+ 
+ #ifndef ARRAY_SIZE
+ #define ARRAY_SIZE(array) (sizeof(array) / sizeof((array)[0]))
+@@ -2944,7 +2982,10 @@
+     unsigned int texture_level;
+     unsigned int texture_layer;
+ 
+-    /* For GetDC */
++    /* The legacy GDI DIB owns its storage. Synchronize it across GetDC/ReleaseDC. */
++    BYTE *dib_pixels, *mapped_pixels;
++    HGDIOBJ previous_bitmap;
++    unsigned int dib_pitch, mapped_pitch, row_bytes, dib_height;
+     HBITMAP bitmap;
+     HDC dc;
+ 
+@@ -2990,6 +3031,7 @@
+         const RECT *rect, const struct wined3d_color *color) DECLSPEC_HIDDEN;
+ HRESULT wined3d_surface_create_dc(struct wined3d_surface *surface) DECLSPEC_HIDDEN;
+ void wined3d_surface_destroy_dc(struct wined3d_surface *surface) DECLSPEC_HIDDEN;
++void wined3d_surface_sync_dc(struct wined3d_surface *surface, BOOL writeback) DECLSPEC_HIDDEN;
+ void surface_load_fb_texture(struct wined3d_surface *surface, BOOL srgb,
+         struct wined3d_context *context) DECLSPEC_HIDDEN;
+ HRESULT surface_load_location(struct wined3d_surface *surface,
+@@ -3878,6 +3920,7 @@
+ }
+ 
+ /* The WNDCLASS-Name for the fake window which we use to retrieve the GL capabilities */
++HWND wined3d_create_gl_window(void) DECLSPEC_HIDDEN;
+ #define WINED3D_OPENGL_WINDOW_CLASS_NAME "WineD3D_OpenGL"
+ 
+ #define MAKEDWORD_VERSION(maj, min) (((maj & 0xffffu) << 16) | (min & 0xffffu))
+--- a/dlls/wined3d/directx.c
++++ b/dlls/wined3d/directx.c
+@@ -30,6 +30,9 @@
+ #include "winternl.h"
+ 
+ WINE_DEFAULT_DEBUG_CHANNEL(d3d);
++
++void (WINE_GLAPI *glDisableWINE)(GLenum cap) DECLSPEC_HIDDEN;
++void (WINE_GLAPI *glEnableWINE)(GLenum cap) DECLSPEC_HIDDEN;
+ WINE_DECLARE_DEBUG_CHANNEL(d3d_perf);
+ WINE_DECLARE_DEBUG_CHANNEL(winediag);
+ 
+@@ -348,11 +351,10 @@
+     ctx->restore_gl_ctx = wglGetCurrentContext();
+ 
+     /* We need a fake window as a hdc retrieved using GetDC(0) can't be used for much GL purposes. */
+-    ctx->wnd = CreateWindowA(WINED3D_OPENGL_WINDOW_CLASS_NAME, "WineD3D fake window",
+-            WS_OVERLAPPEDWINDOW, 10, 10, 10, 10, NULL, NULL, NULL, NULL);
++    ctx->wnd = wined3d_create_gl_window();
+     if (!ctx->wnd)
+     {
+-        ERR("Failed to create a window.\n");
++        ERR("Failed to create a window, error %#x.\n", (unsigned int)GetLastError());
+         goto fail;
+     }
+ 
+@@ -372,14 +374,14 @@
+     pfd.cColorBits = 32;
+     pfd.iLayerType = PFD_MAIN_PLANE;
+ 
+-    if (!(iPixelFormat = ChoosePixelFormat(ctx->dc, &pfd)))
++    if (!(iPixelFormat = windx_choose_pixel_format(ctx->dc, &pfd)))
+     {
+         /* If this happens something is very wrong as ChoosePixelFormat barely fails. */
+         ERR("Failed to find a suitable pixel format.\n");
+         goto fail;
+     }
+-    DescribePixelFormat(ctx->dc, iPixelFormat, sizeof(pfd), &pfd);
+-    SetPixelFormat(ctx->dc, iPixelFormat, &pfd);
++    windx_describe_pixel_format(ctx->dc, iPixelFormat, sizeof(pfd), &pfd);
++    windx_set_pixel_format(ctx->dc, iPixelFormat, &pfd);
+ 
+     /* Create a GL context. */
+     if (!(ctx->gl_ctx = wglCreateContext(ctx->dc)))
+@@ -4160,6 +4162,87 @@
+     return WINED3D_OK;
+ }
+ 
++/* Windows versions with one display expose the original display-mode calls.
++ * Win9x also needs the ANSI entry points for DEVMODE. */
++static HMONITOR adapter_monitor(POINT position)
++{
++    HMONITOR (WINAPI *lookup)(POINT, DWORD) = (void *)
++            GetProcAddress(GetModuleHandleA("user32.dll"), "MonitorFromPoint");
++    /* Primary monitor handle from the Win32 SDK's single-monitor fallback. */
++    return lookup ? lookup(position, MONITOR_DEFAULTTOPRIMARY) : (HMONITOR)(ULONG_PTR)0x12340042;
++}
++
++static BOOL adapter_enum_mode(const WCHAR *device, DWORD index, DEVMODEW *mode)
++{
++    HMODULE user = GetModuleHandleA("user32.dll");
++    DEVMODEA ansi;
++    BOOL (WINAPI *enum_ex_w)(const WCHAR *, DWORD, DEVMODEW *, DWORD);
++    BOOL (WINAPI *enum_w)(const WCHAR *, DWORD, DEVMODEW *);
++    BOOL (WINAPI *enum_ex_a)(const char *, DWORD, DEVMODEA *, DWORD);
++    BOOL (WINAPI *enum_a)(const char *, DWORD, DEVMODEA *);
++    char name[CCHDEVICENAME];
++    const char *selected = NULL;
++    BOOL result;
++
++    if (!(GetVersion() & 0x80000000u))
++    {
++        enum_ex_w = (void *)GetProcAddress(user, "EnumDisplaySettingsExW");
++        if (enum_ex_w) return enum_ex_w(device, index, mode, 0);
++        enum_w = (void *)GetProcAddress(user, "EnumDisplaySettingsW");
++        if (enum_w) return enum_w(NULL, index, mode);
++    }
++    if (device && WideCharToMultiByte(CP_ACP, 0, device, -1, name, sizeof(name), NULL, NULL))
++        selected = name;
++    memset(&ansi, 0, sizeof(ansi));
++    ansi.dmSize = sizeof(ansi);
++    enum_ex_a = (void *)GetProcAddress(user, "EnumDisplaySettingsExA");
++    enum_a = (void *)GetProcAddress(user, "EnumDisplaySettingsA");
++    result = enum_ex_a ? enum_ex_a(selected, index, &ansi, 0) : (enum_a && enum_a(NULL, index, &ansi));
++    if (!result) return FALSE;
++    mode->dmFields = ansi.dmFields;
++    mode->dmPelsWidth = ansi.dmPelsWidth;
++    mode->dmPelsHeight = ansi.dmPelsHeight;
++    mode->dmBitsPerPel = ansi.dmBitsPerPel;
++    mode->u2.dmDisplayFlags = ansi.u2.dmDisplayFlags;
++    mode->dmDisplayFrequency = ansi.dmDisplayFrequency;
++    mode->u1.s2.dmDisplayOrientation = ansi.u1.s2.dmDisplayOrientation;
++    return TRUE;
++}
++
++static LONG adapter_change_mode(const WCHAR *device, DEVMODEW *mode)
++{
++    HMODULE user = GetModuleHandleA("user32.dll");
++    LONG (WINAPI *change_ex_w)(const WCHAR *, DEVMODEW *, HWND, DWORD, void *);
++    LONG (WINAPI *change_w)(DEVMODEW *, DWORD);
++    LONG (WINAPI *change_ex_a)(const char *, DEVMODEA *, HWND, DWORD, void *);
++    LONG (WINAPI *change_a)(DEVMODEA *, DWORD);
++    DEVMODEA ansi;
++    char name[CCHDEVICENAME];
++    const char *selected = NULL;
++
++    if (!(GetVersion() & 0x80000000u))
++    {
++        change_ex_w = (void *)GetProcAddress(user, "ChangeDisplaySettingsExW");
++        if (change_ex_w) return change_ex_w(device, mode, NULL, CDS_FULLSCREEN, NULL);
++        change_w = (void *)GetProcAddress(user, "ChangeDisplaySettingsW");
++        if (change_w) return change_w(mode, CDS_FULLSCREEN);
++    }
++    if (device && WideCharToMultiByte(CP_ACP, 0, device, -1, name, sizeof(name), NULL, NULL))
++        selected = name;
++    memset(&ansi, 0, sizeof(ansi));
++    ansi.dmSize = sizeof(ansi);
++    ansi.dmFields = mode->dmFields;
++    ansi.dmPelsWidth = mode->dmPelsWidth;
++    ansi.dmPelsHeight = mode->dmPelsHeight;
++    ansi.dmBitsPerPel = mode->dmBitsPerPel;
++    ansi.u2.dmDisplayFlags = mode->u2.dmDisplayFlags;
++    ansi.dmDisplayFrequency = mode->dmDisplayFrequency;
++    change_ex_a = (void *)GetProcAddress(user, "ChangeDisplaySettingsExA");
++    if (change_ex_a) return change_ex_a(selected, &ansi, NULL, CDS_FULLSCREEN, NULL);
++    change_a = (void *)GetProcAddress(user, "ChangeDisplaySettingsA");
++    return change_a ? change_a(&ansi, CDS_FULLSCREEN) : DISP_CHANGE_FAILED;
++}
++
+ HRESULT CDECL wined3d_get_output_desc(const struct wined3d *wined3d, unsigned int adapter_idx,
+         struct wined3d_output_desc *desc)
+ {
+@@ -4175,7 +4258,7 @@
+         return WINED3DERR_INVALIDCALL;
+ 
+     adapter = &wined3d->adapters[adapter_idx];
+-    if (!(monitor = MonitorFromPoint(adapter->monitor_position, MONITOR_DEFAULTTOPRIMARY)))
++    if (!(monitor = adapter_monitor(adapter->monitor_position)))
+         return WINED3DERR_INVALIDCALL;
+ 
+     if (FAILED(hr = wined3d_get_adapter_display_mode(wined3d, adapter_idx, &mode, &rotation)))
+@@ -4220,7 +4303,7 @@
+     memset(&mode, 0, sizeof(mode));
+     mode.dmSize = sizeof(mode);
+ 
+-    while (EnumDisplaySettingsExW(adapter->DeviceName, j++, &mode, 0))
++    while (adapter_enum_mode(adapter->DeviceName, j++, &mode))
+     {
+         if (mode.dmFields & DM_DISPLAYFLAGS)
+         {
+@@ -4276,7 +4359,7 @@
+ 
+     while (i <= mode_idx)
+     {
+-        if (!EnumDisplaySettingsExW(adapter->DeviceName, j++, &m, 0))
++        if (!adapter_enum_mode(adapter->DeviceName, j++, &m))
+         {
+             WARN("Invalid mode_idx %u.\n", mode_idx);
+             return WINED3DERR_INVALIDCALL;
+@@ -4445,7 +4528,7 @@
+     memset(&m, 0, sizeof(m));
+     m.dmSize = sizeof(m);
+ 
+-    EnumDisplaySettingsExW(adapter->DeviceName, ENUM_CURRENT_SETTINGS, &m, 0);
++    adapter_enum_mode(adapter->DeviceName, ENUM_CURRENT_SETTINGS, &m);
+     mode->width = m.dmPelsWidth;
+     mode->height = m.dmPelsHeight;
+     mode->refresh_rate = DEFAULT_REFRESH_RATE;
+@@ -4574,7 +4657,7 @@
+         return WINED3D_OK;
+     }
+ 
+-    ret = ChangeDisplaySettingsExW(adapter->DeviceName, &new_mode, NULL, CDS_FULLSCREEN, NULL);
++    ret = adapter_change_mode(adapter->DeviceName, &new_mode);
+     if (ret != DISP_CHANGE_SUCCESSFUL)
+     {
+         if (new_mode.dmFields & DM_DISPLAYFREQUENCY)
+@@ -4582,7 +4665,7 @@
+             WARN("ChangeDisplaySettingsExW failed, trying without the refresh rate.\n");
+             new_mode.dmFields &= ~DM_DISPLAYFREQUENCY;
+             new_mode.dmDisplayFrequency = 0;
+-            ret = ChangeDisplaySettingsExW(adapter->DeviceName, &new_mode, NULL, CDS_FULLSCREEN, NULL);
++            ret = adapter_change_mode(adapter->DeviceName, &new_mode);
+         }
+         if (ret != DISP_CHANGE_SUCCESSFUL)
+             return WINED3DERR_NOTAVAILABLE;
+@@ -6202,7 +6285,7 @@
+     {
+         int cfg_count;
+ 
+-        cfg_count = DescribePixelFormat(dc, 0, 0, 0);
++        cfg_count = windx_describe_pixel_format(dc, 0, 0, 0);
+         adapter->cfgs = wined3d_calloc(cfg_count, sizeof(*adapter->cfgs));
+ 
+         for (i = 0, adapter->cfg_count = 0; i < cfg_count; ++i)
+@@ -6211,7 +6294,7 @@
+             PIXELFORMATDESCRIPTOR pfd;
+             int format_id = i + 1;
+ 
+-            if (!DescribePixelFormat(dc, format_id, sizeof(pfd), &pfd))
++            if (!windx_describe_pixel_format(dc, format_id, sizeof(pfd), &pfd))
+                 continue;
+ 
+             /* We only want HW acceleration using an OpenGL ICD driver.
+@@ -6249,6 +6332,25 @@
+     }
+ }
+ 
++static BOOL adapter_allocate_luid(UINT ordinal, LUID *luid)
++{
++    char name[48];
++    ATOM atom;
++
++    if (!(GetVersion() & 0x80000000u))
++        return AllocateLocallyUniqueId(luid);
++
++    /* The 9x security DLL exports AllocateLocallyUniqueId but cannot allocate
++     * one. Share one adapter identity across clients using the session-global
++     * atom table. Keep the atom alive until Windows ends the session. */
++    wsprintfA(name, "WINDX_DXGI_Adapter_%u", ordinal);
++    if (!(atom = GlobalFindAtomA(name)) && !(atom = GlobalAddAtomA(name)))
++        return FALSE;
++    luid->HighPart = 0x57445800;
++    luid->LowPart = atom;
++    return TRUE;
++}
++
+ static BOOL wined3d_adapter_init(struct wined3d_adapter *adapter, UINT ordinal, DWORD wined3d_creation_flags)
+ {
+     static const DWORD supported_gl_versions[] =
+@@ -6290,7 +6392,7 @@
+     glEnableWINE = gl_info->gl_ops.gl.p_glEnable;
+     glDisableWINE = gl_info->gl_ops.gl.p_glDisable;
+ 
+-    if (!AllocateLocallyUniqueId(&adapter->luid))
++    if (!adapter_allocate_luid(ordinal, &adapter->luid))
+     {
+         ERR("Failed to set adapter LUID (%#x).\n", GetLastError());
+         return FALSE;
+--- a/dlls/wined3d/texture.c
++++ b/dlls/wined3d/texture.c
+@@ -2939,6 +2939,8 @@
+     ++texture->resource.map_count;
+     ++sub_resource->map_count;
+ 
++    if (sub_resource->map_count == 1)
++        wined3d_surface_sync_dc(surface, FALSE);
+     *dc = surface->dc;
+     TRACE("Returning dc %p.\n", *dc);
+ 
+@@ -2973,8 +2975,12 @@
+         return WINED3DERR_INVALIDCALL;
+     }
+ 
+-    if (!(texture->resource.usage & WINED3DUSAGE_OWNDC) && !(device->wined3d->flags & WINED3D_NO3D))
+-        wined3d_surface_destroy_dc(surface);
++    if (sub_resource->map_count == 1)
++    {
++        wined3d_surface_sync_dc(surface, TRUE);
++        if (!(texture->resource.usage & WINED3DUSAGE_OWNDC) && !(device->wined3d->flags & WINED3D_NO3D))
++            wined3d_surface_destroy_dc(surface);
++    }
+ 
+     --sub_resource->map_count;
+     if (!--texture->resource.map_count && texture->update_map_binding)
+--- a/dlls/wined3d/surface.c
++++ b/dlls/wined3d/surface.c
+@@ -252,101 +252,111 @@
+     masks[2] = ((1u << format->blue_size) - 1) << format->blue_offset;
+ }
+ 
++void wined3d_surface_sync_dc(struct wined3d_surface *surface, BOOL writeback)
++{
++    unsigned int y;
++    if (!surface->mapped_pixels || !surface->dib_pixels)
++        return;
++    if (writeback)
++        GdiFlush();
++    for (y = 0; y < surface->dib_height; ++y)
++    {
++        BYTE *bits = surface->dib_pixels + (SIZE_T)y * surface->dib_pitch;
++        BYTE *texture = surface->mapped_pixels + (SIZE_T)y * surface->mapped_pitch;
++        if (writeback) memcpy(texture, bits, surface->row_bytes);
++        else memcpy(bits, texture, surface->row_bytes);
++    }
++}
++
+ void wined3d_surface_destroy_dc(struct wined3d_surface *surface)
+ {
+-    unsigned int sub_resource_idx = surface_get_sub_resource_idx(surface);
+     struct wined3d_texture *texture = surface->container;
++    unsigned int idx = surface_get_sub_resource_idx(surface);
+     struct wined3d_device *device = texture->resource.device;
+-    const struct wined3d_gl_info *gl_info = NULL;
+-    D3DKMT_DESTROYDCFROMMEMORY destroy_desc;
+     struct wined3d_context *context = NULL;
+     struct wined3d_bo_address data;
+-    NTSTATUS status;
+ 
+     if (!surface->dc)
+-    {
+-        ERR("Surface %p has no DC.\n", surface);
+         return;
+-    }
+-
+-    TRACE("dc %p, bitmap %p.\n", surface->dc, surface->bitmap);
+-
+-    destroy_desc.hDc = surface->dc;
+-    destroy_desc.hBitmap = surface->bitmap;
+-    if ((status = D3DKMTDestroyDCFromMemory(&destroy_desc)))
+-        ERR("Failed to destroy dc, status %#x.\n", status);
++    SelectObject(surface->dc, surface->previous_bitmap);
++    DeleteObject(surface->bitmap);
++    DeleteDC(surface->dc);
+     surface->dc = NULL;
+     surface->bitmap = NULL;
+-
++    surface->dib_pixels = NULL;
++    surface->mapped_pixels = NULL;
+     if (device->d3d_initialized)
+-    {
+         context = context_acquire(device, NULL);
+-        gl_info = context->gl_info;
+-    }
+-
+-    wined3d_texture_get_memory(texture, sub_resource_idx, &data, texture->resource.map_binding);
+-    wined3d_texture_unmap_bo_address(&data, gl_info, GL_PIXEL_UNPACK_BUFFER);
+-
++    wined3d_texture_get_memory(texture, idx, &data, texture->resource.map_binding);
++    wined3d_texture_unmap_bo_address(&data, context ? context->gl_info : NULL, GL_PIXEL_UNPACK_BUFFER);
+     if (context)
+         context_release(context);
+ }
+ 
+ HRESULT wined3d_surface_create_dc(struct wined3d_surface *surface)
+ {
+-    unsigned int sub_resource_idx = surface_get_sub_resource_idx(surface);
+     struct wined3d_texture *texture = surface->container;
+     const struct wined3d_format *format = texture->resource.format;
+-    struct wined3d_device *device = texture->resource.device;
+-    const struct wined3d_gl_info *gl_info = NULL;
++    unsigned int idx = surface_get_sub_resource_idx(surface);
++    unsigned int width = wined3d_texture_get_level_width(texture, surface->texture_level);
++    unsigned int height = wined3d_texture_get_level_height(texture, surface->texture_level);
+     struct wined3d_context *context = NULL;
+-    unsigned int row_pitch, slice_pitch;
+     struct wined3d_bo_address data;
+-    D3DKMT_CREATEDCFROMMEMORY desc;
+-    NTSTATUS status;
+-
+-    TRACE("surface %p.\n", surface);
+-
+-    if (!format->ddi_format)
+-    {
+-        WARN("Cannot create a DC for format %s.\n", debug_d3dformat(format->id));
++    unsigned int pitch, slice_pitch;
++    struct { BITMAPINFOHEADER header; DWORD masks[3]; } info = {{0}, {0}};
++    HGDIOBJ previous;
++    HBITMAP bitmap;
++    void *bits;
++    BYTE *mapped;
++    HDC dc;
++
++    /* Packed RGB formats that GDI can represent without changing the texture layout. */
++    if (!format->ddi_format || !format->red_size || !format->green_size || !format->blue_size
++            || format->byte_count < 2 || format->byte_count > 4 || !width || !height
++            || width > (INT_MAX - 3) / format->byte_count || height > INT_MAX)
+         return WINED3DERR_INVALIDCALL;
+-    }
+-
+-    wined3d_texture_get_pitch(texture, surface->texture_level, &row_pitch, &slice_pitch);
+-
+-    if (device->d3d_initialized)
+-    {
+-        context = context_acquire(device, NULL);
+-        gl_info = context->gl_info;
+-    }
+-
+-    wined3d_texture_get_memory(texture, sub_resource_idx, &data, texture->resource.map_binding);
+-    desc.pMemory = wined3d_texture_map_bo_address(&data, texture->sub_resources[sub_resource_idx].size,
+-            gl_info, GL_PIXEL_UNPACK_BUFFER, 0);
+-
++    wined3d_texture_get_pitch(texture, surface->texture_level, &pitch, &slice_pitch);
++    if (width * format->byte_count > pitch)
++        return WINED3DERR_INVALIDCALL;
++    info.header.biSize = sizeof(info.header);
++    info.header.biWidth = width;
++    info.header.biHeight = -(LONG)height;
++    info.header.biPlanes = 1;
++    info.header.biBitCount = 8 * format->byte_count;
++    info.header.biCompression = format->byte_count == 3 ? BI_RGB : BI_BITFIELDS;
++    get_color_masks(format, info.masks);
++    if (!(dc = CreateCompatibleDC(NULL)))
++        return WINED3DERR_INVALIDCALL;
++    bitmap = CreateDIBSection(dc, (BITMAPINFO *)&info, DIB_RGB_COLORS, &bits, NULL, 0);
++    if (!bitmap || !(previous = SelectObject(dc, bitmap)) || previous == HGDI_ERROR)
++    {
++        if (bitmap) DeleteObject(bitmap);
++        DeleteDC(dc);
++        return WINED3DERR_INVALIDCALL;
++    }
++    if (texture->resource.device->d3d_initialized)
++        context = context_acquire(texture->resource.device, NULL);
++    wined3d_texture_get_memory(texture, idx, &data, texture->resource.map_binding);
++    mapped = wined3d_texture_map_bo_address(&data, texture->sub_resources[idx].size,
++            context ? context->gl_info : NULL, GL_PIXEL_UNPACK_BUFFER, 0);
+     if (context)
+         context_release(context);
+-
+-    desc.Format = format->ddi_format;
+-    desc.Width = wined3d_texture_get_level_width(texture, surface->texture_level);
+-    desc.Height = wined3d_texture_get_level_height(texture, surface->texture_level);
+-    desc.Pitch = row_pitch;
+-    desc.hDeviceDc = CreateCompatibleDC(NULL);
+-    desc.pColorTable = NULL;
+-
+-    status = D3DKMTCreateDCFromMemory(&desc);
+-    DeleteDC(desc.hDeviceDc);
+-    if (status)
+-    {
+-        WARN("Failed to create DC, status %#x.\n", status);
++    if (!mapped)
++    {
++        SelectObject(dc, previous);
++        DeleteObject(bitmap);
++        DeleteDC(dc);
+         return WINED3DERR_INVALIDCALL;
+     }
+-
+-    surface->dc = desc.hDc;
+-    surface->bitmap = desc.hBitmap;
+-
+-    TRACE("Created DC %p, bitmap %p for surface %p.\n", surface->dc, surface->bitmap, surface);
+-
++    surface->dc = dc;
++    surface->bitmap = bitmap;
++    surface->previous_bitmap = previous;
++    surface->dib_pixels = bits;
++    surface->mapped_pixels = mapped;
++    surface->row_bytes = width * format->byte_count;
++    surface->dib_pitch = (surface->row_bytes + 3) & ~3u;
++    surface->mapped_pitch = pitch;
++    surface->dib_height = height;
+     return WINED3D_OK;
+ }
+ 
+--- a/dlls/wined3d/wined3d_main.c
++++ b/dlls/wined3d/wined3d_main.c
+@@ -49,24 +49,7 @@
+ static struct wined3d_wndproc_table wndproc_table;
+ 
+ static CRITICAL_SECTION wined3d_cs;
+-static CRITICAL_SECTION_DEBUG wined3d_cs_debug =
+-{
+-    0, 0, &wined3d_cs,
+-    {&wined3d_cs_debug.ProcessLocksList,
+-    &wined3d_cs_debug.ProcessLocksList},
+-    0, 0, {(DWORD_PTR)(__FILE__ ": wined3d_cs")}
+-};
+-static CRITICAL_SECTION wined3d_cs = {&wined3d_cs_debug, -1, 0, 0, 0, 0};
+-
+ static CRITICAL_SECTION wined3d_wndproc_cs;
+-static CRITICAL_SECTION_DEBUG wined3d_wndproc_cs_debug =
+-{
+-    0, 0, &wined3d_wndproc_cs,
+-    {&wined3d_wndproc_cs_debug.ProcessLocksList,
+-    &wined3d_wndproc_cs_debug.ProcessLocksList},
+-    0, 0, {(DWORD_PTR)(__FILE__ ": wined3d_wndproc_cs")}
+-};
+-static CRITICAL_SECTION wined3d_wndproc_cs = {&wined3d_wndproc_cs_debug, -1, 0, 0, 0, 0};
+ 
+ /* When updating default value here, make sure to update winecfg as well,
+  * where appropriate. */
+@@ -137,6 +120,14 @@
+     return ERROR_FILE_NOT_FOUND;
+ }
+ 
++static HINSTANCE wined3d_instance;
++
++HWND wined3d_create_gl_window(void)
++{
++    return CreateWindowA(WINED3D_OPENGL_WINDOW_CLASS_NAME, "WineD3D fake window", WS_OVERLAPPEDWINDOW,
++            10, 10, 10, 10, NULL, NULL, wined3d_instance, NULL);
++}
++
+ static BOOL wined3d_dll_init(HINSTANCE hInstDLL)
+ {
+     DWORD wined3d_context_tls_idx;
+@@ -147,6 +138,7 @@
+     DWORD len, tmpvalue;
+     WNDCLASSA wc;
+ 
++    wined3d_instance = hInstDLL;
+     wined3d_context_tls_idx = TlsAlloc();
+     if (wined3d_context_tls_idx == TLS_OUT_OF_INDEXES)
+     {
+@@ -543,7 +535,13 @@
+     switch (reason)
+     {
+         case DLL_PROCESS_ATTACH:
+-            return wined3d_dll_init(inst);
++            InitializeCriticalSection(&wined3d_cs);
++            InitializeCriticalSection(&wined3d_wndproc_cs);
++            if (wined3d_dll_init(inst))
++                return TRUE;
++            DeleteCriticalSection(&wined3d_wndproc_cs);
++            DeleteCriticalSection(&wined3d_cs);
++            return FALSE;
+ 
+         case DLL_PROCESS_DETACH:
+             if (!reserved)
+--- a/dlls/d3dcompiler_43/compiler.c
++++ b/dlls/d3dcompiler_43/compiler.c
+@@ -64,15 +64,7 @@
+ /* Mutex used to guarantee a single invocation
+    of the D3DXAssembleShader function (or its variants) at a time.
+    This is needed as wpp isn't thread-safe */
+-static CRITICAL_SECTION wpp_mutex;
+-static CRITICAL_SECTION_DEBUG wpp_mutex_debug =
+-{
+-    0, 0, &wpp_mutex,
+-    { &wpp_mutex_debug.ProcessLocksList,
+-      &wpp_mutex_debug.ProcessLocksList },
+-      0, 0, { (DWORD_PTR)(__FILE__ ": wpp_mutex") }
+-};
+-static CRITICAL_SECTION wpp_mutex = { &wpp_mutex_debug, -1, 0, 0, 0, 0 };
++CRITICAL_SECTION wpp_mutex;
+ 
+ /* Preprocessor error reporting functions */
+ static void wpp_write_message(const char *fmt, va_list args)
+--- a/dlls/d3dcompiler_43/main.c
++++ b/dlls/d3dcompiler_43/main.c
+@@ -28,6 +28,8 @@
+ 
+ #include "d3dcompiler_private.h"
+ 
++extern CRITICAL_SECTION wpp_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, void *reserved)
+ {
+     switch (reason)
+@@ -35,7 +37,11 @@
+         case DLL_WINE_PREATTACH:
+             return FALSE; /* prefer native version */
+         case DLL_PROCESS_ATTACH:
++            InitializeCriticalSection(&wpp_mutex);
+             DisableThreadLibraryCalls(inst);
++            break;
++        case DLL_PROCESS_DETACH:
++            if (!reserved) DeleteCriticalSection(&wpp_mutex);
+             break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_36/shader.c
++++ b/dlls/d3dx9_36/shader.c
+@@ -214,17 +214,7 @@
+ 
+ static const void *main_file_data;
+ 
+-static CRITICAL_SECTION from_file_mutex;
+-static CRITICAL_SECTION_DEBUG from_file_mutex_debug =
+-{
+-    0, 0, &from_file_mutex,
+-    {
+-        &from_file_mutex_debug.ProcessLocksList,
+-        &from_file_mutex_debug.ProcessLocksList
+-    },
+-    0, 0, {(DWORD_PTR)(__FILE__ ": from_file_mutex")}
+-};
+-static CRITICAL_SECTION from_file_mutex = {&from_file_mutex_debug, -1, 0, 0, 0, 0};
++CRITICAL_SECTION from_file_mutex;
+ 
+ /* D3DXInclude private implementation, used to implement
+  * D3DXAssembleShaderFromFile() from D3DXAssembleShader(). */
+--- a/dlls/d3dx9_24/d3dx9_24_main.c
++++ b/dlls/d3dx9_24/d3dx9_24_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_25/d3dx9_25_main.c
++++ b/dlls/d3dx9_25/d3dx9_25_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_26/d3dx9_26_main.c
++++ b/dlls/d3dx9_26/d3dx9_26_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_27/d3dx9_27_main.c
++++ b/dlls/d3dx9_27/d3dx9_27_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_28/d3dx9_28_main.c
++++ b/dlls/d3dx9_28/d3dx9_28_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_29/d3dx9_29_main.c
++++ b/dlls/d3dx9_29/d3dx9_29_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_30/d3dx9_30_main.c
++++ b/dlls/d3dx9_30/d3dx9_30_main.c
+@@ -37,6 +37,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -44,7 +46,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_31/d3dx9_31_main.c
++++ b/dlls/d3dx9_31/d3dx9_31_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_32/d3dx9_32_main.c
++++ b/dlls/d3dx9_32/d3dx9_32_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_33/d3dx9_33_main.c
++++ b/dlls/d3dx9_33/d3dx9_33_main.c
+@@ -35,6 +35,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -42,7 +44,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_34/d3dx9_34_main.c
++++ b/dlls/d3dx9_34/d3dx9_34_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_35/d3dx9_35_main.c
++++ b/dlls/d3dx9_35/d3dx9_35_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_36/d3dx9_36_main.c
++++ b/dlls/d3dx9_36/d3dx9_36_main.c
+@@ -29,6 +29,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, void *reserved)
+ {
+     switch(reason)
+@@ -36,7 +38,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_37/d3dx9_37_main.c
++++ b/dlls/d3dx9_37/d3dx9_37_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_38/d3dx9_38_main.c
++++ b/dlls/d3dx9_38/d3dx9_38_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_39/d3dx9_39_main.c
++++ b/dlls/d3dx9_39/d3dx9_39_main.c
+@@ -34,6 +34,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -41,7 +43,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_40/d3dx9_40_main.c
++++ b/dlls/d3dx9_40/d3dx9_40_main.c
+@@ -35,6 +35,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -42,7 +44,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_41/d3dx9_41_main.c
++++ b/dlls/d3dx9_41/d3dx9_41_main.c
+@@ -35,6 +35,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -42,7 +44,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_42/d3dx9_42_main.c
++++ b/dlls/d3dx9_42/d3dx9_42_main.c
+@@ -36,6 +36,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -43,7 +45,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/d3dx9_43/d3dx9_43_main.c
++++ b/dlls/d3dx9_43/d3dx9_43_main.c
+@@ -35,6 +35,8 @@
+ /***********************************************************************
+  * DllMain.
+  */
++extern CRITICAL_SECTION from_file_mutex;
++
+ BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
+ {
+     switch(reason)
+@@ -42,7 +44,11 @@
+     case DLL_WINE_PREATTACH:
+         return FALSE; /* prefer native version */
+     case DLL_PROCESS_ATTACH:
++        InitializeCriticalSection(&from_file_mutex);
+         DisableThreadLibraryCalls(inst);
++        break;
++    case DLL_PROCESS_DETACH:
++        if (!reserved) DeleteCriticalSection(&from_file_mutex);
+         break;
+     }
+     return TRUE;
+--- a/dlls/wined3d/context.c
++++ b/dlls/wined3d/context.c
+@@ -990,7 +990,7 @@
+ 
+     if (!current)
+     {
+-        if (!SetPixelFormat(dc, format, NULL))
++        if (!windx_set_pixel_format(dc, format, NULL))
+         {
+             /* This may also happen if the dc belongs to a destroyed window. */
+             WARN("Failed to set pixel format %d on device context %p, last error %#x.\n",
+@@ -1507,7 +1507,7 @@
+         pfd.cStencilBits = ds_format->stencil_size;
+         pfd.iLayerType = PFD_MAIN_PLANE;
+ 
+-        iPixelFormat = ChoosePixelFormat(hdc, &pfd);
++        iPixelFormat = windx_choose_pixel_format(hdc, &pfd);
+         if(!iPixelFormat) {
+             /* If this happens something is very wrong as ChoosePixelFormat barely fails */
+             ERR("Can't find a suitable iPixelFormat\n");
+--- a/dlls/d3dx9_36/surface.c
++++ b/dlls/d3dx9_36/surface.c
+@@ -811,7 +811,7 @@
+     /* In case of DIB file, convert it to BMP */
+     dib = convert_dib_to_bmp((void**)&data, &datasize);
+ 
+-    initresult = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
++    initresult = CoInitialize(NULL);
+ 
+     hr = CoCreateInstance(&CLSID_WICImagingFactory, NULL, CLSCTX_INPROC_SERVER, &IID_IWICImagingFactory, (void**)&factory);
+ 
+@@ -1092,7 +1092,7 @@
+     if (imginfo.ImageFileFormat == D3DXIFF_DIB)
+         convert_dib_to_bmp((void**)&pSrcData, &SrcDataSize);
+ 
+-    com_init = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
++    com_init = CoInitialize(NULL);
+ 
+     if (FAILED(CoCreateInstance(&CLSID_WICImagingFactory, NULL, CLSCTX_INPROC_SERVER, &IID_IWICImagingFactory, (void**)&factory)))
+         goto cleanup_err;
+@@ -2057,7 +2057,7 @@
+         height = src_surface_desc.Height;
+     }
+ 
+-    initresult = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
++    initresult = CoInitialize(NULL);
+ 
+     hr = CoCreateInstance(encoder_clsid, NULL, CLSCTX_INPROC_SERVER,
+         &IID_IWICBitmapEncoder, (void **)&encoder);
+--- a/dlls/d3dx11_42/d3dx11_42.spec
++++ b/dlls/d3dx11_42/d3dx11_42.spec
+@@ -6,11 +6,11 @@
+ @ stub D3DX11CompileFromResourceW
+ @ stub D3DX11ComputeNormalMap
+ @ stub D3DX11CreateAsyncCompilerProcessor
+-@ stub D3DX11CreateAsyncFileLoaderA
+-@ stub D3DX11CreateAsyncFileLoaderW
+-@ stub D3DX11CreateAsyncMemoryLoader
+-@ stub D3DX11CreateAsyncResourceLoaderA
+-@ stub D3DX11CreateAsyncResourceLoaderW
++@ stdcall D3DX11CreateAsyncFileLoaderA(str ptr)
++@ stdcall D3DX11CreateAsyncFileLoaderW(wstr ptr)
++@ stdcall D3DX11CreateAsyncMemoryLoader(ptr long ptr)
++@ stdcall D3DX11CreateAsyncResourceLoaderA(long str ptr)
++@ stdcall D3DX11CreateAsyncResourceLoaderW(long wstr ptr)
+ @ stub D3DX11CreateAsyncShaderPreprocessProcessor
+ @ stub D3DX11CreateAsyncShaderResourceViewProcessor
+ @ stub D3DX11CreateAsyncTextureInfoProcessor
+--- a/dlls/wined3d/swapchain.c
++++ b/dlls/wined3d/swapchain.c
+@@ -1181,10 +1181,9 @@
+     {
+         TRACE("Creating the backup window for swapchain %p.\n", swapchain);
+ 
+-        if (!(swapchain->backup_wnd = CreateWindowA(WINED3D_OPENGL_WINDOW_CLASS_NAME, "WineD3D fake window",
+-                WS_OVERLAPPEDWINDOW, 10, 10, 10, 10, NULL, NULL, NULL, NULL)))
+-        {
+-            ERR("Failed to create a window.\n");
++        if (!(swapchain->backup_wnd = wined3d_create_gl_window()))
++        {
++            ERR("Failed to create a window, error %#x.\n", (unsigned int)GetLastError());
+             return NULL;
+         }
+ 
+--- a/dlls/ddraw/main.c
++++ b/dlls/ddraw/main.c
+@@ -36,6 +36,7 @@
+ static struct list global_ddraw_list = LIST_INIT(global_ddraw_list);
+ 
+ static HINSTANCE instance;
++static BOOL module_pinned;
+ 
+ /* value of ForceRefreshRate */
+ DWORD force_refresh_rate = 0;
+@@ -273,6 +274,17 @@
+ 
+     *DD = NULL;
+ 
++    /* All callers hold the WineD3D mutex. On early Windows a single retained
++     * reference keeps installed window procedures alive until process exit. */
++    if (!module_pinned)
++    {
++        char path[MAX_PATH];
++        DWORD size = GetModuleFileNameA(instance, path, sizeof(path));
++        if (!size || size >= sizeof(path) || !LoadLibraryA(path))
++            return E_FAIL;
++        module_pinned = TRUE;
++    }
++
+     if (guid == (GUID *) DDCREATE_EMULATIONONLY)
+     {
+         /* Use the reference device id. This doesn't actually change anything,
+@@ -852,7 +864,9 @@
+     {
+     case DLL_PROCESS_ATTACH:
+     {
+-        static HMODULE ddraw_self;
++        HMODULE ddraw_self;
++        BOOL (WINAPI *pin_module)(DWORD, LPCWSTR, HMODULE *) =
++                (void *)GetProcAddress(GetModuleHandleA("kernel32.dll"), "GetModuleHandleExW");
+         HKEY hkey = 0;
+         WNDCLASSA wc;
+ 
+@@ -913,9 +927,9 @@
+          * an application would unload ddraw from the WM_DESTROY handler for
+          * that window, it would return to unmapped memory and die. Apparently
+          * this is supposed to work on Windows. */
+-        if (!GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_PIN,
+-                (const WCHAR *)&ddraw_self, &ddraw_self))
+-            ERR("Failed to get own module handle.\n");
++        if (pin_module)
++            module_pinned = pin_module(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_PIN,
++                    (const WCHAR *)DllMain, &ddraw_self);
+ 
+         instance = inst;
+         DisableThreadLibraryCalls(inst);
+--- a/dlls/ddraw/ddraw.c
++++ b/dlls/ddraw/ddraw.c
+@@ -4746,7 +4746,9 @@
+ {
+     struct ddraw *ddraw = ddraw_from_device_parent(device_parent);
+     MONITORINFO monitor_info;
+-    HMONITOR monitor;
++    HMODULE user32 = GetModuleHandleA("user32.dll");
++    HMONITOR (WINAPI *window_monitor)(HWND, DWORD) = (void *)GetProcAddress(user32, "MonitorFromWindow");
++    BOOL (WINAPI *monitor_info_w)(HMONITOR, MONITORINFO *) = (void *)GetProcAddress(user32, "GetMonitorInfoW");
+     RECT *r;
+ 
+     TRACE("device_parent %p.\n", device_parent);
+@@ -4757,13 +4759,14 @@
+         return;
+     }
+ 
+-    monitor = MonitorFromWindow(ddraw->swapchain_window, MONITOR_DEFAULTTOPRIMARY);
+     monitor_info.cbSize = sizeof(monitor_info);
+-    if (!GetMonitorInfoW(monitor, &monitor_info))
+-    {
+-        ERR("Failed to get monitor info.\n");
+-        return;
+-    }
++    if (window_monitor && monitor_info_w)
++    {
++        if (!monitor_info_w(window_monitor(ddraw->swapchain_window, MONITOR_DEFAULTTOPRIMARY), &monitor_info))
++            return;
++    }
++    else
++        SetRect(&monitor_info.rcMonitor, 0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN));
+ 
+     r = &monitor_info.rcMonitor;
+     TRACE("Resizing window %p to %s.\n", ddraw->swapchain_window, wine_dbgstr_rect(r));
+--- a/dlls/dxdiagn/provider.c
++++ b/dlls/dxdiagn/provider.c
+@@ -369,7 +369,15 @@
+ }
+ 
+ /* Copied from programs/taskkill/taskkill.c. */
+-static DWORD *enumerate_processes(DWORD *list_count)
++/* PSAPI is optional on the early systems. Only the NetMeeting property needs it. */
++struct dxdiag_process_functions
++{
++    BOOL (WINAPI *enumerate)(DWORD *, DWORD, DWORD *);
++    BOOL (WINAPI *modules)(HANDLE, HMODULE *, DWORD, DWORD *);
++    DWORD (WINAPI *basename)(HANDLE, HMODULE, LPWSTR, DWORD);
++};
++
++static DWORD *enumerate_processes(DWORD *list_count, const struct dxdiag_process_functions *api)
+ {
+     DWORD *pid_list, alloc_bytes = 1024 * sizeof(*pid_list), needed_bytes;
+ 
+@@ -381,7 +389,7 @@
+     {
+         DWORD *realloc_list;
+ 
+-        if (!EnumProcesses(pid_list, alloc_bytes, &needed_bytes))
++        if (!api->enumerate(pid_list, alloc_bytes, &needed_bytes))
+         {
+             HeapFree(GetProcessHeap(), 0, pid_list);
+             return NULL;
+@@ -410,7 +418,7 @@
+ }
+ 
+ /* Copied from programs/taskkill/taskkill.c. */
+-static BOOL get_process_name_from_pid(DWORD pid, WCHAR *buf, DWORD chars)
++static BOOL get_process_name_from_pid(DWORD pid, WCHAR *buf, DWORD chars, const struct dxdiag_process_functions *api)
+ {
+     HANDLE process;
+     HMODULE module;
+@@ -420,13 +428,13 @@
+     if (!process)
+         return FALSE;
+ 
+-    if (!EnumProcessModules(process, &module, sizeof(module), &required_size))
++    if (!api->modules(process, &module, sizeof(module), &required_size))
+     {
+         CloseHandle(process);
+         return FALSE;
+     }
+ 
+-    if (!GetModuleBaseNameW(process, module, buf, chars))
++    if (!api->basename(process, module, buf, chars))
+     {
+         CloseHandle(process);
+         return FALSE;
+@@ -442,7 +450,14 @@
+     static const WCHAR conf_exe[] = {'c','o','n','f','.','e','x','e',0};
+ 
+     DWORD list_count;
+-    DWORD *pid_list = enumerate_processes(&list_count);
++    HMODULE psapi = LoadLibraryA("psapi.dll");
++    struct dxdiag_process_functions api;
++    DWORD *pid_list;
++    if (!psapi) return FALSE;
++    api.enumerate = (void *)GetProcAddress(psapi, "EnumProcesses");
++    api.modules = (void *)GetProcAddress(psapi, "EnumProcessModules");
++    api.basename = (void *)GetProcAddress(psapi, "GetModuleBaseNameW");
++    pid_list = api.enumerate && api.modules && api.basename ? enumerate_processes(&list_count, &api) : NULL;
+ 
+     if (pid_list)
+     {
+@@ -451,16 +466,18 @@
+ 
+         for (i = 0; i < list_count; i++)
+         {
+-            if (get_process_name_from_pid(pid_list[i], process_name, sizeof(process_name)/sizeof(WCHAR)) &&
++            if (get_process_name_from_pid(pid_list[i], process_name, sizeof(process_name)/sizeof(WCHAR), &api) &&
+                 !lstrcmpW(conf_exe, process_name))
+             {
+                 HeapFree(GetProcessHeap(), 0, pid_list);
++                FreeLibrary(psapi);
+                 return TRUE;
+             }
+         }
+         HeapFree(GetProcessHeap(), 0, pid_list);
+     }
+ 
++    FreeLibrary(psapi);
+     return FALSE;
+ }
+ 
+@@ -713,7 +730,19 @@
+         return hr;
+ 
+     msex.dwLength = sizeof(msex);
+-    GlobalMemoryStatusEx(&msex);
++    {
++        BOOL (WINAPI *memory_status)(MEMORYSTATUSEX *) =
++                (void *)GetProcAddress(GetModuleHandleA("kernel32.dll"), "GlobalMemoryStatusEx");
++        if (!memory_status || !memory_status(&msex))
++        {
++            MEMORYSTATUS memory;
++            memory.dwLength = sizeof(memory);
++            GlobalMemoryStatus(&memory);
++            msex.ullTotalPhys = memory.dwTotalPhys;
++            msex.ullTotalPageFile = memory.dwTotalPageFile;
++            msex.ullAvailPageFile = memory.dwAvailPageFile;
++        }
++    }
+ 
+     hr = add_ull_as_bstr_property(node, ullPhysicalMemory, msex.ullTotalPhys);
+     if (FAILED(hr))
+--- a/dlls/dsound/dsound_private.h
++++ b/dlls/dsound/dsound_private.h
+@@ -189,9 +189,9 @@
+     IDirectSoundBufferImpl **ppdsb,
+     IDirectSoundBufferImpl *pdsb) DECLSPEC_HIDDEN;
+ void secondarybuffer_destroy(IDirectSoundBufferImpl *This) DECLSPEC_HIDDEN;
+-const IDirectSound3DListenerVtbl ds3dlvt DECLSPEC_HIDDEN;
+-const IDirectSound3DBufferVtbl ds3dbvt DECLSPEC_HIDDEN;
+-const IKsPropertySetVtbl iksbvt DECLSPEC_HIDDEN;
++extern const IDirectSound3DListenerVtbl ds3dlvt DECLSPEC_HIDDEN;
++extern const IDirectSound3DBufferVtbl ds3dbvt DECLSPEC_HIDDEN;
++extern const IKsPropertySetVtbl iksbvt DECLSPEC_HIDDEN;
+ 
+ HRESULT IKsPrivatePropertySetImpl_Create(REFIID riid, void **ppv) DECLSPEC_HIDDEN;
+ 
+--- a/dlls/wined3d/directx.c
++++ b/dlls/wined3d/directx.c
+@@ -4172,6 +4172,53 @@
+     return lookup ? lookup(position, MONITOR_DEFAULTTOPRIMARY) : (HMONITOR)(ULONG_PTR)0x12340042;
+ }
+ 
++/* NT 3.x has a USER export with the same name as the later multi-monitor
++ * API but a different calling convention and parameter layout. */
++static void adapter_name(UINT ordinal, WCHAR *name)
++{
++    DWORD version = GetVersion();
++    HMODULE user = GetModuleHandleA("user32.dll");
++    if (version & 0x80000000u)
++    {
++        DISPLAY_DEVICEA dev;
++        BOOL (WINAPI *enumerate)(const char *, DWORD, DISPLAY_DEVICEA *, DWORD)
++                = (void *)GetProcAddress(user, "EnumDisplayDevicesA");
++        memset(&dev, 0, sizeof(dev));
++        dev.cb = sizeof(dev);
++        if (HIBYTE(LOWORD(version)) >= 10 && enumerate && enumerate(NULL, ordinal, &dev, 0)
++                && dev.DeviceName[0] && MultiByteToWideChar(CP_ACP, 0, dev.DeviceName, -1, name, CCHDEVICENAME))
++            return;
++    }
++    else if (LOBYTE(LOWORD(version)) >= 5)
++    {
++        DISPLAY_DEVICEW dev;
++        BOOL (WINAPI *enumerate)(const WCHAR *, DWORD, DISPLAY_DEVICEW *, DWORD)
++                = (void *)GetProcAddress(user, "EnumDisplayDevicesW");
++        memset(&dev, 0, sizeof(dev));
++        dev.cb = sizeof(dev);
++        if (enumerate && enumerate(NULL, ordinal, &dev, 0) && dev.DeviceName[0])
++        {
++            memcpy(name, dev.DeviceName, sizeof(dev.DeviceName));
++            name[CCHDEVICENAME - 1] = 0;
++            return;
++        }
++    }
++    MultiByteToWideChar(CP_ACP, 0, "\\\\.\\DISPLAY1", -1, name, CCHDEVICENAME);
++}
++
++static BOOL adapter_primary_mode(DWORD index, DEVMODEW *mode)
++{
++    HDC dc;
++    if (index != ENUM_CURRENT_SETTINGS && index != ENUM_REGISTRY_SETTINGS && index != 0) return FALSE;
++    if (!(dc = GetDC(NULL))) return FALSE;
++    mode->dmPelsWidth = GetDeviceCaps(dc, HORZRES);
++    mode->dmPelsHeight = GetDeviceCaps(dc, VERTRES);
++    mode->dmBitsPerPel = GetDeviceCaps(dc, BITSPIXEL) * GetDeviceCaps(dc, PLANES);
++    mode->dmFields = DM_PELSWIDTH | DM_PELSHEIGHT | DM_BITSPERPEL;
++    ReleaseDC(NULL, dc);
++    return mode->dmPelsWidth && mode->dmPelsHeight && mode->dmBitsPerPel;
++}
++
+ static BOOL adapter_enum_mode(const WCHAR *device, DWORD index, DEVMODEW *mode)
+ {
+     HMODULE user = GetModuleHandleA("user32.dll");
+@@ -4187,9 +4234,9 @@
+     if (!(GetVersion() & 0x80000000u))
+     {
+         enum_ex_w = (void *)GetProcAddress(user, "EnumDisplaySettingsExW");
+-        if (enum_ex_w) return enum_ex_w(device, index, mode, 0);
++        if (enum_ex_w && enum_ex_w(device, index, mode, 0)) return TRUE;
+         enum_w = (void *)GetProcAddress(user, "EnumDisplaySettingsW");
+-        if (enum_w) return enum_w(NULL, index, mode);
++        if (enum_w && enum_w(NULL, index, mode)) return TRUE;
+     }
+     if (device && WideCharToMultiByte(CP_ACP, 0, device, -1, name, sizeof(name), NULL, NULL))
+         selected = name;
+@@ -4197,8 +4244,8 @@
+     ansi.dmSize = sizeof(ansi);
+     enum_ex_a = (void *)GetProcAddress(user, "EnumDisplaySettingsExA");
+     enum_a = (void *)GetProcAddress(user, "EnumDisplaySettingsA");
+-    result = enum_ex_a ? enum_ex_a(selected, index, &ansi, 0) : (enum_a && enum_a(NULL, index, &ansi));
+-    if (!result) return FALSE;
++    result = (enum_ex_a && enum_ex_a(selected, index, &ansi, 0)) || (enum_a && enum_a(NULL, index, &ansi));
++    if (!result) return adapter_primary_mode(index, mode);
+     mode->dmFields = ansi.dmFields;
+     mode->dmPelsWidth = ansi.dmPelsWidth;
+     mode->dmPelsHeight = ansi.dmPelsHeight;
+@@ -4528,7 +4575,7 @@
+     memset(&m, 0, sizeof(m));
+     m.dmSize = sizeof(m);
+ 
+-    adapter_enum_mode(adapter->DeviceName, ENUM_CURRENT_SETTINGS, &m);
++    if (!adapter_enum_mode(adapter->DeviceName, ENUM_CURRENT_SETTINGS, &m)) return WINED3DERR_NOTAVAILABLE;
+     mode->width = m.dmPelsWidth;
+     mode->height = m.dmPelsHeight;
+     mode->refresh_rate = DEFAULT_REFRESH_RATE;
+@@ -4631,7 +4678,7 @@
+     }
+     else
+     {
+-        if (!EnumDisplaySettingsW(adapter->DeviceName, ENUM_REGISTRY_SETTINGS, &new_mode))
++        if (!adapter_enum_mode(adapter->DeviceName, ENUM_REGISTRY_SETTINGS, &new_mode))
+         {
+             ERR("Failed to read mode from registry.\n");
+             return WINED3DERR_NOTAVAILABLE;
+@@ -4640,7 +4687,7 @@
+     }
+ 
+     /* Only change the mode if necessary. */
+-    if (!EnumDisplaySettingsW(adapter->DeviceName, ENUM_CURRENT_SETTINGS, &current_mode))
++    if (!adapter_enum_mode(adapter->DeviceName, ENUM_CURRENT_SETTINGS, &current_mode))
+     {
+         ERR("Failed to get current display mode.\n");
+     }
+@@ -6361,7 +6408,6 @@
+     struct wined3d_gl_info *gl_info = &adapter->gl_info;
+     struct wined3d_caps_gl_ctx caps_gl_ctx = {0};
+     unsigned int i;
+-    DISPLAY_DEVICEW display_device;
+ 
+     TRACE("adapter %p, ordinal %u.\n", adapter, ordinal);
+ 
+@@ -6463,10 +6509,7 @@
+     adapter->vram_bytes_used = 0;
+     TRACE("Emulating 0x%s bytes of video ram.\n", wine_dbgstr_longlong(adapter->vram_bytes));
+ 
+-    display_device.cb = sizeof(display_device);
+-    EnumDisplayDevicesW(NULL, ordinal, &display_device, 0);
+-    TRACE("DeviceName: %s\n", debugstr_w(display_device.DeviceName));
+-    strcpyW(adapter->DeviceName, display_device.DeviceName);
++    adapter_name(ordinal, adapter->DeviceName);
+ 
+     wined3d_caps_gl_ctx_destroy(&caps_gl_ctx);
+ 
+@@ -6477,7 +6520,6 @@
+ 
+ static void wined3d_adapter_init_nogl(struct wined3d_adapter *adapter, UINT ordinal)
+ {
+-    DISPLAY_DEVICEW display_device;
+ 
+     memset(adapter, 0, sizeof(*adapter));
+     adapter->ordinal = ordinal;
+@@ -6496,10 +6538,7 @@
+     adapter->shader_backend = &none_shader_backend;
+     adapter->blitter = &cpu_blit;
+ 
+-    display_device.cb = sizeof(display_device);
+-    EnumDisplayDevicesW(NULL, ordinal, &display_device, 0);
+-    TRACE("DeviceName: %s\n", debugstr_w(display_device.DeviceName));
+-    strcpyW(adapter->DeviceName, display_device.DeviceName);
++    adapter_name(ordinal, adapter->DeviceName);
+ }
+ 
+ static void STDMETHODCALLTYPE wined3d_null_wined3d_object_destroyed(void *parent) {}
+--- a/dlls/dxdiagn/provider.c
++++ b/dlls/dxdiagn/provider.c
+@@ -554,7 +554,8 @@
+ 
+ static HRESULT fill_os_string_information(IDxDiagContainerImpl_Container *node, OSVERSIONINFOW *info)
+ {
+-    static const WCHAR winxpW[] = {'W','i','n','d','o','w','s',' ','X','P',' ','P','r','o','f','e','s','s','i','o','n','a','l',0};
++    char text[128];
++    WCHAR name[128];
+     static const WCHAR szOSLocalized[] = {'s','z','O','S','L','o','c','a','l','i','z','e','d',0};
+     static const WCHAR szOSExLocalized[] = {'s','z','O','S','E','x','L','o','c','a','l','i','z','e','d',0};
+     static const WCHAR szOSExLongLocalized[] = {'s','z','O','S','E','x','L','o','n','g','L','o','c','a','l','i','z','e','d',0};
+@@ -568,11 +569,12 @@
+     size_t i;
+     HRESULT hr;
+ 
+-    /* FIXME: OS detection should be performed, and localized OS strings
+-     * should contain translated versions of the "build" phrase. */
++    wsprintfA(text, "Windows %lu.%lu (build %lu)", info->dwMajorVersion, info->dwMinorVersion,
++            info->dwPlatformId == VER_PLATFORM_WIN32_WINDOWS ? LOWORD(info->dwBuildNumber) : info->dwBuildNumber);
++    MultiByteToWideChar(CP_ACP, 0, text, -1, name, sizeof(name) / sizeof(*name));
+     for (i = 0; i < sizeof(prop_list)/sizeof(prop_list[0]); i++)
+     {
+-        hr = add_bstr_property(node, prop_list[i], winxpW);
++        hr = add_bstr_property(node, prop_list[i], name);
+         if (FAILED(hr))
+             return hr;
+     }
+@@ -630,8 +632,7 @@
+ 
+     hr = IEnumWbemClassObject_Next(wbem_enum, 1000, 1, &wbem_class, &no);
+     IEnumWbemClassObject_Release(wbem_enum);
+-    if(FAILED(hr))
+-        return hr;
++    if (FAILED(hr) || !no) return FAILED(hr) ? hr : E_FAIL;
+ 
+     hr = IWbemClassObject_Get(wbem_class, cpu_noW, 0, &cpu_no, NULL, NULL);
+     if(FAILED(hr)) {
+@@ -654,6 +655,35 @@
+     VariantClear(&clock_speed);
+ 
+     return add_bstr_property(node, szProcessorEnglish, print_buf);
++}
++
++/* WMI is optional. Early Windows and installations with limited WMI access
++ * still expose the processor identifier through the registry or kernel. */
++static HRESULT fill_native_processor(IDxDiagContainerImpl_Container *node)
++{
++    static const WCHAR property[] = {'s','z','P','r','o','c','e','s','s','o','r','E','n','g','l','i','s','h',0};
++    SYSTEM_INFO info;
++    HKEY key;
++    DWORD type, bytes;
++    char model[180] = "", buffer[240];
++    WCHAR wide[240];
++    GetSystemInfo(&info);
++    if (RegOpenKeyExA(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\0", 0, KEY_QUERY_VALUE, &key) == ERROR_SUCCESS)
++    {
++        bytes = sizeof(model);
++        if (RegQueryValueExA(key, "ProcessorNameString", NULL, &type, (BYTE *)model, &bytes) != ERROR_SUCCESS || type != REG_SZ)
++        {
++            bytes = sizeof(model);
++            if (RegQueryValueExA(key, "Identifier", NULL, &type, (BYTE *)model, &bytes) != ERROR_SUCCESS || type != REG_SZ)
++                model[0] = 0;
++        }
++        model[sizeof(model) - 1] = 0;
++        RegCloseKey(key);
++    }
++    if (!model[0]) wsprintfA(model, "processor type %lu", info.dwProcessorType);
++    wsprintfA(buffer, "%s (%lu logical processors)", model, info.dwNumberOfProcessors);
++    MultiByteToWideChar(CP_ACP, 0, buffer, -1, wide, sizeof(wide) / sizeof(*wide));
++    return add_bstr_property(node, property, wide);
+ }
+ 
+ static HRESULT build_systeminfo_tree(IDxDiagContainerImpl_Container *node)
+@@ -761,7 +791,29 @@
+         return hr;
+ 
+     info.dwOSVersionInfoSize = sizeof(info);
+-    GetVersionExW(&info);
++    if (!GetVersionExW(&info))
++    {
++        OSVERSIONINFOA ansi;
++        DWORD version = GetVersion();
++        memset(&ansi, 0, sizeof(ansi));
++        ansi.dwOSVersionInfoSize = sizeof(ansi);
++        if (GetVersionExA(&ansi))
++        {
++            info.dwMajorVersion = ansi.dwMajorVersion;
++            info.dwMinorVersion = ansi.dwMinorVersion;
++            info.dwBuildNumber = ansi.dwBuildNumber;
++            info.dwPlatformId = ansi.dwPlatformId;
++            MultiByteToWideChar(CP_ACP, 0, ansi.szCSDVersion, -1, info.szCSDVersion, sizeof(info.szCSDVersion) / sizeof(WCHAR));
++        }
++        else
++        {
++            info.dwMajorVersion = LOBYTE(LOWORD(version));
++            info.dwMinorVersion = HIBYTE(LOWORD(version));
++            info.dwBuildNumber = HIWORD(version) & 0x7fff;
++            info.dwPlatformId = version & 0x80000000u ? VER_PLATFORM_WIN32_WINDOWS : VER_PLATFORM_WIN32_NT;
++            info.szCSDVersion[0] = 0;
++        }
++    }
+ 
+     hr = add_ui4_property(node, dwOSMajorVersion, info.dwMajorVersion);
+     if (FAILED(hr))
+@@ -839,6 +891,7 @@
+         return hr;
+ 
+     hr = fill_processor_information(node);
++    if (FAILED(hr) && hr != E_OUTOFMEMORY) hr = fill_native_processor(node);
+     if (FAILED(hr))
+         return hr;
+ 
+--- a/dlls/wined3d/swapchain.c
++++ b/dlls/wined3d/swapchain.c
+@@ -863,7 +863,13 @@
+         if (desc->backbuffer_format == WINED3DFMT_UNKNOWN)
+         {
+             desc->backbuffer_format = swapchain->original_mode.format_id;
+-            TRACE("Updating format to %s.\n", debug_d3dformat(swapchain->original_mode.format_id));
++            /* A 4- or 8-bit Windows desktop has no matching RGB render
++             * target. Keep the windowed GL surface in RGB and let the WGL
++             * frontend convert it when presenting to the desktop. */
++            if (!(device->wined3d->flags & WINED3D_NO3D)
++                    && (desc->backbuffer_format == WINED3DFMT_UNKNOWN || desc->backbuffer_format == WINED3DFMT_P8_UINT))
++                desc->backbuffer_format = WINED3DFMT_B8G8R8X8_UNORM;
++            TRACE("Updating format to %s.\n", debug_d3dformat(desc->backbuffer_format));
+         }
+     }
+     swapchain->desc = *desc;
+--- a/dlls/d3d10/d3d10.spec
++++ b/dlls/d3d10/d3d10.spec
+@@ -16,8 +16,8 @@
+ @ stdcall D3D10GetShaderDebugInfo(ptr long ptr) d3dcompiler_43.D3DGetDebugInfo
+ @ stub D3D10GetVersion
+ @ stdcall D3D10GetVertexShaderProfile(ptr)
+-@ stub D3D10PreprocessShader
+-@ stdcall D3D10ReflectShader(ptr long ptr)
++@ stdcall D3D10PreprocessShader(ptr long str ptr ptr ptr ptr) d3dcompiler_43.D3DPreprocess
++@ stdcall D3D10ReflectShader(ptr long ptr) wxlegacy.WXReflect10
+ @ stub D3D10RegisterLayers
+ @ stdcall D3D10StateBlockMaskDifference(ptr ptr ptr)
+ @ stdcall D3D10StateBlockMaskDisableAll(ptr)
+--- a/dlls/d3d10/d3d10_main.c
++++ b/dlls/d3d10/d3d10_main.c
+@@ -248,17 +248,8 @@
+         const D3D10_SHADER_MACRO *defines, ID3D10Include *include, UINT hlsl_flags, UINT fx_flags,
+         ID3D10Blob **effect, ID3D10Blob **errors)
+ {
+-    FIXME("data %p, data_size %lu, filename %s, defines %p, include %p,"
+-            " hlsl_flags %#x, fx_flags %#x, effect %p, errors %p stub!\n",
+-            data, data_size, wine_dbgstr_a(filename), defines, include,
++    return D3DCompile(data, data_size, filename, defines, include, NULL, "fx_4_0",
+             hlsl_flags, fx_flags, effect, errors);
+-
+-    if (effect)
+-        *effect = NULL;
+-    if (errors)
+-        *errors = NULL;
+-
+-    return E_NOTIMPL;
+ }
+ 
+ HRESULT WINAPI D3D10CreateEffectPoolFromMemory(void *data, SIZE_T data_size, UINT fx_flags,
+--- a/dlls/d3d10_1/d3d10_1.spec
++++ b/dlls/d3d10_1/d3d10_1.spec
+@@ -1,24 +1,24 @@
+ @ stub RevertToOldImplementation
+-@ stub D3D10CompileEffectFromMemory
+-@ stub D3D10CompileShader
+-@ stub D3D10CreateBlob
++@ stdcall D3D10CompileEffectFromMemory(ptr long ptr ptr ptr long long ptr ptr) d3d10.D3D10CompileEffectFromMemory
++@ stdcall D3D10CompileShader(ptr long str ptr ptr str str long ptr ptr) d3d10.D3D10CompileShader
++@ stdcall D3D10CreateBlob(long ptr) d3d10.D3D10CreateBlob
+ @ stdcall D3D10CreateDevice1(ptr long ptr long long long ptr)
+ @ stdcall D3D10CreateDeviceAndSwapChain1(ptr long ptr long long long ptr ptr ptr)
+ @ stdcall D3D10CreateEffectFromMemory(ptr long long ptr ptr ptr) d3d10.D3D10CreateEffectFromMemory
+ @ stdcall D3D10CreateEffectPoolFromMemory(ptr long long ptr ptr) d3d10.D3D10CreateEffectPoolFromMemory
+ @ stdcall D3D10CreateStateBlock(ptr ptr ptr) d3d10.D3D10CreateStateBlock
+ @ stub D3D10DisassembleEffect
+-@ stub D3D10DisassembleShader
+-@ stub D3D10GetGeometryShaderProfile
+-@ stub D3D10GetInputAndOutputSignatureBlob
+-@ stub D3D10GetInputSignatureBlob
+-@ stub D3D10GetOutputSignatureBlob
+-@ stub D3D10GetPixelShaderProfile
+-@ stub D3D10GetShaderDebugInfo
++@ stdcall D3D10DisassembleShader(ptr long long ptr ptr) d3d10.D3D10DisassembleShader
++@ stdcall D3D10GetGeometryShaderProfile(ptr) d3d10.D3D10GetGeometryShaderProfile
++@ stdcall D3D10GetInputAndOutputSignatureBlob(ptr long ptr) d3d10.D3D10GetInputAndOutputSignatureBlob
++@ stdcall D3D10GetInputSignatureBlob(ptr long ptr) d3d10.D3D10GetInputSignatureBlob
++@ stdcall D3D10GetOutputSignatureBlob(ptr long ptr) d3d10.D3D10GetOutputSignatureBlob
++@ stdcall D3D10GetPixelShaderProfile(ptr) d3d10.D3D10GetPixelShaderProfile
++@ stdcall D3D10GetShaderDebugInfo(ptr long ptr) d3d10.D3D10GetShaderDebugInfo
+ @ stub D3D10GetVersion
+-@ stub D3D10GetVertexShaderProfile
+-@ stub D3D10PreprocessShader
+-@ stub D3D10ReflectShader
++@ stdcall D3D10GetVertexShaderProfile(ptr) d3d10.D3D10GetVertexShaderProfile
++@ stdcall D3D10PreprocessShader(ptr long str ptr ptr ptr ptr) d3d10.D3D10PreprocessShader
++@ stdcall D3D10ReflectShader(ptr long ptr) d3d10.D3D10ReflectShader
+ @ stub D3D10RegisterLayers
+ @ stdcall D3D10StateBlockMaskDifference(ptr ptr ptr) d3d10.D3D10StateBlockMaskDifference
+ @ stdcall D3D10StateBlockMaskDisableAll(ptr) d3d10.D3D10StateBlockMaskDisableAll
+--- a/dlls/d3dcompiler_43/reflection.c
++++ b/dlls/d3dcompiler_43/reflection.c
+@@ -20,8 +20,10 @@
+ 
+ #include "config.h"
+ #include "wine/port.h"
+-
++#include "initguid.h"
+ #include "d3dcompiler_private.h"
++#include "winternl.h"
++#include "d3d10.h"
+ 
+ WINE_DEFAULT_DEBUG_CHANNEL(d3dcompiler);
+ 
+@@ -44,6 +46,7 @@
+ struct d3dcompiler_shader_reflection_type
+ {
+     ID3D11ShaderReflectionType ID3D11ShaderReflectionType_iface;
++    ID3D10ShaderReflectionType ID3D10ShaderReflectionType_iface;
+ 
+     DWORD id;
+     struct wine_rb_entry entry;
+@@ -52,6 +55,7 @@
+ 
+     D3D11_SHADER_TYPE_DESC desc;
+     struct d3dcompiler_shader_reflection_type_member *members;
++    char *name;
+ };
+ 
+ struct d3dcompiler_shader_reflection_type_member
+@@ -64,6 +68,7 @@
+ struct d3dcompiler_shader_reflection_variable
+ {
+     ID3D11ShaderReflectionVariable ID3D11ShaderReflectionVariable_iface;
++    ID3D10ShaderReflectionVariable ID3D10ShaderReflectionVariable_iface;
+ 
+     struct d3dcompiler_shader_reflection_constant_buffer *constant_buffer;
+     struct d3dcompiler_shader_reflection_type *type;
+@@ -78,6 +83,7 @@
+ struct d3dcompiler_shader_reflection_constant_buffer
+ {
+     ID3D11ShaderReflectionConstantBuffer ID3D11ShaderReflectionConstantBuffer_iface;
++    ID3D10ShaderReflectionConstantBuffer ID3D10ShaderReflectionConstantBuffer_iface;
+ 
+     struct d3dcompiler_shader_reflection *reflection;
+ 
+@@ -94,6 +100,7 @@
+ struct d3dcompiler_shader_reflection
+ {
+     ID3D11ShaderReflection ID3D11ShaderReflection_iface;
++    ID3D10ShaderReflection ID3D10ShaderReflection_iface;
+     LONG refcount;
+ 
+     DWORD target;
+@@ -145,11 +152,28 @@
+ static const struct ID3D11ShaderReflectionVariableVtbl d3dcompiler_shader_reflection_variable_vtbl;
+ static const struct ID3D11ShaderReflectionTypeVtbl d3dcompiler_shader_reflection_type_vtbl;
+ 
++static const struct ID3D10ShaderReflectionConstantBufferVtbl d3d10_shader_reflection_constant_buffer_vtbl;
++static const struct ID3D10ShaderReflectionVariableVtbl d3d10_shader_reflection_variable_vtbl;
++static const struct ID3D10ShaderReflectionTypeVtbl d3d10_shader_reflection_type_vtbl;
++
+ /* null objects - needed for invalid calls */
+-static struct d3dcompiler_shader_reflection_constant_buffer null_constant_buffer = {{&d3dcompiler_shader_reflection_constant_buffer_vtbl}};
+-static struct d3dcompiler_shader_reflection_type null_type = {{&d3dcompiler_shader_reflection_type_vtbl}};
+-static struct d3dcompiler_shader_reflection_variable null_variable = {{&d3dcompiler_shader_reflection_variable_vtbl},
+-    &null_constant_buffer, &null_type};
++static struct d3dcompiler_shader_reflection_constant_buffer null_constant_buffer =
++{
++    {&d3dcompiler_shader_reflection_constant_buffer_vtbl},
++    {&d3d10_shader_reflection_constant_buffer_vtbl}
++};
++static struct d3dcompiler_shader_reflection_type null_type =
++{
++    {&d3dcompiler_shader_reflection_type_vtbl},
++    {&d3d10_shader_reflection_type_vtbl}
++};
++static struct d3dcompiler_shader_reflection_variable null_variable =
++{
++    {&d3dcompiler_shader_reflection_variable_vtbl},
++    {&d3d10_shader_reflection_variable_vtbl},
++    &null_constant_buffer,
++    &null_type
++};
+ 
+ static BOOL copy_name(const char *ptr, char **name)
+ {
+@@ -223,6 +247,7 @@
+         HeapFree(GetProcessHeap(), 0, t->members);
+     }
+ 
++    HeapFree(GetProcessHeap(), 0, t->name);
+     HeapFree(GetProcessHeap(), 0, t);
+ }
+ 
+@@ -472,17 +497,17 @@
+ static HRESULT STDMETHODCALLTYPE d3dcompiler_shader_reflection_GetInputParameterDesc(
+         ID3D11ShaderReflection *iface, UINT index, D3D11_SIGNATURE_PARAMETER_DESC *desc)
+ {
+-    struct d3dcompiler_shader_reflection *This = impl_from_ID3D11ShaderReflection(iface);
++    struct d3dcompiler_shader_reflection *reflection = impl_from_ID3D11ShaderReflection(iface);
+ 
+     TRACE("iface %p, index %u, desc %p\n", iface, index, desc);
+ 
+-    if (!desc || !This->isgn || index >= This->isgn->element_count)
++    if (!desc || !reflection->isgn || index >= reflection->isgn->element_count)
+     {
+         WARN("Invalid argument specified\n");
+         return E_INVALIDARG;
+     }
+ 
+-    *desc = This->isgn->elements[index];
++    *desc = reflection->isgn->elements[index];
+ 
+     return S_OK;
+ }
+@@ -490,17 +515,17 @@
+ static HRESULT STDMETHODCALLTYPE d3dcompiler_shader_reflection_GetOutputParameterDesc(
+         ID3D11ShaderReflection *iface, UINT index, D3D11_SIGNATURE_PARAMETER_DESC *desc)
+ {
+-    struct d3dcompiler_shader_reflection *This = impl_from_ID3D11ShaderReflection(iface);
++    struct d3dcompiler_shader_reflection *reflection = impl_from_ID3D11ShaderReflection(iface);
+ 
+     TRACE("iface %p, index %u, desc %p\n", iface, index, desc);
+ 
+-    if (!desc || !This->osgn || index >= This->osgn->element_count)
++    if (!desc || !reflection->osgn || index >= reflection->osgn->element_count)
+     {
+         WARN("Invalid argument specified\n");
+         return E_INVALIDARG;
+     }
+ 
+-    *desc = This->osgn->elements[index];
++    *desc = reflection->osgn->elements[index];
+ 
+     return S_OK;
+ }
+@@ -508,17 +533,17 @@
+ static HRESULT STDMETHODCALLTYPE d3dcompiler_shader_reflection_GetPatchConstantParameterDesc(
+         ID3D11ShaderReflection *iface, UINT index, D3D11_SIGNATURE_PARAMETER_DESC *desc)
+ {
+-    struct d3dcompiler_shader_reflection *This = impl_from_ID3D11ShaderReflection(iface);
++    struct d3dcompiler_shader_reflection *reflection = impl_from_ID3D11ShaderReflection(iface);
+ 
+     TRACE("iface %p, index %u, desc %p\n", iface, index, desc);
+ 
+-    if (!desc || !This->pcsg || index >= This->pcsg->element_count)
++    if (!desc || !reflection->pcsg || index >= reflection->pcsg->element_count)
+     {
+         WARN("Invalid argument specified\n");
+         return E_INVALIDARG;
+     }
+ 
+-    *desc = This->pcsg->elements[index];
++    *desc = reflection->pcsg->elements[index];
+ 
+     return S_OK;
+ }
+@@ -1116,7 +1141,12 @@
+     read_dword(&ptr, &r->gs_max_output_vertex_count);
+     TRACE("GSMaxOutputVertexCount: %u\n", r->gs_max_output_vertex_count);
+ 
+-    skip_dword_unknown(&ptr, 3);
++    skip_dword_unknown(&ptr, 2);
++
++    /* old dx10 stat size */
++    if (size == 28) return S_OK;
++
++    skip_dword_unknown(&ptr, 1);
+ 
+     /* dx10 stat size */
+     if (size == 29) return S_OK;
+@@ -1231,6 +1261,19 @@
+         }
+     }
+ 
++    if ((type->reflection->target & D3DCOMPILER_SHADER_TARGET_VERSION_MASK) >= 0x500)
++    {
++        read_dword(&ptr, &offset);
++        if (!copy_name(data + offset, &type->name))
++        {
++            ERR("Failed to copy name.\n");
++            HeapFree(GetProcessHeap(), 0, members);
++            return E_OUTOFMEMORY;
++        }
++        desc->Name = type->name;
++        TRACE("Type name: %s.\n", debugstr_a(type->name));
++    }
++
+     type->members = members;
+ 
+     return S_OK;
+@@ -1262,6 +1305,7 @@
+         return NULL;
+ 
+     type->ID3D11ShaderReflectionType_iface.lpVtbl = &d3dcompiler_shader_reflection_type_vtbl;
++    type->ID3D10ShaderReflectionType_iface.lpVtbl = &d3d10_shader_reflection_type_vtbl;
+     type->id = offset;
+     type->reflection = reflection;
+ 
+@@ -1303,6 +1347,7 @@
+         DWORD offset;
+ 
+         v->ID3D11ShaderReflectionVariable_iface.lpVtbl = &d3dcompiler_shader_reflection_variable_vtbl;
++        v->ID3D10ShaderReflectionVariable_iface.lpVtbl = &d3d10_shader_reflection_variable_vtbl;
+         v->constant_buffer = cb;
+ 
+         read_dword(&ptr, &offset);
+@@ -1477,6 +1522,7 @@
+             struct d3dcompiler_shader_reflection_constant_buffer *cb = &constant_buffers[i];
+ 
+             cb->ID3D11ShaderReflectionConstantBuffer_iface.lpVtbl = &d3dcompiler_shader_reflection_constant_buffer_vtbl;
++            cb->ID3D10ShaderReflectionConstantBuffer_iface.lpVtbl = &d3d10_shader_reflection_constant_buffer_vtbl;
+             cb->reflection = r;
+ 
+             read_dword(&ptr, &offset);
+@@ -1591,6 +1637,10 @@
+         UINT name_offset;
+         DWORD mask;
+ 
++#if D3D_COMPILER_VERSION >= 46
++        /* FIXME */
++        d[i].MinPrecision = D3D_MIN_PRECISION_DEFAULT;
++#endif
+         if (element_size == D3DCOMPILER_SIGNATURE_ELEMENT_SIZE7)
+         {
+             read_dword(&ptr, &d[i].Stream);
+@@ -1617,10 +1667,14 @@
+ 
+             if (d[i].Register == 0xffffffff)
+             {
+-                if (!strcasecmp(d[i].SemanticName, "sv_depth")) d[i].SystemValueType = D3D_NAME_DEPTH;
+-                if (!strcasecmp(d[i].SemanticName, "sv_coverage")) d[i].SystemValueType = D3D_NAME_COVERAGE;
+-                if (!strcasecmp(d[i].SemanticName, "sv_depthgreaterequal")) d[i].SystemValueType = D3D_NAME_DEPTH_GREATER_EQUAL;
+-                if (!strcasecmp(d[i].SemanticName, "sv_depthlessequal")) d[i].SystemValueType = D3D_NAME_DEPTH_LESS_EQUAL;
++                if (!_strnicmp(d[i].SemanticName, "sv_depth", -1))
++                    d[i].SystemValueType = D3D_NAME_DEPTH;
++                else if (!_strnicmp(d[i].SemanticName, "sv_coverage", -1))
++                    d[i].SystemValueType = D3D_NAME_COVERAGE;
++                else if (!_strnicmp(d[i].SemanticName, "sv_depthgreaterequal", -1))
++                    d[i].SystemValueType = D3D_NAME_DEPTH_GREATER_EQUAL;
++                else if (!_strnicmp(d[i].SemanticName, "sv_depthlessequal", -1))
++                    d[i].SystemValueType = D3D_NAME_DEPTH_LESS_EQUAL;
+             }
+             else
+             {
+@@ -1659,9 +1713,6 @@
+     struct dxbc src_dxbc;
+     HRESULT hr;
+     unsigned int i;
+-
+-    reflection->ID3D11ShaderReflection_iface.lpVtbl = &d3dcompiler_shader_reflection_vtbl;
+-    reflection->refcount = 1;
+ 
+     wine_rb_init(&reflection->types, d3dcompiler_shader_reflection_type_compare);
+ 
+@@ -1775,6 +1826,489 @@
+     return hr;
+ }
+ 
++/* d3d10 reflection methods. */
++static inline struct d3dcompiler_shader_reflection *impl_from_ID3D10ShaderReflection(ID3D10ShaderReflection *iface)
++{
++    return CONTAINING_RECORD(iface, struct d3dcompiler_shader_reflection, ID3D10ShaderReflection_iface);
++}
++
++static HRESULT STDMETHODCALLTYPE d3d10_shader_reflection_QueryInterface(ID3D10ShaderReflection *iface,
++        REFIID riid, void **object)
++{
++    TRACE("iface %p, riid %s, object %p.\n", iface, debugstr_guid(riid), object);
++
++    if (IsEqualGUID(riid, &IID_ID3D10ShaderReflection) || IsEqualGUID(riid, &IID_IUnknown))
++    {
++        IUnknown_AddRef(iface);
++        *object = iface;
++        return S_OK;
++    }
++
++    WARN("%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid(riid));
++
++    *object = NULL;
++    return E_NOINTERFACE;
++}
++
++static ULONG STDMETHODCALLTYPE d3d10_shader_reflection_AddRef(ID3D10ShaderReflection *iface)
++{
++    struct d3dcompiler_shader_reflection *reflection = impl_from_ID3D10ShaderReflection(iface);
++    ULONG refcount = InterlockedIncrement(&reflection->refcount);
++
++    TRACE("%p increasing refcount to %u.\n", reflection, refcount);
++
++    return refcount;
++}
++
++static ULONG STDMETHODCALLTYPE d3d10_shader_reflection_Release(ID3D10ShaderReflection *iface)
++{
++    struct d3dcompiler_shader_reflection *reflection = impl_from_ID3D10ShaderReflection(iface);
++    ULONG refcount = InterlockedDecrement(&reflection->refcount);
++
++    TRACE("%p decreasing refcount to %u.\n", reflection, refcount);
++
++    if (!refcount)
++        HeapFree(GetProcessHeap(), 0, reflection);
++
++    return refcount;
++}
++
++static HRESULT STDMETHODCALLTYPE d3d10_shader_reflection_GetDesc(ID3D10ShaderReflection *iface,
++        D3D10_SHADER_DESC *desc)
++{
++    struct d3dcompiler_shader_reflection *reflection = impl_from_ID3D10ShaderReflection(iface);
++
++    FIXME("iface %p, desc %p partial stub!\n", iface, desc);
++
++    if (!desc)
++    {
++        WARN("Invalid argument specified.\n");
++        return E_FAIL;
++    }
++
++    desc->Version = reflection->version;
++    desc->Creator = reflection->creator;
++    desc->Flags = reflection->flags;
++    desc->ConstantBuffers = reflection->constant_buffer_count;
++    desc->BoundResources = reflection->bound_resource_count;
++    desc->InputParameters = reflection->isgn ? reflection->isgn->element_count : 0;
++    desc->OutputParameters = reflection->osgn ? reflection->osgn->element_count : 0;
++    desc->InstructionCount = reflection->instruction_count;
++    desc->TempRegisterCount = reflection->temp_register_count;
++    desc->TempArrayCount = reflection->temp_array_count;
++    desc->DefCount = 0;
++    desc->DclCount = reflection->dcl_count;
++    desc->TextureNormalInstructions = reflection->texture_normal_instructions;
++    desc->TextureLoadInstructions = reflection->texture_load_instructions;
++    desc->TextureCompInstructions = reflection->texture_comp_instructions;
++    desc->TextureBiasInstructions = reflection->texture_bias_instructions;
++    desc->TextureGradientInstructions = reflection->texture_gradient_instructions;
++    desc->FloatInstructionCount = reflection->float_instruction_count;
++    desc->IntInstructionCount = reflection->int_instruction_count;
++    desc->UintInstructionCount = reflection->uint_instruction_count;
++    desc->StaticFlowControlCount = reflection->static_flow_control_count;
++    desc->DynamicFlowControlCount = reflection->dynamic_flow_control_count;
++    desc->MacroInstructionCount = 0;
++    desc->ArrayInstructionCount = reflection->array_instruction_count;
++    desc->CutInstructionCount = reflection->cut_instruction_count;
++    desc->EmitInstructionCount = reflection->emit_instruction_count;
++    desc->GSOutputTopology = reflection->gs_output_topology;
++    desc->GSMaxOutputVertexCount = reflection->gs_max_output_vertex_count;
++
++    return S_OK;
++}
++
++static struct ID3D10ShaderReflectionConstantBuffer * STDMETHODCALLTYPE d3d10_shader_reflection_GetConstantBufferByIndex(
++        ID3D10ShaderReflection *iface, UINT index)
++{
++    struct d3dcompiler_shader_reflection *reflection = impl_from_ID3D10ShaderReflection(iface);
++
++    TRACE("iface %p, index %u.\n", iface, index);
++
++    if (index >= reflection->constant_buffer_count)
++    {
++        WARN("Invalid argument specified.\n");
++        return &null_constant_buffer.ID3D10ShaderReflectionConstantBuffer_iface;
++    }
++
++    return &reflection->constant_buffers[index].ID3D10ShaderReflectionConstantBuffer_iface;
++}
++
++static struct ID3D10ShaderReflectionConstantBuffer * STDMETHODCALLTYPE d3d10_shader_reflection_GetConstantBufferByName(
++        ID3D10ShaderReflection *iface, const char *name)
++{
++    struct d3dcompiler_shader_reflection *reflection = impl_from_ID3D10ShaderReflection(iface);
++    unsigned int i;
++
++    TRACE("iface %p, name %s.\n", iface, debugstr_a(name));
++
++    if (!name)
++    {
++        WARN("Invalid argument specified.\n");
++        return &null_constant_buffer.ID3D10ShaderReflectionConstantBuffer_iface;
++    }
++
++    for (i = 0; i < reflection->constant_buffer_count; ++i)
++    {
++        struct d3dcompiler_shader_reflection_constant_buffer *d = &reflection->constant_buffers[i];
++
++        if (!strcmp(d->name, name))
++        {
++            TRACE("Returning ID3D10ShaderReflectionConstantBuffer %p.\n", d);
++            return &d->ID3D10ShaderReflectionConstantBuffer_iface;
++        }
++    }
++
++    WARN("Invalid name specified.\n");
++
++    return &null_constant_buffer.ID3D10ShaderReflectionConstantBuffer_iface;
++}
++
++static HRESULT STDMETHODCALLTYPE d3d10_shader_reflection_GetResourceBindingDesc(ID3D10ShaderReflection *iface,
++        UINT index, D3D10_SHADER_INPUT_BIND_DESC *desc)
++{
++    struct d3dcompiler_shader_reflection *reflection = impl_from_ID3D10ShaderReflection(iface);
++
++    TRACE("iface %p, index %u, desc %p.\n", iface, index, desc);
++
++    if (!desc || index >= reflection->bound_resource_count)
++    {
++        WARN("Invalid argument specified.\n");
++        return E_INVALIDARG;
++    }
++
++    memcpy(desc, &reflection->bound_resources[index], sizeof(*desc));
++
++    return S_OK;
++}
++
++static HRESULT STDMETHODCALLTYPE d3d10_shader_reflection_GetInputParameterDesc(ID3D10ShaderReflection *iface,
++        UINT index, D3D10_SIGNATURE_PARAMETER_DESC *desc)
++{
++    struct d3dcompiler_shader_reflection *reflection = impl_from_ID3D10ShaderReflection(iface);
++
++    TRACE("iface %p, index %u, desc %p.\n", iface, index, desc);
++
++    if (!desc || !reflection->isgn || index >= reflection->isgn->element_count)
++    {
++        WARN("Invalid argument specified.\n");
++        return E_INVALIDARG;
++    }
++
++    memcpy(desc, &reflection->isgn->elements[index], sizeof(*desc));
++
++    return S_OK;
++}
++
++static HRESULT STDMETHODCALLTYPE d3d10_shader_reflection_GetOutputParameterDesc(ID3D10ShaderReflection *iface,
++        UINT index, D3D10_SIGNATURE_PARAMETER_DESC *desc)
++{
++    struct d3dcompiler_shader_reflection *reflection = impl_from_ID3D10ShaderReflection(iface);
++
++    TRACE("iface %p, index %u, desc %p.\n", iface, index, desc);
++
++    if (!desc || !reflection->osgn || index >= reflection->osgn->element_count)
++    {
++        WARN("Invalid argument specified.\n");
++        return E_INVALIDARG;
++    }
++
++    memcpy(desc, &reflection->osgn->elements[index], sizeof(*desc));
++
++    return S_OK;
++}
++
++static const struct ID3D10ShaderReflectionVtbl d3d10_shader_reflection_vtbl =
++{
++    d3d10_shader_reflection_QueryInterface,
++    d3d10_shader_reflection_AddRef,
++    d3d10_shader_reflection_Release,
++    d3d10_shader_reflection_GetDesc,
++    d3d10_shader_reflection_GetConstantBufferByIndex,
++    d3d10_shader_reflection_GetConstantBufferByName,
++    d3d10_shader_reflection_GetResourceBindingDesc,
++    d3d10_shader_reflection_GetInputParameterDesc,
++    d3d10_shader_reflection_GetOutputParameterDesc,
++};
++
++static inline struct d3dcompiler_shader_reflection_constant_buffer *impl_from_ID3D10ShaderReflectionConstantBuffer(
++        ID3D10ShaderReflectionConstantBuffer *iface)
++{
++    return CONTAINING_RECORD(iface, struct d3dcompiler_shader_reflection_constant_buffer,
++            ID3D10ShaderReflectionConstantBuffer_iface);
++}
++
++static HRESULT STDMETHODCALLTYPE d3d10_shader_reflection_constant_buffer_GetDesc(
++        ID3D10ShaderReflectionConstantBuffer *iface, D3D10_SHADER_BUFFER_DESC *desc)
++{
++    struct d3dcompiler_shader_reflection_constant_buffer *cb = impl_from_ID3D10ShaderReflectionConstantBuffer(iface);
++
++    TRACE("iface %p, desc %p.\n", iface, desc);
++
++    if (cb == &null_constant_buffer)
++    {
++        WARN("Null constant buffer specified.\n");
++        return E_FAIL;
++    }
++
++    if (!desc)
++    {
++        WARN("Invalid argument specified.\n");
++        return E_FAIL;
++    }
++
++    desc->Name = cb->name;
++    desc->Type = cb->type;
++    desc->Variables = cb->variable_count;
++    desc->Size = cb->size;
++    desc->uFlags = cb->flags;
++
++    return S_OK;
++}
++
++static ID3D10ShaderReflectionVariable * STDMETHODCALLTYPE d3d10_shader_reflection_constant_buffer_GetVariableByIndex(
++        ID3D10ShaderReflectionConstantBuffer *iface, UINT index)
++{
++    struct d3dcompiler_shader_reflection_constant_buffer *cb = impl_from_ID3D10ShaderReflectionConstantBuffer(iface);
++
++    TRACE("iface %p, index %u.\n", iface, index);
++
++    if (index >= cb->variable_count)
++    {
++        WARN("Invalid index specified.\n");
++        return &null_variable.ID3D10ShaderReflectionVariable_iface;
++    }
++
++    return &cb->variables[index].ID3D10ShaderReflectionVariable_iface;
++}
++
++static ID3D10ShaderReflectionVariable * STDMETHODCALLTYPE d3d10_shader_reflection_constant_buffer_GetVariableByName(
++        ID3D10ShaderReflectionConstantBuffer *iface, const char *name)
++{
++    struct d3dcompiler_shader_reflection_constant_buffer *cb = impl_from_ID3D10ShaderReflectionConstantBuffer(iface);
++    unsigned int i;
++
++    TRACE("iface %p, name %s.\n", iface, debugstr_a(name));
++
++    if (!name)
++    {
++        WARN("Invalid argument specified.\n");
++        return &null_variable.ID3D10ShaderReflectionVariable_iface;
++    }
++
++    for (i = 0; i < cb->variable_count; ++i)
++    {
++        struct d3dcompiler_shader_reflection_variable *v = &cb->variables[i];
++
++        if (!strcmp(v->name, name))
++        {
++            TRACE("Returning ID3D10ShaderReflectionVariable %p.\n", v);
++            return &v->ID3D10ShaderReflectionVariable_iface;
++        }
++    }
++
++    WARN("Invalid name specified.\n");
++
++    return &null_variable.ID3D10ShaderReflectionVariable_iface;
++}
++
++static const struct ID3D10ShaderReflectionConstantBufferVtbl d3d10_shader_reflection_constant_buffer_vtbl =
++{
++    d3d10_shader_reflection_constant_buffer_GetDesc,
++    d3d10_shader_reflection_constant_buffer_GetVariableByIndex,
++    d3d10_shader_reflection_constant_buffer_GetVariableByName,
++};
++
++static inline struct d3dcompiler_shader_reflection_variable *impl_from_ID3D10ShaderReflectionVariable(ID3D10ShaderReflectionVariable *iface)
++{
++    return CONTAINING_RECORD(iface, struct d3dcompiler_shader_reflection_variable, ID3D10ShaderReflectionVariable_iface);
++}
++
++static HRESULT STDMETHODCALLTYPE d3d10_shader_reflection_variable_GetDesc(ID3D10ShaderReflectionVariable *iface,
++        D3D10_SHADER_VARIABLE_DESC *desc)
++{
++    struct d3dcompiler_shader_reflection_variable *var = impl_from_ID3D10ShaderReflectionVariable(iface);
++
++    TRACE("iface %p, desc %p.\n", iface, desc);
++
++    if (var == &null_variable)
++    {
++        WARN("Null variable specified.\n");
++        return E_FAIL;
++    }
++
++    if (!desc)
++    {
++        WARN("Invalid argument specified.\n");
++        return E_FAIL;
++    }
++
++    desc->Name = var->name;
++    desc->StartOffset = var->start_offset;
++    desc->Size = var->size;
++    desc->uFlags = var->flags;
++    desc->DefaultValue = var->default_value;
++
++    return S_OK;
++}
++
++static ID3D10ShaderReflectionType * STDMETHODCALLTYPE d3d10_shader_reflection_variable_GetType(
++        ID3D10ShaderReflectionVariable *iface)
++{
++    struct d3dcompiler_shader_reflection_variable *var = impl_from_ID3D10ShaderReflectionVariable(iface);
++
++    TRACE("iface %p.\n", iface);
++
++    return &var->type->ID3D10ShaderReflectionType_iface;
++}
++
++static const struct ID3D10ShaderReflectionVariableVtbl d3d10_shader_reflection_variable_vtbl =
++{
++    d3d10_shader_reflection_variable_GetDesc,
++    d3d10_shader_reflection_variable_GetType,
++};
++
++static inline struct d3dcompiler_shader_reflection_type *impl_from_ID3D10ShaderReflectionType(
++        ID3D10ShaderReflectionType *iface)
++{
++    return CONTAINING_RECORD(iface, struct d3dcompiler_shader_reflection_type, ID3D10ShaderReflectionType_iface);
++}
++
++static HRESULT STDMETHODCALLTYPE d3d10_shader_reflection_type_GetDesc(ID3D10ShaderReflectionType *iface,
++        D3D10_SHADER_TYPE_DESC *desc)
++{
++    struct d3dcompiler_shader_reflection_type *type = impl_from_ID3D10ShaderReflectionType(iface);
++
++    TRACE("iface %p, desc %p.\n", iface, desc);
++
++    if (type == &null_type)
++    {
++        WARN("Null type specified.\n");
++        return E_FAIL;
++    }
++
++    if (!desc)
++    {
++        WARN("Invalid argument specified.\n");
++        return E_FAIL;
++    }
++
++    memcpy(desc, &type->desc, sizeof(*desc));
++
++    return S_OK;
++}
++
++static ID3D10ShaderReflectionType * STDMETHODCALLTYPE d3d10_shader_reflection_type_GetMemberTypeByIndex(
++        ID3D10ShaderReflectionType *iface, UINT index)
++{
++    struct d3dcompiler_shader_reflection_type *type = impl_from_ID3D10ShaderReflectionType(iface);
++
++    TRACE("iface %p, index %u.\n", iface, index);
++
++    if (index >= type->desc.Members)
++    {
++        WARN("Invalid index specified.\n");
++        return &null_type.ID3D10ShaderReflectionType_iface;
++    }
++
++    return &type->members[index].type->ID3D10ShaderReflectionType_iface;
++}
++
++static ID3D10ShaderReflectionType * STDMETHODCALLTYPE d3d10_shader_reflection_type_GetMemberTypeByName(
++        ID3D10ShaderReflectionType *iface, const char *name)
++{
++    struct d3dcompiler_shader_reflection_type *type = impl_from_ID3D10ShaderReflectionType(iface);
++    unsigned int i;
++
++    TRACE("iface %p, name %s.\n", iface, debugstr_a(name));
++
++    if (!name)
++    {
++        WARN("Invalid argument specified.\n");
++        return &null_type.ID3D10ShaderReflectionType_iface;
++    }
++
++    for (i = 0; i < type->desc.Members; ++i)
++    {
++        struct d3dcompiler_shader_reflection_type_member *member = &type->members[i];
++
++        if (!strcmp(member->name, name))
++        {
++            TRACE("Returning ID3D10ShaderReflectionType %p.\n", member->type);
++            return &member->type->ID3D10ShaderReflectionType_iface;
++        }
++    }
++
++    WARN("Invalid name specified.\n");
++
++    return &null_type.ID3D10ShaderReflectionType_iface;
++}
++
++static const char * STDMETHODCALLTYPE d3d10_shader_reflection_type_GetMemberTypeName(
++        ID3D10ShaderReflectionType *iface, UINT index)
++{
++    struct d3dcompiler_shader_reflection_type *type = impl_from_ID3D10ShaderReflectionType(iface);
++
++    TRACE("iface %p, index %u.\n", iface, index);
++
++    if (type == &null_type)
++    {
++        WARN("Null type specified.\n");
++        return "$Invalid";
++    }
++
++    if (index >= type->desc.Members)
++    {
++        WARN("Invalid index specified.\n");
++        return NULL;
++    }
++
++    return type->members[index].name;
++}
++
++static const struct ID3D10ShaderReflectionTypeVtbl d3d10_shader_reflection_type_vtbl =
++{
++    d3d10_shader_reflection_type_GetDesc,
++    d3d10_shader_reflection_type_GetMemberTypeByIndex,
++    d3d10_shader_reflection_type_GetMemberTypeByName,
++    d3d10_shader_reflection_type_GetMemberTypeName,
++};
++
++HRESULT WINAPI D3D10ReflectShader(const void *data, SIZE_T data_size, ID3D10ShaderReflection **reflector)
++{
++    struct d3dcompiler_shader_reflection *object;
++    HRESULT hr;
++
++    TRACE("data %p, data_size %lu, reflector %p.\n", data, data_size, reflector);
++
++    if (!reflector) return E_INVALIDARG;
++    *reflector = NULL;
++    if (!data || data_size < 32 || ((const DWORD *)data)[6] != data_size) return D3DERR_INVALIDCALL;
++
++    if (!(object = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sizeof(*object))))
++    {
++        ERR("Failed to allocate D3D10 shader reflection object memory.\n");
++        return E_OUTOFMEMORY;
++    }
++
++    object->ID3D10ShaderReflection_iface.lpVtbl = &d3d10_shader_reflection_vtbl;
++    object->refcount = 1;
++
++    hr = d3dcompiler_shader_reflection_init(object, data, data_size);
++    if (FAILED(hr))
++    {
++        WARN("Failed to initialize shader reflection.\n");
++        HeapFree(GetProcessHeap(), 0, object);
++        return hr;
++    }
++
++    *reflector = &object->ID3D10ShaderReflection_iface;
++
++    TRACE("Created ID3D10ShaderReflection %p.\n", object);
++
++    return S_OK;
++}
++
+ HRESULT WINAPI D3DReflect(const void *data, SIZE_T data_size, REFIID riid, void **reflector)
+ {
+     struct d3dcompiler_shader_reflection *object;
+@@ -1792,19 +2326,30 @@
+     if (temp[6] != data_size)
+     {
+         WARN("Wrong size supplied.\n");
++#if D3D_COMPILER_VERSION >= 46
++        return D3DERR_INVALIDCALL;
++#else
+         return E_FAIL;
++#endif
+     }
+ 
+     if (!IsEqualGUID(riid, &IID_ID3D11ShaderReflection))
+     {
+         WARN("Wrong riid %s, accept only %s!\n", debugstr_guid(riid), debugstr_guid(&IID_ID3D11ShaderReflection));
++#if D3D_COMPILER_VERSION >= 46
++        return E_INVALIDARG;
++#else
+         return E_NOINTERFACE;
++#endif
+     }
+ 
+     object = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sizeof(*object));
+     if (!object)
+         return E_OUTOFMEMORY;
+ 
++    object->ID3D11ShaderReflection_iface.lpVtbl = &d3dcompiler_shader_reflection_vtbl;
++    object->refcount = 1;
++
+     hr = d3dcompiler_shader_reflection_init(object, data, data_size);
+     if (FAILED(hr))
+     {
+--- a/dlls/d3dcompiler_43/d3dcompiler_43.spec
++++ b/dlls/d3dcompiler_43/d3dcompiler_43.spec
+@@ -15,3 +15,4 @@
+ @ stdcall D3DReflect(ptr long ptr ptr)
+ @ stub D3DReturnFailure1
+ @ stdcall D3DStripShader(ptr long long ptr)
++1000 stdcall WXReflect10(ptr long ptr) D3D10ReflectShader
+--- a/dlls/d3d10/d3d10.spec
++++ b/dlls/d3d10/d3d10.spec
+@@ -1,6 +1,6 @@
+ @ stdcall D3D10CompileEffectFromMemory(ptr long ptr ptr ptr long long ptr ptr)
+ @ stdcall D3D10CompileShader(ptr long str ptr ptr str str long ptr ptr)
+-@ stdcall D3D10CreateBlob(long ptr) d3dcompiler_43.D3DCreateBlob
++@ stdcall D3D10CreateBlob(long ptr)
+ @ stdcall D3D10CreateDevice(ptr long ptr long long ptr)
+ @ stdcall D3D10CreateDeviceAndSwapChain(ptr long ptr long long ptr ptr ptr)
+ @ stdcall D3D10CreateEffectFromMemory(ptr long long ptr ptr ptr)
+@@ -9,15 +9,15 @@
+ @ stub D3D10DisassembleEffect
+ @ stdcall D3D10DisassembleShader(ptr long long ptr ptr)
+ @ stdcall D3D10GetGeometryShaderProfile(ptr)
+-@ stdcall D3D10GetInputAndOutputSignatureBlob(ptr long ptr) d3dcompiler_43.D3DGetInputAndOutputSignatureBlob
+-@ stdcall D3D10GetInputSignatureBlob(ptr long ptr) d3dcompiler_43.D3DGetInputSignatureBlob
+-@ stdcall D3D10GetOutputSignatureBlob(ptr long ptr) d3dcompiler_43.D3DGetOutputSignatureBlob
++@ stdcall D3D10GetInputAndOutputSignatureBlob(ptr long ptr)
++@ stdcall D3D10GetInputSignatureBlob(ptr long ptr)
++@ stdcall D3D10GetOutputSignatureBlob(ptr long ptr)
+ @ stdcall D3D10GetPixelShaderProfile(ptr)
+-@ stdcall D3D10GetShaderDebugInfo(ptr long ptr) d3dcompiler_43.D3DGetDebugInfo
++@ stdcall D3D10GetShaderDebugInfo(ptr long ptr)
+ @ stub D3D10GetVersion
+ @ stdcall D3D10GetVertexShaderProfile(ptr)
+-@ stdcall D3D10PreprocessShader(ptr long str ptr ptr ptr ptr) d3dcompiler_43.D3DPreprocess
+-@ stdcall D3D10ReflectShader(ptr long ptr) wxlegacy.WXReflect10
++@ stdcall D3D10PreprocessShader(ptr long str ptr ptr ptr ptr)
++@ stdcall D3D10ReflectShader(ptr long ptr)
+ @ stub D3D10RegisterLayers
+ @ stdcall D3D10StateBlockMaskDifference(ptr ptr ptr)
+ @ stdcall D3D10StateBlockMaskDisableAll(ptr)
+--- a/dlls/d3d10/d3d10_main.c
++++ b/dlls/d3d10/d3d10_main.c
+@@ -216,6 +216,10 @@
+     FIXME("data %p, data_size %lu, flags %#x, device %p, effect_pool %p, effect %p stub!\n",
+             data, data_size, flags, device, effect_pool, effect);
+ 
++    if (!effect) return E_INVALIDARG;
++    *effect = NULL;
++    if (!data || !device) return E_INVALIDARG;
++
+     object = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sizeof(*object));
+     if (!object)
+     {
+@@ -228,6 +232,7 @@
+     object->refcount = 1;
+     ID3D10Device_AddRef(device);
+     object->device = device;
++    if ((object->pool = effect_pool)) IUnknown_AddRef(effect_pool);
+ 
+     hr = d3d10_effect_parse(object, data, data_size);
+     if (FAILED(hr))
+@@ -284,23 +289,56 @@
+ 
+ HRESULT WINAPI D3D10ReflectShader(const void *data, SIZE_T data_size, ID3D10ShaderReflection **reflector)
+ {
+-    struct d3d10_shader_reflection *object;
+-
+-    FIXME("data %p, data_size %lu, reflector %p stub!\n", data, data_size, reflector);
+-
+-    object = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sizeof(*object));
+-    if (!object)
+-    {
+-        ERR("Failed to allocate D3D10 shader reflection object memory\n");
+-        return E_OUTOFMEMORY;
+-    }
+-
+-    object->ID3D10ShaderReflection_iface.lpVtbl = &d3d10_shader_reflection_vtbl;
+-    object->refcount = 1;
+-
+-    *reflector = &object->ID3D10ShaderReflection_iface;
+-
+-    TRACE("Created ID3D10ShaderReflection %p\n", object);
+-
+-    return S_OK;
+-}
++    typedef HRESULT (WINAPI *reflect_fn)(const void *, SIZE_T, ID3D10ShaderReflection **);
++    static HMODULE compiler;
++    HMODULE module;
++    reflect_fn reflect;
++
++    if (!reflector) return E_INVALIDARG;
++    *reflector = NULL;
++    /* A reflection interface can outlive the D3D10 module that created it. */
++    if (!(module = InterlockedCompareExchangePointer((void *volatile *)&compiler, NULL, NULL)))
++    {
++        HMODULE previous;
++        if (!(module = LoadLibraryA("wxlegacy.dll"))) return HRESULT_FROM_WIN32(GetLastError());
++        if ((previous = InterlockedCompareExchangePointer((void *volatile *)&compiler, module, NULL)))
++        {
++            FreeLibrary(module);
++            module = previous;
++        }
++    }
++    if (!(reflect = (reflect_fn)GetProcAddress(module, "WXReflect10"))) return HRESULT_FROM_WIN32(ERROR_PROC_NOT_FOUND);
++    return reflect(data, data_size, reflector);
++}
++
++
++HRESULT WINAPI D3D10PreprocessShader(const void *source, SIZE_T size, const char *filename,
++        const D3D10_SHADER_MACRO *defines, ID3D10Include *include, ID3D10Blob **text, ID3D10Blob **errors)
++{
++    return D3DPreprocess(source, size, filename, defines, include, text, errors);
++}
++
++HRESULT WINAPI D3D10CreateBlob(SIZE_T size, ID3D10Blob **blob)
++{
++    return D3DCreateBlob(size, blob);
++}
++
++HRESULT WINAPI D3D10GetInputSignatureBlob(const void *data, SIZE_T size, ID3D10Blob **blob)
++{
++    return D3DGetInputSignatureBlob(data, size, blob);
++}
++
++HRESULT WINAPI D3D10GetOutputSignatureBlob(const void *data, SIZE_T size, ID3D10Blob **blob)
++{
++    return D3DGetOutputSignatureBlob(data, size, blob);
++}
++
++HRESULT WINAPI D3D10GetInputAndOutputSignatureBlob(const void *data, SIZE_T size, ID3D10Blob **blob)
++{
++    return D3DGetInputAndOutputSignatureBlob(data, size, blob);
++}
++
++HRESULT WINAPI D3D10GetShaderDebugInfo(const void *data, SIZE_T size, ID3D10Blob **blob)
++{
++    return D3DGetDebugInfo(data, size, blob);
++}
+--- a/dlls/d3d10/d3d10_private.h
++++ b/dlls/d3d10/d3d10_private.h
+@@ -222,6 +222,7 @@
+     ID3D10Effect ID3D10Effect_iface;
+     LONG refcount;
+ 
++    ID3D10EffectPool *pool;
+     ID3D10Device *device;
+     DWORD version;
+     DWORD local_buffer_count;
+--- a/dlls/d3d10/effect.c
++++ b/dlls/d3d10/effect.c
+@@ -2671,6 +2671,7 @@
+ 
+         wine_rb_destroy(&This->types, d3d10_effect_type_destroy, NULL);
+ 
++        if (This->pool) IUnknown_Release(This->pool);
+         ID3D10Device_Release(This->device);
+         HeapFree(GetProcessHeap(), 0, This);
+     }
+@@ -2708,9 +2709,24 @@
+ 
+ static HRESULT STDMETHODCALLTYPE d3d10_effect_GetDesc(ID3D10Effect *iface, D3D10_EFFECT_DESC *desc)
+ {
+-    FIXME("iface %p, desc %p stub!\n", iface, desc);
+-
+-    return E_NOTIMPL;
++    struct d3d10_effect *effect = impl_from_ID3D10Effect(iface);
++    D3D10_EFFECT_DESC parent = {0};
++
++    if (!desc) return E_INVALIDARG;
++    if (effect->pool)
++    {
++        ID3D10Effect *pool = effect->pool->lpVtbl->AsEffect(effect->pool);
++        HRESULT hr;
++        if (!pool) return E_FAIL;
++        if (FAILED(hr = pool->lpVtbl->GetDesc(pool, &parent))) return hr;
++    }
++    desc->IsChildEffect = !!effect->pool;
++    desc->ConstantBuffers = effect->local_buffer_count;
++    desc->SharedConstantBuffers = parent.ConstantBuffers;
++    desc->GlobalVariables = effect->local_variable_count + effect->variable_count;
++    desc->SharedGlobalVariables = parent.GlobalVariables;
++    desc->Techniques = effect->technique_count;
++    return S_OK;
+ }
+ 
+ static struct ID3D10EffectConstantBuffer * STDMETHODCALLTYPE d3d10_effect_GetConstantBufferByIndex(ID3D10Effect *iface,
+--- a/dlls/d3d10_1/d3d10_1.spec
++++ b/dlls/d3d10_1/d3d10_1.spec
+@@ -1,6 +1,6 @@
+ @ stub RevertToOldImplementation
+ @ stdcall D3D10CompileEffectFromMemory(ptr long ptr ptr ptr long long ptr ptr) d3d10.D3D10CompileEffectFromMemory
+-@ stdcall D3D10CompileShader(ptr long str ptr ptr str str long ptr ptr) d3d10.D3D10CompileShader
++@ stdcall D3D10CompileShader(ptr long str ptr ptr str str long ptr ptr) wx_compile_shader
+ @ stdcall D3D10CreateBlob(long ptr) d3d10.D3D10CreateBlob
+ @ stdcall D3D10CreateDevice1(ptr long ptr long long long ptr)
+ @ stdcall D3D10CreateDeviceAndSwapChain1(ptr long ptr long long long ptr ptr ptr)
+--- a/dlls/d3d10_1/d3d10_1_main.c
++++ b/dlls/d3d10_1/d3d10_1_main.c
+@@ -243,3 +243,12 @@
+     *device = NULL;
+     return hr;
+ }
++
++/* Keep d3d10 in the import table. Windows 95 resolves forwarded SDK exports
++ * only after their destination module has been loaded. */
++HRESULT WINAPI wx_compile_shader(const char *data, SIZE_T size, const char *filename,
++        const D3D10_SHADER_MACRO *defines, ID3D10Include *include, const char *entry,
++        const char *profile, UINT flags, ID3D10Blob **shader, ID3D10Blob **errors)
++{
++    return D3D10CompileShader(data, size, filename, defines, include, entry, profile, flags, shader, errors);
++}
+--- a/dlls/d3d10_1/Makefile.in
++++ b/dlls/d3d10_1/Makefile.in
+@@ -1,6 +1,6 @@
+ MODULE    = d3d10_1.dll
+ IMPORTLIB = d3d10_1
+-IMPORTS   = dxguid d3d10core dxgi
++IMPORTS   = dxguid d3d10 d3d10core dxgi
+ 
+ C_SRCS = \
+ 	d3d10_1_main.c
+--- a/dlls/dxdiagn/provider.c
++++ b/dlls/dxdiagn/provider.c
+@@ -38,6 +38,8 @@
+ #include "fil_data.h"
+ #include "psapi.h"
+ #include "wbemcli.h"
++#define WINDX_IDENTITY_HAS_WINAPI
++#include "wx_identity.h"
+ 
+ #include "wine/debug.h"
+ 
+@@ -552,10 +554,9 @@
+     return S_OK;
+ }
+ 
+-static HRESULT fill_os_string_information(IDxDiagContainerImpl_Container *node, OSVERSIONINFOW *info)
+-{
+-    char text[128];
+-    WCHAR name[128];
++static HRESULT fill_os_string_information(IDxDiagContainerImpl_Container *node, const struct wx_system_identity *identity)
++{
++    WCHAR name[sizeof(identity->os)];
+     static const WCHAR szOSLocalized[] = {'s','z','O','S','L','o','c','a','l','i','z','e','d',0};
+     static const WCHAR szOSExLocalized[] = {'s','z','O','S','E','x','L','o','c','a','l','i','z','e','d',0};
+     static const WCHAR szOSExLongLocalized[] = {'s','z','O','S','E','x','L','o','n','g','L','o','c','a','l','i','z','e','d',0};
+@@ -569,9 +570,8 @@
+     size_t i;
+     HRESULT hr;
+ 
+-    wsprintfA(text, "Windows %lu.%lu (build %lu)", info->dwMajorVersion, info->dwMinorVersion,
+-            info->dwPlatformId == VER_PLATFORM_WIN32_WINDOWS ? LOWORD(info->dwBuildNumber) : info->dwBuildNumber);
+-    MultiByteToWideChar(CP_ACP, 0, text, -1, name, sizeof(name) / sizeof(*name));
++    if (!MultiByteToWideChar(CP_ACP, 0, identity->os, -1, name, sizeof(name) / sizeof(*name)))
++        return HRESULT_FROM_WIN32(GetLastError());
+     for (i = 0; i < sizeof(prop_list)/sizeof(prop_list[0]); i++)
+     {
+         hr = add_bstr_property(node, prop_list[i], name);
+@@ -657,32 +657,19 @@
+     return add_bstr_property(node, szProcessorEnglish, print_buf);
+ }
+ 
+-/* WMI is optional. Early Windows and installations with limited WMI access
+- * still expose the processor identifier through the registry or kernel. */
+-static HRESULT fill_native_processor(IDxDiagContainerImpl_Container *node)
++static HRESULT fill_native_processor(IDxDiagContainerImpl_Container *node, const struct wx_system_identity *identity)
+ {
+     static const WCHAR property[] = {'s','z','P','r','o','c','e','s','s','o','r','E','n','g','l','i','s','h',0};
+-    SYSTEM_INFO info;
+-    HKEY key;
+-    DWORD type, bytes;
+-    char model[180] = "", buffer[240];
+-    WCHAR wide[240];
+-    GetSystemInfo(&info);
+-    if (RegOpenKeyExA(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\0", 0, KEY_QUERY_VALUE, &key) == ERROR_SUCCESS)
+-    {
+-        bytes = sizeof(model);
+-        if (RegQueryValueExA(key, "ProcessorNameString", NULL, &type, (BYTE *)model, &bytes) != ERROR_SUCCESS || type != REG_SZ)
+-        {
+-            bytes = sizeof(model);
+-            if (RegQueryValueExA(key, "Identifier", NULL, &type, (BYTE *)model, &bytes) != ERROR_SUCCESS || type != REG_SZ)
+-                model[0] = 0;
+-        }
+-        model[sizeof(model) - 1] = 0;
+-        RegCloseKey(key);
+-    }
+-    if (!model[0]) wsprintfA(model, "processor type %lu", info.dwProcessorType);
+-    wsprintfA(buffer, "%s (%lu logical processors)", model, info.dwNumberOfProcessors);
+-    MultiByteToWideChar(CP_ACP, 0, buffer, -1, wide, sizeof(wide) / sizeof(*wide));
++    WCHAR wide[sizeof(identity->processor)];
++    HRESULT hr;
++
++    if (!identity->has_signature && !identity->brand[0])
++    {
++        hr = fill_processor_information(node);
++        if (SUCCEEDED(hr) || hr == E_OUTOFMEMORY) return hr;
++    }
++    if (!MultiByteToWideChar(CP_ACP, 0, identity->processor, -1, wide, sizeof(wide) / sizeof(*wide)))
++        return HRESULT_FROM_WIN32(GetLastError());
+     return add_bstr_property(node, property, wide);
+ }
+ 
+@@ -726,7 +713,8 @@
+ 
+     HRESULT hr;
+     MEMORYSTATUSEX msex;
+-    OSVERSIONINFOW info;
++    struct wx_system_identity identity;
++    WCHAR service_pack[sizeof(identity.service_pack)];
+     DWORD count, usedpage_mb, availpage_mb;
+     WCHAR buffer[MAX_PATH], computer_name[MAX_COMPUTERNAME_LENGTH + 1], print_buf[200], localized_pagefile_fmt[200];
+     DWORD_PTR args[2];
+@@ -790,48 +778,27 @@
+     if (FAILED(hr))
+         return hr;
+ 
+-    info.dwOSVersionInfoSize = sizeof(info);
+-    if (!GetVersionExW(&info))
+-    {
+-        OSVERSIONINFOA ansi;
+-        DWORD version = GetVersion();
+-        memset(&ansi, 0, sizeof(ansi));
+-        ansi.dwOSVersionInfoSize = sizeof(ansi);
+-        if (GetVersionExA(&ansi))
+-        {
+-            info.dwMajorVersion = ansi.dwMajorVersion;
+-            info.dwMinorVersion = ansi.dwMinorVersion;
+-            info.dwBuildNumber = ansi.dwBuildNumber;
+-            info.dwPlatformId = ansi.dwPlatformId;
+-            MultiByteToWideChar(CP_ACP, 0, ansi.szCSDVersion, -1, info.szCSDVersion, sizeof(info.szCSDVersion) / sizeof(WCHAR));
+-        }
+-        else
+-        {
+-            info.dwMajorVersion = LOBYTE(LOWORD(version));
+-            info.dwMinorVersion = HIBYTE(LOWORD(version));
+-            info.dwBuildNumber = HIWORD(version) & 0x7fff;
+-            info.dwPlatformId = version & 0x80000000u ? VER_PLATFORM_WIN32_WINDOWS : VER_PLATFORM_WIN32_NT;
+-            info.szCSDVersion[0] = 0;
+-        }
+-    }
+-
+-    hr = add_ui4_property(node, dwOSMajorVersion, info.dwMajorVersion);
+-    if (FAILED(hr))
+-        return hr;
+-
+-    hr = add_ui4_property(node, dwOSMinorVersion, info.dwMinorVersion);
+-    if (FAILED(hr))
+-        return hr;
+-
+-    hr = add_ui4_property(node, dwOSBuildNumber, info.dwBuildNumber);
+-    if (FAILED(hr))
+-        return hr;
+-
+-    hr = add_ui4_property(node, dwOSPlatformID, info.dwPlatformId);
+-    if (FAILED(hr))
+-        return hr;
+-
+-    hr = add_bstr_property(node, szCSDVersion, info.szCSDVersion);
++    if (!wx_read_system_identity(&identity)) return E_FAIL;
++    if (!MultiByteToWideChar(CP_ACP, 0, identity.service_pack, -1, service_pack, sizeof(service_pack) / sizeof(*service_pack)))
++        return HRESULT_FROM_WIN32(GetLastError());
++
++    hr = add_ui4_property(node, dwOSMajorVersion, identity.major);
++    if (FAILED(hr))
++        return hr;
++
++    hr = add_ui4_property(node, dwOSMinorVersion, identity.minor);
++    if (FAILED(hr))
++        return hr;
++
++    hr = add_ui4_property(node, dwOSBuildNumber, identity.build);
++    if (FAILED(hr))
++        return hr;
++
++    hr = add_ui4_property(node, dwOSPlatformID, identity.platform);
++    if (FAILED(hr))
++        return hr;
++
++    hr = add_bstr_property(node, szCSDVersion, service_pack);
+     if (FAILED(hr))
+         return hr;
+ 
+@@ -890,8 +857,7 @@
+     if (FAILED(hr))
+         return hr;
+ 
+-    hr = fill_processor_information(node);
+-    if (FAILED(hr) && hr != E_OUTOFMEMORY) hr = fill_native_processor(node);
++    hr = fill_native_processor(node, &identity);
+     if (FAILED(hr))
+         return hr;
+ 
+@@ -911,7 +877,7 @@
+     if (FAILED(hr))
+         return hr;
+ 
+-    hr = fill_os_string_information(node, &info);
++    hr = fill_os_string_information(node, &identity);
+     if (FAILED(hr))
+         return hr;
+ 
+--- a/dlls/dxdiagn/provider.c
++++ b/dlls/dxdiagn/provider.c
+@@ -28,6 +28,7 @@
+ #include "dxdiag_private.h"
+ #include "wine/unicode.h"
+ #include "winver.h"
++#include "wx_inventory.h"
+ #include "objidl.h"
+ #include "uuids.h"
+ #include "vfw.h"
+@@ -678,13 +679,10 @@
+     static const WCHAR dwDirectXVersionMajor[] = {'d','w','D','i','r','e','c','t','X','V','e','r','s','i','o','n','M','a','j','o','r',0};
+     static const WCHAR dwDirectXVersionMinor[] = {'d','w','D','i','r','e','c','t','X','V','e','r','s','i','o','n','M','i','n','o','r',0};
+     static const WCHAR szDirectXVersionLetter[] = {'s','z','D','i','r','e','c','t','X','V','e','r','s','i','o','n','L','e','t','t','e','r',0};
+-    static const WCHAR szDirectXVersionLetter_v[] = {'c',0};
+     static const WCHAR bDebug[] = {'b','D','e','b','u','g',0};
+     static const WCHAR bNECPC98[] = {'b','N','E','C','P','C','9','8',0};
+     static const WCHAR szDirectXVersionEnglish[] = {'s','z','D','i','r','e','c','t','X','V','e','r','s','i','o','n','E','n','g','l','i','s','h',0};
+-    static const WCHAR szDirectXVersionEnglish_v[] = {'4','.','0','9','.','0','0','0','0','.','0','9','0','4',0};
+     static const WCHAR szDirectXVersionLongEnglish[] = {'s','z','D','i','r','e','c','t','X','V','e','r','s','i','o','n','L','o','n','g','E','n','g','l','i','s','h',0};
+-    static const WCHAR szDirectXVersionLongEnglish_v[] = {'=',' ','"','D','i','r','e','c','t','X',' ','9','.','0','c',' ','(','4','.','0','9','.','0','0','0','0','.','0','9','0','4',')',0};
+     static const WCHAR ullPhysicalMemory[] = {'u','l','l','P','h','y','s','i','c','a','l','M','e','m','o','r','y',0};
+     static const WCHAR ullUsedPageFile[]   = {'u','l','l','U','s','e','d','P','a','g','e','F','i','l','e',0};
+     static const WCHAR ullAvailPageFile[]  = {'u','l','l','A','v','a','i','l','P','a','g','e','F','i','l','e',0};
+@@ -719,23 +717,30 @@
+     WCHAR buffer[MAX_PATH], computer_name[MAX_COMPUTERNAME_LENGTH + 1], print_buf[200], localized_pagefile_fmt[200];
+     DWORD_PTR args[2];
+ 
+-    hr = add_ui4_property(node, dwDirectXVersionMajor, 9);
+-    if (FAILED(hr))
+-        return hr;
+-
+-    hr = add_ui4_property(node, dwDirectXVersionMinor, 0);
+-    if (FAILED(hr))
+-        return hr;
+-
+-    hr = add_bstr_property(node, szDirectXVersionLetter, szDirectXVersionLetter_v);
+-    if (FAILED(hr))
+-        return hr;
+-
+-    hr = add_bstr_property(node, szDirectXVersionEnglish, szDirectXVersionEnglish_v);
+-    if (FAILED(hr))
+-        return hr;
+-
+-    hr = add_bstr_property(node, szDirectXVersionLongEnglish, szDirectXVersionLongEnglish_v);
++    struct wx_runtime_inventory inventory;
++    WCHAR raw[sizeof(inventory.registered)], letter[sizeof(inventory.letter)], description[sizeof(inventory.text)];
++    wx_query_runtime(NULL, &inventory);
++    if (!MultiByteToWideChar(CP_ACP, 0, inventory.registered, -1, raw, sizeof(raw) / sizeof(*raw)) ||
++            !MultiByteToWideChar(CP_ACP, 0, inventory.letter, -1, letter, sizeof(letter) / sizeof(*letter)) ||
++            !MultiByteToWideChar(CP_ACP, 0, inventory.text, -1, description, sizeof(description) / sizeof(*description)))
++        return E_FAIL;
++    hr = add_ui4_property(node, dwDirectXVersionMajor, inventory.major);
++    if (FAILED(hr))
++        return hr;
++
++    hr = add_ui4_property(node, dwDirectXVersionMinor, inventory.minor);
++    if (FAILED(hr))
++        return hr;
++
++    hr = add_bstr_property(node, szDirectXVersionLetter, letter);
++    if (FAILED(hr))
++        return hr;
++
++    hr = add_bstr_property(node, szDirectXVersionEnglish, raw);
++    if (FAILED(hr))
++        return hr;
++
++    hr = add_bstr_property(node, szDirectXVersionLongEnglish, description);
+     if (FAILED(hr))
+         return hr;
+ 
+--- a/dlls/ddraw/ddraw.c
++++ b/dlls/ddraw/ddraw.c
+@@ -418,7 +418,11 @@
+  *****************************************************************************/
+ static void ddraw_destroy(struct ddraw *This)
+ {
+-    IDirectDraw7_SetCooperativeLevel(&This->IDirectDraw7_iface, NULL, DDSCL_NORMAL);
++    /* Normal-mode teardown already releases the swap chain and its window.
++     * Moving it to a new hidden window here creates a second graphics context
++     * solely to destroy it, which can exhaust memory on older display drivers. */
++    if (This->cooperative_level & DDSCL_EXCLUSIVE)
++        IDirectDraw7_SetCooperativeLevel(&This->IDirectDraw7_iface, NULL, DDSCL_NORMAL);
+     IDirectDraw7_RestoreDisplayMode(&This->IDirectDraw7_iface);
+ 
+     /* Destroy the device window if we created one */
+@@ -948,19 +952,14 @@
+ 
+     if (restore_state)
+     {
+-        if (dsv)
++        if (SUCCEEDED(hr))
+         {
+-            wined3d_device_set_depth_stencil_view(ddraw->wined3d_device, dsv);
+-            wined3d_rendertarget_view_decref(dsv);
++            if (dsv) wined3d_device_set_depth_stencil_view(ddraw->wined3d_device, dsv);
++            if (rtv) wined3d_device_set_rendertarget_view(ddraw->wined3d_device, 0, rtv, FALSE);
++            wined3d_stateblock_apply(stateblock);
+         }
+-
+-        if (rtv)
+-        {
+-            wined3d_device_set_rendertarget_view(ddraw->wined3d_device, 0, rtv, FALSE);
+-            wined3d_rendertarget_view_decref(rtv);
+-        }
+-
+-        wined3d_stateblock_apply(stateblock);
++        if (dsv) wined3d_rendertarget_view_decref(dsv);
++        if (rtv) wined3d_rendertarget_view_decref(rtv);
+         wined3d_stateblock_decref(stateblock);
+     }
+ 
+--- a/dlls/dxdiagn/provider.c
++++ b/dlls/dxdiagn/provider.c
+@@ -41,6 +41,7 @@
+ #include "wbemcli.h"
+ #define WINDX_IDENTITY_HAS_WINAPI
+ #include "wx_identity.h"
++#include "wx_firmware.h"
+ 
+ #include "wine/debug.h"
+ 
+@@ -553,6 +554,59 @@
+         return hr;
+ 
+     return S_OK;
++}
++
++static HRESULT add_hardware_text(IDxDiagContainerImpl_Container *node, const WCHAR *property, const char *str)
++{
++    WCHAR wide[384];
++    if (!MultiByteToWideChar(CP_ACP, 0, str, -1, wide, sizeof(wide) / sizeof(*wide)))
++        return HRESULT_FROM_WIN32(GetLastError());
++    return add_bstr_property(node, property, wide);
++}
++
++static BOOL diagnostic_file_version(const char *path, char *out)
++{
++    DWORD ignored, bytes = GetFileVersionInfoSizeA(path, &ignored);
++    UINT count;
++    VS_FIXEDFILEINFO *version;
++    BYTE *buffer;
++    BOOL success = FALSE;
++    if (!bytes || !(buffer = HeapAlloc(GetProcessHeap(), 0, bytes))) return FALSE;
++    if (GetFileVersionInfoA(path, 0, bytes, buffer) &&
++            VerQueryValueA(buffer, "\\", (void **)&version, &count) && count >= sizeof(*version) &&
++            version->dwSignature == VS_FFI_SIGNATURE) {
++        wsprintfA(out, "%u.%02u.%u.%04u", HIWORD(version->dwFileVersionMS),
++                LOWORD(version->dwFileVersionMS), HIWORD(version->dwFileVersionLS), LOWORD(version->dwFileVersionLS));
++        success = TRUE;
++    }
++    HeapFree(GetProcessHeap(), 0, buffer);
++    return success;
++}
++
++static HRESULT fill_dxdiag_version(IDxDiagContainerImpl_Container *node, const WCHAR *property)
++{
++    char file[MAX_PATH], version[64];
++    DWORD length = GetModuleFileNameA(NULL, file, sizeof(file));
++    char *p, *base = file;
++    if (length && length < sizeof(file)) {
++        for (p = file; *p; ++p) if (*p == '\\' || *p == '/') base = p + 1;
++        if (!lstrcmpiA(base, "dxdiag.exe") && diagnostic_file_version(file, version))
++            return add_hardware_text(node, property, version);
++    }
++    length = GetModuleFileNameA(dxdiagn_instance, file, sizeof(file));
++    if (length && length < sizeof(file)) {
++        for (base = p = file; *p; ++p) if (*p == '\\' || *p == '/') base = p + 1;
++        if (sizeof(file) - (base - file) >= sizeof("dxdiag.exe")) {
++            lstrcpyA(base, "dxdiag.exe");
++            if (diagnostic_file_version(file, version)) return add_hardware_text(node, property, version);
++        }
++    }
++    length = GetSystemDirectoryA(file, sizeof(file));
++    if (length && length < sizeof(file) - sizeof("\\dxdiag.exe")) {
++        lstrcatA(file, "\\dxdiag.exe");
++        if (diagnostic_file_version(file, version)) return add_hardware_text(node, property, version);
++    }
++    return add_hardware_text(node, property, "DxDiag executable version unavailable");
+ }
+ 
+ static HRESULT fill_os_string_information(IDxDiagContainerImpl_Container *node, const struct wx_system_identity *identity)
+@@ -712,6 +766,7 @@
+     HRESULT hr;
+     MEMORYSTATUSEX msex;
+     struct wx_system_identity identity;
++    struct wx_firmware_identity firmware;
+     WCHAR service_pack[sizeof(identity.service_pack)];
+     DWORD count, usedpage_mb, availpage_mb;
+     WCHAR buffer[MAX_PATH], computer_name[MAX_COMPUTERNAME_LENGTH + 1], print_buf[200], localized_pagefile_fmt[200];
+@@ -850,15 +905,16 @@
+     if (FAILED(hr))
+         return hr;
+ 
+-    hr = add_bstr_property(node, szSystemManufacturerEnglish, szEmpty);
+-    if (FAILED(hr))
+-        return hr;
+-
+-    hr = add_bstr_property(node, szSystemModelEnglish, szEmpty);
+-    if (FAILED(hr))
+-        return hr;
+-
+-    hr = add_bstr_property(node, szBIOSEnglish, szEmpty);
++    wx_read_firmware_identity(&firmware);
++    hr = add_hardware_text(node, szSystemManufacturerEnglish, firmware.manufacturer);
++    if (FAILED(hr))
++        return hr;
++
++    hr = add_hardware_text(node, szSystemModelEnglish, firmware.model);
++    if (FAILED(hr))
++        return hr;
++
++    hr = add_hardware_text(node, szBIOSEnglish, firmware.bios);
+     if (FAILED(hr))
+         return hr;
+ 
+@@ -870,7 +926,7 @@
+     if (FAILED(hr))
+         return hr;
+ 
+-    hr = add_bstr_property(node, szDxDiagVersion, szEmpty);
++    hr = fill_dxdiag_version(node, szDxDiagVersion);
+     if (FAILED(hr))
+         return hr;
+ 
+--- a/dlls/dxdiagn/provider.c
++++ b/dlls/dxdiagn/provider.c
+@@ -562,6 +562,26 @@
+     if (!MultiByteToWideChar(CP_ACP, 0, str, -1, wide, sizeof(wide) / sizeof(*wide)))
+         return HRESULT_FROM_WIN32(GetLastError());
+     return add_bstr_property(node, property, wide);
++}
++
++static HRESULT fill_setup_parameters(IDxDiagContainerImpl_Container *node, const WCHAR *property)
++{
++    static const char *const commands[] = {
++        "None", "/Silent", "/WindowsUpdate", "/PackageInstall", "/Silent /Reboot", "/Reboot"
++    };
++    HKEY key;
++    DWORD command;
++    char unknown[48];
++    BOOL found;
++    if (RegOpenKeyExA(HKEY_LOCAL_MACHINE, "Software\\Microsoft\\DirectX", 0, KEY_QUERY_VALUE, &key) != ERROR_SUCCESS)
++        return add_hardware_text(node, property, "Not found");
++    found = wx_identity_reg(key, "Command", REG_DWORD, &command, sizeof(command));
++    RegCloseKey(key);
++    if (!found || command == ~(DWORD)0) return add_hardware_text(node, property, "Not found");
++    if (command < sizeof(commands) / sizeof(commands[0]))
++        return add_hardware_text(node, property, commands[command]);
++    wsprintfA(unknown, "Unknown switch (%lu)", command);
++    return add_hardware_text(node, property, unknown);
+ }
+ 
+ static BOOL diagnostic_file_version(const char *path, char *out)
+@@ -758,7 +778,6 @@
+     static const WCHAR szSetupParamEnglish[] = {'s','z','S','e','t','u','p','P','a','r','a','m','E','n','g','l','i','s','h',0};
+     static const WCHAR szDxDiagVersion[] = {'s','z','D','x','D','i','a','g','V','e','r','s','i','o','n',0};
+ 
+-    static const WCHAR notpresentW[] = {'N','o','t',' ','p','r','e','s','e','n','t',0};
+ 
+     static const WCHAR pagefile_fmtW[] = {'%','u','M','B',' ','u','s','e','d',',',' ','%','u','M','B',' ','a','v','a','i','l','a','b','l','e',0};
+     static const WCHAR physmem_fmtW[] = {'%','u','M','B',' ','R','A','M',0};
+@@ -922,7 +941,7 @@
+     if (FAILED(hr))
+         return hr;
+ 
+-    hr = add_bstr_property(node, szSetupParamEnglish, notpresentW);
++    hr = fill_setup_parameters(node, szSetupParamEnglish);
+     if (FAILED(hr))
+         return hr;
+ 
+--- a/dlls/dxdiagn/provider.c
++++ b/dlls/dxdiagn/provider.c
+@@ -1710,12 +1710,19 @@
+ 
+     hr = CoCreateInstance(&CLSID_SystemDeviceEnum, NULL, CLSCTX_INPROC_SERVER,
+                           &IID_ICreateDevEnum, (void **)&pCreateDevEnum);
+-    if (FAILED(hr))
+-        return hr;
++    /* DirectShow is an optional runtime. Its absence is an empty filter
++     * category, so the other independent DxDiag containers remain available. */
++    if (hr == REGDB_E_CLASSNOTREG || hr == CLASS_E_CLASSNOTAVAILABLE) return S_OK;
++    if (FAILED(hr)) return hr;
++    if (!pCreateDevEnum) return E_UNEXPECTED;
+ 
+     hr = ICreateDevEnum_CreateClassEnumerator(pCreateDevEnum, &CLSID_ActiveMovieCategories, &pEmCat, 0);
+-    if (FAILED(hr))
++    if (hr == S_FALSE || hr == REGDB_E_CLASSNOTREG || hr == CLASS_E_CLASSNOTAVAILABLE) {
++        hr = S_OK;
+         goto cleanup;
++    }
++    if (FAILED(hr)) goto cleanup;
++    if (!pEmCat) { hr = E_UNEXPECTED; goto cleanup; }
+ 
+     while (IEnumMoniker_Next(pEmCat, 1, &pMCat, NULL) == S_OK)
+     {
+--- a/dlls/dxdiagn/provider.c
++++ b/dlls/dxdiagn/provider.c
+@@ -1029,6 +1029,8 @@
+     }
+ }
+ 
++#include "wx_provider_display.h"
++
+ static HRESULT fill_display_information_d3d(IDxDiagContainerImpl_Container *node)
+ {
+     IDxDiagContainerImpl_Container *display_adapter;
+@@ -1070,6 +1072,11 @@
+ 
+         add_subcontainer(node, display_adapter);
+ 
++        hr = wx_fill_measured_display(display_adapter, pDirect3D9, index);
++        if (FAILED(hr)) goto cleanup;
++        if (hr == S_OK) continue;
++
++
+         hr = IDirect3D9_GetAdapterIdentifier(pDirect3D9, index, 0, &adapter_info);
+         if (SUCCEEDED(hr))
+         {
+@@ -1232,6 +1239,10 @@
+         return E_OUTOFMEMORY;
+ 
+     add_subcontainer(node, display_adapter);
++
++    hr = wx_fill_measured_display(display_adapter, NULL, 0);
++    if (hr != S_FALSE) return hr;
++
+ 
+     disp_dev.cb = sizeof(disp_dev);
+     if (EnumDisplayDevicesW( NULL, 0, &disp_dev, 0 ))
+--- a/dlls/dxdiagn/Makefile.in
++++ b/dlls/dxdiagn/Makefile.in
+@@ -1,5 +1,5 @@
+ MODULE    = dxdiagn.dll
+-IMPORTS   = strmiids dxguid uuid d3d9 ddraw version ole32 oleaut32 psapi user32 advapi32
++IMPORTS   = strmiids dxguid uuid d3d9 ddraw version ole32 oleaut32 psapi user32 advapi32 gdi32
+ 
+ C_SRCS = \
+ 	container.c \
+--- a/dlls/dxdiagn/provider.c
++++ b/dlls/dxdiagn/provider.c
+@@ -1044,6 +1044,10 @@
+         return E_FAIL;
+ 
+     count = IDirect3D9_GetAdapterCount(pDirect3D9);
++    if (!count) {
++        IDirect3D9_Release(pDirect3D9);
++        return E_FAIL;
++    }
+     for (index = 0; index < count; index++)
+     {
+         static const WCHAR adapterid_fmtW[] = {'%','u',0};
+--- a/dlls/d3drm/frame.c
++++ b/dlls/d3drm/frame.c
+@@ -764,10 +764,14 @@
+     struct d3drm_frame *This = impl_from_IDirect3DRMFrame3(iface);
+     struct d3drm_frame *child_obj = unsafe_impl_from_IDirect3DRMFrame3(child);
+ 
++    struct d3drm_frame *ancestor;
++
+     TRACE("iface %p, child %p.\n", iface, child);
+ 
+     if (!child_obj)
+         return D3DRMERR_BADOBJECT;
++    for (ancestor = This; ancestor; ancestor = ancestor->parent)
++        if (ancestor == child_obj) return D3DRMERR_BADOBJECT;
+ 
+     if (child_obj->parent)
+     {
+@@ -932,33 +936,72 @@
+     return E_NOTIMPL;
+ }
+ 
++/* Retained-mode frames act on row vectors. Each frame stores its transform
++ * relative to its parent. All three public versions share this representation. */
++static void frame_multiply(D3DRMMATRIX4D out, const D3DRMMATRIX4D first, const D3DRMMATRIX4D second)
++{
++    D3DRMMATRIX4D result;
++    unsigned int r, c, k;
++    for (r = 0; r < 4; ++r)
++        for (c = 0; c < 4; ++c)
++        {
++            result[r][c] = 0.0f;
++            for (k = 0; k < 4; ++k) result[r][c] += first[r][k] * second[k][c];
++        }
++    memcpy(out, result, sizeof(result));
++}
++
++static void frame_world_matrix(const struct d3drm_frame *frame, D3DRMMATRIX4D result)
++{
++    memcpy(result, frame->transform, sizeof(D3DRMMATRIX4D));
++    while ((frame = frame->parent)) frame_multiply(result, result, frame->transform);
++}
++
++static void frame_transform_point(const D3DRMMATRIX4D m, D3DVECTOR *out, const D3DVECTOR *v)
++{
++    const float x = v->u1.x, y = v->u2.y, z = v->u3.z;
++    out->u1.x = x * m[0][0] + y * m[1][0] + z * m[2][0] + m[3][0];
++    out->u2.y = x * m[0][1] + y * m[1][1] + z * m[2][1] + m[3][1];
++    out->u3.z = x * m[0][2] + y * m[1][2] + z * m[2][2] + m[3][2];
++}
++
++static BOOL frame_inverse_affine(const D3DRMMATRIX4D m, D3DRMMATRIX4D inv)
++{
++    unsigned int r, c;
++    double cof[3][3], det;
++    for (r = 0; r < 3; ++r)
++        for (c = 0; c < 3; ++c)
++        {
++            unsigned int r1 = (r + 1) % 3, r2 = (r + 2) % 3;
++            unsigned int c1 = (c + 1) % 3, c2 = (c + 2) % 3;
++            cof[r][c] = (double)m[r1][c1] * m[r2][c2] - (double)m[r1][c2] * m[r2][c1];
++        }
++    det = m[0][0] * cof[0][0] + m[0][1] * cof[0][1] + m[0][2] * cof[0][2];
++    if (det == 0.0) return FALSE;
++    for (c = 0; c < 3; ++c)
++    {
++        for (r = 0; r < 3; ++r) inv[r][c] = cof[c][r] / det;
++        inv[3][c] = -(m[3][0] * inv[0][c] + m[3][1] * inv[1][c] + m[3][2] * inv[2][c]);
++        inv[c][3] = 0.0f;
++    }
++    inv[3][3] = 1.0f;
++    return TRUE;
++}
++
+ static HRESULT WINAPI d3drm_frame3_AddTransform(IDirect3DRMFrame3 *iface,
+         D3DRMCOMBINETYPE type, D3DRMMATRIX4D matrix)
+ {
+     struct d3drm_frame *frame = impl_from_IDirect3DRMFrame3(iface);
+-
+-    TRACE("iface %p, type %#x, matrix %p.\n", iface, type, matrix);
+-
++    if (!matrix || matrix[0][3] || matrix[1][3] || matrix[2][3] || matrix[3][3] != 1.0f)
++        return D3DRMERR_BADVALUE;
+     switch (type)
+     {
+-        case D3DRMCOMBINE_REPLACE:
+-            memcpy(frame->transform, matrix, sizeof(D3DRMMATRIX4D));
+-            break;
+-
+-        case D3DRMCOMBINE_BEFORE:
+-            FIXME("D3DRMCOMBINE_BEFORE not supported yet\n");
+-            break;
+-
+-        case D3DRMCOMBINE_AFTER:
+-            FIXME("D3DRMCOMBINE_AFTER not supported yet\n");
+-            break;
+-
+-        default:
+-            WARN("Unknown Combine Type %u\n", type);
+-            return D3DRMERR_BADVALUE;
+-    }
+-
+-    return S_OK;
++        case D3DRMCOMBINE_REPLACE: memcpy(frame->transform, matrix, sizeof(frame->transform)); break;
++        case D3DRMCOMBINE_BEFORE: frame_multiply(frame->transform, matrix, frame->transform); break;
++        case D3DRMCOMBINE_AFTER: frame_multiply(frame->transform, frame->transform, matrix); break;
++        default: return D3DRMERR_BADVALUE;
++    }
++    return D3DRM_OK;
+ }
+ 
+ static HRESULT WINAPI d3drm_frame2_AddTransform(IDirect3DRMFrame2 *iface,
+@@ -984,74 +1027,77 @@
+ static HRESULT WINAPI d3drm_frame3_AddTranslation(IDirect3DRMFrame3 *iface,
+         D3DRMCOMBINETYPE type, D3DVALUE x, D3DVALUE y, D3DVALUE z)
+ {
+-    FIXME("iface %p, type %#x, x %.8e, y %.8e, z %.8e stub!\n", iface, type, x, y, z);
+-
+-    return E_NOTIMPL;
++    D3DRMMATRIX4D m;
++    memcpy(m, identity, sizeof(m));
++    m[3][0] = x; m[3][1] = y; m[3][2] = z;
++    return d3drm_frame3_AddTransform(iface, type, m);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame2_AddTranslation(IDirect3DRMFrame2 *iface,
+         D3DRMCOMBINETYPE type, D3DVALUE x, D3DVALUE y, D3DVALUE z)
+ {
+-    FIXME("iface %p, type %#x, x %.8e, y %.8e, z %.8e stub!\n", iface, type, x, y, z);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame2(iface);
++    return d3drm_frame3_AddTranslation(&frame->IDirect3DRMFrame3_iface, type, x, y, z);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame1_AddTranslation(IDirect3DRMFrame *iface,
+         D3DRMCOMBINETYPE type, D3DVALUE x, D3DVALUE y, D3DVALUE z)
+ {
+-    FIXME("iface %p, type %#x, x %.8e, y %.8e, z %.8e stub!\n", iface, type, x, y, z);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame(iface);
++    return d3drm_frame3_AddTranslation(&frame->IDirect3DRMFrame3_iface, type, x, y, z);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame3_AddScale(IDirect3DRMFrame3 *iface,
+         D3DRMCOMBINETYPE type, D3DVALUE sx, D3DVALUE sy, D3DVALUE sz)
+ {
+-    FIXME("iface %p, type %#x, sx %.8e, sy %.8e, sz %.8e stub!\n", iface, type, sx, sy, sz);
+-
+-    return E_NOTIMPL;
++    D3DRMMATRIX4D m;
++    memcpy(m, identity, sizeof(m));
++    m[0][0] = sx; m[1][1] = sy; m[2][2] = sz;
++    return d3drm_frame3_AddTransform(iface, type, m);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame2_AddScale(IDirect3DRMFrame2 *iface,
+         D3DRMCOMBINETYPE type, D3DVALUE sx, D3DVALUE sy, D3DVALUE sz)
+ {
+-    FIXME("iface %p, type %#x, sx %.8e, sy %.8e, sz %.8e stub!\n", iface, type, sx, sy, sz);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame2(iface);
++    return d3drm_frame3_AddScale(&frame->IDirect3DRMFrame3_iface, type, sx, sy, sz);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame1_AddScale(IDirect3DRMFrame *iface,
+         D3DRMCOMBINETYPE type, D3DVALUE sx, D3DVALUE sy, D3DVALUE sz)
+ {
+-    FIXME("iface %p, type %#x, sx %.8e, sy %.8e, sz %.8e stub!\n", iface, type, sx, sy, sz);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame(iface);
++    return d3drm_frame3_AddScale(&frame->IDirect3DRMFrame3_iface, type, sx, sy, sz);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame3_AddRotation(IDirect3DRMFrame3 *iface,
+         D3DRMCOMBINETYPE type, D3DVALUE x, D3DVALUE y, D3DVALUE z, D3DVALUE theta)
+ {
+-    FIXME("iface %p, type %#x, x %.8e, y %.8e, z %.8e, theta %.8e stub!\n",
+-            iface, type, x, y, z, theta);
+-
+-    return E_NOTIMPL;
++    D3DRMMATRIX4D m;
++    D3DVECTOR axis;
++    D3DVALUE sine = sin(theta), cosine = cos(theta), t = 1.0f - cosine;
++    axis.u1.x = x; axis.u2.y = y; axis.u3.z = z;
++    D3DRMVectorNormalize(&axis);
++    x = axis.u1.x; y = axis.u2.y; z = axis.u3.z;
++    memcpy(m, identity, sizeof(m));
++    m[0][0] = cosine + t*x*x; m[0][1] = t*x*y + sine*z; m[0][2] = t*x*z - sine*y;
++    m[1][0] = t*y*x - sine*z; m[1][1] = cosine + t*y*y; m[1][2] = t*y*z + sine*x;
++    m[2][0] = t*z*x + sine*y; m[2][1] = t*z*y - sine*x; m[2][2] = cosine + t*z*z;
++    return d3drm_frame3_AddTransform(iface, type, m);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame2_AddRotation(IDirect3DRMFrame2 *iface,
+         D3DRMCOMBINETYPE type, D3DVALUE x, D3DVALUE y, D3DVALUE z, D3DVALUE theta)
+ {
+-    FIXME("iface %p, type %#x, x %.8e, y %.8e, z %.8e, theta %.8e stub!\n", iface, type, x, y, z, theta);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame2(iface);
++    return d3drm_frame3_AddRotation(&frame->IDirect3DRMFrame3_iface, type, x, y, z, theta);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame1_AddRotation(IDirect3DRMFrame *iface,
+         D3DRMCOMBINETYPE type, D3DVALUE x, D3DVALUE y, D3DVALUE z, D3DVALUE theta)
+ {
+-    FIXME("iface %p, type %#x, x %.8e, y %.8e, z %.8e, theta %.8e stub!\n", iface, type, x, y, z, theta);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame(iface);
++    return d3drm_frame3_AddRotation(&frame->IDirect3DRMFrame3_iface, type, x, y, z, theta);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame3_AddVisual(IDirect3DRMFrame3 *iface, IUnknown *visual)
+@@ -1561,23 +1607,25 @@
+ 
+ static HRESULT WINAPI d3drm_frame3_InverseTransform(IDirect3DRMFrame3 *iface, D3DVECTOR *d, D3DVECTOR *s)
+ {
+-    FIXME("iface %p, d %p, s %p stub!\n", iface, d, s);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame3(iface);
++    D3DRMMATRIX4D world, inverse;
++    if (!d || !s) return D3DRMERR_BADVALUE;
++    frame_world_matrix(frame, world);
++    if (!frame_inverse_affine(world, inverse)) return D3DRMERR_BADVALUE;
++    frame_transform_point(inverse, d, s);
++    return D3DRM_OK;
+ }
+ 
+ static HRESULT WINAPI d3drm_frame2_InverseTransform(IDirect3DRMFrame2 *iface, D3DVECTOR *d, D3DVECTOR *s)
+ {
+-    FIXME("iface %p, d %p, s %p stub!\n", iface, d, s);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame2(iface);
++    return d3drm_frame3_InverseTransform(&frame->IDirect3DRMFrame3_iface, d, s);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame1_InverseTransform(IDirect3DRMFrame *iface, D3DVECTOR *d, D3DVECTOR *s)
+ {
+-    FIXME("iface %p, d %p, s %p stub!\n", iface, d, s);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame(iface);
++    return d3drm_frame3_InverseTransform(&frame->IDirect3DRMFrame3_iface, d, s);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame3_Load(IDirect3DRMFrame3 *iface, void *filename,
+@@ -2430,23 +2478,24 @@
+ 
+ static HRESULT WINAPI d3drm_frame3_Transform(IDirect3DRMFrame3 *iface, D3DVECTOR *d, D3DVECTOR *s)
+ {
+-    FIXME("iface %p, d %p, s %p stub!\n", iface, d, s);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame3(iface);
++    D3DRMMATRIX4D world;
++    if (!d || !s) return D3DRMERR_BADVALUE;
++    frame_world_matrix(frame, world);
++    frame_transform_point(world, d, s);
++    return D3DRM_OK;
+ }
+ 
+ static HRESULT WINAPI d3drm_frame2_Transform(IDirect3DRMFrame2 *iface, D3DVECTOR *d, D3DVECTOR *s)
+ {
+-    FIXME("iface %p, d %p, s %p stub!\n", iface, d, s);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame2(iface);
++    return d3drm_frame3_Transform(&frame->IDirect3DRMFrame3_iface, d, s);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame1_Transform(IDirect3DRMFrame *iface, D3DVECTOR *d, D3DVECTOR *s)
+ {
+-    FIXME("iface %p, d %p, s %p stub!\n", iface, d, s);
+-
+-    return E_NOTIMPL;
++    struct d3drm_frame *frame = impl_from_IDirect3DRMFrame(iface);
++    return d3drm_frame3_Transform(&frame->IDirect3DRMFrame3_iface, d, s);
+ }
+ 
+ static HRESULT WINAPI d3drm_frame2_AddMoveCallback2(IDirect3DRMFrame2 *iface,
+--- a/dlls/d3drm/meshbuilder.c
++++ b/dlls/d3drm/meshbuilder.c
+@@ -1904,138 +1904,130 @@
+     return 0;
+ }
+ 
++/* .x stores position and normal indices separately. A retained-mode mesh
++ * group instead indexes complete vertices and owns its own index space. */
++struct group_vertex_key
++{
++    DWORD normal, next;
++};
++
++static HRESULT mesh_builder_add_group(struct d3drm_mesh_builder *builder,
++        IDirect3DRMMesh *mesh, DWORD material_index)
++{
++    const DWORD *in = builder->pFaceData, *end = in + builder->face_data_size;
++    DWORD i, j, max_corners = builder->face_data_size / 2, nv = 0, nf = 0, count = 0, per_face = 0;
++    BOOL mixed = FALSE;
++    DWORD *heads = NULL, *indices = NULL;
++    struct group_vertex_key *keys = NULL;
++    D3DRMVERTEX *vertices = NULL;
++    D3DRMGROUPINDEX group;
++    HRESULT hr = E_OUTOFMEMORY;
++    struct mesh_material *material = builder->nb_materials ? &builder->materials[material_index] : NULL;
++    D3DCOLOR color = material ? material->color : builder->color;
++    IDirect3DRMMaterial2 *mat = material ? material->material : builder->material;
++    IDirect3DRMTexture3 *tex = material ? material->texture : builder->texture;
++    if (max_corners > ~(SIZE_T)0 / sizeof(*vertices) || builder->nb_vertices > ~(SIZE_T)0 / sizeof(*heads)
++            || builder->face_data_size > ~(SIZE_T)0 / sizeof(*indices)) return E_OUTOFMEMORY;
++    for (i = 0; i < builder->nb_faces; ++i)
++    {
++        DWORD n;
++        if (in == end) return D3DRMERR_BADVALUE;
++        n = *in++;
++        if (n > (end - in) / 2) return D3DRMERR_BADVALUE;
++        if (!material || builder->material_indices[i] == material_index)
++        {
++            if (nf && n != per_face) mixed = TRUE;
++            per_face = n;
++            ++nf;
++        }
++        in += 2 * n;
++    }
++    if (!nf) return D3DRM_OK;
++    if (mixed) per_face = 0;
++    heads = HeapAlloc(GetProcessHeap(), 0, builder->nb_vertices * sizeof(*heads));
++    keys = HeapAlloc(GetProcessHeap(), 0, max_corners * sizeof(*keys));
++    vertices = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, max_corners * sizeof(*vertices));
++    indices = HeapAlloc(GetProcessHeap(), 0, builder->face_data_size * sizeof(*indices));
++    if (!heads || !keys || !vertices || !indices) goto done;
++    memset(heads, 0xff, builder->nb_vertices * sizeof(*heads));
++    in = builder->pFaceData;
++    for (i = 0; i < builder->nb_faces; ++i)
++    {
++        DWORD n = *in++;
++        if (material && builder->material_indices[i] != material_index)
++        {
++            in += 2 * n;
++            continue;
++        }
++        if (!per_face) indices[count++] = n;
++        for (j = 0; j < n; ++j)
++        {
++            DWORD index, pos = *in++, normal = *in++;
++            if (pos >= builder->nb_vertices || normal >= builder->nb_normals)
++            {
++                hr = D3DRMERR_BADVALUE;
++                goto done;
++            }
++            for (index = heads[pos]; index != ~0u && keys[index].normal != normal; index = keys[index].next) {}
++            if (index == ~0u)
++            {
++                index = nv++;
++                keys[index].normal = normal;
++                keys[index].next = heads[pos];
++                heads[pos] = index;
++                vertices[index].position = builder->pVertices[pos];
++                vertices[index].normal = builder->pNormals[normal];
++                vertices[index].color = color;
++                if (pos < builder->nb_coords2d)
++                {
++                    vertices[index].tu = builder->pCoords2d[pos].u;
++                    vertices[index].tv = builder->pCoords2d[pos].v;
++                }
++            }
++            indices[count++] = index;
++        }
++    }
++    hr = IDirect3DRMMesh_AddGroup(mesh, nv, nf, per_face, indices, &group);
++    if (SUCCEEDED(hr) && nv) hr = IDirect3DRMMesh_SetVertices(mesh, group, 0, nv, vertices);
++    if (SUCCEEDED(hr)) hr = IDirect3DRMMesh_SetGroupColor(mesh, group, color);
++    if (SUCCEEDED(hr) && mat) hr = IDirect3DRMMesh_SetGroupMaterial(mesh, group, (IDirect3DRMMaterial *)mat);
++    if (SUCCEEDED(hr) && tex)
++    {
++        IDirect3DRMTexture *texture;
++        hr = IDirect3DRMTexture3_QueryInterface(tex, &IID_IDirect3DRMTexture, (void **)&texture);
++        if (SUCCEEDED(hr))
++        {
++            hr = IDirect3DRMMesh_SetGroupTexture(mesh, group, texture);
++            IDirect3DRMTexture_Release(texture);
++        }
++    }
++done:
++    HeapFree(GetProcessHeap(), 0, heads);
++    HeapFree(GetProcessHeap(), 0, keys);
++    HeapFree(GetProcessHeap(), 0, vertices);
++    HeapFree(GetProcessHeap(), 0, indices);
++    return hr;
++}
++
+ static HRESULT WINAPI d3drm_mesh_builder3_CreateMesh(IDirect3DRMMeshBuilder3 *iface, IDirect3DRMMesh **mesh)
+ {
+-    struct d3drm_mesh_builder *This = impl_from_IDirect3DRMMeshBuilder3(iface);
++    struct d3drm_mesh_builder *builder = impl_from_IDirect3DRMMeshBuilder3(iface);
++    DWORD groups = builder->nb_materials ? builder->nb_materials : 1;
+     HRESULT hr;
+-    D3DRMGROUPINDEX group;
+-
+-    TRACE("iface %p, mesh %p.\n", iface, mesh);
+-
+-    if (!mesh)
+-        return E_POINTER;
+-
++    if (!mesh) return E_POINTER;
+     hr = Direct3DRMMesh_create(mesh);
+-    if (FAILED(hr))
+-        return hr;
+-
+-    /* If there is mesh data, create a group and put data inside */
+-    if (This->nb_vertices)
+-    {
+-        DWORD i, j;
+-        int k;
+-        D3DRMVERTEX* vertices;
+-
+-        vertices = HeapAlloc(GetProcessHeap(), 0, This->nb_vertices * sizeof(D3DRMVERTEX));
+-        if (!vertices)
++    if (FAILED(hr)) return hr;
++    /* Retained mode exposes material groups in reverse .x file order. */
++    while (groups && builder->nb_faces)
++    {
++        hr = mesh_builder_add_group(builder, *mesh, --groups);
++        if (FAILED(hr))
+         {
+             IDirect3DRMMesh_Release(*mesh);
+-            return E_OUTOFMEMORY;
++            *mesh = NULL;
++            return hr;
+         }
+-        for (i = 0; i < This->nb_vertices; i++)
+-            vertices[i].position = This->pVertices[i];
+-        hr = IDirect3DRMMesh_SetVertices(*mesh, 0, 0, This->nb_vertices, vertices);
+-        HeapFree(GetProcessHeap(), 0, vertices);
+-
+-        /* Groups are in reverse order compared to materials list in X file */
+-        for (k = This->nb_materials - 1; k >= 0; k--)
+-        {
+-            unsigned* face_data;
+-            unsigned* out_ptr;
+-            DWORD* in_ptr = This->pFaceData;
+-            ULONG vertex_per_face = 0;
+-            BOOL* used_vertices;
+-            unsigned nb_vertices = 0;
+-            unsigned nb_faces = 0;
+-
+-            used_vertices = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, This->face_data_size * sizeof(*used_vertices));
+-            if (!used_vertices)
+-            {
+-                IDirect3DRMMesh_Release(*mesh);
+-                return E_OUTOFMEMORY;
+-            }
+-
+-            face_data = HeapAlloc(GetProcessHeap(), 0, This->face_data_size * sizeof(*face_data));
+-            if (!face_data)
+-            {
+-                HeapFree(GetProcessHeap(), 0, used_vertices);
+-                IDirect3DRMMesh_Release(*mesh);
+-                return E_OUTOFMEMORY;
+-            }
+-            out_ptr = face_data;
+-
+-            /* If all faces have the same number of vertex, set vertex_per_face */
+-            for (i = 0; i < This->nb_faces; i++)
+-            {
+-                /* Process only faces belonging to the group */
+-                if (This->material_indices[i] == k)
+-                {
+-                    if (vertex_per_face && (vertex_per_face != *in_ptr))
+-                        break;
+-                    vertex_per_face = *in_ptr;
+-                }
+-                in_ptr += 1 + *in_ptr * 2;
+-            }
+-            if (i != This->nb_faces)
+-                vertex_per_face = 0;
+-
+-            /* Put only vertex indices */
+-            in_ptr = This->pFaceData;
+-            for (i = 0; i < This->nb_faces; i++)
+-            {
+-                DWORD nb_indices = *in_ptr++;
+-
+-                /* Skip faces not belonging to the group */
+-                if (This->material_indices[i] != k)
+-                {
+-                    in_ptr += 2 * nb_indices;
+-                    continue;
+-                }
+-
+-                /* Don't put nb indices when vertex_per_face is set */
+-                if (vertex_per_face)
+-                    *out_ptr++ = nb_indices;
+-
+-                for (j = 0; j < nb_indices; j++)
+-                {
+-                    *out_ptr = *in_ptr++;
+-                    used_vertices[*out_ptr++] = TRUE;
+-                    /* Skip normal index */
+-                    in_ptr++;
+-                }
+-
+-                nb_faces++;
+-            }
+-
+-            for (i = 0; i < This->nb_vertices; i++)
+-                if (used_vertices[i])
+-                    nb_vertices++;
+-
+-            hr = IDirect3DRMMesh_AddGroup(*mesh, nb_vertices, nb_faces, vertex_per_face, face_data, &group);
+-            HeapFree(GetProcessHeap(), 0, used_vertices);
+-            HeapFree(GetProcessHeap(), 0, face_data);
+-            if (SUCCEEDED(hr))
+-                hr = IDirect3DRMMesh_SetGroupColor(*mesh, group, This->materials[k].color);
+-            if (SUCCEEDED(hr))
+-                hr = IDirect3DRMMesh_SetGroupMaterial(*mesh, group,
+-                        (IDirect3DRMMaterial *)This->materials[k].material);
+-            if (SUCCEEDED(hr) && This->materials[k].texture)
+-            {
+-                IDirect3DRMTexture *texture;
+-
+-                IDirect3DRMTexture3_QueryInterface(This->materials[k].texture,
+-                        &IID_IDirect3DRMTexture, (void **)&texture);
+-                hr = IDirect3DRMMesh_SetGroupTexture(*mesh, group, texture);
+-                IDirect3DRMTexture_Release(texture);
+-            }
+-            if (FAILED(hr))
+-            {
+-                IDirect3DRMMesh_Release(*mesh);
+-                return hr;
+-            }
+-        }
+-    }
+-
++    }
+     return D3DRM_OK;
+ }
+ 
+@@ -2519,7 +2511,7 @@
+         {
+             nb_indices = *face_data_ptr;
+             group->face_data_size += nb_indices + 1;
+-            face_data_ptr += nb_indices;
++            face_data_ptr += nb_indices + 1;
+         }
+     }
+ 

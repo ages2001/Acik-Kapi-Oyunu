@@ -1,0 +1,461 @@
+--- a/include/c11/threads_win32.h
++++ b/include/c11/threads_win32.h
+@@ -76,16 +76,19 @@
+ #define TSS_DTOR_ITERATIONS 1
+ 
+ // FIXME: temporary non-standard hack to ease transition
+-#define _MTX_INITIALIZER_NP {(PCRITICAL_SECTION_DEBUG)-1, -1, 0, 0, 0, 0}
++#define _MTX_INITIALIZER_NP {NULL}
+ 
+ /*---------------------------- types ----------------------------*/
+-typedef CONDITION_VARIABLE cnd_t;
++#include "mesa_condition.h"
++typedef windx_condition cnd_t;
+ 
+ typedef HANDLE thrd_t;
+ 
+ typedef DWORD tss_t;
+ 
+-typedef CRITICAL_SECTION mtx_t;
++/* Create unnamed recursive mutexes through the OS. The internal layout of
++ * CRITICAL_SECTION differs between Windows 9x and Windows NT. */
++typedef struct { HANDLE volatile handle; } mtx_t;
+ 
+ #ifdef EMULATED_THREADS_USE_NATIVE_CALL_ONCE
+ typedef INIT_ONCE once_flag;
+@@ -218,34 +221,32 @@
+ cnd_broadcast(cnd_t *cond)
+ {
+     assert(cond != NULL);
+-    WakeAllConditionVariable(cond);
++    return windx_condition_wake(cond, TRUE) ? thrd_success : thrd_error;
++}
++
++// 7.25.3.2
++static inline void
++cnd_destroy(cnd_t *cond)
++{
++    assert(cond != NULL);
++    windx_condition_destroy(cond);
++}
++
++// 7.25.3.3
++static inline int
++cnd_init(cnd_t *cond)
++{
++    assert(cond != NULL);
++    windx_condition_init(cond);
+     return thrd_success;
+ }
+ 
+-// 7.25.3.2
+-static inline void
+-cnd_destroy(cnd_t *cond)
++// 7.25.3.4
++static inline int
++cnd_signal(cnd_t *cond)
+ {
+     assert(cond != NULL);
+-    // do nothing
+-}
+-
+-// 7.25.3.3
+-static inline int
+-cnd_init(cnd_t *cond)
+-{
+-    assert(cond != NULL);
+-    InitializeConditionVariable(cond);
+-    return thrd_success;
+-}
+-
+-// 7.25.3.4
+-static inline int
+-cnd_signal(cnd_t *cond)
+-{
+-    assert(cond != NULL);
+-    WakeConditionVariable(cond);
+-    return thrd_success;
++    return windx_condition_wake(cond, FALSE) ? thrd_success : thrd_error;
+ }
+ 
+ // 7.25.3.5
+@@ -257,7 +258,7 @@
+     assert(abs_time != NULL);
+ #ifdef HAVE_TIMESPEC_GET
+     const DWORD timeout = impl_abs2relmsec(abs_time);
+-    if (SleepConditionVariableCS(cond, mtx, timeout))
++    if (windx_condition_wait(cond, mtx->handle, timeout))
+         return thrd_success;
+     return (GetLastError() == ERROR_TIMEOUT) ? thrd_busy : thrd_error;
+ #else
+@@ -271,18 +272,38 @@
+ {
+     assert(cond != NULL);
+     assert(mtx != NULL);
+-    SleepConditionVariableCS(cond, mtx, INFINITE);
+-    return thrd_success;
++    return windx_condition_wait(cond, mtx->handle, INFINITE) ? thrd_success : thrd_error;
+ }
+ 
+ 
+ /*-------------------- 7.25.4 Mutex functions --------------------*/
++static inline int
++impl_mtx_acquire(mtx_t *mtx, DWORD timeout)
++{
++    HANDLE handle = mtx->handle;
++    if (!handle) {
++        HANDLE candidate = CreateMutexA(NULL, FALSE, NULL);
++        if (!candidate)
++            return thrd_nomem;
++        handle = InterlockedCompareExchangePointer(&mtx->handle, candidate, NULL);
++        if (handle)
++            CloseHandle(candidate);
++        else
++            handle = candidate;
++    }
++    DWORD result = WaitForSingleObject(handle, timeout);
++    if (result == WAIT_OBJECT_0 || result == WAIT_ABANDONED)
++        return thrd_success;
++    return result == WAIT_TIMEOUT ? thrd_busy : thrd_error;
++}
++
+ // 7.25.4.1
+ static inline void
+ mtx_destroy(mtx_t *mtx)
+ {
+     assert(mtx);
+-    DeleteCriticalSection(mtx);
++    if (mtx->handle) CloseHandle(mtx->handle);
++    mtx->handle = NULL;
+ }
+ 
+ // 7.25.4.2
+@@ -295,8 +316,8 @@
+       && type != (mtx_timed|mtx_recursive)
+       && type != (mtx_try|mtx_recursive))
+         return thrd_error;
+-    InitializeCriticalSection(mtx);
+-    return thrd_success;
++    mtx->handle = CreateMutexA(NULL, FALSE, NULL);
++    return mtx->handle ? thrd_success : thrd_nomem;
+ }
+ 
+ // 7.25.4.3
+@@ -304,8 +325,7 @@
+ mtx_lock(mtx_t *mtx)
+ {
+     assert(mtx != NULL);
+-    EnterCriticalSection(mtx);
+-    return thrd_success;
++    return impl_mtx_acquire(mtx, INFINITE);
+ }
+ 
+ // 7.25.4.4
+@@ -315,13 +335,7 @@
+     assert(mtx != NULL);
+     assert(ts != NULL);
+ #ifdef HAVE_TIMESPEC_GET
+-    while (mtx_trylock(mtx) != thrd_success) {
+-        if (impl_abs2relmsec(ts) == 0)
+-            return thrd_busy;
+-        // busy loop!
+-        thrd_yield();
+-    }
+-    return thrd_success;
++    return impl_mtx_acquire(mtx, impl_abs2relmsec(ts));
+ #else
+     return thrd_error;
+ #endif
+@@ -332,7 +346,7 @@
+ mtx_trylock(mtx_t *mtx)
+ {
+     assert(mtx != NULL);
+-    return TryEnterCriticalSection(mtx) ? thrd_success : thrd_busy;
++    return impl_mtx_acquire(mtx, 0);
+ }
+ 
+ // 7.25.4.6
+@@ -340,8 +354,7 @@
+ mtx_unlock(mtx_t *mtx)
+ {
+     assert(mtx != NULL);
+-    LeaveCriticalSection(mtx);
+-    return thrd_success;
++    return ReleaseMutex(mtx->handle) ? thrd_success : thrd_error;
+ }
+ 
+ 
+@@ -463,7 +476,7 @@
+ static inline void
+ thrd_yield(void)
+ {
+-    SwitchToThread();
++    Sleep(0);
+ }
+ 
+ 
+--- a/src/gallium/frontends/wgl/stw_tls.c
++++ b/src/gallium/frontends/wgl/stw_tls.c
+@@ -39,9 +39,7 @@
+  * Static mutex to protect the access to g_pendingTlsData global and
+  * stw_tls_data::next member.
+  */
+-static CRITICAL_SECTION g_mutex = {
+-   (PCRITICAL_SECTION_DEBUG)-1, -1, 0, 0, 0, 0
+-};
++static CRITICAL_SECTION g_mutex;
+ 
+ /**
+  * There is no way to invoke TlsSetValue for a different thread, so we
+@@ -64,6 +62,8 @@
+    if (tlsIndex == TLS_OUT_OF_INDEXES) {
+       return FALSE;
+    }
++
++   InitializeCriticalSection(&g_mutex);
+ 
+    /*
+     * DllMain is called with DLL_THREAD_ATTACH only for threads created after
+@@ -73,14 +73,22 @@
+     * XXX: Except for the current thread since it there is an explicit
+     * stw_tls_init_thread() call for it later on.
+     */
+-   if (1) {
++   HMODULE kernel = GetModuleHandleA("kernel32.dll");
++   HANDLE (WINAPI *snapshot)(DWORD, DWORD) = (HANDLE (WINAPI *)(DWORD, DWORD))
++      GetProcAddress(kernel, "CreateToolhelp32Snapshot");
++   BOOL (WINAPI *first)(HANDLE, LPTHREADENTRY32) = (BOOL (WINAPI *)(HANDLE, LPTHREADENTRY32))
++      GetProcAddress(kernel, "Thread32First");
++   BOOL (WINAPI *next)(HANDLE, LPTHREADENTRY32) = (BOOL (WINAPI *)(HANDLE, LPTHREADENTRY32))
++      GetProcAddress(kernel, "Thread32Next");
++   /* stw_tls_get_data() also initializes previously existing threads on first use. */
++   if (snapshot && first && next) {
+       DWORD dwCurrentProcessId = GetCurrentProcessId();
+       DWORD dwCurrentThreadId = GetCurrentThreadId();
+-      HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, dwCurrentProcessId);
++      HANDLE hSnapshot = snapshot(TH32CS_SNAPTHREAD, dwCurrentProcessId);
+       if (hSnapshot != INVALID_HANDLE_VALUE) {
+          THREADENTRY32 te;
+          te.dwSize = sizeof te;
+-         if (Thread32First(hSnapshot, &te)) {
++         if (first(hSnapshot, &te)) {
+             do {
+                if (te.dwSize >= FIELD_OFFSET(THREADENTRY32, th32OwnerProcessID) +
+                                 sizeof te.th32OwnerProcessID) {
+@@ -98,7 +106,7 @@
+                   }
+                }
+                te.dwSize = sizeof te;
+-            } while (Thread32Next(hSnapshot, &te));
++            } while (next(hSnapshot, &te));
+          }
+          CloseHandle(hSnapshot);
+       }
+@@ -225,6 +233,7 @@
+       }
+       LeaveCriticalSection(&g_mutex);
+ 
++      DeleteCriticalSection(&g_mutex);
+       TlsFree(tlsIndex);
+       tlsIndex = TLS_OUT_OF_INDEXES;
+    }
+--- a/src/util/cnd_monotonic.h
++++ b/src/util/cnd_monotonic.h
+@@ -38,7 +38,7 @@
+ struct u_cnd_monotonic
+ {
+ #ifdef _WIN32
+-   CONDITION_VARIABLE condvar;
++   cnd_t condvar;
+ #else
+    pthread_cond_t cond;
+ #endif
+@@ -50,8 +50,7 @@
+    assert(cond != NULL);
+ 
+ #ifdef _WIN32
+-   InitializeConditionVariable(&cond->condvar);
+-   return thrd_success;
++   return cnd_init(&cond->condvar);
+ #else
+    int ret = thrd_error;
+    pthread_condattr_t condattr;
+@@ -74,7 +73,7 @@
+    assert(cond != NULL);
+ 
+ #ifdef _WIN32
+-   // Do nothing
++   cnd_destroy(&cond->condvar);
+ #else
+    pthread_cond_destroy(&cond->cond);
+ #endif
+@@ -86,8 +85,7 @@
+    assert(cond != NULL);
+ 
+ #ifdef _WIN32
+-   WakeAllConditionVariable(&cond->condvar);
+-   return thrd_success;
++   return cnd_broadcast(&cond->condvar);
+ #else
+    return (pthread_cond_broadcast(&cond->cond) == 0) ? thrd_success : thrd_error;
+ #endif
+@@ -99,8 +97,7 @@
+    assert(cond != NULL);
+ 
+ #ifdef _WIN32
+-   WakeConditionVariable(&cond->condvar);
+-   return thrd_success;
++   return cnd_signal(&cond->condvar);
+ #else
+    return (pthread_cond_signal(&cond->cond) == 0) ? thrd_success : thrd_error;
+ #endif
+@@ -117,7 +114,7 @@
+    const uint64_t future = (abs_time->tv_sec * 1000) + (abs_time->tv_nsec / 1000000);
+    const uint64_t now = os_time_get_nano() / 1000000;
+    const DWORD timeout = (future > now) ? (DWORD)(future - now) : 0;
+-   if (SleepConditionVariableCS(&cond->condvar, mtx, timeout))
++   if (windx_condition_wait(&cond->condvar, mtx->handle, timeout))
+       return thrd_success;
+    return (GetLastError() == ERROR_TIMEOUT) ? thrd_busy : thrd_error;
+ #else
+@@ -135,8 +132,7 @@
+    assert(mtx != NULL);
+ 
+ #ifdef _WIN32
+-   SleepConditionVariableCS(&cond->condvar, mtx, INFINITE);
+-   return thrd_success;
++   return cnd_wait(&cond->condvar, mtx);
+ #else
+    return (pthread_cond_wait(&cond->cond, mtx) == 0) ? thrd_success : thrd_error;
+ #endif
+--- a/src/util/os_memory_stdc.h
++++ b/src/util/os_memory_stdc.h
+@@ -45,7 +45,7 @@
+ #define os_realloc( _old_ptr, _old_size, _new_size) \
+    realloc(_old_ptr, _new_size + 0*(_old_size))
+ 
+-#if DETECT_OS_WINDOWS
++#if DETECT_OS_WINDOWS && !defined(__MINGW32__)
+ 
+ #include <malloc.h>
+ 
+--- a/src/util/os_misc.c
++++ b/src/util/os_misc.c
+@@ -103,7 +103,8 @@
+ 
+ #if DETECT_OS_WINDOWS
+    OutputDebugStringA(message);
+-   if(GetConsoleWindow() && !IsDebuggerPresent()) {
++   DWORD mode;
++   if (GetConsoleMode(GetStdHandle(STD_ERROR_HANDLE), &mode) && !IsDebuggerPresent()) {
+       fflush(stdout);
+       fputs(message, fout);
+       fflush(fout);
+@@ -261,13 +262,22 @@
+    *size = (uint64_t)info.max_pages * (uint64_t)B_PAGE_SIZE;
+    return true;
+ #elif DETECT_OS_WINDOWS
+-   MEMORYSTATUSEX status;
+-   BOOL ret;
+-
+-   status.dwLength = sizeof(status);
+-   ret = GlobalMemoryStatusEx(&status);
+-   *size = status.ullTotalPhys;
+-   return (ret == TRUE);
++   typedef BOOL (WINAPI *memory_status_fn)(LPMEMORYSTATUSEX);
++   memory_status_fn get_status = (memory_status_fn)
++      GetProcAddress(GetModuleHandleA("kernel32.dll"), "GlobalMemoryStatusEx");
++   if (get_status) {
++      MEMORYSTATUSEX status;
++      status.dwLength = sizeof(status);
++      if (!get_status(&status))
++         return false;
++      *size = status.ullTotalPhys;
++   } else {
++      MEMORYSTATUS status;
++      status.dwLength = sizeof(status);
++      GlobalMemoryStatus(&status);
++      *size = status.dwTotalPhys;
++   }
++   return true;
+ #else
+ #error unexpected platform in os_sysinfo.c
+    return false;
+--- a/src/util/u_qsort.h
++++ b/src/util/u_qsort.h
+@@ -70,7 +70,7 @@
+    /* GNU extension added in glibc 2.8 */
+    qsort_r(base, nmemb, size, compar, arg);
+ #  endif
+-#elif HAVE_QSORT_S
++#elif HAVE_QSORT_S && !defined(__MINGW32__)
+ #  ifdef _WIN32
+    /* MSVC/MinGW qsort_s takes "arg" after the comparison function and it
+     * pass the "arg" before the elements.
+--- a/src/util/u_thread.h
++++ b/src/util/u_thread.h
+@@ -96,8 +96,7 @@
+ #if DETECT_OS_LINUX && !defined(ANDROID)
+    return sched_getcpu();
+ 
+-#elif defined(_WIN32) && !defined(__CYGWIN__) && _WIN32_WINNT >= 0x0600
+-   return GetCurrentProcessorNumber();
++/* Processor-number hints are optional on legacy Windows. */
+ 
+ #else
+    return -1;
+--- a/src/util/u_cpu_detect.c
++++ b/src/util/u_cpu_detect.c
+@@ -730,6 +730,20 @@
+                                     ((xgetbv() & 6) == 6);    // XMM & YMM
+          util_cpu_caps.has_f16c   = ((regs2[2] >> 29) & 1) && util_cpu_caps.has_avx;
+          util_cpu_caps.has_fma    = ((regs2[2] >> 12) & 1) && util_cpu_caps.has_avx;
++#if defined(PIPE_OS_WINDOWS) && defined(PIPE_ARCH_X86)
++         /* Some pre-SSE kernels run on CPUs with SSE but do not enable or
++          * save XMM state. Check the OS before any runtime-generated code. */
++         {
++            BOOL (WINAPI *feature)(DWORD) = (BOOL (WINAPI *)(DWORD))
++               GetProcAddress(GetModuleHandleA("kernel32.dll"), "IsProcessorFeaturePresent");
++            if (!feature || !feature(PF_XMMI_INSTRUCTIONS_AVAILABLE)) {
++               util_cpu_caps.has_sse = util_cpu_caps.has_sse2 = 0;
++               util_cpu_caps.has_sse3 = util_cpu_caps.has_ssse3 = 0;
++               util_cpu_caps.has_sse4_1 = util_cpu_caps.has_sse4_2 = 0;
++               util_cpu_caps.has_avx = util_cpu_caps.has_f16c = 0;
++            }
++         }
++#endif
+          util_cpu_caps.has_mmx2   = util_cpu_caps.has_sse; /* SSE cpus supports mmxext too */
+ #if defined(PIPE_ARCH_X86_64)
+          util_cpu_caps.has_daz = 1;
+--- a/src/util/os_misc.c
++++ b/src/util/os_misc.c
+@@ -104,7 +104,10 @@
+ #if DETECT_OS_WINDOWS
+    OutputDebugStringA(message);
+    DWORD mode;
+-   if (GetConsoleMode(GetStdHandle(STD_ERROR_HANDLE), &mode) && !IsDebuggerPresent()) {
++   BOOL (WINAPI *debugger_present)(void) = (void *)
++      GetProcAddress(GetModuleHandleA("kernel32.dll"), "IsDebuggerPresent");
++   if (GetConsoleMode(GetStdHandle(STD_ERROR_HANDLE), &mode) &&
++       (!debugger_present || !debugger_present())) {
+       fflush(stdout);
+       fputs(message, fout);
+       fflush(fout);
+--- a/src/util/u_math.h
++++ b/src/util/u_math.h
+@@ -121,7 +121,14 @@
+ static inline int
+ util_ifloor(float f)
+ {
+-#if defined(USE_X86_ASM) && defined(__GNUC__) && defined(__i386__)
++#if defined(_WIN32) && defined(__i386__)
++   /* Direct3D 8 and 9 can select 24-bit x87 precision. Adding a large bias
++    * discards the fractional part at that precision, so the double-based
++    * rounding trick below can choose an adjacent texel. Truncation and a
++    * sign-aware correction keep the floor independent of the control word. */
++   int truncated = (int) f;
++   return truncated - ((float) truncated > f);
++#elif defined(USE_X86_ASM) && defined(__GNUC__) && defined(__i386__)
+    /*
+     * IEEE floor for computers that round to nearest or even.
+     * 'f' must be between -4194304 and 4194303.

@@ -1,0 +1,112 @@
+--- a/include/vkd3d_types.h
++++ b/include/vkd3d_types.h
+@@ -65,7 +65,11 @@
+ 
+ typedef void (*PFN_vkd3d_log)(const char *format, va_list args);
+ 
+-#ifdef _WIN32
++#ifdef WINDX_SHADER_DLL
++/* The combined compiler DLL has an explicit export list. */
++# define VKD3D_IMPORT
++# define VKD3D_EXPORT
++#elif defined(_WIN32)
+ # define VKD3D_IMPORT __declspec(dllimport)
+ # define VKD3D_EXPORT __declspec(dllexport)
+ #elif defined(__GNUC__)
+--- a/libs/vkd3d-utils/vkd3d_utils_main.c
++++ b/libs/vkd3d-utils/vkd3d_utils_main.c
+@@ -19,7 +19,9 @@
+ #include "vkd3d_utils_private.h"
+ #undef D3D12CreateDevice
+ 
++#ifndef WINDX_SHADER_DLL
+ VKD3D_DEBUG_ENV_NAME("VKD3D_DEBUG");
++#endif
+ 
+ static const char *debug_d3d_blob_part(D3D_BLOB_PART part)
+ {
+@@ -50,6 +52,7 @@
+     }
+ }
+ 
++#ifndef WINDX_SHADER_DLL
+ HRESULT WINAPI D3D12GetDebugInterface(REFIID iid, void **debug)
+ {
+     FIXME("iid %s, debug %p stub!\n", debugstr_guid(iid), debug);
+@@ -159,6 +162,8 @@
+     return vkd3d_serialize_versioned_root_signature(desc, blob, error_blob);
+ }
+ 
++#endif
++
+ static int open_include(const char *filename, bool local, const char *parent_data, void *context,
+         struct vkd3d_shader_code *code)
+ {
+@@ -405,7 +410,12 @@
+ 
+     return D3DCompile2VKD3D(data, data_size, filename, macros, include,
+             entry_point, profile, flags, effect_flags, secondary_flags,
+-            secondary_data, secondary_data_size, shader_blob, messages_blob, 47);
++            secondary_data, secondary_data_size, shader_blob, messages_blob,
++#ifdef WINDX_SHADER_DLL
++            43);
++#else
++            47);
++#endif
+ }
+ 
+ HRESULT WINAPI D3DCompile(const void *data, SIZE_T data_size, const char *filename,
+@@ -964,7 +974,9 @@
+ 
+ void vkd3d_utils_set_log_callback(PFN_vkd3d_log callback)
+ {
++#ifndef WINDX_SHADER_DLL
+     vkd3d_set_log_callback(callback);
++#endif
+     vkd3d_dbg_set_log_callback(callback);
+ }
+ 
+--- a/libs/vkd3d-common/debug.c
++++ b/libs/vkd3d-common/debug.c
+@@ -397,6 +397,7 @@
+     return flags;
+ }
+ 
++#ifndef WINDX_SHADER_DLL /* Shader compilation creates no worker threads. */
+ #ifdef _WIN32
+ 
+ static HRESULT (WINAPI *pfn_SetThreadDescription)(HANDLE, const WCHAR *);
+@@ -442,3 +443,5 @@
+     pthread_setname_np(name);
+ #endif
+ }
++
++#endif
+--- a/libs/vkd3d-shader/preproc.y
++++ b/libs/vkd3d-shader/preproc.y
+@@ -157,7 +157,9 @@
+ {
+     uint8_t *data, *new_data;
+     size_t size = 4096;
++#ifndef WINDX_SHADER_DLL
+     struct stat st;
++#endif
+     size_t pos = 0;
+     size_t ret;
+     FILE *f;
+@@ -168,6 +170,7 @@
+         return VKD3D_ERROR;
+     }
+ 
++#ifndef WINDX_SHADER_DLL /* Older CRTs use a different stat ABI. Use the growing read buffer below. */
+     if (fstat(fileno(f), &st) == -1)
+     {
+         ERR("Could not stat file %s.\n", debugstr_a(filename));
+@@ -177,6 +180,7 @@
+ 
+     if (S_ISREG(st.st_mode))
+         size = st.st_size;
++#endif
+ 
+     if (!size)
+     {

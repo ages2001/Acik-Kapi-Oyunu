@@ -1,0 +1,696 @@
+--- a/dlls/dinput/mouse.c
++++ b/dlls/dinput/mouse.c
+@@ -64,6 +64,8 @@
+ 
+     /* SysMouseAImpl */
+     /* These are used in case of relative -> absolute transitions */
++    POINT                           sample_position;
++    BOOL                            have_sample_position;
+     POINT                           org_coords;
+     BOOL                            clipped;
+     /* warping: whether we need to move mouse back to middle once we
+@@ -127,7 +129,7 @@
+     else
+         ddi.dwDevType = DIDEVTYPE_MOUSE | (DIDEVTYPEMOUSE_TRADITIONAL << 8);
+     strcpy(ddi.tszInstanceName, "Mouse");
+-    strcpy(ddi.tszProductName, "Wine Mouse");
++    strcpy(ddi.tszProductName, "System mouse");
+ 
+     memcpy(lpddi, &ddi, (dwSize < sizeof(ddi) ? dwSize : sizeof(ddi)));
+ }
+@@ -151,7 +153,7 @@
+     else
+         ddi.dwDevType = DIDEVTYPE_MOUSE | (DIDEVTYPEMOUSE_TRADITIONAL << 8);
+     MultiByteToWideChar(CP_ACP, 0, "Mouse", -1, ddi.tszInstanceName, MAX_PATH);
+-    MultiByteToWideChar(CP_ACP, 0, "Wine Mouse", -1, ddi.tszProductName, MAX_PATH);
++    MultiByteToWideChar(CP_ACP, 0, "System mouse", -1, ddi.tszProductName, MAX_PATH);
+ 
+     memcpy(lpddi, &ddi, (dwSize < sizeof(ddi) ? dwSize : sizeof(ddi)));
+ }
+@@ -192,6 +194,17 @@
+     return S_FALSE;
+ }
+ 
++static unsigned native_mouse_buttons(void)
++{
++    int count = GetSystemMetrics(SM_CMOUSEBUTTONS);
++    return count < 0 ? 0 : (count > 5 ? 5 : count);
++}
++
++static BOOL native_mouse_wheel(void)
++{
++    return !wx_legacy_input() && GetSystemMetrics(SM_MOUSEWHEELPRESENT);
++}
++
+ static SysMouseImpl *alloc_device(REFGUID rguid, IDirectInputImpl *dinput)
+ {
+     SysMouseImpl* newDevice;
+@@ -208,7 +221,6 @@
+     newDevice->base.dwCoopLevel = DISCL_NONEXCLUSIVE | DISCL_BACKGROUND;
+     newDevice->base.guid = *rguid;
+     InitializeCriticalSection(&newDevice->base.crit);
+-    newDevice->base.crit.DebugInfo->Spare[0] = (DWORD_PTR)(__FILE__ ": SysMouseImpl*->base.crit");
+     newDevice->base.dinput = dinput;
+     newDevice->base.event_proc = dinput_mouse_hook;
+ 
+@@ -229,12 +241,15 @@
+     if (!(df->rgodf = HeapAlloc(GetProcessHeap(), 0, df->dwNumObjs * df->dwObjSize))) goto failed;
+     memcpy(df->rgodf, c_dfDIMouse2.rgodf, df->dwNumObjs * df->dwObjSize);
+ 
+-    /* Because we don't do any detection yet just modify instance and type */
+-    for (i = 0; i < df->dwNumObjs; i++)
+-        if (DIDFT_GETTYPE(df->rgodf[i].dwType) & DIDFT_AXIS)
+-            df->rgodf[i].dwType = DIDFT_MAKEINSTANCE(i) | DIDFT_RELAXIS;
+-        else
+-            df->rgodf[i].dwType = DIDFT_MAKEINSTANCE(i) | DIDFT_PSHBUTTON;
++    unsigned count = 0, buttons = native_mouse_buttons();
++    for (i = 0; i < df->dwNumObjs; ++i) {
++        if (i == 2 && !native_mouse_wheel()) continue;
++        if (i >= 3 && i - 3 >= buttons) break;
++        df->rgodf[count] = c_dfDIMouse2.rgodf[i];
++        df->rgodf[count++].dwType = DIDFT_MAKEINSTANCE(i) |
++            (i < 3 ? DIDFT_RELAXIS : DIDFT_PSHBUTTON);
++    }
++    df->dwNumObjs = count;
+ 
+     newDevice->base.data_format.wine_df = df;
+     IDirectInput_AddRef(&newDevice->base.dinput->IDirectInput7A_iface);
+@@ -433,7 +448,8 @@
+             mapped_center.x = (rect.left + rect.right) / 2;
+             mapped_center.y = (rect.top + rect.bottom) / 2;
+             TRACE("Warping mouse to %d - %d\n", mapped_center.x, mapped_center.y);
+-            SetCursorPos( mapped_center.x, mapped_center.y );
++            if (SetCursorPos(mapped_center.x, mapped_center.y))
++                This->sample_position = mapped_center;
+         }
+         if (This->base.dwCoopLevel & DISCL_EXCLUSIVE)
+         {
+@@ -464,7 +480,8 @@
+     if ((res = IDirectInputDevice2WImpl_Acquire(iface)) != DI_OK) return res;
+ 
+     /* Init the mouse state */
+-    GetCursorPos( &point );
++    This->have_sample_position = GetCursorPos(&point);
++    This->sample_position = point;
+     if (This->base.data_format.user_df->dwFlags & DIDF_ABSAXIS)
+     {
+       This->m_state.lX = point.x;
+@@ -546,6 +563,8 @@
+   *   For the moment, only the "standard" return structure (DIMOUSESTATE) is
+   *   supported.
+   */
++#include "mouse_sample.inc"
++
+ static HRESULT WINAPI SysMouseWImpl_GetDeviceState(LPDIRECTINPUTDEVICE8W iface, DWORD len, LPVOID ptr)
+ {
+     SysMouseImpl *This = impl_from_IDirectInputDevice8W(iface);
+@@ -553,6 +572,7 @@
+ 
+     if(This->base.acquired == 0) return DIERR_NOTACQUIRED;
+ 
++    if (wx_legacy_input()) wx_sample_mouse(&This->base);
+     check_dinput_events();
+ 
+     EnterCriticalSection(&This->base.crit);
+@@ -673,13 +693,13 @@
+ 	devcaps.dwDevType = DI8DEVTYPE_MOUSE | (DI8DEVTYPEMOUSE_TRADITIONAL << 8);
+     else
+ 	devcaps.dwDevType = DIDEVTYPE_MOUSE | (DIDEVTYPEMOUSE_TRADITIONAL << 8);
+-    devcaps.dwAxes = 3;
+-    devcaps.dwButtons = 8;
++    devcaps.dwAxes = native_mouse_wheel() ? 3 : 2;
++    devcaps.dwButtons = native_mouse_buttons();
+     devcaps.dwPOVs = 0;
+     devcaps.dwFFSamplePeriod = 0;
+     devcaps.dwFFMinTimeResolution = 0;
+-    devcaps.dwFirmwareRevision = 100;
+-    devcaps.dwHardwareRevision = 100;
++    devcaps.dwFirmwareRevision = 0;
++    devcaps.dwHardwareRevision = 0;
+     devcaps.dwFFDriverVersion = 0;
+ 
+     memcpy(lpDIDevCaps, &devcaps, lpDIDevCaps->dwSize);
+--- a/dlls/dinput/device_private.h
++++ b/dlls/dinput/device_private.h
+@@ -250,3 +250,6 @@
+ 							    LPDIDEVICEIMAGEINFOHEADERW lpdiDevImageInfoHeader) DECLSPEC_HIDDEN;
+ 
+ #endif /* __WINE_DLLS_DINPUT_DINPUTDEVICE_PRIVATE_H */
++
++void wx_sample_keyboard(IDirectInputDeviceImpl *device);
++void wx_sample_mouse(IDirectInputDeviceImpl *device);
+--- a/dlls/dinput/joystick_linuxinput.c
++++ b/dlls/dinput/joystick_linuxinput.c
+@@ -476,7 +476,6 @@
+     newDevice->ff_autocenter = 1;
+     newDevice->ff_gain = 0xFFFF;
+     InitializeCriticalSection(&newDevice->generic.base.crit);
+-    newDevice->generic.base.crit.DebugInfo->Spare[0] = (DWORD_PTR)(__FILE__ ": JoystickImpl*->base.crit");
+ 
+     /* Count number of available axes - supported Axis & POVs */
+     for (i = 0; i < ABS_MAX; i++)
+--- a/dlls/dinput/device.c
++++ b/dlls/dinput/device.c
+@@ -658,7 +658,7 @@
+ 
+     keyname = HeapAlloc(GetProcessHeap(), 0,
+         sizeof(WCHAR) * (lstrlenW(subkey) + strlenW(username) + strlenW(device) + strlenW(guid)));
+-    sprintfW(keyname, subkey, username, device, guid);
++    wsprintfW(keyname, subkey, username, device, guid);
+ 
+     /* The key used is HKCU\Software\Wine\DirectInput\Mappings\[username]\[device]\[mapping_guid] */
+     if (RegCreateKeyW(HKEY_CURRENT_USER, keyname, &hkey))
+@@ -679,14 +679,14 @@
+     didev.dwSize = sizeof(didev);
+     IDirectInputDevice8_GetDeviceInfo(iface, &didev);
+ 
+-    if (StringFromCLSID(&lpdiaf->guidActionMap, &guid_str) != S_OK)
++    if (wx_action_map_guid(&lpdiaf->guidActionMap, &guid_str) != S_OK)
+         return DI_SETTINGSNOTSAVED;
+ 
+     hkey = get_mapping_key(didev.tszInstanceName, lpszUsername, guid_str);
+ 
+     if (!hkey)
+     {
+-        CoTaskMemFree(guid_str);
++        HeapFree(GetProcessHeap(),0,guid_str);
+         return DI_SETTINGSNOTSAVED;
+     }
+ 
+@@ -701,13 +701,13 @@
+         if (IsEqualGUID(&didev.guidInstance, &lpdiaf->rgoAction[i].guidInstance) &&
+             lpdiaf->rgoAction[i].dwHow != DIAH_UNMAPPED)
+         {
+-             sprintfW(label, format, lpdiaf->rgoAction[i].dwSemantic);
++             wsprintfW(label, format, lpdiaf->rgoAction[i].dwSemantic);
+              RegSetValueExW(hkey, label, 0, REG_DWORD, (const BYTE*) &lpdiaf->rgoAction[i].dwObjID, sizeof(DWORD));
+         }
+     }
+ 
+     RegCloseKey(hkey);
+-    CoTaskMemFree(guid_str);
++    HeapFree(GetProcessHeap(),0,guid_str);
+ 
+     return DI_OK;
+ }
+@@ -722,14 +722,14 @@
+     didev.dwSize = sizeof(didev);
+     IDirectInputDevice8_GetDeviceInfo(&This->IDirectInputDevice8W_iface, &didev);
+ 
+-    if (StringFromCLSID(&lpdiaf->guidActionMap, &guid_str) != S_OK)
++    if (wx_action_map_guid(&lpdiaf->guidActionMap, &guid_str) != S_OK)
+         return FALSE;
+ 
+     hkey = get_mapping_key(didev.tszInstanceName, username, guid_str);
+ 
+     if (!hkey)
+     {
+-        CoTaskMemFree(guid_str);
++        HeapFree(GetProcessHeap(),0,guid_str);
+         return FALSE;
+     }
+ 
+@@ -740,7 +740,7 @@
+         DWORD id, size = sizeof(DWORD);
+         WCHAR label[9];
+ 
+-        sprintfW(label, format, lpdiaf->rgoAction[i].dwSemantic);
++        wsprintfW(label, format, lpdiaf->rgoAction[i].dwSemantic);
+ 
+         if (!RegQueryValueExW(hkey, label, 0, NULL, (LPBYTE) &id, &size))
+         {
+@@ -752,7 +752,7 @@
+     }
+ 
+     RegCloseKey(hkey);
+-    CoTaskMemFree(guid_str);
++    HeapFree(GetProcessHeap(),0,guid_str);
+ 
+     return mapped > 0;
+ }
+@@ -990,9 +990,9 @@
+     EnterCriticalSection(&This->crit);
+     res = This->acquired ? S_FALSE : DI_OK;
+     This->acquired = 1;
++    LeaveCriticalSection(&This->crit);
+     if (res == DI_OK)
+         check_dinput_hooks(iface);
+-    LeaveCriticalSection(&This->crit);
+ 
+     return res;
+ }
+@@ -1018,9 +1018,9 @@
+     EnterCriticalSection(&This->crit);
+     res = !This->acquired ? DI_NOEFFECT : DI_OK;
+     This->acquired = 0;
++    LeaveCriticalSection(&This->crit);
+     if (res == DI_OK)
+         check_dinput_hooks(iface);
+-    LeaveCriticalSection(&This->crit);
+ 
+     return res;
+ }
+@@ -1159,7 +1159,6 @@
+     LeaveCriticalSection( &This->dinput->crit );
+ 
+     IDirectInput_Release(&This->dinput->IDirectInput7A_iface);
+-    This->crit.DebugInfo->Spare[0] = 0;
+     DeleteCriticalSection(&This->crit);
+ 
+     HeapFree(GetProcessHeap(), 0, This);
+@@ -1707,6 +1706,10 @@
+ 
+     if (!This->acquired) return DIERR_NOTACQUIRED;
+ 
++    if (wx_legacy_input()) {
++        if (IsEqualGUID(&This->guid,&GUID_SysKeyboard)) wx_sample_keyboard(This);
++        else if (IsEqualGUID(&This->guid,&GUID_SysMouse)) wx_sample_mouse(This);
++    }
+     check_dinput_events();
+     return DI_OK;
+ }
+--- a/dlls/dinput/keyboard.c
++++ b/dlls/dinput/keyboard.c
+@@ -136,6 +136,14 @@
+     0x0ab8648a, 0x7735, 0x11d2, {0x8c, 0x73, 0x71, 0xdf, 0x54, 0xa9, 0x64, 0x41}
+ };
+ 
++static unsigned native_keyboard_subtype(void)
++{
++    int type = GetKeyboardType(0);
++    /* Types 1 through 6 have the same meaning in Win32 and DirectInput.
++     * Type 7 covers multiple Japanese layouts and needs more information. */
++    return type >= 1 && type <= 6 ? type : DIDEVTYPEKEYBOARD_UNKNOWN;
++}
++
+ static void fill_keyboard_dideviceinstanceA(LPDIDEVICEINSTANCEA lpddi, DWORD version) {
+     DWORD dwSize;
+     DIDEVICEINSTANCEA ddi;
+@@ -151,11 +159,11 @@
+     ddi.guidInstance = GUID_SysKeyboard;/* DInput's GUID */
+     ddi.guidProduct = DInput_Wine_Keyboard_GUID; /* Vendor's GUID */
+     if (version >= 0x0800)
+-        ddi.dwDevType = DI8DEVTYPE_KEYBOARD | (DI8DEVTYPEKEYBOARD_UNKNOWN << 8);
++        ddi.dwDevType = DI8DEVTYPE_KEYBOARD | (native_keyboard_subtype() << 8);
+     else
+-        ddi.dwDevType = DIDEVTYPE_KEYBOARD | (DIDEVTYPEKEYBOARD_UNKNOWN << 8);
++        ddi.dwDevType = DIDEVTYPE_KEYBOARD | (native_keyboard_subtype() << 8);
+     strcpy(ddi.tszInstanceName, "Keyboard");
+-    strcpy(ddi.tszProductName, "Wine Keyboard");
++    strcpy(ddi.tszProductName, "System keyboard");
+ 
+     memcpy(lpddi, &ddi, (dwSize < sizeof(ddi) ? dwSize : sizeof(ddi)));
+ }
+@@ -175,11 +183,11 @@
+     ddi.guidInstance = GUID_SysKeyboard;/* DInput's GUID */
+     ddi.guidProduct = DInput_Wine_Keyboard_GUID; /* Vendor's GUID */
+     if (version >= 0x0800)
+-        ddi.dwDevType = DI8DEVTYPE_KEYBOARD | (DI8DEVTYPEKEYBOARD_UNKNOWN << 8);
++        ddi.dwDevType = DI8DEVTYPE_KEYBOARD | (native_keyboard_subtype() << 8);
+     else
+-        ddi.dwDevType = DIDEVTYPE_KEYBOARD | (DIDEVTYPEKEYBOARD_UNKNOWN << 8);
++        ddi.dwDevType = DIDEVTYPE_KEYBOARD | (native_keyboard_subtype() << 8);
+     MultiByteToWideChar(CP_ACP, 0, "Keyboard", -1, ddi.tszInstanceName, MAX_PATH);
+-    MultiByteToWideChar(CP_ACP, 0, "Wine Keyboard", -1, ddi.tszProductName, MAX_PATH);
++    MultiByteToWideChar(CP_ACP, 0, "System keyboard", -1, ddi.tszProductName, MAX_PATH);
+ 
+     memcpy(lpddi, &ddi, (dwSize < sizeof(ddi) ? dwSize : sizeof(ddi)));
+ }
+@@ -227,6 +235,7 @@
+     int i, idx = 0;
+ 
+     newDevice = HeapAlloc(GetProcessHeap(),HEAP_ZERO_MEMORY,sizeof(SysKeyboardImpl));
++    if (!newDevice) return NULL;
+     newDevice->base.IDirectInputDevice8A_iface.lpVtbl = &SysKeyboardAvt;
+     newDevice->base.IDirectInputDevice8W_iface.lpVtbl = &SysKeyboardWvt;
+     newDevice->base.ref = 1;
+@@ -234,7 +243,6 @@
+     newDevice->base.dinput = dinput;
+     newDevice->base.event_proc = KeyboardCallback;
+     InitializeCriticalSection(&newDevice->base.crit);
+-    newDevice->base.crit.DebugInfo->Spare[0] = (DWORD_PTR)(__FILE__ ": SysKeyboardImpl*->base.crit");
+ 
+     /* Create copy of default data format */
+     if (!(df = HeapAlloc(GetProcessHeap(), 0, c_dfDIKeyboard.dwSize))) goto failed;
+@@ -325,6 +333,8 @@
+   keyboarddev_create_device
+ };
+ 
++#include "keyboard_sample.inc"
++
+ static HRESULT WINAPI SysKeyboardWImpl_GetDeviceState(LPDIRECTINPUTDEVICE8W iface, DWORD len, LPVOID ptr)
+ {
+     SysKeyboardImpl *This = impl_from_IDirectInputDevice8W(iface);
+@@ -335,6 +345,7 @@
+     if (len != This->base.data_format.user_df->dwDataSize )
+         return DIERR_INVALIDPARAM;
+ 
++    if (wx_legacy_input()) wx_sample_keyboard(&This->base);
+     check_dinput_events();
+ 
+     EnterCriticalSection(&This->base.crit);
+@@ -377,16 +388,16 @@
+     devcaps.dwSize = lpDIDevCaps->dwSize;
+     devcaps.dwFlags = DIDC_ATTACHED | DIDC_EMULATED;
+     if (This->base.dinput->dwVersion >= 0x0800)
+-        devcaps.dwDevType = DI8DEVTYPE_KEYBOARD | (DI8DEVTYPEKEYBOARD_PCENH << 8);
++        devcaps.dwDevType = DI8DEVTYPE_KEYBOARD | (native_keyboard_subtype() << 8);
+     else
+-        devcaps.dwDevType = DIDEVTYPE_KEYBOARD | (DIDEVTYPEKEYBOARD_PCENH << 8);
++        devcaps.dwDevType = DIDEVTYPE_KEYBOARD | (native_keyboard_subtype() << 8);
+     devcaps.dwAxes = 0;
+     devcaps.dwButtons = This->base.data_format.wine_df->dwNumObjs;
+     devcaps.dwPOVs = 0;
+     devcaps.dwFFSamplePeriod = 0;
+     devcaps.dwFFMinTimeResolution = 0;
+-    devcaps.dwFirmwareRevision = 100;
+-    devcaps.dwHardwareRevision = 100;
++    devcaps.dwFirmwareRevision = 0;
++    devcaps.dwHardwareRevision = 0;
+     devcaps.dwFFDriverVersion = 0;
+ 
+     memcpy(lpDIDevCaps, &devcaps, lpDIDevCaps->dwSize);
+--- a/dlls/dinput/joystick_osx.c
++++ b/dlls/dinput/joystick_osx.c
+@@ -1122,7 +1122,6 @@
+     newDevice->generic.base.dinput = dinput;
+     newDevice->generic.base.guid = *rguid;
+     InitializeCriticalSection(&newDevice->generic.base.crit);
+-    newDevice->generic.base.crit.DebugInfo->Spare[0] = (DWORD_PTR)(__FILE__ ": JoystickImpl*->generic.base.crit");
+ 
+     /* Create copy of default data format */
+     if (!(df = HeapAlloc(GetProcessHeap(), 0, c_dfDIJoystick2.dwSize))) goto FAILED;
+--- a/dlls/dinput/dinput_private.h
++++ b/dlls/dinput/dinput_private.h
+@@ -80,3 +80,7 @@
+ #define DIGENRE_ANY        0xFF000000
+ 
+ #endif /* __WINE_DLLS_DINPUT_DINPUT_PRIVATE_H */
++
++BOOL wx_legacy_input(void);
++HRESULT wx_register_input(HMODULE, BOOL, BOOL);
++HRESULT wx_action_map_guid(REFGUID,WCHAR **);
+--- a/dlls/dinput/dinput_main.c
++++ b/dlls/dinput/dinput_main.c
+@@ -128,6 +128,15 @@
+     return DI_OK;
+ }
+ 
++#ifdef WX_DINPUT8
++#include "input8.inc"
++#define NATIVE_INPUT_CLASS CLSID_DirectInput8
++#define NATIVE_INPUT8 TRUE
++#else
++#define NATIVE_INPUT_CLASS CLSID_DirectInput
++#define NATIVE_INPUT8 FALSE
++#endif
++
+ /******************************************************************************
+  *	DirectInputCreateEx (DINPUT.@)
+  */
+@@ -574,7 +583,6 @@
+         This->evsequence = 1;
+ 
+         InitializeCriticalSection( &This->crit );
+-        This->crit.DebugInfo->Spare[0] = (DWORD_PTR)(__FILE__ ": IDirectInputImpl*->crit");
+ 
+         list_init( &This->devices_list );
+ 
+@@ -606,7 +614,6 @@
+ 
+         check_hook_thread();
+ 
+-        This->crit.DebugInfo->Spare[0] = 0;
+         DeleteCriticalSection( &This->crit );
+ 
+         This->initialized = FALSE;
+@@ -1363,10 +1370,14 @@
+ }
+ 
+ static HRESULT WINAPI DICF_QueryInterface(LPCLASSFACTORY iface,REFIID riid,LPVOID *ppobj) {
+-	IClassFactoryImpl *This = impl_from_IClassFactory(iface);
+-
+-	FIXME("(%p)->(%s,%p),stub!\n",This,debugstr_guid(riid),ppobj);
+-	return E_NOINTERFACE;
++    if (!ppobj) return E_POINTER;
++    *ppobj = NULL;
++    if (!riid) return E_POINTER;
++    if (!IsEqualGUID(riid,&IID_IClassFactory) && !IsEqualGUID(riid,&IID_IUnknown))
++        return E_NOINTERFACE;
++    *ppobj = iface;
++    IClassFactory_AddRef(iface);
++    return S_OK;
+ }
+ 
+ static ULONG WINAPI DICF_AddRef(LPCLASSFACTORY iface) {
+@@ -1386,6 +1397,14 @@
+ 	IClassFactoryImpl *This = impl_from_IClassFactory(iface);
+ 
+ 	TRACE("(%p)->(%p,%s,%p)\n",This,pOuter,debugstr_guid(riid),ppobj);
++        if (!ppobj) return E_POINTER;
++        *ppobj = NULL;
++        if (!riid) return E_POINTER;
++        if (pOuter) return CLASS_E_NOAGGREGATION;
++#ifdef WX_DINPUT8
++        if (IsEqualGUID(riid,&IID_IDirectInput8A) || IsEqualGUID(riid,&IID_IDirectInput8W) ||
++            IsEqualGUID(riid,&IID_IUnknown)) return create_directinput_instance(riid,ppobj,NULL);
++#else
+         if ( IsEqualGUID( &IID_IUnknown, riid ) ||
+              IsEqualGUID( &IID_IDirectInputA, riid ) ||
+ 	     IsEqualGUID( &IID_IDirectInputW, riid ) ||
+@@ -1396,6 +1415,7 @@
+ 		return create_directinput_instance(riid, ppobj, NULL);
+ 	}
+ 
++#endif
+ 	FIXME("(%p,%p,%s,%p) Interface not found!\n",This,pOuter,debugstr_guid(riid),ppobj);	
+ 	return E_NOINTERFACE;
+ }
+@@ -1429,14 +1449,11 @@
+ HRESULT WINAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, LPVOID *ppv)
+ {
+     TRACE("(%s,%s,%p)\n", debugstr_guid(rclsid), debugstr_guid(riid), ppv);
+-    if ( IsEqualCLSID( &IID_IClassFactory, riid ) ) {
+-        *ppv = &DINPUT_CF;
+-	IClassFactory_AddRef((IClassFactory*)*ppv);
+-    return S_OK;
+-    }
+-
+-    FIXME("(%s,%s,%p): no interface found.\n", debugstr_guid(rclsid), debugstr_guid(riid), ppv);
+-    return CLASS_E_CLASSNOTAVAILABLE;
++    if (!ppv) return E_POINTER;
++    *ppv = NULL;
++    if (!rclsid || !riid) return E_POINTER;
++    if (!IsEqualGUID(rclsid,&NATIVE_INPUT_CLASS)) return CLASS_E_CLASSNOTAVAILABLE;
++    return IClassFactory_QueryInterface(&DINPUT_CF.IClassFactory_iface,riid,ppv);
+ }
+ 
+ /***********************************************************************
+@@ -1444,7 +1461,7 @@
+  */
+ HRESULT WINAPI DllRegisterServer(void)
+ {
+-    return __wine_register_resources( DINPUT_instance );
++    return wx_register_input(DINPUT_instance,FALSE,NATIVE_INPUT8);
+ }
+ 
+ /***********************************************************************
+@@ -1452,7 +1469,7 @@
+  */
+ HRESULT WINAPI DllUnregisterServer(void)
+ {
+-    return __wine_unregister_resources( DINPUT_instance );
++    return wx_register_input(DINPUT_instance,TRUE,NATIVE_INPUT8);
+ }
+ 
+ /******************************************************************************
+@@ -1524,16 +1541,32 @@
+ static DWORD WINAPI hook_thread_proc(void *param)
+ {
+     static HHOOK kbd_hook, mouse_hook;
++    UINT_PTR sample_timer=0;
+     MSG msg;
+ 
+     /* Force creation of the message queue */
+-    PeekMessageW( &msg, 0, 0, 0, PM_NOREMOVE );
++    PeekMessageA( &msg, 0, 0, 0, PM_NOREMOVE );
+     SetEvent(*(LPHANDLE)param);
+ 
+-    while (GetMessageW( &msg, 0, 0, 0 ))
++    while (GetMessageA( &msg, 0, 0, 0 ))
+     {
+         UINT kbd_cnt = 0, mice_cnt = 0;
+ 
++        if (sample_timer && msg.message == WM_TIMER && msg.wParam == sample_timer) {
++            IDirectInputImpl *input;
++            EnterCriticalSection(&dinput_hook_crit);
++            LIST_FOR_EACH_ENTRY(input, &direct_input_list, IDirectInputImpl, entry) {
++                IDirectInputDeviceImpl *d;
++                EnterCriticalSection(&input->crit);
++                LIST_FOR_EACH_ENTRY(d, &input->devices_list, IDirectInputDeviceImpl, entry) {
++                    if (d->acquired && IsEqualGUID(&d->guid,&GUID_SysKeyboard)) wx_sample_keyboard(d);
++                    else if (d->acquired && IsEqualGUID(&d->guid,&GUID_SysMouse)) wx_sample_mouse(d);
++                }
++                LeaveCriticalSection(&input->crit);
++            }
++            LeaveCriticalSection(&dinput_hook_crit);
++            continue;
++        }
+         if (msg.message == WM_USER+0x10)
+         {
+             IDirectInputImpl *dinput;
+@@ -1544,6 +1577,7 @@
+             {
+                 if (kbd_hook) UnhookWindowsHookEx( kbd_hook );
+                 if (mouse_hook) UnhookWindowsHookEx( mouse_hook );
++                if (sample_timer) KillTimer(NULL,sample_timer);
+                 kbd_hook = mouse_hook = NULL;
+                 break;
+             }
+@@ -1572,6 +1606,11 @@
+             }
+             LeaveCriticalSection( &dinput_hook_crit );
+ 
++            if (wx_legacy_input()) {
++                if ((kbd_cnt || mice_cnt) && !sample_timer) sample_timer=SetTimer(NULL,0,15,NULL);
++                else if (!kbd_cnt && !mice_cnt && sample_timer) { KillTimer(NULL,sample_timer);sample_timer=0; }
++                continue;
++            }
+             if (kbd_cnt && !kbd_hook)
+                 kbd_hook = SetWindowsHookExW( WH_KEYBOARD_LL, LL_hook_proc, DINPUT_instance, 0 );
+             else if (!kbd_cnt && kbd_hook)
+@@ -1589,21 +1628,13 @@
+             }
+         }
+         TranslateMessage(&msg);
+-        DispatchMessageW(&msg);
++        DispatchMessageA(&msg);
+     }
+ 
+     return 0;
+ }
+ 
+ static DWORD hook_thread_id;
+-
+-static CRITICAL_SECTION_DEBUG dinput_critsect_debug =
+-{
+-    0, 0, &dinput_hook_crit,
+-    { &dinput_critsect_debug.ProcessLocksList, &dinput_critsect_debug.ProcessLocksList },
+-      0, 0, { (DWORD_PTR)(__FILE__ ": dinput_hook_crit") }
+-};
+-static CRITICAL_SECTION dinput_hook_crit = { &dinput_critsect_debug, -1, 0, 0, 0, 0 };
+ 
+ static BOOL check_hook_thread(void)
+ {
+@@ -1616,7 +1647,7 @@
+     {
+         HANDLE event;
+ 
+-        event = CreateEventW(NULL, FALSE, FALSE, NULL);
++        event = CreateEventA(NULL, FALSE, FALSE, NULL);
+         hook_thread = CreateThread(NULL, 0, hook_thread_proc, &event, 0, &hook_thread_id);
+         if (event && hook_thread)
+         {
+@@ -1633,7 +1664,7 @@
+         DWORD tid = hook_thread_id;
+ 
+         hook_thread_id = 0;
+-        PostThreadMessageW(tid, WM_USER+0x10, 0, 0);
++        PostThreadMessageA(tid, WM_USER+0x10, 0, 0);
+         LeaveCriticalSection(&dinput_hook_crit);
+ 
+         /* wait for hook thread to exit */
+@@ -1672,7 +1703,7 @@
+         callwndproc_hook = NULL;
+     }
+ 
+-    PostThreadMessageW( hook_thread_id, WM_USER+0x10, 1, 0 );
++    PostThreadMessageA( hook_thread_id, WM_USER+0x10, 1, 0 );
+ 
+     LeaveCriticalSection(&dinput_hook_crit);
+ }
+@@ -1688,7 +1719,7 @@
+      * - some games only poll the device, and neither keyboard nor mouse
+      *   (for example Civilization: Call to Power 2)
+      */
+-    MsgWaitForMultipleObjectsEx(0, NULL, 0, QS_ALLINPUT, 0);
++    MsgWaitForMultipleObjects(0, NULL, FALSE, 0, QS_ALLINPUT);
+ }
+ 
+ BOOL WINAPI DllMain( HINSTANCE inst, DWORD reason, LPVOID reserved)
+@@ -1696,7 +1727,7 @@
+     switch(reason)
+     {
+       case DLL_PROCESS_ATTACH:
+-        DisableThreadLibraryCalls(inst);
++        InitializeCriticalSection(&dinput_hook_crit);
+         DINPUT_instance = inst;
+         break;
+       case DLL_PROCESS_DETACH:
+--- a/dlls/dinput/joystick.c
++++ b/dlls/dinput/joystick.c
+@@ -505,12 +505,12 @@
+     if (res != DI_OK) return res;
+ 
+     if (pdidoi->dwType & DIDFT_AXIS) {
+-        sprintfW(pdidoi->tszName, axisW, DIDFT_GETINSTANCE(pdidoi->dwType));
++        wsprintfW(pdidoi->tszName, axisW, DIDFT_GETINSTANCE(pdidoi->dwType));
+         pdidoi->dwFlags |= DIDOI_ASPECTPOSITION;
+     } else if (pdidoi->dwType & DIDFT_POV)
+-        sprintfW(pdidoi->tszName, povW, DIDFT_GETINSTANCE(pdidoi->dwType));
++        wsprintfW(pdidoi->tszName, povW, DIDFT_GETINSTANCE(pdidoi->dwType));
+     else if (pdidoi->dwType & DIDFT_BUTTON)
+-        sprintfW(pdidoi->tszName, buttonW, DIDFT_GETINSTANCE(pdidoi->dwType));
++        wsprintfW(pdidoi->tszName, buttonW, DIDFT_GETINSTANCE(pdidoi->dwType));
+ 
+     _dump_OBJECTINSTANCEW(pdidoi);
+     return res;
+@@ -653,7 +653,7 @@
+     pdidi->guidProduct = This->guidProduct;
+     /* we only support traditional joysticks for now */
+     pdidi->dwDevType = This->devcaps.dwDevType;
+-    snprintf(pdidi->tszInstanceName, MAX_PATH, "Joystick %d", index);
++    wsprintfA(pdidi->tszInstanceName, "Joystick %d", index);
+     strcpy(pdidi->tszProductName, This->name);
+     if (pdidi->dwSize > sizeof(DIDEVICEINSTANCE_DX3A)) {
+         pdidi->guidFFDriver = GUID_NULL;
+@@ -697,7 +697,7 @@
+     pdidi->guidProduct = This->guidProduct;
+     /* we only support traditional joysticks for now */
+     pdidi->dwDevType = This->devcaps.dwDevType;
+-    snprintf(buffer, sizeof(buffer), "Joystick %d", index);
++    wsprintfA(buffer, "Joystick %d", index);
+     MultiByteToWideChar(CP_ACP, 0, buffer, -1, pdidi->tszInstanceName, MAX_PATH);
+     MultiByteToWideChar(CP_ACP, 0, This->name, -1, pdidi->tszProductName, MAX_PATH);
+     if (pdidi->dwSize > sizeof(DIDEVICEINSTANCE_DX3W)) {
+--- a/dlls/dinput/joystick_linux.c
++++ b/dlls/dinput/joystick_linux.c
+@@ -438,7 +438,6 @@
+     newDevice->generic.base.dinput = dinput;
+     newDevice->generic.base.guid = *rguid;
+     InitializeCriticalSection(&newDevice->generic.base.crit);
+-    newDevice->generic.base.crit.DebugInfo->Spare[0] = (DWORD_PTR)(__FILE__ ": JoystickImpl*->generic.base.crit");
+ 
+     /* setup_dinput_options may change these */
+     newDevice->generic.deadzone = 0;
+--- a/dlls/dinput/dinput.rc
++++ b/dlls/dinput/dinput.rc
+@@ -18,16 +18,9 @@
+ 
+ #include "resource.h"
+ 
+-#define WINE_FILEDESCRIPTION_STR "Wine DirectInput"
+-#define WINE_FILENAME_STR "dinput.dll"
+-#define WINE_FILEVERSION 5,1,2600,881
+-#define WINE_FILEVERSION_STR "5.1.2600.881"
+-#define WINE_PRODUCTVERSION 5,1,2600,881
+-#define WINE_PRODUCTVERSION_STR "5.1"
++#include <windows.h>
++#include <commctrl.h>
+ 
+-#include "wine/wine_common_ver.rc"
+-
+-#pragma makedep po
+ 
+ LANGUAGE LANG_ENGLISH, SUBLANG_DEFAULT
+ 

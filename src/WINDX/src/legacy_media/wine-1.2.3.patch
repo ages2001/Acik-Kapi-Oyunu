@@ -1,0 +1,374 @@
+--- a/dlls/dsound/propset.c
++++ b/dlls/dsound/propset.c
+@@ -34,6 +34,7 @@
+ #include "dsound.h"
+ #include "dsdriver.h"
+ #include "dsound_private.h"
++#include "native_wave.h"
+ #include "dsconf.h"
+ 
+ #ifdef NONAMELESSSTRUCT
+@@ -109,7 +110,7 @@
+         ULONG wod;
+         unsigned int wodn;
+         TRACE("DataFlow=DIRECTSOUNDDEVICE_DATAFLOW_RENDER\n");
+-        wodn = waveOutGetNumDevs();
++        wodn = min(waveOutGetNumDevs(), MAXWAVEDRIVERS);
+         for (wod = 0; wod < wodn; wod++) {
+             WAVEOUTCAPSW capsW;
+             MMRESULT res;
+@@ -128,7 +129,7 @@
+         ULONG wid;
+         unsigned int widn;
+         TRACE("DataFlow=DIRECTSOUNDDEVICE_DATAFLOW_CAPTURE\n");
+-        widn = waveInGetNumDevs();
++        widn = min(waveInGetNumDevs(), MAXWAVEDRIVERS);
+         for (wid = 0; wid < widn; wid++) {
+             WAVEINCAPSW capsW;
+             MMRESULT res;
+@@ -217,8 +218,8 @@
+ 
+     GetDeviceID(&ppd->DeviceId, &dev_guid);
+ 
+-    wodn = waveOutGetNumDevs();
+-    widn = waveInGetNumDevs();
++    wodn = min(waveOutGetNumDevs(), MAXWAVEDRIVERS);
++    widn = min(waveInGetNumDevs(), MAXWAVEDRIVERS);
+     wid = wod = dev_guid.Data4[7];
+     if (!memcmp(&dev_guid, &DSOUND_renderer_guids[0], sizeof(GUID)-1)
+         && wod < wodn)
+@@ -239,9 +240,9 @@
+     }
+ 
+     if (ppd->DataFlow == DIRECTSOUNDDEVICE_DATAFLOW_RENDER)
+-        err = waveOutMessage(UlongToHandle(wod),DRV_QUERYDSOUNDDESC,(DWORD_PTR)&desc,0);
++        err = wx_wave_description(wod, FALSE, &desc);
+     else
+-        err = waveInMessage(UlongToHandle(wod),DRV_QUERYDSOUNDDESC,(DWORD_PTR)&desc,0);
++        err = wx_wave_description(wod, TRUE, &desc);
+ 
+     if (err != MMSYSERR_NOERROR)
+     {
+@@ -303,8 +304,8 @@
+         return E_PROP_ID_UNSUPPORTED;
+     }
+ 
+-    wodn = waveOutGetNumDevs();
+-    widn = waveInGetNumDevs();
++    wodn = min(waveOutGetNumDevs(), MAXWAVEDRIVERS);
++    widn = min(waveInGetNumDevs(), MAXWAVEDRIVERS);
+ 
+     data.DeviceId = DSOUND_renderer_guids[0];
+     for (i = 0; i < wodn; ++i)
+--- a/dlls/dsound/dsound.c
++++ b/dlls/dsound/dsound.c
+@@ -39,6 +39,7 @@
+ #include "dsound.h"
+ #include "dsdriver.h"
+ #include "dsound_private.h"
++#include "native_wave.h"
+ 
+ WINE_DEFAULT_DEBUG_CHANNEL(dsound);
+ 
+@@ -1217,7 +1218,6 @@
+     device->pwfx->cbSize = 0;
+ 
+     InitializeCriticalSection(&(device->mixlock));
+-    device->mixlock.DebugInfo->Spare[0] = (DWORD_PTR)(__FILE__ ": DirectSoundDevice.mixlock");
+ 
+     RtlInitializeResource(&(device->buffer_list_lock));
+ 
+@@ -1281,7 +1281,6 @@
+         if (device->drvdesc.dwFlags & DSDDESC_USESYSTEMMEMORY)
+             HeapFree(GetProcessHeap(), 0, device->buffer);
+         RtlDeleteResource(&device->buffer_list_lock);
+-        device->mixlock.DebugInfo->Spare[0] = 0;
+         DeleteCriticalSection(&device->mixlock);
+         HeapFree(GetProcessHeap(),0,device);
+         TRACE("(%p) released\n", device);
+@@ -1367,7 +1366,7 @@
+     }
+ 
+     /* Enumerate WINMM audio devices and find the one we want */
+-    wodn = waveOutGetNumDevs();
++    wodn = min(waveOutGetNumDevs(), MAXWAVEDRIVERS);
+     if (!wodn) {
+         WARN("no driver\n");
+         return DSERR_NODRIVER;
+@@ -1409,6 +1408,7 @@
+     device->driver = NULL;
+ 
+     device->drvdesc.dnDevNode = wod;
++    wx_choose_primary_format(wod, device->pwfx);
+     hr = DSOUND_ReopenDevice(device, FALSE);
+     if (FAILED(hr))
+     {
+@@ -1431,6 +1431,9 @@
+             return hr;
+         }
+         ZeroMemory(&device->drvcaps, sizeof(device->drvcaps));
++        if (woc.wChannels == 1) device->speaker_config = DSSPEAKER_MONO;
++        device->drvcaps.dwFlags = DSCAPS_EMULDRIVER | DSCAPS_SECONDARYMONO | DSCAPS_SECONDARYSTEREO |
++                DSCAPS_SECONDARY8BIT | DSCAPS_SECONDARY16BIT;
+         if ((woc.dwFormats & WAVE_FORMAT_1M08) ||
+             (woc.dwFormats & WAVE_FORMAT_2M08) ||
+             (woc.dwFormats & WAVE_FORMAT_4M08) ||
+--- a/dlls/dsound/dsound_private.h
++++ b/dlls/dsound/dsound_private.h
+@@ -24,6 +24,7 @@
+ #define DS_TIME_DEL 10  /* Delay of multimedia timer callback, and duration of HEL fragment */
+ 
+ #include "wine/list.h"
++#include "native_lock.h"
+ 
+ /* direct sound hardware acceleration levels */
+ #define DS_HW_ACCEL_FULL        0	/* default on Windows 98 */
+--- a/dlls/dsound/regsvr.c
++++ b/dlls/dsound/regsvr.c
+@@ -31,6 +31,7 @@
+ #include "dsound.h"
+ 
+ #include "wine/debug.h"
++int WINAPI wx_guid_string(REFGUID guid, WCHAR *output, int capacity);
+ #include "wine/unicode.h"
+ 
+ WINE_DEFAULT_DEBUG_CHANNEL(dsound);
+@@ -136,14 +137,14 @@
+ 	WCHAR buf[39];
+ 	HKEY iid_key;
+ 
+-	StringFromGUID2(list->iid, buf, 39);
++	wx_guid_string(list->iid, buf, 39);
+ 	res = RegCreateKeyExW(interface_key, buf, 0, NULL, 0,
+ 			      KEY_READ | KEY_WRITE, NULL, &iid_key, NULL);
+ 	if (res != ERROR_SUCCESS) goto error_close_interface_key;
+ 
+ 	if (list->name) {
+ 	    res = RegSetValueExA(iid_key, NULL, 0, REG_SZ,
+-				 (CONST BYTE*)(list->name),
++				 (const BYTE*)(list->name),
+ 				 strlen(list->name) + 1);
+ 	    if (res != ERROR_SUCCESS) goto error_close_iid_key;
+ 	}
+@@ -163,7 +164,7 @@
+ 
+ 	    sprintfW(buf, fmt, list->num_methods);
+ 	    res = RegSetValueExW(key, NULL, 0, REG_SZ,
+-				 (CONST BYTE*)buf,
++				 (const BYTE*)buf,
+ 				 (lstrlenW(buf) + 1) * sizeof(WCHAR));
+ 	    RegCloseKey(key);
+ 
+@@ -206,7 +207,7 @@
+     for (; res == ERROR_SUCCESS && list->iid; ++list) {
+ 	WCHAR buf[39];
+ 
+-	StringFromGUID2(list->iid, buf, 39);
++	wx_guid_string(list->iid, buf, 39);
+ 	res = pRegDeleteTreeW(interface_key, buf);
+ 	if (res == ERROR_FILE_NOT_FOUND) res = ERROR_SUCCESS;
+     }
+@@ -232,14 +233,14 @@
+ 	WCHAR buf[39];
+ 	HKEY clsid_key;
+ 
+-	StringFromGUID2(list->clsid, buf, 39);
++	wx_guid_string(list->clsid, buf, 39);
+ 	res = RegCreateKeyExW(coclass_key, buf, 0, NULL, 0,
+ 			      KEY_READ | KEY_WRITE, NULL, &clsid_key, NULL);
+ 	if (res != ERROR_SUCCESS) goto error_close_coclass_key;
+ 
+ 	if (list->name) {
+ 	    res = RegSetValueExA(clsid_key, NULL, 0, REG_SZ,
+-				 (CONST BYTE*)(list->name),
++				 (const BYTE*)(list->name),
+ 				 strlen(list->name) + 1);
+ 	    if (res != ERROR_SUCCESS) goto error_close_clsid_key;
+ 	}
+@@ -258,11 +259,11 @@
+ 	    if (res != ERROR_SUCCESS) goto error_close_clsid_key;
+ 
+ 	    res = RegSetValueExA(ips32_key, NULL, 0, REG_SZ,
+-				 (CONST BYTE*)list->ips32,
++				 (const BYTE*)list->ips32,
+ 				 lstrlenA(list->ips32) + 1);
+ 	    if (res == ERROR_SUCCESS && list->ips32_tmodel)
+ 		res = RegSetValueExA(ips32_key, tmodel_valuename, 0, REG_SZ,
+-				     (CONST BYTE*)list->ips32_tmodel,
++				     (const BYTE*)list->ips32_tmodel,
+ 				     strlen(list->ips32_tmodel) + 1);
+ 	    RegCloseKey(ips32_key);
+ 	    if (res != ERROR_SUCCESS) goto error_close_clsid_key;
+@@ -314,7 +315,7 @@
+     for (; res == ERROR_SUCCESS && list->clsid; ++list) {
+ 	WCHAR buf[39];
+ 
+-	StringFromGUID2(list->clsid, buf, 39);
++	wx_guid_string(list->clsid, buf, 39);
+ 	res = pRegDeleteTreeW(coclass_key, buf);
+ 	if (res == ERROR_FILE_NOT_FOUND) res = ERROR_SUCCESS;
+ 	if (res != ERROR_SUCCESS) goto error_close_coclass_key;
+@@ -345,7 +346,7 @@
+ {
+     WCHAR buf[39];
+ 
+-    StringFromGUID2(guid, buf, 39);
++    wx_guid_string(guid, buf, 39);
+     return register_key_defvalueW(base, name, buf);
+ }
+ 
+@@ -363,7 +364,7 @@
+     res = RegCreateKeyExW(base, name, 0, NULL, 0,
+ 			  KEY_READ | KEY_WRITE, NULL, &key, NULL);
+     if (res != ERROR_SUCCESS) return res;
+-    res = RegSetValueExW(key, NULL, 0, REG_SZ, (CONST BYTE*)value,
++    res = RegSetValueExW(key, NULL, 0, REG_SZ, (const BYTE*)value,
+ 			 (lstrlenW(value) + 1) * sizeof(WCHAR));
+     RegCloseKey(key);
+     return res;
+@@ -383,7 +384,7 @@
+     res = RegCreateKeyExW(base, name, 0, NULL, 0,
+ 			  KEY_READ | KEY_WRITE, NULL, &key, NULL);
+     if (res != ERROR_SUCCESS) return res;
+-    res = RegSetValueExA(key, NULL, 0, REG_SZ, (CONST BYTE*)value,
++    res = RegSetValueExA(key, NULL, 0, REG_SZ, (const BYTE*)value,
+ 			 lstrlenA(value) + 1);
+     RegCloseKey(key);
+     return res;
+@@ -409,7 +410,7 @@
+ 
+     if (name) {
+ 	res = RegSetValueExA(progid_key, NULL, 0, REG_SZ,
+-			     (CONST BYTE*)name, strlen(name) + 1);
++			     (const BYTE*)name, strlen(name) + 1);
+ 	if (res != ERROR_SUCCESS) goto error_close_progid_key;
+     }
+ 
+--- a/dlls/dsound/capture.c
++++ b/dlls/dsound/capture.c
+@@ -999,7 +999,6 @@
+     device->state = STATE_STOPPED;
+ 
+     InitializeCriticalSection( &(device->lock) );
+-    device->lock.DebugInfo->Spare[0] = (DWORD_PTR)(__FILE__ ": DirectSoundCaptureDevice.lock");
+ 
+     *ppDevice = device;
+ 
+@@ -1024,7 +1023,6 @@
+         }
+ 
+         HeapFree(GetProcessHeap(), 0, device->pwfx);
+-        device->lock.DebugInfo->Spare[0] = 0;
+         DeleteCriticalSection( &(device->lock) );
+         DSOUND_capture[device->drvdesc.dnDevNode] = NULL;
+         HeapFree(GetProcessHeap(), 0, device);
+@@ -1053,7 +1051,7 @@
+         return DSERR_INVALIDPARAM;
+     }
+ 
+-    widn = waveInGetNumDevs();
++    widn = min(waveInGetNumDevs(), MAXWAVEDRIVERS);
+     if (!widn) {
+ 	WARN("no audio devices found\n");
+ 	return DSERR_NODRIVER;
+@@ -1086,16 +1084,8 @@
+     *ppDevice = device;
+     device->guid = devGUID;
+ 
+-    /* Disable the direct sound driver to force emulation if requested. */
++    /* An NT WinMM wave driver does not implement the Wine driver interface. */
+     device->driver = NULL;
+-    if (ds_hw_accel != DS_HW_ACCEL_EMULATION)
+-    {
+-        err = mmErr(waveInMessage(UlongToHandle(wid),DRV_QUERYDSOUNDIFACE,(DWORD_PTR)&device->driver,0));
+-        if ( (err != DS_OK) && (err != DSERR_UNSUPPORTED) ) {
+-            WARN("waveInMessage failed; err=%x\n",err);
+-            return err;
+-        }
+-    }
+     err = DS_OK;
+ 
+     /* Get driver description */
+--- a/dlls/dsound/primary.c
++++ b/dlls/dsound/primary.c
+@@ -103,10 +103,7 @@
+ 	else if (device->drvdesc.dwFlags & DSDDESC_DOMMSYSTEMOPEN)
+ 		waveOutClose(device->hwo);
+ 
+-	/* DRV_QUERYDSOUNDIFACE is a "Wine extension" to get the DSound interface */
+-	if (ds_hw_accel != DS_HW_ACCEL_EMULATION && !forcewave)
+-		waveOutMessage((HWAVEOUT)device->drvdesc.dnDevNode, DRV_QUERYDSOUNDIFACE, (DWORD_PTR)&device->driver, 0);
+-
++	/* Native WinMM devices use the software mixer. */
+ 	/* Get driver description */
+ 	if (device->driver) {
+ 		DWORD wod = device->drvdesc.dnDevNode;
+--- a/dlls/dsound/dsound_main.c
++++ b/dlls/dsound/dsound_main.c
+@@ -54,6 +54,7 @@
+ #include "dsdriver.h"
+ 
+ #include "dsound_private.h"
++#include "native_wave.h"
+ 
+ WINE_DEFAULT_DEBUG_CHANNEL(dsound);
+ 
+@@ -351,13 +352,13 @@
+ 	return DSERR_INVALIDPARAM;
+     }
+ 
+-    devs = waveOutGetNumDevs();
++    devs = min(waveOutGetNumDevs(), MAXWAVEDRIVERS);
+     if (devs > 0) {
+ 	if (GetDeviceID(&DSDEVID_DefaultPlayback, &guid) == DS_OK) {
+             static const WCHAR empty[] = { 0 };
+ 	    for (wod = 0; wod < devs; ++wod) {
+                 if (IsEqualGUID( &guid, &DSOUND_renderer_guids[wod] ) ) {
+-                    err = mmErr(waveOutMessage(UlongToHandle(wod),DRV_QUERYDSOUNDDESC,(DWORD_PTR)&desc,0));
++                    err = mmErr(wx_wave_description(wod, FALSE, &desc));
+                     if (err == DS_OK) {
+                         TRACE("calling lpDSEnumCallback(NULL,\"%s\",\"%s\",%p)\n",
+                               "Primary Sound Driver",desc.szDrvname,lpContext);
+@@ -372,7 +373,7 @@
+     }
+ 
+     for (wod = 0; wod < devs; ++wod) {
+-        err = mmErr(waveOutMessage(UlongToHandle(wod),DRV_QUERYDSOUNDDESC,(DWORD_PTR)&desc,0));
++        err = mmErr(wx_wave_description(wod, FALSE, &desc));
+ 	if (err == DS_OK) {
+             TRACE("calling lpDSEnumCallback(%s,\"%s\",\"%s\",%p)\n",
+                   debugstr_guid(&DSOUND_renderer_guids[wod]),desc.szDesc,desc.szDrvname,lpContext);
+@@ -453,12 +454,12 @@
+         return DSERR_INVALIDPARAM;
+     }
+ 
+-    devs = waveInGetNumDevs();
++    devs = min(waveInGetNumDevs(), MAXWAVEDRIVERS);
+     if (devs > 0) {
+ 	if (GetDeviceID(&DSDEVID_DefaultCapture, &guid) == DS_OK) {
+ 	    for (wid = 0; wid < devs; ++wid) {
+                 if (IsEqualGUID( &guid, &DSOUND_capture_guids[wid] ) ) {
+-                    err = mmErr(waveInMessage(UlongToHandle(wid),DRV_QUERYDSOUNDDESC,(DWORD_PTR)&desc,0));
++                    err = mmErr(wx_wave_description(wid, TRUE, &desc));
+                     if (err == DS_OK) {
+                         TRACE("calling lpDSEnumCallback(NULL,\"%s\",\"%s\",%p)\n",
+                               "Primary Sound Capture Driver",desc.szDrvname,lpContext);
+@@ -477,7 +478,7 @@
+     }
+ 
+     for (wid = 0; wid < devs; ++wid) {
+-        err = mmErr(waveInMessage(UlongToHandle(wid),DRV_QUERYDSOUNDDESC,(DWORD_PTR)&desc,0));
++        err = mmErr(wx_wave_description(wid, TRUE, &desc));
+ 	if (err == DS_OK) {
+             TRACE("calling lpDSEnumCallback(%s,\"%s\",\"%s\",%p)\n",
+                   debugstr_guid(&DSOUND_capture_guids[wid]),desc.szDesc,desc.szDrvname,lpContext);
+@@ -669,9 +670,6 @@
+             INIT_GUID(DSOUND_renderer_guids[i], 0xbd6dd71a, 0x3deb, 0x11d1, 0xb1, 0x71, 0x00, 0xc0, 0x4f, 0xc2, 0x00, 0x00 + i);
+             INIT_GUID(DSOUND_capture_guids[i],  0xbd6dd71b, 0x3deb, 0x11d1, 0xb1, 0x71, 0x00, 0xc0, 0x4f, 0xc2, 0x00, 0x00 + i);
+         }
+-        DisableThreadLibraryCalls(hInstDLL);
+-        /* Increase refcount on dsound by 1 */
+-        GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS, (LPCWSTR)hInstDLL, &hInstDLL);
+         break;
+     case DLL_PROCESS_DETACH:
+         TRACE("DLL_PROCESS_DETACH\n");

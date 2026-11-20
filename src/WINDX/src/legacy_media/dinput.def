@@ -1,0 +1,9 @@
+LIBRARY dinput
+EXPORTS
+    DirectInputCreateA=DirectInputCreateA@16
+    DirectInputCreateW=DirectInputCreateW@16
+    DirectInputCreateEx=DirectInputCreateEx@20
+    DllGetClassObject=DllGetClassObject@12
+    DllCanUnloadNow=DllCanUnloadNow@0
+    DllRegisterServer=DllRegisterServer@0
+    DllUnregisterServer=DllUnregisterServer@0

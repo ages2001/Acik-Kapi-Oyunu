@@ -1,0 +1,29 @@
+#include <windows.h>
+
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+1 VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+ FILEFLAGS VS_FF_PRERELEASE
+ FILEOS VOS__WINDOWS32
+ FILETYPE VFT_DLL
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "WINDX contributors\0"
+            VALUE "FileDescription", MEDIA_DESCRIPTION "\0"
+            VALUE "FileVersion", "1.0.0.0\0"
+            VALUE "InternalName", MEDIA_FILENAME "\0"
+            VALUE "OriginalFilename", MEDIA_FILENAME "\0"
+            VALUE "ProductName", "WINDX\0"
+            VALUE "ProductVersion", "1.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1252
+    END
+END

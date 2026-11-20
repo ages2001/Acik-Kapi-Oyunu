@@ -1,0 +1,20 @@
+Windows NT 3.1 build 528, private QEMU/IDE guest, Pentium II, 256 MiB
+===================================================================
+The guest held the classic83 runtime in D:\WXRENDER. The working directory for the first three commands was C:\WINNT31. The DirectX system registration was absent throughout.
+
+WXINV.EXE /probe (before WINDX registration)
+No registered DirectX runtime
+
+WXINV.EXE /register D:\WXRENDER (cold process)
+WINDX Direct3D 11 (feature level 10.1)
+Registered WINDX runtime directory: D:\WXRENDER
+
+WXINV.EXE /probe (new process after registration)
+WINDX Direct3D 11 (feature level 10.1)
+
+The runtime query performed a new Direct3D device creation for each of the last two commands. File presence alone cannot produce this result.
+
+Native installation data, checked independently in private disk images
+====================================================================
+NT 4.0 SP3: HKLM\Software\Microsoft\DirectX contains InstalledVersion (REG_BINARY), bytes 03 00 00 00.
+XP x86 SP3: HKLM\Software\Microsoft\DirectX\Version (REG_SZ) is 4.09.00.0904.

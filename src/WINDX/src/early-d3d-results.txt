@@ -1,0 +1,101 @@
+Legacy Direct3D device draws and render-target readback
+
+wxold3d.exe loaded the application-local ddraw.dll and requested the HAL device through each historical API. WINOGL supplied a software GL backend. For each device, the probe first read every pixel of a freshly cleared 32 by 32 RGB render target. It submitted three pretransformed vertices, ended the scene, then locked the render target and verified 153 foreground pixels in the interior and 618 preserved background pixels outside the triangle. Samples immediately adjacent to triangle edges are omitted from the second comparison to allow each rasterizer's edge convention.
+
+The Direct3D 1 path submits an execute buffer containing PROCESSVERTICES, STATERENDER, TRIANGLE and EXIT instructions. The Direct3D 2 path uses DrawPrimitive with D3DVT_TLVERTEX, while Direct3D 3 and 7 use a flexible vertex format. Each run below finished with process exit code zero.
+
+Windows 98 SE
+=============
+ddraw.dll loaded from C:\WX3AD1\DDRAW.DLL
+Direct3D 1 execute buffer
+Direct3D 1 execute buffer triangle and surface readback PASS
+Direct3D 2 DrawPrimitive
+Direct3D 2 DrawPrimitive triangle and surface readback PASS
+Direct3D 3 FVF DrawPrimitive
+Direct3D 3 FVF DrawPrimitive triangle and surface readback PASS
+Direct3D 7 DrawPrimitive
+Direct3D 7 DrawPrimitive triangle and surface readback PASS
+
+Windows Me
+==========
+ddraw.dll loaded from C:\WXMT2\DDRAW.DLL
+Direct3D 1 execute buffer
+Direct3D 1 execute buffer triangle and surface readback PASS
+Direct3D 2 DrawPrimitive
+Direct3D 2 DrawPrimitive triangle and surface readback PASS
+Direct3D 3 FVF DrawPrimitive
+Direct3D 3 FVF DrawPrimitive triangle and surface readback PASS
+Direct3D 7 DrawPrimitive
+Direct3D 7 DrawPrimitive triangle and surface readback PASS
+
+Windows NT 3.5 SP3
+==================
+ddraw.dll loaded from D:\WXCLASS\ddraw.dll
+Direct3D 1 execute buffer
+Direct3D 1 execute buffer triangle and surface readback PASS
+Direct3D 2 DrawPrimitive
+Direct3D 2 DrawPrimitive triangle and surface readback PASS
+Direct3D 3 FVF DrawPrimitive
+Direct3D 3 FVF DrawPrimitive triangle and surface readback PASS
+Direct3D 7 DrawPrimitive
+Direct3D 7 DrawPrimitive triangle and surface readback PASS
+
+Windows NT 3.51 SP5
+===================
+ddraw.dll loaded from C:\WXMT2\ddraw.dll
+Direct3D 1 execute buffer
+Direct3D 1 execute buffer triangle and surface readback PASS
+Direct3D 2 DrawPrimitive
+Direct3D 2 DrawPrimitive triangle and surface readback PASS
+Direct3D 3 FVF DrawPrimitive
+Direct3D 3 FVF DrawPrimitive triangle and surface readback PASS
+Direct3D 7 DrawPrimitive
+Direct3D 7 DrawPrimitive triangle and surface readback PASS
+
+Windows NT 4.0 SP3
+==================
+ddraw.dll loaded from C:\WXSV2\ddraw.dll
+Direct3D 1 execute buffer
+Direct3D 1 execute buffer triangle and surface readback PASS
+Direct3D 2 DrawPrimitive
+Direct3D 2 DrawPrimitive triangle and surface readback PASS
+Direct3D 3 FVF DrawPrimitive
+Direct3D 3 FVF DrawPrimitive triangle and surface readback PASS
+Direct3D 7 DrawPrimitive
+Direct3D 7 DrawPrimitive triangle and surface readback PASS
+
+Windows 2000 SP4
+================
+ddraw.dll loaded from C:\WXSV2\ddraw.dll
+Direct3D 1 execute buffer
+Direct3D 1 execute buffer triangle and surface readback PASS
+Direct3D 2 DrawPrimitive
+Direct3D 2 DrawPrimitive triangle and surface readback PASS
+Direct3D 3 FVF DrawPrimitive
+Direct3D 3 FVF DrawPrimitive triangle and surface readback PASS
+Direct3D 7 DrawPrimitive
+Direct3D 7 DrawPrimitive triangle and surface readback PASS
+
+Windows XP Professional x86 SP3
+===============================
+ddraw.dll loaded from C:\MXM1\DRAW\ddraw.dll
+Direct3D 1 execute buffer
+Direct3D 1 execute buffer triangle and surface readback PASS
+Direct3D 2 DrawPrimitive
+Direct3D 2 DrawPrimitive triangle and surface readback PASS
+Direct3D 3 FVF DrawPrimitive
+Direct3D 3 FVF DrawPrimitive triangle and surface readback PASS
+Direct3D 7 DrawPrimitive
+Direct3D 7 DrawPrimitive triangle and surface readback PASS
+
+Windows XP Professional x64 SP2 (native 64-bit process)
+=======================================================
+ddraw.dll loaded from C:\MXM1\DRAW\ddraw.dll
+Direct3D 1 execute buffer
+Direct3D 1 execute buffer triangle and surface readback PASS
+Direct3D 2 DrawPrimitive
+Direct3D 2 DrawPrimitive triangle and surface readback PASS
+Direct3D 3 FVF DrawPrimitive
+Direct3D 3 FVF DrawPrimitive triangle and surface readback PASS
+Direct3D 7 DrawPrimitive
+Direct3D 7 DrawPrimitive triangle and surface readback PASS

@@ -1,0 +1,21 @@
+--- a/loader/icd_trace.h
++++ b/loader/icd_trace.h
+@@ -22,6 +22,7 @@
+ #include <stdio.h>
+ 
+ extern int khrEnableTrace;
++void winocl_trace(const char *format, ...);
+ 
+ // internal tracing macros
+ #define KHR_ICD_TRACE(...) \
+@@ -29,8 +30,8 @@
+ { \
+     if (khrEnableTrace) \
+     { \
+-        fprintf(stderr, "KHR ICD trace at %s:%d: ", __FILE__, __LINE__); \
+-        fprintf(stderr, __VA_ARGS__); \
++        winocl_trace("KHR ICD trace at %s:%d: ", __FILE__, __LINE__); \
++        winocl_trace(__VA_ARGS__); \
+     } \
+ } while (0)
+ 

@@ -1,0 +1,40 @@
+Windows NT 3.1 x86, build 528
+===========================
+
+The test ran in a disposable guest with a Sound Blaster-compatible ISA device
+and Microsoft's sound driver from the Windows NT 3.1 release. The port address
+was 0x220, the interrupt was 5 and the 8-bit DMA channel was 1. WinMM reported
+one device after the driver started and zero before installation. A separate
+untouched guest tested the no-device path.
+
+Independent native WinMM check
+WinMM devices 00000001
+GetDevCaps 00000000
+Creative Labs Sound Blaster 1.5
+formats 00000011
+open 00000000
+prepare 00000000
+write 00000000
+WHDR_DONE 00000001
+
+DirectSound host-visible playback
+DirectSound module A:\dsound.dll
+Default playback endpoint Primary Sound Driver
+WinMM playback endpoint Creative Labs Sound Blaster 1.5
+DirectSound device capabilities 00000f25
+Two simultaneous PCM buffers, wrapped locks and moving playback cursor PASS
+Nonlooping playback finished PASS
+Process exit 0
+
+A host WAV recording contained both synthesized tones, at approximately
+344.53 Hz and 220.50 Hz, while both DirectSound buffers were looping. After
+the test stopped the two buffers and replayed the first, the recording
+contained only the 344.53 Hz tone. The WAV used stereo 44,100 Hz signed
+16-bit PCM; the DirectSound secondary buffers used mono 11,025 Hz unsigned
+8-bit PCM. Physical speaker output was not measured.
+
+No WinMM playback device
+DirectSound module A:\dsound.dll
+No WinMM output, DirectSoundCreate returned 88780078
+Empty output-device list and DSERR_NODRIVER PASS
+Process exit 2

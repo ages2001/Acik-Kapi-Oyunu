@@ -1,0 +1,22 @@
+--- a/src/gallium/drivers/llvmpipe/lp_screen.c
++++ b/src/gallium/drivers/llvmpipe/lp_screen.c
+@@ -212,7 +212,7 @@
+    case PIPE_CAP_GLSL_FEATURE_LEVEL_COMPATIBILITY:
+    case PIPE_CAP_GLSL_FEATURE_LEVEL: {
+       struct llvmpipe_screen *lscreen = llvmpipe_screen(screen);
+-      return lscreen->use_tgsi ? 330 : 450;
++      return lscreen->use_tgsi ? 330 : 460;
+    }
+    case PIPE_CAP_COMPUTE:
+       return GALLIVM_HAVE_CORO;
+--- a/src/gallium/frontends/wgl/stw_ext_context.c
++++ b/src/gallium/frontends/wgl/stw_ext_context.c
+@@ -133,7 +133,7 @@
+         ((majorVersion == 1 && minorVersion > 5) ||
+          (majorVersion == 2 && minorVersion > 1) ||
+          (majorVersion == 3 && minorVersion > 3) ||
+-         (majorVersion == 4 && minorVersion > 5) ||
++         (majorVersion == 4 && minorVersion > 6) ||
+          majorVersion > 4)) ||
+        (profileMask == WGL_CONTEXT_ES_PROFILE_BIT_EXT &&
+         ((majorVersion == 1 && minorVersion > 1) ||

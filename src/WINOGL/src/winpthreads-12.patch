@@ -1,0 +1,267 @@
+--- a/src/cond.h
++++ b/src/cond.h
+@@ -45,7 +45,7 @@
+     LONG waiters_count_; /* Number of waiting threads.  */
+     LONG waiters_count_unblock_; /* Number of waiting threads whitch can be unblocked.  */
+     LONG waiters_count_gone_; /* Number of waiters which are gone.  */
+-    CRITICAL_SECTION waiters_count_lock_; /* Serialize access to <waiters_count_>.  */
++    pthread_mutex_t waiters_count_lock_; /* Serialize access to <waiters_count_>.  */
+     CRITICAL_SECTION waiters_q_lock_; /* Serialize access to sema_q.  */
+     LONG value_q;
+     CRITICAL_SECTION waiters_b_lock_; /* Serialize access to sema_b.  */
+--- a/src/cond.c
++++ b/src/cond.c
+@@ -219,15 +219,19 @@
+       0,          /* initially 0 */
+       0x7fffffff, /* max count */
+       NULL);  
+-  if (_c->sema_q == NULL || _c->sema_b == NULL) {
++  /* The counter lock also needs a nonblocking acquire on Windows NT 3.x. */
++  _c->waiters_count_lock_ = PTHREAD_RECURSIVE_MUTEX_INITIALIZER;
++  if (_c->sema_q == NULL || _c->sema_b == NULL ||
++      (r = pthread_mutex_lock (&_c->waiters_count_lock_)) != 0) {
+       if (_c->sema_q != NULL)
+ 	CloseHandle (_c->sema_q);
+       if (_c->sema_b != NULL)
+ 	CloseHandle (_c->sema_b);
++      pthread_mutex_destroy (&_c->waiters_count_lock_);
+       free (_c);
+-      r = EAGAIN;
++      if (!r) r = EAGAIN;
+   } else {
+-      InitializeCriticalSection(&_c->waiters_count_lock_);
++      pthread_mutex_unlock (&_c->waiters_count_lock_);
+       InitializeCriticalSection(&_c->waiters_b_lock_);
+       InitializeCriticalSection(&_c->waiters_q_lock_);
+       _c->value_q = 0;
+@@ -267,7 +271,7 @@
+   r = do_sema_b_wait(_c->sema_b, 0, INFINITE,&_c->waiters_b_lock_,&_c->value_b);
+   if (r != 0)
+     return r;
+-  if (!TryEnterCriticalSection (&_c->waiters_count_lock_))
++  if (pthread_mutex_trylock (&_c->waiters_count_lock_) != 0)
+     {
+        do_sema_b_release (_c->sema_b, 1,&_c->waiters_b_lock_,&_c->value_b);
+        return EBUSY;
+@@ -276,7 +280,7 @@
+     {
+       r = do_sema_b_release (_c->sema_b, 1,&_c->waiters_b_lock_,&_c->value_b);
+       if (!r) r = EBUSY;
+-      LeaveCriticalSection(&_c->waiters_count_lock_);
++      pthread_mutex_unlock (&_c->waiters_count_lock_);
+       return r;
+     }
+   *c = (pthread_cond_t)NULL;
+@@ -286,8 +290,8 @@
+     r = EINVAL;
+   if (!CloseHandle (_c->sema_b) && !r)
+     r = EINVAL;
+-  LeaveCriticalSection (&_c->waiters_count_lock_);
+-  DeleteCriticalSection(&_c->waiters_count_lock_);
++  pthread_mutex_unlock (&_c->waiters_count_lock_);
++  pthread_mutex_destroy (&_c->waiters_count_lock_);
+   DeleteCriticalSection(&_c->waiters_b_lock_);
+   DeleteCriticalSection(&_c->waiters_q_lock_);
+   _c->valid  = DEAD_COND;
+@@ -309,13 +313,13 @@
+   else if (_c->valid != (unsigned int)LIFE_COND)
+     return EINVAL;
+ 
+-  EnterCriticalSection (&_c->waiters_count_lock_);
++  pthread_mutex_lock (&_c->waiters_count_lock_);
+   /* If there aren't any waiters, then this is a no-op.   */
+   if (_c->waiters_count_unblock_ != 0)
+     {
+       if (_c->waiters_count_ == 0)
+       {
+-	LeaveCriticalSection (&_c->waiters_count_lock_);
++	pthread_mutex_unlock (&_c->waiters_count_lock_);
+ 	/* pthread_testcancel(); */
+ 	return 0;
+       }
+@@ -327,7 +331,7 @@
+       r = do_sema_b_wait (_c->sema_b, 1, INFINITE,&_c->waiters_b_lock_,&_c->value_b);
+       if (r != 0)
+       {
+-	LeaveCriticalSection (&_c->waiters_count_lock_);
++	pthread_mutex_unlock (&_c->waiters_count_lock_);
+ 	/* pthread_testcancel(); */
+ 	return r;
+       }
+@@ -341,11 +345,11 @@
+     }
+   else
+     {
+-      LeaveCriticalSection (&_c->waiters_count_lock_);
++      pthread_mutex_unlock (&_c->waiters_count_lock_);
+       /* pthread_testcancel(); */
+       return 0;
+     }
+-  LeaveCriticalSection (&_c->waiters_count_lock_);
++  pthread_mutex_unlock (&_c->waiters_count_lock_);
+   r = do_sema_b_release(_c->sema_q, 1,&_c->waiters_q_lock_,&_c->value_q);
+   /* pthread_testcancel(); */
+   return r;
+@@ -366,13 +370,13 @@
+   else if (_c->valid != (unsigned int)LIFE_COND)
+     return EINVAL;
+ 
+-  EnterCriticalSection (&_c->waiters_count_lock_);
++  pthread_mutex_lock (&_c->waiters_count_lock_);
+   /* If there aren't any waiters, then this is a no-op.   */
+   if (_c->waiters_count_unblock_ != 0)
+     {
+       if (_c->waiters_count_ == 0)
+       {
+-	LeaveCriticalSection (&_c->waiters_count_lock_);
++	pthread_mutex_unlock (&_c->waiters_count_lock_);
+ 	/* pthread_testcancel(); */
+ 	return 0;
+       }
+@@ -385,7 +389,7 @@
+       r = do_sema_b_wait (_c->sema_b, 1, INFINITE,&_c->waiters_b_lock_,&_c->value_b);
+       if (r != 0)
+       {
+-	LeaveCriticalSection (&_c->waiters_count_lock_);
++	pthread_mutex_unlock (&_c->waiters_count_lock_);
+ 	/* pthread_testcancel(); */
+ 	return r;
+       }
+@@ -400,11 +404,11 @@
+     }
+   else
+     {
+-      LeaveCriticalSection (&_c->waiters_count_lock_);
++      pthread_mutex_unlock (&_c->waiters_count_lock_);
+       /* pthread_testcancel(); */
+       return 0;
+     }
+-  LeaveCriticalSection (&_c->waiters_count_lock_);
++  pthread_mutex_unlock (&_c->waiters_count_lock_);
+   r = do_sema_b_release(_c->sema_q, relCnt,&_c->waiters_q_lock_,&_c->value_q);
+   /* pthread_testcancel(); */
+   return r;
+@@ -436,7 +440,7 @@
+   if (r != 0)
+     return r;
+ 
+-  if (!TryEnterCriticalSection (&_c->waiters_count_lock_))
++  if (pthread_mutex_trylock (&_c->waiters_count_lock_) != 0)
+   {
+     r = do_sema_b_release (_c->sema_b, 1,&_c->waiters_b_lock_,&_c->value_b);
+     if (r != 0)
+@@ -446,7 +450,7 @@
+   }
+ 
+   _c->waiters_count_++;
+-  LeaveCriticalSection(&_c->waiters_count_lock_);
++  pthread_mutex_unlock (&_c->waiters_count_lock_);
+   r = do_sema_b_release (_c->sema_b, 1,&_c->waiters_b_lock_,&_c->value_b);
+   if (r != 0)
+     return r;
+@@ -500,7 +504,7 @@
+   if (r != 0)
+     return r;
+ 
+-  if (!TryEnterCriticalSection (&_c->waiters_count_lock_))
++  if (pthread_mutex_trylock (&_c->waiters_count_lock_) != 0)
+   {
+     r = do_sema_b_release (_c->sema_b, 1,&_c->waiters_b_lock_,&_c->value_b);
+     if (r != 0)
+@@ -510,7 +514,7 @@
+   }
+ 
+   _c->waiters_count_++;
+-  LeaveCriticalSection(&_c->waiters_count_lock_);
++  pthread_mutex_unlock (&_c->waiters_count_lock_);
+   r = do_sema_b_release (_c->sema_b, 1,&_c->waiters_b_lock_,&_c->value_b);
+   if (r != 0)
+     return r;
+@@ -550,7 +554,7 @@
+   cond_t *_c;
+ 
+   _c = ch->c;
+-  EnterCriticalSection (&_c->waiters_count_lock_);
++  pthread_mutex_lock (&_c->waiters_count_lock_);
+   n = _c->waiters_count_unblock_;
+   if (n != 0)
+     _c->waiters_count_unblock_ -= 1;
+@@ -560,7 +564,7 @@
+     r = do_sema_b_wait (_c->sema_b, 1, INFINITE,&_c->waiters_b_lock_,&_c->value_b);
+     if (r != 0)
+     {
+-      LeaveCriticalSection(&_c->waiters_count_lock_);
++      pthread_mutex_unlock (&_c->waiters_count_lock_);
+       ch->r[0] = r;
+       return;
+     }
+@@ -568,7 +572,7 @@
+     r = do_sema_b_release (_c->sema_b, 1,&_c->waiters_b_lock_,&_c->value_b);
+     if (r != 0)
+     {
+-      LeaveCriticalSection(&_c->waiters_count_lock_);
++      pthread_mutex_unlock (&_c->waiters_count_lock_);
+       ch->r[0] = r;
+       return;
+     }
+@@ -576,7 +580,7 @@
+   }
+   else
+     _c->waiters_count_gone_ += 1;
+-  LeaveCriticalSection (&_c->waiters_count_lock_);
++  pthread_mutex_unlock (&_c->waiters_count_lock_);
+ 
+   if (n == 1)
+   {
+--- a/src/thread.c
++++ b/src/thread.c
+@@ -759,7 +759,10 @@
+ 	      r++;
+ 	    }
+ 	}
+-      SetProcessAffinityMask (GetCurrentProcess (),ProcessNewAffinityMask);
++      BOOL (WINAPI *set_affinity)(HANDLE, DWORD_PTR) = (void *)
++          GetProcAddress (GetModuleHandleA ("kernel32.dll"), "SetProcessAffinityMask");
++      if (!set_affinity || !set_affinity (GetCurrentProcess (), ProcessNewAffinityMask))
++        return pthread_num_processors_np ();
+     }
+   return r;
+ }
+--- a/src/thread.c
++++ b/src/thread.c
+@@ -122,10 +122,13 @@
+    /* Without a debugger we *must* have an exception handler,
+     * otherwise raising an exception will crash the process.
+     */
++   BOOL (WINAPI *debugger_present)(void) = (void *)
++     GetProcAddress(GetModuleHandleA("kernel32.dll"), "IsDebuggerPresent");
++   BOOL attached = debugger_present && debugger_present();
+ #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+-   if ((!IsDebuggerPresent ()) && (SetThreadName_VEH_handle == NULL))
++   if (!attached && SetThreadName_VEH_handle == NULL)
+ #else
+-   if (!IsDebuggerPresent ())
++   if (!attached)
+ #endif
+      return;
+ 
+--- a/src/thread.c
++++ b/src/thread.c
+@@ -1614,7 +1614,7 @@
+   HANDLE thrd = NULL;
+   int redo = 0;
+   struct _pthread_v *tv;
+-  unsigned int ssize = 0;
++  unsigned int ssize = 0, thread_id;
+   pthread_spinlock_t new_spin_keys = PTHREAD_SPINLOCK_INITIALIZER;
+ 
+   if (attr && attr->s_size > UINT_MAX)
+@@ -1672,7 +1672,7 @@
+   /* Make sure tv->h has value of INVALID_HANDLE_VALUE */
+   _ReadWriteBarrier();
+ 
+-  thrd = (HANDLE) _beginthreadex(NULL, ssize, pthread_create_wrapper, tv, 0x4/*CREATE_SUSPEND*/, NULL);
++  thrd = (HANDLE) _beginthreadex(NULL, ssize, pthread_create_wrapper, tv, 0x4/*CREATE_SUSPEND*/, &thread_id);
+   if (thrd == INVALID_HANDLE_VALUE)
+     thrd = 0;
+   /* Failed */

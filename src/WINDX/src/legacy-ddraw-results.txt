@@ -1,0 +1,140 @@
+Classic DirectDraw software surfaces
+==================================
+
+Each group below comes from the native wxddver.exe process and its application-local early/ddraw.dll. The test creates the selected device and surface interfaces, fills white and red rows, copies them, writes one arbitrary RGB value through a subrectangle lock, verifies all 12 source pixels and samples three window pixels after a stretched primary blit. DirectDraw 2 creates a version 1 surface and also exercises its version 2 and version 3 interfaces. DirectDraw 4 and 7 use their distinct surface descriptions and rectangle-based Unlock calls. The version 7 device is constructed through DirectDrawCreateEx.
+
+Groups mentioning GDI DC also draw one blue pixel with SetPixel, release the DC and verify the changed pixel and an untouched 24-bit color by locking the surface again. Groups mentioning the 8-bit palette exercise all four devices, change a palette entry, preserve destinations covered by the source color key and convert fifteen RGB pixels back into their palette indices.
+
+Groups mentioning clip rectangles also validate a disjoint explicit region and a window-derived clip list. The metadata line covers a snapshot of live surfaces, version 4/7 private data expiring after a uniqueness change, and reverse lookup of a surface from its GDI DC.
+
+Primary presentation uses a 32-bit windowed GDI software surface on the running desktop. Driver identification identifies the WINDX software adapter. Exclusive display modes, overlays and 3D rendering are outside these surface tests.
+
+Windows NT 3.1 (build 528, original boot loader)
+------------------------------------------------
+DirectDraw module C:\WXDDTEST\ddraw.dll
+Default display adapter enumeration PASS
+DirectDraw7 adapter WINDX GDI software display
+DirectDraw1 surface1 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw2 surface1/2/3 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw4 surface4 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw7 surface7 fill, copy, subrectangle, GDI DC and primary pixels PASS
+Two disjoint clip rectangles, fill/readback and native window clip list on all four interfaces PASS
+Live surface enumeration, DirectDraw4/7 private data, uniqueness and surface lookup by DC PASS
+8-bit palette lookup/update, color key and RGB-to-index round trip on all four device interfaces PASS
+PASS
+
+Windows NT 3.5 SP3
+------------------
+DirectDraw module D:\WXDDTEST\ddraw.dll
+Default display adapter enumeration PASS
+DirectDraw7 adapter WINDX GDI software display
+DirectDraw1 surface1 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw2 surface1/2/3 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw4 surface4 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw7 surface7 fill, copy, subrectangle, GDI DC and primary pixels PASS
+Live surface enumeration, DirectDraw4/7 private data, uniqueness and surface lookup by DC PASS
+8-bit palette lookup/update, color key and RGB-to-index round trip on all four device interfaces PASS
+PASS
+
+Windows NT 3.51 SP5
+-------------------
+DirectDraw module C:\WXDDTEST\ddraw.dll
+Default display adapter enumeration PASS
+DirectDraw7 adapter WINDX GDI software display
+DirectDraw1 surface1 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw2 surface1/2/3 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw4 surface4 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw7 surface7 fill, copy, subrectangle, GDI DC and primary pixels PASS
+Two disjoint clip rectangles, fill/readback and native window clip list on all four interfaces PASS
+Live surface enumeration, DirectDraw4/7 private data, uniqueness and surface lookup by DC PASS
+8-bit palette lookup/update, color key and RGB-to-index round trip on all four device interfaces PASS
+PASS
+
+Windows NT 4.0 SP3
+------------------
+DirectDraw module C:\WXDDTEST\ddraw.dll
+Default display adapter enumeration PASS
+DirectDraw7 adapter WINDX GDI software display
+DirectDraw1 surface1 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw2 surface1/2/3 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw4 surface4 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw7 surface7 fill, copy, subrectangle, GDI DC and primary pixels PASS
+8-bit palette lookup/update, color key and RGB-to-index round trip on all four device interfaces PASS
+PASS
+
+Windows 2000 Professional SP4
+-----------------------------
+DirectDraw module C:\WXDDTEST\ddraw.dll
+Default display adapter enumeration PASS
+DirectDraw7 adapter WINDX GDI software display
+DirectDraw1 surface1 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw2 surface1/2/3 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw4 surface4 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw7 surface7 fill, copy, subrectangle, GDI DC and primary pixels PASS
+8-bit palette lookup/update, color key and RGB-to-index round trip on all four device interfaces PASS
+PASS
+
+Windows 95 OSR2
+---------------
+DirectDraw module C:\WXDDTEST\DDRAW.DLL
+Default display adapter enumeration PASS
+DirectDraw7 adapter WINDX GDI software display
+DirectDraw1 surface1 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw2 surface1/2/3 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw4 surface4 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw7 surface7 fill, copy, subrectangle, GDI DC and primary pixels PASS
+Two disjoint clip rectangles, fill/readback and native window clip list on all four interfaces PASS
+Live surface enumeration, DirectDraw4/7 private data, uniqueness and surface lookup by DC PASS
+8-bit palette lookup/update, color key and RGB-to-index round trip on all four device interfaces PASS
+PASS
+
+Windows 98 Second Edition
+-------------------------
+DirectDraw module C:\WXDDTEST\DDRAW.DLL
+Default display adapter enumeration PASS
+DirectDraw7 adapter WINDX GDI software display
+DirectDraw1 surface1 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw2 surface1/2/3 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw4 surface4 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw7 surface7 fill, copy, subrectangle, GDI DC and primary pixels PASS
+8-bit palette lookup/update, color key and RGB-to-index round trip on all four device interfaces PASS
+PASS
+
+Windows Me
+----------
+DirectDraw module C:\WXDDTEST\DDRAW.DLL
+Default display adapter enumeration PASS
+DirectDraw7 adapter WINDX GDI software display
+DirectDraw1 surface1 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw2 surface1/2/3 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw4 surface4 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw7 surface7 fill, copy, subrectangle, GDI DC and primary pixels PASS
+8-bit palette lookup/update, color key and RGB-to-index round trip on all four device interfaces PASS
+PASS
+
+Windows XP Professional x86 SP3
+-------------------------------
+DirectDraw module C:\WXDDTEST\ddraw.dll
+Default display adapter enumeration PASS
+DirectDraw7 adapter WINDX GDI software display
+DirectDraw1 surface1 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw2 surface1/2/3 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw4 surface4 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw7 surface7 fill, copy, subrectangle, GDI DC and primary pixels PASS
+Live surface enumeration, DirectDraw4/7 private data, uniqueness and surface lookup by DC PASS
+8-bit palette lookup/update, color key and RGB-to-index round trip on all four device interfaces PASS
+PASS
+
+Windows XP Professional x64 SP2 (native AMD64 process)
+------------------------------------------------------
+DirectDraw module C:\WXDDTEST\ddraw.dll
+Default display adapter enumeration PASS
+DirectDraw7 adapter WINDX GDI software display
+DirectDraw1 surface1 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw2 surface1/2/3 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw4 surface4 fill, copy, subrectangle, GDI DC and primary pixels PASS
+DirectDraw7 surface7 fill, copy, subrectangle, GDI DC and primary pixels PASS
+Live surface enumeration, DirectDraw4/7 private data, uniqueness and surface lookup by DC PASS
+8-bit palette lookup/update, color key and RGB-to-index round trip on all four device interfaces PASS
+PASS
+

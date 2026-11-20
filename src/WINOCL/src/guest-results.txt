@@ -1,0 +1,131 @@
+Windows NT 3.1, loader without an ICD
+=====================================
+OpenCL 3.1 loader entry points found
+No installed compute platform
+
+Windows NT 3.5 SP3, loader without an ICD
+=========================================
+OpenCL 3.1 loader entry points found
+No installed compute platform
+
+Windows 95 OSR2, loader without an ICD
+======================================
+OpenCL 3.1 loader entry points found
+No installed compute platform
+
+Windows Me, loader without an ICD
+=================================
+OpenCL 3.1 loader entry points found
+No installed compute platform
+
+Windows 2000 SP4, loader without an ICD
+=======================================
+OpenCL 3.1 loader entry points found
+No installed compute platform
+
+Windows 98 SE, FreeOCL and native MinGW GCC with GNU ld
+=======================================================
+OpenCL 3.1 loader entry points found
+Device Unknown
+Version OpenCL 1.2 FreeOCL-0.3.6
+cl_khr_suggested_local_work_size work size query and executed group size PASS
+OpenCL kernel and 32 results PASS
+
+Windows Me, FreeOCL and native MinGW GCC with GNU ld
+====================================================
+OpenCL 3.1 loader entry points found
+Device Unknown
+Version OpenCL 1.2 FreeOCL-0.3.6
+cl_khr_suggested_local_work_size work size query and executed group size PASS
+OpenCL kernel and 32 results PASS
+
+Windows NT 4.0 SP3, FreeOCL and native MinGW GCC
+================================================
+OpenCL 3.1 loader entry points found
+Device x86 Family 6 Model 7 Stepping 3, GenuineIntel
+Version OpenCL 1.2 FreeOCL-0.3.6
+cl_khr_suggested_local_work_size work size query and executed group size PASS
+OpenCL kernel and 32 results PASS
+
+Windows 2000 SP4, FreeOCL and native MinGW GCC
+==============================================
+OpenCL 3.1 loader entry points found
+Device x86 Family 6 Model 7 Stepping 3, GenuineIntel
+Version OpenCL 1.2 FreeOCL-0.3.6
+cl_khr_suggested_local_work_size work size query and executed group size PASS
+OpenCL kernel and 32 results PASS
+
+Windows XP x86 SP3, FreeOCL and native MinGW GCC
+================================================
+OpenCL 3.1 loader entry points found
+Device x86 Family 6 Model 7 Stepping 3, GenuineIntel
+Version OpenCL 1.2 FreeOCL-0.3.6
+cl_khr_suggested_local_work_size work size query and executed group size PASS
+OpenCL kernel and 32 results PASS
+
+Windows XP x64 SP2, AMD64 FreeOCL and native MinGW GCC
+======================================================
+OpenCL 3.1 loader entry points found
+Device AMD64 Family 15 Model 107 Stepping 1, AuthenticAMD
+Version OpenCL 1.2 FreeOCL-0.3.6
+cl_khr_suggested_local_work_size work size query and executed group size PASS
+OpenCL kernel and 32 results PASS
+
+Linux x86-64, PoCL reference
+============================
+OpenCL 3.1 loader entry points found
+Device cpu-minimal-skylake-avx512-AMD EPYC 9V74 80-Core Processor
+Version OpenCL 3.0 PoCL HSTR: cpu-x86_64-pc-linux-gnu-skylake-avx512
+OpenCL kernel and 32 results PASS
+
+
+Windows NT 3.51, GCC 4.8.1 and native CPU kernel
+================================================
+OpenCL 3.1 loader entry points found
+context creation
+Device x86 Family 6 Model 5 Stepping 2, GenuineIntel
+Version OpenCL 1.2 FreeOCL-0.3.6
+command queue creation
+program creation
+program build
+kernel creation
+work size capability discovery
+buffer allocation
+kernel argument binding
+local work size query
+kernel dispatch or readback
+
+Independent execution of the DLL generated in that guest
+Load kernel
+Initialize kernel
+Set work group
+Execute kernel
+32 results PASS, local size 00000020
+
+Windows NT 3.51 SP5, GCC 4.8.1 and revised Windows thread library
+==============================================================
+OpenCL 3.1 loader entry points found
+Device x86 Family 6 Model 5 Stepping 2, GenuineIntel
+Version OpenCL 1.2 FreeOCL-0.3.6
+cl_khr_suggested_local_work_size work size query and executed group size PASS
+OpenCL kernel and 32 results PASS
+Process exit 0
+
+
+Windows 95 OSR2, FreeOCL and native MinGW.org GCC 4.8.1
+=======================================================
+OpenCL 3.1 loader entry points found
+Device Unknown
+Version OpenCL 1.2 FreeOCL-0.3.6
+cl_khr_suggested_local_work_size work size query and executed group size PASS
+OpenCL kernel and 32 results PASS
+
+
+Windows NT 3.5 SP3, application-local runtime and native GCC 4.8.1
+=================================================================
+OpenCL 3.1 loader entry points found
+Device Unknown
+Version OpenCL 1.2 FreeOCL-0.3.6
+cl_khr_suggested_local_work_size work size query and executed group size PASS
+OpenCL kernel and 32 results PASS
+Process exit 0
