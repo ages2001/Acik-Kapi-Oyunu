@@ -1,0 +1,240 @@
+WINWDM v1.0 preview
+Implementation and verification report
+21 November 2026
+
+Repository  ages2001/Acik-Kapi-Oyunu
+Tag         winwdm-v1.0
+Commit      137de8d6b2740d38fe180dcebf6a957874c83fe9
+Archive     WINWDM-v1.0.zip (3,933,684 bytes)
+SHA-256     87a8b169617aee9b632627cf5603d0231070c9c694eacefb942281b1e1226c4e
+
+What this preview can run
+-------------------------
+WINWDM lets the same x86 function-driver source build for legacy Windows and
+provides selected Windows Driver Model (WDM) services. Its own installed
+driver passed all 66 target/guest combinations. General use of unchanged
+manufacturer WDM binaries across those operating systems remains incomplete.
+An application that needs the full NTKERN, Kernel Streaming or modern graphics
+stack cannot rely on this preview.
+
+The WDM header reference is Microsoft.Windows.WDK.x64 10.0.28000.2526 (WDM
+6.0). The kit produces 32-bit x86 binaries. Selecting a target chooses a
+tested kit build. Compatibility of each imported function, class driver,
+operating-system service and device still matters.
+
+Installer, source and deliverables
+----------------------------------
+The ZIP contains the English README, MIT license for original code and
+artwork, third-party notices, source, SDK archives, native diagnostics, QEMU
+evidence, three setup editions and a 1.44 MB install floppy. The cloud build
+uses MinGW-w64, Open Watcom, NASM, JWlink, NSIS and mtools. The repository
+game was also built and smoke-tested during cloud setup.
+
+The graphical wizard has Back/Next navigation and six choices: 1.00, 1.05,
+1.10, 1.20, 1.30 and 6.0 (default). Info reads the active target from the
+loaded driver. The 1.x startup test uses two devices and 64-byte extensions.
+The 6.0 test uses seven devices, a 5,000-byte extension and at least 12 I/O
+request stack locations. Enhanced-mode builds initially reserve four or
+sixteen data pages respectively.
+
+On Windows 3.x and NT 3.x, Program Manager receives Info and Uninstall items.
+On Windows 95, 98 FE and NT 4.0, setup creates an Info desktop shortcut and
+registers the uninstaller in Add/Remove Programs. The 16- and 32-pixel icons
+use the 16-color palette. The uninstaller icon adds a red cross. The wizards
+measure text with the guest fonts. Tests checked the version list and keyboard
+navigation at 640 x 480 and exercised uninstall with Info open on the Explorer
+guests.
+
+Kernel, devices and SDK
+-----------------------
+NT loads WINWDM.SYS as a native PE driver. Windows 3.x enhanced mode and the
+Windows 95/98 kit use WINWDM.386 through the Virtual Machine Manager. Both
+builds compile the same example function-driver source. The SDKs share 26 RTL
+bitmap routines, six cancel-safe queue functions, four remove-lock operations
+and IoReuseIrp.
+
+Implemented and exercised buffered device control, filter attachment and
+completion, deferred I/O, cancellation handling, NT overlapped I/O and
+draining outstanding requests on removal. The VMM backend allocates locked
+resident pages, per-request completion data and variable-size devices,
+extensions and request stacks. The QEMU PCI test device counted two port
+writes across the kit's start/stop, D3/D0 and removal tests. These PnP and
+power transitions apply to the private test bus.
+
+On NT 3.1, 3.50, 3.51 and 4.0, an independent EDU bus-master driver
+transferred 4,096 bytes in both directions and verified the readback. A
+separate driver connected and disconnected a fully specified line interrupt
+and acknowledged device interrupts on each OS. The native SDK also adapts
+SCSIPORT registration sizes for source-built miniports.
+
+Guest matrix and media
+----------------------
+QEMU 10.0.13 used TCG, one x86 CPU and an IDE system disk. Each of the eleven
+Microsoft configurations below passed all six target selections,
+installed-image comparison and the live PCI checks. The rows cover the kit
+driver. Individual manufacturer driver results follow separately.
+
+Windows 3.00, 3.10, 3.11   Three separate enhanced-mode installations.
+Windows for Workgroups 3.11  Separate enhanced-mode installation.
+Windows 95 retail, OSR2    Two Explorer guests, builds 950 and 1111.
+Windows 98 First Edition   KERNEL32 and USER32 identified 4.10.1998.
+Windows NT 3.1             IDE-bootable NT31TEST disk copy.
+Windows NT 3.50 SP3        Independent Workstation build 807 installation.
+Windows NT 3.51            Build 1057, user-supplied OS files on a copy.
+Windows NT 4.0             Independent Workstation build 1381 disk.
+
+NT 3.1's supplied NTLDR and NTDETECT.COM replacements did not resolve the
+original PCI check. The WINWDM legacy PCI configuration fallback passed with
+the original boot files. NT 3.50 was deployed to a blank disk. The Windows 98
+FE test used the supplied eight-part archive and verified its CRC and guest
+build. NT 3.51 required a QEMU reset after a shutdown stall in the documented
+restart tests.
+
+Loading independent SYS files
+-----------------------------
+On native NT, Info provides Drivers > Load SYS, Drivers > Unload SYS, and
+matching /load and /unload commands. It uses the Service Control Manager to
+demand-start a driver from its original path and returns native errors. Tests
+covered retries, service-name and path collisions, driver-entry failure,
+preservation of independently owned services, and cleanup after reboot. NT 3.1
+used an 8.3 FAT path. A resident class module without an unload entry returned
+error 1052 until restart.
+
+The original Microsoft Windows 98 FE HIDPARSE.SYS decoded a captured QEMU
+keyboard descriptor and the J, J+K and release reports on NT 3.50, 3.51 and
+4.0. NT 3.1 rejected that identical SYS with loader error 193. The NT test
+replayed packets captured on FE. Live delivery to Notepad on FE used its own
+HIDUSB, HIDCLASS and HIDPARSE drivers. A complete live USB/HID backport to the
+old NT systems is still open.
+
+The separate native PE loader controls used eight images with the same entry
+routine. NT 3.1 accepted the tested 4 KB alignment layouts and rejected the
+32-byte ones. The other three NT guests reached the entry routine with both
+alignments. Changing the tested PE version fields alone did not fix NT 3.1
+loading.
+
+Audio, Kernel Streaming and USB
+-------------------------------
+Optional PORTCLS.SYS provides PcGetTimeInterval, PcNewInterruptSync,
+PcNewResourceList and PcNewResourceSublist. The tests checked paired
+bus-relative and translated resources, bounded sublists, reference handling
+and Normal/All/Repeat interrupt dispatch against QEMU EDU on all four NT
+releases.
+
+Optional KS.SYS provides KsPinPropertyHandler, KsTopologyPropertyHandler,
+KsPinDataIntersection, KsCreatePin and KsValidateConnectRequest. On all four
+NT releases, the client queried seven static pin properties and three topology
+properties, negotiated 48 kHz stereo 16-bit PCM and opened two native pin
+handles. The test filter exchanged 512 matching PCM bytes using the standard
+KS stream controls. Its packet handler accepts kernel-mode requests. General
+streaming transport and hardware audio output through this provider remain
+open.
+
+Windows 98 FE enumerated two external USB hubs while WINWDM was active. The
+supplied QEMUAUD.INF matched the QEMU speaker to the original FE USBAUDIO.SYS.
+The guest played 48,000 stereo frames. QEMU measured 996.99 Hz on the left and
+1511.02 Hz on the right. The Microsoft FE NTKERN and streaming stack provided
+playback. FE already includes native WDM 1.00.
+
+The optional experimental USBD.SYS parses USB descriptors and builds
+select-configuration requests. The module compiled and its exports were
+checked, including names imported by the original USBLOOP.SYS. Execution of
+USBLOOP.SYS and hardware transfers through this helper remain unverified.
+
+Microsoft ICHAUD.SYS 4.90.2509.1 failed on all four native NT guests with an
+emulated Intel AC97 controller. Baseline start errors were 193 on NT 3.1, 127
+on NT 3.50 and 3.51, and 317 on NT 4.0. With the optional WINWDM PortCls
+provider, NT 4.0 stopped at the missing PcRegisterSubdevice import. First
+Edition exposed no waveOut endpoint in its AC97 binding tests. The separate 98
+SE control played the requested stereo tones using its original Intel driver
+and SE class stack.
+
+WDMHDA 0.26 HDA.SYS failed on NT 3.1 (193), 3.50 (127), 3.51 (127) and 4.0
+(127). Required kernel, HAL and PortCls services vary by OS. The separate 98
+SE HDA control exposed no usable endpoint. AUDIONT 1.2, a driver specifically
+written for legacy NT, did play both tones on NT 3.1 with emulated Intel HD
+Audio hardware.
+
+Storage and supplemental testing
+--------------------------------
+The original NCR 53C810 driver is a pre-WDM SCSIPORT miniport. On NT 3.51 and
+4.0 it read an entire 65,536-byte test file with the correct hash. On NT 3.50
+the service started but the test disk recorded zero block reads. On NT 3.1
+startup failed with error 31 using either set of boot files. The separate SDK
+registration test reached an ISA adapter search callback on all four NT
+systems. NCR results describe the legacy storage path.
+
+ReactOS 0.4.16 i386 had a supplemental installation, restart, PCI,
+asynchronous I/O and removal check. Its loader retained the unloaded image. A
+separate clean installation stopped before WINWDM setup. The Microsoft guest
+matrix remains the primary verification.
+
+Remaining work and graphics projects
+------------------------------------
+Complete the driver interfaces for each advertised WDM level. The inventory
+examined 1,046 Microsoft WDM documentation pages. It classified 35 shared SDK
+APIs, 24 VMM adapter entries and two native line-interrupt entries. The other
+985 pages remain unclassified by this inventory. These counts describe
+coverage work and do not certify ABI conformance.
+
+Implement a general independent PE WDM loader and the NT kernel services
+needed by arbitrary SYS files on Win3.x/95. Finish system-wide Plug and Play,
+power management, bus and class integration, general DMA
+adapter/scatter-gather support, and additional interrupt models. On early NT,
+native image and import restrictions continue to prevent drivers from reaching
+their entry point.
+
+Complete Kernel Streaming, PortCls and the paths required by unchanged audio
+drivers. Of 101 named exports in the FE KS reference, the kit provides five.
+Of 39 in the FE PortCls reference, the kit provides four. FE PortCls imports
+29 KS names, of which 25 remain absent. Open work includes adapter/subdevice
+registration, Wave and Topology ports, general packet probing/queuing and
+working audio endpoints for ICHAUD and WDMHDA on pre-WDM NT.
+
+WINXPDM and WINWDDM have local project scaffolds with English README, MIT
+license and reserved src/bin directories. Implementations and guest-tested
+display binaries are pending. WDDM 1.x and 2.x still need graphics-kernel
+services, memory management, scheduling and matching user-mode components. No
+GTX 900, GTX 1000 or RTX driver, hardware acceleration or faithful QEMU GPU
+emulation has been verified. Matching x86 architecture alone supplies none of
+these display services.
+
+Reproducibility and evidence
+----------------------------
+Host tests covered 84,988 bitmap searches, 7,680 concurrent cancel-safe queue
+operations, remove-lock races, resident pool allocation and reclamation, DMA
+bounds and interrupt dispatch. Loader audits covered five NT export catalogs
+and the NT 3.50 SP3 binaries. All nineteen floppy executable images and both
+icon sizes passed media checks. Clean builds reproduced the target drivers,
+SDK archives and native class modules. GUI rebuild comparisons accounted for
+Watcom timestamps and embedded build paths.
+
+The ZIP contains the English test matrix, per-guest logs, screenshots, file
+hashes and the 89-byte HID fixture. Operating-system images and third-party
+driver binaries are supplied separately. The following paths are relative to
+WINWDM/src/qa in the ZIP.
+
+RESULTS.md
+evidence/wdm-surface.csv
+evidence/win311-standard-targets.txt
+evidence/nt31-bootloaders.txt
+evidence/nt350-media.txt
+evidence/win98fe-targets.txt
+evidence/explorer-open-info-removal.txt
+evidence/native-driver-manager.txt
+evidence/vendor-hid-input.txt
+evidence/nt-pe-loader.txt
+evidence/nt-edu-dma.txt
+evidence/nt-edu-interrupt.txt
+evidence/nt-portcls-interrupt.txt
+evidence/nt-ks-properties.txt
+evidence/win98fe-class-coverage.txt
+evidence/win98fe-usb-audio.txt
+evidence/ich-audio-nt.txt
+evidence/wdmhda-native-load.txt
+evidence/ncr810-nt.txt
+evidence/reactos-current.txt
+
+Tagged source and ZIP
+https://github.com/ages2001/Acik-Kapi-Oyunu/tree/winwdm-v1.0
+https://raw.githubusercontent.com/ages2001/Acik-Kapi-Oyunu/winwdm-v1.0/WINWDM-v1.0.zip
