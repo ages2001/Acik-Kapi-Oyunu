@@ -1,6 +1,5 @@
 """Build the DOS MZ executable for DOS and Windows, including the release catalog."""
 import argparse
-import base64
 import hashlib
 import json
 import os
@@ -10,6 +9,10 @@ import struct
 import subprocess
 import tempfile
 from modules.build import native_modules
+from modules.menucode import menu_header
+from modules.xoutcode import xout_header
+from modules.pagercode import pager_header
+from modules.objects import encode as encode_objects
 from installer.pif import settings
 
 source = Path(__file__).resolve().parent
@@ -24,16 +27,8 @@ def generate(directory, nasm, compiled):
         return json.dumps(s)
     for row in catalog["patches"]:
         start = len(data)
-        for offset, encoded in row["ranges"]:
-            if isinstance(encoded, dict):
-                length = encoded["length"]
-                if not 0 < length < 0x80000000:
-                    raise ValueError("Invalid source-copy length")
-                data.extend(struct.pack("<III", offset, length | 0x80000000, encoded["source"]))
-            else:
-                content = base64.b64decode(encoded, validate=True)
-                data.extend(struct.pack("<II", offset, len(content)) + content)
-        lines.append('{%d,%s,%s,%s,%dL,%dL,%d},' % (profiles[row["profile"]],string(row["path"]),string(row["original"]),string(row["modified"]),row["size"],start,len(row["ranges"])))
+        data.extend(encode_objects(row["objects"]))
+        lines.append('{%d,%s,%dL},' % (profiles[row["profile"]],string(row["path"]),start))
     lines.extend(['{0}};', 'Signature sigs[]={'])
     signatures = set()
     for profile, path, size, before, newsize, after in catalog["signatures"]:
@@ -71,14 +66,17 @@ def run(args, cwd, env):
 def build(work, watcom, nasm, output):
     env = dict(os.environ, WATCOM=str(watcom), PATH=str(watcom/"binl64")+os.pathsep+os.environ["PATH"],
                INCLUDE=str(watcom/"h/win")+";"+str(watcom/"h"))
+    menu_header(work, nasm)
+    xout_header(work, nasm)
+    pager_header(work, nasm)
     resources = generate(work, nasm, native_modules(work, nasm, watcom, env))
     compiler = shutil.which("wcc",path=env["PATH"])
     linker = shutil.which("wlink",path=env["PATH"])
-    names = ["hash", "io", "host", "scan", "queue", "catalog", "config", "transaction", "console"]
+    names = ["hash", "io", "nepatch", "host", "scan", "queue", "catalog", "config", "transaction", "console"]
     for name in names:
         src = work / "catalog.c" if name == "catalog" else installer / (name + ".c")
-        run([compiler, "-q", "-ms", "-3", "-os", "-s", "-bt=dos",
-             "-i=" + str(installer), "-fo=" + name + ".o", src], work, env)
+        run([compiler, "-q", "-mm", "-3", "-os", "-s", "-bt=dos",
+             "-i=" + str(installer), "-i=" + str(work), "-fo=" + name + ".o", src], work, env)
     commands = ["system dos", "option quiet", "option stack=18k", "name engine.exe",
                 "file " + ",".join(name + ".o" for name in names)]
     (work / "link.lnk").write_text("\n".join(commands) + "\n")

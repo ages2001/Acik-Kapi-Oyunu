@@ -1,0 +1,603 @@
+{
+  "version": "1.0.1",
+  "executable_sha256": "32c1939e6828a3520ab6d610dea5d79482e63572322db2091b28e0126a0589f1",
+  "environment": {
+    "emulator": "QEMU system i386 with TCG",
+    "high_memory_machine": "pc,acpi=off,max-ram-below-4g=4G",
+    "high_memory_cpu": "486",
+    "guest_ram_mib": 4032
+  },
+  "portable_user_tests": {
+    "generated_module_cases": 17,
+    "original_files_tested": 8,
+    "passed": 25,
+    "inputs": {
+      "W30": "609f8945fd73e084851f99b515c534eb68a1db8dc0c1b556d81c105dccef666c",
+      "W31": "741d0191bf267726aaa1fd78127bd9ecae637deb512f1cf9608ca81860188b4c",
+      "WFW": "b73da901978290968753af1e5d27b8315619fea4806ab5955dd85b98846f44c2",
+      "W95": "a8fa217089e164234908d5e04154a2da4e5f6b1376aa8c17fb2d310ee1d8a64b",
+      "W98": "6e262ede0ac7ba75abc43e3f45bbbc6bd2eb5ddd6731f3e8ab53475be4fa5e1b",
+      "WME": "cd931e9175d44cab5ffc39e33322cc4a26b17b3b36f0732f38698d81026d7ab4",
+      "Windows 3.1 tr": "94fae3d1299257ee95941ec11988377af546dddc861e50d0820ba2a0b2f05b71",
+      "Windows 3.1 de": "e648d603d1bd605129713997b777ba6a529baaf724c36a3a9173e8ea2627841d"
+    },
+    "coverage": [
+      "Different NE header locations and code alignment",
+      "Allocation calls crossing a 1 KiB input buffer",
+      "A duplicate sequence in a data segment",
+      "Different import order and references following the name table",
+      "Imported functions named directly or by ordinal",
+      "Missing or ambiguous allocation sites, wrong module or import, truncated input",
+      "Second application preserves the patched bytes"
+    ]
+  },
+  "relocated_windows31_user": {
+    "OLD": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nRejected",
+    "INS": "WINRAM 1.0.1\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nInstalled. Restart the target system.",
+    "VER": "WINRAM 1.0.1\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nInstallation verified.",
+    "UNDO": "WINRAM 1.0.1\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nUninstalled. Original backups retained.",
+    "restored_sha256": "5bfad1a58ec80282cf51797f98ab181f9e4579a53ed12cde0af38e81abe406b0",
+    "installed_sha256": "3f5d37b3f8ff911161f8842872eea89ee7068c362a30b53583f5496bdec15b71",
+    "original_menu_segment_position": 97952,
+    "test_menu_segment_position": 264016,
+    "preserved_overlay": true,
+    "retained_backup": true
+  },
+  "rejected_ambiguous_user": {
+    "scenario": "Two allocation-call patterns in the active USER menu code segment",
+    "install_rejected": true,
+    "original_files_unchanged": [
+      "WIN.COM",
+      "WIN.INI",
+      "SYSTEM.INI",
+      "SYSTEM/USER.EXE",
+      "SYSTEM/GDI.EXE",
+      "SYSTEM/KRNL386.EXE",
+      "SYSTEM/SHELL.DLL",
+      "SYSTEM/WIN386.EXE"
+    ],
+    "dos_startup_unchanged": true,
+    "active_installation_record_created": false
+  },
+  "windows_installer_round_trips": {
+    "W101": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Microsoft Windows 1.01",
+        "D:\\ARCHIVE\\W101",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Microsoft Windows 1.01",
+        "D:\\ARCHIVE\\W101",
+        "Installation verified."
+      ],
+      "uninstall": "Uninstalled. Original backups retained.",
+      "restored_all_inputs": true
+    },
+    "W203": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Microsoft Windows 2.03",
+        "D:\\ARCHIVE\\W203",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Microsoft Windows 2.03",
+        "D:\\ARCHIVE\\W203",
+        "Installation verified."
+      ],
+      "uninstall": "Uninstalled. Original backups retained.",
+      "restored_all_inputs": true
+    },
+    "W286": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Microsoft Windows/286 2.11",
+        "D:\\ARCHIVE\\W286",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Microsoft Windows/286 2.11",
+        "D:\\ARCHIVE\\W286",
+        "Installation verified."
+      ],
+      "uninstall": "Uninstalled. Original backups retained.",
+      "restored_all_inputs": true
+    },
+    "W386": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Microsoft Windows/386 2.11",
+        "D:\\ARCHIVE\\W386",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Microsoft Windows/386 2.11",
+        "D:\\ARCHIVE\\W386",
+        "Installation verified."
+      ],
+      "uninstall": "Uninstalled. Original backups retained.",
+      "restored_all_inputs": true
+    },
+    "W30": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Microsoft Windows 3.0a",
+        "D:\\ARCHIVE\\W30",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Microsoft Windows 3.0a",
+        "D:\\ARCHIVE\\W30",
+        "Installation verified."
+      ],
+      "uninstall": "Uninstalled. Original backups retained.",
+      "restored_all_inputs": true,
+      "moved_from": 84000,
+      "moved_to": 231680
+    },
+    "W31": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Microsoft Windows 3.1",
+        "D:\\ARCHIVE\\W31",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Microsoft Windows 3.1",
+        "D:\\ARCHIVE\\W31",
+        "Installation verified."
+      ],
+      "uninstall": "Uninstalled. Original backups retained.",
+      "restored_all_inputs": true,
+      "moved_from": 97952,
+      "moved_to": 264016
+    },
+    "WFW": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Windows for Workgroups 3.11",
+        "D:\\ARCHIVE\\WFW",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Windows for Workgroups 3.11",
+        "D:\\ARCHIVE\\WFW",
+        "Installation verified."
+      ],
+      "uninstall": "Uninstalled. Original backups retained.",
+      "restored_all_inputs": true,
+      "moved_from": 98016,
+      "moved_to": 264096
+    },
+    "W95": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Windows 95 OSR2 (4.00.1111)",
+        "D:\\ARCHIVE\\W95",
+        "",
+        "Windows 95/98/SE/ME RAM Limitation Patch  Version 7.2",
+        "Copyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.",
+        "",
+        "VMM File Extracted",
+        "VCACHE File Extracted",
+        "VMM32 Patched",
+        "VMM Patched",
+        "VCACHE Patched",
+        "",
+        "Patch Installed Successfully",
+        "",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Windows 95 OSR2 (4.00.1111)",
+        "D:\\ARCHIVE\\W95",
+        "Installation verified."
+      ],
+      "uninstall": "Uninstalled. Original backups retained.",
+      "restored_all_inputs": true,
+      "moved_from": 27200,
+      "moved_to": 462112
+    },
+    "W98": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Windows 98 Second Edition (4.10.2222)",
+        "D:\\ARCHIVE\\W98",
+        "",
+        "Windows 95/98/SE/ME RAM Limitation Patch  Version 7.2",
+        "Copyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.",
+        "",
+        "VMM File Extracted",
+        "VCACHE File Extracted",
+        "VMM32 Patched",
+        "VMM Patched",
+        "VCACHE Patched",
+        "",
+        "Patch Installed Successfully",
+        "",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Windows 98 Second Edition (4.10.2222)",
+        "D:\\ARCHIVE\\W98",
+        "Installation verified."
+      ],
+      "uninstall": "Uninstalled. Original backups retained.",
+      "restored_all_inputs": true,
+      "moved_from": 29696,
+      "moved_to": 549664
+    },
+    "WME": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Windows Millennium Edition (4.90.3000)",
+        "D:\\ARCHIVE\\WME",
+        "",
+        "Windows 95/98/SE/ME RAM Limitation Patch  Version 7.2",
+        "Copyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.",
+        "",
+        "VMM File Extracted",
+        "VCACHE File Extracted",
+        "VMM32 Patched",
+        "VMM Patched",
+        "VCACHE Patched",
+        "",
+        "Patch Installed Successfully",
+        "",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Windows Millennium Edition (4.90.3000)",
+        "D:\\ARCHIVE\\WME",
+        "Installation verified."
+      ],
+      "uninstall": "Uninstalled. Original backups retained.",
+      "restored_all_inputs": true,
+      "moved_from": 33120,
+      "moved_to": 557536
+    }
+  },
+  "dos_installer_round_trips": {
+    "5": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 5.00",
+        "A:\\",
+        "Installed. Restart the target system."
+      ],
+      "verify": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 5.00",
+        "A:\\",
+        "Installation verified."
+      ],
+      "mem": [
+        "BIOS conventional memory: 639 KiB",
+        "Largest free DOS block: 572720 bytes",
+        "Free extended memory (XMS 3): 4127680 KiB",
+        "Largest free XMS block: 4127680 KiB",
+        "Highest XMS physical byte address: 4227858431",
+        "BIOS E820 usable RAM (type 1): 4128383 KiB"
+      ],
+      "uninstall": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 5.00",
+        "A:\\",
+        "Uninstalled. Original backups retained."
+      ],
+      "config_restored": true
+    },
+    "6": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 6.22",
+        "C:\\",
+        "Installed. Restart the target system."
+      ],
+      "verify": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 6.22",
+        "C:\\",
+        "Installation verified."
+      ],
+      "mem": [
+        "BIOS conventional memory: 639 KiB",
+        "Largest free DOS block: 571504 bytes",
+        "Free extended memory (XMS 3): 4127680 KiB",
+        "Largest free XMS block: 4127680 KiB",
+        "Highest XMS physical byte address: 4227858431",
+        "BIOS E820 usable RAM (type 1): 4128383 KiB"
+      ],
+      "uninstall": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 6.22",
+        "C:\\",
+        "Uninstalled. Original backups retained."
+      ],
+      "config_restored": true
+    },
+    "7": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 7.10",
+        "A:\\",
+        "Installed. Restart the target system."
+      ],
+      "verify": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 7.10",
+        "A:\\",
+        "Installation verified."
+      ],
+      "mem": [
+        "BIOS conventional memory: 640 KiB",
+        "Largest free DOS block: 548592 bytes",
+        "Free extended memory (XMS 3): 4127680 KiB",
+        "Largest free XMS block: 4127680 KiB",
+        "Highest XMS physical byte address: 4227858431",
+        "BIOS E820 usable RAM (type 1): 4128383 KiB"
+      ],
+      "uninstall": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 7.10",
+        "A:\\",
+        "Uninstalled. Original backups retained."
+      ],
+      "config_restored": true
+    },
+    "8": {
+      "install": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 8.00",
+        "A:\\",
+        "Installed. Restart the target system."
+      ],
+      "verify": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 8.00",
+        "A:\\",
+        "Installation verified."
+      ],
+      "mem": [
+        "BIOS conventional memory: 639 KiB",
+        "Largest free DOS block: 595248 bytes",
+        "Free extended memory (XMS 3): 4127680 KiB",
+        "Largest free XMS block: 4127680 KiB",
+        "Highest XMS physical byte address: unreported by XMS driver",
+        "BIOS E820 usable RAM (type 1): 4128383 KiB"
+      ],
+      "uninstall": [
+        "WINRAM 1.0.1",
+        "Microsoft MS-DOS 8.00",
+        "A:\\",
+        "Uninstalled. Original backups retained."
+      ],
+      "config_restored": true
+    }
+  },
+  "enhanced_mode_relocated_user_boots": {
+    "30": [
+      "VWINRAM memory service started",
+      "WINRAM global memory service ready",
+      "WINRAM memory display ready",
+      "W31PROBE begin",
+      "menus=2142 released=2142",
+      "brushes=1973 released=1973",
+      "result=PASS resource allocation and reuse",
+      "W31PROBE end"
+    ],
+    "31": [
+      "WINRAM memory service started",
+      "WINRAM global memory service ready",
+      "WINRAM memory display ready",
+      "W31PROBE begin",
+      "start USER=95 GDI=88 system=88 user_selector=0797 gdi_selector=05f7",
+      "menus USER=9 GDI=88 system=9 user_selector=0797 gdi_selector=05f7",
+      "menus simultaneous=2960 released=2960 before_percent=95 low_percent=9 after_percent=95",
+      "brushes USER=95 GDI=9 system=9 user_selector=0797 gdi_selector=05f7",
+      "brushes simultaneous=1656 released=1656 before_percent=88 low_percent=9 after_percent=86",
+      "end USER=95 GDI=86 system=86 user_selector=0797 gdi_selector=05f7",
+      "result=PASS menus and GDI drawing",
+      "W31PROBE end"
+    ],
+    "wfw": [
+      "WINRAM memory service started",
+      "WINRAM global memory service ready",
+      "WINRAM memory display ready",
+      "W31PROBE begin",
+      "start USER=95 GDI=86 system=86 user_selector=182f gdi_selector=0697",
+      "menus USER=9 GDI=86 system=9 user_selector=182f gdi_selector=0697",
+      "menus simultaneous=2960 released=2960 before_percent=95 low_percent=9 after_percent=95",
+      "brushes USER=95 GDI=9 system=9 user_selector=182f gdi_selector=0697",
+      "brushes simultaneous=1640 released=1640 before_percent=86 low_percent=9 after_percent=86",
+      "end USER=95 GDI=86 system=86 user_selector=182f gdi_selector=0697",
+      "result=PASS menus and GDI drawing",
+      "W31PROBE end"
+    ]
+  },
+  "windows31_standard_only": {
+    "enhanced_components_present": false,
+    "boot_command": "WIN /S",
+    "probe": [
+      "WINRAM memory service started",
+      "WINRAM global memory service ready",
+      "WINRAM memory display ready",
+      "W31PROBE begin",
+      "start USER=95 GDI=88 system=88 user_selector=107f gdi_selector=0e2f",
+      "menus USER=9 GDI=88 system=9 user_selector=107f gdi_selector=0e2f",
+      "menus simultaneous=2960 released=2960 before_percent=95 low_percent=9 after_percent=95",
+      "brushes USER=95 GDI=9 system=9 user_selector=107f gdi_selector=0e2f",
+      "brushes simultaneous=1656 released=1656 before_percent=88 low_percent=9 after_percent=86",
+      "end USER=95 GDI=86 system=86 user_selector=107f gdi_selector=0e2f",
+      "result=PASS menus and GDI drawing",
+      "W31PROBE end"
+    ]
+  },
+  "localized_windows31": {
+    "installation": "The baseline Windows 3.1 QEMU disk used the indicated language editions of all eight listed system and shell files and the VGA and dialog fonts from their original installation disks. Each run started with unmodified binaries.",
+    "media": {
+      "tr": "https://archive.org/details/microsoft-windows-3.1-turkish-3.5-1.44mb",
+      "de": "https://archive.org/details/microsoft-windows-3.1-german-3.5-1.44mb.-7z"
+    },
+    "Turkish": {
+      "original_file_sha256": {
+        "WINDOWS/SYSTEM/USER.EXE": "94fae3d1299257ee95941ec11988377af546dddc861e50d0820ba2a0b2f05b71",
+        "WINDOWS/SYSTEM/GDI.EXE": "f3ce14cff84f2b79872e929194072d60b9eab089914086d1466ec4379aacf24f",
+        "WINDOWS/SYSTEM/SHELL.DLL": "5b30bd15ad033ea1cb380c2bd2341435c9f0b4489465de914718a967f5b261d6",
+        "WINDOWS/SYSTEM/KRNL286.EXE": "2779643be18f8afde3707209fd26c1737e4fc0f0a4eb2e4f21c29dec257ab598",
+        "WINDOWS/SYSTEM/KRNL386.EXE": "fc52c47758ba06ac5c2423d8a507f1b73a08b61c5b51f7554265102949716477",
+        "WINDOWS/SYSTEM/WIN386.EXE": "b12d720d4c598500dd74bb883db81ed4c96c9365792355d5e18b38a857494312",
+        "WINDOWS/PROGMAN.EXE": "cd95182fd2750bf1dd98c68e62a77ebdbaa140898d6eab969a3ab23c5f4d0da9",
+        "WINDOWS/WINFILE.EXE": "720b977b3182bbb3bb07eb3a450a6576a9f02c303c475c324f652c58e183ba89"
+      },
+      "install_and_verify": [
+        "WINRAM 1.0.1",
+        "Microsoft Windows 3.1",
+        "D:\\WINDOWS",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Microsoft Windows 3.1",
+        "D:\\WINDOWS",
+        "Installation verified."
+      ],
+      "uninstall": [
+        "WINRAM 1.0.1",
+        "Microsoft Windows 3.1",
+        "D:\\WINDOWS",
+        "Uninstalled. Original backups retained."
+      ],
+      "originals_restored_by_hash": true,
+      "vmm_extra_locked_page_bytes": 0,
+      "native_dialog": {
+        "total_kib": 4124160,
+        "native_free_kib": 4072692,
+        "live_free_kib": 4072692,
+        "capture": "screens/w31-tr-about.png"
+      },
+      "resources": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "W31PROBE begin",
+        "start USER=95 GDI=86 system=86 user_selector=07b7 gdi_selector=05f7",
+        "menus USER=9 GDI=86 system=9 user_selector=07b7 gdi_selector=05f7",
+        "menus simultaneous=2976 released=2976 before_percent=95 low_percent=9 after_percent=95",
+        "brushes USER=95 GDI=9 system=9 user_selector=07b7 gdi_selector=05f7",
+        "brushes simultaneous=1656 released=1656 before_percent=86 low_percent=9 after_percent=86",
+        "end USER=95 GDI=86 system=86 user_selector=07b7 gdi_selector=05f7",
+        "result=PASS menus and GDI drawing",
+        "W31PROBE end"
+      ],
+      "ordinary_win16_swap_disabled": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Block KiB=4096",
+        "Requested blocks=940",
+        "Written KiB=1048576",
+        "Written KiB=2097152",
+        "Written KiB=3145728",
+        "Simultaneously held KiB=3850240",
+        "Written blocks=940",
+        "Verified blocks=940",
+        "Released blocks=940",
+        "Integrity PASS",
+        "GLOBALMEM END"
+      ]
+    },
+    "German": {
+      "original_file_sha256": {
+        "WINDOWS/SYSTEM/USER.EXE": "e648d603d1bd605129713997b777ba6a529baaf724c36a3a9173e8ea2627841d",
+        "WINDOWS/SYSTEM/GDI.EXE": "c205c67807554a3a065f4204fba904e966f920769dafb8b7f9fad86566c1b1e0",
+        "WINDOWS/SYSTEM/SHELL.DLL": "d68cdc289b65328436c4d3a2e9ca37860d0b73d2df9344825349d5397ac940f9",
+        "WINDOWS/SYSTEM/KRNL286.EXE": "6b22884ae6e49b5b937e4e008d17604bc3c930ae8ae5a983aa890252eb5e8b7e",
+        "WINDOWS/SYSTEM/KRNL386.EXE": "04aa1ad0d77842caeed6a7b5c78de8f802fe49a2c9bd37ea98609426697fa4da",
+        "WINDOWS/SYSTEM/WIN386.EXE": "b377730fdf5f82a59ff95e239e1c64b7cec289db765202775a81bfd200a805d5",
+        "WINDOWS/PROGMAN.EXE": "e198d80cb946ec98e4ee4e0bfc9261fe1e5b960e902b7edeb0b7d8bb3031cef4",
+        "WINDOWS/WINFILE.EXE": "d715b48372b6eacc803f144fbe61722a67f7226a4af4af72ff54f16bae0a1886"
+      },
+      "install_and_verify": [
+        "WINRAM 1.0.1",
+        "Microsoft Windows 3.1",
+        "D:\\WINDOWS",
+        "Installed. Restart the target system.",
+        "WINRAM 1.0.1",
+        "Microsoft Windows 3.1",
+        "D:\\WINDOWS",
+        "Installation verified."
+      ],
+      "uninstall": [
+        "WINRAM 1.0.1",
+        "Microsoft Windows 3.1",
+        "D:\\WINDOWS",
+        "Uninstalled. Original backups retained."
+      ],
+      "originals_restored_by_hash": true,
+      "vmm_extra_locked_page_bytes": 4096,
+      "native_dialog": {
+        "total_kib": 4124156,
+        "native_free_kib": 4072684,
+        "live_free_kib": 4072684,
+        "capture": "screens/w31-de-about.png"
+      },
+      "resources": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "W31PROBE begin",
+        "start USER=95 GDI=86 system=86 user_selector=0797 gdi_selector=05f7",
+        "menus USER=9 GDI=86 system=9 user_selector=0797 gdi_selector=05f7",
+        "menus simultaneous=2960 released=2960 before_percent=95 low_percent=9 after_percent=95",
+        "brushes USER=95 GDI=9 system=9 user_selector=0797 gdi_selector=05f7",
+        "brushes simultaneous=1656 released=1656 before_percent=86 low_percent=9 after_percent=86",
+        "end USER=95 GDI=86 system=86 user_selector=0797 gdi_selector=05f7",
+        "result=PASS menus and GDI drawing",
+        "W31PROBE end"
+      ],
+      "ordinary_win16_swap_disabled": [
+        "WINRAM memory service started",
+        "WINRAM global memory service ready",
+        "WINRAM memory display ready",
+        "Block KiB=4096",
+        "Requested blocks=940",
+        "Written KiB=1048576",
+        "Written KiB=2097152",
+        "Written KiB=3145728",
+        "Simultaneously held KiB=3850240",
+        "Written blocks=940",
+        "Verified blocks=940",
+        "Released blocks=940",
+        "Integrity PASS",
+        "GLOBALMEM END"
+      ]
+    }
+  },
+  "vmm_component_tests": {
+    "builds": [
+      "Windows 3.1 English",
+      "Windows 3.1 Turkish",
+      "Windows 3.1 German",
+      "Windows for Workgroups 3.11 English"
+    ],
+    "checks": [
+      "Original image and a copy with a trailing overlay",
+      "Every bundled driver other than WIN386 compared byte-for-byte after adjusting its absolute file offsets",
+      "Duplicate bootstrap anchor rejected"
+    ]
+  },
+  "installer_in_windows": {
+    "Windows 1.01": {
+      "application": "The same release DOS executable and PIF",
+      "listed_host_dos": "MS-DOS 6.22",
+      "listed_windows": "Windows 1.01",
+      "numbered_selection_prompt_visible": true,
+      "capture": "screens/windows1-installer.png"
+    },
+    "Windows 2.03": {
+      "application": "The same release DOS executable and PIF",
+      "listed_host_dos": "MS-DOS 6.22",
+      "listed_windows": "Windows 2.03",
+      "numbered_selection_prompt_visible": true,
+      "capture": "screens/windows2-installer.png"
+    },
+    "Windows 3.1": {
+      "application": "The same release DOS executable and PIF",
+      "listed_host_dos": "MS-DOS 6.22",
+      "listed_windows": "Windows 3.1",
+      "numbered_selection_prompt_visible": true,
+      "capture": "screens/windows31-installer.png"
+    }
+  }
+}

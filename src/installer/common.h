@@ -43,9 +43,8 @@ typedef struct {
 } Signature;
 typedef struct {
     int id;
-    const char *path, *before, *after;
-    long size, offset;
-    unsigned runs;
+    const char *path;
+    long objects;
 } Patch;
 typedef struct {
     const char *name;
@@ -84,7 +83,6 @@ int samefile(const char *a, const char *b);
 int rmfile(const char *path);
 int startpack(const char *exe);
 int extract(const char *name, const char *destination);
-int apply_delta(const Patch *p, const char *src, const char *dest);
 int detect(const char *path);
 const char *display_name(int id, const char *base);
 int installed(const char *path);

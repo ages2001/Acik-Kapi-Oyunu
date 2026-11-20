@@ -24,6 +24,14 @@ WINRAM /UNINSTALL C:\WINDOWS
 - Original files are retained under **`WRMSTATE\Bxxxx.BKP`** beneath the selected target. Shared DOS boot files use **`\WRMBOOT`** and the DOSX boot profile uses **`\WRMLOW`**. The installation record maps names to destinations. Removal restores the original contents, FAT attributes and timestamps. Existing backups survive removal. Later edits to managed files are saved as additional `.BKP` files before restoration.
 - A pending file transaction resumes when the same target is selected again. Keep its state directory with the installation. The shared XMS driver is released when the last dependent installation is removed.
 
+## Executable compatibility in v1.0.1
+
+WINRAM resolves the active code inside the selected installation. For Windows 3.x it follows the NE exports and the KERNEL imports for menu allocation and release. Windows 95, 98 and Me use a different USER heap initialization routine. Windows 1.x and 2.x bind USER into the system binary and overlay. The installer uses the format and allocator for each family. A translated resource, a different file checksum, a relocated code segment or a vendor trailer can coexist with the patch.
+
+Windows 3.1 kernel entry points and the 386 VMM use their own executable tables. The installer checks the affected instructions and relocation records. It can add a resident page when translated data occupies the space required by the VMM patch. If a required operation is missing or ambiguous, installation stops before replacing the system files. SHA-256 still verifies the user's exact backups, staged output and installed files.
+
+QEMU runs used English Windows 3.0a, 3.1 and Windows for Workgroups 3.11, plus Windows 3.1 system modules and shells from Turkish and German retail disks. The localized Program Manager dialogs showed **4,124,160 KB** and **4,124,156 KB** respectively. Automatic recognition requires a compatible executable format and allocator. The tested versions and guest measurements are listed in the verification record. [Compatibility results](src/verification/dynamic-compatibility.json) · [Turkish Program Manager](src/verification/screens/w31-tr-about.png) · [German Program Manager](src/verification/screens/w31-de-about.png)
+
 ## What the numbers mean
 
 The screenshots use **4,032 MiB** of QEMU guest RAM, or **3.9375 GiB**. BIOS and device reservations account for the difference between installed RAM and the usable amount. The displays read the running guest. The Windows 1.01 test at **256 MiB** reports **261,056 KiB** of free XMS. [256 MiB screenshot](src/verification/screens/w101-256.png)
@@ -54,7 +62,7 @@ All entries in this table are KiB. Other applications and drivers change the sta
 
 ## Ordinary Win16 applications
 
-On the tested English Windows 1.01, 2.03, Windows/286 and Windows/386 2.11, Windows 3.0a, Windows 3.1 and WfW 3.11 installations, WINRAM extends the standard Win16 global-memory calls. An application can allocate private movable blocks with `GlobalAlloc`, write through `GlobalLock`, unlock them, and later lock the same handles to read back their contents. The application needs no WINRAM import and no recompilation. The installed memory service uses XMS, the session's bank, or DPMI according to the selected mode.
+On the tested Windows 1.01, 2.03, Windows/286 and Windows/386 2.11, Windows 3.0a, Windows 3.1 and WfW 3.11 installations, WINRAM extends the standard Win16 global-memory calls. An application can allocate private movable blocks with `GlobalAlloc`, write through `GlobalLock`, unlock them, and later lock the same handles to read back their contents. The application needs no WINRAM import and no recompilation. The installed memory service uses XMS, the session's bank, or DPMI according to the selected mode.
 
 Windows retains a native working allocation while a pointer is locked. Unlocked data can move to high memory. The memory service reserves a reusable working window for large blocks so a reader can reach its data again under pressure. Moving data between that window and high memory takes time on workloads that repeatedly lock and unlock large blocks. Fixed or shared blocks, stacks, local heaps, driver buffers and objects explicitly wired in memory still follow their native allocation rules. Code that keeps a pointer after unlocking it, derives a selector directly from a handle, or needs many simultaneously locked blocks has additional compatibility constraints. Real-mode segment addressing and the number of handles or selectors available in the guest limit each application's working set.
 
@@ -102,7 +110,7 @@ The managed installer retains `.BKP` originals and handles the additional Window
 
 The managed Me profile sets the native `MaxFileCache` to 64 MiB for the tested multi-process configuration. An explicit `/C:n` sets both that entry and the reference patch limit to the requested value.
 
-The English builds with tested display and resource changes are **Windows 95 OSR2 4.00.1111**, **Windows 98 SE 4.10.2222** and **Windows Me 4.90.3000**. Other identifiable 95/98/Me builds use the PATCHMEM profile. Additional GUI binary changes require a matching SHA-256 fingerprint. The VxD comparison records cover the default profile and `/A /M /P /C:256` on all three tested builds. [Reference comparison](src/verification/PATCHMEM.md)
+The English builds with tested display and resource changes are **Windows 95 OSR2 4.00.1111**, **Windows 98 SE 4.10.2222** and **Windows Me 4.90.3000**. Other identifiable 95/98/Me builds use the PATCHMEM profile. WINRAM checks USER, KERNEL32 and System Properties independently against their imports, exports, resource formats and instruction sequences. For these additional editions it reports an absent or incompatible optional component and continues with the reference VMM and VCACHE changes. The VxD comparison records cover the default profile and `/A /M /P /C:256` on all three tested builds. [Reference comparison](src/verification/PATCHMEM.md)
 
 ## Legacy startup
 

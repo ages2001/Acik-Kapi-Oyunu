@@ -1,4 +1,5 @@
 #include "transaction.h"
+#include "nepatch.h"
 #include <process.h>
 #include <errno.h>
 #include <sys/locking.h>
@@ -302,10 +303,78 @@ static int remove_tx(void) {
     tx.h.direction = 'U';
     return write_record("TXN.DAT") && publish();
 }
+enum DynamicComponent { USER3, USER9, MEMORY9, PANEL9 };
+static int patch_component(const char *relative, enum DynamicComponent kind, int optional) {
+    char path[PATHLEN];
+    FILE *out;
+    const char *reason;
+    int io_error;
+    if (!pathjoin(path,tx.base,relative)) return 0;
+    if (optional && !exists(path)) {
+        printf("Component absent: %s\n",path);
+        return 1;
+    }
+    if (!begin(path) || !copyfile(path, staged)) return 0;
+    out = fopen(staged, "r+b");
+    if (!out) return fail("Cannot open staged component", path);
+    if (kind == MEMORY9) reason = patch_pe_memory(out);
+    else if (kind == PANEL9) reason = patch_ne_panel(out);
+    else reason = patch_ne_user(out,kind == USER9);
+    io_error = ferror(out);
+    if (fclose(out) || io_error) return fail("Cannot finish staged component",path);
+    if (reason) {
+        if (!rmfile(staged)) return fail("Cannot discard staged component",path);
+        if (!optional) return fail(reason,path);
+        printf("Skipped %s: %s. Continuing with PATCHMEM.\n",path,reason);
+        return 1;
+    }
+    return finish();
+}
+static int patch_legacy_objects(const Patch *first, const char *file) {
+    const Patch *q;
+    FILE *in, *out;
+    int ok, io_error;
+    if (!begin(file)) return 0;
+    for (q=first; q->id; ++q) {
+        if (q->id!=first->id || strcmp(q->path,first->path)) continue;
+        if (!copyfile(file,staged)) return 0;
+        in=fopen(self,"rb"); out=fopen(staged,"r+b");
+        if (!in || !out) {
+            if (in) fclose(in);
+            if (out) fclose(out);
+            return fail("Cannot open executable object recipe",file);
+        }
+        ok=!fseek(in,packbase+q->objects,SEEK_SET) && patch_objects(out,in);
+        io_error=ferror(in) || ferror(out);
+        fclose(in);
+        if (fclose(out) || io_error) return fail("Cannot read or write executable object",file);
+        if (ok) return finish();
+    }
+    rmfile(staged);
+    return fail("Incompatible code or relocation data in executable object",file);
+}
 static int patch_binaries(int id) {
     Patch *p, *q;
-    char f[PATHLEN], hash[65];
-    Byte d[32];
+    char f[PATHLEN];
+    int standard_only=0;
+    if (id==W31) {
+        int standard,enhanced,loader;
+        if (!pathjoin(f,tx.base,"SYSTEM\\KRNL286.EXE")) return 0;
+        standard=exists(f);
+        if (!pathjoin(f,tx.base,"SYSTEM\\KRNL386.EXE")) return 0;
+        enhanced=exists(f);
+        if (!pathjoin(f,tx.base,"SYSTEM\\WIN386.EXE")) return 0;
+        loader=exists(f);
+        standard_only=standard && !enhanced && !loader;
+    }
+    if (id >= W30 && id <= WFW &&
+        !patch_component("SYSTEM\\USER.EXE",USER3,0)) return 0;
+    if ((id >= W95 && id <= WME) || (id >= GEN95 && id <= GENME)) {
+        int optional = id >= GEN95;
+        return patch_component("SYSTEM\\USER.EXE",USER9,optional) &&
+               patch_component("SYSTEM\\KERNEL32.DLL",MEMORY9,optional) &&
+               patch_component("SYSTEM\\SYSDM.CPL",PANEL9,optional);
+    }
     for (p = patches; p->id; p++) {
         if (p->id != id)
             continue;
@@ -322,21 +391,11 @@ static int patch_binaries(int id) {
                                             !strcmp(p->path, "SYSTEM\\KRNL386.EXE"))) ||
                            (id == W31 && !strcmp(p->path, "SYSTEM\\KRNL286.EXE"))))
             continue;
-        if (!hashfile(f, d))
+        if (standard_only && (!strcmp(p->path,"SYSTEM\\KRNL386.EXE") ||
+                              !strcmp(p->path,"SYSTEM\\WIN386.EXE"))) continue;
+        if (!exists(f))
             return fail("Required system file is missing", f);
-        hexhash(d, hash);
-        for (q = p; q->id; q++)
-            if (q->id == id && !strcmp(q->path, p->path) && !strcmp(hash, q->after))
-                break;
-        if (q->id)
-            continue;
-        for (q = p; q->id; q++)
-            if (q->id == id && !strcmp(q->path, p->path) && !strcmp(hash, q->before))
-                break;
-        if (!q->id)
-            return fail("Unrecognized system file. No target files have been replaced", f);
-        if (!begin(f) || !apply_delta(q, f, staged) || !finish())
-            return 0;
+        if (!patch_legacy_objects(p,f)) return 0;
     }
     return 1;
 }
@@ -512,13 +571,9 @@ static int prepare9x(int id, const Options *o) {
         if (!setting(staged, "vcache", "MaxFileCache", limit, 0))
             return 0;
     }
-    if (id == W95 || id == W98 || id == WME) {
-        if (!setting(staged, "windows", "GDIMaxHeapSize", "32767", 0))
-            return 0;
-    }
-    if (!finish())
-        return 0;
-    return 1;
+    if (!finish() || !pathjoin(cfg, tx.base, "WIN.INI") || !begin(cfg) ||
+        !setting(cfg,"windows","GDIMaxHeapSize","32767",0)) return 0;
+    return finish();
 }
 static int preparedos(void) {
     char dir[PATHLEN], loc[PATHLEN];

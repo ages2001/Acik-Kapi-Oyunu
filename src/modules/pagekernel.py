@@ -1,8 +1,7 @@
 """Build the narrow Win16 global-memory entry changes from a supported system file.
 
-Run after applying the other WINRAM resource changes to the same input. The
-installer uses the checksummed copy/literal recipe in catalog.json, so release
-builds do not require access to operating-system installation media.
+This offline authoring utility follows kernel exports and startup instructions.
+The DOS installer resolves them in the selected file through installer/kernel.inc.
 """
 import argparse
 from pathlib import Path
@@ -12,15 +11,20 @@ import tempfile
 
 SOURCES = Path(__file__).resolve().parent
 ORDINALS = (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 111, 112, 191, 192, 197, 198)
-# Each pair names the resident-size instruction and its original immediate.
-RETAIN = {
-    ("win30", "KERNEL.EXE"): ((0x9a0b, 0x9170), (0x9a15, 0x7590)),
-    ("win30", "KRNL286.EXE"): ((0x7d48, 0x7300), (0x7d4b, 0x6ff0)),
-    ("win30", "KRNL386.EXE"): ((0x833d, 0x7920), (0x8340, 0x7610)),
-    ("windows31", "KRNL286.EXE"): ((0xa517, 0x98f0),),
-    ("windows31", "KRNL386.EXE"): ((0xb567, 0xa940),),
-    ("wfw311", "KRNL386.EXE"): ((0xb577, 0xa950),),
-}
+# Each matcher captures the resident length operands in the linker's startup code.
+def retained_operands(code):
+    import re
+    patterns = (
+        rb"\x33\xd2\x26\x89\x16..\x89\x16..\xb9(..)\x83\x3e..\x00\x75\x03\xb9(..)\x56\x53\x1e",
+        rb"\x33\xd2\x26\x89\x16..\x89\x16..\xb9(..)\xb9(..)\xfa\x2e\x8e\x16..\xbc..\xfb\x0e\x52\x51\x52\x0e\xb8",
+        rb"\x1e\x52\x51\x52\x90\x0e\xe8..\x33\xd2\xb9(..)\x0e\x52\x51\x52\x0e\xb8",
+    )
+    hits = [hit for pattern in patterns for hit in re.finditer(pattern, code, re.S)]
+    if len(hits) != 1:
+        raise ValueError("Ambiguous or missing resident-size instruction")
+    hit = hits[0]
+    return [hit.start(i) for i in range(1, len(hit.groups()) + 1)]
+
 
 def word(data, pos):
     return struct.unpack_from("<H", data, pos)[0]
@@ -159,11 +163,8 @@ def patch(data, profile, name, nasm="nasm"):
                 raise ValueError("Unknown resident-area instruction")
             put_word(data, at + 1, length)
     else:
-        for offset, original in RETAIN[profile, name]:
-            at = base + offset
-            if data[at] != 0xb9 or word(data, at + 1) != original:
-                raise ValueError("Unknown kernel startup")
-            put_word(data, at + 1, length)
+        for operand in retained_operands(data[base:end]):
+            put_word(data, base + operand, length)
     added = code + relocs
     padding = (tail - end - len(added)) % stride
     growth = end + len(added) + padding - tail

@@ -1,4 +1,5 @@
 #include "transaction.h"
+#include "nepatch.h"
 const char *names[] = {"Unknown",
                        "Microsoft Windows 1.01",
                        "Microsoft Windows 2.03",
@@ -14,9 +15,9 @@ const char *names[] = {"Unknown",
                        "Microsoft MS-DOS 6.x",
                        "Microsoft MS-DOS 7.x",
                        "Microsoft MS-DOS 8.0",
-                       "Windows 95 (PATCHMEM profile)",
-                       "Windows 98 (PATCHMEM profile)",
-                       "Windows Me (PATCHMEM profile)"};
+                       "Windows 95",
+                       "Windows 98",
+                       "Windows Millennium Edition"};
 Target *targets;
 static Target **tail;
 int installed(const char *p) {
@@ -51,25 +52,66 @@ static int contains(const char *file, const char *word) {
     return 0;
 }
 static int version9x(const char *file) {
-    Byte b[1040];
-    size_t n, k = 0, i;
-    FILE *f = fopen(file, "rb");
-    if (!f)
-        return 0;
-    while ((n = fread(b + k, 1, 1024, f))) {
-        n += k;
-        for (i = 0; i + 16 <= n; i++)
-            if (!memcmp(b + i, "\xbd\x04\xef\xfe\0\0\x01\0", 8) && b[i + 10] == 4 &&
-                b[i + 11] == 0) {
-                unsigned minor = b[i + 8];
-                fclose(f);
-                return minor == 90 ? GENME : minor == 10 ? GEN98 : minor == 0 ? GEN95 : 0;
-            }
-        k = n < 15 ? n : 15;
-        memmove(b, b + n - k, k);
-    }
+    unsigned minor, build;
+    int ok;
+    FILE *f=fopen(file,"rb");
+    if (!f) return NONE;
+    ok=pe_product_version(f,&minor,&build);
     fclose(f);
-    return 0;
+    if (!ok) return NONE;
+    if (minor==0) return build==1111 ? W95 : GEN95;
+    if (minor==10) return build==2222 ? W98 : GEN98;
+    if (minor==90) return build==3000 ? WME : GENME;
+    return NONE;
+}
+static int bound_windows(const char *path) {
+    char file[PATHLEN];
+    FILE *in;
+    unsigned version;
+    int early=has(path,"WIN100.BIN");
+    const char *bin=early ? "WIN100.BIN" : "WIN200.BIN";
+    if (!pathjoin(file,path,bin) || !(in=fopen(file,"rb"))) return NONE;
+    version=bound_windows_version(in);
+    fclose(in);
+    if (early && version==0x0100 && pathjoin(file,path,"WIN100.OVL") &&
+        (contains(file,"1.01") || contains(file,"1,01"))) return W101;
+    if (!early && version==0x0203) return W203;
+    if (!early && version==0x0211) return has(path,"WIN386.386") ? W386 : W286;
+    return NONE;
+}
+/* The enhanced-mode loader records its Windows version in the W3 directory.
+   The NE target version alone cannot distinguish Windows 3.1 from Workgroups. */
+static int windows3(const char *path) {
+    char file[PATHLEN];
+    FILE *in;
+    unsigned char mz[64], w3[6];
+    unsigned user_version, loader_version = 0;
+    U32 offset;
+    int workgroups;
+    if (!has(path,"WIN.COM") || !pathjoin(file,path,"SYSTEM\\USER.EXE") ||
+        !(in=fopen(file,"rb"))) return NONE;
+    user_version=ne_windows_version(in,"USER");
+    fclose(in);
+    if ((user_version>>8)!=3) return NONE;
+    if (pathjoin(file,path,"SYSTEM\\WIN386.EXE") && (in=fopen(file,"rb"))!=NULL) {
+        if (fread(mz,1,sizeof(mz),in)==sizeof(mz) && !memcmp(mz,"MZ",2)) {
+            memcpy(&offset,mz+60,4);
+            if (offset<=0x7fffffffUL && !fseek(in,(long)offset,SEEK_SET) &&
+                fread(w3,1,6,in)==6 && !memcmp(w3,"W3",2) && (w3[4]||w3[5]))
+                loader_version=w3[2] | ((unsigned)w3[3]<<8);
+        }
+        fclose(in);
+    }
+    workgroups=has(path,"SYSTEM\\WFWSETUP.DLL") || has(path,"SYSTEM\\WFWNET.DRV");
+    if (loader_version==0x030b) {
+        if (!workgroups && pathjoin(file,path,"SYSTEM\\KRNL386.EXE"))
+            workgroups=contains(file,"Workgroups") || contains(file,"WORKGROUPS");
+        return workgroups ? WFW : W31;
+    }
+    if (loader_version==0x0300 || (!loader_version && user_version==0x0300)) return W30;
+    if (loader_version==0x030a || (!loader_version && user_version==0x030a))
+        return workgroups ? WFW : W31;
+    return NONE;
 }
 int detect(const char *path) {
     char f[PATHLEN], hex[65];
@@ -99,6 +141,18 @@ int detect(const char *path) {
     }
     if (!has(path, "WIN.COM") && !has(path, "WIN386.EXE") && !has(path, "IO.SYS"))
         return NONE;
+    if (has(path,"WIN100.BIN") || has(path,"WIN200.BIN")) {
+        id=bound_windows(path);
+        if (id) return id;
+    }
+    id=windows3(path);
+    if (id) return id;
+    if (has(path, "WIN.COM") && has(path, "SYSTEM\\VMM32.VXD") &&
+        pathjoin(f, path, "SYSTEM\\KERNEL32.DLL")) {
+        id = version9x(f);
+        if (id)
+            return id;
+    }
     for (s = sigs; s->id; s++) {
         if (s->id >= D5 && strlen(path) != 3 && !has(path, "COMMAND.COM"))
             continue;
@@ -116,12 +170,6 @@ int detect(const char *path) {
                     return NONE;
                 return j->id;
             }
-    }
-    if (has(path, "WIN.COM") && has(path, "SYSTEM\\VMM32.VXD") &&
-        pathjoin(f, path, "SYSTEM\\KERNEL32.DLL")) {
-        id = version9x(f);
-        if (id)
-            return id;
     }
     if (has(path, "IO.SYS") && has(path, "MSDOS.SYS") && pathjoin(f, path, "COMMAND.COM")) {
         if (contains(f, "MS-DOS(R) Version 5."))

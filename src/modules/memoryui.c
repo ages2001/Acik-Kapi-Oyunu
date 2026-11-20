@@ -6,8 +6,8 @@
 /* Use only USER/KERNEL APIs present in the first retail Windows version.
    The shell keeps ownership of the dialog and its existing size readouts. */
 static FARPROC top_proc, child_proc;
-static HWND title_ctrl, icon_ctrl, live_ctrl, legacy_ctrl;
-static int has_disk, has_memory, has_capacity;
+static HWND title_ctrl, icon_ctrl, live_ctrl, legacy_ctrl, capacity_ctrl;
+static int has_disk, has_memory, has_capacity, windows_title;
 static char text[128], class_name[36], heading[48], last_value[88];
 static DWORD total;
 static WORD kind;
@@ -85,6 +85,8 @@ BOOL FAR PASCAL __export __loadds scan_child(HWND h, LPARAM l) {
     if ((style & 15) == SS_ICON)
         icon_ctrl = h;
     GetWindowText(h, text, sizeof(text));
+    if (strstr(text, "Microsoft Windows"))
+        windows_title = 1;
     if (!strcmp(text, "MS-DOS Executive"))
         title_ctrl = h;
     if (strstr(text, "Disk Space Free"))
@@ -94,10 +96,51 @@ BOOL FAR PASCAL __export __loadds scan_child(HWND h, LPARAM l) {
         has_memory = 1;
         legacy_ctrl = h;
     }
-    if (strstr(text, "KiB") || strstr(text, "KB RAM") || strstr(text, "Extended memory"))
+    if (strstr(text, "KiB") || strstr(text, "KB RAM") || strstr(text, "Extended memory")) {
         has_capacity = 1;
+        capacity_ctrl = h;
+    }
     return TRUE;
 }
+/* ShellAbout puts its native free-memory value on the row below the mode
+   and physical capacity. Pair the displayed rows across translated templates. */
+static int numeric_field(char *s, char **first, char **end, char *separator) {
+    char *p = s;
+    while (*p && (*p < '0' || *p > '9')) ++p;
+    if (!*p) return 0;
+    *first = p;
+    *separator = ',';
+    while (*p) {
+        if (*p >= '0' && *p <= '9') { ++p; continue; }
+        if ((*p == ',' || *p == '.' || *p == ' ' || *p == 39) &&
+            p[1] >= '0' && p[1] <= '9') { *separator = *p++; continue; }
+        break;
+    }
+    *end = p;
+    while (*p == ' ') ++p;
+    return *p == 'K' || *p == 'k';
+}
+#ifndef EARLY_SHELL
+static HWND native_free(HWND dialog, HWND capacity) {
+    HWND child, best = 0;
+    RECT above, row;
+    char *a, *z, sep;
+    int distance = 32767;
+    GetWindowRect(capacity, &above);
+    for (child = GetWindow(dialog, GW_CHILD); child; child = GetWindow(child, GW_HWNDNEXT)) {
+        if (!IsWindowVisible(child) || child == live_ctrl) continue;
+        GetClassName(child,class_name,sizeof(class_name));
+        if (stricmp(class_name,"Static")) continue;
+        GetWindowRect(child,&row);
+        if (row.top <= above.top || row.top-above.top >= distance) continue;
+        GetWindowText(child,text,sizeof(text));
+        if (!numeric_field(text,&a,&z,&sep)) continue;
+        distance = row.top-above.top;
+        best = child;
+    }
+    return best;
+}
+#endif
 static void redraw(HWND h) {
     InvalidateRect(h, NULL, TRUE);
     UpdateWindow(h);
@@ -115,19 +158,22 @@ BOOL FAR PASCAL __export __loadds scan_top(HWND h, LPARAM l) {
     if (strcmp(class_name, "#32770") && stricmp(class_name, "Dialog"))
         return TRUE;
     GetWindowText(h, text, sizeof(text));
-    /* The Executive has a captionless About box; later shells name theirs. */
     {
-        int shell_about = !stricmp(text, "About") || !stricmp(text, "About Program Manager") ||
-                          !stricmp(text, "About File Manager") || !stricmp(text, "About Windows") ||
-                          !stricmp(text, "About MS-DOS Executive") || !*text;
-        if (!shell_about)
-            return TRUE;
+        int shell_caption = !stricmp(text, "About") || !stricmp(text, "About Program Manager") ||
+                            !stricmp(text, "About File Manager") || !stricmp(text, "About Windows") ||
+                            !stricmp(text, "About MS-DOS Executive") || !*text;
+        has_disk = has_memory = has_capacity = windows_title = 0;
+        title_ctrl = icon_ctrl = live_ctrl = legacy_ctrl = capacity_ctrl = 0;
+        EnumChildWindows(h, (WNDENUMPROC)child_proc, 0);
+        if (!live_ctrl && !((shell_caption || windows_title) && has_capacity) &&
+            !(shell_caption && title_ctrl && has_disk && has_memory)) return TRUE;
+#ifndef EARLY_SHELL
+        if (windows_title && capacity_ctrl) {
+            HWND field = native_free(h,capacity_ctrl);
+            if (field) legacy_ctrl = field;
+        }
+#endif
     }
-    has_disk = has_memory = has_capacity = 0;
-    title_ctrl = icon_ctrl = live_ctrl = legacy_ctrl = 0;
-    EnumChildWindows(h, (WNDENUMPROC)child_proc, 0);
-    if (!live_ctrl && !(has_capacity || (title_ctrl && has_disk && has_memory)))
-        return TRUE;
     if (title_ctrl && total != 0xffffffffUL) {
         format(heading, kind ? "Bank total: " : "XMS total: ", total);
         SetWindowText(title_ctrl, heading);
@@ -146,17 +192,14 @@ BOOL FAR PASCAL __export __loadds scan_top(HWND h, LPARAM l) {
     /* Some enhanced shells originally show a Win16 estimate in their KB Free
        field. Refresh that field from the same physical-page sample as the live row. */
     if (k == 2 && legacy_ctrl) {
-        char *tail, *start, num[20], value[120];
-        int prefix;
+        char *tail, *start, *p, sep, num[20], value[120];
+        unsigned prefix;
         GetWindowText(legacy_ctrl, native, sizeof(native));
-        tail = strstr(native, " KB Free");
-        if (tail) {
-            start = tail;
-            while (start > native && ((start[-1] >= '0' && start[-1] <= '9') || start[-1] == ','))
-                --start;
+        if (numeric_field(native,&start,&tail,&sep)) {
             prefix = start - native;
             digits(num, avail);
-            if (start != tail && prefix + strlen(num) + strlen(tail) < sizeof(value)) {
+            for (p=num; *p; ++p) if (*p == ',') *p=sep;
+            if (prefix + strlen(num) + strlen(tail) < sizeof(value)) {
                 memcpy(value, native, prefix);
                 value[prefix] = 0;
                 strcat(value, num);

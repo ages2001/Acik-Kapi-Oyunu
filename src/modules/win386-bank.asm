@@ -4,8 +4,13 @@
 ; interrupts resume. The preboot XMS handle remains locked for the session.
 bits 32
 cpu 386
+%ifdef XOUT_RUNTIME
+section .text
+extern CUR_VMID, CUR_VM_HANDLE, EVENT_CHK, LEGACY_RESUME
+%else
 %include "xout-layout.inc"
 org BANK_CODE
+%endif
 entry:
     cmp word [ebp+28],0xd74d
     jne near legacy

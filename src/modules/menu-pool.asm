@@ -1,7 +1,8 @@
 bits 16
 cpu 286
-org 0x14a0
-%define ROOT 0x0ab8
+org 0
+; The build records the operand locations. The installer supplies the actual DGROUP offset.
+%define ROOT 0xd17a
 %define COUNT 16
 %define ITEM 18
 %macro kernel_call 1

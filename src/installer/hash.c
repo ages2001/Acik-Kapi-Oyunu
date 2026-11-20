@@ -1,4 +1,8 @@
-#include "common.h"
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h>
+typedef unsigned char Byte;
+typedef uint32_t U32;
 /* SHA-256, FIPS 180-4. Open Watcom has 32-bit unsigned long on both targets. */
 static const U32 k[64] = {
     0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
@@ -50,26 +54,23 @@ static void block(U32 *h, const Byte *data) {
     h[6] += g;
     h[7] += t;
 }
-int hashfile(const char *path, Byte *out) {
+static int hash_stream(FILE *f, long limit, Byte *out) {
     U32 h[8] = {0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
                 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19};
     static Byte buf[2048];
     U32 total = 0, bits;
     unsigned n, j, i, tail;
-    FILE *f = fopen(path, "rb");
-    if (!f)
-        return 0;
+    unsigned count;
     do {
-        n = fread(buf, 1, sizeof(buf), f);
+        count = limit >= 0 && limit-(long)total < (long)sizeof(buf) ?
+                (unsigned)(limit-total) : sizeof(buf);
+        n = fread(buf, 1, count, f);
+        if (n < count && (ferror(f) || limit >= 0)) return 0;
         total += n;
         for (j = 0; j + 64 <= n; j += 64)
             block(h, buf + j);
     } while (n == sizeof(buf));
-    if (ferror(f)) {
-        fclose(f);
-        return 0;
-    }
-    fclose(f);
+    if (ferror(f)) return 0;
     tail = n - j;
     memmove(buf, buf + j, tail);
     buf[tail++] = 0x80;
@@ -88,6 +89,19 @@ int hashfile(const char *path, Byte *out) {
         out[i] = (Byte)(h[i / 4] >> (24 - 8 * (i % 4)));
     return 1;
 }
+int digest_at(FILE *f, long start, long length, Byte *actual) {
+    return start>=0 && length>=0 && !fseek(f,start,SEEK_SET) &&
+           hash_stream(f,length,actual);
+}
+int hashfile(const char *path, Byte *out) {
+    FILE *f=fopen(path,"rb");
+    int ok;
+    if (!f) return 0;
+    ok=hash_stream(f,-1L,out);
+    fclose(f);
+    return ok;
+}
+
 void hexhash(const Byte *d, char *h) {
     static const char digits[] = "0123456789abcdef";
     int i;
