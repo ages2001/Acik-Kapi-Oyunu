@@ -13,14 +13,14 @@ for family in ${*:-WIN30 WIN31 WIN9X NT3X NT4 NT5X86 XPAMD64}; do
         WIN30|WIN31)
             flags="-q -ml -zW -bt=windows -2 -os -dWXP_WIN16"
             if [ "$family" = WIN30 ]; then flags="$flags -dWXP_WIN30"; fi
-            for name in platform progman driver16; do
+            for name in platform progman driver16 accelerator; do
                 wcc $flags -fo="$name.obj" "$src/$name.c"
             done
             wrc -q -r -bt=windows -30 -i="$WATCOM/h/win" -i="$src" -fo=ui.res "$src/setup.rc"
             for product in SETUP INFO; do
                 kind=; if [ "$product" = INFO ]; then kind=-dBUILD_INFO; fi
                 wcc $flags $kind -fo=ui.obj "$src/ui.c"
-                wlink system windows option quiet option stack=16384 name "$dest/$product.EXE" file ui.obj,platform.obj,progman.obj,driver16.obj
+                wlink system windows option quiet option stack=16384 name "$dest/$product.EXE" file ui.obj,platform.obj,progman.obj,driver16.obj,accelerator.obj
                 wrc -q -bt=windows -30 ui.res "$dest/$product.EXE" -fe="$dest/$product.EXE"
             done;;
         WIN9X|NT3X|NT4|NT5X86|XPAMD64)
@@ -38,7 +38,7 @@ for family in ${*:-WIN30 WIN31 WIN9X NT3X NT4 NT5X86 XPAMD64}; do
             for product in SETUP INFO; do
                 kind=; if [ "$product" = INFO ]; then kind=-DBUILD_INFO; fi
                 "$cc" -Os -Wall -ffreestanding -fno-builtin -fno-stack-protector -nostdlib $cpu -D"$def" $kind \
-                  "$src/ui.c" "$src/platform.c" "$src/$shell.c" "$src/$drv.c" ui.o \
+                  "$src/ui.c" "$src/platform.c" "$src/accelerator.c" "$src/$shell.c" "$src/$drv.c" ui.o \
                   "-Wl,-e,$entry,--subsystem,windows:$ver,--major-os-version,1,--minor-os-version,0" \
                   -s -luser32 -lgdi32 -ladvapi32 -lkernel32 $libs -o "$dest/$product.EXE"
             done;;

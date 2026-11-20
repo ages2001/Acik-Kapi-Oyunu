@@ -42,6 +42,10 @@ python3 tests/gpu/priority_guest.py --qemu "$QEMU" --linux "$KERNEL" --busybox "
     --bios-path "$QEMU_FIRMWARE" --bios-path "$SEABIOS" --output priority-qemu.txt
 ```
 
+## Native Windows guest command tests
+
+The guest probes now send NVIDIA B097/B197/C197 color-target commands and an NV902D solid triangle to a QEMU PCI test function. A separate RDNA 4 path executes SDMA 7 constant fill and unaligned linear copy from Linux's packet layout. The graphical scene uses a native VirtIO shader driver on each Windows family. Two independently presented scanouts and the GPU memory behind them are checked. The per-version logs distinguish the render and command paths. [Guest matrix and captures](windows/README.md)
+
 ## Monitor and acceleration acceptance
 
 An end-to-end native 3D pass requires commands from the Windows guest to execute on the target GPU or a validated complete model, with correct color, texture and depth readback. A DisplayPort HBR3 pass needs a connected sink and measured HBR3 training on hardware supporting that rate. HDMI 2.0 tests need measured active timing, link scrambling/SCDC where required, and a visible image. Multi-monitor tests require two active independent outputs, an extended desktop and successful mode changes on each output. A board's physical ports and transmitter limit which cases apply.
@@ -65,3 +69,7 @@ The Forceware publisher reports GDI, Direct3D and OpenGL rendering over HDMI wit
 ## Windows 2000 driver port
 
 The Windows 2000 companion supplies the five missing direct imports. A system-start probe exercised them successfully in the guest kernel. A second test actually entered the x86 Forceware miniport and observed its native video-port initialization. The XP miniport supplied an 84-byte structure and the Windows 2000 video port accepted its compatible 80-byte prefix. The VM had no matching NVIDIA PCI device and the driver service stayed stopped. [Source, binary and guest transcripts](../../src/compat/win2000/README.md)
+
+## Windows NT 3.1 and GTX 980
+
+The native NT 3.1 HAL companion supplies the six missing hardware-abstraction functions shared by NVIDIA 368.81 and SupraGSX 382.69 x86. Both private miniport copies resolve all 15 HAL imports. A booted NT 3.1 kernel exercised the XP calling conventions and PCI configuration reads and writes on two virtual PCI buses. The remaining 66 kernel and video-port imports, display DLL integration and board bring-up still gate GTX 980 operation. [Companion source and results](../../src/compat/nt31/README.md)

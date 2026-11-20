@@ -1,0 +1,18 @@
+# NVIDIA XP miniport HAL interface on Windows NT 3.1
+
+The GTX 980 uses GM204, PCI `10de:13c0`. NVIDIA 368.81 x86 with the project's desktop Maxwell INF entry and the SupraGSX 382.69 x86 package both import 15 functions from `HAL.dll`. On the tested NT 3.1 installation, nine names already exist. WINXPDM's native `W3H.SYS` forwards those nine to the installed HAL and implements the six missing names. Both private miniport copies now resolve the complete HAL descriptor. The remaining 66 missing imports are in the NT kernel and video port. NT 3.1 also hosts the display DDI in its user-mode window subsystem. The XP display DLL expects `win32k.sys`. Physical GTX 980 initialization, scanout and accelerated rendering are still open. [Import counts](../../../tests/gpu/results/nt31-forceware/imports.tsv) · [GTX 980 INF comparison](../../../tests/gpu/priority.md)
+
+Four fastcall entries adapt the XP spin-lock and IRQL conventions to the older HAL's stdcall API. Two PCI calls implement offset reads and writes using x86 PCI configuration mechanism 1 on a single-processor PC. They preserve the configuration address across each access and recognize firmware-numbered secondary PCI buses. Other bus-data types are outside this implementation. The project-built module is distributed separately from the seven display packages. [Companion binary](../../../bin/NT31COMP/W3H.SYS)
+
+A separately linked system-start driver imported all six missing names on uniprocessor Windows NT 3.1 build 528. It verified IRQL transitions, spin-lock acquisition and release, aligned and unaligned reads, the configuration-space boundary and missing slots. It changed and restored the interrupt-line byte on the project's interrupt-free test device, and identified a second device behind a PCI bridge. The running guest passed all three checks. [Guest transcript](../../../tests/gpu/results/nt31-forceware/kernel.txt) · [Native probe](../../../tests/gpu/nt31/probe.c)
+
+## Reproduction
+
+Use i686 MinGW-w64, its DDK headers, Python and pefile. Run the following from the WINXPDM directory. The second command creates a separate private file for one of the two recognized miniport builds.
+
+```sh
+sh src/compat/nt31/build.sh
+python3 src/compat/nt31/adapt.py "$DRIVER/nv4_mini.sys" bin/NT31COMP/W3H.SYS build/nt31-hal/local.sys
+```
+
+For the kernel check, copy `W3H.SYS` and `W3HTEST.SYS` from `build/nt31-hal` into a disposable NT 3.1 installation's `system32\drivers`. Register the probe as a kernel driver with Start 1 and its own ImagePath. Boot the patched QEMU with `-device winxpdm-engines,addr=6 -device pci-bridge,id=downstream,chassis_nr=1,addr=7 -device pci-testdev,bus=downstream,addr=0 -debugcon file:hal.log`.

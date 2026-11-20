@@ -5,3 +5,5 @@
 #define ID_TITLE     202
 #define ID_BODY      203
 #define ID_BACK      204
+#define ID_3D 205
+#define ID_EXISTING 206

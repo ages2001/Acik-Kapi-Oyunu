@@ -28,3 +28,4 @@ done
 cp SRC/dd9x/obj/wvbdd32.dll "$root/bin/WIN9X/WVBDD32.DLL"
 cp SRC/vxd/obj/winvbe.386 "$root/bin/WIN9X/WXPDM.386"
 python3 "$root/tools/stage_inf.py"
+sh "$root/tools/build_virtio.sh"

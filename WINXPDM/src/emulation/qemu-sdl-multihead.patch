@@ -1,0 +1,65 @@
+--- a/ui/sdl2.c
++++ b/ui/sdl2.c
+@@ -117,5 +117,20 @@
+         SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
+-
++
++        /* VirGL textures may be scanned out on any head. SDL windows
++         * need an explicit common share group when a head is hot-added. */
++        bool sharing = false;
++        int previous_share = 0;
++        SDL_GL_GetAttribute(SDL_GL_SHARE_WITH_CURRENT_CONTEXT, &previous_share);
++        for (int i = 0; i < sdl2_num_outputs; ++i) {
++            struct sdl2_console *peer = &sdl2_console[i];
++            if (peer != scon && peer->real_window && peer->winctx &&
++                SDL_GL_MakeCurrent(peer->real_window, peer->winctx) == 0) {
++                sharing = true;
++                break;
++            }
++        }
++        SDL_GL_SetAttribute(SDL_GL_SHARE_WITH_CURRENT_CONTEXT, sharing);
+         scon->winctx = SDL_GL_CreateContext(scon->real_window);
++        SDL_GL_SetAttribute(SDL_GL_SHARE_WITH_CURRENT_CONTEXT, previous_share);
+         SDL_GL_SetSwapInterval(0);
+     } else {
+--- a/ui/sdl2-gl.c
++++ b/ui/sdl2-gl.c
+@@ -40,5 +40,5 @@
+     if (!scon->scanout_mode) {
+         egl_fb_destroy(&scon->guest_fb);
+-        if (scon->surface) {
++        if (scon->surface && scon->gls) {
+             surface_gl_destroy_texture(scon->gls, scon->surface);
+             surface_gl_create_texture(scon->gls, scon->surface);
+--- a/hw/display/virtio-gpu-virgl.c
++++ b/hw/display/virtio-gpu-virgl.c
+@@ -940,7 +940,10 @@
+     case VIRTIO_GPU_CMD_SET_SCANOUT:
+         virgl_cmd_set_scanout(g, cmd);
++        /* The display backend may have switched or destroyed its active GL context. */
++        virgl_renderer_force_ctx_0();
+         break;
+     case VIRTIO_GPU_CMD_RESOURCE_FLUSH:
+         virgl_cmd_resource_flush(g, cmd);
++        virgl_renderer_force_ctx_0();
+         break;
+     case VIRTIO_GPU_CMD_RESOURCE_UNREF:
+--- a/hw/display/virtio-vga.c
++++ b/hw/display/virtio-vga.c
+@@ -28,5 +28,15 @@
+         g->hw_ops->gfx_update(g);
+     } else {
+-        vvga->vga.hw_ops->gfx_update(&vvga->vga);
++        VGACommonState *vga = &vvga->vga;
++        DisplaySurface *surface = qemu_console_surface(vga->con);
++        /* The virtio scanout and legacy VGA share the primary console.
++         * Restore the VGA surface when the guest releases a different mode. */
++        if (vga->last_scr_width > 0 && vga->last_scr_height > 0 &&
++            (!surface || surface_width(surface) != vga->last_scr_width ||
++             surface_height(surface) != vga->last_scr_height)) {
++            qemu_console_resize(vga->con, vga->last_scr_width, vga->last_scr_height);
++            vga->hw_ops->invalidate(vga);
++        }
++        vga->hw_ops->gfx_update(vga);
+     }
+ }

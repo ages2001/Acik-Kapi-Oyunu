@@ -13,17 +13,17 @@
 #endif
 
 char wxp_error[420], wxp_folder[PATH_CAP], wxp_source[PATH_CAP], wxp_state[PATH_CAP];
-int wxp_program_manager;
+int wxp_program_manager, wxp_keep_display;
 static const char *const payload[] = {
-    "INFO.EXE", "SETUP.EXE",
+    "INFO.EXE", "SETUP.EXE", "GPUVIEW.EXE",
 #if defined(WXP_WIN16)
-    "WXPDM.DRV",
+    "WXPGPU.DRV", "WXPDM.DRV",
 #elif defined(WXP_9X)
-    "WXPDM.DRV", "WXPDM.386", "WVBDD32.DLL", "WXPDM.INF",
+    "WXPGPU.DRV", "WXPDM.DRV", "WXPDM.386", "WVBDD32.DLL", "WXPDM.INF",
 #elif defined(WXP_NT3)
-    "WXPDM.SYS", "WXPDM.DLL", "OEMSETUP.INF",
+    "WXPG31.SYS", "WXPGPU.SYS", "WXPDM.SYS", "WXPDM.DLL", "OEMSETUP.INF",
 #else
-    "WXPDM.SYS", "WXPDM.DLL", "WXPDM.INF",
+    "WXPGPU.SYS", "WXPDM.SYS", "WXPDM.DLL", "WXPDM.INF",
 #endif
     NULL
 };
@@ -149,6 +149,11 @@ static void undo_copies(int count)
     drop_dir(wxp_folder);
 }
 
+static int configure_product(HWND parent)
+{
+    return install_accelerator() && (GetPrivateProfileInt("Package","KeepDisplay",0,wxp_state) || install_driver(parent));
+}
+
 int install_product(HWND parent)
 {
     char src[PATH_CAP], dst[PATH_CAP], mark[20];
@@ -158,7 +163,7 @@ int install_product(HWND parent)
         if (lstrcmp(mark,"WINXPDM") == 0) {
             if (GetPrivateProfileInt("Package","Complete",0,wxp_state))
                 return fail("WINXPDM is already installed. Open Info to view the active display.");
-            if (!install_driver(parent)) return 0;
+            if (!configure_product(parent)) return 0;
             return WritePrivateProfileString("Package","Complete","1",wxp_state) ||
                    fail("Could not record the completed installation.");
         }
@@ -172,12 +177,13 @@ int install_product(HWND parent)
             return 0;
         }
     }
-    if (!WritePrivateProfileString("Package","Owner","WINXPDM",wxp_state)) {
+    if (!WritePrivateProfileString("Package","Owner","WINXPDM",wxp_state) ||
+        !WritePrivateProfileString("Package","KeepDisplay",wxp_keep_display ? "1" : "0",wxp_state)) {
         undo_copies(i); return fail("Cannot save the uninstall record.");
     }
     if (!change_shortcuts(parent,1)) { undo_copies(i); return 0; }
     /* Keep the recovery entry when the native installer needs another run. */
-    if (!install_driver(parent)) return 0;
+    if (!configure_product(parent)) return 0;
     return WritePrivateProfileString("Package","Complete","1",wxp_state) ||
            fail("Could not record the completed installation.");
 }
@@ -188,7 +194,8 @@ int remove_product(HWND parent)
     int i;
     GetPrivateProfileString("Package","Owner","",mark,sizeof(mark),wxp_state);
     if (lstrcmp(mark,"WINXPDM")) return fail("The WINXPDM installation record is missing.");
-    if (!remove_driver(parent)) return 0;
+    if (!GetPrivateProfileInt("Package","KeepDisplay",0,wxp_state) && !remove_driver(parent)) return 0;
+    if (!remove_accelerator()) return 0;
     /* Keep the entry points and the recovery record until the driver files are free. */
     for (i=2; payload[i]; ++i) {
         if (!path_join(path,wxp_folder,payload[i]) || !delete_owned(path))

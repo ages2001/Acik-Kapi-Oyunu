@@ -24,7 +24,14 @@ def imports(package, windows):
 
     errors = []
     count = 0
+    # NT 3.1 has no HAL PCI configuration writes. Setup selects the
+    # dedicated uniprocessor image on that version.
+    accelerator = "WXPGPU.SYS"
+    if package.name == "NT3X" and b"HalSetBusDataByOffset" not in symbols("hal.dll"):
+        accelerator = "WXPG31.SYS"
     for binary in sorted(package.iterdir()):
+        if binary.name in {"WXPG31.SYS", "WXPGPU.SYS"} and binary.name != accelerator:
+            continue
         if binary.suffix.lower() not in (".exe", ".dll", ".sys"):
             continue
         with pefile.PE(str(binary), fast_load=True) as pe:

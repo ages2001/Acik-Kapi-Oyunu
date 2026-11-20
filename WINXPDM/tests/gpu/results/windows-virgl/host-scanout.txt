@@ -1,0 +1,5 @@
+status=0 request=0201 reply=1100 commands=35 fence=5 outputs=2 enabled=1 edid=3 scanouts=3 black=736 green=32 center=ff00ff00
+Offscreen VirGL triangle interpolation, depth ordering and clear passed
+Second draw texture sample passed 1024 pixels
+Device close and reopen passed
+Two SDL output windows verified: 1024 triangle pixels and 1024 stripe pixels

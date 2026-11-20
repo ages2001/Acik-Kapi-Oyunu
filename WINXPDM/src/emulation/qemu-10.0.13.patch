@@ -4,7 +4,7 @@
  
  system_ss.add(when: 'CONFIG_OMAP', if_true: files('omap_lcdc.c'))
  
-+system_ss.add(files('winxpdm-nv-color.c'))
++system_ss.add(files('winxpdm-nv-color.c', 'winxpdm-engines.c'))
 +
  modules += { 'hw-display': hw_display_modules }
 --- a/qapi/qom.json

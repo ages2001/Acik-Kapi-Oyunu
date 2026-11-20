@@ -28,6 +28,9 @@ struct WxpNvColor {
     uint32_t vram[16384];
     uint32_t cls, method, count, addr_hi, addr, pitch, height, format, memory;
     uint32_t rect_x, rect_y, control, color[4], read_addr;
+    uint32_t dst_format, layout, dst_pitch, width, dst_height, dst_hi, dst_lo;
+    uint32_t operation, primitive, solid_format, solid;
+    int16_t px[3], py[3];
 };
 
 static bool color_clear(WxpNvColor *s, uint32_t action, Error **errp)
@@ -78,10 +81,94 @@ static bool color_clear(WxpNvColor *s, uint32_t action, Error **errp)
     return true;
 }
 
+/* NV902D solid primitives use integer window coordinates. Test pixel centers
+ * at twice their coordinate and apply a top/left rule on shared edges. */
+static int64_t edge(int ax, int ay, int bx, int by, int x2, int y2)
+{
+    return (int64_t)(bx - ax) * (y2 - 2 * ay) -
+           (int64_t)(by - ay) * (x2 - 2 * ax);
+}
+
+static bool solid_triangle(WxpNvColor *s, Error **errp)
+{
+    int a = 0, b = 1, c = 2;
+    int64_t area = edge(s->px[a], s->py[a], s->px[b], s->py[b], 2*s->px[c], 2*s->py[c]);
+    if (s->dst_hi || s->dst_lo >= sizeof(s->vram) || (s->dst_lo & 3) ||
+        !s->dst_pitch || (s->dst_pitch & 3) || s->width > s->dst_pitch / 4 ||
+        s->dst_height > (sizeof(s->vram) - s->dst_lo) / s->dst_pitch ||
+        s->dst_format != A8B8G8R8 || s->solid_format != A8B8G8R8 ||
+        s->layout != 1 || s->operation != 3 || s->primitive != 3) {
+        error_setg(errp, "Unsupported NV902D solid triangle target or operation");
+        return false;
+    }
+    if (!area) {
+        return true;
+    }
+    if (area < 0) {
+        b = 2; c = 1;
+    }
+    int order[] = {a,b,c,a};
+    for (unsigned y = 0; y < s->dst_height; ++y) {
+        for (unsigned x = 0; x < s->width; ++x) {
+            bool covered = true;
+            for (unsigned i = 0; i < 3; ++i) {
+                int start = order[i], end = order[i+1];
+                int dx = s->px[end] - s->px[start], dy = s->py[end] - s->py[start];
+                int64_t side = edge(s->px[start], s->py[start], s->px[end], s->py[end], 2*x+1, 2*y+1);
+                if (side < 0 || (!side && !(dy < 0 || (!dy && dx > 0)))) {
+                    covered = false;
+                    break;
+                }
+            }
+            if (covered) {
+                s->vram[(s->dst_lo + y*s->dst_pitch)/4 + x] = s->solid;
+            }
+        }
+    }
+    return true;
+}
+
+static bool solid_method(WxpNvColor *s, uint32_t value, Error **errp)
+{
+    switch (s->method) {
+    case 0x200: s->dst_format = value; break;
+    case 0x204: s->layout = value; break;
+    case 0x214: s->dst_pitch = value; break;
+    case 0x218: s->width = value; break;
+    case 0x21c: s->dst_height = value; break;
+    case 0x220: s->dst_hi = value; break;
+    case 0x224: s->dst_lo = value; break;
+    case 0x2ac: s->operation = value; break;
+    case 0x580: s->primitive = value; break;
+    case 0x584: s->solid_format = value; break;
+    case 0x588: s->solid = value; break;
+    case 0x600 ... 0x614: {
+        unsigned index = (s->method - 0x600) / 8;
+        if ((int32_t)value != (int16_t)value) {
+            error_setg(errp, "Solid vertex outside signed 16-bit fixture limits");
+            return false;
+        }
+        if (s->method & 4) {
+            s->py[index] = (int16_t)value;
+            if (index == 2) {
+                return solid_triangle(s, errp);
+            }
+        } else {
+            s->px[index] = (int16_t)value;
+        }
+        break;
+    }
+    default:
+        error_setg(errp, "Unsupported NV902D method 0x%x", s->method);
+        return false;
+    }
+    return true;
+}
+
 static bool write_method(WxpNvColor *s, uint32_t value, Error **errp)
 {
     if (s->method == SET_OBJECT) {
-        if (value != 0xb097 && value != 0xb197 && value != 0xc197) {
+        if (value != 0xb097 && value != 0xb197 && value != 0xc197 && value != 0x902d) {
             error_setg(errp, "Unsupported NVIDIA 3D class 0x%x", value);
             return false;
         }
@@ -91,6 +178,9 @@ static bool write_method(WxpNvColor *s, uint32_t value, Error **errp)
     if (!s->cls) {
         error_setg(errp, "Bind a 3D class before programming a target");
         return false;
+    }
+    if (s->cls == 0x902d) {
+        return solid_method(s, value, errp);
     }
     switch (s->method) {
     case TARGET_HI: s->addr_hi = value; break;

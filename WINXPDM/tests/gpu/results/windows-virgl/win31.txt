@@ -1,0 +1,10 @@
+WINXPDM guest 3.10 enhanced=1
+Maxwell A B097 + 902D PASS
+Maxwell B B197 + 902D PASS
+Pascal B C197 + 902D PASS
+RDNA 4 SDMA 7 fill, unaligned copy and guards PASS
+DPCD sink model HBR3 x4 TPS1/TPS4 and adjust request PASS
+HDMI SCDC sink model 594 MHz 1:40 and 148.5 MHz 1:10 PASS
+draw=0 request=0201 response=1100 commands=35 fence=5 outputs=2 enabled=1 edid=3 scanouts=3 center=ff00ff00
+interpolation and depth PASS 1024 pixels
+texture PASS 1024 pixels

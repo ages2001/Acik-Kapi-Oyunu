@@ -2,6 +2,8 @@
 
 WINXPDM is a development port of the Windows XP display driver model to older Windows systems. The GeForce and Radeon work covers original driver packages, the supplied XP x86 Maxwell/Pascal driver, and QEMU and Linux tests for Maxwell, Pascal and RDNA 4. Native GPU rendering, DisplayPort HBR3, HDMI 2.0 and extended-desktop results are tracked per Windows generation. [Priority GPUs and feature matrix](tests/gpu/priority.md) · [All audited GPU IDs](tests/gpu/results/xp-pci.tsv)
 
+A second native driver submits vertex and fragment shaders to QEMU's VirtIO GPU. The Windows probes check interpolation, depth and texture sampling. The dual-output test presents two different images. Install the matching package, select **Keep my display driver and install VirtIO 3D**, and choose **Test 3D** in Info. [Windows GPU results and instructions](tests/gpu/windows/README.md)
+
 The reference Windows driver supports PCI 1234:1111. Seven native packages include the English setup wizard, Info and shell-integrated removal. [Windows guest results](tests/README.md) · [WINRAM memory tests](tests/winram/README.md)
 
 QEMU exposes a linear framebuffer and the Bochs display registers. The display modules share the register programming code. Windows 3.x uses a Win16 display DDI, Windows 9x uses a display DRV and a VxD, and Windows NT uses a video miniport and a GDI display DLL. NT 3.x loads its display DLL into the windowing subsystem. NT 4.0 and later load the kernel-mode DLL. Loading independent vendors’ XPDM binaries on earlier systems also requires the operating-system interfaces those binaries call. The vendor compatibility work is in progress.
@@ -20,7 +22,7 @@ QEMU exposes a linear framebuffer and the Bochs display registers. The display m
 
 ## Installation
 
-1. Configure the guest with one QEMU Standard VGA adapter. Use `-vga std`, or use `-nodefaults -device VGA,vgamem_mb=16` when supplying the devices individually. The test systems used a PC machine, an IDE disk and SeaBIOS.
+1. For the reference display driver, configure QEMU with `-vga std`. For the shader driver, configure `-device virtio-vga-gl,max_outputs=2` with a GL display and use the **Keep my display driver and install VirtIO 3D** option. The tests used a PC machine, an IDE disk and SeaBIOS.
 2. Copy the entire package folder to the guest. Run `SETUP.EXE` from that folder. On NT, sign in with an administrator account.
 3. Choose **Next**, review the destination, choose **Install**, then **Finish**. Follow any driver selection or signature dialogs from Windows. Restart Windows and open **WINXPDM Info** to read the active resolution and color depth.
 

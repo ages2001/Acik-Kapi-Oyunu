@@ -1,0 +1,17 @@
+LIBRARY W3H.SYS
+EXPORTS
+KfAcquireSpinLock=@WxpAcquire@4
+KfReleaseSpinLock=@WxpRelease@8
+KfRaiseIrql=@WxpRaise@4
+KfLowerIrql=@WxpLower@4
+HalGetBusDataByOffset=WxpGetBus@24
+HalSetBusDataByOffset=WxpSetBus@24
+KeGetCurrentIrql=KeGetCurrentIrql@0
+KeQueryPerformanceCounter=KeQueryPerformanceCounter@4
+KeStallExecutionProcessor=KeStallExecutionProcessor@4
+READ_PORT_ULONG=READ_PORT_ULONG@4
+WRITE_PORT_ULONG=WRITE_PORT_ULONG@8
+READ_PORT_USHORT=READ_PORT_USHORT@4
+WRITE_PORT_USHORT=WRITE_PORT_USHORT@8
+READ_PORT_UCHAR=READ_PORT_UCHAR@4
+WRITE_PORT_UCHAR=WRITE_PORT_UCHAR@8

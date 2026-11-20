@@ -1,0 +1,4 @@
+NT 3.1 Forceware HAL companion loaded
+XP fastcall spin lock and IRQL transitions PASS
+PCI unaligned reads, boundaries, missing functions and IRQ-line restore PASS
+Secondary PCI bus, device identity and absent slot PASS

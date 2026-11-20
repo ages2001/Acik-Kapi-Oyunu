@@ -65,9 +65,17 @@ static void render(HWND d)
         action = removing ? "&Remove" : "&Install";
     } else {
         title = removing ? "Removal complete" : "Installation complete";
-        body = "Restart Windows to finish changing the display driver.";
+        if (wxp_keep_display && !removing)
+#if defined(WXP_WIN16) || defined(WXP_9X)
+            body = "Open WINXPDM Info and choose Test 3D.";
+#else
+            body = "Restart Windows to start the 3D service. Then open WINXPDM Info and choose Test 3D.";
+#endif
+        else body = "Restart Windows to finish changing the display driver.";
         action = "&Finish";
     }
+    ShowWindow(GetDlgItem(d, ID_EXISTING), !info && !removing && page==1 ? SW_SHOW : SW_HIDE);
+    ShowWindow(GetDlgItem(d, ID_3D), info && !removing ? SW_SHOW : SW_HIDE);
     SetDlgItemText(d, ID_TITLE, title);
     SetDlgItemText(d, ID_BODY, body);
     SetDlgItemText(d, IDOK, action);
@@ -92,6 +100,18 @@ DLGRET FARCB dialog_proc(HWND d, UINT msg, WPARAM wp, LPARAM lp)
         if (working) return TRUE;
         switch (LOWORD(wp)) {
         case IDCANCEL: EndDialog(d, 0); return TRUE;
+        case ID_3D: {
+            char viewer[PATH_CAP], command[PATH_CAP+4];
+            if (!path_join(viewer,wxp_folder,"GPUVIEW.EXE")) return TRUE;
+#ifdef _WIN32
+            wsprintf(command,"\"%s\"",viewer);
+#else
+            lstrcpy(command,viewer);
+#endif
+            if (WinExec(command,SW_SHOWNORMAL)<32)
+                MessageBox(d,"Windows could not open the 3D viewer.","WINXPDM Info",MB_OK);
+            return TRUE;
+        }
         case ID_BACK:
             if (page == 1) { page = 0; render(d); }
             return TRUE;
@@ -101,6 +121,7 @@ DLGRET FARCB dialog_proc(HWND d, UINT msg, WPARAM wp, LPARAM lp)
                 int ok;
                 working = 1;
                 EnableWindow(GetDlgItem(d, IDOK), FALSE);
+                if (!removing) wxp_keep_display = IsDlgButtonChecked(d, ID_EXISTING) == 1;
                 ok = removing ? remove_product(d) : install_product(d);
                 working = 0;
                 EnableWindow(GetDlgItem(d, IDOK), TRUE);

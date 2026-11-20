@@ -1,6 +1,6 @@
 # Test results
 
-[Native GPU and monitor qualification](gpu/priority.md) · [WINRAM memory checks](winram/README.md)
+[Windows guest 3D and dual scanout](gpu/windows/README.md) · [Native GPU and monitor qualification](gpu/priority.md) · [WINRAM memory checks](winram/README.md)
 
 ## QEMU Standard VGA reference driver
 

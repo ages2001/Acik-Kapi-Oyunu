@@ -1,5 +1,7 @@
 # XPDM GPU compatibility
 
+[Native Windows 3D rendering, vendor engine commands and dual scanout](windows/README.md)
+
 The project goal is to run XP-supported graphics adapters across the legacy Windows targets. The included Windows display driver currently targets QEMU Standard VGA. Stock vendor XPDM packages introduce another set of requirements: PCI and subsystem identification, the driver binary's machine type, video-port/kernel imports, the GDI display DDI and the vendor's hardware-specific command stream. Win16 and Windows 9x use different kernel and graphics interfaces. An INF match alone establishes device selection.
 
 The 382.69 community package, verified donor comparisons, native XP setup results, shader machine code and QEMU color-method checks have dedicated results. The feature matrix tracks the OS and board required for each native 3D, output and multi-monitor test. [Maxwell, Pascal and RDNA 4](priority.md)
