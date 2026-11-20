@@ -1,0 +1,28 @@
+Previously delivered installer messages
+A:\AHCINT.SYS
+3 Button [OK]
+ffff Static []
+ffff Static [The driver also imports another kernel module.]
+A:\NVME2K.SYS
+3 Button [OK]
+ffff Static []
+ffff Static [Miniport registered as N3DF5470. Restart Windows NT to load the driver.]
+Setup dialogs completed
+END
+
+Windows after second restart
+GetVersion 3.10 build 528
+CurrentVersion = 3.1
+Service AHCINT query error 1060
+Service N3679182 query error 1060
+Service NVME2K query error 1060
+Service N3DF5470 state 4, Win32 exit 0, service exit 0
+HARDWARE\DEVICEMAP\Scsi\Scsi Port 0
+N3DF5470
+Target Id 0 Logical Unit Id 0 DiskPeripheral QEMU NVMe Ctrl          10.0
+Target 0 LBA 478 SCSI status 0, 512 bytes
+NT3SCPRT NVME2K NAMESPACE
+
+Target 0 post-reboot READ(10) LBAs 16-31, every byte matched
+AHCINT SATA disk NOT RUN (no adapter) / SATA CD NOT RUN (no adapter) / disk write NOT RUN (no adapter)
+nvme2k namespace PASS / disk write PASS

@@ -1,0 +1,9 @@
+CurrentVersion = 3.51
+CurrentBuildNumber = 1057
+CSDVersion = Service Pack 5
+HARDWARE\DEVICEMAP\Scsi\Scsi Port 0
+N359C39D
+Target 1 LBA 478 SCSI status 0, 512 bytes
+NT3SCPRT SCSI DISK READ OK
+
+BusLogic disk PASS

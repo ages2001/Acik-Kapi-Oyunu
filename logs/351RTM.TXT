@@ -1,0 +1,18 @@
+CurrentVersion = 3.51
+CurrentBuildNumber = 1057
+HARDWARE\DEVICEMAP\Scsi\Scsi Port 0
+N3DF5470
+Target 0 LBA 478 SCSI status 0, 512 bytes
+NT3SCPRT NVME READ OK
+
+HARDWARE\DEVICEMAP\Scsi\Scsi Port 1
+N3DF8825
+Target 1 LBA 478 SCSI status 2, 512 bytes
+Target 1 LBA 478 SCSI status 0, 512 bytes
+NT3SCPRT SCSI DISK READ OK
+
+Target 3 READ(10) returned Win32 error 87
+D:\N3CD.TXT
+NT3SCPRT SCSI CD READ OK
+
+SCSI disk PASS / SCSI CD PASS / NVMe PASS

@@ -1,0 +1,45 @@
+86Box controller
+53C815 at PCI; Windows NT 3.1 SP3; SYMC810.SYS.
+
+Windows guest
+Windows 3.10 build 528
+Loaded installation and read system kernel
+C:\winnt\system32\NTOSKRNL.EXE
+Service N35BEEDD state 1, Win32 exit 31, service exit 0
+ImagePath = System32\drivers\N35BEEDD.SYS
+Start = 0x00000000
+Service N3DF8825 state 4, Win32 exit 0, service exit 0
+ImagePath = System32\drivers\N3DF8825.SYS
+Start = 0x00000000
+Service N3ACEC56 query error 1060
+Service N359C39D query error 1060
+Service N3679182 state 1, Win32 exit 31, service exit 0
+ImagePath = System32\drivers\N3679182.SYS
+Start = 0x00000000
+Service N3DF5470 state 1, Win32 exit 31, service exit 0
+ImagePath = System32\drivers\N3DF5470.SYS
+Start = 0x00000000
+Service Scsicdrm state 4, Win32 exit 0, service exit 0
+Start = 0x00000001
+Service Scsidisk state 4, Win32 exit 0, service exit 0
+Start = 0x00000000
+Loaded optical class module
+\SystemRoot\System32\Drivers\Scsicdrm.SYS
+HARDWARE\DEVICEMAP\Scsi\Scsi Port 0
+N3DF8825
+Target Id 1 Logical Unit Id 0 DiskPeripheral 86Box   86B_HD01        3.50
+Target Id 3 Logical Unit Id 0 CdRomPeripheral 86Box   86B_CD00        3.50
+Target 1 READ(10) returned Win32 error 87
+Target 3 READ(10) returned Win32 error 87
+Mounted fixture D:\AHCI.TXT
+D:\N3WRITE.BIN 1048576 bytes after write, flush, close and reopen PASS
+E:\AHCICD.TXT
+NT3SCPRT AHCINT SATA CD-ROM
+
+SCSI disk read PASS / scratch write verification PASS / optical data PASS / mounted optical file PASS
+
+Powered-off FAT16 disk
+Read the completed FAT16 test file from the emulated disk image.
+N3WRITE.BIN 1048576 bytes
+SHA-256 6c04c6f04e8486d0d5893a103078b5c94624d37017a10f036a756b1319271c72
+Independent full-byte comparison PASS

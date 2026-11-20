@@ -1,0 +1,8 @@
+Windows 3.10 build 528
+ImagePath = System32\drivers\N3CDROM.SYS
+Loaded optical class module
+\SystemRoot\System32\drivers\N3CDROM.SYS
+E:\AHCICD.TXT
+NT3SCPRT AHCINT SATA CD-ROM
+
+Mounted optical file PASS

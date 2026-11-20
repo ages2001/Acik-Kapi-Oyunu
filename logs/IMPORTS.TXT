@@ -1,0 +1,43 @@
+Offline image-format and named-import checks only. Hardware was not exercised by this check.
+Windows NT 4.0 Workstation boot disk 3 files plus the NT4 x86 nvme2k release.
+
+Driver        NT 3.1  NT 3.50 NT 3.51  (RTM ports)
+ABIOSDSK.SYS  reject  reject  reject
+AHA154X.SYS   accept  accept  accept
+AHA174X.SYS   accept  accept  accept
+AIC78XX.SYS   accept  accept  accept
+AMI0NT.SYS    accept  accept  accept
+AMSINT.SYS    accept  accept  accept
+ARROW.SYS     accept  accept  accept
+ATAPI.SYS     accept  accept  accept
+ATDISK.SYS    reject  reject  reject
+BUSLOGIC.SYS  accept  accept  accept
+CDFS.SYS      reject  reject  reject
+CDROM.SYS     reject  reject  reject
+CLASS2.SYS    reject  reject  reject
+CPQARRAY.SYS  accept  accept  accept
+CPQFWS2E.SYS  accept  accept  accept
+DAC960NT.SYS  accept  accept  accept
+DELLDSA.SYS   accept  accept  accept
+DISK.SYS      reject  reject  reject
+DPTSCSI.SYS   accept  accept  accept
+FD16_700.SYS  accept  accept  accept
+FD7000EX.SYS  accept  accept  accept
+FD8XX.SYS     accept  accept  accept
+FLASHPNT.SYS  accept  accept  accept
+MITSUMI.SYS   accept  accept  accept
+MKECR5XX.SYS  accept  accept  accept
+NCR53C9X.SYS  accept  accept  accept
+NCRC700.SYS   accept  accept  accept
+NCRC710.SYS   accept  accept  accept
+NTFS.SYS      reject  reject  reject
+OLISCSI.SYS   accept  accept  accept
+QL10WNT.SYS   accept  accept  accept
+SFLOPPY.SYS   reject  reject  reject
+SLCD32.SYS    accept  accept  accept
+SPARROW.SYS   accept  accept  accept
+SPOCK.SYS     accept  accept  accept
+SYMC810.SYS   accept  accept  accept
+ULTRA14F.SYS  accept  accept  accept
+ULTRA24F.SYS  accept  accept  accept
+NVME2K.SYS    accept  accept  accept

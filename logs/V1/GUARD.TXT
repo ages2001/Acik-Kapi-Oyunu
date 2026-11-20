@@ -1,0 +1,1 @@
+The running Windows volume uses an NT3SCPRT driver. Boot it through an independent controller before removal.

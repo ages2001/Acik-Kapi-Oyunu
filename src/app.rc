@@ -1,0 +1,19 @@
+#include <windows.h>
+10 ICON "app.ico"
+11 ICON "remove.ico"
+20 DIALOG 0, 0, 254, 112
+STYLE DS_MODALFRAME | DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "NT3SCPRT Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON 10, -1, 10, 10, 22, 20
+    LTEXT "SCSI miniport compatibility", -1, 39, 10, 174, 10
+    LTEXT "", 100, 39, 24, 170, 9
+    LTEXT "Add a secondary controller or select Boot driver to load a miniport before the disk class. Setup backs up the selected driver.", -1, 10, 44, 231, 20
+    DEFPUSHBUTTON "&Install", 101, 15, 72, 48, 14
+    PUSHBUTTON "&Add driver...", 103, 69, 72, 62, 14
+    PUSHBUTTON "&Remove", 102, 137, 72, 49, 14
+    PUSHBUTTON "Close", IDCANCEL, 192, 72, 49, 14
+    PUSHBUTTON "&Boot driver...", 104, 69, 90, 62, 14
+    PUSHBUTTON "&NT4 CD-ROM...", 105, 137, 90, 82, 14
+END

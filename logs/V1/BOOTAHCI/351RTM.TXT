@@ -1,0 +1,26 @@
+QEMU topology
+Boot controller ich9-ahci, PCI 8086:2922.
+Inserted drives: diagnostic floppy and osdisk. The only hard disk is attached to bootctl.
+
+Windows guest after cold start
+Windows 3.51 build 1057
+Loaded installation and read system kernel
+C:\WINNT35\System32\NTOSKRNL.EXE
+Service N35BEEDD state 1, Win32 exit 31, service exit 0
+Start = 0x00000000
+Service N3DF8825 state 1, Win32 exit 31, service exit 0
+Start = 0x00000000
+Service N3ACEC56 query error 1060
+Service N359C39D query error 1060
+Service N3679182 state 4, Win32 exit 0, service exit 0
+Start = 0x00000000
+Service N3DF5470 state 1, Win32 exit 31, service exit 0
+Start = 0x00000000
+Service Scsicdrm state 1, Win32 exit 31, service exit 0
+Start = 0x00000001
+Service Scsidisk state 4, Win32 exit 0, service exit 0
+Start = 0x00000000
+HARDWARE\DEVICEMAP\Scsi\Scsi Port 0
+N3679182
+Target Id 0 Logical Unit Id 0 DiskPeripheral QEMU HARDDISK           2.5+
+Boot diagnostic complete

@@ -1,0 +1,14 @@
+Native service registration, no NT3SCPRT
+AHCINT original copy = 0; service creation = 0
+NVME2K original copy = 0; service creation = 0
+
+Windows control guest
+GetVersion 3.10 build 528
+CurrentVersion = 3.1
+CSDVersion = 0x00000300
+Service AHCINT state 1, Win32 exit 31, service exit 0
+Service N3679182 query error 1060
+Service NVME2K state 1, Win32 exit 31, service exit 0
+Service N3DF5470 query error 1060
+AHCINT SATA disk NOT RUN (no adapter) / SATA CD NOT RUN (no adapter) / disk write NOT RUN (no adapter)
+nvme2k namespace NOT RUN (no adapter) / disk write NOT RUN (no adapter)

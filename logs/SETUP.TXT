@@ -1,0 +1,49 @@
+Uninstall verification after restart, Windows NT 3.1 x86.
+
+31
+Installed port SHA-256: dc07a6875a9c626ea028491a10564988caf3e30cb7e47881cbd39ee76fc12e21
+Backup and restored port SHA-256: 3586031adf87fd4cd5a412c6c400153fd7cea238620f71885765d2b074b189a4
+SCSIPORT.BKP present
+N3DF8825 OpenService error 1060
+N3DF8825.SYS present 0
+N3DF8825.BKP present 0
+N3DF5470 OpenService error 1060
+N3DF5470.SYS present 0
+N3DF5470.BKP present 0
+NT3SCPRT.EXE present 0
+
+31SP3
+Installed port SHA-256: e1e8db187e462198bc1add72a4fded3d9f92c9cc27e49ff09e3bf792cb68a4a1
+Backup and restored port SHA-256: dcea2e7fb640ca12d8e75a6a71718812b58610358250016214002aa47aa12869
+SCSIPORT.BKP present
+N3DF8825 OpenService error 1060
+N3DF8825.SYS present 0
+N3DF8825.BKP present 0
+N3DF5470 OpenService error 1060
+N3DF5470.SYS present 0
+N3DF5470.BKP present 0
+NT3SCPRT.EXE present 0
+
+NT4 Workstation SP3 build 1381
+Unsupported OS (Windows NT 4.0, build 1381)
+Closed after OK
+
+NT 3.50 SP3 after restart
+Original system port SHA-256: efd9bb077e93ddabb396884259190928b32b470391341d7ac5c3f8f503cabe84
+N3DF8825 OpenService error 1060
+N3DF8825.SYS present 0
+N3DF8825.BKP present 0
+N3DF5470 OpenService error 1060
+N3DF5470.SYS present 0
+N3DF5470.BKP present 0
+NT3SCPRT.EXE present 0
+
+NT 3.51 RTM after restart
+Original system port SHA-256: f9b550d16c6cc05c0e5c456d5ee064a053816c9f7b5328bf720ad38f562c6b2d
+N3DF8825 OpenService error 1060
+N3DF8825.SYS present 0
+N3DF8825.BKP present 0
+N3DF5470 OpenService error 1060
+N3DF5470.SYS present 0
+N3DF5470.BKP present 0
+NT3SCPRT.EXE present 0

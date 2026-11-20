@@ -1,0 +1,15 @@
+Installed application matches previously delivered SETUP.EXE before upgrade
+A:\AHCINT.SYS
+3 Button [OK]
+ffff Static []
+ffff Static [Boot-start miniport registered as N3679182. Restart and verify disk access before moving the system volume.]
+A:\NVME2K.SYS
+3 Button [OK]
+ffff Static []
+ffff Static [Boot-start miniport registered as N3DF5470. Restart and verify disk access before moving the system volume.]
+A:\CDROM.SYS
+3 Button [OK]
+ffff Static []
+ffff Static [NT4 optical class registered. Restart Windows NT to use the CD-ROM class driver.]
+Setup dialogs completed
+END

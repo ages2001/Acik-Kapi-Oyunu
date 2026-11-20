@@ -1,0 +1,29 @@
+Windows release-driver I/O
+GetVersion 3.51 build 1057
+CurrentVersion = 3.51
+CurrentBuildNumber = 1057
+Service AHCINT query error 1060
+Service N3679182 state 4, Win32 exit 0, service exit 0
+Service NVME2K query error 1060
+Service N3DF5470 state 4, Win32 exit 0, service exit 0
+HARDWARE\DEVICEMAP\Scsi\Scsi Port 0
+N3679182
+Target Id 0 Logical Unit Id 0 DiskPeripheral N3_AHCINT_SATA          2.5+
+Target Id 1 Logical Unit Id 0 CdRomPeripheral QEMU DVD-ROM            2.5+
+Target 0 LBA 478 SCSI status 0, 512 bytes
+NT3SCPRT AHCINT SATA DISK
+
+Target 0 1048576 bytes WRITE(10) then READ(10) LBAs 16-31, every byte matched
+Target 1 READ(10) returned Win32 error 87
+HARDWARE\DEVICEMAP\Scsi\Scsi Port 1
+N3DF5470
+Target Id 0 Logical Unit Id 0 DiskPeripheral QEMU NVMe Ctrl          10.0
+Target 0 LBA 478 SCSI status 0, 512 bytes
+NT3SCPRT NVME2K NAMESPACE
+
+Target 0 1048576 bytes WRITE(10) then READ(10) LBAs 16-31, every byte matched
+D:\AHCICD.TXT
+NT3SCPRT AHCINT SATA CD-ROM
+
+AHCINT SATA disk PASS / SATA CD PASS / disk write PASS
+nvme2k namespace PASS / disk write PASS
