@@ -17,6 +17,6 @@ jobs:
         run: |
           set -euo pipefail
           cd "$RUNNER_TEMP"
-          gh api -H 'Accept: application/vnd.github.raw+json' "repos/$GITHUB_REPOSITORY/contents/NT3SCPRT.ZIP?ref=$GITHUB_SHA" > NT3SCPRT.ZIP
+          curl --fail --location --silent --show-error --retry 3 "https://raw.githubusercontent.com/$GITHUB_REPOSITORY/998b729dc8171fbf041ef8d56c261aeeeecece74/NT3SCPRT.ZIP" --output NT3SCPRT.ZIP
           echo 'df0bb6d8a96c598f40fdce07c6deeb86c606d216aacf25fe43d030f29c580765  NT3SCPRT.ZIP' | sha256sum --check -
           gh release upload nt3scprt-v1.0 NT3SCPRT.ZIP --repo "$GITHUB_REPOSITORY"
