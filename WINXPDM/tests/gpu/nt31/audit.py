@@ -16,14 +16,15 @@ def missing(image, modules):
             total += len(wanted)
             if module not in modules:
                 raise ValueError(f"Missing dependency image for {module}")
-            absent = sum(name not in modules[module] for name in wanted)
-            by_module[module] = by_module.get(module, 0) + absent
+            absent = by_module.setdefault(module, [])
+            absent.extend(name for name in wanted if name not in modules[module])
     return total, by_module
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     for arg in ("system32", "companions", "stock", "stock_adapted", "community", "community_adapted"):
         p.add_argument(arg, type=Path)
+    p.add_argument("--unresolved", type=Path, help="write the names of unresolved imports to a TSV file")
     a = p.parse_args()
     drivers, = (f for f in a.system32.iterdir() if f.name.lower() == "drivers")
     files = {p.name.lower(): p for d in (a.system32, drivers, a.companions) for p in d.iterdir()}
@@ -39,14 +40,25 @@ def main():
     writer = csv.writer(sys.stdout, delimiter="\t", lineterminator="\n")
     writer.writerow(("package", "miniport_imports", "stock_missing", "missing_with_hal",
                      "missing_with_both_companions", "remaining_hal_imports"))
+    unresolved = []
     for name, raw, bound in (("NVIDIA 368.81 x86", a.stock, a.stock_adapted),
                               ("SupraGSX 382.69 x86", a.community, a.community_adapted)):
         total, baseline = missing(raw, modules)
         count, qualified = missing(bound, modules)
         if total != count or set(qualified) != {"w3h.sys", "w3port.sys", "ntoskrnl.exe"}:
             raise ValueError("Expected the two bound service descriptors and the original secondary kernel descriptor")
-        writer.writerow((name, total, sum(baseline.values()), sum(baseline.values()) - baseline["hal.dll"],
-                         sum(qualified.values()), qualified["w3h.sys"]))
+        initial = sum(map(len, baseline.values()))
+        writer.writerow((name, total, initial, initial - len(baseline["hal.dll"]),
+                         sum(map(len, qualified.values())), len(qualified["w3h.sys"])))
+        for module, symbols in qualified.items():
+            for symbol in symbols:
+                resolved_name = symbol.decode("ascii") if isinstance(symbol, bytes) else f"#{symbol}"
+                unresolved.append((name, module, resolved_name))
+    if a.unresolved:
+        with a.unresolved.open("w", newline="") as out:
+            detail = csv.writer(out, delimiter="\t", lineterminator="\n")
+            detail.writerow(("package", "bound_module", "unresolved_import"))
+            detail.writerows(sorted(unresolved))
 
 if __name__ == "__main__":
     main()

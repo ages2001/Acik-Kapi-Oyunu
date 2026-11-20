@@ -27,6 +27,21 @@ The Win16 entry is `WXPDRAWTRIANGLES` in `WXPGPU.DRV`. The NT device is `\\.\Wxp
 
 The NVIDIA, AMD and connector checks use QEMU lab function `1b36:ff01`. The lab function executes selected NVIDIA and AMD instructions in a 32 × 32 RGBA8 color/depth target. The independent VirtIO path presents the visible Windows shader scene. Physical NVIDIA and Radeon rendering, electrical HBR3 and HDMI 2.0 measurements and an extended Windows desktop still require end-to-end qualification. [QEMU implementation](../../../src/emulation/README.md) · [Vendor feature matrix](../priority.md)
 
+## Direct access to the vendor PCI adapter
+
+Fourteen Windows installations each tested the GTX 980, GTX 1050 Ti and RX 9070 XT at PCI slot 6. All 42 runs read the expected vendor and device IDs. The GeForce test wrote a word through the PRAMIN window, read it back through BAR1, restored it through BAR1 and checked that the display counter advanced. The Radeon test published a partial packet and then wrapped the ring, filled local VRAM, copied an unaligned byte range and checked the destination guards and read-pointer writeback. All operations target the modeled vendor board's own BARs. The native vendor Direct3D results are recorded separately. [42 results](../results/vendor-windows.tsv) · [Guest transcripts](../results/vendor-windows.txt) · [Vendor miniport and Direct3D trials](../results/board-windows/README.md)
+
+Build the probes with `sh tools/build_virtio.sh`. Add `-device VGA,addr=2 -device winxpdm-probe-gpu,model=gtx980,addr=6 -debugcon file:vendor.log` to the guest's QEMU command, or retain its existing primary display at a different slot. The other tested model names are `gtx1050ti` and `rx9070xt`. Use a disposable test guest and the dedicated secondary adapter.
+
+| Windows | How to run the board test |
+| --- | --- |
+| Windows 3.0, 3.0a, 3.1 and WfW 3.11 | Start Windows in 386 enhanced mode and run `bin/TEST16/BOARDTEST.EXE`. It maps one physical page per window through DPMI. |
+| Windows 95 OSR2, 98 SE and Me | Copy `bin/TEST16/WXPBOARD.386` to the Windows SYSTEM directory and add `device=WXPBOARD.386` in the `[386Enh]` section of SYSTEM.INI. Restart the guest. VMM runs the probe during Device_Init, before the desktop. Windows 98 SE also passed the three boards from the Win16 executable. |
+| Windows NT 3.1 | Copy `bin/TESTX86/WXPBD31.SYS` into `system32\drivers`. Register a kernel-driver service (Type 1, Start 1) with ImagePath `\SystemRoot\system32\drivers\WXPBD31.SYS` and reboot. |
+| NT 3.5, 3.51, 4.0, Windows 2000, XP x86 and XP Professional x64 | Follow the NT procedure with `WXPBOARD.SYS` and the matching ImagePath. Choose `bin/TESTX86` for x86 and `bin/TESTX64` for AMD64. |
+
+The last line of a successful board test is `Vendor board test PASS`. The guest also prints its PCI ID and the operation that passed. [Common test](board_ops.h) · [Windows mapping and entry points](board_access.c)
+
 ## Windows runs
 
 Each of the fourteen booted installations passed 20 checks, including twelve chipset-specific native shader cases. The Win16 API reports 3.95 on all three Windows 9x guests. Kernel version resources and file hashes distinguish their images. [Guest system-file identities](../results/windows-virgl/guest-images.tsv)

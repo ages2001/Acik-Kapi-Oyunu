@@ -14,7 +14,8 @@ IoQueueWorkItem@16
 IoFreeWorkItem@4
 KeClearEvent@4
 KeQueryInterruptTime@0
-VideoPortGetCurrentIrql@4
+VideoPortGetCurrentIrql@0
 VideoPortCreateEvent@16
 VideoPortWaitForSingleObject@12
 VideoPortDeleteEvent@8
+@ObfDereferenceObject@4

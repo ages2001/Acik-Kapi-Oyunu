@@ -13,7 +13,7 @@ for arch in i686 x86_64; do
     "$cc" -Os -Wall -ffreestanding -fno-builtin -nostdlib -nostartfiles $cpu \
         "-Wl,-e,$entry,--subsystem,windows:$subsystem" -s "$src/d3d7.c" -o "$out/D3DTEST.EXE" \
         -lddraw -luser32 -lgdi32 -lkernel32 -ldxguid
-    "$cc" -Os -Wall $cpu "-Wl,--subsystem,windows:$subsystem" -s \
+    "$cc" -Os -Wall $cpu "-Wl,--no-insert-timestamp,--subsystem,windows:$subsystem" -s \
         "$src/d3d9.c" -o "$out/D3D9TEST.EXE" -ld3d9 -luser32
     "$cc" -Os -Wall $cpu "-Wl,--subsystem,windows:$subsystem" -s \
         "$src/maxwell_guest.c" -o "$out/INFTEST.EXE" -lsetupapi

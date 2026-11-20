@@ -1,5 +1,6 @@
 NT 3.1 Forceware service companion loaded
 Four video event modes, poll, native clear and invalid handles PASS
-Raised and passive IRQL, previous mode and interrupt clock PASS
+Zero-argument stack balance, raised and passive IRQL, previous mode and interrupt clock PASS
+XP fastcall object dereference on a referenced native device PASS
 Tagged pool, cross-thread resource exclusion and self-freeing work item PASS
 XP fastcall dispatch and completed native IRP PASS

@@ -1,0 +1,8 @@
+NativeBits=64
+HardwareID=PCI\VEN_10DE&DEV_13C0&SUBSYS_85041043&REV_A1
+Description=NVIDIA GeForce GTX 980
+Service=nv
+NodeStatus=01806400
+Problem=10
+ServiceState=1
+ServiceWin32Exit=1077

@@ -1,8 +1,8 @@
 windows	profile	pci_id	package	update_error	device_status
 XP x86	gtx980	10DE:13C0	Forceware 382.69	00000000	STOP 0x7F
 XP x86	gtx1050ti	10DE:1C82	Forceware 382.69	00000000	STOP 0x7F
-XP x64	gtx980	10DE:13C0	NVIDIA 368.81 + Maxwell INF	00000000	STOP 0x7E
-Windows 2000 x86	gtx980	10DE:13C0	Forceware 382.69 + WXP2KAPI	00000000	register access, no desktop
+XP x64	gtx980	10DE:13C0	NVIDIA 368.81 + Maxwell INF	00000000	desktop on VGA; NVIDIA device problem 10; absent from Direct3D 9
+Windows 2000 x86	gtx980	10DE:13C0	Forceware 382.69 + WXP2KAPI	00000000	STOP 0x50
 XP x86	rx9060xt	1002:7590	Catalyst 14.4	e0000203	no AMD driver selected
 XP x64	rx9060xt	1002:7590	Catalyst 14.4	e0000203	no AMD driver selected
 XP x64	rx9060xt	1002:7590	Adrenalin 26.11.2	e0000203	no AMD driver selected

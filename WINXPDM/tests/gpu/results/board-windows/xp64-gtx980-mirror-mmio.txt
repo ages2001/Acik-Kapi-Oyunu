@@ -1,0 +1,7 @@
+mmio-reads	51
+mmio-writes	19
+identity-reads	3
+unknown-reads	24
+unknown-writes	11
+first-unknown-read	0x1070
+first-unknown-write	0x1373a0

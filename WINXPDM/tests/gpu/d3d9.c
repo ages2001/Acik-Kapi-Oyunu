@@ -73,6 +73,9 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR args,int show)
     IDirect3DSurface9 *back=NULL,*copy=NULL;
     IDirect3DTexture9 *tex=NULL;
     D3DADAPTER_IDENTIFIER9 adapter;
+    DISPLAY_DEVICEA display;
+    UINT index, count, selected = D3DADAPTER_DEFAULT;
+    char pci[16];
     D3DPRESENT_PARAMETERS pp={0};
     D3DLOCKED_RECT lock;
     HWND window=NULL;
@@ -81,16 +84,37 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR args,int show)
     const VERTEX triangle[]={
         {0,0,.5f,1,0xffff0000,0,0},{60,0,.5f,1,0xff00ff00,0,0},{0,60,.5f,1,0xff0000ff,0,0}
     };
-    (void)previous; (void)args; (void)show;
+    (void)previous; (void)show;
     if (!size || size>=MAX_PATH-12) return 2;
     for (name=path+size;name>path && name[-1]!='\\';--name) {}
     lstrcpyA(name,"D3D9TEST.TXT");
     logfile=fopen(path,"w");
     if (!logfile) return 2;
     fprintf(logfile,"Direct3D 9 native %u-bit HAL test\n",(unsigned)(8*sizeof(void*)));
+    if (*args) {
+        if (lstrlenA(args)!=9 || args[4]!=':') {
+            fputs("Expected a four-digit vendor:device PCI ID\n",logfile);
+            goto done;
+        }
+        fprintf(logfile,"RequestedPCI=%s\n",args);
+    }
+    ZeroMemory(&display,sizeof(display));
+    display.cb=sizeof(display);
+    for (index=0;EnumDisplayDevicesA(NULL,index,&display,0);++index)
+        fprintf(logfile,"GDI[%u]=%s %s flags=%08lx\n",index,display.DeviceString,display.DeviceID,display.StateFlags);
     api=Direct3DCreate9(D3D_SDK_VERSION);
     if (!api) { fputs("Direct3DCreate9 failed\n",logfile); goto done; }
-    if (!succeeded(IDirect3D9_GetAdapterIdentifier(api,0,0,&adapter),"GetAdapterIdentifier")) goto done;
+    count=IDirect3D9_GetAdapterCount(api);
+    if (*args) selected=count;
+    for (index=0;index<count;++index) {
+        if (!succeeded(IDirect3D9_GetAdapterIdentifier(api,index,0,&adapter),"GetAdapterIdentifier")) goto done;
+        fprintf(logfile,"D3D[%u]=%s %s PCI=%04lx:%04lx\n",index,adapter.Description,adapter.Driver,
+                adapter.VendorId,adapter.DeviceId);
+        wsprintfA(pci,"%04lx:%04lx",adapter.VendorId & 0xffff,adapter.DeviceId & 0xffff);
+        if (*args && selected==count && !lstrcmpiA(pci,args)) selected=index;
+    }
+    if (selected>=count) { fputs("Requested adapter unavailable to Direct3D 9\n",logfile); goto done; }
+    if (!succeeded(IDirect3D9_GetAdapterIdentifier(api,selected,0,&adapter),"GetAdapterIdentifier")) goto done;
     fprintf(logfile,"Adapter=%s Driver=%s PCI=%04lx:%04lx\n",
             adapter.Description,adapter.Driver,adapter.VendorId,adapter.DeviceId);
     window=CreateWindowA("STATIC","WINXPDM Direct3D 9",WS_POPUP|WS_VISIBLE,0,0,64,64,NULL,NULL,instance,NULL);
@@ -103,7 +127,7 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR args,int show)
     pp.hDeviceWindow=window;
     pp.EnableAutoDepthStencil=TRUE;
     pp.AutoDepthStencilFormat=D3DFMT_D16;
-    if (!succeeded(IDirect3D9_CreateDevice(api,0,D3DDEVTYPE_HAL,window,D3DCREATE_SOFTWARE_VERTEXPROCESSING,&pp,&dev),
+    if (!succeeded(IDirect3D9_CreateDevice(api,selected,D3DDEVTYPE_HAL,window,D3DCREATE_SOFTWARE_VERTEXPROCESSING,&pp,&dev),
                    "CreateDevice HAL with software vertex processing")) goto done;
     if (!succeeded(IDirect3DDevice9_GetBackBuffer(dev,0,0,D3DBACKBUFFER_TYPE_MONO,&back),"GetBackBuffer") ||
         !succeeded(IDirect3DDevice9_CreateOffscreenPlainSurface(dev,64,64,D3DFMT_X8R8G8B8,D3DPOOL_SYSTEMMEM,&copy,NULL),

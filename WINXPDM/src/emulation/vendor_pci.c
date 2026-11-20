@@ -11,6 +11,7 @@
 #include "migration/vmstate.h"
 
 #include "winxpdm-fragment.h"
+#include "winxpdm-sdma.h"
 
 #define TYPE_WXP_ENGINES "winxpdm-engines"
 OBJECT_DECLARE_SIMPLE_TYPE(WxpEngines, WXP_ENGINES)
@@ -26,43 +27,23 @@ struct WxpEngines {
     bool clock_recovered, equalized;
 };
 
-static bool range_valid(uint32_t start, uint32_t bytes)
-{
-    return bytes && start < 65536 && bytes <= 65536 - start;
-}
-
 static void sdma_word(WxpEngines *s, uint32_t word)
 {
-    uint32_t *p = s->packet;
+    uint32_t destination, length;
     if (!s->used) {
-        switch (word) {
-        case 0x0001000b: s->needed = 5; break; /* SDMA 7 CONSTANT_FILL, COMPRESS */
-        case 0x00080001: s->needed = 8; break; /* COPY_LINEAR, CPV, uncompressed */
-        default: s->error = 2; return;
-        }
-    }
-    p[s->used++] = word;
-    if (s->used < s->needed) {
-        return;
-    }
-    s->used = 0;
-    if (p[0] == 0x0001000b) {
-        uint32_t bytes = p[4] + 1;
-        if (p[2] || ((p[1] | bytes) & 3) || !range_valid(p[1], bytes)) {
-            s->error = 3;
+        s->needed = wxp_sdma_words(word);
+        if (!s->needed) {
+            s->error = 2;
             return;
         }
-        for (unsigned i = 0; i < bytes; i += 4) {
-            stl_le_p(s->sdma_memory + p[1] + i, p[3]);
-        }
-    } else {
-        uint32_t bytes = p[1] + 1;
-        if (p[2] || p[4] || p[6] || p[7] ||
-            !range_valid(p[3], bytes) || !range_valid(p[5], bytes)) {
+    }
+    s->packet[s->used++] = word;
+    if (s->used == s->needed) {
+        s->used = 0;
+        if (!wxp_sdma_execute(s->sdma_memory, sizeof(s->sdma_memory), s->packet,
+                              &destination, &length)) {
             s->error = 3;
-            return;
         }
-        memmove(s->sdma_memory + p[5], s->sdma_memory + p[3], bytes);
     }
 }
 

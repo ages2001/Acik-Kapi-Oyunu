@@ -10,6 +10,17 @@ The fragment unit receives a guest-supplied instruction stream, three vertices a
 
 The VirGL test uses QEMU's existing virtio GPU. The SDL patch puts its live monitor contexts into the same OpenGL share group and handles destruction of a secondary output. The QEMU patch also restores the legacy VGA console geometry when Windows returns to its desktop. The host test samples the two SDL windows independently. The connector register fixture exposes DPCD training feedback and HDMI SCDC channel status to Windows probes. [Windows results](../../tests/gpu/windows/README.md)
 
+The vendor GeForce models implement the 1 MiB PRAMIN window at BAR0 offset `0x700000`, its selector at `0x1700`, and PCI configuration-space reads and writes through the mirror at `0x88000`. The PDISPLAY counter uses QEMU virtual time and the model's 13.5 MHz reset crystal. The Radeon models implement SDMA0 queue 0 at BAR5 offset `0x4b80`. Linux-format packets read from a circular ring in local VRAM. The engine supports uncompressed linear copies, constant fills, NOPs and read-pointer writeback. Tests cover wrapped and partial packets, a 32-bit pointer carry, destination guard bytes and a transfer crossing the end of VRAM. The modeled ring uses MMIO write-pointer submission and local VRAM addresses. Firmware, GPU virtual-address translation and display scanout remain open. [Nouveau PRAMIN](https://github.com/torvalds/linux/blob/v6.15/drivers/gpu/drm/nouveau/nvkm/subdev/instmem/nv50.c) · [PDISPLAY counter measurement](https://github.com/envytools/envytools/blob/f102b82381f3f11cee113d16374c87091db039d9/nva/nvatiming.c) · [GC 12 offsets](https://github.com/torvalds/linux/blob/v6.15/drivers/gpu/drm/amd/include/asic_reg/gc/gc_12_0_0_offset.h) · [Linux SDMA 7](https://github.com/torvalds/linux/blob/v6.15/drivers/gpu/drm/amd/amdgpu/sdma_v7_0.c)
+
+The GeForce model can load a board VBIOS using QEMU's PCI `romfile` option. It provides the PCI expansion ROM, the read-only PROM window at BAR0 offset `0x300000` and a writable copy in the last MiB of local VRAM. At reset, `0x619f04` identifies this shadow to the display engine. The driver can select the shadow with the usual PRAMIN register. Without an option ROM the pointer is disabled. Optional `subsystem-vendor-id` and `subsystem-id` select the matching OEM PCI identity. QMP properties `prom-reads` and `shadow-reads` count reads through BAR0. [Linux PROM reader](https://github.com/torvalds/linux/blob/v6.15/drivers/gpu/drm/nouveau/nvkm/subdev/bios/shadowrom.c) · [Linux shadow reader](https://github.com/torvalds/linux/blob/v6.15/drivers/gpu/drm/nouveau/nvkm/subdev/bios/shadowramin.c)
+
+The firmware test compares bytes from all three paths with the supplied GTX 980 image. It changes the VRAM shadow, checks the original ROM is intact, and restores the shadow. Use the matching IDs from the local board image. The tested ASUS image identifies `10de:13c0` and subsystem `1043:8506`. [Firmware qualification](../../tests/gpu/results/board-windows/README.md#gtx-980-option-rom)
+
+```sh
+python3 tests/gpu/board_pci.py --qemu "$QEMU" --firmware "$QEMU_FIRMWARE" --firmware "$SEABIOS" \
+    --profile gtx980 --rom "$GTX980_ROM" --subsystem 1043:8506
+```
+
 Use a clean QEMU 10.0.13 tree and Mesa 25.0.7 class headers. Set the following variables to their absolute source directories. QEMU needs its normal build dependencies.
 
 ```sh
@@ -17,6 +28,7 @@ cp "$WINXPDM/src/emulation/nv_color.c" "$QEMU_SRC/hw/display/winxpdm-nv-color.c"
 cp "$WINXPDM/src/emulation/vendor_pci.c" "$QEMU_SRC/hw/display/winxpdm-engines.c"
 cp "$WINXPDM/src/emulation/fragment.c" "$QEMU_SRC/hw/display/winxpdm-fragment.c"
 cp "$WINXPDM/src/emulation/fragment.h" "$QEMU_SRC/hw/display/winxpdm-fragment.h"
+cp "$WINXPDM/src/emulation/sdma.h" "$QEMU_SRC/hw/display/winxpdm-sdma.h"
 cp "$WINXPDM/src/emulation/board.c" "$QEMU_SRC/hw/display/winxpdm-board.c"
 patch -d "$QEMU_SRC" -p1 < "$WINXPDM/src/emulation/qemu-10.0.13.patch"
 patch -d "$QEMU_SRC" -p1 < "$WINXPDM/src/emulation/qemu-sdl-multihead.patch"

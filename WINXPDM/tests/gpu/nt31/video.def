@@ -1,0 +1,17 @@
+LIBRARY W3PORT.SYS
+EXPORTS
+VideoPortInitialize@16
+VideoPortGetCurrentIrql@0
+VideoPortGetAccessRanges@32
+VideoPortQueueDpc@12
+VideoPortStartTimer@4
+VideoPortGetVgaStatus@8
+VideoPortGetBusData@24
+VideoPortSetBusData@24
+VideoPortGetDeviceBase@20
+VideoPortFreeDeviceBase@8
+VideoPortSetRegistryParameters@16
+VideoPortGetRegistryParameters@20
+VideoPortReadRegisterUlong@4
+VideoPortWriteRegisterUlong@8
+VideoPortStallExecution@4

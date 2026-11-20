@@ -2,7 +2,7 @@
 
 The Windows guests ran the real SetupAPI installer against the adapter in PCI slot 6. QEMU provided a separate VGA console. These results cover INF selection, service registration, reboot and MMIO on the modeled adapter. The 3D shader tests on the separate WINXPDM test function have their own results. [Machine-readable outcomes](bindings.tsv) · [Windows shader results](../../windows/README.md) · [Board implementation](../../../../src/emulation/board.c)
 
-| Windows | Board and driver | Installation and next boot |
+| Windows | Board and driver | Initial vendor-driver qualification |
 | --- | --- | --- |
 | XP x86 | GTX 980, community Forceware 382.69 | Setup installed `nv` and requested a restart. The adapter saw 15 register reads and three writes. Windows stopped with 0x7F, parameter 1 equal to 8. [Installer](xp32-gtx980-install.txt) · [Registers](xp32-gtx980-registers.txt) · [Screen](xp32-gtx980-stop.png) |
 | XP x86 | GTX 1050 Ti, community Forceware 382.69 | Setup installed `nv` and requested a restart. This Pascal board reached the same register sequence and stop code. [Installer](xp32-gtx1050ti-install.txt) · [Registers](xp32-gtx1050ti-registers.txt) · [Screen](xp32-gtx1050ti-stop.png) |
@@ -13,7 +13,17 @@ Each trace comes from a fresh QEMU process. The reported NVIDIA totals cover acc
 
 A Windows 2000 control boot used a copy of the same installed disk, the same QEMU board and the same CPU. Only the NVIDIA service start setting changed to disabled on that copy. Windows reached the desktop, the NT kernel probe passed, and the native status probe recorded device problem 32. There were zero board-register reads or writes during the control boot. [Control kernel and MMIO counters](win2000-control-kernel.txt) · [Native control status](win2000-control-node.txt)
 
+After adding the running PDISPLAY counter and the PCI configuration mirror, XP Professional x64 booted to the desktop with the GTX 980 present. SetupAPI recorded device problem 10 and a stopped `nv` service. The native 64-bit Direct3D 9 probe requested PCI `10de:13c0`. Its adapter list contained only `vga.dll` on `1234:1111`, so it executed zero of the nine render checks. The GTX 980 and GTX 1050 Ti XP x86 installations still stopped at 0x7F, parameter 8, with the display counter present. Windows 2000 reached a 0x50 PAGE_FAULT_IN_NONPAGED_AREA. These records are from separate boots of the installed vendor packages. [XP x64 device state](xp64-gtx980-code10.txt) · [Direct3D enumeration](xp64-gtx980-d3d9.txt) · [XP x64 MMIO counts](xp64-gtx980-mirror-mmio.txt) · [XP x86 stop screen](xp32-gtx980-counter-stop.png) · [Windows 2000 stop screen](win2000-gtx980-counter-stop.png)
+
 During an earlier XP x86 run, the board exposed the original chip ID and returned zero at the newer PMC identification register. Windows reported device problem 10 after restart for each board. The later model implements both register layouts and the two primary strap overrides. The later boot progressed further and produced the stops above. [Earlier GTX 980 device status](xp32-gtx980-before-pmc.txt) · [Earlier GTX 1050 Ti device status](xp32-gtx1050ti-before-pmc.txt) · [PMC register documentation](https://github.com/envytools/envytools/blob/f102b82381f3f11cee113d16374c87091db039d9/docs/hw/bus/pmc.rst) · [PSTRAPS documentation](https://github.com/envytools/envytools/blob/f102b82381f3f11cee113d16374c87091db039d9/docs/hw/io/pstraps.rst)
+
+## GTX 980 option ROM
+
+The ASUS GTX 980 ROM used in this trial reports the GM204 device ID `10de:13c0`, OEM subsystem `1043:8506` and BIOS version `84.04.1F.00.49`. The x86 and EFI images in its PCI ROM chain both have a valid checksum. The SHA-256 of the full 199,154-byte file is `4effb35efdddcc500bc303a4017d88dd5dc83137eb79ac0df7ee7dde399d8ae7`. The bytes came from a public GPU passthrough project. WINXPDM distributes the test and its results. [Firmware source at the tested revision](https://github.com/BenyHdezM/My-Single-Gpu-Passthrough/blob/31bec3ad9951b42a71ee2156dd54cbe820703d8c/Asus.GTX980.Patch.rom)
+
+On i440FX and Q35 the PCI expansion ROM, BAR0 PROM and display-engine shadow all returned the expected bytes. A write to the shadow changed VRAM. Both read-only ROM views retained the original word. XP Professional x64 subsequently installed the NVIDIA 368.81 miniport with the desktop Maxwell INF entry on this OEM subsystem and requested a restart. [Firmware tests](gtx980-rom.tsv) · [XP x64 driver selection](xp64-gtx980-rom-install.txt) · [QEMU model and reproduction](../../../../src/emulation/README.md)
+
+After restart the GTX 980 received 162,007 register reads. Of these, 153,365 went through the PROM window. The PRAMIN firmware-shadow read count was zero. The board received 37 writes and recorded 123 unimplemented reads and 25 unimplemented writes. Windows reported Code 10 for `nv`. The native AMD64 Direct3D 9 probe requested this PCI ID and found only the QEMU VGA adapter. [Register counters](xp64-gtx980-rom-mmio.txt) · [Unimplemented accesses](xp64-gtx980-rom-registers.txt) · [Device and service state](xp64-gtx980-rom-node.txt) · [Direct3D adapter list](xp64-gtx980-rom-d3d9.txt)
 
 ## RDNA 4
 

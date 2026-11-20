@@ -9,7 +9,7 @@
 __declspec(dllimport) VOID NTAPI KeClearEvent(PRKEVENT);
 __declspec(dllimport) ULONGLONG NTAPI KeQueryInterruptTime(void);
 extern VOID NTAPI IoCompleteRequest(PIRP, CCHAR);
-extern KIRQL NTAPI VideoPortGetCurrentIrql(PVOID);
+extern KIRQL NTAPI VideoPortGetCurrentIrql(VOID);
 extern ULONG NTAPI VideoPortCreateEvent(PVOID, ULONG, PVOID, PVOID *);
 extern ULONG NTAPI VideoPortWaitForSingleObject(PVOID, PVOID, PLARGE_INTEGER);
 extern ULONG NTAPI VideoPortDeleteEvent(PVOID, PVOID);
@@ -42,15 +42,22 @@ static BOOLEAN events(void)
            VideoPortWaitForSingleObject(NULL, NULL, &poll) == 87;
 }
 
+/* Restore ESP even on failure so a regression reports a diagnostic. */
+extern int irql_stack_intact(void);
+__asm__(".text\n.globl _irql_stack_intact\n_irql_stack_intact:\n"
+        " pushl %esi\n movl %esp,%esi\n call _VideoPortGetCurrentIrql@0\n"
+        " xorl %eax,%eax\n cmpl %esi,%esp\n sete %al\n"
+        " movl %esi,%esp\n popl %esi\n ret\n");
+
 static BOOLEAN time_and_mode(void)
 {
     LARGE_INTEGER interval;
     ULONGLONG before, elapsed;
     KIRQL old, raised;
-    if (VideoPortGetCurrentIrql(NULL) != PASSIVE_LEVEL || ExGetPreviousMode() != KernelMode)
+    if (!irql_stack_intact() || VideoPortGetCurrentIrql() != PASSIVE_LEVEL || ExGetPreviousMode() != KernelMode)
         return FALSE;
     old = KfRaiseIrql(DISPATCH_LEVEL);
-    raised = VideoPortGetCurrentIrql(NULL);
+    raised = VideoPortGetCurrentIrql();
     KfLowerIrql(old);
     before = KeQueryInterruptTime();
     interval.QuadPart = -1000000;
@@ -141,11 +148,15 @@ NTSTATUS NTAPI DriverEntry(PDRIVER_OBJECT driver, PUNICODE_STRING key)
     if (!events()) { message("Video and kernel events FAIL\n"); return STATUS_UNSUCCESSFUL; }
     message("Four video event modes, poll, native clear and invalid handles PASS\n");
     if (!time_and_mode()) { message("IRQL, previous mode and timer FAIL\n"); return STATUS_UNSUCCESSFUL; }
-    message("Raised and passive IRQL, previous mode and interrupt clock PASS\n");
+    message("Zero-argument stack balance, raised and passive IRQL, previous mode and interrupt clock PASS\n");
     status = IoCreateDevice(driver, 0, NULL, FILE_DEVICE_UNKNOWN, 0, FALSE, &device);
     if (!NT_SUCCESS(status)) return status;
     driver->MajorFunction[IRP_MJ_DEVICE_CONTROL] = dispatch;
     device->Flags &= ~DO_DEVICE_INITIALIZING;
+    status = ObReferenceObjectByPointer(device, 0, NULL, KernelMode);
+    if (!NT_SUCCESS(status)) { IoDeleteDevice(device); return status; }
+    ObfDereferenceObject(device);
+    message("XP fastcall object dereference on a referenced native device PASS\n");
     if (!work_and_lock(device)) { message("Worker, pool and resource FAIL\n"); status = STATUS_UNSUCCESSFUL; }
     else {
         message("Tagged pool, cross-thread resource exclusion and self-freeing work item PASS\n");

@@ -21,7 +21,7 @@ extern VOID NTAPI ExReleaseResource(NATIVE_RESOURCE *);
 extern VOID NTAPI ExDeleteResource(NATIVE_RESOURCE *);
 extern KPROCESSOR_MODE NTAPI KeGetPreviousMode(void);
 extern VOID NTAPI NativeQueryTicks(PLARGE_INTEGER) __asm__("_KeQueryTickCount@4");
-extern VOID NTAPI NativeDereference(PVOID) __asm__("_ObDereferenceObject@4");
+extern LONG_PTR NTAPI NativeDereference(PVOID) __asm__("_ObDereferenceObject@4");
 extern NTSTATUS NTAPI NativeCall(PDEVICE_OBJECT, PIRP) __asm__("_IoCallDriver@8");
 
 PVOID NTAPI WxpAllocate(POOL_TYPE type, SIZE_T bytes, ULONG tag)
@@ -93,6 +93,11 @@ NTSTATUS FASTCALL WxpCallDriver(PDEVICE_OBJECT device, PIRP irp)
     return NativeCall(device, irp);
 }
 
+LONG_PTR FASTCALL WxpDereference(PVOID object)
+{
+    return NativeDereference(object);
+}
+
 ULONGLONG NTAPI WxpInterruptTime(void)
 {
     LARGE_INTEGER ticks;
@@ -100,9 +105,8 @@ ULONGLONG NTAPI WxpInterruptTime(void)
     return (ULONGLONG)ticks.QuadPart * KeQueryTimeIncrement();
 }
 
-KIRQL NTAPI WxpVideoIrql(PVOID extension)
+KIRQL NTAPI WxpVideoIrql(VOID)
 {
-    UNREFERENCED_PARAMETER(extension);
     return KeGetCurrentIrql();
 }
 

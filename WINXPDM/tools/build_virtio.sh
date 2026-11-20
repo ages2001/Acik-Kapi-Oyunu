@@ -17,6 +17,18 @@ wlink system windows_dll name WXPGPU.DRV option modname=WXPGPU option version=3.
 wcl -q -ml -3 -bt=windows -l=windows -os -fe=GPUVIEW.EXE "$src/demo.c"
 wrc -q -r -bt=windows -30 -i="$root/src/setup" -fo=viewer.res "$src/demo.rc"
 wrc -q -bt=windows -30 viewer.res GPUVIEW.EXE -fe=GPUVIEW.EXE
+wcl -q -ml -3 -bt=windows -l=windows -os -dWXP_BOARD16 -fe=BOARDTEST.EXE "$testsrc/board_access.c"
+mkdir -p "$root/bin/TEST16"
+cp BOARDTEST.EXE "$root/bin/TEST16/"
+gcc -m32 -march=i386 -ffreestanding -Os -Wall -Werror -fno-pie -fno-stack-protector \
+    -fno-asynchronous-unwind-tables -DWXP_BOARD_VXD -c "$testsrc/board_access.c" -o board_vxd.o
+gcc -m32 -c "$testsrc/board_vxd.S" -o board_ddb.o
+for base in 0 0x10000; do
+    ld -m elf_i386 --defsym image_base=$base -T "$testsrc/board_vxd.ld" \
+        board_ddb.o board_vxd.o -o "board_vxd-$base.bin"
+done
+python3 "$root/src/drivers/tools/mkvxd32.py" WXPBOARD board_vxd-0.bin board_vxd-0x10000.bin WXPBOARD.386
+cp WXPBOARD.386 "$root/bin/TEST16/"
 wcl -q -ml -3 -bt=windows -l=windows -os -fe=GPUCHECK.EXE "$testsrc/probe16.c" "$root/src/display/links.c"
 for family in WIN30 WIN31 WIN9X; do
     mkdir -p "$root/bin/$family"
@@ -37,13 +49,21 @@ for variant in 31 32 64; do
     done
     "$cc" $flags $arch -I"$inc" -Wall -Werror -c "$testsrc/probe_nt.c" -o probe.o
     "$cc" $flags $arch -I"$inc" -Wall -Werror -c "$root/src/display/links.c" -o links.o
-    for product in "WXPGPU:nt.o transport.o virgl.o" "WXPGTST:probe.o links.o"; do
+    "$cc" $flags $arch -I"$inc" -Wall -Werror -c "$testsrc/board_access.c" -o board.o
+    for product in "WXPBOARD:board.o" "WXPGPU:nt.o transport.o virgl.o" "WXPGTST:probe.o links.o"; do
         name=${product%%:*}
         "$cc" -nostdlib -shared "-Wl,--subsystem,native:$ver,-e,$entry,--image-base,0x10000,--no-insert-timestamp" \
             -Wl,--disable-dynamicbase,--major-os-version,1,--minor-os-version,0 -s ${product#*:} \
             -lntoskrnl -lhal -lgcc -o "$name.SYS"
         python3 "$root/src/drivers/nt/tools/pefix.py" "$name.SYS" nonpaged
     done
+    case "$variant" in
+        31) testfamily=TESTX86; boardprobe=WXPBD31.SYS;;
+        32) testfamily=TESTX86; boardprobe=WXPBOARD.SYS;;
+        64) testfamily=TESTX64; boardprobe=WXPBOARD.SYS;;
+    esac
+    mkdir -p "$root/bin/$testfamily"
+    cp WXPBOARD.SYS "$root/bin/$testfamily/$boardprobe"
     userentry=_WinMainEntry@0; userver=3.10
     if [ "$variant" = 64 ]; then userentry=WinMainEntry; userver=5.2; fi
     "$cross-w64-mingw32-windres" -I "$root/src/setup" "$src/demo.rc" -o viewer.o

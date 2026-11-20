@@ -9,3 +9,5 @@ ObDereferenceObject@4
 IoCallDriver@8
 KeGetPreviousMode@0
 KeQueryTickCount@4
+RtlMoveMemory@12
+RtlZeroMemory@8

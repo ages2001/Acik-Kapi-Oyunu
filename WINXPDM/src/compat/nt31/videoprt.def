@@ -1,20 +1,11 @@
 LIBRARY VIDEOPRT.SYS
 EXPORTS
 VideoPortCompareMemory
-VideoPortFreeDeviceBase
-VideoPortGetDeviceBase
-VideoPortGetRegistryParameters
-VideoPortInitialize
-VideoPortInt10
-VideoPortMapMemory
 VideoPortMoveMemory
 VideoPortReadRegisterUchar
 VideoPortReadRegisterUlong
 VideoPortReadRegisterUshort
-VideoPortSetRegistryParameters
-VideoPortSetTrappedEmulatorPorts
 VideoPortStallExecution
-VideoPortUnmapMemory
 VideoPortWriteRegisterUchar
 VideoPortWriteRegisterUlong
 VideoPortWriteRegisterUshort

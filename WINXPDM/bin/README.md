@@ -20,4 +20,9 @@ The same filenames identify different formats across Windows generations. Keep t
 
 `W2KCOMP/WXP2KAPI.SYS` is the separately built Windows 2000 x86 compatibility module for private Forceware 382.69 tests. It is used with an adapted local miniport. [Build inputs and guest results](../src/compat/win2000/README.md)
 
-`NT31COMP/W3H.SYS` supplies six HAL functions and `NT31COMP/W3PORT.SYS` supplies 18 kernel and video-port functions on NT 3.1 x86 for private tests of NVIDIA 368.81 and SupraGSX 382.69. [Build inputs and kernel results](../src/compat/nt31/README.md)
+`NT31COMP/W3H.SYS` supplies six HAL functions and `NT31COMP/W3PORT.SYS` supplies 25 previously missing kernel and video-port functions on NT 3.1 x86 for private tests of NVIDIA 368.81 and SupraGSX 382.69. [Build inputs and kernel results](../src/compat/nt31/README.md)
+
+Run `D3D9TEST.EXE 10de:13c0` to require the GTX 980 specifically. The executable records all GDI and Direct3D adapter identities, the selected adapter and the results in `D3D9TEST.TXT` beside the executable. With no argument it tests the default adapter.
+
+
+`TEST16/BOARDTEST.EXE` runs the GeForce PRAMIN or Radeon SDMA qualification in enhanced-mode Windows. `TEST16/WXPBOARD.386` performs it from VMM during Windows 9x startup. The NT system-start probes are `TESTX86/WXPBD31.SYS` for NT 3.1, `TESTX86/WXPBOARD.SYS` for later x86 NT and `TESTX64/WXPBOARD.SYS` for XP x64. They expect a dedicated modeled board at PCI 00:06.0 and write their results to debug port E9h. `NT31COMP/W3VTEST.SYS` additionally exercises the XP-style NT 3.1 video-port callbacks. [Guest tests](../tests/gpu/windows/README.md) · [PCI miniport test](../src/compat/nt31/README.md)
