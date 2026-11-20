@@ -1,0 +1,14 @@
+NVIDIA_Devices.NTx86.5.1
+stock PCI\VEN_10DE&DEV_1401 NVIDIA GeForce GTX 960 Section008 service=nv
+stock PCI\VEN_10DE&DEV_13C2 no desktop match
+stock PCI\VEN_10DE&DEV_13C0 no desktop match
+stock PCI\VEN_10DE&DEV_17C8 no desktop match
+stock PCI\VEN_10DE&DEV_1B80 no desktop match
+stock PCI\VEN_10DE&DEV_1B06 no desktop match
+edited PCI\VEN_10DE&DEV_13C0 NVIDIA GeForce GTX 980 Section008 service=nv
+edited PCI\VEN_10DE&DEV_13C2 NVIDIA GeForce GTX 970 Section008 service=nv
+edited PCI\VEN_10DE&DEV_17C8 NVIDIA GeForce GTX 980 Ti Section008 service=nv
+edited PCI\VEN_10DE&DEV_1401 NVIDIA GeForce GTX 960 Section008 service=nv
+edited PCI\VEN_10DE&DEV_1B80 no desktop match
+edited PCI\VEN_10DE&DEV_1B06 no desktop match
+result: PASS

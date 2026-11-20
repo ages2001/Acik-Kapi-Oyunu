@@ -1,0 +1,3 @@
+NVB097: 2 RGBA8 layouts, clipped blue-channel clear, 260 readbacks, bounds check passed
+NVB197: 2 RGBA8 layouts, clipped blue-channel clear, 260 readbacks, bounds check passed
+NVC197: 2 RGBA8 layouts, clipped blue-channel clear, 260 readbacks, bounds check passed

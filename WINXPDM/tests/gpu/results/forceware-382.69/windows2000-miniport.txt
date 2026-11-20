@@ -1,0 +1,3 @@
+Requesting miniport start in a VM with no NVIDIA PCI adapter
+StartService=0 Win32_error=1306
+service_state=1 Win32_exit=1306 service_exit=0

@@ -1,0 +1,118 @@
+{
+  "Windows 3.00": {
+    "phase": "install",
+    "log": {
+      "WRINST.TXT": [
+        "WINRAM: No supported installation found - C:\\WINDOWS",
+        "WINRAM 1.0"
+      ],
+      "WRVERIFY.TXT": [
+        "WINRAM: No supported installation found - C:\\WINDOWS",
+        "WINRAM 1.0"
+      ]
+    },
+    "sampled_files_changed": [],
+    "active_record": false,
+    "passed": false
+  },
+  "Windows 3.1": {
+    "phase": "install",
+    "log": {
+      "WRINST.TXT": [
+        "WINRAM: Unrecognized system file. No target files have been replaced - C:\\WINDOWS\\SYSTEM\\USER.EXE",
+        "WINRAM 1.0",
+        "Microsoft Windows 3.1",
+        "C:\\WINDOWS"
+      ],
+      "WRVERIFY.TXT": [
+        "WINRAM: Cannot open installation record - C:\\WINDOWS\\WRMSTATE\\ACTIVE.DAT",
+        "WINRAM 1.0",
+        "Microsoft Windows 3.1",
+        "C:\\WINDOWS"
+      ]
+    },
+    "sampled_files_changed": [],
+    "active_record": false,
+    "passed": false
+  },
+  "Windows for Workgroups 3.11": {
+    "phase": "install",
+    "log": {
+      "WRINST.TXT": [
+        "WINRAM: Unrecognized system file. No target files have been replaced - C:\\WINDOWS\\SYSTEM\\USER.EXE",
+        "WINRAM 1.0",
+        "Windows for Workgroups 3.11",
+        "C:\\WINDOWS"
+      ],
+      "WRVERIFY.TXT": [
+        "WINRAM: Cannot open installation record - C:\\WINDOWS\\WRMSTATE\\ACTIVE.DAT",
+        "WINRAM 1.0",
+        "Windows for Workgroups 3.11",
+        "C:\\WINDOWS"
+      ]
+    },
+    "sampled_files_changed": [],
+    "active_record": false,
+    "passed": false
+  },
+  "Windows 95 OSR2": {
+    "phase": "install",
+    "log": {
+      "WRINST.TXT": [
+        "WINRAM: Unrecognized system file. No target files have been replaced - C:\\WINDOWS\\SYSTEM\\USER.EXE",
+        "WINRAM 1.0",
+        "Windows 95 OSR2 (4.00.1111)",
+        "C:\\WINDOWS"
+      ],
+      "WRVERIFY.TXT": [
+        "WINRAM: Cannot open installation record - C:\\WINDOWS\\WRMSTATE\\ACTIVE.DAT",
+        "WINRAM 1.0",
+        "Windows 95 OSR2 (4.00.1111)",
+        "C:\\WINDOWS"
+      ]
+    },
+    "sampled_files_changed": [],
+    "active_record": false,
+    "passed": false
+  },
+  "Windows 98 SE": {
+    "phase": "install",
+    "log": {
+      "WRINST.TXT": [
+        "WINRAM: Unrecognized system file. No target files have been replaced - C:\\WINDOWS\\SYSTEM\\USER.EXE",
+        "WINRAM 1.0",
+        "Windows 98 Second Edition (4.10.2222)",
+        "C:\\WINDOWS"
+      ],
+      "WRVERIFY.TXT": [
+        "WINRAM: Cannot open installation record - C:\\WINDOWS\\WRMSTATE\\ACTIVE.DAT",
+        "WINRAM 1.0",
+        "Windows 98 Second Edition (4.10.2222)",
+        "C:\\WINDOWS"
+      ]
+    },
+    "sampled_files_changed": [],
+    "active_record": false,
+    "passed": false
+  },
+  "Windows Me": {
+    "phase": "install",
+    "log": {
+      "WRINST.TXT": [
+        "WINRAM: Unrecognized system file. No target files have been replaced - C:\\WINDOWS\\SYSTEM\\USER.EXE",
+        "WINRAM 1.0",
+        "Windows Millennium Edition (4.90.3000)",
+        "C:\\WINDOWS"
+      ],
+      "WRVERIFY.TXT": [
+        "WINRAM: Cannot open installation record - C:\\WINDOWS\\WRMSTATE\\ACTIVE.DAT",
+        "WINRAM 1.0",
+        "Windows Millennium Edition (4.90.3000)",
+        "C:\\WINDOWS"
+      ]
+    },
+    "sampled_files_changed": [],
+    "active_record": false,
+    "passed": false
+  }
+}

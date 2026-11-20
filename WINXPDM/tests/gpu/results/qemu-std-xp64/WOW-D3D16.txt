@@ -1,0 +1,25 @@
+D3DTEST 640x480x16 2 s
+DirectDrawCreateEx 00000000
+SetCooperativeLevel 00000000
+SetDisplayMode 00000000
+CreateSurface 3D flip chain 00000000
+back buffer caps 1000601c (video memory)
+IDirect3D7 00000000
+Z buffer 16 bits: 00000000
+HAL device 00000000
+DrawPrimitive 00000000
+HAL device: 169 frames in 2000 ms (84 per second)
+checks (HAL device):
+  gouraud centre at 320,316: 505450 (want 555555) ok
+  gouraud near red at 320,16: f80000 (want f00000) ok
+  background at 3,3: 000000 (want 000000) ok
+  Z: near square in front at 150,150: 00fc00 (want 00ff00) ok
+  Z: far square around it at 60,60: f80000 (want ff0000) ok
+  alpha blend at 70,70: 800078 (want 80007f) ok
+  texture 64x64 565: 00000000
+  texture top left (white) at 230,130: f8fcf8 (want f8fcf8) ok
+  texture top right (red) at 300,130: f80000 (want f80000) ok
+  texture bottom right (white) at 300,200: f8fcf8 (want f8fcf8) ok
+pixel checks: 9/9 executed, 0 failed
+result: PASS
+done

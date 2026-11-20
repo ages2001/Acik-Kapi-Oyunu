@@ -1,0 +1,5 @@
+VWINRAM memory service started
+WINRAM global memory service ready
+WINRAM memory display ready
+WINRAM enhanced bank_KiB=1035072 free_before=1035072 free_reserved=1018688 free_released=1035072
+WINRAM enhanced reservation PASS

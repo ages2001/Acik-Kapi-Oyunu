@@ -1,0 +1,8 @@
+WXP2K companion loaded
+WXP2K notification and synchronization event checks passed
+WXP2K version agrees with running Windows 2000 kernel
+WXP2K debug printing returned
+WXP2K PASS
+WXP2K incoming init size 0x00000054
+WXP2K native init size 0x00000050
+WXP2K native port result 0x00000000

@@ -1,0 +1,67 @@
+# GeForce Maxwell, Pascal and Radeon RDNA 4
+
+## Windows XP driver selection
+
+SupraGSX Forceware 382.69 is an XP x86 community package based on NVIDIA 368.81. The published installer is 221,601,706 bytes. Its SHA-256 is `bb7ff231910851827143a7a090d0e4aca5715a2ce0f26294c8d1004ea40a00f9`. The test used the November 9 release at commit `91ad42bc4fab7d710ce6861e044620fe63d28d38`. [Pinned source and hardware reports](https://github.com/SupraGSX/Forceware-382.69/tree/91ad42bc4fab7d710ce6861e044620fe63d28d38) · [Release](https://github.com/SupraGSX/Forceware-382.69/releases/tag/382.69-2026-11-09)
+
+Comparison of NVIDIA's x86 display INF with the community INF found 1,990 original hardware or board matches retained and 39 added. The resulting 2,029 matches cover 287 PCI vendor/device pairs. The community package selects `Section021` for the GTX 970, 980, 980 Ti and the added desktop Pascal models. It also changes the display miniport, graphics and compute components. The stock XP x86 and AMD64 INF modification tested separately for the three Maxwell boards uses `Section008`. The original 368.81 inventory also includes a qualified GM204 GTX 965M entry, PCI `10DE:1667`. [Detailed PCI inventory](results/priority-pci.tsv)
+
+| Windows guest | Native SetupAPI display-class list, stock 368.81 | Native SetupAPI display-class list, community 382.69 |
+| --- | ---: | ---: |
+| XP x86 | 112 entries | 141, including GTX 1050, 1050 Ti, 1060, 1070, 1070 Ti, 1080 and 1080 Ti |
+| XP Professional x64 | 111 entries from the AMD64 stock INF | 0 entries from the x86-only INF |
+
+These are native class-driver enumerations from actual XP guests. SetupAPI coalesces some model aliases. Detecting the physical adapter, starting the miniport and rendering on it are further tests. [XP x86 transcript](results/forceware-382.69/setupapi-x86.tsv) · [XP x64 transcript](results/forceware-382.69/setupapi-amd64.tsv) · [Guest probe](vendor_list.c)
+
+The upstream rebuild passed all extraction checks using stock 368.81 and six SHA-256-matched NVIDIA driver donors. It reproduced the release runtime, including 130 donor resources. It checked 636 non-generated files and 469 Control Panel comparison files. The outer repacked installer has a different SHA-256. For the Quadro 390.77 donor the international 32-bit download below supplied the required miniport hash. [Rebuild results](results/forceware-382.69/rebuild.json) · [Upstream rebuild instructions](https://github.com/SupraGSX/Forceware-382.69/blob/91ad42bc4fab7d710ce6861e044620fe63d28d38/REBUILDING.md) · [NVIDIA Quadro 390.77](https://us.download.nvidia.com/Windows/Quadro_Certified/390.77/390.77-quadro-grid-desktop-notebook-win8-win7-32bit-international-whql.exe)
+
+The original x86 community miniport imports 173 functions and the display DLL imports 82. Both resolve against XP x86. On Windows 2000 the display DLL resolves and the miniport needs five additional functions. NT 4.0, 3.51, 3.5 and 3.1 have larger import or module gaps. Resolving imports is only the loader portion of a port. [Operating-system import comparison](results/forceware-382.69/nt-imports.tsv)
+
+## QEMU and Linux graphics tests
+
+| Test running in or as part of source-built QEMU 10.0.13 | Observed result |
+| --- | --- |
+| Forceware GP107 limit selector from the release x86 miniport | All 256 input values passed. The 52-byte function and table were matched to the released binary before executing them at their original address under TCG. |
+| DisplayPort policy from the same release sources | Startup, training and fallback tests passed, including 49,152 link bitmap/capacity inputs and 9,600,000 depth/clock inputs. |
+| HDMI recovery policy from the same release sources | Simulated SCDC register transactions and retry tests passed. |
+| Maxwell/Pascal hardware color methods | B097, B197 and C197 each returned 260 expected framebuffer words across two formats, including guard words and clipped channel clears. |
+| Mesa Nouveau graphics compiler | GM107, GM108, GM200, GM204, GM206, GP102, GP104, GP106, GP107 and GP108 each linked the vertex and textured fragment shader, emitted machine code for both stages and submitted a validation draw to the no-op DRM interface. Each renderer string matched the requested chipset. |
+| Mesa RADV graphics compiler | GFX1200 (Navi 44, including RX 9060 XT) and GFX1201 (Navi 48, including RX 9070 XT) each created a graphics pipeline. Both reported vertex and fragment assembly, texture sampling and program termination. |
+| VirtIO/VirGL control | A guest drew and read back opaque red and blue pixels. The reported host renderer was LLVMpipe. |
+
+The compiler guests use Linux 6.12.107 and Mesa 25.0.7. The vertex and fragment inputs are shared across NVIDIA and AMD. The chipset compiler tests produce native GPU instructions without executing them on a board. The QEMU color target executes its supported methods independently of the compiler tests. None of these results verifies a Windows vendor miniport's complete path from draw submission to scanout. [Full guest transcript and machine code](results/priority-qemu.txt) · [QEMU color method implementation and reproduction](../../src/emulation/README.md) · [VirGL readback](results/virgl-linux.txt)
+
+### Reproduce the compiler and display-policy tests
+
+Configure Mesa 25.0.7 with `-Dgallium-drivers=nouveau -Dtools=drm-shim -Dgbm=enabled -Degl=enabled -Dplatforms= -Dglx=disabled -Dllvm=disabled -Db_ndebug=false`. Build the Nouveau DRM shim, Gallium, EGL, GBM and its DRI backend. Use an x86-64 Linux kernel with i386 compatibility, a static BusyBox, Mesa's RADV library and ICD JSON, glslangValidator, spirv-val, GCC with 32-bit output, binutils, NASM, bsdtar and Python with pefile. Set the input paths below to your builds and the extracted release miniport.
+
+```sh
+python3 tests/gpu/priority_guest.py --qemu "$QEMU" --linux "$KERNEL" --busybox "$BUSYBOX" \
+    --upstream "$FORCEWARE_SOURCE" --miniport "$DISPLAY_DRIVER/nv4_mini.sys" \
+    --radv "$RADV_LIBRARY" --radv-icd "$RADV_JSON" --nouveau-mesa-build "$MESA_BUILD" \
+    --bios-path "$QEMU_FIRMWARE" --bios-path "$SEABIOS" --output priority-qemu.txt
+```
+
+## Monitor and acceleration acceptance
+
+An end-to-end native 3D pass requires commands from the Windows guest to execute on the target GPU or a validated complete model, with correct color, texture and depth readback. A DisplayPort HBR3 pass needs a connected sink and measured HBR3 training on hardware supporting that rate. HDMI 2.0 tests need measured active timing, link scrambling/SCDC where required, and a visible image. Multi-monitor tests require two active independent outputs, an extended desktop and successful mode changes on each output. A board's physical ports and transmitter limit which cases apply.
+
+| Target OS | Native accelerated 3D | DP HBR3 | HDMI 2.0 | Extended desktop |
+| --- | --- | --- | --- | --- |
+| Windows 3.0 enhanced | Open | Open | Open | Open |
+| Windows 3.1 / 3.11 / WfW enhanced | Open | Open | Open | Open |
+| Windows 95 | Open | Open | Open | Open |
+| Windows 98 / 98 SE | Open | Open | Open | Open |
+| Windows Me | Open | Open | Open | Open |
+| Windows NT 3.1 | Open | Open | Open | Open |
+| Windows NT 3.5 / 3.51 | Open | Open | Open | Open |
+| Windows NT 4.0 | Open | Open | Open | Open |
+| Windows 2000 | Open | Open | Open | Open |
+| Windows XP x86 | Upstream board-specific results | Upstream GTX 1050 Ti | Upstream timing results | Open |
+| Windows XP Professional x64 | Open | Open | Open | Open |
+
+The Forceware publisher reports GDI, Direct3D and OpenGL rendering over HDMI with a DDR4 GT 1030, and 3440 × 1440 at 175 Hz, 8-bit RGB and HBR3 ×4 on a GTX 1050 Ti. The publisher also reports 543.5 MHz HDMI on Pascal and leaves 594 MHz open. Independent board qualification in WINXPDM is open. [Release hardware qualification](https://github.com/SupraGSX/Forceware-382.69/blob/91ad42bc4fab7d710ce6861e044620fe63d28d38/README.md)
+
+## Windows 2000 driver port
+
+The Windows 2000 companion supplies the five missing direct imports. A system-start probe exercised them successfully in the guest kernel. A second test actually entered the x86 Forceware miniport and observed its native video-port initialization. The XP miniport supplied an 84-byte structure and the Windows 2000 video port accepted its compatible 80-byte prefix. The VM had no matching NVIDIA PCI device and the driver service stayed stopped. [Source, binary and guest transcripts](../../src/compat/win2000/README.md)

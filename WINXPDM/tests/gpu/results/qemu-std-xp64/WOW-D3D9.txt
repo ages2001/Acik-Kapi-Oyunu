@@ -1,0 +1,13 @@
+Direct3D 9 native 32-bit HAL test
+Adapter=WINXPDM QEMU Standard VGA Driver=wxpdm.dll PCI=1234:1111
+Gouraud at 20,20: 555555 expected 555555 ok
+Background at 62,62: 000000 expected 000000 ok
+Near depth at 32,32: 00ff00 expected 00ff00 ok
+Far depth at 4,4: ff0000 expected ff0000 ok
+Alpha blend at 32,32: 80007f expected 80007f ok
+Texture top left at 16,16: 00ffff expected 00ffff ok
+Texture top right at 48,16: ff00ff expected ff00ff ok
+Texture bottom left at 16,48: ffffff expected ffffff ok
+Texture bottom right at 48,48: ffff00 expected ffff00 ok
+pixel checks: 9/9 executed, 0 failed
+result: PASS

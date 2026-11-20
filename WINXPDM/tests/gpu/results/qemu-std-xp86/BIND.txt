@@ -1,0 +1,11 @@
+DisplayDevice=
+Video0=\Registry\Machine\System\CurrentControlSet\Control\Video\{23A77BF7-ED96-40EC-AF06-9B1F4867732A}\0000
+Mode=640x480x32
+GdiBitBlt=pass
+DeviceProblem=28
+HardwareID=PCI\VEN_1234&DEV_1111&SUBSYS_11001AF4&REV_02
+Service=
+UpdateError=0
+RebootRequested=no
+DeviceProblem=0
+SelectedService=wxpdm

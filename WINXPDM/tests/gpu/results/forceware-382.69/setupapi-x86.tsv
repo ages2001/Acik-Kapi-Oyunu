@@ -1,0 +1,256 @@
+native_bits	32
+NVIDIA_368.81	pci\ven_10de&dev_06c0	Section001	NVIDIA GeForce GTX 480
+NVIDIA_368.81	pci\ven_10de&dev_06c4	Section002	NVIDIA GeForce GTX 465
+NVIDIA_368.81	pci\ven_10de&dev_06cd	Section001	NVIDIA GeForce GTX 470
+NVIDIA_368.81	pci\ven_10de&dev_06d1	Section003	NVIDIA Tesla C2050 / C2070
+NVIDIA_368.81	pci\ven_10de&dev_06d1&subsys_077110de	Section003	NVIDIA Tesla C2050
+NVIDIA_368.81	pci\ven_10de&dev_06d1&subsys_077210de	Section003	NVIDIA Tesla C2070
+NVIDIA_368.81	pci\ven_10de&dev_06d2	Section003	NVIDIA Tesla M2070
+NVIDIA_368.81	pci\ven_10de&dev_06d2&subsys_088f10de	Section003	NVIDIA Tesla X2070
+NVIDIA_368.81	pci\ven_10de&dev_06d8	Section004	NVIDIA Quadro 6000
+NVIDIA_368.81	pci\ven_10de&dev_06d9	Section004	NVIDIA Quadro 5000
+NVIDIA_368.81	pci\ven_10de&dev_06dd	Section004	NVIDIA Quadro 4000
+NVIDIA_368.81	pci\ven_10de&dev_06de	Section006	NVIDIA Tesla T20 Processor
+NVIDIA_368.81	pci\ven_10de&dev_06de&subsys_077310de	Section006	NVIDIA Tesla S2050
+NVIDIA_368.81	pci\ven_10de&dev_06de&subsys_082f10de	Section006	NVIDIA Tesla M2050
+NVIDIA_368.81	pci\ven_10de&dev_06df	Section006	NVIDIA Tesla M2070-Q
+NVIDIA_368.81	pci\ven_10de&dev_0dc0	Section001	NVIDIA GeForce GT 440
+NVIDIA_368.81	pci\ven_10de&dev_0dc4	Section001	NVIDIA GeForce GTS 450
+NVIDIA_368.81	pci\ven_10de&dev_0dd8	Section005	NVIDIA Quadro 2000
+NVIDIA_368.81	pci\ven_10de&dev_0dd8&subsys_091410de	Section005	NVIDIA Quadro 2000D
+NVIDIA_368.81	pci\ven_10de&dev_0de1	Section001	NVIDIA GeForce GT 430
+NVIDIA_368.81	pci\ven_10de&dev_0de2	Section002	NVIDIA GeForce GT 420
+NVIDIA_368.81	pci\ven_10de&dev_0de4	Section002	NVIDIA GeForce GT 520
+NVIDIA_368.81	pci\ven_10de&dev_0de5	Section002	NVIDIA GeForce GT 530
+NVIDIA_368.81	pci\ven_10de&dev_0de7	Section002	NVIDIA GeForce GT 610
+NVIDIA_368.81	pci\ven_10de&dev_0df8	Section005	NVIDIA Quadro 600
+NVIDIA_368.81	pci\ven_10de&dev_0df9	Section005	NVIDIA Quadro 500M
+NVIDIA_368.81	pci\ven_10de&dev_0dfa	Section005	NVIDIA Quadro 1000M
+NVIDIA_368.81	pci\ven_10de&dev_0e22	Section001	NVIDIA GeForce GTX 460
+NVIDIA_368.81	pci\ven_10de&dev_0e23	Section001	NVIDIA GeForce GTX 460 SE
+NVIDIA_368.81	pci\ven_10de&dev_0e3a	Section005	NVIDIA Quadro 3000M
+NVIDIA_368.81	pci\ven_10de&dev_0e3b	Section005	NVIDIA Quadro 4000M
+NVIDIA_368.81	pci\ven_10de&dev_0f00	Section002	NVIDIA GeForce GT 630
+NVIDIA_368.81	pci\ven_10de&dev_0f01	Section002	NVIDIA GeForce GT 620
+NVIDIA_368.81	pci\ven_10de&dev_0f02	Section002	NVIDIA GeForce GT 730
+NVIDIA_368.81	pci\ven_10de&dev_0fc0	Section008	NVIDIA GeForce GT 640
+NVIDIA_368.81	pci\ven_10de&dev_0fc6	Section008	NVIDIA GeForce GTX 650
+NVIDIA_368.81	pci\ven_10de&dev_0fc8	Section008	NVIDIA GeForce GT 740
+NVIDIA_368.81	pci\ven_10de&dev_0fef	Section010	NVIDIA GRID K340
+NVIDIA_368.81	pci\ven_10de&dev_0ff2	Section011	NVIDIA GRID K1
+NVIDIA_368.81	pci\ven_10de&dev_0ff3	Section012	NVIDIA Quadro K420
+NVIDIA_368.81	pci\ven_10de&dev_0ff9	Section012	NVIDIA Quadro K2000D
+NVIDIA_368.81	pci\ven_10de&dev_0ffa	Section012	NVIDIA Quadro K600
+NVIDIA_368.81	pci\ven_10de&dev_0ffd	Section009	NVIDIA NVS 510
+NVIDIA_368.81	pci\ven_10de&dev_0ffe	Section012	NVIDIA Quadro K2000
+NVIDIA_368.81	pci\ven_10de&dev_0fff	Section012	NVIDIA Quadro 410
+NVIDIA_368.81	pci\ven_10de&dev_1004	Section008	NVIDIA GeForce GTX 780
+NVIDIA_368.81	pci\ven_10de&dev_1005	Section008	NVIDIA GeForce GTX TITAN
+NVIDIA_368.81	pci\ven_10de&dev_1008	Section008	NVIDIA GeForce GTX 780 Ti
+NVIDIA_368.81	pci\ven_10de&dev_100c	Section008	NVIDIA GeForce GTX TITAN Black
+NVIDIA_368.81	pci\ven_10de&dev_103a	Section012	NVIDIA Quadro K6000
+NVIDIA_368.81	pci\ven_10de&dev_103c	Section012	NVIDIA Quadro K5200
+NVIDIA_368.81	pci\ven_10de&dev_1042	Section002	NVIDIA GeForce 510
+NVIDIA_368.81	pci\ven_10de&dev_1048	Section002	NVIDIA GeForce 605
+NVIDIA_368.81	pci\ven_10de&dev_104b	Section002	NVIDIA GeForce GT 625 (OEM)
+NVIDIA_368.81	pci\ven_10de&dev_104c	Section002	NVIDIA GeForce GT 705
+NVIDIA_368.81	pci\ven_10de&dev_107c	Section007	NVIDIA NVS 315
+NVIDIA_368.81	pci\ven_10de&dev_107d	Section007	NVIDIA NVS 310
+NVIDIA_368.81	pci\ven_10de&dev_1080	Section015	NVIDIA GeForce GTX 580
+NVIDIA_368.81	pci\ven_10de&dev_1081	Section015	NVIDIA GeForce GTX 570
+NVIDIA_368.81	pci\ven_10de&dev_1082	Section002	NVIDIA GeForce GTX 560 Ti
+NVIDIA_368.81	pci\ven_10de&dev_1084	Section002	NVIDIA GeForce GTX 560
+NVIDIA_368.81	pci\ven_10de&dev_1088	Section016	NVIDIA GeForce GTX 590
+NVIDIA_368.81	pci\ven_10de&dev_1091	Section003	NVIDIA Tesla M2090
+NVIDIA_368.81	pci\ven_10de&dev_1091&subsys_088e10de	Section003	NVIDIA Tesla X2090
+NVIDIA_368.81	pci\ven_10de&dev_1094	Section003	NVIDIA Tesla M2075
+NVIDIA_368.81	pci\ven_10de&dev_1096	Section003	NVIDIA Tesla C2075
+NVIDIA_368.81	pci\ven_10de&dev_109b	Section004	NVIDIA Quadro 7000
+NVIDIA_368.81	pci\ven_10de&dev_1180	Section008	NVIDIA GeForce GTX 680
+NVIDIA_368.81	pci\ven_10de&dev_1183	Section008	NVIDIA GeForce GTX 660 Ti
+NVIDIA_368.81	pci\ven_10de&dev_1184	Section008	NVIDIA GeForce GTX 770
+NVIDIA_368.81	pci\ven_10de&dev_1185	Section008	NVIDIA GeForce GTX 660
+NVIDIA_368.81	pci\ven_10de&dev_1187	Section008	NVIDIA GeForce GTX 760
+NVIDIA_368.81	pci\ven_10de&dev_1189	Section008	NVIDIA GeForce GTX 670
+NVIDIA_368.81	pci\ven_10de&dev_118a	Section010	NVIDIA GRID K520
+NVIDIA_368.81	pci\ven_10de&dev_118e	Section008	NVIDIA GeForce GTX 760 (192-bit)
+NVIDIA_368.81	pci\ven_10de&dev_118f	Section013	NVIDIA Tesla K10
+NVIDIA_368.81	pci\ven_10de&dev_1193	Section008	NVIDIA GeForce GTX 760 Ti OEM
+NVIDIA_368.81	pci\ven_10de&dev_1194	Section013	NVIDIA Tesla K8
+NVIDIA_368.81	pci\ven_10de&dev_11b4	Section012	NVIDIA Quadro K4200
+NVIDIA_368.81	pci\ven_10de&dev_11b6	Section012	NVIDIA Quadro K3100M
+NVIDIA_368.81	pci\ven_10de&dev_11ba	Section012	NVIDIA Quadro K5000
+NVIDIA_368.81	pci\ven_10de&dev_11bc	Section012	NVIDIA Quadro K5000M
+NVIDIA_368.81	pci\ven_10de&dev_11bd	Section012	NVIDIA Quadro K4000M
+NVIDIA_368.81	pci\ven_10de&dev_11be	Section012	NVIDIA Quadro K3000M
+NVIDIA_368.81	pci\ven_10de&dev_11bf	Section011	NVIDIA GRID K2
+NVIDIA_368.81	pci\ven_10de&dev_11c2	Section008	NVIDIA GeForce GTX 650 Ti BOOST
+NVIDIA_368.81	pci\ven_10de&dev_11c3	Section008	NVIDIA GeForce GTX 650 Ti
+NVIDIA_368.81	pci\ven_10de&dev_11c4	Section008	NVIDIA GeForce GTX 645
+NVIDIA_368.81	pci\ven_10de&dev_11fa	Section012	NVIDIA Quadro K4000
+NVIDIA_368.81	pci\ven_10de&dev_11fc	Section012	NVIDIA Quadro K2100M
+NVIDIA_368.81	pci\ven_10de&dev_1205	Section002	NVIDIA GeForce GTX 460 v2
+NVIDIA_368.81	pci\ven_10de&dev_1206	Section002	NVIDIA GeForce  GTX 555
+NVIDIA_368.81	pci\ven_10de&dev_1207	Section002	NVIDIA GeForce GT 645
+NVIDIA_368.81	pci\ven_10de&dev_1208	Section002	NVIDIA GeForce GTX 560 SE
+NVIDIA_368.81	pci\ven_10de&dev_1241	Section002	NVIDIA GeForce GT 545
+NVIDIA_368.81	pci\ven_10de&dev_1244	Section002	NVIDIA GeForce GTX 550 Ti
+NVIDIA_368.81	pci\ven_10de&dev_1280	Section008	NVIDIA GeForce GT 635
+NVIDIA_368.81	pci\ven_10de&dev_1281	Section008	NVIDIA GeForce GT 710
+NVIDIA_368.81	pci\ven_10de&dev_1286	Section008	NVIDIA GeForce GT 720
+NVIDIA_368.81	pci\ven_10de&dev_12b9	Section012	NVIDIA Quadro K610M
+NVIDIA_368.81	pci\ven_10de&dev_134e	Section014	NVIDIA GeForce 930MX
+NVIDIA_368.81	pci\ven_10de&dev_1380	Section018	NVIDIA GeForce GTX 750 Ti
+NVIDIA_368.81	pci\ven_10de&dev_1381	Section018	NVIDIA GeForce GTX 750
+NVIDIA_368.81	pci\ven_10de&dev_1382	Section008	NVIDIA GeForce GTX 745
+NVIDIA_368.81	pci\ven_10de&dev_13b9	Section012	NVIDIA NVS 810
+NVIDIA_368.81	pci\ven_10de&dev_13ba	Section012	NVIDIA Quadro K2200
+NVIDIA_368.81	pci\ven_10de&dev_13bb	Section012	NVIDIA Quadro K620
+NVIDIA_368.81	pci\ven_10de&dev_13bc	Section012	NVIDIA Quadro K1200
+NVIDIA_368.81	pci\ven_10de&dev_1401	Section008	NVIDIA GeForce GTX 960
+NVIDIA_368.81	pci\ven_10de&dev_1402	Section008	NVIDIA GeForce GTX 950
+NVIDIA_368.81	pci\ven_10de&dev_1430	Section012	NVIDIA Quadro M2000
+NVIDIA_368.81	display\nvmultiview	Section020	NVIDIA MultiView
+NVIDIA_368.81	rows	112
+Forceware_382.69	pci\ven_10de&dev_06c0	Section001	NVIDIA GeForce GTX 480
+Forceware_382.69	pci\ven_10de&dev_06c4	Section002	NVIDIA GeForce GTX 465
+Forceware_382.69	pci\ven_10de&dev_06cd	Section001	NVIDIA GeForce GTX 470
+Forceware_382.69	pci\ven_10de&dev_06d1	Section003	NVIDIA Tesla C2050 / C2070
+Forceware_382.69	pci\ven_10de&dev_06d1&subsys_077110de	Section003	NVIDIA Tesla C2050
+Forceware_382.69	pci\ven_10de&dev_06d1&subsys_077210de	Section003	NVIDIA Tesla C2070
+Forceware_382.69	pci\ven_10de&dev_06d2	Section003	NVIDIA Tesla M2070
+Forceware_382.69	pci\ven_10de&dev_06d2&subsys_088f10de	Section003	NVIDIA Tesla X2070
+Forceware_382.69	pci\ven_10de&dev_06d8	Section004	NVIDIA Quadro 6000
+Forceware_382.69	pci\ven_10de&dev_06d9	Section004	NVIDIA Quadro 5000
+Forceware_382.69	pci\ven_10de&dev_06dd	Section004	NVIDIA Quadro 4000
+Forceware_382.69	pci\ven_10de&dev_06de	Section006	NVIDIA Tesla T20 Processor
+Forceware_382.69	pci\ven_10de&dev_06de&subsys_077310de	Section006	NVIDIA Tesla S2050
+Forceware_382.69	pci\ven_10de&dev_06de&subsys_082f10de	Section006	NVIDIA Tesla M2050
+Forceware_382.69	pci\ven_10de&dev_06df	Section006	NVIDIA Tesla M2070-Q
+Forceware_382.69	pci\ven_10de&dev_0dc0	Section001	NVIDIA GeForce GT 440
+Forceware_382.69	pci\ven_10de&dev_0dc4	Section001	NVIDIA GeForce GTS 450
+Forceware_382.69	pci\ven_10de&dev_0dd8	Section005	NVIDIA Quadro 2000
+Forceware_382.69	pci\ven_10de&dev_0dd8&subsys_091410de	Section005	NVIDIA Quadro 2000D
+Forceware_382.69	pci\ven_10de&dev_0de1	Section001	NVIDIA GeForce GT 430
+Forceware_382.69	pci\ven_10de&dev_0de2	Section002	NVIDIA GeForce GT 420
+Forceware_382.69	pci\ven_10de&dev_0de4	Section002	NVIDIA GeForce GT 520
+Forceware_382.69	pci\ven_10de&dev_0de5	Section002	NVIDIA GeForce GT 530
+Forceware_382.69	pci\ven_10de&dev_0de7	Section002	NVIDIA GeForce GT 610
+Forceware_382.69	pci\ven_10de&dev_0df8	Section005	NVIDIA Quadro 600
+Forceware_382.69	pci\ven_10de&dev_0e22	Section001	NVIDIA GeForce GTX 460
+Forceware_382.69	pci\ven_10de&dev_0e23	Section001	NVIDIA GeForce GTX 460 SE
+Forceware_382.69	pci\ven_10de&dev_0f00	Section002	NVIDIA GeForce GT 630
+Forceware_382.69	pci\ven_10de&dev_0f01	Section002	NVIDIA GeForce GT 620
+Forceware_382.69	pci\ven_10de&dev_0f02	Section002	NVIDIA GeForce GT 730
+Forceware_382.69	pci\ven_10de&dev_0fc0	Section008	NVIDIA GeForce GT 640
+Forceware_382.69	pci\ven_10de&dev_0fc6	Section008	NVIDIA GeForce GTX 650
+Forceware_382.69	pci\ven_10de&dev_0fc8	Section008	NVIDIA GeForce GT 740
+Forceware_382.69	pci\ven_10de&dev_0fef	Section010	NVIDIA GRID K340
+Forceware_382.69	pci\ven_10de&dev_0ff2	Section011	NVIDIA GRID K1
+Forceware_382.69	pci\ven_10de&dev_0ff3	Section012	NVIDIA Quadro K420
+Forceware_382.69	pci\ven_10de&dev_0ff9	Section012	NVIDIA Quadro K2000D
+Forceware_382.69	pci\ven_10de&dev_0ffa	Section012	NVIDIA Quadro K600
+Forceware_382.69	pci\ven_10de&dev_0ffd	Section009	NVIDIA NVS 510
+Forceware_382.69	pci\ven_10de&dev_0ffe	Section012	NVIDIA Quadro K2000
+Forceware_382.69	pci\ven_10de&dev_0fff	Section012	NVIDIA Quadro 410
+Forceware_382.69	pci\ven_10de&dev_1004	Section008	NVIDIA GeForce GTX 780
+Forceware_382.69	pci\ven_10de&dev_1005	Section008	NVIDIA GeForce GTX TITAN
+Forceware_382.69	pci\ven_10de&dev_1008	Section008	NVIDIA GeForce GTX 780 Ti
+Forceware_382.69	pci\ven_10de&dev_100c	Section008	NVIDIA GeForce GTX TITAN Black
+Forceware_382.69	pci\ven_10de&dev_103a	Section012	NVIDIA Quadro K6000
+Forceware_382.69	pci\ven_10de&dev_103c	Section012	NVIDIA Quadro K5200
+Forceware_382.69	pci\ven_10de&dev_1042	Section002	NVIDIA GeForce 510
+Forceware_382.69	pci\ven_10de&dev_1048	Section002	NVIDIA GeForce 605
+Forceware_382.69	pci\ven_10de&dev_104b	Section002	NVIDIA GeForce GT 625 (OEM)
+Forceware_382.69	pci\ven_10de&dev_104c	Section002	NVIDIA GeForce GT 705
+Forceware_382.69	pci\ven_10de&dev_107c	Section007	NVIDIA NVS 315
+Forceware_382.69	pci\ven_10de&dev_107d	Section007	NVIDIA NVS 310
+Forceware_382.69	pci\ven_10de&dev_1080	Section015	NVIDIA GeForce GTX 580
+Forceware_382.69	pci\ven_10de&dev_1081	Section015	NVIDIA GeForce GTX 570
+Forceware_382.69	pci\ven_10de&dev_1082	Section002	NVIDIA GeForce GTX 560 Ti
+Forceware_382.69	pci\ven_10de&dev_1084	Section002	NVIDIA GeForce GTX 560
+Forceware_382.69	pci\ven_10de&dev_1088	Section016	NVIDIA GeForce GTX 590
+Forceware_382.69	pci\ven_10de&dev_1091	Section003	NVIDIA Tesla M2090
+Forceware_382.69	pci\ven_10de&dev_1091&subsys_088e10de	Section003	NVIDIA Tesla X2090
+Forceware_382.69	pci\ven_10de&dev_1094	Section003	NVIDIA Tesla M2075
+Forceware_382.69	pci\ven_10de&dev_1096	Section003	NVIDIA Tesla C2075
+Forceware_382.69	pci\ven_10de&dev_109b	Section004	NVIDIA Quadro 7000
+Forceware_382.69	pci\ven_10de&dev_1180	Section008	NVIDIA GeForce GTX 680
+Forceware_382.69	pci\ven_10de&dev_1183	Section008	NVIDIA GeForce GTX 660 Ti
+Forceware_382.69	pci\ven_10de&dev_1184	Section008	NVIDIA GeForce GTX 770
+Forceware_382.69	pci\ven_10de&dev_1185	Section008	NVIDIA GeForce GTX 660
+Forceware_382.69	pci\ven_10de&dev_1187	Section008	NVIDIA GeForce GTX 760
+Forceware_382.69	pci\ven_10de&dev_1189	Section008	NVIDIA GeForce GTX 670
+Forceware_382.69	pci\ven_10de&dev_118a	Section010	NVIDIA GRID K520
+Forceware_382.69	pci\ven_10de&dev_118e	Section008	NVIDIA GeForce GTX 760 (192-bit)
+Forceware_382.69	pci\ven_10de&dev_118f	Section013	NVIDIA Tesla K10
+Forceware_382.69	pci\ven_10de&dev_1193	Section008	NVIDIA GeForce GTX 760 Ti OEM
+Forceware_382.69	pci\ven_10de&dev_1194	Section013	NVIDIA Tesla K8
+Forceware_382.69	pci\ven_10de&dev_11b4	Section012	NVIDIA Quadro K4200
+Forceware_382.69	pci\ven_10de&dev_11ba	Section012	NVIDIA Quadro K5000
+Forceware_382.69	pci\ven_10de&dev_11bf	Section011	NVIDIA GRID K2
+Forceware_382.69	pci\ven_10de&dev_11c2	Section008	NVIDIA GeForce GTX 650 Ti BOOST
+Forceware_382.69	pci\ven_10de&dev_11c3	Section008	NVIDIA GeForce GTX 650 Ti
+Forceware_382.69	pci\ven_10de&dev_11c4	Section008	NVIDIA GeForce GTX 645
+Forceware_382.69	pci\ven_10de&dev_11fa	Section012	NVIDIA Quadro K4000
+Forceware_382.69	pci\ven_10de&dev_1205	Section002	NVIDIA GeForce GTX 460 v2
+Forceware_382.69	pci\ven_10de&dev_1206	Section002	NVIDIA GeForce  GTX 555
+Forceware_382.69	pci\ven_10de&dev_1207	Section002	NVIDIA GeForce GT 645
+Forceware_382.69	pci\ven_10de&dev_1208	Section002	NVIDIA GeForce GTX 560 SE
+Forceware_382.69	pci\ven_10de&dev_1241	Section002	NVIDIA GeForce GT 545
+Forceware_382.69	pci\ven_10de&dev_1244	Section002	NVIDIA GeForce GTX 550 Ti
+Forceware_382.69	pci\ven_10de&dev_1280	Section008	NVIDIA GeForce GT 635
+Forceware_382.69	pci\ven_10de&dev_1281	Section008	NVIDIA GeForce GT 710
+Forceware_382.69	pci\ven_10de&dev_1286	Section008	NVIDIA GeForce GT 720
+Forceware_382.69	pci\ven_10de&dev_1380	Section018	NVIDIA GeForce GTX 750 Ti
+Forceware_382.69	pci\ven_10de&dev_1381	Section018	NVIDIA GeForce GTX 750
+Forceware_382.69	pci\ven_10de&dev_1382	Section008	NVIDIA GeForce GTX 745
+Forceware_382.69	pci\ven_10de&dev_13b9	Section012	NVS 810
+Forceware_382.69	pci\ven_10de&dev_13ba	Section012	Quadro K2200
+Forceware_382.69	pci\ven_10de&dev_13bb	Section012	Quadro K620
+Forceware_382.69	pci\ven_10de&dev_13bc	Section012	Quadro K1200
+Forceware_382.69	pci\ven_10de&dev_13c0	Section021	NVIDIA GeForce GTX 980
+Forceware_382.69	pci\ven_10de&dev_13c2	Section021	NVIDIA GeForce GTX 970
+Forceware_382.69	pci\ven_10de&dev_13f0	Section012	Quadro M5000
+Forceware_382.69	pci\ven_10de&dev_13f1	Section012	Quadro M4000
+Forceware_382.69	pci\ven_10de&dev_1401	Section008	NVIDIA GeForce GTX 960
+Forceware_382.69	pci\ven_10de&dev_1402	Section008	NVIDIA GeForce GTX 950
+Forceware_382.69	pci\ven_10de&dev_1430	Section012	Quadro M2000
+Forceware_382.69	pci\ven_10de&dev_17c2	Section021	NVIDIA GeForce GTX TITAN X
+Forceware_382.69	pci\ven_10de&dev_17c8	Section021	NVIDIA GeForce GTX 980 Ti
+Forceware_382.69	pci\ven_10de&dev_17f0	Section012	Quadro M6000
+Forceware_382.69	pci\ven_10de&dev_17f1	Section012	Quadro M6000 24GB
+Forceware_382.69	pci\ven_10de&dev_1b00	Section021	NVIDIA TITAN X (Pascal)
+Forceware_382.69	pci\ven_10de&dev_1b02	Section021	NVIDIA TITAN Xp
+Forceware_382.69	pci\ven_10de&dev_1b06	Section021	NVIDIA GeForce GTX 1080 Ti
+Forceware_382.69	pci\ven_10de&dev_1b30	Section012	Quadro P6000
+Forceware_382.69	pci\ven_10de&dev_1b80	Section021	NVIDIA GeForce GTX 1080
+Forceware_382.69	pci\ven_10de&dev_1b81	Section021	NVIDIA GeForce GTX 1070
+Forceware_382.69	pci\ven_10de&dev_1b82	Section021	NVIDIA GeForce GTX 1070 Ti
+Forceware_382.69	pci\ven_10de&dev_1b83	Section021	NVIDIA GeForce GTX 1060 6GB
+Forceware_382.69	pci\ven_10de&dev_1b84	Section021	NVIDIA GeForce GTX 1060 3GB
+Forceware_382.69	pci\ven_10de&dev_1bb0	Section012	Quadro P5000
+Forceware_382.69	pci\ven_10de&dev_1bb1	Section012	Quadro P4000
+Forceware_382.69	pci\ven_10de&dev_1c04	Section021	NVIDIA GeForce GTX 1060 5GB
+Forceware_382.69	pci\ven_10de&dev_1c30	Section012	Quadro P2000
+Forceware_382.69	pci\ven_10de&dev_1c31	Section012	Quadro P2200
+Forceware_382.69	pci\ven_10de&dev_1c81	Section021	NVIDIA GeForce GTX 1050
+Forceware_382.69	pci\ven_10de&dev_1c82	Section021	NVIDIA GeForce GTX 1050 Ti
+Forceware_382.69	pci\ven_10de&dev_1d01	Section021	NVIDIA GeForce GT 1030
+Forceware_382.69	pci\ven_10de&dev_1cb1	Section012	Quadro P1000
+Forceware_382.69	pci\ven_10de&dev_1cb2	Section012	Quadro P600
+Forceware_382.69	pci\ven_10de&dev_1cb3	Section012	Quadro P400
+Forceware_382.69	pci\ven_10de&dev_1cb6	Section012	Quadro P620
+Forceware_382.69	pci\ven_10de&dev_0df9	Section005	NVIDIA Quadro 500M
+Forceware_382.69	pci\ven_10de&dev_0dfa	Section005	NVIDIA Quadro 1000M
+Forceware_382.69	pci\ven_10de&dev_0e3a	Section005	NVIDIA Quadro 3000M
+Forceware_382.69	pci\ven_10de&dev_0e3b	Section005	NVIDIA Quadro 4000M
+Forceware_382.69	pci\ven_10de&dev_11b6	Section012	NVIDIA Quadro K3100M
+Forceware_382.69	pci\ven_10de&dev_11bc	Section012	NVIDIA Quadro K5000M
+Forceware_382.69	pci\ven_10de&dev_11bd	Section012	NVIDIA Quadro K4000M
+Forceware_382.69	pci\ven_10de&dev_11be	Section012	NVIDIA Quadro K3000M
+Forceware_382.69	pci\ven_10de&dev_11fc	Section012	NVIDIA Quadro K2100M
+Forceware_382.69	pci\ven_10de&dev_12b9	Section012	NVIDIA Quadro K610M
+Forceware_382.69	pci\ven_10de&dev_134e	Section014	NVIDIA GeForce 930MX
+Forceware_382.69	display\nvmultiview	Section020	NVIDIA MultiView
+Forceware_382.69	rows	141

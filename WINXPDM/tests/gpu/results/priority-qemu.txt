@@ -1,0 +1,4424 @@
+WXP Linux 6.12.107+deb13-amd64
+WXP Forceware gp107 exit=0
+PASS: compiled i386 policy, 49152 bitmap/cap cases and 9600000 depth/clock cases, overflow and ABI checks
+WXP Forceware dp-trained exit=0
+WXP Forceware dp-startup exit=0
+WXP Forceware hdmi-recovery exit=0
+WARNING: radv is not a conformant Vulkan implementation, testing use only.
+ac_compute_device_uuid's output is based on invalid pci bus info.
+Target=GFX1200 Driver=Null hardware (RADV GFX1200) Vendor=0x1002
+Executable=vertex Stages=0x1 Representation=Assembly
+BB0:
+	s_setprio 3                                                 ; bfb50003
+	s_pack_ll_b32_b16 s2, 0, s3                                 ; 99020380
+	s_delay_alu instid0(SALU_CYCLE_1)                           ; bf870009
+	s_bfe_u64 exec, -1, s2                                      ; 947e02c1
+	s_cbranch_execz BB6                                         ; bfa50014
+BB1:
+	s_mov_b32 s2, s9                                            ; be820009
+	s_movk_i32 s9, 0x8000                                       ; b0098000
+	s_load_b128 s[8:11], s[8:9], 0x0                            ; f4004204 f8000000
+	v_add_nc_u32_e32 v3, s2, v3                                 ; 4a060602
+	s_wait_kmcnt 0x0                                            ; bfc70000
+	s_clause 0x2                                                ; bf850002
+	buffer_load_b128 v[4:7], v3, s[8:11], null idxen offset:12  ; c405c07c 80801004 00000c03
+	buffer_load_b64 v[8:9], v3, s[8:11], null idxen offset:28   ; c405407c 80801008 00001c03
+	buffer_load_b96 v[1:3], v3, s[8:11], null idxen             ; c405807c 80801001 00000003
+	v_mov_b32_e32 v10, 1.0                                      ; 7e1402f2
+	s_wait_loadcnt 0x0                                          ; bfc00000
+	export pos0 v1, v2, v3, v10 done                            ; f80008cf 0a030201
+BB6:
+	s_lshl_b32 s2, s3, 8                                        ; 84028803
+	s_wait_expcnt 0x0                                           ; bfc40000
+	s_wait_alu 0xfffe                                           ; bf88fffe
+	s_bfe_u64 exec, -1, s2                                      ; 947e02c1
+	s_cbranch_execz BB12                                        ; bfa50002
+BB7:
+	export prim v0, off, off, off done                          ; f8000941 80808000
+BB12:
+	s_load_b128 s[8:11], s[0:1], 0xa0                           ; f4004200 f80000a0
+	s_add_co_u32 s0, s3, 7                                      ; 80008703
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_and_b32 s0, s0, -8                                        ; 8b00c800
+	s_pack_ll_b32_b16 s0, 0, s0                                 ; 99000080
+	s_wait_expcnt 0x0                                           ; bfc40000
+	s_delay_alu instid0(SALU_CYCLE_1)                           ; bf870009
+	s_bfe_u64 exec, -1, s0                                      ; 947e00c1
+	s_cbranch_execz BB18                                        ; bfa50017
+BB13:
+	s_bfe_u32 s3, s3, 0x40018                                   ; 9303ff03 00040018
+	s_wait_alu 0xfffe                                           ; bf88fffe
+	s_lshl_b32 s3, s3, 6                                        ; 84038603
+	s_wait_alu 0xfffe                                           ; bf88fffe
+	v_mbcnt_lo_u32_b32 v0, -1, s3                               ; d71f0000 000006c1
+	s_delay_alu instid0(VALU_DEP_1) | instskip(SKIP_3) | instid1(SALU_CYCLE_1) ; bf8704c1
+	v_mbcnt_hi_u32_b32 v0, -1, v0                               ; d7200000 000200c1
+	s_wait_kmcnt 0x0                                            ; bfc70000
+	s_or_b32 s9, s9, 0x200000                                   ; 8c09ff09 00200000
+	s_and_b32 s5, s5, 0x7fff                                    ; 8b05ff05 00007fff
+	s_lshl_b32 s5, s5, 9                                        ; 84058905
+	s_clause 0x1                                                ; bf850001
+	buffer_store_b128 v[4:7], v0, s[8:11], s5 idxen scope:SCOPE_DEV ; c4074005 80881004 00000000
+	buffer_store_b128 v[8:11], v0, s[8:11], s5 idxen offset:16 scope:SCOPE_DEV ; c4074005 80881008 00001000
+BB18:
+	s_nop 0                                                     ; bf800000
+	s_sendmsg sendmsg(MSG_DEALLOC_VGPRS)                        ; bfb60003
+	s_endpgm                                                    ; bfb00000
+
+Executable=fragment Stages=0x10 Representation=Assembly
+BB0:
+	s_mov_b32 s4, s3                                            ; be840003
+	s_movk_i32 s3, 0x8000                                       ; b0038000
+	s_clause 0x1                                                ; bf850001
+	s_load_b256 s[8:15], s[2:3], 0x0                            ; f4006201 f8000000
+	s_load_b128 s[16:19], s[2:3], 0x50                          ; f4004401 f8000050
+	s_mov_b64 s[0:1], exec                                      ; be80017e
+	s_wqm_b64 exec, exec                                        ; befe1d7e
+	s_mov_b32 m0, s4                                            ; befd0004
+	ds_param_load v2, attr1.y wait_va_vdst:15 wait_vm_vsrc:1    ; ce8f0502
+	ds_param_load v3, attr1.x wait_va_vdst:15 wait_vm_vsrc:1    ; ce8f0403
+	v_interp_p10_f32 v4, v2, v0, v2 wait_exp:1                  ; cd000104 040a0102
+	v_interp_p10_f32 v5, v3, v0, v3 wait_exp:0                  ; cd000005 040e0103
+	s_delay_alu instid0(VALU_DEP_2)                             ; bf870002
+	v_interp_p2_f32 v2, v2, v1, v4 wait_exp:7                   ; cd010702 04120302
+	v_interp_p2_f32 v3, v3, v1, v5 wait_exp:7                   ; cd010703 04160303
+	s_wait_kmcnt 0x0                                            ; bfc70000
+	image_sample v[4:7], [v3, v2], s[8:15], s[16:19] dmask:0xf dim:SQ_RSRC_IMG_2D ; e7c6c001 08001004 00000203
+	ds_param_load v8, attr0.w wait_va_vdst:15 wait_vm_vsrc:1    ; ce8f0308
+	v_interp_p10_f32 v9, v8, v0, v8 wait_exp:0                  ; cd000009 04220108
+	s_delay_alu instid0(VALU_DEP_1) | instskip(SKIP_1) | instid1(VALU_DEP_1) ; bf8700a1
+	v_interp_p2_f32 v8, v8, v1, v9 wait_exp:7                   ; cd010708 04260308
+	s_wait_samplecnt 0x0                                        ; bfc20000
+	v_mul_f32_e32 v7, v7, v8                                    ; 100e1107
+	s_delay_alu instid0(VALU_DEP_1) | instskip(SKIP_1) | instid1(SALU_CYCLE_1) ; bf8704a1
+	v_cmp_gt_f32_e32 vcc, 0x3e800000, v7                        ; 7c280eff 3e800000
+	s_and_not1_b64 s[0:1], s[0:1], vcc                          ; 91806a00
+	s_wqm_b64 exec, s[0:1]                                      ; befe1d00
+	s_cbranch_execz BB1                                         ; bfa5001d
+	ds_param_load v10, attr0.x wait_va_vdst:15 wait_vm_vsrc:1   ; ce8f000a
+	ds_param_load v11, attr0.y wait_va_vdst:15 wait_vm_vsrc:1   ; ce8f010b
+	ds_param_load v12, attr0.z wait_va_vdst:15 wait_vm_vsrc:1   ; ce8f020c
+	v_interp_p10_f32 v13, v10, v0, v10 wait_exp:2               ; cd00020d 042a010a
+	v_interp_p10_f32 v15, v11, v0, v11 wait_exp:1               ; cd00010f 042e010b
+	v_interp_p10_f32 v0, v12, v0, v12 wait_exp:0                ; cd000000 0432010c
+	s_delay_alu instid0(VALU_DEP_3) | instskip(SKIP_2) | instid1(VALU_DEP_3) ; bf8701b3
+	v_interp_p2_f32 v10, v10, v1, v13 wait_exp:7                ; cd01070a 0436030a
+	v_interp_p2_f32 v11, v11, v1, v15 wait_exp:7                ; cd01070b 043e030b
+	v_interp_p2_f32 v12, v12, v1, v0 wait_exp:7                 ; cd01070c 0402030c
+	v_fma_mixlo_f16 v14, v4, v10, neg(0) op_sel_hi:[0,0,1]      ; cc21400e 82021504
+	v_fma_mixhi_f16 v14, v5, v11, neg(0) op_sel_hi:[0,0,1]      ; cc22400e 82021705
+	v_mul_f32_e32 v6, v6, v12                                   ; 100c1906
+	s_delay_alu instid0(VALU_DEP_1)                             ; bf870001
+	v_cvt_pk_rtz_f16_f32_e32 v6, v6, v7                         ; 5e0c0f06
+	s_mov_b64 exec, s[0:1]                                      ; befe0100
+	export mrt0 v14, v6, off, off done                          ; f8000803 8080060e
+	s_nop 0                                                     ; bf800000
+	s_sendmsg sendmsg(MSG_DEALLOC_VGPRS)                        ; bfb60003
+	s_endpgm                                                    ; bfb00000
+BB1:
+	export mrt0 off, off, off, off done                         ; f8000800 80808080
+	s_nop 0                                                     ; bf800000
+	s_sendmsg sendmsg(MSG_DEALLOC_VGPRS)                        ; bfb60003
+	s_endpgm                                                    ; bfb00000
+
+WXP RADV GFX1200 exit=0
+WARNING: radv is not a conformant Vulkan implementation, testing use only.
+ac_compute_device_uuid's output is based on invalid pci bus info.
+Target=GFX1201 Driver=Null hardware (RADV GFX1201) Vendor=0x1002
+Executable=vertex Stages=0x1 Representation=Assembly
+BB0:
+	s_setprio 3                                                 ; bfb50003
+	s_pack_ll_b32_b16 s2, 0, s3                                 ; 99020380
+	s_delay_alu instid0(SALU_CYCLE_1)                           ; bf870009
+	s_bfe_u64 exec, -1, s2                                      ; 947e02c1
+	s_cbranch_execz BB6                                         ; bfa50014
+BB1:
+	s_mov_b32 s2, s9                                            ; be820009
+	s_movk_i32 s9, 0x8000                                       ; b0098000
+	s_load_b128 s[8:11], s[8:9], 0x0                            ; f4004204 f8000000
+	v_add_nc_u32_e32 v3, s2, v3                                 ; 4a060602
+	s_wait_kmcnt 0x0                                            ; bfc70000
+	s_clause 0x2                                                ; bf850002
+	buffer_load_b128 v[4:7], v3, s[8:11], null idxen offset:12  ; c405c07c 80801004 00000c03
+	buffer_load_b64 v[8:9], v3, s[8:11], null idxen offset:28   ; c405407c 80801008 00001c03
+	buffer_load_b96 v[1:3], v3, s[8:11], null idxen             ; c405807c 80801001 00000003
+	v_mov_b32_e32 v10, 1.0                                      ; 7e1402f2
+	s_wait_loadcnt 0x0                                          ; bfc00000
+	export pos0 v1, v2, v3, v10 done                            ; f80008cf 0a030201
+BB6:
+	s_lshl_b32 s2, s3, 8                                        ; 84028803
+	s_wait_expcnt 0x0                                           ; bfc40000
+	s_wait_alu 0xfffe                                           ; bf88fffe
+	s_bfe_u64 exec, -1, s2                                      ; 947e02c1
+	s_cbranch_execz BB12                                        ; bfa50002
+BB7:
+	export prim v0, off, off, off done                          ; f8000941 80808000
+BB12:
+	s_load_b128 s[8:11], s[0:1], 0xa0                           ; f4004200 f80000a0
+	s_add_co_u32 s0, s3, 7                                      ; 80008703
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_and_b32 s0, s0, -8                                        ; 8b00c800
+	s_pack_ll_b32_b16 s0, 0, s0                                 ; 99000080
+	s_wait_expcnt 0x0                                           ; bfc40000
+	s_delay_alu instid0(SALU_CYCLE_1)                           ; bf870009
+	s_bfe_u64 exec, -1, s0                                      ; 947e00c1
+	s_cbranch_execz BB18                                        ; bfa50017
+BB13:
+	s_bfe_u32 s3, s3, 0x40018                                   ; 9303ff03 00040018
+	s_wait_alu 0xfffe                                           ; bf88fffe
+	s_lshl_b32 s3, s3, 6                                        ; 84038603
+	s_wait_alu 0xfffe                                           ; bf88fffe
+	v_mbcnt_lo_u32_b32 v0, -1, s3                               ; d71f0000 000006c1
+	s_delay_alu instid0(VALU_DEP_1) | instskip(SKIP_3) | instid1(SALU_CYCLE_1) ; bf8704c1
+	v_mbcnt_hi_u32_b32 v0, -1, v0                               ; d7200000 000200c1
+	s_wait_kmcnt 0x0                                            ; bfc70000
+	s_or_b32 s9, s9, 0x200000                                   ; 8c09ff09 00200000
+	s_and_b32 s5, s5, 0x7fff                                    ; 8b05ff05 00007fff
+	s_lshl_b32 s5, s5, 9                                        ; 84058905
+	s_clause 0x1                                                ; bf850001
+	buffer_store_b128 v[4:7], v0, s[8:11], s5 idxen scope:SCOPE_DEV ; c4074005 80881004 00000000
+	buffer_store_b128 v[8:11], v0, s[8:11], s5 idxen offset:16 scope:SCOPE_DEV ; c4074005 80881008 00001000
+BB18:
+	s_nop 0                                                     ; bf800000
+	s_sendmsg sendmsg(MSG_DEALLOC_VGPRS)                        ; bfb60003
+	s_endpgm                                                    ; bfb00000
+
+Executable=fragment Stages=0x10 Representation=Assembly
+BB0:
+	s_mov_b32 s4, s3                                            ; be840003
+	s_movk_i32 s3, 0x8000                                       ; b0038000
+	s_clause 0x1                                                ; bf850001
+	s_load_b256 s[8:15], s[2:3], 0x0                            ; f4006201 f8000000
+	s_load_b128 s[16:19], s[2:3], 0x50                          ; f4004401 f8000050
+	s_mov_b64 s[0:1], exec                                      ; be80017e
+	s_wqm_b64 exec, exec                                        ; befe1d7e
+	s_mov_b32 m0, s4                                            ; befd0004
+	ds_param_load v2, attr1.y wait_va_vdst:15 wait_vm_vsrc:1    ; ce8f0502
+	ds_param_load v3, attr1.x wait_va_vdst:15 wait_vm_vsrc:1    ; ce8f0403
+	v_interp_p10_f32 v4, v2, v0, v2 wait_exp:1                  ; cd000104 040a0102
+	v_interp_p10_f32 v5, v3, v0, v3 wait_exp:0                  ; cd000005 040e0103
+	s_delay_alu instid0(VALU_DEP_2)                             ; bf870002
+	v_interp_p2_f32 v2, v2, v1, v4 wait_exp:7                   ; cd010702 04120302
+	v_interp_p2_f32 v3, v3, v1, v5 wait_exp:7                   ; cd010703 04160303
+	s_wait_kmcnt 0x0                                            ; bfc70000
+	image_sample v[4:7], [v3, v2], s[8:15], s[16:19] dmask:0xf dim:SQ_RSRC_IMG_2D ; e7c6c001 08001004 00000203
+	ds_param_load v8, attr0.w wait_va_vdst:15 wait_vm_vsrc:1    ; ce8f0308
+	v_interp_p10_f32 v9, v8, v0, v8 wait_exp:0                  ; cd000009 04220108
+	s_delay_alu instid0(VALU_DEP_1) | instskip(SKIP_1) | instid1(VALU_DEP_1) ; bf8700a1
+	v_interp_p2_f32 v8, v8, v1, v9 wait_exp:7                   ; cd010708 04260308
+	s_wait_samplecnt 0x0                                        ; bfc20000
+	v_mul_f32_e32 v7, v7, v8                                    ; 100e1107
+	s_delay_alu instid0(VALU_DEP_1) | instskip(SKIP_1) | instid1(SALU_CYCLE_1) ; bf8704a1
+	v_cmp_gt_f32_e32 vcc, 0x3e800000, v7                        ; 7c280eff 3e800000
+	s_and_not1_b64 s[0:1], s[0:1], vcc                          ; 91806a00
+	s_wqm_b64 exec, s[0:1]                                      ; befe1d00
+	s_cbranch_execz BB1                                         ; bfa5001d
+	ds_param_load v10, attr0.x wait_va_vdst:15 wait_vm_vsrc:1   ; ce8f000a
+	ds_param_load v11, attr0.y wait_va_vdst:15 wait_vm_vsrc:1   ; ce8f010b
+	ds_param_load v12, attr0.z wait_va_vdst:15 wait_vm_vsrc:1   ; ce8f020c
+	v_interp_p10_f32 v13, v10, v0, v10 wait_exp:2               ; cd00020d 042a010a
+	v_interp_p10_f32 v15, v11, v0, v11 wait_exp:1               ; cd00010f 042e010b
+	v_interp_p10_f32 v0, v12, v0, v12 wait_exp:0                ; cd000000 0432010c
+	s_delay_alu instid0(VALU_DEP_3) | instskip(SKIP_2) | instid1(VALU_DEP_3) ; bf8701b3
+	v_interp_p2_f32 v10, v10, v1, v13 wait_exp:7                ; cd01070a 0436030a
+	v_interp_p2_f32 v11, v11, v1, v15 wait_exp:7                ; cd01070b 043e030b
+	v_interp_p2_f32 v12, v12, v1, v0 wait_exp:7                 ; cd01070c 0402030c
+	v_fma_mixlo_f16 v14, v4, v10, neg(0) op_sel_hi:[0,0,1]      ; cc21400e 82021504
+	v_fma_mixhi_f16 v14, v5, v11, neg(0) op_sel_hi:[0,0,1]      ; cc22400e 82021705
+	v_mul_f32_e32 v6, v6, v12                                   ; 100c1906
+	s_delay_alu instid0(VALU_DEP_1)                             ; bf870001
+	v_cvt_pk_rtz_f16_f32_e32 v6, v6, v7                         ; 5e0c0f06
+	s_mov_b64 exec, s[0:1]                                      ; befe0100
+	export mrt0 v14, v6, off, off done                          ; f8000803 8080060e
+	s_nop 0                                                     ; bf800000
+	s_sendmsg sendmsg(MSG_DEALLOC_VGPRS)                        ; bfb60003
+	s_endpgm                                                    ; bfb00000
+BB1:
+	export mrt0 off, off, off, off done                         ; f8000800 80808080
+	s_nop 0                                                     ; bf800000
+	s_sendmsg sendmsg(MSG_DEALLOC_VGPRS)                        ; bfb60003
+	s_endpgm                                                    ; bfb00000
+
+WXP RADV GFX1201 exit=0
+WXP Nouveau begin 117
+libEGL warning: invalid EGL_PLATFORM given
+shader: MESA_SHADER_TESS_CTRL
+name: tcp_empty
+internal: true
+next_stage: MESA_SHADER_VERTEX
+subgroup_size: 0
+divergence_analysis_run: true
+primitive_mode: 0
+tcs_vertices_out: 1
+spacing: 0
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:  // preds:, succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (8)
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+Nouveau chipset=117 renderer=NV117
+shader: MESA_SHADER_VERTEX
+source_blake3: {0x07ee96f8, 0xedaf6453, 0x6ddc4b49, 0x1fa4191e, 0x1fe8d3aa, 0xf7492634, 0xf4d782ec, 0x287093f8}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+inputs_read: 15-17
+outputs_written: 0,32-33
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+inputs: 3
+outputs: 3
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inPosition (VERT_ATTRIB_GENERIC0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inColor (VERT_ATTRIB_GENERIC1.xyzw, 1, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inUV (VERT_ATTRIB_GENERIC2.xyzw, 2, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 gl_Position (VARYING_SLOT_POS.xyzw, 0, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 color (VARYING_SLOT_VAR0.xyzw, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec2 uv (VARYING_SLOT_VAR1.xy, 2, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    con 32     %6 = load_const (0x3f800000 = 1.000000)
+    con 32    %12 = load_const (0x00000000)
+    div 32x4  %13 = @load_input (%12 (0x0)) (base=0, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC0 slots=1)  // inPosition
+    div 32x4   %7 = vec4 %13.x, %13.y, %13.z, %6 (0x3f800000)
+    div 32x4  %17 = @load_input (%12 (0x0)) (base=2, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC2 slots=1)  // inUV
+    div 32x2   %8 = vec2 %17.x, %17.y
+    div 32x4  %15 = @load_input (%12 (0x0)) (base=1, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC1 slots=1)  // inColor
+                    @store_output (%15, %12 (0x0)) (base=1, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_VAR0 slots=1, xfb(), xfb2())  // color
+                    @store_output (%8, %12 (0x0)) (base=2, range=1, wrmask=xy, component=0, src_type=float32, io location=VARYING_SLOT_VAR1 slots=1, xfb(), xfb2())  // uv
+                    @store_output (%7, %12 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_POS slots=1, xfb(), xfb2())  // gl_Position
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (8 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 { %r29 %r30 } a[0x80] (0)
+  1: vfetch u32 %r31 a[0x88] (0)
+  2: mov u32 %r33 0x3f800000 (0)
+  3: vfetch u64 { %r38 %r39 } a[0xa0] (0)
+  4: vfetch b128 { %r44 %r45 %r46 %r47 } a[0x90] (0)
+  5: export b128 # o[0x80] %r44 %r45 %r46 %r47 (0)
+  6: export u64 # o[0x90] %r38 %r39 (0)
+  7: export b128 # o[0x70] %r29 %r30 %r31 %r33 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  8: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (10 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 $r0d a[0x80] (8)
+  1: vfetch u32 $r10 a[0x88] (8)
+  2: vfetch u64 $r2d a[0xa0] (8)
+  3: vfetch b128 $r4q a[0x90] (8)
+  4: export b128 # o[0x80] $r4q (8)
+  5: export u64 # o[0x90] $r2d (8)
+  6: mov u32 $r8 $r0 (8)
+  7: mov u32 $r9 $r1 (8)
+  8: mov u32 $r11 0x3f800000 (8)
+  9: export b128 # o[0x70] $r8q (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 10: exit - # (8)
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+shader: MESA_SHADER_FRAGMENT
+source_blake3: {0x81173a3c, 0x933df3c9, 0xc8389669, 0xaf9c4451, 0x4a193336, 0x7ce5cd3d, 0x99307696, 0x9af0ed07}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+num_textures: 1
+inputs_read: 32-33
+outputs_written: 4
+system_values_read: 0x00000000'00000000'01000000'00000000
+textures_used: 0x00000000'00000000'00000000'00000001
+samplers_used: 0x00000001
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_float: 0x20
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+uses_discard: true
+needs_quad_helper_invocations: true
+inputs: 2
+outputs: 1
+decl_var uniform INTERP_MODE_NONE none sampler2D imageSampler (0, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec4 VARYING_SLOT_VAR0 (VARYING_SLOT_VAR0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec2 VARYING_SLOT_VAR1 (VARYING_SLOT_VAR1.xy, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 outColor (FRAG_RESULT_DATA0.xyzw, 0, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    div 32x2  %10 = @load_barycentric_pixel (interp_mode=INTERP_MODE_SMOOTH)
+    con 32     %9 = load_const (0x00000000)
+    div 32x2  %14 = @load_interpolated_input (%10, %9 (0x0)) (base=1, component=0, dest_type=float32, io location=VARYING_SLOT_VAR1 slots=1)  // VARYING_SLOT_VAR1
+    div 32x4   %5 = (float32)tex %14 (coord), 0 (texture), 0 (sampler)
+    div 32x4  %11 = @load_interpolated_input (%10, %9 (0x0)) (base=0, component=0, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)  // VARYING_SLOT_VAR0
+    div 32    %16 = fmul %5.x, %11.x
+    div 32    %17 = fmul %5.y, %11.y
+    div 32    %18 = fmul %5.z, %11.z
+    div 32    %19 = fmul %5.w, %11.w
+    div 32x4  %20 = vec4 %16, %17, %18, %19
+    con 32     %4 = load_const (0x3e800000 = 0.250000)
+    div 32     %7 = flt32 %19, %4 (0.250000)
+                    @demote_if (%7)
+                    @store_output (%20, %9 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=FRAG_RESULT_DATA0 slots=1, xfb(), xfb2())  // outColor
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (19 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 %r32 a[0x7c] (0)
+  1: rcp  f32 %r33 %r32 (0)
+  2: pinterp mul u32 %r35 a[0x90] %r33 (0)
+  3: pinterp mul u32 %r36 a[0x94] %r33 (0)
+  4: tex 2D $r8 $s0 rgba f32 { %r37 %r38 %r39 %r40 } %r35 %r36 (0)
+  5: pinterp mul u32 %r41 a[0x80] %r33 (0)
+  6: pinterp mul u32 %r42 a[0x84] %r33 (0)
+  7: pinterp mul u32 %r43 a[0x88] %r33 (0)
+  8: pinterp mul u32 %r44 a[0x8c] %r33 (0)
+  9: mul ftz f32 %r45 %r37 %r41 (0)
+ 10: mul ftz f32 %r46 %r38 %r42 (0)
+ 11: mul ftz f32 %r47 %r39 %r43 (0)
+ 12: mul ftz f32 %r48 %r40 %r44 (0)
+ 13: set ftz u8 %p55 lt f32 %r48 0.250000 (0)
+ 14: %p55 discard - # (0)
+ 15: mov (SUBOP:1) u32 $r0 %r45 (0)
+ 16: mov (SUBOP:1) u32 $r1 %r46 (0)
+ 17: mov (SUBOP:1) u32 $r2 %r47 (0)
+ 18: mov (SUBOP:1) u32 $r3 %r48 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 19: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (15 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 $r0 a[0x7c] (8)
+  1: rcp  f32 $r4 $r0 (8)
+  2: pinterp mul u32 $r0 a[0x90] $r4 (8)
+  3: pinterp mul u32 $r1 a[0x94] $r4 (8)
+  4: texs 2D $r8 $s0 rgba f32 { $r0d $r2d } $r0 $r1 (8)
+  5: pinterp mul u32 $r5 a[0x80] $r4 (8)
+  6: pinterp mul u32 $r6 a[0x84] $r4 (8)
+  7: pinterp mul u32 $r7 a[0x88] $r4 (8)
+  8: pinterp mul u32 $r4 a[0x8c] $r4 (8)
+  9: mul ftz f32 $r0 $r0 $r5 (8)
+ 10: mul ftz f32 $r1 $r1 $r6 (8)
+ 11: mul ftz f32 $r2 $r2 $r7 (8)
+ 12: mul ftz f32 $r3 $r3 $r4 (8)
+ 13: set ftz u8 $p0 lt f32 $r3 0.250000 (8)
+ 14: $p0 discard - # (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 15: exit - # (8)
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+Program linked, validation draw GL error=0x0
+WXP Nouveau 117 exit=0
+WXP Nouveau begin 118
+libEGL warning: invalid EGL_PLATFORM given
+shader: MESA_SHADER_TESS_CTRL
+name: tcp_empty
+internal: true
+next_stage: MESA_SHADER_VERTEX
+subgroup_size: 0
+divergence_analysis_run: true
+primitive_mode: 0
+tcs_vertices_out: 1
+spacing: 0
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:  // preds:, succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (8)
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+Nouveau chipset=118 renderer=NV118
+shader: MESA_SHADER_VERTEX
+source_blake3: {0x07ee96f8, 0xedaf6453, 0x6ddc4b49, 0x1fa4191e, 0x1fe8d3aa, 0xf7492634, 0xf4d782ec, 0x287093f8}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+inputs_read: 15-17
+outputs_written: 0,32-33
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+inputs: 3
+outputs: 3
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inPosition (VERT_ATTRIB_GENERIC0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inColor (VERT_ATTRIB_GENERIC1.xyzw, 1, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inUV (VERT_ATTRIB_GENERIC2.xyzw, 2, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 gl_Position (VARYING_SLOT_POS.xyzw, 0, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 color (VARYING_SLOT_VAR0.xyzw, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec2 uv (VARYING_SLOT_VAR1.xy, 2, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    con 32     %6 = load_const (0x3f800000 = 1.000000)
+    con 32    %12 = load_const (0x00000000)
+    div 32x4  %13 = @load_input (%12 (0x0)) (base=0, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC0 slots=1)  // inPosition
+    div 32x4   %7 = vec4 %13.x, %13.y, %13.z, %6 (0x3f800000)
+    div 32x4  %17 = @load_input (%12 (0x0)) (base=2, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC2 slots=1)  // inUV
+    div 32x2   %8 = vec2 %17.x, %17.y
+    div 32x4  %15 = @load_input (%12 (0x0)) (base=1, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC1 slots=1)  // inColor
+                    @store_output (%15, %12 (0x0)) (base=1, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_VAR0 slots=1, xfb(), xfb2())  // color
+                    @store_output (%8, %12 (0x0)) (base=2, range=1, wrmask=xy, component=0, src_type=float32, io location=VARYING_SLOT_VAR1 slots=1, xfb(), xfb2())  // uv
+                    @store_output (%7, %12 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_POS slots=1, xfb(), xfb2())  // gl_Position
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (8 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 { %r29 %r30 } a[0x80] (0)
+  1: vfetch u32 %r31 a[0x88] (0)
+  2: mov u32 %r33 0x3f800000 (0)
+  3: vfetch u64 { %r38 %r39 } a[0xa0] (0)
+  4: vfetch b128 { %r44 %r45 %r46 %r47 } a[0x90] (0)
+  5: export b128 # o[0x80] %r44 %r45 %r46 %r47 (0)
+  6: export u64 # o[0x90] %r38 %r39 (0)
+  7: export b128 # o[0x70] %r29 %r30 %r31 %r33 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  8: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (10 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 $r0d a[0x80] (8)
+  1: vfetch u32 $r10 a[0x88] (8)
+  2: vfetch u64 $r2d a[0xa0] (8)
+  3: vfetch b128 $r4q a[0x90] (8)
+  4: export b128 # o[0x80] $r4q (8)
+  5: export u64 # o[0x90] $r2d (8)
+  6: mov u32 $r8 $r0 (8)
+  7: mov u32 $r9 $r1 (8)
+  8: mov u32 $r11 0x3f800000 (8)
+  9: export b128 # o[0x70] $r8q (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 10: exit - # (8)
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+shader: MESA_SHADER_FRAGMENT
+source_blake3: {0x81173a3c, 0x933df3c9, 0xc8389669, 0xaf9c4451, 0x4a193336, 0x7ce5cd3d, 0x99307696, 0x9af0ed07}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+num_textures: 1
+inputs_read: 32-33
+outputs_written: 4
+system_values_read: 0x00000000'00000000'01000000'00000000
+textures_used: 0x00000000'00000000'00000000'00000001
+samplers_used: 0x00000001
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_float: 0x20
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+uses_discard: true
+needs_quad_helper_invocations: true
+inputs: 2
+outputs: 1
+decl_var uniform INTERP_MODE_NONE none sampler2D imageSampler (0, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec4 VARYING_SLOT_VAR0 (VARYING_SLOT_VAR0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec2 VARYING_SLOT_VAR1 (VARYING_SLOT_VAR1.xy, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 outColor (FRAG_RESULT_DATA0.xyzw, 0, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    div 32x2  %10 = @load_barycentric_pixel (interp_mode=INTERP_MODE_SMOOTH)
+    con 32     %9 = load_const (0x00000000)
+    div 32x2  %14 = @load_interpolated_input (%10, %9 (0x0)) (base=1, component=0, dest_type=float32, io location=VARYING_SLOT_VAR1 slots=1)  // VARYING_SLOT_VAR1
+    div 32x4   %5 = (float32)tex %14 (coord), 0 (texture), 0 (sampler)
+    div 32x4  %11 = @load_interpolated_input (%10, %9 (0x0)) (base=0, component=0, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)  // VARYING_SLOT_VAR0
+    div 32    %16 = fmul %5.x, %11.x
+    div 32    %17 = fmul %5.y, %11.y
+    div 32    %18 = fmul %5.z, %11.z
+    div 32    %19 = fmul %5.w, %11.w
+    div 32x4  %20 = vec4 %16, %17, %18, %19
+    con 32     %4 = load_const (0x3e800000 = 0.250000)
+    div 32     %7 = flt32 %19, %4 (0.250000)
+                    @demote_if (%7)
+                    @store_output (%20, %9 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=FRAG_RESULT_DATA0 slots=1, xfb(), xfb2())  // outColor
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (19 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 %r32 a[0x7c] (0)
+  1: rcp  f32 %r33 %r32 (0)
+  2: pinterp mul u32 %r35 a[0x90] %r33 (0)
+  3: pinterp mul u32 %r36 a[0x94] %r33 (0)
+  4: tex 2D $r8 $s0 rgba f32 { %r37 %r38 %r39 %r40 } %r35 %r36 (0)
+  5: pinterp mul u32 %r41 a[0x80] %r33 (0)
+  6: pinterp mul u32 %r42 a[0x84] %r33 (0)
+  7: pinterp mul u32 %r43 a[0x88] %r33 (0)
+  8: pinterp mul u32 %r44 a[0x8c] %r33 (0)
+  9: mul ftz f32 %r45 %r37 %r41 (0)
+ 10: mul ftz f32 %r46 %r38 %r42 (0)
+ 11: mul ftz f32 %r47 %r39 %r43 (0)
+ 12: mul ftz f32 %r48 %r40 %r44 (0)
+ 13: set ftz u8 %p55 lt f32 %r48 0.250000 (0)
+ 14: %p55 discard - # (0)
+ 15: mov (SUBOP:1) u32 $r0 %r45 (0)
+ 16: mov (SUBOP:1) u32 $r1 %r46 (0)
+ 17: mov (SUBOP:1) u32 $r2 %r47 (0)
+ 18: mov (SUBOP:1) u32 $r3 %r48 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 19: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (15 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 $r0 a[0x7c] (8)
+  1: rcp  f32 $r4 $r0 (8)
+  2: pinterp mul u32 $r0 a[0x90] $r4 (8)
+  3: pinterp mul u32 $r1 a[0x94] $r4 (8)
+  4: texs 2D $r8 $s0 rgba f32 { $r0d $r2d } $r0 $r1 (8)
+  5: pinterp mul u32 $r5 a[0x80] $r4 (8)
+  6: pinterp mul u32 $r6 a[0x84] $r4 (8)
+  7: pinterp mul u32 $r7 a[0x88] $r4 (8)
+  8: pinterp mul u32 $r4 a[0x8c] $r4 (8)
+  9: mul ftz f32 $r0 $r0 $r5 (8)
+ 10: mul ftz f32 $r1 $r1 $r6 (8)
+ 11: mul ftz f32 $r2 $r2 $r7 (8)
+ 12: mul ftz f32 $r3 $r3 $r4 (8)
+ 13: set ftz u8 $p0 lt f32 $r3 0.250000 (8)
+ 14: $p0 discard - # (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 15: exit - # (8)
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+Program linked, validation draw GL error=0x0
+WXP Nouveau 118 exit=0
+WXP Nouveau begin 120
+libEGL warning: invalid EGL_PLATFORM given
+shader: MESA_SHADER_TESS_CTRL
+name: tcp_empty
+internal: true
+next_stage: MESA_SHADER_VERTEX
+subgroup_size: 0
+divergence_analysis_run: true
+primitive_mode: 0
+tcs_vertices_out: 1
+spacing: 0
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:  // preds:, succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (8)
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+Nouveau chipset=120 renderer=NV120
+shader: MESA_SHADER_VERTEX
+source_blake3: {0x07ee96f8, 0xedaf6453, 0x6ddc4b49, 0x1fa4191e, 0x1fe8d3aa, 0xf7492634, 0xf4d782ec, 0x287093f8}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+inputs_read: 15-17
+outputs_written: 0,32-33
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+inputs: 3
+outputs: 3
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inPosition (VERT_ATTRIB_GENERIC0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inColor (VERT_ATTRIB_GENERIC1.xyzw, 1, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inUV (VERT_ATTRIB_GENERIC2.xyzw, 2, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 gl_Position (VARYING_SLOT_POS.xyzw, 0, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 color (VARYING_SLOT_VAR0.xyzw, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec2 uv (VARYING_SLOT_VAR1.xy, 2, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    con 32     %6 = load_const (0x3f800000 = 1.000000)
+    con 32    %12 = load_const (0x00000000)
+    div 32x4  %13 = @load_input (%12 (0x0)) (base=0, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC0 slots=1)  // inPosition
+    div 32x4   %7 = vec4 %13.x, %13.y, %13.z, %6 (0x3f800000)
+    div 32x4  %17 = @load_input (%12 (0x0)) (base=2, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC2 slots=1)  // inUV
+    div 32x2   %8 = vec2 %17.x, %17.y
+    div 32x4  %15 = @load_input (%12 (0x0)) (base=1, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC1 slots=1)  // inColor
+                    @store_output (%15, %12 (0x0)) (base=1, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_VAR0 slots=1, xfb(), xfb2())  // color
+                    @store_output (%8, %12 (0x0)) (base=2, range=1, wrmask=xy, component=0, src_type=float32, io location=VARYING_SLOT_VAR1 slots=1, xfb(), xfb2())  // uv
+                    @store_output (%7, %12 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_POS slots=1, xfb(), xfb2())  // gl_Position
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (8 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 { %r29 %r30 } a[0x80] (0)
+  1: vfetch u32 %r31 a[0x88] (0)
+  2: mov u32 %r33 0x3f800000 (0)
+  3: vfetch u64 { %r38 %r39 } a[0xa0] (0)
+  4: vfetch b128 { %r44 %r45 %r46 %r47 } a[0x90] (0)
+  5: export b128 # o[0x80] %r44 %r45 %r46 %r47 (0)
+  6: export u64 # o[0x90] %r38 %r39 (0)
+  7: export b128 # o[0x70] %r29 %r30 %r31 %r33 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  8: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (10 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 $r0d a[0x80] (8)
+  1: vfetch u32 $r10 a[0x88] (8)
+  2: vfetch u64 $r2d a[0xa0] (8)
+  3: vfetch b128 $r4q a[0x90] (8)
+  4: export b128 # o[0x80] $r4q (8)
+  5: export u64 # o[0x90] $r2d (8)
+  6: mov u32 $r8 $r0 (8)
+  7: mov u32 $r9 $r1 (8)
+  8: mov u32 $r11 0x3f800000 (8)
+  9: export b128 # o[0x70] $r8q (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 10: exit - # (8)
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+shader: MESA_SHADER_FRAGMENT
+source_blake3: {0x81173a3c, 0x933df3c9, 0xc8389669, 0xaf9c4451, 0x4a193336, 0x7ce5cd3d, 0x99307696, 0x9af0ed07}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+num_textures: 1
+inputs_read: 32-33
+outputs_written: 4
+system_values_read: 0x00000000'00000000'01000000'00000000
+textures_used: 0x00000000'00000000'00000000'00000001
+samplers_used: 0x00000001
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_float: 0x20
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+uses_discard: true
+needs_quad_helper_invocations: true
+inputs: 2
+outputs: 1
+decl_var uniform INTERP_MODE_NONE none sampler2D imageSampler (0, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec4 VARYING_SLOT_VAR0 (VARYING_SLOT_VAR0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec2 VARYING_SLOT_VAR1 (VARYING_SLOT_VAR1.xy, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 outColor (FRAG_RESULT_DATA0.xyzw, 0, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    div 32x2  %10 = @load_barycentric_pixel (interp_mode=INTERP_MODE_SMOOTH)
+    con 32     %9 = load_const (0x00000000)
+    div 32x2  %14 = @load_interpolated_input (%10, %9 (0x0)) (base=1, component=0, dest_type=float32, io location=VARYING_SLOT_VAR1 slots=1)  // VARYING_SLOT_VAR1
+    div 32x4   %5 = (float32)tex %14 (coord), 0 (texture), 0 (sampler)
+    div 32x4  %11 = @load_interpolated_input (%10, %9 (0x0)) (base=0, component=0, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)  // VARYING_SLOT_VAR0
+    div 32    %16 = fmul %5.x, %11.x
+    div 32    %17 = fmul %5.y, %11.y
+    div 32    %18 = fmul %5.z, %11.z
+    div 32    %19 = fmul %5.w, %11.w
+    div 32x4  %20 = vec4 %16, %17, %18, %19
+    con 32     %4 = load_const (0x3e800000 = 0.250000)
+    div 32     %7 = flt32 %19, %4 (0.250000)
+                    @demote_if (%7)
+                    @store_output (%20, %9 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=FRAG_RESULT_DATA0 slots=1, xfb(), xfb2())  // outColor
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (19 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 %r32 a[0x7c] (0)
+  1: rcp  f32 %r33 %r32 (0)
+  2: pinterp mul u32 %r35 a[0x90] %r33 (0)
+  3: pinterp mul u32 %r36 a[0x94] %r33 (0)
+  4: tex 2D $r8 $s0 rgba f32 { %r37 %r38 %r39 %r40 } %r35 %r36 (0)
+  5: pinterp mul u32 %r41 a[0x80] %r33 (0)
+  6: pinterp mul u32 %r42 a[0x84] %r33 (0)
+  7: pinterp mul u32 %r43 a[0x88] %r33 (0)
+  8: pinterp mul u32 %r44 a[0x8c] %r33 (0)
+  9: mul ftz f32 %r45 %r37 %r41 (0)
+ 10: mul ftz f32 %r46 %r38 %r42 (0)
+ 11: mul ftz f32 %r47 %r39 %r43 (0)
+ 12: mul ftz f32 %r48 %r40 %r44 (0)
+ 13: set ftz u8 %p55 lt f32 %r48 0.250000 (0)
+ 14: %p55 discard - # (0)
+ 15: mov (SUBOP:1) u32 $r0 %r45 (0)
+ 16: mov (SUBOP:1) u32 $r1 %r46 (0)
+ 17: mov (SUBOP:1) u32 $r2 %r47 (0)
+ 18: mov (SUBOP:1) u32 $r3 %r48 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 19: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (15 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 $r0 a[0x7c] (8)
+  1: rcp  f32 $r4 $r0 (8)
+  2: pinterp mul u32 $r0 a[0x90] $r4 (8)
+  3: pinterp mul u32 $r1 a[0x94] $r4 (8)
+  4: texs 2D $r8 $s0 rgba f32 { $r0d $r2d } $r0 $r1 (8)
+  5: pinterp mul u32 $r5 a[0x80] $r4 (8)
+  6: pinterp mul u32 $r6 a[0x84] $r4 (8)
+  7: pinterp mul u32 $r7 a[0x88] $r4 (8)
+  8: pinterp mul u32 $r4 a[0x8c] $r4 (8)
+  9: mul ftz f32 $r0 $r0 $r5 (8)
+ 10: mul ftz f32 $r1 $r1 $r6 (8)
+ 11: mul ftz f32 $r2 $r2 $r7 (8)
+ 12: mul ftz f32 $r3 $r3 $r4 (8)
+ 13: set ftz u8 $p0 lt f32 $r3 0.250000 (8)
+ 14: $p0 discard - # (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 15: exit - # (8)
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+Program linked, validation draw GL error=0x0
+WXP Nouveau 120 exit=0
+WXP Nouveau begin 124
+libEGL warning: invalid EGL_PLATFORM given
+shader: MESA_SHADER_TESS_CTRL
+name: tcp_empty
+internal: true
+next_stage: MESA_SHADER_VERTEX
+subgroup_size: 0
+divergence_analysis_run: true
+primitive_mode: 0
+tcs_vertices_out: 1
+spacing: 0
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:  // preds:, succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (8)
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+Nouveau chipset=124 renderer=NV124
+shader: MESA_SHADER_VERTEX
+source_blake3: {0x07ee96f8, 0xedaf6453, 0x6ddc4b49, 0x1fa4191e, 0x1fe8d3aa, 0xf7492634, 0xf4d782ec, 0x287093f8}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+inputs_read: 15-17
+outputs_written: 0,32-33
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+inputs: 3
+outputs: 3
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inPosition (VERT_ATTRIB_GENERIC0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inColor (VERT_ATTRIB_GENERIC1.xyzw, 1, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inUV (VERT_ATTRIB_GENERIC2.xyzw, 2, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 gl_Position (VARYING_SLOT_POS.xyzw, 0, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 color (VARYING_SLOT_VAR0.xyzw, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec2 uv (VARYING_SLOT_VAR1.xy, 2, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    con 32     %6 = load_const (0x3f800000 = 1.000000)
+    con 32    %12 = load_const (0x00000000)
+    div 32x4  %13 = @load_input (%12 (0x0)) (base=0, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC0 slots=1)  // inPosition
+    div 32x4   %7 = vec4 %13.x, %13.y, %13.z, %6 (0x3f800000)
+    div 32x4  %17 = @load_input (%12 (0x0)) (base=2, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC2 slots=1)  // inUV
+    div 32x2   %8 = vec2 %17.x, %17.y
+    div 32x4  %15 = @load_input (%12 (0x0)) (base=1, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC1 slots=1)  // inColor
+                    @store_output (%15, %12 (0x0)) (base=1, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_VAR0 slots=1, xfb(), xfb2())  // color
+                    @store_output (%8, %12 (0x0)) (base=2, range=1, wrmask=xy, component=0, src_type=float32, io location=VARYING_SLOT_VAR1 slots=1, xfb(), xfb2())  // uv
+                    @store_output (%7, %12 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_POS slots=1, xfb(), xfb2())  // gl_Position
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (8 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 { %r29 %r30 } a[0x80] (0)
+  1: vfetch u32 %r31 a[0x88] (0)
+  2: mov u32 %r33 0x3f800000 (0)
+  3: vfetch u64 { %r38 %r39 } a[0xa0] (0)
+  4: vfetch b128 { %r44 %r45 %r46 %r47 } a[0x90] (0)
+  5: export b128 # o[0x80] %r44 %r45 %r46 %r47 (0)
+  6: export u64 # o[0x90] %r38 %r39 (0)
+  7: export b128 # o[0x70] %r29 %r30 %r31 %r33 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  8: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (10 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 $r0d a[0x80] (8)
+  1: vfetch u32 $r10 a[0x88] (8)
+  2: vfetch u64 $r2d a[0xa0] (8)
+  3: vfetch b128 $r4q a[0x90] (8)
+  4: export b128 # o[0x80] $r4q (8)
+  5: export u64 # o[0x90] $r2d (8)
+  6: mov u32 $r8 $r0 (8)
+  7: mov u32 $r9 $r1 (8)
+  8: mov u32 $r11 0x3f800000 (8)
+  9: export b128 # o[0x70] $r8q (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 10: exit - # (8)
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+shader: MESA_SHADER_FRAGMENT
+source_blake3: {0x81173a3c, 0x933df3c9, 0xc8389669, 0xaf9c4451, 0x4a193336, 0x7ce5cd3d, 0x99307696, 0x9af0ed07}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+num_textures: 1
+inputs_read: 32-33
+outputs_written: 4
+system_values_read: 0x00000000'00000000'01000000'00000000
+textures_used: 0x00000000'00000000'00000000'00000001
+samplers_used: 0x00000001
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_float: 0x20
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+uses_discard: true
+needs_quad_helper_invocations: true
+inputs: 2
+outputs: 1
+decl_var uniform INTERP_MODE_NONE none sampler2D imageSampler (0, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec4 VARYING_SLOT_VAR0 (VARYING_SLOT_VAR0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec2 VARYING_SLOT_VAR1 (VARYING_SLOT_VAR1.xy, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 outColor (FRAG_RESULT_DATA0.xyzw, 0, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    div 32x2  %10 = @load_barycentric_pixel (interp_mode=INTERP_MODE_SMOOTH)
+    con 32     %9 = load_const (0x00000000)
+    div 32x2  %14 = @load_interpolated_input (%10, %9 (0x0)) (base=1, component=0, dest_type=float32, io location=VARYING_SLOT_VAR1 slots=1)  // VARYING_SLOT_VAR1
+    div 32x4   %5 = (float32)tex %14 (coord), 0 (texture), 0 (sampler)
+    div 32x4  %11 = @load_interpolated_input (%10, %9 (0x0)) (base=0, component=0, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)  // VARYING_SLOT_VAR0
+    div 32    %16 = fmul %5.x, %11.x
+    div 32    %17 = fmul %5.y, %11.y
+    div 32    %18 = fmul %5.z, %11.z
+    div 32    %19 = fmul %5.w, %11.w
+    div 32x4  %20 = vec4 %16, %17, %18, %19
+    con 32     %4 = load_const (0x3e800000 = 0.250000)
+    div 32     %7 = flt32 %19, %4 (0.250000)
+                    @demote_if (%7)
+                    @store_output (%20, %9 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=FRAG_RESULT_DATA0 slots=1, xfb(), xfb2())  // outColor
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (19 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 %r32 a[0x7c] (0)
+  1: rcp  f32 %r33 %r32 (0)
+  2: pinterp mul u32 %r35 a[0x90] %r33 (0)
+  3: pinterp mul u32 %r36 a[0x94] %r33 (0)
+  4: tex 2D $r8 $s0 rgba f32 { %r37 %r38 %r39 %r40 } %r35 %r36 (0)
+  5: pinterp mul u32 %r41 a[0x80] %r33 (0)
+  6: pinterp mul u32 %r42 a[0x84] %r33 (0)
+  7: pinterp mul u32 %r43 a[0x88] %r33 (0)
+  8: pinterp mul u32 %r44 a[0x8c] %r33 (0)
+  9: mul ftz f32 %r45 %r37 %r41 (0)
+ 10: mul ftz f32 %r46 %r38 %r42 (0)
+ 11: mul ftz f32 %r47 %r39 %r43 (0)
+ 12: mul ftz f32 %r48 %r40 %r44 (0)
+ 13: set ftz u8 %p55 lt f32 %r48 0.250000 (0)
+ 14: %p55 discard - # (0)
+ 15: mov (SUBOP:1) u32 $r0 %r45 (0)
+ 16: mov (SUBOP:1) u32 $r1 %r46 (0)
+ 17: mov (SUBOP:1) u32 $r2 %r47 (0)
+ 18: mov (SUBOP:1) u32 $r3 %r48 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 19: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (15 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 $r0 a[0x7c] (8)
+  1: rcp  f32 $r4 $r0 (8)
+  2: pinterp mul u32 $r0 a[0x90] $r4 (8)
+  3: pinterp mul u32 $r1 a[0x94] $r4 (8)
+  4: texs 2D $r8 $s0 rgba f32 { $r0d $r2d } $r0 $r1 (8)
+  5: pinterp mul u32 $r5 a[0x80] $r4 (8)
+  6: pinterp mul u32 $r6 a[0x84] $r4 (8)
+  7: pinterp mul u32 $r7 a[0x88] $r4 (8)
+  8: pinterp mul u32 $r4 a[0x8c] $r4 (8)
+  9: mul ftz f32 $r0 $r0 $r5 (8)
+ 10: mul ftz f32 $r1 $r1 $r6 (8)
+ 11: mul ftz f32 $r2 $r2 $r7 (8)
+ 12: mul ftz f32 $r3 $r3 $r4 (8)
+ 13: set ftz u8 $p0 lt f32 $r3 0.250000 (8)
+ 14: $p0 discard - # (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 15: exit - # (8)
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+Program linked, validation draw GL error=0x0
+WXP Nouveau 124 exit=0
+WXP Nouveau begin 126
+libEGL warning: invalid EGL_PLATFORM given
+shader: MESA_SHADER_TESS_CTRL
+name: tcp_empty
+internal: true
+next_stage: MESA_SHADER_VERTEX
+subgroup_size: 0
+divergence_analysis_run: true
+primitive_mode: 0
+tcs_vertices_out: 1
+spacing: 0
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:  // preds:, succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (8)
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+Nouveau chipset=126 renderer=NV126
+shader: MESA_SHADER_VERTEX
+source_blake3: {0x07ee96f8, 0xedaf6453, 0x6ddc4b49, 0x1fa4191e, 0x1fe8d3aa, 0xf7492634, 0xf4d782ec, 0x287093f8}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+inputs_read: 15-17
+outputs_written: 0,32-33
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+inputs: 3
+outputs: 3
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inPosition (VERT_ATTRIB_GENERIC0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inColor (VERT_ATTRIB_GENERIC1.xyzw, 1, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inUV (VERT_ATTRIB_GENERIC2.xyzw, 2, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 gl_Position (VARYING_SLOT_POS.xyzw, 0, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 color (VARYING_SLOT_VAR0.xyzw, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec2 uv (VARYING_SLOT_VAR1.xy, 2, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    con 32     %6 = load_const (0x3f800000 = 1.000000)
+    con 32    %12 = load_const (0x00000000)
+    div 32x4  %13 = @load_input (%12 (0x0)) (base=0, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC0 slots=1)  // inPosition
+    div 32x4   %7 = vec4 %13.x, %13.y, %13.z, %6 (0x3f800000)
+    div 32x4  %17 = @load_input (%12 (0x0)) (base=2, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC2 slots=1)  // inUV
+    div 32x2   %8 = vec2 %17.x, %17.y
+    div 32x4  %15 = @load_input (%12 (0x0)) (base=1, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC1 slots=1)  // inColor
+                    @store_output (%15, %12 (0x0)) (base=1, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_VAR0 slots=1, xfb(), xfb2())  // color
+                    @store_output (%8, %12 (0x0)) (base=2, range=1, wrmask=xy, component=0, src_type=float32, io location=VARYING_SLOT_VAR1 slots=1, xfb(), xfb2())  // uv
+                    @store_output (%7, %12 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_POS slots=1, xfb(), xfb2())  // gl_Position
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (8 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 { %r29 %r30 } a[0x80] (0)
+  1: vfetch u32 %r31 a[0x88] (0)
+  2: mov u32 %r33 0x3f800000 (0)
+  3: vfetch u64 { %r38 %r39 } a[0xa0] (0)
+  4: vfetch b128 { %r44 %r45 %r46 %r47 } a[0x90] (0)
+  5: export b128 # o[0x80] %r44 %r45 %r46 %r47 (0)
+  6: export u64 # o[0x90] %r38 %r39 (0)
+  7: export b128 # o[0x70] %r29 %r30 %r31 %r33 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  8: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (10 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 $r0d a[0x80] (8)
+  1: vfetch u32 $r10 a[0x88] (8)
+  2: vfetch u64 $r2d a[0xa0] (8)
+  3: vfetch b128 $r4q a[0x90] (8)
+  4: export b128 # o[0x80] $r4q (8)
+  5: export u64 # o[0x90] $r2d (8)
+  6: mov u32 $r8 $r0 (8)
+  7: mov u32 $r9 $r1 (8)
+  8: mov u32 $r11 0x3f800000 (8)
+  9: export b128 # o[0x70] $r8q (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 10: exit - # (8)
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+shader: MESA_SHADER_FRAGMENT
+source_blake3: {0x81173a3c, 0x933df3c9, 0xc8389669, 0xaf9c4451, 0x4a193336, 0x7ce5cd3d, 0x99307696, 0x9af0ed07}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+num_textures: 1
+inputs_read: 32-33
+outputs_written: 4
+system_values_read: 0x00000000'00000000'01000000'00000000
+textures_used: 0x00000000'00000000'00000000'00000001
+samplers_used: 0x00000001
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_float: 0x20
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+uses_discard: true
+needs_quad_helper_invocations: true
+inputs: 2
+outputs: 1
+decl_var uniform INTERP_MODE_NONE none sampler2D imageSampler (0, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec4 VARYING_SLOT_VAR0 (VARYING_SLOT_VAR0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec2 VARYING_SLOT_VAR1 (VARYING_SLOT_VAR1.xy, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 outColor (FRAG_RESULT_DATA0.xyzw, 0, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    div 32x2  %10 = @load_barycentric_pixel (interp_mode=INTERP_MODE_SMOOTH)
+    con 32     %9 = load_const (0x00000000)
+    div 32x2  %14 = @load_interpolated_input (%10, %9 (0x0)) (base=1, component=0, dest_type=float32, io location=VARYING_SLOT_VAR1 slots=1)  // VARYING_SLOT_VAR1
+    div 32x4   %5 = (float32)tex %14 (coord), 0 (texture), 0 (sampler)
+    div 32x4  %11 = @load_interpolated_input (%10, %9 (0x0)) (base=0, component=0, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)  // VARYING_SLOT_VAR0
+    div 32    %16 = fmul %5.x, %11.x
+    div 32    %17 = fmul %5.y, %11.y
+    div 32    %18 = fmul %5.z, %11.z
+    div 32    %19 = fmul %5.w, %11.w
+    div 32x4  %20 = vec4 %16, %17, %18, %19
+    con 32     %4 = load_const (0x3e800000 = 0.250000)
+    div 32     %7 = flt32 %19, %4 (0.250000)
+                    @demote_if (%7)
+                    @store_output (%20, %9 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=FRAG_RESULT_DATA0 slots=1, xfb(), xfb2())  // outColor
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (19 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 %r32 a[0x7c] (0)
+  1: rcp  f32 %r33 %r32 (0)
+  2: pinterp mul u32 %r35 a[0x90] %r33 (0)
+  3: pinterp mul u32 %r36 a[0x94] %r33 (0)
+  4: tex 2D $r8 $s0 rgba f32 { %r37 %r38 %r39 %r40 } %r35 %r36 (0)
+  5: pinterp mul u32 %r41 a[0x80] %r33 (0)
+  6: pinterp mul u32 %r42 a[0x84] %r33 (0)
+  7: pinterp mul u32 %r43 a[0x88] %r33 (0)
+  8: pinterp mul u32 %r44 a[0x8c] %r33 (0)
+  9: mul ftz f32 %r45 %r37 %r41 (0)
+ 10: mul ftz f32 %r46 %r38 %r42 (0)
+ 11: mul ftz f32 %r47 %r39 %r43 (0)
+ 12: mul ftz f32 %r48 %r40 %r44 (0)
+ 13: set ftz u8 %p55 lt f32 %r48 0.250000 (0)
+ 14: %p55 discard - # (0)
+ 15: mov (SUBOP:1) u32 $r0 %r45 (0)
+ 16: mov (SUBOP:1) u32 $r1 %r46 (0)
+ 17: mov (SUBOP:1) u32 $r2 %r47 (0)
+ 18: mov (SUBOP:1) u32 $r3 %r48 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 19: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (15 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 $r0 a[0x7c] (8)
+  1: rcp  f32 $r4 $r0 (8)
+  2: pinterp mul u32 $r0 a[0x90] $r4 (8)
+  3: pinterp mul u32 $r1 a[0x94] $r4 (8)
+  4: texs 2D $r8 $s0 rgba f32 { $r0d $r2d } $r0 $r1 (8)
+  5: pinterp mul u32 $r5 a[0x80] $r4 (8)
+  6: pinterp mul u32 $r6 a[0x84] $r4 (8)
+  7: pinterp mul u32 $r7 a[0x88] $r4 (8)
+  8: pinterp mul u32 $r4 a[0x8c] $r4 (8)
+  9: mul ftz f32 $r0 $r0 $r5 (8)
+ 10: mul ftz f32 $r1 $r1 $r6 (8)
+ 11: mul ftz f32 $r2 $r2 $r7 (8)
+ 12: mul ftz f32 $r3 $r3 $r4 (8)
+ 13: set ftz u8 $p0 lt f32 $r3 0.250000 (8)
+ 14: $p0 discard - # (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 15: exit - # (8)
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+Program linked, validation draw GL error=0x0
+WXP Nouveau 126 exit=0
+WXP Nouveau begin 132
+libEGL warning: invalid EGL_PLATFORM given
+shader: MESA_SHADER_TESS_CTRL
+name: tcp_empty
+internal: true
+next_stage: MESA_SHADER_VERTEX
+subgroup_size: 0
+divergence_analysis_run: true
+primitive_mode: 0
+tcs_vertices_out: 1
+spacing: 0
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:  // preds:, succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (8)
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+Nouveau chipset=132 renderer=NV132
+shader: MESA_SHADER_VERTEX
+source_blake3: {0x07ee96f8, 0xedaf6453, 0x6ddc4b49, 0x1fa4191e, 0x1fe8d3aa, 0xf7492634, 0xf4d782ec, 0x287093f8}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+inputs_read: 15-17
+outputs_written: 0,32-33
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+inputs: 3
+outputs: 3
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inPosition (VERT_ATTRIB_GENERIC0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inColor (VERT_ATTRIB_GENERIC1.xyzw, 1, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inUV (VERT_ATTRIB_GENERIC2.xyzw, 2, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 gl_Position (VARYING_SLOT_POS.xyzw, 0, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 color (VARYING_SLOT_VAR0.xyzw, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec2 uv (VARYING_SLOT_VAR1.xy, 2, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    con 32     %6 = load_const (0x3f800000 = 1.000000)
+    con 32    %12 = load_const (0x00000000)
+    div 32x4  %13 = @load_input (%12 (0x0)) (base=0, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC0 slots=1)  // inPosition
+    div 32x4   %7 = vec4 %13.x, %13.y, %13.z, %6 (0x3f800000)
+    div 32x4  %17 = @load_input (%12 (0x0)) (base=2, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC2 slots=1)  // inUV
+    div 32x2   %8 = vec2 %17.x, %17.y
+    div 32x4  %15 = @load_input (%12 (0x0)) (base=1, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC1 slots=1)  // inColor
+                    @store_output (%15, %12 (0x0)) (base=1, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_VAR0 slots=1, xfb(), xfb2())  // color
+                    @store_output (%8, %12 (0x0)) (base=2, range=1, wrmask=xy, component=0, src_type=float32, io location=VARYING_SLOT_VAR1 slots=1, xfb(), xfb2())  // uv
+                    @store_output (%7, %12 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_POS slots=1, xfb(), xfb2())  // gl_Position
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (8 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 { %r29 %r30 } a[0x80] (0)
+  1: vfetch u32 %r31 a[0x88] (0)
+  2: mov u32 %r33 0x3f800000 (0)
+  3: vfetch u64 { %r38 %r39 } a[0xa0] (0)
+  4: vfetch b128 { %r44 %r45 %r46 %r47 } a[0x90] (0)
+  5: export b128 # o[0x80] %r44 %r45 %r46 %r47 (0)
+  6: export u64 # o[0x90] %r38 %r39 (0)
+  7: export b128 # o[0x70] %r29 %r30 %r31 %r33 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  8: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (10 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 $r0d a[0x80] (8)
+  1: vfetch u32 $r10 a[0x88] (8)
+  2: vfetch u64 $r2d a[0xa0] (8)
+  3: vfetch b128 $r4q a[0x90] (8)
+  4: export b128 # o[0x80] $r4q (8)
+  5: export u64 # o[0x90] $r2d (8)
+  6: mov u32 $r8 $r0 (8)
+  7: mov u32 $r9 $r1 (8)
+  8: mov u32 $r11 0x3f800000 (8)
+  9: export b128 # o[0x70] $r8q (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 10: exit - # (8)
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+shader: MESA_SHADER_FRAGMENT
+source_blake3: {0x81173a3c, 0x933df3c9, 0xc8389669, 0xaf9c4451, 0x4a193336, 0x7ce5cd3d, 0x99307696, 0x9af0ed07}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+num_textures: 1
+inputs_read: 32-33
+outputs_written: 4
+system_values_read: 0x00000000'00000000'01000000'00000000
+textures_used: 0x00000000'00000000'00000000'00000001
+samplers_used: 0x00000001
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_float: 0x20
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+uses_discard: true
+needs_quad_helper_invocations: true
+inputs: 2
+outputs: 1
+decl_var uniform INTERP_MODE_NONE none sampler2D imageSampler (0, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec4 VARYING_SLOT_VAR0 (VARYING_SLOT_VAR0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec2 VARYING_SLOT_VAR1 (VARYING_SLOT_VAR1.xy, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 outColor (FRAG_RESULT_DATA0.xyzw, 0, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    div 32x2  %10 = @load_barycentric_pixel (interp_mode=INTERP_MODE_SMOOTH)
+    con 32     %9 = load_const (0x00000000)
+    div 32x2  %14 = @load_interpolated_input (%10, %9 (0x0)) (base=1, component=0, dest_type=float32, io location=VARYING_SLOT_VAR1 slots=1)  // VARYING_SLOT_VAR1
+    div 32x4   %5 = (float32)tex %14 (coord), 0 (texture), 0 (sampler)
+    div 32x4  %11 = @load_interpolated_input (%10, %9 (0x0)) (base=0, component=0, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)  // VARYING_SLOT_VAR0
+    div 32    %16 = fmul %5.x, %11.x
+    div 32    %17 = fmul %5.y, %11.y
+    div 32    %18 = fmul %5.z, %11.z
+    div 32    %19 = fmul %5.w, %11.w
+    div 32x4  %20 = vec4 %16, %17, %18, %19
+    con 32     %4 = load_const (0x3e800000 = 0.250000)
+    div 32     %7 = flt32 %19, %4 (0.250000)
+                    @demote_if (%7)
+                    @store_output (%20, %9 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=FRAG_RESULT_DATA0 slots=1, xfb(), xfb2())  // outColor
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (19 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 %r32 a[0x7c] (0)
+  1: rcp  f32 %r33 %r32 (0)
+  2: pinterp mul u32 %r35 a[0x90] %r33 (0)
+  3: pinterp mul u32 %r36 a[0x94] %r33 (0)
+  4: tex 2D $r8 $s0 rgba f32 { %r37 %r38 %r39 %r40 } %r35 %r36 (0)
+  5: pinterp mul u32 %r41 a[0x80] %r33 (0)
+  6: pinterp mul u32 %r42 a[0x84] %r33 (0)
+  7: pinterp mul u32 %r43 a[0x88] %r33 (0)
+  8: pinterp mul u32 %r44 a[0x8c] %r33 (0)
+  9: mul ftz f32 %r45 %r37 %r41 (0)
+ 10: mul ftz f32 %r46 %r38 %r42 (0)
+ 11: mul ftz f32 %r47 %r39 %r43 (0)
+ 12: mul ftz f32 %r48 %r40 %r44 (0)
+ 13: set ftz u8 %p55 lt f32 %r48 0.250000 (0)
+ 14: %p55 discard - # (0)
+ 15: mov (SUBOP:1) u32 $r0 %r45 (0)
+ 16: mov (SUBOP:1) u32 $r1 %r46 (0)
+ 17: mov (SUBOP:1) u32 $r2 %r47 (0)
+ 18: mov (SUBOP:1) u32 $r3 %r48 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 19: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (15 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 $r0 a[0x7c] (8)
+  1: rcp  f32 $r4 $r0 (8)
+  2: pinterp mul u32 $r0 a[0x90] $r4 (8)
+  3: pinterp mul u32 $r1 a[0x94] $r4 (8)
+  4: texs 2D $r8 $s0 rgba f32 { $r0d $r2d } $r0 $r1 (8)
+  5: pinterp mul u32 $r5 a[0x80] $r4 (8)
+  6: pinterp mul u32 $r6 a[0x84] $r4 (8)
+  7: pinterp mul u32 $r7 a[0x88] $r4 (8)
+  8: pinterp mul u32 $r4 a[0x8c] $r4 (8)
+  9: mul ftz f32 $r0 $r0 $r5 (8)
+ 10: mul ftz f32 $r1 $r1 $r6 (8)
+ 11: mul ftz f32 $r2 $r2 $r7 (8)
+ 12: mul ftz f32 $r3 $r3 $r4 (8)
+ 13: set ftz u8 $p0 lt f32 $r3 0.250000 (8)
+ 14: $p0 discard - # (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 15: exit - # (8)
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+Program linked, validation draw GL error=0x0
+WXP Nouveau 132 exit=0
+WXP Nouveau begin 134
+libEGL warning: invalid EGL_PLATFORM given
+shader: MESA_SHADER_TESS_CTRL
+name: tcp_empty
+internal: true
+next_stage: MESA_SHADER_VERTEX
+subgroup_size: 0
+divergence_analysis_run: true
+primitive_mode: 0
+tcs_vertices_out: 1
+spacing: 0
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:  // preds:, succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (8)
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+Nouveau chipset=134 renderer=NV134
+shader: MESA_SHADER_VERTEX
+source_blake3: {0x07ee96f8, 0xedaf6453, 0x6ddc4b49, 0x1fa4191e, 0x1fe8d3aa, 0xf7492634, 0xf4d782ec, 0x287093f8}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+inputs_read: 15-17
+outputs_written: 0,32-33
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+inputs: 3
+outputs: 3
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inPosition (VERT_ATTRIB_GENERIC0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inColor (VERT_ATTRIB_GENERIC1.xyzw, 1, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inUV (VERT_ATTRIB_GENERIC2.xyzw, 2, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 gl_Position (VARYING_SLOT_POS.xyzw, 0, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 color (VARYING_SLOT_VAR0.xyzw, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec2 uv (VARYING_SLOT_VAR1.xy, 2, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    con 32     %6 = load_const (0x3f800000 = 1.000000)
+    con 32    %12 = load_const (0x00000000)
+    div 32x4  %13 = @load_input (%12 (0x0)) (base=0, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC0 slots=1)  // inPosition
+    div 32x4   %7 = vec4 %13.x, %13.y, %13.z, %6 (0x3f800000)
+    div 32x4  %17 = @load_input (%12 (0x0)) (base=2, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC2 slots=1)  // inUV
+    div 32x2   %8 = vec2 %17.x, %17.y
+    div 32x4  %15 = @load_input (%12 (0x0)) (base=1, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC1 slots=1)  // inColor
+                    @store_output (%15, %12 (0x0)) (base=1, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_VAR0 slots=1, xfb(), xfb2())  // color
+                    @store_output (%8, %12 (0x0)) (base=2, range=1, wrmask=xy, component=0, src_type=float32, io location=VARYING_SLOT_VAR1 slots=1, xfb(), xfb2())  // uv
+                    @store_output (%7, %12 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_POS slots=1, xfb(), xfb2())  // gl_Position
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (8 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 { %r29 %r30 } a[0x80] (0)
+  1: vfetch u32 %r31 a[0x88] (0)
+  2: mov u32 %r33 0x3f800000 (0)
+  3: vfetch u64 { %r38 %r39 } a[0xa0] (0)
+  4: vfetch b128 { %r44 %r45 %r46 %r47 } a[0x90] (0)
+  5: export b128 # o[0x80] %r44 %r45 %r46 %r47 (0)
+  6: export u64 # o[0x90] %r38 %r39 (0)
+  7: export b128 # o[0x70] %r29 %r30 %r31 %r33 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  8: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (10 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 $r0d a[0x80] (8)
+  1: vfetch u32 $r10 a[0x88] (8)
+  2: vfetch u64 $r2d a[0xa0] (8)
+  3: vfetch b128 $r4q a[0x90] (8)
+  4: export b128 # o[0x80] $r4q (8)
+  5: export u64 # o[0x90] $r2d (8)
+  6: mov u32 $r8 $r0 (8)
+  7: mov u32 $r9 $r1 (8)
+  8: mov u32 $r11 0x3f800000 (8)
+  9: export b128 # o[0x70] $r8q (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 10: exit - # (8)
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+shader: MESA_SHADER_FRAGMENT
+source_blake3: {0x81173a3c, 0x933df3c9, 0xc8389669, 0xaf9c4451, 0x4a193336, 0x7ce5cd3d, 0x99307696, 0x9af0ed07}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+num_textures: 1
+inputs_read: 32-33
+outputs_written: 4
+system_values_read: 0x00000000'00000000'01000000'00000000
+textures_used: 0x00000000'00000000'00000000'00000001
+samplers_used: 0x00000001
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_float: 0x20
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+uses_discard: true
+needs_quad_helper_invocations: true
+inputs: 2
+outputs: 1
+decl_var uniform INTERP_MODE_NONE none sampler2D imageSampler (0, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec4 VARYING_SLOT_VAR0 (VARYING_SLOT_VAR0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec2 VARYING_SLOT_VAR1 (VARYING_SLOT_VAR1.xy, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 outColor (FRAG_RESULT_DATA0.xyzw, 0, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    div 32x2  %10 = @load_barycentric_pixel (interp_mode=INTERP_MODE_SMOOTH)
+    con 32     %9 = load_const (0x00000000)
+    div 32x2  %14 = @load_interpolated_input (%10, %9 (0x0)) (base=1, component=0, dest_type=float32, io location=VARYING_SLOT_VAR1 slots=1)  // VARYING_SLOT_VAR1
+    div 32x4   %5 = (float32)tex %14 (coord), 0 (texture), 0 (sampler)
+    div 32x4  %11 = @load_interpolated_input (%10, %9 (0x0)) (base=0, component=0, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)  // VARYING_SLOT_VAR0
+    div 32    %16 = fmul %5.x, %11.x
+    div 32    %17 = fmul %5.y, %11.y
+    div 32    %18 = fmul %5.z, %11.z
+    div 32    %19 = fmul %5.w, %11.w
+    div 32x4  %20 = vec4 %16, %17, %18, %19
+    con 32     %4 = load_const (0x3e800000 = 0.250000)
+    div 32     %7 = flt32 %19, %4 (0.250000)
+                    @demote_if (%7)
+                    @store_output (%20, %9 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=FRAG_RESULT_DATA0 slots=1, xfb(), xfb2())  // outColor
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (19 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 %r32 a[0x7c] (0)
+  1: rcp  f32 %r33 %r32 (0)
+  2: pinterp mul u32 %r35 a[0x90] %r33 (0)
+  3: pinterp mul u32 %r36 a[0x94] %r33 (0)
+  4: tex 2D $r8 $s0 rgba f32 { %r37 %r38 %r39 %r40 } %r35 %r36 (0)
+  5: pinterp mul u32 %r41 a[0x80] %r33 (0)
+  6: pinterp mul u32 %r42 a[0x84] %r33 (0)
+  7: pinterp mul u32 %r43 a[0x88] %r33 (0)
+  8: pinterp mul u32 %r44 a[0x8c] %r33 (0)
+  9: mul ftz f32 %r45 %r37 %r41 (0)
+ 10: mul ftz f32 %r46 %r38 %r42 (0)
+ 11: mul ftz f32 %r47 %r39 %r43 (0)
+ 12: mul ftz f32 %r48 %r40 %r44 (0)
+ 13: set ftz u8 %p55 lt f32 %r48 0.250000 (0)
+ 14: %p55 discard - # (0)
+ 15: mov (SUBOP:1) u32 $r0 %r45 (0)
+ 16: mov (SUBOP:1) u32 $r1 %r46 (0)
+ 17: mov (SUBOP:1) u32 $r2 %r47 (0)
+ 18: mov (SUBOP:1) u32 $r3 %r48 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 19: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (15 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 $r0 a[0x7c] (8)
+  1: rcp  f32 $r4 $r0 (8)
+  2: pinterp mul u32 $r0 a[0x90] $r4 (8)
+  3: pinterp mul u32 $r1 a[0x94] $r4 (8)
+  4: texs 2D $r8 $s0 rgba f32 { $r0d $r2d } $r0 $r1 (8)
+  5: pinterp mul u32 $r5 a[0x80] $r4 (8)
+  6: pinterp mul u32 $r6 a[0x84] $r4 (8)
+  7: pinterp mul u32 $r7 a[0x88] $r4 (8)
+  8: pinterp mul u32 $r4 a[0x8c] $r4 (8)
+  9: mul ftz f32 $r0 $r0 $r5 (8)
+ 10: mul ftz f32 $r1 $r1 $r6 (8)
+ 11: mul ftz f32 $r2 $r2 $r7 (8)
+ 12: mul ftz f32 $r3 $r3 $r4 (8)
+ 13: set ftz u8 $p0 lt f32 $r3 0.250000 (8)
+ 14: $p0 discard - # (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 15: exit - # (8)
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+Program linked, validation draw GL error=0x0
+WXP Nouveau 134 exit=0
+WXP Nouveau begin 136
+libEGL warning: invalid EGL_PLATFORM given
+shader: MESA_SHADER_TESS_CTRL
+name: tcp_empty
+internal: true
+next_stage: MESA_SHADER_VERTEX
+subgroup_size: 0
+divergence_analysis_run: true
+primitive_mode: 0
+tcs_vertices_out: 1
+spacing: 0
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:  // preds:, succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (8)
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+Nouveau chipset=136 renderer=NV136
+shader: MESA_SHADER_VERTEX
+source_blake3: {0x07ee96f8, 0xedaf6453, 0x6ddc4b49, 0x1fa4191e, 0x1fe8d3aa, 0xf7492634, 0xf4d782ec, 0x287093f8}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+inputs_read: 15-17
+outputs_written: 0,32-33
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+inputs: 3
+outputs: 3
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inPosition (VERT_ATTRIB_GENERIC0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inColor (VERT_ATTRIB_GENERIC1.xyzw, 1, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inUV (VERT_ATTRIB_GENERIC2.xyzw, 2, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 gl_Position (VARYING_SLOT_POS.xyzw, 0, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 color (VARYING_SLOT_VAR0.xyzw, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec2 uv (VARYING_SLOT_VAR1.xy, 2, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    con 32     %6 = load_const (0x3f800000 = 1.000000)
+    con 32    %12 = load_const (0x00000000)
+    div 32x4  %13 = @load_input (%12 (0x0)) (base=0, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC0 slots=1)  // inPosition
+    div 32x4   %7 = vec4 %13.x, %13.y, %13.z, %6 (0x3f800000)
+    div 32x4  %17 = @load_input (%12 (0x0)) (base=2, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC2 slots=1)  // inUV
+    div 32x2   %8 = vec2 %17.x, %17.y
+    div 32x4  %15 = @load_input (%12 (0x0)) (base=1, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC1 slots=1)  // inColor
+                    @store_output (%15, %12 (0x0)) (base=1, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_VAR0 slots=1, xfb(), xfb2())  // color
+                    @store_output (%8, %12 (0x0)) (base=2, range=1, wrmask=xy, component=0, src_type=float32, io location=VARYING_SLOT_VAR1 slots=1, xfb(), xfb2())  // uv
+                    @store_output (%7, %12 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_POS slots=1, xfb(), xfb2())  // gl_Position
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (8 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 { %r29 %r30 } a[0x80] (0)
+  1: vfetch u32 %r31 a[0x88] (0)
+  2: mov u32 %r33 0x3f800000 (0)
+  3: vfetch u64 { %r38 %r39 } a[0xa0] (0)
+  4: vfetch b128 { %r44 %r45 %r46 %r47 } a[0x90] (0)
+  5: export b128 # o[0x80] %r44 %r45 %r46 %r47 (0)
+  6: export u64 # o[0x90] %r38 %r39 (0)
+  7: export b128 # o[0x70] %r29 %r30 %r31 %r33 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  8: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (10 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 $r0d a[0x80] (8)
+  1: vfetch u32 $r10 a[0x88] (8)
+  2: vfetch u64 $r2d a[0xa0] (8)
+  3: vfetch b128 $r4q a[0x90] (8)
+  4: export b128 # o[0x80] $r4q (8)
+  5: export u64 # o[0x90] $r2d (8)
+  6: mov u32 $r8 $r0 (8)
+  7: mov u32 $r9 $r1 (8)
+  8: mov u32 $r11 0x3f800000 (8)
+  9: export b128 # o[0x70] $r8q (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 10: exit - # (8)
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+shader: MESA_SHADER_FRAGMENT
+source_blake3: {0x81173a3c, 0x933df3c9, 0xc8389669, 0xaf9c4451, 0x4a193336, 0x7ce5cd3d, 0x99307696, 0x9af0ed07}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+num_textures: 1
+inputs_read: 32-33
+outputs_written: 4
+system_values_read: 0x00000000'00000000'01000000'00000000
+textures_used: 0x00000000'00000000'00000000'00000001
+samplers_used: 0x00000001
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_float: 0x20
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+uses_discard: true
+needs_quad_helper_invocations: true
+inputs: 2
+outputs: 1
+decl_var uniform INTERP_MODE_NONE none sampler2D imageSampler (0, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec4 VARYING_SLOT_VAR0 (VARYING_SLOT_VAR0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec2 VARYING_SLOT_VAR1 (VARYING_SLOT_VAR1.xy, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 outColor (FRAG_RESULT_DATA0.xyzw, 0, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    div 32x2  %10 = @load_barycentric_pixel (interp_mode=INTERP_MODE_SMOOTH)
+    con 32     %9 = load_const (0x00000000)
+    div 32x2  %14 = @load_interpolated_input (%10, %9 (0x0)) (base=1, component=0, dest_type=float32, io location=VARYING_SLOT_VAR1 slots=1)  // VARYING_SLOT_VAR1
+    div 32x4   %5 = (float32)tex %14 (coord), 0 (texture), 0 (sampler)
+    div 32x4  %11 = @load_interpolated_input (%10, %9 (0x0)) (base=0, component=0, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)  // VARYING_SLOT_VAR0
+    div 32    %16 = fmul %5.x, %11.x
+    div 32    %17 = fmul %5.y, %11.y
+    div 32    %18 = fmul %5.z, %11.z
+    div 32    %19 = fmul %5.w, %11.w
+    div 32x4  %20 = vec4 %16, %17, %18, %19
+    con 32     %4 = load_const (0x3e800000 = 0.250000)
+    div 32     %7 = flt32 %19, %4 (0.250000)
+                    @demote_if (%7)
+                    @store_output (%20, %9 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=FRAG_RESULT_DATA0 slots=1, xfb(), xfb2())  // outColor
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (19 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 %r32 a[0x7c] (0)
+  1: rcp  f32 %r33 %r32 (0)
+  2: pinterp mul u32 %r35 a[0x90] %r33 (0)
+  3: pinterp mul u32 %r36 a[0x94] %r33 (0)
+  4: tex 2D $r8 $s0 rgba f32 { %r37 %r38 %r39 %r40 } %r35 %r36 (0)
+  5: pinterp mul u32 %r41 a[0x80] %r33 (0)
+  6: pinterp mul u32 %r42 a[0x84] %r33 (0)
+  7: pinterp mul u32 %r43 a[0x88] %r33 (0)
+  8: pinterp mul u32 %r44 a[0x8c] %r33 (0)
+  9: mul ftz f32 %r45 %r37 %r41 (0)
+ 10: mul ftz f32 %r46 %r38 %r42 (0)
+ 11: mul ftz f32 %r47 %r39 %r43 (0)
+ 12: mul ftz f32 %r48 %r40 %r44 (0)
+ 13: set ftz u8 %p55 lt f32 %r48 0.250000 (0)
+ 14: %p55 discard - # (0)
+ 15: mov (SUBOP:1) u32 $r0 %r45 (0)
+ 16: mov (SUBOP:1) u32 $r1 %r46 (0)
+ 17: mov (SUBOP:1) u32 $r2 %r47 (0)
+ 18: mov (SUBOP:1) u32 $r3 %r48 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 19: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (15 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 $r0 a[0x7c] (8)
+  1: rcp  f32 $r4 $r0 (8)
+  2: pinterp mul u32 $r0 a[0x90] $r4 (8)
+  3: pinterp mul u32 $r1 a[0x94] $r4 (8)
+  4: texs 2D $r8 $s0 rgba f32 { $r0d $r2d } $r0 $r1 (8)
+  5: pinterp mul u32 $r5 a[0x80] $r4 (8)
+  6: pinterp mul u32 $r6 a[0x84] $r4 (8)
+  7: pinterp mul u32 $r7 a[0x88] $r4 (8)
+  8: pinterp mul u32 $r4 a[0x8c] $r4 (8)
+  9: mul ftz f32 $r0 $r0 $r5 (8)
+ 10: mul ftz f32 $r1 $r1 $r6 (8)
+ 11: mul ftz f32 $r2 $r2 $r7 (8)
+ 12: mul ftz f32 $r3 $r3 $r4 (8)
+ 13: set ftz u8 $p0 lt f32 $r3 0.250000 (8)
+ 14: $p0 discard - # (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 15: exit - # (8)
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+Program linked, validation draw GL error=0x0
+WXP Nouveau 136 exit=0
+WXP Nouveau begin 137
+libEGL warning: invalid EGL_PLATFORM given
+shader: MESA_SHADER_TESS_CTRL
+name: tcp_empty
+internal: true
+next_stage: MESA_SHADER_VERTEX
+subgroup_size: 0
+divergence_analysis_run: true
+primitive_mode: 0
+tcs_vertices_out: 1
+spacing: 0
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:  // preds:, succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (8)
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+Nouveau chipset=137 renderer=NV137
+shader: MESA_SHADER_VERTEX
+source_blake3: {0x07ee96f8, 0xedaf6453, 0x6ddc4b49, 0x1fa4191e, 0x1fe8d3aa, 0xf7492634, 0xf4d782ec, 0x287093f8}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+inputs_read: 15-17
+outputs_written: 0,32-33
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+inputs: 3
+outputs: 3
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inPosition (VERT_ATTRIB_GENERIC0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inColor (VERT_ATTRIB_GENERIC1.xyzw, 1, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inUV (VERT_ATTRIB_GENERIC2.xyzw, 2, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 gl_Position (VARYING_SLOT_POS.xyzw, 0, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 color (VARYING_SLOT_VAR0.xyzw, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec2 uv (VARYING_SLOT_VAR1.xy, 2, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    con 32     %6 = load_const (0x3f800000 = 1.000000)
+    con 32    %12 = load_const (0x00000000)
+    div 32x4  %13 = @load_input (%12 (0x0)) (base=0, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC0 slots=1)  // inPosition
+    div 32x4   %7 = vec4 %13.x, %13.y, %13.z, %6 (0x3f800000)
+    div 32x4  %17 = @load_input (%12 (0x0)) (base=2, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC2 slots=1)  // inUV
+    div 32x2   %8 = vec2 %17.x, %17.y
+    div 32x4  %15 = @load_input (%12 (0x0)) (base=1, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC1 slots=1)  // inColor
+                    @store_output (%15, %12 (0x0)) (base=1, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_VAR0 slots=1, xfb(), xfb2())  // color
+                    @store_output (%8, %12 (0x0)) (base=2, range=1, wrmask=xy, component=0, src_type=float32, io location=VARYING_SLOT_VAR1 slots=1, xfb(), xfb2())  // uv
+                    @store_output (%7, %12 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_POS slots=1, xfb(), xfb2())  // gl_Position
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (8 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 { %r29 %r30 } a[0x80] (0)
+  1: vfetch u32 %r31 a[0x88] (0)
+  2: mov u32 %r33 0x3f800000 (0)
+  3: vfetch u64 { %r38 %r39 } a[0xa0] (0)
+  4: vfetch b128 { %r44 %r45 %r46 %r47 } a[0x90] (0)
+  5: export b128 # o[0x80] %r44 %r45 %r46 %r47 (0)
+  6: export u64 # o[0x90] %r38 %r39 (0)
+  7: export b128 # o[0x70] %r29 %r30 %r31 %r33 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  8: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (10 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 $r0d a[0x80] (8)
+  1: vfetch u32 $r10 a[0x88] (8)
+  2: vfetch u64 $r2d a[0xa0] (8)
+  3: vfetch b128 $r4q a[0x90] (8)
+  4: export b128 # o[0x80] $r4q (8)
+  5: export u64 # o[0x90] $r2d (8)
+  6: mov u32 $r8 $r0 (8)
+  7: mov u32 $r9 $r1 (8)
+  8: mov u32 $r11 0x3f800000 (8)
+  9: export b128 # o[0x70] $r8q (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 10: exit - # (8)
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+shader: MESA_SHADER_FRAGMENT
+source_blake3: {0x81173a3c, 0x933df3c9, 0xc8389669, 0xaf9c4451, 0x4a193336, 0x7ce5cd3d, 0x99307696, 0x9af0ed07}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+num_textures: 1
+inputs_read: 32-33
+outputs_written: 4
+system_values_read: 0x00000000'00000000'01000000'00000000
+textures_used: 0x00000000'00000000'00000000'00000001
+samplers_used: 0x00000001
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_float: 0x20
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+uses_discard: true
+needs_quad_helper_invocations: true
+inputs: 2
+outputs: 1
+decl_var uniform INTERP_MODE_NONE none sampler2D imageSampler (0, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec4 VARYING_SLOT_VAR0 (VARYING_SLOT_VAR0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec2 VARYING_SLOT_VAR1 (VARYING_SLOT_VAR1.xy, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 outColor (FRAG_RESULT_DATA0.xyzw, 0, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    div 32x2  %10 = @load_barycentric_pixel (interp_mode=INTERP_MODE_SMOOTH)
+    con 32     %9 = load_const (0x00000000)
+    div 32x2  %14 = @load_interpolated_input (%10, %9 (0x0)) (base=1, component=0, dest_type=float32, io location=VARYING_SLOT_VAR1 slots=1)  // VARYING_SLOT_VAR1
+    div 32x4   %5 = (float32)tex %14 (coord), 0 (texture), 0 (sampler)
+    div 32x4  %11 = @load_interpolated_input (%10, %9 (0x0)) (base=0, component=0, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)  // VARYING_SLOT_VAR0
+    div 32    %16 = fmul %5.x, %11.x
+    div 32    %17 = fmul %5.y, %11.y
+    div 32    %18 = fmul %5.z, %11.z
+    div 32    %19 = fmul %5.w, %11.w
+    div 32x4  %20 = vec4 %16, %17, %18, %19
+    con 32     %4 = load_const (0x3e800000 = 0.250000)
+    div 32     %7 = flt32 %19, %4 (0.250000)
+                    @demote_if (%7)
+                    @store_output (%20, %9 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=FRAG_RESULT_DATA0 slots=1, xfb(), xfb2())  // outColor
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (19 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 %r32 a[0x7c] (0)
+  1: rcp  f32 %r33 %r32 (0)
+  2: pinterp mul u32 %r35 a[0x90] %r33 (0)
+  3: pinterp mul u32 %r36 a[0x94] %r33 (0)
+  4: tex 2D $r8 $s0 rgba f32 { %r37 %r38 %r39 %r40 } %r35 %r36 (0)
+  5: pinterp mul u32 %r41 a[0x80] %r33 (0)
+  6: pinterp mul u32 %r42 a[0x84] %r33 (0)
+  7: pinterp mul u32 %r43 a[0x88] %r33 (0)
+  8: pinterp mul u32 %r44 a[0x8c] %r33 (0)
+  9: mul ftz f32 %r45 %r37 %r41 (0)
+ 10: mul ftz f32 %r46 %r38 %r42 (0)
+ 11: mul ftz f32 %r47 %r39 %r43 (0)
+ 12: mul ftz f32 %r48 %r40 %r44 (0)
+ 13: set ftz u8 %p55 lt f32 %r48 0.250000 (0)
+ 14: %p55 discard - # (0)
+ 15: mov (SUBOP:1) u32 $r0 %r45 (0)
+ 16: mov (SUBOP:1) u32 $r1 %r46 (0)
+ 17: mov (SUBOP:1) u32 $r2 %r47 (0)
+ 18: mov (SUBOP:1) u32 $r3 %r48 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 19: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (15 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 $r0 a[0x7c] (8)
+  1: rcp  f32 $r4 $r0 (8)
+  2: pinterp mul u32 $r0 a[0x90] $r4 (8)
+  3: pinterp mul u32 $r1 a[0x94] $r4 (8)
+  4: texs 2D $r8 $s0 rgba f32 { $r0d $r2d } $r0 $r1 (8)
+  5: pinterp mul u32 $r5 a[0x80] $r4 (8)
+  6: pinterp mul u32 $r6 a[0x84] $r4 (8)
+  7: pinterp mul u32 $r7 a[0x88] $r4 (8)
+  8: pinterp mul u32 $r4 a[0x8c] $r4 (8)
+  9: mul ftz f32 $r0 $r0 $r5 (8)
+ 10: mul ftz f32 $r1 $r1 $r6 (8)
+ 11: mul ftz f32 $r2 $r2 $r7 (8)
+ 12: mul ftz f32 $r3 $r3 $r4 (8)
+ 13: set ftz u8 $p0 lt f32 $r3 0.250000 (8)
+ 14: $p0 discard - # (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 15: exit - # (8)
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+Program linked, validation draw GL error=0x0
+WXP Nouveau 137 exit=0
+WXP Nouveau begin 138
+libEGL warning: invalid EGL_PLATFORM given
+shader: MESA_SHADER_TESS_CTRL
+name: tcp_empty
+internal: true
+next_stage: MESA_SHADER_VERTEX
+subgroup_size: 0
+divergence_analysis_run: true
+primitive_mode: 0
+tcs_vertices_out: 1
+spacing: 0
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:  // preds:, succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (0 instructions) - df = { }
+ -> BB:1 (tree)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  0: exit - # (8)
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+Nouveau chipset=138 renderer=NV138
+shader: MESA_SHADER_VERTEX
+source_blake3: {0x07ee96f8, 0xedaf6453, 0x6ddc4b49, 0x1fa4191e, 0x1fe8d3aa, 0xf7492634, 0xf4d782ec, 0x287093f8}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+inputs_read: 15-17
+outputs_written: 0,32-33
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+inputs: 3
+outputs: 3
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inPosition (VERT_ATTRIB_GENERIC0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inColor (VERT_ATTRIB_GENERIC1.xyzw, 1, 0)
+decl_var shader_in INTERP_MODE_NONE none highp vec4 inUV (VERT_ATTRIB_GENERIC2.xyzw, 2, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 gl_Position (VARYING_SLOT_POS.xyzw, 0, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 color (VARYING_SLOT_VAR0.xyzw, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec2 uv (VARYING_SLOT_VAR1.xy, 2, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    con 32     %6 = load_const (0x3f800000 = 1.000000)
+    con 32    %12 = load_const (0x00000000)
+    div 32x4  %13 = @load_input (%12 (0x0)) (base=0, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC0 slots=1)  // inPosition
+    div 32x4   %7 = vec4 %13.x, %13.y, %13.z, %6 (0x3f800000)
+    div 32x4  %17 = @load_input (%12 (0x0)) (base=2, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC2 slots=1)  // inUV
+    div 32x2   %8 = vec2 %17.x, %17.y
+    div 32x4  %15 = @load_input (%12 (0x0)) (base=1, range=1, component=0, dest_type=float32, io location=VERT_ATTRIB_GENERIC1 slots=1)  // inColor
+                    @store_output (%15, %12 (0x0)) (base=1, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_VAR0 slots=1, xfb(), xfb2())  // color
+                    @store_output (%8, %12 (0x0)) (base=2, range=1, wrmask=xy, component=0, src_type=float32, io location=VARYING_SLOT_VAR1 slots=1, xfb(), xfb2())  // uv
+                    @store_output (%7, %12 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=VARYING_SLOT_POS slots=1, xfb(), xfb2())  // gl_Position
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (8 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 { %r29 %r30 } a[0x80] (0)
+  1: vfetch u32 %r31 a[0x88] (0)
+  2: mov u32 %r33 0x3f800000 (0)
+  3: vfetch u64 { %r38 %r39 } a[0xa0] (0)
+  4: vfetch b128 { %r44 %r45 %r46 %r47 } a[0x90] (0)
+  5: export b128 # o[0x80] %r44 %r45 %r46 %r47 (0)
+  6: export u64 # o[0x90] %r38 %r39 (0)
+  7: export b128 # o[0x70] %r29 %r30 %r31 %r33 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+  8: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (10 instructions) - df = { }
+ -> BB:1 (tree)
+  0: vfetch u64 $r0d a[0x80] (8)
+  1: vfetch u32 $r10 a[0x88] (8)
+  2: vfetch u64 $r2d a[0xa0] (8)
+  3: vfetch b128 $r4q a[0x90] (8)
+  4: export b128 # o[0x80] $r4q (8)
+  5: export u64 # o[0x90] $r2d (8)
+  6: mov u32 $r8 $r0 (8)
+  7: mov u32 $r9 $r1 (8)
+  8: mov u32 $r11 0x3f800000 (8)
+  9: export b128 # o[0x70] $r8q (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 10: exit - # (8)
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+shader: MESA_SHADER_FRAGMENT
+source_blake3: {0x81173a3c, 0x933df3c9, 0xc8389669, 0xaf9c4451, 0x4a193336, 0x7ce5cd3d, 0x99307696, 0x9af0ed07}
+name: GLSL3
+next_stage: MESA_SHADER_FRAGMENT
+num_textures: 1
+inputs_read: 32-33
+outputs_written: 4
+system_values_read: 0x00000000'00000000'01000000'00000000
+textures_used: 0x00000000'00000000'00000000'00000001
+samplers_used: 0x00000001
+subgroup_size: 1
+divergence_analysis_run: true
+bit_sizes_float: 0x20
+bit_sizes_int: 0x20
+first_ubo_is_default_ubo: true
+flrp_lowered: true
+uses_discard: true
+needs_quad_helper_invocations: true
+inputs: 2
+outputs: 1
+decl_var uniform INTERP_MODE_NONE none sampler2D imageSampler (0, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec4 VARYING_SLOT_VAR0 (VARYING_SLOT_VAR0.xyzw, 0, 0)
+decl_var shader_in INTERP_MODE_SMOOTH none highp vec2 VARYING_SLOT_VAR1 (VARYING_SLOT_VAR1.xy, 1, 0)
+decl_var shader_out INTERP_MODE_NONE none highp vec4 outColor (FRAG_RESULT_DATA0.xyzw, 0, 0)
+decl_function main () (entrypoint)
+
+impl main {
+    con block b0:       // preds:
+    div 32x2  %10 = @load_barycentric_pixel (interp_mode=INTERP_MODE_SMOOTH)
+    con 32     %9 = load_const (0x00000000)
+    div 32x2  %14 = @load_interpolated_input (%10, %9 (0x0)) (base=1, component=0, dest_type=float32, io location=VARYING_SLOT_VAR1 slots=1)  // VARYING_SLOT_VAR1
+    div 32x4   %5 = (float32)tex %14 (coord), 0 (texture), 0 (sampler)
+    div 32x4  %11 = @load_interpolated_input (%10, %9 (0x0)) (base=0, component=0, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)  // VARYING_SLOT_VAR0
+    div 32    %16 = fmul %5.x, %11.x
+    div 32    %17 = fmul %5.y, %11.y
+    div 32    %18 = fmul %5.z, %11.z
+    div 32    %19 = fmul %5.w, %11.w
+    div 32x4  %20 = vec4 %16, %17, %18, %19
+    con 32     %4 = load_const (0x3e800000 = 0.250000)
+    div 32     %7 = flt32 %19, %4 (0.250000)
+                    @demote_if (%7)
+                    @store_output (%20, %9 (0x0)) (base=0, range=1, wrmask=xyzw, component=0, src_type=float32, io location=FRAG_RESULT_DATA0 slots=1, xfb(), xfb2())  // outColor
+                    // succs: b1
+    block b1:
+}
+
+
+MAIN:-1 ()
+BB:0 (19 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 %r32 a[0x7c] (0)
+  1: rcp  f32 %r33 %r32 (0)
+  2: pinterp mul u32 %r35 a[0x90] %r33 (0)
+  3: pinterp mul u32 %r36 a[0x94] %r33 (0)
+  4: tex 2D $r8 $s0 rgba f32 { %r37 %r38 %r39 %r40 } %r35 %r36 (0)
+  5: pinterp mul u32 %r41 a[0x80] %r33 (0)
+  6: pinterp mul u32 %r42 a[0x84] %r33 (0)
+  7: pinterp mul u32 %r43 a[0x88] %r33 (0)
+  8: pinterp mul u32 %r44 a[0x8c] %r33 (0)
+  9: mul ftz f32 %r45 %r37 %r41 (0)
+ 10: mul ftz f32 %r46 %r38 %r42 (0)
+ 11: mul ftz f32 %r47 %r39 %r43 (0)
+ 12: mul ftz f32 %r48 %r40 %r44 (0)
+ 13: set ftz u8 %p55 lt f32 %r48 0.250000 (0)
+ 14: %p55 discard - # (0)
+ 15: mov (SUBOP:1) u32 $r0 %r45 (0)
+ 16: mov (SUBOP:1) u32 $r1 %r46 (0)
+ 17: mov (SUBOP:1) u32 $r2 %r47 (0)
+ 18: mov (SUBOP:1) u32 $r3 %r48 (0)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 19: exit - # (0)
+
+MAIN:-1 ()
+BB:0 (15 instructions) - df = { }
+ -> BB:1 (tree)
+  0: linterp pass f32 $r0 a[0x7c] (8)
+  1: rcp  f32 $r4 $r0 (8)
+  2: pinterp mul u32 $r0 a[0x90] $r4 (8)
+  3: pinterp mul u32 $r1 a[0x94] $r4 (8)
+  4: texs 2D $r8 $s0 rgba f32 { $r0d $r2d } $r0 $r1 (8)
+  5: pinterp mul u32 $r5 a[0x80] $r4 (8)
+  6: pinterp mul u32 $r6 a[0x84] $r4 (8)
+  7: pinterp mul u32 $r7 a[0x88] $r4 (8)
+  8: pinterp mul u32 $r4 a[0x8c] $r4 (8)
+  9: mul ftz f32 $r0 $r0 $r5 (8)
+ 10: mul ftz f32 $r1 $r1 $r6 (8)
+ 11: mul ftz f32 $r2 $r2 $r7 (8)
+ 12: mul ftz f32 $r3 $r3 $r4 (8)
+ 13: set ftz u8 $p0 lt f32 $r3 0.250000 (8)
+ 14: $p0 discard - # (8)
+BB:1 (1 instructions) - idom = BB:0, df = { }
+ 15: exit - # (8)
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 0
+HDR[00] = 0x00020461
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000fff
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x003ff000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x78 bytes):
+e4200701 001d0400 0807ff00 efd8ff80 0887ff0a efd87f80 0a07ff02 efd8ff80 
+7c20076f 008b8408 0907ff04 efd9ff80 0807ff04 eff1ff80 0907ff02 eff0ff80 
+fc200fe1 001f9800 00070008 5c980780 00170009 5c980780 0007f00b 0103f800 
+fde010e2 0000003f 0707ff08 eff1ff80 0007000f e3000000 
+dumping HDR for type 1
+HDR[00] = 0x00020861
+HDR[04] = 0x06000000
+HDR[08] = 0x01000000
+HDR[0c] = 0x60000000
+HDR[10] = 0x000ff000
+HDR[14] = 0x00000000
+HDR[18] = 0x00000000
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x00000000
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0x10 bytes):
+0001ffef 00000000 0007000f e3000000 
+dumping HDR for type 4
+HDR[00] = 0x0002d462
+HDR[04] = 0x00000000
+HDR[08] = 0x00000000
+HDR[0c] = 0x00000000
+HDR[10] = 0x00000000
+HDR[14] = 0x80000000
+HDR[18] = 0x00000aaa
+HDR[1c] = 0x00000000
+HDR[20] = 0x00000000
+HDR[24] = 0x00000000
+HDR[28] = 0x00000000
+HDR[2c] = 0x00000000
+HDR[30] = 0x00000000
+HDR[34] = 0x00000000
+HDR[38] = 0x00000000
+HDR[3c] = 0x00000000
+HDR[40] = 0x00000000
+HDR[44] = 0x00000000
+HDR[48] = 0x0000000f
+HDR[4c] = 0x00000000
+HDR[50] = 0x00000000
+HDR[54] = 0x00000000
+HDR[58] = 0x00000000
+HDR[5c] = 0x00000000
+HDR[60] = 0x00000000
+HDR[64] = 0x00000000
+HDR[68] = 0x00000000
+HDR[6c] = 0x00000000
+HDR[70] = 0x00000000
+HDR[74] = 0x00000000
+HDR[78] = 0x00000000
+HDR[7c] = 0x00000000
+shader binary code (0xb0 bytes):
+e1a0070f 003c0401 cff7ff00 e003ff87 00470004 50800000 0047ff00 e043ff89 
+e020072f 00088403 4047ff01 e043ff89 20170000 d8300080 0047ff05 e043ff88 
+b4400461 069d2c00 4047ff06 e043ff88 8047ff07 e043ff88 c047ff04 e043ff88 
+fc201fe1 001f8808 00570000 5c681000 00670101 5c681000 00770202 5c681000 
+fda027e6 001fb400 00470303 5c681000 80070307 36b183be 0000000f e3300000 
+0001ffef 00000000 0007000f e3000000 
+Program linked, validation draw GL error=0x0
+WXP Nouveau 138 exit=0
+WXP END
+[   11.363409] reboot: Power down

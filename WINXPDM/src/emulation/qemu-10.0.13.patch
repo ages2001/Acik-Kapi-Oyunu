@@ -1,0 +1,19 @@
+--- a/hw/display/meson.build
++++ b/hw/display/meson.build
+@@ -144,4 +144,6 @@
+ 
+ system_ss.add(when: 'CONFIG_OMAP', if_true: files('omap_lcdc.c'))
+ 
++system_ss.add(files('winxpdm-nv-color.c'))
++
+ modules += { 'hw-display': hw_display_modules }
+--- a/qapi/qom.json
++++ b/qapi/qom.json
+@@ -1121,6 +1121,7 @@
+     { 'name': 'pr-manager-helper',
+       'if': 'CONFIG_LINUX' },
+     'qtest',
++    'winxpdm-nv-color',
+     'rng-builtin',
+     'rng-egd',
+     { 'name': 'rng-random',

@@ -1,0 +1,62 @@
+{
+  "install": {
+    "phase": "install",
+    "profile": "patchmem",
+    "log": {
+      "WRINST.TXT": [
+        "WINRAM 1.0",
+        "",
+        "Windows 95/98/SE/ME RAM Limitation Patch  Version 7.2",
+        "Copyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.",
+        "",
+        "VMM File Extracted",
+        "VCACHE File Extracted",
+        "VMM32 Patched",
+        "VMM Patched",
+        "VCACHE Patched",
+        "",
+        "Patch Installed Successfully",
+        ""
+      ]
+    },
+    "sampled_files_changed": [
+      "SYSTEM/VMM32.VXD",
+      "SYSTEM/VMM32/VMM.VXD",
+      "SYSTEM/VMM32/VCACHE.VXD"
+    ],
+    "active_record": false,
+    "passed": true
+  },
+  "remove": {
+    "phase": "remove",
+    "profile": "patchmem",
+    "log": {
+      "WRREMOVE.TXT": [
+        "WINRAM 1.0",
+        "",
+        "Windows 95/98/SE/ME RAM Limitation Patch  Version 7.2",
+        "Copyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.",
+        "",
+        "",
+        "Patch Already Installed - Uninstall (Y/N) ? (N) ",
+        "Uninstall Completed",
+        ""
+      ]
+    },
+    "sampled_files_changed": [],
+    "active_record": false,
+    "passed": true
+  },
+  "before_sha256": {
+    "SYSTEM.INI": "97c4b16450c1c7e2e2d7b0a4569de5bbf47112a2022d7355a2434c52db946782",
+    "WIN.COM": "440726d049b07ae92663c0d9f23fd626ab77b68ecc92081ecd4c22651b236339",
+    "SYSTEM/USER.EXE": "73e6c90cc14484b38c83fe0418c5872e4508140cac02cf5cdfa9a0a8c0384d36",
+    "SYSTEM/KRNL386.EXE": "9518bc4d2db4b46abc3a39add88f8f6f05ebf189852b36ff4f296c54b27b446c",
+    "SYSTEM/WIN386.EXE": null,
+    "SYSTEM/KERNEL32.DLL": "e50329ab9bc89268a1eecf435ab04400ade702d349cb934ae83d38f9a3339435",
+    "SYSTEM/SYSDM.CPL": "c02d675b9f279673f0334386e93fb277c6ec5fc6924ce287b82706d54eefffdc",
+    "SYSTEM/VMM32.VXD": "911a6dd1b9af24bc31063f38cfd9f969221558843476ecd82fe38368049141cb",
+    "SYSTEM/VMM32/VMM.VXD": null,
+    "SYSTEM/VMM32/VCACHE.VXD": null
+  }
+}

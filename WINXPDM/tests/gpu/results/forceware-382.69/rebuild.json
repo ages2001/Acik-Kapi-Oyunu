@@ -1,0 +1,21 @@
+{
+  "base": "stock 368.81",
+  "prior_forceware_installer_required": false,
+  "input_hashes": {
+    "stock": "eaaef0650b6c6a99a2ed70d5e15aaf5221570ae596ca51784ff5e6fc7e5482f1",
+    "geforce": "467bdc2e47f4f36330ed011520b9ac79e3051c20728a60e5a2ecebda0228152f",
+    "gp102": "1de048708f30399a5f33f15b4ac3e3609db0c626b71a5596d2528c3585cb0d09",
+    "gp107": "583a7c051bbe933a558ec1c000a0077e0be0cdf03717e366d371e9b3b2006358",
+    "gp108": "927f556d98494769b5a09e48edd3491a38fff52aab9b7c1f87ed9b8121c9d96b",
+    "pascal391": "29d87a800925ff50a1b14c3007ab6913c375faf795185a3da5ade139b685c6db",
+    "quadro": "84fcd8f31466956f40f1aebc833ef4b23c30b0077e61a842257b4076e4482633"
+  },
+  "runtime_payload_exact": true,
+  "non_generated_package_files": 636,
+  "control_panel_files": 469,
+  "donor_resources": 130,
+  "installer_sha256": "d37a52b7f7a5db656b95edec1f80fd1a96fdf6951c2eef28224df6dc69139d54",
+  "release_installer_sha256": "bb7ff231910851827143a7a090d0e4aca5715a2ce0f26294c8d1004ea40a00f9",
+  "installer_exact": false,
+  "all_extraction_checks_pass": true
+}

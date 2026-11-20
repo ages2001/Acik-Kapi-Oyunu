@@ -1,0 +1,47 @@
+; Lab binding for the two unmodified Cirrus binaries from XP's driver.cab.
+[Version]
+Signature="$Windows NT$"
+Class=Display
+ClassGUID={4D36E968-E325-11CE-BFC1-08002BE10318}
+Provider=%Lab%
+DriverVer=08/17/2001,5.1.2600.0
+
+[Manufacturer]
+%Lab%=Models
+[Models]
+%Card%=Install,PCI\VEN_1013&DEV_00B8
+
+[Install]
+CopyFiles=Miniport,DisplayDLL
+[Install.Services]
+AddService=cirrus,0x00000002,Service
+[Install.SoftwareSettings]
+AddReg=Settings
+[Service]
+ServiceType=1
+StartType=1
+ErrorControl=1
+LoadOrderGroup=Video
+ServiceBinary=%12%\cirrus.sys
+[Settings]
+HKR,,InstalledDisplayDrivers,0x00010000,vga,cirrus,vga256,vga64k
+HKR,,VgaCompatible,0x00010001,1
+HKR,,DefaultSettings.BitsPerPel,0x00010001,16
+HKR,,DefaultSettings.XResolution,0x00010001,800
+HKR,,DefaultSettings.YResolution,0x00010001,600
+HKR,,DefaultSettings.VRefresh,0x00010001,60
+[DestinationDirs]
+Miniport=12
+DisplayDLL=11
+[Miniport]
+cirrus.sys
+[DisplayDLL]
+cirrus.dll
+[SourceDisksNames]
+1=%Lab%,,,
+[SourceDisksFiles]
+cirrus.sys=1
+cirrus.dll=1
+[Strings]
+Lab="WINXPDM compatibility test"
+Card="Cirrus Logic CL-GD5446 (XP driver test)"

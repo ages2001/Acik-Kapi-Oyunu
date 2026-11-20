@@ -1,0 +1,14 @@
+Failed to create /home/agent/.cache/mesa_shader_cache for shader cache (Read-only file system)---disabling.
+Failed to create /home/agent/.cache/mesa_shader_cache_db for shader cache (Read-only file system)---disabling.
+WXP KERNEL 6.12.107+deb13-amd64
+WXP PCI 0x1af4 0x1050
+WXP DRIVER virtio-pci
+opened device `virtio GPU` on driver `virtio_gpu` (version 0.1.0 at 0)
+setting mode 1280x800-74.99Hz on connectors 37, crtc 36
+WXP MODESET 1280x800
+WXP FB virtio_gpudrmfb 1280,800
+WXP GL_RENDERER virgl (LLVMPIPE (LLVM 19.1.7, 256 bits))
+WXP GL_PIXELS 255,0,0,255 0,0,255,255
+WXP VIRGL_RENDER PASS
+WXP END
+[   10.539093] reboot: Power down

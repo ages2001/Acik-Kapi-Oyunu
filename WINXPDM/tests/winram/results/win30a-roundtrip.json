@@ -1,0 +1,55 @@
+{
+  "install": {
+    "phase": "install",
+    "profile": "managed",
+    "log": {
+      "WRINST.TXT": [
+        "WINRAM 1.0",
+        "Microsoft Windows 3.0a",
+        "C:\\WINDOWS",
+        "Installed. Restart the target system."
+      ],
+      "WRVERIFY.TXT": [
+        "WINRAM 1.0",
+        "Microsoft Windows 3.0a",
+        "C:\\WINDOWS",
+        "Installation verified."
+      ]
+    },
+    "sampled_files_changed": [
+      "SYSTEM.INI",
+      "WIN.COM",
+      "SYSTEM/USER.EXE",
+      "SYSTEM/KRNL386.EXE"
+    ],
+    "active_record": true,
+    "passed": true
+  },
+  "remove": {
+    "phase": "remove",
+    "profile": "managed",
+    "log": {
+      "WRREMOVE.TXT": [
+        "WINRAM 1.0",
+        "Microsoft Windows 3.0a",
+        "C:\\WINDOWS",
+        "Uninstalled. Original backups retained."
+      ]
+    },
+    "sampled_files_changed": [],
+    "active_record": false,
+    "passed": true
+  },
+  "before_sha256": {
+    "SYSTEM.INI": "88441b3a7f87340441777b9424510710bd8913005d9554f2fecac202e886708a",
+    "WIN.COM": "2b7bb358162ce2c49012e24bdea9c2abf2b1f002949d11271893691abdd39129",
+    "SYSTEM/USER.EXE": "609f8945fd73e084851f99b515c534eb68a1db8dc0c1b556d81c105dccef666c",
+    "SYSTEM/KRNL386.EXE": "824c1e0e85ae7eee2b8313c3347852bf94bb1a458a61362204ad4b3b77047cdc",
+    "SYSTEM/WIN386.EXE": "efbcbddb561f8cdf5c4bb2fad0b1d9ac4148e172ac939e9cd60fe1555266e6a7",
+    "SYSTEM/KERNEL32.DLL": null,
+    "SYSTEM/SYSDM.CPL": null,
+    "SYSTEM/VMM32.VXD": null,
+    "SYSTEM/VMM32/VMM.VXD": null,
+    "SYSTEM/VMM32/VCACHE.VXD": null
+  }
+}

@@ -1,0 +1,10 @@
+D3DTEST 800x600x32 2 s
+DirectDrawCreateEx 00000000
+SetCooperativeLevel 00000000
+SetDisplayMode 00000000
+CreateSurface 3D flip chain 00000000
+back buffer caps 1000601c (video memory)
+IDirect3D7 80004002
+pixel checks: 0/9 executed, 0 failed
+result: FAIL
+done
