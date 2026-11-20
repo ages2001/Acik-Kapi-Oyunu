@@ -1,0 +1,22 @@
+name: Attach NT3SCPRT v1.0 ZIP
+on:
+  push:
+    branches: [nt3scprt-v1-asset]
+    paths: [.github/workflows/attach-nt3scprt-v1.yml, NT3SCPRT.ZIP]
+permissions: {}
+jobs:
+  attach:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Verify and attach the published archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP"
+          gh api -H 'Accept: application/vnd.github.raw+json' "repos/$GITHUB_REPOSITORY/contents/NT3SCPRT.ZIP?ref=$GITHUB_SHA" > NT3SCPRT.ZIP
+          echo 'df0bb6d8a96c598f40fdce07c6deeb86c606d216aacf25fe43d030f29c580765  NT3SCPRT.ZIP' | sha256sum --check -
+          gh release upload nt3scprt-v1.0 NT3SCPRT.ZIP --repo "$GITHUB_REPOSITORY"
