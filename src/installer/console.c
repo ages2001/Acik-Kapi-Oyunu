@@ -95,7 +95,7 @@ int main(int argc, char **argv) {
     unsigned n = 0;
     _harderr(hardfail);
     detect_host();
-    puts("WINRAM 1.0.1");
+    puts("WINRAM 1.0");
     if (windows_major)
         puts("Running inside Windows.");
     if (!startpack(argv[0]))

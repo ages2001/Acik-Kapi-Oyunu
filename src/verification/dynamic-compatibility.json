@@ -1,6 +1,6 @@
 {
-  "version": "1.0.1",
-  "executable_sha256": "32c1939e6828a3520ab6d610dea5d79482e63572322db2091b28e0126a0589f1",
+  "version": "1.0",
+  "executable_sha256": "3f76519738c03dd282a8eaa186e05aae0b88df3724347212bf16a016e55a3293",
   "environment": {
     "emulator": "QEMU system i386 with TCG",
     "high_memory_machine": "pc,acpi=off,max-ram-below-4g=4G",
@@ -33,15 +33,25 @@
   },
   "relocated_windows31_user": {
     "OLD": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nRejected",
-    "INS": "WINRAM 1.0.1\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nInstalled. Restart the target system.",
-    "VER": "WINRAM 1.0.1\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nInstallation verified.",
-    "UNDO": "WINRAM 1.0.1\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nUninstalled. Original backups retained.",
+    "INS": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nInstalled. Restart the target system.",
+    "VER": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nInstallation verified.",
+    "UNDO": "WINRAM 1.0\r\nMicrosoft Windows 3.1\r\nD:\\ARCHIVE\\W31\r\nUninstalled. Original backups retained.",
     "restored_sha256": "5bfad1a58ec80282cf51797f98ab181f9e4579a53ed12cde0af38e81abe406b0",
     "installed_sha256": "3f5d37b3f8ff911161f8842872eea89ee7068c362a30b53583f5496bdec15b71",
     "original_menu_segment_position": 97952,
     "test_menu_segment_position": 264016,
     "preserved_overlay": true,
-    "retained_backup": true
+    "retained_backup": true,
+    "comparison_builds": {
+      "OLD": {
+        "description": "First v1.0 archive",
+        "installer_sha256": "1e85f229b4a1e64f97cb0104854295b6b653538c4794a679e41034dc628691bc"
+      },
+      "INS_VER_UNDO": {
+        "description": "Current v1.0 archive with dynamic USER handling",
+        "installer_sha256": "3f76519738c03dd282a8eaa186e05aae0b88df3724347212bf16a016e55a3293"
+      }
+    }
   },
   "rejected_ambiguous_user": {
     "scenario": "Two allocation-call patterns in the active USER menu code segment",
@@ -62,11 +72,11 @@
   "windows_installer_round_trips": {
     "W101": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 1.01",
         "D:\\ARCHIVE\\W101",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 1.01",
         "D:\\ARCHIVE\\W101",
         "Installation verified."
@@ -76,11 +86,11 @@
     },
     "W203": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 2.03",
         "D:\\ARCHIVE\\W203",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 2.03",
         "D:\\ARCHIVE\\W203",
         "Installation verified."
@@ -90,11 +100,11 @@
     },
     "W286": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows/286 2.11",
         "D:\\ARCHIVE\\W286",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows/286 2.11",
         "D:\\ARCHIVE\\W286",
         "Installation verified."
@@ -104,11 +114,11 @@
     },
     "W386": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows/386 2.11",
         "D:\\ARCHIVE\\W386",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows/386 2.11",
         "D:\\ARCHIVE\\W386",
         "Installation verified."
@@ -118,11 +128,11 @@
     },
     "W30": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 3.0a",
         "D:\\ARCHIVE\\W30",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 3.0a",
         "D:\\ARCHIVE\\W30",
         "Installation verified."
@@ -134,11 +144,11 @@
     },
     "W31": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 3.1",
         "D:\\ARCHIVE\\W31",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 3.1",
         "D:\\ARCHIVE\\W31",
         "Installation verified."
@@ -150,11 +160,11 @@
     },
     "WFW": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Windows for Workgroups 3.11",
         "D:\\ARCHIVE\\WFW",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Windows for Workgroups 3.11",
         "D:\\ARCHIVE\\WFW",
         "Installation verified."
@@ -166,7 +176,7 @@
     },
     "W95": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Windows 95 OSR2 (4.00.1111)",
         "D:\\ARCHIVE\\W95",
         "",
@@ -182,7 +192,7 @@
         "Patch Installed Successfully",
         "",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Windows 95 OSR2 (4.00.1111)",
         "D:\\ARCHIVE\\W95",
         "Installation verified."
@@ -194,7 +204,7 @@
     },
     "W98": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Windows 98 Second Edition (4.10.2222)",
         "D:\\ARCHIVE\\W98",
         "",
@@ -210,7 +220,7 @@
         "Patch Installed Successfully",
         "",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Windows 98 Second Edition (4.10.2222)",
         "D:\\ARCHIVE\\W98",
         "Installation verified."
@@ -222,7 +232,7 @@
     },
     "WME": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Windows Millennium Edition (4.90.3000)",
         "D:\\ARCHIVE\\WME",
         "",
@@ -238,7 +248,7 @@
         "Patch Installed Successfully",
         "",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Windows Millennium Edition (4.90.3000)",
         "D:\\ARCHIVE\\WME",
         "Installation verified."
@@ -252,13 +262,13 @@
   "dos_installer_round_trips": {
     "5": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 5.00",
         "A:\\",
         "Installed. Restart the target system."
       ],
       "verify": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 5.00",
         "A:\\",
         "Installation verified."
@@ -272,7 +282,7 @@
         "BIOS E820 usable RAM (type 1): 4128383 KiB"
       ],
       "uninstall": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 5.00",
         "A:\\",
         "Uninstalled. Original backups retained."
@@ -281,13 +291,13 @@
     },
     "6": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 6.22",
         "C:\\",
         "Installed. Restart the target system."
       ],
       "verify": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 6.22",
         "C:\\",
         "Installation verified."
@@ -301,7 +311,7 @@
         "BIOS E820 usable RAM (type 1): 4128383 KiB"
       ],
       "uninstall": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 6.22",
         "C:\\",
         "Uninstalled. Original backups retained."
@@ -310,13 +320,13 @@
     },
     "7": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 7.10",
         "A:\\",
         "Installed. Restart the target system."
       ],
       "verify": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 7.10",
         "A:\\",
         "Installation verified."
@@ -330,7 +340,7 @@
         "BIOS E820 usable RAM (type 1): 4128383 KiB"
       ],
       "uninstall": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 7.10",
         "A:\\",
         "Uninstalled. Original backups retained."
@@ -339,13 +349,13 @@
     },
     "8": {
       "install": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 8.00",
         "A:\\",
         "Installed. Restart the target system."
       ],
       "verify": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 8.00",
         "A:\\",
         "Installation verified."
@@ -359,7 +369,7 @@
         "BIOS E820 usable RAM (type 1): 4128383 KiB"
       ],
       "uninstall": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft MS-DOS 8.00",
         "A:\\",
         "Uninstalled. Original backups retained."
@@ -443,17 +453,17 @@
         "WINDOWS/WINFILE.EXE": "720b977b3182bbb3bb07eb3a450a6576a9f02c303c475c324f652c58e183ba89"
       },
       "install_and_verify": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 3.1",
         "D:\\WINDOWS",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 3.1",
         "D:\\WINDOWS",
         "Installation verified."
       ],
       "uninstall": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 3.1",
         "D:\\WINDOWS",
         "Uninstalled. Original backups retained."
@@ -509,17 +519,17 @@
         "WINDOWS/WINFILE.EXE": "d715b48372b6eacc803f144fbe61722a67f7226a4af4af72ff54f16bae0a1886"
       },
       "install_and_verify": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 3.1",
         "D:\\WINDOWS",
         "Installed. Restart the target system.",
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 3.1",
         "D:\\WINDOWS",
         "Installation verified."
       ],
       "uninstall": [
-        "WINRAM 1.0.1",
+        "WINRAM 1.0",
         "Microsoft Windows 3.1",
         "D:\\WINDOWS",
         "Uninstalled. Original backups retained."
@@ -579,21 +589,21 @@
   },
   "installer_in_windows": {
     "Windows 1.01": {
-      "application": "The same release DOS executable and PIF",
+      "application": "The release v1.0 DOS executable and PIF",
       "listed_host_dos": "MS-DOS 6.22",
       "listed_windows": "Windows 1.01",
       "numbered_selection_prompt_visible": true,
       "capture": "screens/windows1-installer.png"
     },
     "Windows 2.03": {
-      "application": "The same release DOS executable and PIF",
+      "application": "The release v1.0 DOS executable and PIF",
       "listed_host_dos": "MS-DOS 6.22",
       "listed_windows": "Windows 2.03",
       "numbered_selection_prompt_visible": true,
       "capture": "screens/windows2-installer.png"
     },
     "Windows 3.1": {
-      "application": "The same release DOS executable and PIF",
+      "application": "The release v1.0 DOS executable and PIF",
       "listed_host_dos": "MS-DOS 6.22",
       "listed_windows": "Windows 3.1",
       "numbered_selection_prompt_visible": true,

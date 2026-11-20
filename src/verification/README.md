@@ -9,10 +9,10 @@ The records in this directory came from bootable FAT guests under QEMU TCG. The 
 | Test | Evidence |
 | --- | --- |
 | Scan two DOS-visible drives, select a system by number, install, verify, keep or uninstall an existing installation, retain backups and restore original SHA-256 values | [DOS installer transcript and hashes](installer-roundtrip.json) |
-| Install and remove v1.0.1 on ten Windows editions with modified file headers, overlays or relocated code. Compare restored files with their actual inputs | [Compatibility results](dynamic-compatibility.json) |
+| Install and remove v1.0 on ten Windows editions with modified file headers, overlays or relocated code. Compare restored files with their actual inputs | [Compatibility results](dynamic-compatibility.json) |
 | Follow relocated USER menu code and reordered import tables, accept named imports, ignore matches in data and reject ambiguous or truncated code | [Portable regression](tests/user_variants.py) · [Results](dynamic-compatibility.json) |
 | Boot the Turkish and German Windows 3.1 core and shell at 4,032 MiB, observe native Program Manager values, create and release GUI objects and verify large Win16 allocations | [Results](dynamic-compatibility.json) · [Turkish](screens/w31-tr-about.png) · [German](screens/w31-de-about.png) |
-| Share boot files between two installations and restore them after the last dependent removal. The v1.0 transcript also records that release's stricter input check | [Original installer round trip](installer-roundtrip.json) |
+| Share boot files between two installations and restore them after the last dependent removal. The transcript shows the stricter input check used by the first build | [Original installer round trip](installer-roundtrip.json) |
 | Install the DOS profile, boot its memory driver, run MEM, remove and restore CONFIG.SYS | [DOS 5.00](dos5.json) · [DOS 6.22](dos6.json) · [DOS 7.10](dos7.json) · [DOS 8.00](dos8.json) |
 | Launch the same executable as a standard Windows task, scan and select by number | [Windows 1.01](screens/windows1-installer.png) · [Windows 2.03](screens/windows2-installer.png) · [Windows 3.1](screens/windows31-installer.png) |
 | Queue removal from a running Windows 2.03 desktop, reboot DOS, recover AUTOEXEC.BAT and retain the five target backups | [Early Windows restart](windows2-restart.json) |

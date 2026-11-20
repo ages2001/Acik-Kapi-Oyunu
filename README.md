@@ -1,4 +1,4 @@
-# WINRAM
+# WINRAM v1.0
 
 WINRAM expands usable memory and selected system-resource pools on DOS and early Windows. The release has one public executable, **`bin/WINRAM.EXE`**. It identifies installed operating systems, applies the matching changes and keeps the original files for removal. It supports offline installations on other DOS drive letters.
 
@@ -24,7 +24,7 @@ WINRAM /UNINSTALL C:\WINDOWS
 - Original files are retained under **`WRMSTATE\Bxxxx.BKP`** beneath the selected target. Shared DOS boot files use **`\WRMBOOT`** and the DOSX boot profile uses **`\WRMLOW`**. The installation record maps names to destinations. Removal restores the original contents, FAT attributes and timestamps. Existing backups survive removal. Later edits to managed files are saved as additional `.BKP` files before restoration.
 - A pending file transaction resumes when the same target is selected again. Keep its state directory with the installation. The shared XMS driver is released when the last dependent installation is removed.
 
-## Executable compatibility in v1.0.1
+## Executable compatibility
 
 WINRAM resolves the active code inside the selected installation. For Windows 3.x it follows the NE exports and the KERNEL imports for menu allocation and release. Windows 95, 98 and Me use a different USER heap initialization routine. Windows 1.x and 2.x bind USER into the system binary and overlay. The installer uses the format and allocator for each family. A translated resource, a different file checksum, a relocated code segment or a vendor trailer can coexist with the patch.
 
