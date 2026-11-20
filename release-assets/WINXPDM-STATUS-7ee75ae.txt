@@ -1,0 +1,287 @@
+WINXPDM development status | 21 November 2026 (Istanbul)
+======================================================
+
+The seven English Windows installation packages are available. The project
+does not yet run the original XP display drivers with full acceleration across
+all requested Windows versions and GPUs. The GTX 980 on NT 3.1 and the RX
+9070 XT on legacy Windows are still development targets.
+
+Published build
+---------------
+
+Source commit    7ee75aec08b8eedff0b70667c0313ae7ad3e7806
+Release tag      winxpdm-v1.0
+Current archive  WINXPDM-v1.0-dev-7ee75ae.zip
+Archive size     1,988,452 bytes, 424 files
+SHA-256          c6d294723ab905b537a6febc0e743f79c5b6334f7045dd66a0817feb9a076b07
+
+GitHub hosts the original v1.0 ZIP and subsequent development archives on the
+same release. The download above was fetched from GitHub and compared byte for
+byte to the locally verified archive. Every archived file corresponds to the
+source commit. The project includes bin, src, tools, tests, English READMEs,
+the GPLv3 project license and component-specific notices. The QEMU additions
+carry GPL-2.0-or-later notices. The media, VBIOS images and commercial vendor
+driver packages used in testing are external inputs.
+
+Release page
+https://github.com/ages2001/Acik-Kapi-Oyunu/releases/tag/winxpdm-v1.0
+Current ZIP
+https://github.com/ages2001/Acik-Kapi-Oyunu/releases/download/winxpdm-v1.0/WINXPDM-v1.0-dev-7ee75ae.zip
+Source, binaries, third-party notices and indexed results
+https://github.com/ages2001/Acik-Kapi-Oyunu/tree/7ee75aec08b8eedff0b70667c0313ae7ad3e7806/WINXPDM
+
+What runs on the requested Windows generations
+----------------------------------------------
+
+The lab booted 14 installations using Windows 3.0, 3.0a, 3.1, Windows for
+Workgroups 3.11, Windows 95 OSR2, 98 SE, Me, NT 3.1, NT 3.5, NT 3.51,
+NT 4.0, 2000, XP x86 and XP Professional x64. The Windows 3.x runs used 386
+enhanced mode. Seven packages cover Win30, Win31, Win9x, NT3x, NT4, NT5x86
+and XPAMD64. XP x64 has native AMD64 executables and drivers.
+
+The English Next/Install/Finish wizard has 16-color artwork, a monitor icon,
+an Info application and a red-cross removal icon. Program Manager receives
+Info and Uninstall entries. Explorer receives a desktop Info shortcut and
+an Add/Remove Programs entry. Info can open the optional 3D viewer.
+
+Reference display driver (QEMU Standard VGA, PCI 1234:1111)
+
+System                   Verified in the guest / remaining lifecycle work
+Windows 3.0/3.1/WfW 3.11  Setup, high-color operation and VGA restoration.
+                          WfW needed a second removal pass for open files.
+Windows 95 OSR2           Media and package staged. Complete reference-driver
+                          activation, restart and removal remain open.
+Windows 98 SE and Me      Both booted. Setup opened Display Properties.
+                          Final reference-driver selection and removal are open.
+NT 3.1 and 3.51           Setup, reboot and 800 x 600 at 16 bpp. Removal open.
+NT 3.5 and 4.0            Service and/or restarted high-color desktop observed.
+                          Complete install/remove coverage remains open.
+Windows 2000              800 x 600 at 16 bpp and 60 Hz. Direct3D 7/8/9 each
+                          displayed a rotating textured cube in software.
+                          Full reference-driver removal remains open.
+XP x86 and XP x64         GDI passed with device problem 0, at 800 x 600 x 16
+                          and 1280 x 800 x 32 respectively. The XP x64 wizard
+                          also passed install/view/remove/cleanup for VirtIO.
+                          Reference-display removal is separately tracked.
+
+The native VirtIO/VirGL test driver submitted guest vertex and fragment
+programs, checked interpolation, depth and texture sampling, and presented
+different images on two virtual outputs. All 14 installations passed the
+guest suite. The host renderer recorded in the VirGL control was LLVMpipe.
+The Win3.0 viewer and removal wizard also ran on a 16-color desktop.
+
+Evidence in the ZIP
+  tests/README.md
+  tests/gpu/windows/README.md
+  tests/gpu/results/windows-virgl/
+  tests/gpu/results/qemu-std-xp86/ and qemu-std-xp64/
+
+GPU inventory and source-built emulation
+---------------------------------------
+
+Windows media and the original XP driver packages contained 8,900 model
+matches covering 793 distinct PCI vendor/device IDs. Native XP SetupAPI
+selected the expected INF sections for 750 x86 cases and 537 AMD64 cases,
+827 distinct IDs across both sets including community additions. The focused
+inventory covers 20 GTX 9xx IDs, 34 GTX 10xx IDs and three RDNA 4 IDs.
+These numbers establish package selection. Rendering requires separate tests.
+
+NVIDIA 355.82/368.81, AMD Catalyst 14.4 XP, the SupraGSX 382.69 community
+package and comparison drivers for newer Windows were examined. The tested
+Maxwell INF edit adds desktop GTX 970, 980 and 980 Ti to stock XP 368.81 on
+both architectures. The 382.69 XP x86 rebuild used six hash-checked donor
+packages and reproduced the checked runtime. It adds 39 board matches and
+changes driver binaries as well as the INF. XP x64 selected zero entries
+from its x86-only INF. No AMD64 Pascal driver was established by that test.
+
+QEMU 10.0.13 was built from source. Linux 6.12.107, Nouveau, AMDGPU, Mesa
+25.0.7 and published register/class descriptions were used for comparison.
+The guest Linux mode tests obtained modes on Bochs, Cirrus and VirtIO; the
+Rage 128 framebuffer bound. The RV100 case timed out before a mode result.
+The VMware test did not produce a usable DRM connector.
+
+All 16 priority PCI profiles passed register/BAR/VRAM and AUX tests on three
+topologies, 48 cases. Profiles cover GTX 950, 960, 970, 980, 980 Ti, 1050,
+1050 Ti, two 1060 variants, 1070, 1070 Ti, 1080, 1080 Ti, RX 9060 XT,
+RX 9070 XT and Radeon AI PRO R9700. These are partial QEMU models.
+
+The separate graphics test device executed two Mesa-compiled fragment
+programs on ten Maxwell/Pascal and two RDNA 4 target encodings. Fourteen
+Windows installations passed the gradient, texture, depth and error-path
+checks. The Maxwell/Pascal class-method test read back 260 framebuffer
+words per class for B097/B197/C197. The Forceware GP107 selector also passed all 256 inputs.
+DisplayPort policy checks covered 49,152 link inputs and 9,600,000
+depth/clock inputs. HDMI SCDC recovery and retry tests passed in simulation.
+These tests cover the specified shaders, commands and policy logic. The full vendor command processors and Windows display stacks
+remain unfinished.
+
+Native probes accessed the emulated GTX 980, GTX 1050 Ti and RX 9070 XT
+through each board's own PCI BARs in all 14 guests, giving 42 OS/board
+results. GeForce passed bidirectional video-memory and display-counter
+checks. RDNA 4 passed local fill, unaligned copy, two ordered 32-bit fence
+writes forming a 64-bit sequence and ring read-pointer writeback. Each board
+exposed two AUX sinks with four EDID blocks and two distinct preferred modes.
+
+Evidence in the ZIP
+  tests/gpu/priority.md and tests/gpu/README.md
+  tests/gpu/results/xp-pci.tsv and priority-pci.tsv
+  tests/gpu/results/xp-selection-32.tsv and xp-selection-64.tsv
+  tests/gpu/results/board-pci.tsv, vendor-windows.tsv and vendor-windows.txt
+  tests/gpu/results/fragment-qtest.txt and nvidia-3d-methods.txt
+
+GTX 980, GTX 10xx and current Radeon driver results
+-------------------------------------------------
+
+GTX 970/980 GM204. The emulated power-management processor has 32 KiB of
+instruction SRAM, 24 KiB of data SRAM, virtual page tags, ordinary Falcon v5
+execution and physical VRAM/PCI RAM transfers. The Windows test on the GTX
+980 uploaded an original five-instruction program, ran it for two inputs,
+checked the exact results including overflow, acknowledged EXIT and released
+the page. This passed inside all 14 Windows installations. The host tests
+also exercised both GM204 models with partial uploads, duplicate mappings,
+a cross-page call and external code/data transfers.
+
+GTX 980 on XP x64. Stock NVIDIA 368.81 with the desktop INF addition bound
+to the ASUS identity 10DE:13C0 / 1043:8506. Direct attachment on Q35 gave
+Code 12. Behind a PCIe root port the driver received firmware resources,
+read its VBIOS and uploaded 128 ordinary instruction words and 19 data
+words. The two code pages were placed at physical offset 0x7e00 and started
+at virtual PC 0x10000. The processor retired 37 instructions and fetched one
+256-byte code page from PCI system RAM. The next operation at 0x10072
+selects a Falcon cryptographic context that the model does not implement.
+The guest still reported Code 10. Direct3D 9 enumerated only QEMU VGA and
+executed 0 of 9 target-GPU pixel tests. The vendor driver issued zero AUX
+requests. Native GTX 980 3D is unverified.
+
+GTX 980 and GTX 1050 Ti on XP x86. Community Forceware 382.69 selected and
+installed the matching vendor driver. The recorded conventional-PCI
+reboots stopped at 0x7F, parameter 8. A further Q35/PCIe GTX 1050 Ti
+comparison was in progress when this report was prepared. The package
+publisher separately reports Pascal rendering and high-rate output on
+named physical boards. WINXPDM has not reproduced those physical results.
+
+Recent AMD. XP x86 and x64 enumerated RX 9060 XT, RX 9070 XT and R9700.
+Nine Catalyst/Adrenalin INF installation attempts on XP returned
+0xE0000203 (no driver selected). No AMD display miniport started on these
+boards. The RX 9070 XT memory-command and shader tests above are working
+development components. An RDNA 4 legacy display driver, vendor acceleration,
+and a WDDM-to-legacy driver port are outstanding.
+
+Evidence in the ZIP
+  tests/gpu/results/board-windows/README.md
+  tests/gpu/results/board-windows/xp64-gtx980-q35-falcon.txt
+  tests/gpu/results/forceware-382.69/
+
+Windows NT compatibility work
+-----------------------------
+
+NT 3.1 build 528, x86 uniprocessor. W3H.SYS implements six missing HAL
+calls and forwards nine existing calls. All 15 HAL imports resolve. W3PORT.SYS
+supplies 39 previously missing kernel/video-port imports. Tests cover
+interrupt levels and locks, timers, work items, device-list references,
+version and stack services, PCI configuration and monitor enumeration.
+MmGetSystemRoutineAddress resolved counted kernel/HAL names against the
+installed binaries, and the native probe checked returned addresses, calls
+and unknown names. The video port ran adapter tests across 16 board
+profiles on two buses. The monitor probe observed removal and reattachment.
+
+Both locally adapted Forceware x86 miniports reached the native NT loader
+on all 13 GeForce profiles (26 combinations). The correctly linked control
+reached DriverEntry. Each vendor image returned 0xC000007A, with 27 of its
+173 direct imports unresolved. The exact list is included below. The XP
+display DLL's dependency on win32k.sys and the older NT 3.x user-mode display
+DDI also require work. GTX 980 has yet to initialize or render on NT 3.1.
+
+Windows 2000 x86. WXP2KAPI.SYS provides five missing Forceware 382.69
+interfaces and adapts the video-port initialization structure. The private
+miniport's static imports resolve. The tested GTX 980 vendor service still
+failed during startup. One recorded run reached bugcheck 0x50. Native
+vendor 3D is outstanding. NT 3.5/3.51 and NT 4.0 also retain loader/DDI
+gaps. The NT 4.0 DDC2B companion implements the XP monitor-read helper
+used by the Cirrus study. The XP Cirrus pair resolves all 66 imports on
+Windows 2000. Win16 and Windows 9x still need full bridges for the XP vendor
+binaries and their kernel/graphics semantics.
+
+Evidence in the ZIP
+  src/compat/nt31/README.md and src/compat/win2000/README.md
+  tests/gpu/results/nt31-forceware/ and tests/gpu/results/nt-imports.tsv
+
+WINRAM and the USER.EXE mismatch
+--------------------------------
+
+WINRAM v1.0 was downloaded and verified from this repository's releases.
+The original managed catalog rejected several installed English USER.EXE
+files after Windows Setup personalized their string resources. The local
+builder checks the distribution and installed hashes while preserving the
+guest's personalization. Managed install, verification and removal restored
+the original USER.EXE byte for byte on Win3.1, WfW 3.11, 95 OSR2, 98 SE
+and Me. High-memory runs covered Win3.0a, Win3.1, WfW 3.11 and the three
+9x guests at 1 GiB. The 3.1/WfW clients verified 120 MiB and the 9x
+clients verified 128 MiB. Original retail Windows 3.00 is a separate case.
+its managed installation was not recognized. WINRAM is a memory utility.
+Its successful runs do not establish GPU support.
+
+Release and evidence
+https://github.com/ages2001/Acik-Kapi-Oyunu/releases/tag/winram-v1.0
+  tests/winram/README.md and tests/winram/results/
+
+Outstanding end-to-end acceptance
+---------------------------------
+
+1. Complete each Windows generation's display/miniport bridge, implement
+   the remaining OS services and validate installation through removal.
+2. Bring up the original vendor drivers through firmware, memory management,
+   command submission, hardware rendering and scanout. The QEMU models
+   currently implement selected engines and address spaces.
+3. Obtain repeatable Direct3D/OpenGL rendering on the target vendor adapter
+   with color, texture and depth readback. Full acceleration across the
+   requested cards and Windows versions has not been demonstrated.
+4. Verify physical DisplayPort link training, HDMI 2.0 timings/SCDC, and
+   Windows extended desktop with independent mode changes. AUX/EDID reads,
+   policy tests and two virtual scanouts have passed. Physical validation
+   needs an appropriate board, display and link. The GTX 980 Gaming 4G
+   specifies DisplayPort 1.2, limited to HBR2. HBR3 requires a capable
+   transmitter. The cloud host exposes no vendor GPU through VFIO or DRI.
+5. Extend actual device startup, rendering, power-cycle and uninstall
+   qualification to the other inventoried XP GPUs. The INF inventory and
+   short selection tests have broader coverage than the full board tests.
+
+The lab retrieved Windows setup media and disk images from PCjs, the
+repository owner's Universal Windows Installer, v86 and archived Windows
+installation sets. Test media receipts and SHA-256 hashes appear in
+tests/README.md and tests/winram/README.md.
+
+Relevant media and display references
+https://github.com/ages2001/Universal-Windows-Installer/releases/tag/v0.2.0-beta
+https://github.com/SupraGSX/Forceware-382.69/tree/91ad42bc4fab7d710ce6861e044620fe63d28d38
+https://www.msi.com/Graphics-Card/GTX-980-GAMING-4G/Specification
+
+Unresolved NT 3.1 imports shared by both tested x86 miniports
+------------------------------------------------------------
+  ExEventObjectType
+  IoDriverObjectType
+  IoGetDeviceProperty
+  IoRegisterPlugPlayNotification
+  IoUnregisterPlugPlayNotification
+  KeRestoreFloatingPointState
+  KeSaveFloatingPointState
+  KeStackAttachProcess
+  KeTickCount
+  KeUnstackDetachProcess
+  MmAllocateContiguousMemorySpecifyCache
+  MmAllocatePagesForMdl
+  MmFreeContiguousMemorySpecifyCache
+  MmFreePagesFromMdl
+  MmMapLockedPagesSpecifyCache
+  MmMapUserAddressesToPage
+  ObReferenceObjectByName
+  PsLookupProcessByProcessId
+  PsReferenceImpersonationToken
+  PsReferencePrimaryToken
+  PsSetCreateProcessNotifyRoutine
+  RtlRaiseException
+  SeTokenIsAdmin
+  ZwOpenProcess
+  ZwPowerInformation
+  ZwSetInformationThread
+  _purecall

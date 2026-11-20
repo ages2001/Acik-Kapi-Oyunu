@@ -1,0 +1,24 @@
+name: Publish the WINXPDM 7ee75ae status report
+on:
+  push:
+    branches: [delivery/winxpdm-v1.0]
+    paths:
+      - 'release-assets/WINXPDM-STATUS-7ee75ae.txt'
+      - '.github/workflows/attach-winxpdm-status-7ee75ae.yml'
+permissions:
+  contents: write
+jobs:
+  attach:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify and attach text report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          echo 'cfca6dcb961c588caee9415e73d8d70a3f95084a394c564217bf4defcace2dc1  release-assets/WINXPDM-STATUS-7ee75ae.txt' | sha256sum --check
+          gh release upload winxpdm-v1.0 "release-assets/WINXPDM-STATUS-7ee75ae.txt#Project status, test coverage and outstanding work (English text)" --repo "$GITHUB_REPOSITORY"
