@@ -1,0 +1,27 @@
+Unmodified WDMHDA 0.26 x86 native service load in QEMU
+HDA.SYS SHA-256 2090d7d2cb986f96699e63493afe026fd267710045b7982cd61d410bd8f26b88
+WINWDM 6.0 diagnostic and service were running before each test.
+
+Windows NT 3.1
+GetVersion 0x02100A03
+Native StartService result failed, Windows error 193
+Temporary service removal succeeded
+193 = ERROR_BAD_EXE_FORMAT.
+
+Windows NT 3.50 Workstation SP3
+GetVersion 0x03273203
+Native StartService result failed, Windows error 127
+Temporary service removal succeeded
+127 = ERROR_PROC_NOT_FOUND. No individual import was identified by this guest report.
+
+Windows NT 3.51
+GetVersion 0x04213303
+Native StartService result failed, Windows error 127
+Temporary service removal succeeded
+The guest loader dialog identified _aulldiv in ntoskrnl.exe. 127 = ERROR_PROC_NOT_FOUND.
+
+Windows NT 4.0
+GetVersion 0x05650004
+Native StartService result failed, Windows error 127
+Temporary service removal succeeded
+The guest loader dialog identified IoGetDmaAdapter in ntoskrnl.exe. 127 = ERROR_PROC_NOT_FOUND.

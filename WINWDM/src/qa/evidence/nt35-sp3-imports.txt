@@ -1,0 +1,17 @@
+Microsoft Windows NT 3.5 U.S. Service Pack 3, x86 standalone update
+ISO SHA-256 d02bf8d2e980ba3cea641a4e06ed350510242961aac610e3d90166760adc0c03
+
+ntoskrnl.exe file version 3.50.807.1, 751 named exports, SHA-256 581af4e7a3d903eab72498ace4a7d8b1486072216e7366665875f7dc652321d9
+hal.dll file version 3.50.807.1, 86 named exports, SHA-256 d1c6e33309053a9c8591bbd1be815b36cf7b63864c6be1605cc63a25a3029ece
+
+W100.SYS imports resolved by name: 24 NTOSKRNL and 6 HAL
+W105.SYS imports resolved by name: 24 NTOSKRNL and 6 HAL
+W110.SYS imports resolved by name: 24 NTOSKRNL and 6 HAL
+W120.SYS imports resolved by name: 24 NTOSKRNL and 6 HAL
+W130.SYS imports resolved by name: 24 NTOSKRNL and 6 HAL
+WINWDM.SYS imports resolved by name: 24 NTOSKRNL and 6 HAL
+
+Static import comparison using the Microsoft PE export tables. The service-pack CD contains UPDATE.EXE and requires an existing NT 3.5 installation.
+
+A separate, bootable NT 3.50 installation confirmed these results at run time.
+See nt350-media.txt, nt350-targets.txt and nt350-cold-boot.txt.

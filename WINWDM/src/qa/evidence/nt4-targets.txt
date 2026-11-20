@@ -1,0 +1,149 @@
+Microsoft Windows NT 4.0 Workstation, build 1381. QEMU pci-testdev.
+Each cycle ran the Explorer installer from the current distribution floppy, compared
+the installed SYS with its packaged target, ran KITCHK /pci=<target>, queried the
+system-start service, then launched the registered Add/Remove Programs uninstaller.
+The following cycle started after the previous service had been removed.
+
+Target 1.00 installed SHA-256 bea560b5de57ca3d9557571afc2eaa4ef56578a7c21a3911592912a669cf1e8b
+GetVersion 0x05650004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINNT\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.00
+Requested WDM target 1.00
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+GetVersion 0x05650004
+Open WINWDM service 0
+Service type 1, current state 4
+Start type 1, image \SystemRoot\WINWDM\WINWDM.SYS
+Registered command "C:\WINNT\WINWDM\UNINST.EXE"
+Launcher exit 0
+Uninstall registration and Info file removal PASS
+GetVersion 0x05650004
+Open WINWDM service 1060
+
+Target 1.05 installed SHA-256 2399cbeb18965e4736223a700d6a0f30e15ba47989233df40be76b7c9c1d5119
+GetVersion 0x05650004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINNT\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.05
+Requested WDM target 1.05
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+GetVersion 0x05650004
+Open WINWDM service 0
+Service type 1, current state 4
+Start type 1, image \SystemRoot\WINWDM\WINWDM.SYS
+Registered command "C:\WINNT\WINWDM\UNINST.EXE"
+Launcher exit 0
+Uninstall registration and Info file removal PASS
+GetVersion 0x05650004
+Open WINWDM service 1060
+
+Target 1.10 installed SHA-256 613557f8c0dc4257220cd0edf9387464d95a8c99335be3a5779a501a56d5f01a
+GetVersion 0x05650004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINNT\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.10
+Requested WDM target 1.10
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+GetVersion 0x05650004
+Open WINWDM service 0
+Service type 1, current state 4
+Start type 1, image \SystemRoot\WINWDM\WINWDM.SYS
+Registered command "C:\WINNT\WINWDM\UNINST.EXE"
+Launcher exit 0
+Uninstall registration and Info file removal PASS
+GetVersion 0x05650004
+Open WINWDM service 1060
+
+Target 1.20 installed SHA-256 d0d52b46806163ad40de7f47ff9ccf3180eeef51dd2fbf0f5450b3ec027381c1
+GetVersion 0x05650004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINNT\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.20
+Requested WDM target 1.20
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+GetVersion 0x05650004
+Open WINWDM service 0
+Service type 1, current state 4
+Start type 1, image \SystemRoot\WINWDM\WINWDM.SYS
+Registered command "C:\WINNT\WINWDM\UNINST.EXE"
+Launcher exit 0
+Uninstall registration and Info file removal PASS
+GetVersion 0x05650004
+Open WINWDM service 1060
+
+Target 1.30 installed SHA-256 9bb328981b8602932c478ae17323a8a9d19fbf4be5e5d90abe54c950c6de6b9b
+GetVersion 0x05650004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINNT\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.30
+Requested WDM target 1.30
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+GetVersion 0x05650004
+Open WINWDM service 0
+Service type 1, current state 4
+Start type 1, image \SystemRoot\WINWDM\WINWDM.SYS
+Registered command "C:\WINNT\WINWDM\UNINST.EXE"
+Launcher exit 0
+Uninstall registration and Info file removal PASS
+GetVersion 0x05650004
+Open WINWDM service 1060
+
+Target 6.0 installed SHA-256 c7e8bbb5cd38e625bff8cfbdd5efa2dfae23fe2ba0367ad3eb86ff0f2435cdc4
+GetVersion 0x05650004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINNT\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 6.0
+Requested WDM target 6.0
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+GetVersion 0x05650004
+Open WINWDM service 0
+Service type 1, current state 4
+Start type 1, image \SystemRoot\WINWDM\WINWDM.SYS
+Registered command "C:\WINNT\WINWDM\UNINST.EXE"
+Launcher exit 0
+Uninstall registration and Info file removal PASS
+GetVersion 0x05650004
+Open WINWDM service 1060

@@ -1,0 +1,18 @@
+--- a/SCons/Config/gnu
++++ b/SCons/Config/gnu
+@@ -96,6 +96,7 @@
+ 
+ stub_env = defenv.Clone()
+ cross_env(stub_env)
++stub_env.Append(CCFLAGS = ['-march=i386'])
+ 
+ stub_env.Append(CPPPATH = ['#$BUILD_CONFIG'])
+ 
+@@ -142,6 +143,7 @@
+ 
+ plugin_env = defenv.Clone()
+ cross_env(plugin_env)
++plugin_env.Append(CCFLAGS = ['-march=i386'])
+ 
+ if not defenv['DEBUG']:
+ 	plugin_env.Append(CCFLAGS = ['-Os'])              # optimize for size

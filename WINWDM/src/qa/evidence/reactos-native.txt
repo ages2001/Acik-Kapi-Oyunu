@@ -1,0 +1,7 @@
+GetVersion 0x0ECE0205
+Uninstall registry open 2
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS

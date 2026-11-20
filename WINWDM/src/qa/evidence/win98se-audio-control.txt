@@ -1,0 +1,8 @@
+Windows 98 Second Edition, KERNEL32 4.10.0.2222, existing IDE guest
+QEMU info pci: Audio controller, PCI device 8086:2668.
+The original WDMHDA 0.26 SYS and INF were present on the guest disk.
+Windows SetupAPI did not enumerate the ICH6 audio controller as a present device.
+Native INF binding and audio I/O were not verified in this guest.
+
+waveOut devices 0
+No matching HD Audio waveOut endpoint

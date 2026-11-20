@@ -1,0 +1,28 @@
+Microsoft Windows NT 3.1. Same QEMU machine, PCI test device, driver and diagnostic in both runs.
+WINWDM.SYS SHA-256 0dccee5cd1b8b7c7470c14e4f0ebb679a69576d373d6426da120fd0f98a616f6
+
+Original NT31TEST IDE disk boot files:
+NTLDR    941a3434af90819617ffd3edfa2eaa760caa2a128769b039061a9ab106341fe6
+NTDETECT bd0101d7ed70e5a75499eaca24d7422211c46047a8429fc357a83be5389ab7e1
+
+GetVersion 0x02100A03
+Uninstall registry open 2
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 2, bytes 0, reply 0
+Kernel check FAIL
+
+User-supplied replacement boot files:
+NTLDR 73728847c40536324ec898fde01a6a3d267060ecd8417d6f8c40e2a9c852a33c
+NTDETECT.COM 192df846f5549f23e83d8e4fb7bce8c233eaf0f83fe7b772975cf0938c3e29ba
+
+GetVersion 0x02100A03
+Uninstall registry open 2
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 2, bytes 0, reply 0
+Kernel check FAIL
+
+With the legacy PCI configuration fallback in the driver, the same test passed with the original boot files.

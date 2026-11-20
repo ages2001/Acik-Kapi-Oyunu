@@ -1,0 +1,85 @@
+NCR Corporation NCRC810.SYS, file version 3.50.807.1, 12,000 bytes.
+Source: NCRC810.SY_ in the Microsoft Windows NT 3.5 U.S. Service Pack 3 CD.
+The PE version resource identifies NCR Corporation and the NCR MPD SCSI Miniport Driver.
+Original SHA-256 63e2e5166195bdb530259b53f6833b28d20131f6dea0a490c07124555f986f44
+
+QEMU 10.0.13, Pentium, IDE system disk, pci-testdev and lsi53c810.
+The 53C810 had a separate, read-only, partitioned FAT16 SCSI disk at ID zero.
+The disk held a 65,536-byte file NCRTEST.BIN; its bytes were generated outside the guest.
+Original test file SHA-256 7ce811f72f73b348d733ce482442f1d114a378c48cc8a83c87a34d4ea813eaf8
+
+The guest copied the unchanged OEM image as System32\drivers\NcrWdmQa.sys and
+registered it under a private boot-start service in the SCSI miniport group.
+Each run queried the service after restart and attempted to read the test file
+through the mounted filesystem. WINWDM 6.0 was installed in the same guest.
+This exercises the native NT SCSIPORT miniport interface. The binary imports
+14 SCSIPORT functions. This experiment does not exercise WDM PnP or PortCls.
+
+NT 3.1 with the original IDE boot files
+GetVersion 0x02100A03
+Original miniport registered for boot, group tag 25
+Result PASS
+GetVersion 0x02100A03
+Service state 1, exit 31
+Logical drives mask 0x00000005
+Result FAIL
+QEMU SCSI statistics: rd_bytes=0, wr_bytes=0, rd_operations=0, wr_operations=0
+System event 7026, Service Control Manager, identifies NcrWdmQa.
+Independent WINWDM PCI diagnostic: PCI PnP, power and device counter: error 0, bytes 4, reply 2
+
+NT 3.1 with the supplied patched NTLDR and NTDETECT.COM
+GetVersion 0x02100A03
+Original miniport registered for boot, group tag 25
+Result PASS
+GetVersion 0x02100A03
+Service state 1, exit 31
+Logical drives mask 0x00000005
+Result FAIL
+QEMU SCSI statistics: rd_bytes=0, wr_bytes=0, rd_operations=0, wr_operations=0
+System event 7026, Service Control Manager, identifies NcrWdmQa.
+Independent WINWDM PCI diagnostic: PCI PnP, power and device counter: error 0, bytes 4, reply 2
+
+NT 3.50 Workstation SP3 on its independent NT350 Vanilla installation.
+Original miniport registered for boot (group tag 33). All installed SYS bytes matched NCR.
+Four separate boots used the same read-only target, varying the PCI configuration.
+All reached Program Manager. The service reported running but no SCSI drive appeared.
+GetVersion 0x03273203
+Service state 4, exit 0
+Logical drives mask 0x00000005
+Result FAIL
+nt350-storage: ncrdata: rd_bytes=0 wr_bytes=0 rd_operations=0 wr_operations=0
+nt350-ncr-slot3: ncrdata: rd_bytes=0 wr_bytes=0 rd_operations=0 wr_operations=0
+nt350-ncr-slot5: ncrdata: rd_bytes=0 wr_bytes=0 rd_operations=0 wr_operations=0
+nt350-ncr-slot6: ncrdata: rd_bytes=0 wr_bytes=0 rd_operations=0 wr_operations=0
+Slot 3, 5 and 6 controller traces recorded resets and no SCSI commands.
+The original NT 3.50 SCSIDISK class service was configured to start at boot.
+The independent WINWDM PCI diagnostic passed after restart with two writes.
+
+NT 3.51 Workstation
+GetVersion 0x04213303
+Original miniport registered for boot, group tag 33
+Result PASS
+GetVersion 0x04213303
+Service state 4, exit 0
+Logical drives mask 0x0000000D
+Read D:\NCRTEST.BIN from the attached disk
+Result PASS
+QEMU SCSI statistics: rd_bytes=136704, wr_bytes=0, rd_operations=48, wr_operations=0
+Returned file SHA-256 7ce811f72f73b348d733ce482442f1d114a378c48cc8a83c87a34d4ea813eaf8
+Independent WINWDM PCI diagnostic: PCI PnP, power and device counter: error 0, bytes 4, reply 2
+
+NT 4.0 Workstation
+GetVersion 0x05650004
+Original miniport registered for boot, group tag 33
+Result PASS
+GetVersion 0x05650004
+Service state 4, exit 0
+Logical drives mask 0x0000000D
+Read D:\NCRTEST.BIN from the attached disk
+Result PASS
+QEMU SCSI statistics: rd_bytes=134144, wr_bytes=0, rd_operations=29, wr_operations=0
+Returned file SHA-256 7ce811f72f73b348d733ce482442f1d114a378c48cc8a83c87a34d4ea813eaf8
+Independent WINWDM PCI diagnostic: PCI PnP, power and device counter: error 0, bytes 4, reply 2
+
+On NT 3.51 the guest reached a blank screen during shutdown. The QEMU reset then booted
+the persisted system configuration. No OS files, OEM driver or test disk are distributed.

@@ -1,0 +1,19 @@
+WINWDM
+Development build for 32-bit x86
+
+Run the installer for this computer:
+
+  WIN3\SETUP.EXE      Windows 3.0 / 3.1x, 386 enhanced mode
+  NT3\SETUP.EXE       Windows NT 3.x, Program Manager
+  DESKTOP\SETUP.EXE   Windows 95 / 98 or Windows NT 4.0, Explorer shell
+
+Choose the WDM target in Setup: 1.00, 1.05, 1.10, 1.20, 1.30 or 6.0.
+The 1.x targets use smaller startup diagnostics. WINWDM Info reads the
+active target from the running driver. The default is 6.0.
+
+Use an administrator account on NT. Restart Windows 3.x or 9x after Setup.
+Open Info or Uninstall in the WINWDM Program Manager group. On Explorer
+systems, use the Info desktop shortcut and Add/Remove Programs.
+
+The NT backend installs WINWDM.SYS. The enhanced-mode backend installs
+WINWDM.386. See README.md for implemented APIs and vendor driver coverage.

@@ -1,0 +1,43 @@
+SCSIPORT miniport registration on original Microsoft x86 Windows NT, QEMU TCG.
+WKS064 and WKS076 call the system directly with 64 and 76 bytes. The SDK probes
+supply 80 bytes. WKSADPT uses ISA without extensions, WKSPCI matches 1000:0001,
+and WKSCTRL provides an adapter-control callback. All probes decline hardware.
+STATUS_DEVICE_DOES_NOT_EXIST (0xC00000C0) after one callback is expected.
+STATUS_REVISION_MISMATCH (0xC0000059) with zero callbacks rejects registration.
+
+The NCR NT 3.5 miniport sets HwInitializationDataSize to 76 and supplies PCI vendor
+and device ID strings. The NT 3.1 SCSIPORT initialization routine compares the size
+with 64 and returns STATUS_REVISION_MISMATCH on a size mismatch. NT 3.51 accepts
+the NCR descriptor. The independent probes vary the size on the same native bus.
+All variants run through the guest boot loader and its unmodified SCSIPORT.
+
+WKS064.SYS SHA-256 5eacb954fb02d3c9435b62d2a72975864fb5f6e4e540586e64b12cc7ff345146
+NT 3.1 WINWDM SCSIPORT size=0x00000040 status=0xc00000c0 find_calls=0x00000001
+NT 3.50 WINWDM SCSIPORT size=0x00000040 status=0xc00000c0 find_calls=0x00000001
+NT 3.51 WINWDM SCSIPORT size=0x00000040 status=0xc00000c0 find_calls=0x00000001
+NT 4.0 WINWDM SCSIPORT size=0x00000040 status=0xc00000c0 find_calls=0x00000001
+
+WKS076.SYS SHA-256 234203d3c2455edf3c9e4d2cf0489a756869027cbdbad7256ce3667342323044
+NT 3.1 WINWDM SCSIPORT size=0x0000004c status=0xc0000059 find_calls=0x00000000
+NT 3.50 WINWDM SCSIPORT size=0x0000004c status=0xc00000c0 find_calls=0x00000001
+NT 3.51 WINWDM SCSIPORT size=0x0000004c status=0xc00000c0 find_calls=0x00000001
+NT 4.0 WINWDM SCSIPORT size=0x0000004c status=0xc00000c0 find_calls=0x00000001
+
+WKSADPT.SYS SHA-256 61f4bcbb380910531fa8cf72db893513a04a3fd7631d576b99fb1dfe200d77f4
+NT 3.1 WINWDM SCSIPORT size=0x00000050 status=0xc00000c0 find_calls=0x00000001
+NT 3.50 WINWDM SCSIPORT size=0x00000050 status=0xc00000c0 find_calls=0x00000001
+NT 3.51 WINWDM SCSIPORT size=0x00000050 status=0xc00000c0 find_calls=0x00000001
+NT 4.0 WINWDM SCSIPORT size=0x00000050 status=0xc00000c0 find_calls=0x00000001
+
+WKSPCI.SYS SHA-256 cbd0c29b3105f6d3881e16e144e9dd489e835cc6a205c967af27705e055f4eda
+NT 3.1 WINWDM SCSIPORT size=0x00000050 status=0xc0000059 find_calls=0x00000000
+NT 3.50 WINWDM SCSIPORT size=0x00000050 status=0xc00000c0 find_calls=0x00000001
+NT 3.51 WINWDM SCSIPORT size=0x00000050 status=0xc00000c0 find_calls=0x00000001
+NT 4.0 WINWDM SCSIPORT size=0x00000050 status=0xc00000c0 find_calls=0x00000001
+
+WKSCTRL.SYS SHA-256 13fa85d76566b1a625d6b3ba2362cdea6aeb0dbaf111a8337427201a71d63ec4
+NT 3.1 WINWDM SCSIPORT size=0x00000050 status=0xc0000059 find_calls=0x00000000
+NT 3.50 WINWDM SCSIPORT size=0x00000050 status=0xc0000059 find_calls=0x00000000
+NT 3.51 WINWDM SCSIPORT size=0x00000050 status=0xc0000059 find_calls=0x00000000
+NT 4.0 WINWDM SCSIPORT size=0x00000050 status=0xc0000059 find_calls=0x00000000
+

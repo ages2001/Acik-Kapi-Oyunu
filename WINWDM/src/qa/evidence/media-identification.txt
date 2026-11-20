@@ -1,0 +1,22 @@
+Guest media identification from embedded Microsoft PE version resources.
+Images and third-party installers are not part of the distribution.
+
+Pixelsuft v86 windows98_original.img: KERNEL32.DLL 4.10.0.2222, SHA-256 9c8d574f84bfbbb6521dac54d0bfaf7a4c8fee07e468525cdb9da7db418e6c7e
+Pixelsuft img halfix_win98.img: KERNEL32.DLL 4.10.0.2222, SHA-256 9c8d574f84bfbbb6521dac54d0bfaf7a4c8fee07e468525cdb9da7db418e6c7e
+Pixelsuft DOSBox 98.img: KERNEL32.DLL 4.10.0.2222, SHA-256 34273503c3b8379536a08354dcf0142da4e1c8d4b6082473802c60208fd38e93
+electron-jsdos disk/package.zip drive-c.img: KERNEL32.DLL 4.0.0.1111, SHA-256 e50329ab9bc89268a1eecf435ab04400ade702d349cb934ae83d38f9a3339435
+Pixelsuft qemu_limbo winnt_en.vmdk: NTOSKRNL.EXE 4.0.1381.335, SHA-256 a019784c86f2c8490961e492c6ec888b59a83eb484b53d825b0b5603f6992d12
+Pixelsuft qemu_limbo winnt_qemu_limbo.vmdk: NTOSKRNL.EXE 4.0.1381.1, SHA-256 1e6e75423110924967f4933f5ab8c9e35007563ec7a61cbc17b9864b21d7feb5
+
+Pixelsuft iso/winnt.iso has ISO volume label NTWKS40RU.
+The additional repleded Windows 98 CD has the ISO volume label WIN98 SE.
+The repleded NT-3.5 CD contains Microsoft Windows NT 3.5 U.S. Service Pack 3, version 3.50.807.1. Its README requires an installed NT 3.5 for UPDATE.EXE.
+
+ashley-au/Windows-3.11-DOSBox at bbe40f866bab28f104fdab1850d9729ed205683e:
+WINVER.EXE explicitly identifies Windows for Workgroups Version 3.11.
+SHA-256 7e16a3806831f6df46e6d46c875db98274768a4bde53ef58199e0089609faea2
+KRNL386.EXE also identifies the Workgroups edition. SHA-256 b2686eb8882e251e00471a9c7a43b365390800c8ccffda9fd7e7eb1141cfea2e
+
+A separate NT350.WIM from Universal Windows Installer v0.2.0-beta was deployed onto
+a new empty disk. Its one index was NT350 Vanilla, x86 3.50.807. The guest booted.
+See nt350-media.txt for its provenance and comparison with the original Microsoft files.

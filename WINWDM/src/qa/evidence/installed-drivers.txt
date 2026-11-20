@@ -1,0 +1,8 @@
+Windows 3.00  WDM 1.00  WINWDM.386  595d3ec267b3dfebaea8d93701c2361cab4cf8373f7a4a63412a46b191c4b18f
+Windows 3.10  WDM 1.20  WINWDM.386  7006cae185dca3fb1f244b36bfd66fe9fe254282ce80025649845388c69704d1
+Windows for Workgroups 3.11  WDM 6.0  WINWDM.386  dbb17435362c4ab7a3ddee7431d6d86e4aeb427fb72dfb52d5b6a55aedfde244
+Windows 95 retail  WDM 1.05  WINWDM.386  26153ddf6a0eaae94c452dbe6baa9c7f925a9f1c623a54cfdca16a2892f249e9
+Windows 95 OSR2  WDM 6.0  WINWDM.386  dbb17435362c4ab7a3ddee7431d6d86e4aeb427fb72dfb52d5b6a55aedfde244
+Windows NT 3.1  WDM 6.0  WINWDM.SYS  c7e8bbb5cd38e625bff8cfbdd5efa2dfae23fe2ba0367ad3eb86ff0f2435cdc4
+Windows NT 3.51  WDM 6.0  WINWDM.SYS  c7e8bbb5cd38e625bff8cfbdd5efa2dfae23fe2ba0367ad3eb86ff0f2435cdc4
+Windows NT 4.0  WDM 6.0  WINWDM.SYS  c7e8bbb5cd38e625bff8cfbdd5efa2dfae23fe2ba0367ad3eb86ff0f2435cdc4

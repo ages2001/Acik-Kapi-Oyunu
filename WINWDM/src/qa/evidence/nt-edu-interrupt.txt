@@ -1,0 +1,93 @@
+WINWDM native x86 fully specified line interrupts on QEMU 10.0.13, PC, TCG, one Pentium CPU.
+Device: QEMU EDU PCI 1234:11e8 at 05.0 on bus zero. INTx was enabled. No message-signaled interrupt was requested.
+Probe SYS SHA-256 310e635ee515b83e825977896f510d3a21f491836f8e1b8cf774b5a097db8fc1
+
+One unmodified probe binary ran against four different NT kernels. Before the IRQ tests it performed the
+4,096-byte DMA write/read-back and verified all bytes. It registered the extended interrupt interface,
+raised device mask 1, observed the ISR acknowledgement and a cleared status register, then disconnected.
+A second registration raised and acknowledged mask 2 through the same device. Calls for automatic MSI
+and an empty CPU affinity mask were rejected before connecting the interrupt.
+
+The native NT 3.1 HAL lacks PCI enumeration and translated firmware IRQ 10 via its PC interrupt controller.
+NT 3.50 and NT 4.0 reported the same line through the PCI HAL. NT 3.51 rewrote the IRQ line to 0x14 when
+reading the device through HalGetBusData. HalGetInterruptVector on PCIBus translated that line to vector 0x51.
+In an earlier NT 3.51 control, translating firmware IRQ 10 as ISA produced vector zero and the probe declined
+the interrupt without attaching an ISR. The other three HALs used vector 0x3a.
+
+Windows NT 3.1
+GetVersion 0x02100A03
+WdmEduIrq StartService error 20
+Finished
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU firmware IRQ 0000000a
+WINWDM EDU translated vector 0000003a
+WINWDM EDU ISR acknowledged mask 00000001
+WINWDM EDU ISR acknowledged mask 00000002
+WINWDM EDU handled interrupts 00000002
+WINWDM EDU result 00000000
+
+Windows NT 3.50
+GetVersion 0x03273203
+WdmEduIrq StartService error 20
+Finished
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU firmware IRQ 0000000a
+WINWDM EDU PCI HAL IRQ 0000000a
+WINWDM EDU translated vector 0000003a
+WINWDM EDU ISR acknowledged mask 00000001
+WINWDM EDU ISR acknowledged mask 00000002
+WINWDM EDU handled interrupts 00000002
+WINWDM EDU result 00000000
+
+Windows NT 3.51
+GetVersion 0x04213303
+WdmEduIrq StartService error 20
+Finished
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU firmware IRQ 0000000a
+WINWDM EDU PCI HAL IRQ 00000014
+WINWDM EDU translated vector 00000051
+WINWDM EDU ISR acknowledged mask 00000001
+WINWDM EDU ISR acknowledged mask 00000002
+WINWDM EDU handled interrupts 00000002
+WINWDM EDU result 00000000
+
+Windows NT 4.0
+GetVersion 0x05650004
+WdmEduIrq StartService error 20
+Finished
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU firmware IRQ 0000000a
+WINWDM EDU PCI HAL IRQ 0000000a
+WINWDM EDU translated vector 0000003a
+WINWDM EDU ISR acknowledged mask 00000001
+WINWDM EDU ISR acknowledged mask 00000002
+WINWDM EDU handled interrupts 00000002
+WINWDM EDU result 00000000
+
+Error 20 is recorded after the probe returns STATUS_NO_SUCH_DEVICE to end its demand-start service.
+The IRQ and DMA results above were emitted by the kernel driver before that return.

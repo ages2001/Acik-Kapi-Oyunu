@@ -1,0 +1,5 @@
+WINWDM: DriverEntry and control device ready, seven-device stack and 5000-byte extension verified
+WINWDM: filter stack, deferred completion and cancellation PASS
+WINWDM: filter stack, deferred completion and cancellation PASS
+WINWDM: filter stack, deferred completion and cancellation PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal

@@ -1,0 +1,94 @@
+ReactOS 0.4.16 x86 (822e8647792a2c43f033e3e00ed273d59f163c7b)
+QEMU 10.0.13, Pentium III, one CPU, 384 MB, IDE and pci-testdev.
+Installed guest copy. The test removed an earlier build via its registered
+uninstaller, then installed the current distribution from the floppy with
+A:\DESKTOP\SETUP.EXE /S /WDM=6.0. The guest automatically restarted.
+The installed SYS matched the distribution byte for byte.
+SHA-256 c7e8bbb5cd38e625bff8cfbdd5efa2dfae23fe2ba0367ad3eb86ff0f2435cdc4
+
+After the registered removal, the desktop Info shortcut and executable
+were absent. The last diagnostic was expected to fail to open the device.
+ReactOS also logged the following when unloading the driver. Reclamation
+of the loaded image on this OS remains unverified.
+(ntoskrnl/mm/ARM3/sysldr.c:989) Leaking driver: WINWDM.SYS
+
+A separate fresh OS setup stopped before executing the WINWDM installer.
+Its serial log reported the following cache-manager assertion.
+File was: \ReactOS\TEMP\is-7IQ1N.tmp\winevdm_setup.tmp
+*** Assertion failed: Refs > 0
+***   Source File: ../ntoskrnl/cc/view.c, line 617
+
+STAGE.TXT
+Removing previous test build
+Starting the current installer
+Checking the current driver after restart
+
+INST.TXT
+GetVersion 0x0ECE0205
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\ReactOS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 6.0
+Requested WDM target 6.0
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+
+SERVICE.TXT
+SERVICE_NAME: WdmKit
+	TYPE               : 1  KERNEL_DRIVER
+	STATE              : 4  RUNNING
+				(STOPPABLE,NOT_PAUSABLE,IGNORES_SHUTDOWN)
+	WIN32_EXIT_CODE    : 0  (0x0)
+	SERVICE_EXIT_CODE  : 0  (0x0)
+	CHECKPOINT         : 0x0
+	WAIT_HINT          : 0x0
+
+[SC] QueryServiceConfig SUCCESS
+
+SERVICE_NAME: WdmKit
+        TYPE               : 1   KERNEL_DRIVER
+        START_TYPE         : 1   SYSTEM_START
+        ERROR_CONTROL      : 1   NORMAL
+        BINARY_PATH_NAME   : \SystemRoot\WINWDM\WINWDM.SYS
+        LOAD_ORDER_GROUP   : 
+        TAG                : 0
+        DISPLAY_NAME       : WINWDM
+        DEPENDENCIES       : 
+        SERVICE_START_NAME :
+
+BOOT.TXT
+GetVersion 0x0ECE0205
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\ReactOS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 6.0
+Requested WDM target 6.0
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+
+REMOVAL.TXT
+Registered command "C:\ReactOS\WINWDM\UNINST.EXE"
+Launcher exit 0
+Uninstall registration and Info file removal PASS
+
+GONE-SVC.TXT
+The specified service does not exist as an installed service.
+
+GONE.TXT
+GetVersion 0x0ECE0205
+Uninstall registry open 2
+Open device error 2
+Kernel check FAIL
+
+DONE.DAT
+Done

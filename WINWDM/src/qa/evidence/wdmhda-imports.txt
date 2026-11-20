@@ -1,0 +1,31 @@
+hda.sys 2090d7d2cb986f96699e63493afe026fd267710045b7982cd61d410bd8f26b88
+hal.dll (5): ExAcquireFastMutex, ExReleaseFastMutex, KeStallExecutionProcessor, KfAcquireSpinLock, KfReleaseSpinLock
+ntoskrnl.exe (39): DbgPrint, ExAllocatePoolWithTag, ExFreePool, ExQueueWorkItem, InterlockedCompareExchange, InterlockedDecrement, InterlockedExchange, InterlockedIncrement, IoBuildSynchronousFsdRequest, IoGetAttachedDeviceReference, IoGetDmaAdapter, IoIsWdmVersionAvailable, IofCallDriver, KeCancelTimer, KeClearEvent, KeInitializeDpc, KeInitializeEvent, KeInitializeSpinLock, KeInitializeTimer, KeRemoveQueueDpc, KeSetEvent, KeSetTimerEx, KeWaitForSingleObject, MmMapIoSpace, MmUnmapIoSpace, ObfDereferenceObject, ObfReferenceObject, READ_REGISTER_UCHAR, READ_REGISTER_ULONG, READ_REGISTER_USHORT, RtlAssert, RtlInitUnicodeString, WRITE_REGISTER_UCHAR, WRITE_REGISTER_ULONG, WRITE_REGISTER_USHORT, _alldiv, _allmul, _aulldiv, _snwprintf
+portcls.sys (11): PcAddAdapterDevice, PcInitializeAdapterDriver, PcNewInterruptSync, PcNewMiniport, PcNewPort, PcNewRegistryKey, PcNewResourceSublist, PcNewServiceGroup, PcRegisterAdapterPowerManagement, PcRegisterPhysicalConnection, PcRegisterSubdevice
+
+nt31rtm
+  hal.dll: missing ExAcquireFastMutex, ExReleaseFastMutex, KfAcquireSpinLock, KfReleaseSpinLock
+  ntoskrnl.exe: missing ExAllocatePoolWithTag, InterlockedCompareExchange, InterlockedDecrement, InterlockedExchange, InterlockedIncrement, IoGetAttachedDeviceReference, IoGetDmaAdapter, IoIsWdmVersionAvailable, IofCallDriver, KeClearEvent, KeSetTimerEx, ObfDereferenceObject, ObfReferenceObject, _alldiv, _allmul, _aulldiv, _snwprintf
+  portcls.sys: no module export catalog
+
+nt31
+  hal.dll: missing ExAcquireFastMutex, ExReleaseFastMutex, KfAcquireSpinLock, KfReleaseSpinLock
+  ntoskrnl.exe: missing ExAllocatePoolWithTag, InterlockedCompareExchange, InterlockedDecrement, InterlockedExchange, InterlockedIncrement, IoGetAttachedDeviceReference, IoGetDmaAdapter, IoIsWdmVersionAvailable, IofCallDriver, KeClearEvent, KeSetTimerEx, ObfDereferenceObject, ObfReferenceObject, _alldiv, _allmul, _aulldiv, _snwprintf
+  portcls.sys: no module export catalog
+
+nt35
+  hal.dll: all import names present
+  ntoskrnl.exe: missing InterlockedCompareExchange, InterlockedDecrement, InterlockedExchange, InterlockedIncrement, IoGetAttachedDeviceReference, IoGetDmaAdapter, IoIsWdmVersionAvailable, KeSetTimerEx, ObfReferenceObject, _alldiv, _allmul, _aulldiv
+  portcls.sys: no module export catalog
+
+nt351
+  hal.dll: all import names present
+  ntoskrnl.exe: missing InterlockedCompareExchange, IoGetAttachedDeviceReference, IoGetDmaAdapter, IoIsWdmVersionAvailable, KeSetTimerEx, ObfReferenceObject, _alldiv, _allmul, _aulldiv
+  portcls.sys: no module export catalog
+
+nt4
+  hal.dll: all import names present
+  ntoskrnl.exe: missing IoGetAttachedDeviceReference, IoGetDmaAdapter, IoIsWdmVersionAvailable
+  portcls.sys: no module export catalog
+
+Direct import names only. Loading, PnP, class services and hardware I/O require guest tests.

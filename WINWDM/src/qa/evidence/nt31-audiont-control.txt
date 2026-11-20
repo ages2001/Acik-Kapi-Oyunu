@@ -1,0 +1,29 @@
+Windows NT 3.1, GetVersion 0x02100A03, QEMU Intel ICH6 HD Audio
+Upstream ages2001/AUDIONT v1.2, NT 3.1-4.0 edition
+Installed SYS exactly matches the published binary, SHA-256 6ec912908ed7fcc698e1d4c4a26f9101ef8fe0661c8921403e80fbc0c37b0267
+The publisher's installer ran in the Microsoft guest. The guest restarted before playback.
+
+waveOut devices 1
+Device 0: Intel ICH6 HD Audio, manufacturer 1, product 1
+waveOutOpen 0
+waveOutWrite 0, completed 1
+
+QEMU PCM output: 48000 Hz, 16 bit, stereo.
+Requested frequencies: 997 Hz left, 1511 Hz right.
+Median measured peaks: 997.0 Hz left, 1510.9 Hz right.
+19 overlapping windows of 8192 frames contained both expected peaks.
+
+WINWDM independent PCI control after vendor playback:
+GetVersion 0x02100A03
+Uninstall registry open 2
+Matching WDM targets 1, active 6.0
+Requested WDM target 6.0
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+
+This upstream binary targets NT 3.1 natively. It verifies the hardware and audio measurement path.

@@ -1,0 +1,87 @@
+Microsoft Windows 3.11, standard six-disk distribution, separate from Windows for Workgroups 3.11.
+Source: https://github.com/aznbil/Win-3.11-Installations-on-QEMU-KVM/tree/4fbf35d0bcd00587d616398df90bceb1224dea6a/win3.11
+Source disk SHA-256 values:
+bfe61ee42e61add2442bffa20b39996557835f54057b9efef19b05f92173a778  DISK1.IMG
+56a2afc50ab3fc49825764af01c81bdd8d11411012e8553e18dc48f61c3590ff  DISK2.IMG
+3ea9110e04337da2873f53e472243873b28256b34ec70dc217eb73975361b6f0  DISK3.IMG
+13538166b2bfb988a76bb72657fcedf444a1ea5b22cc6444fa1130a01f8d2bba  DISK4.IMG
+9d702c60162014bd50dd4875577f4783156b9949cbd072df58e93361028c8df7  DISK5.IMG
+d6b9736df3962c2e0a052e207cf7074055a194effdafd7c0d71f998de3862477  DISK6.IMG
+
+Microsoft SETUP installed the six disks onto a new, empty FAT16 disk. MS-DOS 5.0 booted from A:.
+File Manager About displayed "Version 3.11" and "386 Enhanced Mode". The standalone WINVER utility displayed 3.10.
+The volume labels were MSWIN3111 through MSWIN3116. Installed file sizes and SHA-256 values follow.
+WINFILE.EXE  146864 bytes  fb20b6f0723f1ccd96fc65a6644ca0db450838a4e7151cfd40057c30914e77e7
+KRNL386.EXE  76400 bytes  b2686eb8882e251e00471a9c7a43b365390800c8ccffda9fd7e7eb1141cfea2e
+USER.EXE  264016 bytes  58e75f618d1d60f16bcc1be669a3e475b61f5af08a37347a8aa032af63c5d473
+GDI.EXE  220800 bytes  928b30373155e71219715cb961952b9ec4e158ec88a74a57b6280ffa550b37b5
+KRNL386.EXE and GDI.EXE matched the decompressed distribution files. Setup recorded the registered user in USER.EXE.
+
+Each test started with its own copy of the installation. W16CHECK operated the actual Setup wizard.
+Windows restarted before the live VxD test. The Info and Uninstall executable hashes matched the distribution.
+
+1.00 installed W100.386 as WINWDM.386
+SHA-256 595d3ec267b3dfebaea8d93701c2361cab4cf8373f7a4a63412a46b191c4b18f
+Target 1.00, GetWinFlags 0x00000C29
+All six labels and the default passed. Setup installed the selected target.
+PASS
+Target 1.00, GetWinFlags 0x00000C29
+Active target 1.00
+Enhanced mode, filter, deferred I/O and PCI counter passed.
+PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal
+
+1.05 installed W105.386 as WINWDM.386
+SHA-256 26153ddf6a0eaae94c452dbe6baa9c7f925a9f1c623a54cfdca16a2892f249e9
+Target 1.05, GetWinFlags 0x00000C29
+All six labels and the default passed. Setup installed the selected target.
+PASS
+Target 1.05, GetWinFlags 0x00000C29
+Active target 1.05
+Enhanced mode, filter, deferred I/O and PCI counter passed.
+PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal
+
+1.10 installed W110.386 as WINWDM.386
+SHA-256 e64c28a0f26f9933c20619dd987a259cfa2d83b2d058375f551025813af85959
+Target 1.10, GetWinFlags 0x00000C29
+All six labels and the default passed. Setup installed the selected target.
+PASS
+Target 1.10, GetWinFlags 0x00000C29
+Active target 1.10
+Enhanced mode, filter, deferred I/O and PCI counter passed.
+PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal
+
+1.20 installed W120.386 as WINWDM.386
+SHA-256 7006cae185dca3fb1f244b36bfd66fe9fe254282ce80025649845388c69704d1
+Target 1.20, GetWinFlags 0x00000C29
+All six labels and the default passed. Setup installed the selected target.
+PASS
+Target 1.20, GetWinFlags 0x00000C29
+Active target 1.20
+Enhanced mode, filter, deferred I/O and PCI counter passed.
+PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal
+
+1.30 installed W130.386 as WINWDM.386
+SHA-256 0624151d90c601db8a6b5c4d3f86062f481e8b981b91211c3e0c5cc00d1f4102
+Target 1.30, GetWinFlags 0x00000C29
+All six labels and the default passed. Setup installed the selected target.
+PASS
+Target 1.30, GetWinFlags 0x00000C29
+Active target 1.30
+Enhanced mode, filter, deferred I/O and PCI counter passed.
+PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal
+
+6.0 installed WINWDM.386 as WINWDM.386
+SHA-256 dbb17435362c4ab7a3ddee7431d6d86e4aeb427fb72dfb52d5b6a55aedfde244
+Target 6.0, GetWinFlags 0x00000C29
+All six labels and the default passed. Setup installed the selected target.
+PASS
+Target 6.0, GetWinFlags 0x00000C29
+Active target 6.0
+Enhanced mode, filter, deferred I/O and PCI counter passed.
+PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal

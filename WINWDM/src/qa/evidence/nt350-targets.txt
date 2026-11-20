@@ -1,0 +1,85 @@
+WDM 1.00 selected in Setup
+Installed kernel matches the selected image. Live PCI diagnostic passed.
+WDM 1.05 selected in Setup
+Installed kernel matches the selected image. Live PCI diagnostic passed.
+WDM 1.10 selected in Setup
+Installed kernel matches the selected image. Live PCI diagnostic passed.
+WDM 1.20 selected in Setup
+Installed kernel matches the selected image. Live PCI diagnostic passed.
+WDM 1.30 selected in Setup
+Installed kernel matches the selected image. Live PCI diagnostic passed.
+WDM 6.0 selected in Setup
+Installed kernel matches the selected image. Live PCI diagnostic passed.
+Target selection cycle PASS
+
+GetVersion 0x03273203
+Uninstall registry open 2
+Matching WDM targets 1, active 1.00
+Requested WDM target 1.00
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+
+GetVersion 0x03273203
+Uninstall registry open 2
+Matching WDM targets 1, active 1.05
+Requested WDM target 1.05
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+
+GetVersion 0x03273203
+Uninstall registry open 2
+Matching WDM targets 1, active 1.10
+Requested WDM target 1.10
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+
+GetVersion 0x03273203
+Uninstall registry open 2
+Matching WDM targets 1, active 1.20
+Requested WDM target 1.20
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+
+GetVersion 0x03273203
+Uninstall registry open 2
+Matching WDM targets 1, active 1.30
+Requested WDM target 1.30
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS
+
+GetVersion 0x03273203
+Uninstall registry open 2
+Matching WDM targets 1, active 6.0
+Requested WDM target 6.0
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS

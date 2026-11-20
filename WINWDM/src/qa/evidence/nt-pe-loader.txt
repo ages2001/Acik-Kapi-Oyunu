@@ -1,0 +1,32 @@
+Original Microsoft x86 NT kernel driver loader, QEMU 10.0.13 TCG, one Pentium CPU.
+Eight images use the same compiled entry.o and only import NTOSKRNL!RtlInitUnicodeString.
+Each image prints its own service name to the QEMU debug console from DriverEntry,
+creates no device and deliberately returns STATUS_NO_SUCH_DEVICE (StartService error 20).
+Error 193 is ERROR_BAD_EXE_FORMAT. No service was left installed.
+
+The pair in each guest column is the native StartService error and whether DriverEntry ran.
+Image     OS     Subsystem   File/section alignment    NT 3.1      NT 3.50     NT 3.51     NT 4.0
+P000.SYS  3.10   3.10         4096 bytes              20/yes      20/yes      20/yes      20/yes
+P001.SYS  3.10   3.10           32 bytes              193/no      20/yes      20/yes      20/yes
+P010.SYS  3.10   5.0          4096 bytes              20/yes      20/yes      20/yes      20/yes
+P011.SYS  3.10   5.0            32 bytes              193/no      20/yes      20/yes      20/yes
+P100.SYS  5.0    3.10         4096 bytes              20/yes      20/yes      20/yes      20/yes
+P101.SYS  5.0    3.10           32 bytes              193/no      20/yes      20/yes      20/yes
+P110.SYS  5.0    5.0          4096 bytes              20/yes      20/yes      20/yes      20/yes
+P111.SYS  5.0    5.0            32 bytes              193/no      20/yes      20/yes      20/yes
+
+SHA-256 of each control image:
+P000.SYS c5daa920fd801e696bbf8256fcd09dcfc18c39c9ef5adba7a96fdfc00f0e6be5
+P001.SYS 7dce5d03a8dff0dd93584891b0b9b3e1fa91244ada5157aab66e523acf8a32d0
+P010.SYS 4cd4b54a6d948c3cf2ba07c275864e972a2b5e740309e8457159d66748a434ad
+P011.SYS e67950b8989850e5ada7b1053ece00b88dbc39a176227ded248d970f6c64185a
+P100.SYS b8505bbad6b3e75054329ffd11f6a6d80d05e629062d99c1ccbcf63e07967749
+P101.SYS 5bc745be92333b55e4370df1f8796769f6ba750c597bc971f964e30fe6be1009
+P110.SYS 30394cd0eac97893a2118b3e39247b7cddf0c3d26928a79f7bef431883f27e0c
+P111.SYS 125381dcb96551fd29f92661ac1fc4cf681b40e4f2f87633ff4ffa6ec2f797d0
+
+Original WDMHDA 0.26 HDA.SYS uses OS version 5.0, native subsystem version 5.0,
+32-byte file and section alignment. The original binary returned 193 on NT 3.1.
+Changing the version fields in these independent controls had no effect on entry.
+The separate HDA import check found missing native services and the PortCls module.
+No HDA or Microsoft binary was changed in this experiment.

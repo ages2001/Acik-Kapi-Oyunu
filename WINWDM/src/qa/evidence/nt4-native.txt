@@ -1,0 +1,13 @@
+GetVersion 0x05650004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINNT\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 6.0
+Requested WDM target 6.0
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS

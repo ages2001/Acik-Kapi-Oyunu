@@ -1,0 +1,5 @@
+#ifdef WK_REMOVE
+1 ICON "resources/remove.ico"
+#else
+1 ICON "resources/kit.ico"
+#endif

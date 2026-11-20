@@ -1,0 +1,10 @@
+Registered command "C:\WINNT\WINWDM\UNINST.EXE"
+Launcher exit 0
+Uninstall registration and Info file removal PASS
+GetVersion 0x05650004
+Open WINWDM service 1060
+GetVersion 0x05650004
+Uninstall registry open 2
+Open device error 2
+Required Add/Remove Programs entry is missing or incomplete
+Kernel check FAIL

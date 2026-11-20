@@ -1,0 +1,4 @@
+GetVersion 0x0ECE0205
+Uninstall registry open 2
+Open device error 2
+Kernel check FAIL

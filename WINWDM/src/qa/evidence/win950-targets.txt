@@ -1,0 +1,125 @@
+Windows 95 retail, KERNEL32 4.0.0.950. QEMU pci-testdev.
+Each target used a new disposable OS disk copy, the Explorer installer and a full
+restart. The live test required the selected profile, the registered uninstall
+command, deferred I/O and the actual PCI device counter. The VxD verified its
+two hardware writes internally. The Win9x API returned zero output bytes.
+
+1.00 installed W100.386 as WINWDM.386
+SHA-256 595d3ec267b3dfebaea8d93701c2361cab4cf8373f7a4a63412a46b191c4b18f
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.00
+Requested WDM target 1.00
+DeviceIoControl error 0, bytes 0, reply 0x0
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal
+
+1.05 installed W105.386 as WINWDM.386
+SHA-256 26153ddf6a0eaae94c452dbe6baa9c7f925a9f1c623a54cfdca16a2892f249e9
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.05
+Requested WDM target 1.05
+DeviceIoControl error 0, bytes 0, reply 0x0
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal
+
+1.10 installed W110.386 as WINWDM.386
+SHA-256 e64c28a0f26f9933c20619dd987a259cfa2d83b2d058375f551025813af85959
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.10
+Requested WDM target 1.10
+DeviceIoControl error 0, bytes 0, reply 0x0
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal
+
+1.20 installed W120.386 as WINWDM.386
+SHA-256 7006cae185dca3fb1f244b36bfd66fe9fe254282ce80025649845388c69704d1
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.20
+Requested WDM target 1.20
+DeviceIoControl error 0, bytes 0, reply 0x0
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal
+
+1.30 installed W130.386 as WINWDM.386
+SHA-256 0624151d90c601db8a6b5c4d3f86062f481e8b981b91211c3e0c5cc00d1f4102
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.30
+Requested WDM target 1.30
+DeviceIoControl error 0, bytes 0, reply 0x0
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal
+
+6.0 installed WINWDM.386 as WINWDM.386
+SHA-256 dbb17435362c4ab7a3ddee7431d6d86e4aeb427fb72dfb52d5b6a55aedfde244
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 6.0
+Requested WDM target 6.0
+DeviceIoControl error 0, bytes 0, reply 0x0
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+WINWDM: QEMU PCI port counter 2, PnP and D3/D0 PASS, pending I/O drained on removal

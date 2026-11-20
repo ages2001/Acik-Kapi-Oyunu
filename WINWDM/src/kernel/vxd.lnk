@@ -1,0 +1,6 @@
+format windows vxd
+option quiet, modname=WDMKIT
+segment type code preload nondiscardable resident
+segment type data preload nondiscardable resident
+export _WkDescriptor.1
+file build/vxd.obj,build/vxd_io.res.o,build/vxd_control.res.o,build/vxd_queue.res.o,build/vxd_csq.res.o,build/vxd_remove_lock.res.o,build/vxd_irp.res.o,build/vxd_resident.res.o,build/vxd_worker.res.o,build/vxd_pci_device.res.o,build/vxd_pci_bus.res.o,build/check.o,build/bitmap.o,build/memory.o

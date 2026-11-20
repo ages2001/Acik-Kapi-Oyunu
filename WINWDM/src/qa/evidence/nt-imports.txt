@@ -1,0 +1,77 @@
+WINWDM.SYS c7e8bbb5cd38e625bff8cfbdd5efa2dfae23fe2ba0367ad3eb86ff0f2435cdc4
+  hal.dll (6), ntoskrnl.exe (24)
+  nt31rtm PASS
+  nt31 PASS
+  nt35 PASS
+  nt351 PASS
+  nt4 PASS
+W100.SYS bea560b5de57ca3d9557571afc2eaa4ef56578a7c21a3911592912a669cf1e8b
+  hal.dll (6), ntoskrnl.exe (24)
+  nt31rtm PASS
+  nt31 PASS
+  nt35 PASS
+  nt351 PASS
+  nt4 PASS
+W105.SYS 2399cbeb18965e4736223a700d6a0f30e15ba47989233df40be76b7c9c1d5119
+  hal.dll (6), ntoskrnl.exe (24)
+  nt31rtm PASS
+  nt31 PASS
+  nt35 PASS
+  nt351 PASS
+  nt4 PASS
+W110.SYS 613557f8c0dc4257220cd0edf9387464d95a8c99335be3a5779a501a56d5f01a
+  hal.dll (6), ntoskrnl.exe (24)
+  nt31rtm PASS
+  nt31 PASS
+  nt35 PASS
+  nt351 PASS
+  nt4 PASS
+W120.SYS d0d52b46806163ad40de7f47ff9ccf3180eeef51dd2fbf0f5450b3ec027381c1
+  hal.dll (6), ntoskrnl.exe (24)
+  nt31rtm PASS
+  nt31 PASS
+  nt35 PASS
+  nt351 PASS
+  nt4 PASS
+W130.SYS 9bb328981b8602932c478ae17323a8a9d19fbf4be5e5d90abe54c950c6de6b9b
+  hal.dll (6), ntoskrnl.exe (24)
+  nt31rtm PASS
+  nt31 PASS
+  nt35 PASS
+  nt351 PASS
+  nt4 PASS
+SETUP.EXE 044fe2a8d4d78b8c3fe86a5f7fdafa062ae0e34592bafbcf7cded8bce669d78a
+  advapi32.dll (8), gdi32.dll (9), kernel32.dll (58), user32.dll (47)
+  nt31rtm PASS
+  nt31 PASS
+  nt35 PASS
+  nt351 PASS
+  nt4 PASS
+INFO.EXE 3e9190093a1b6ee38335483cd6ac2797c6f8630a450d7ac9f5c6fa798d5e8b5e
+  gdi32.dll (9), kernel32.dll (30), user32.dll (38)
+  nt31rtm PASS
+  nt31 PASS
+  nt35 PASS
+  nt351 PASS
+  nt4 PASS
+UNINST.EXE 2ca2520ee06fec6e66b2c9d99219c52c64e83c7d091f9953b1e3950da18cc14b
+  advapi32.dll (8), gdi32.dll (9), kernel32.dll (58), user32.dll (47)
+  nt31rtm PASS
+  nt31 PASS
+  nt35 PASS
+  nt351 PASS
+  nt4 PASS
+NTSVC.EXE addb2ebdbc925e04753db60348b3053911de8ca9e9ccec339f4129b1348c526a
+  advapi32.dll (8), kernel32.dll (36), user32.dll (1)
+  nt31rtm PASS
+  nt31 PASS
+  nt35 PASS
+  nt351 PASS
+  nt4 PASS
+KITCHK.EXE 2604b5a8f778fb10480af25579d077cee6d4e0f6babe0baef375f83a39c16a2b
+  advapi32.dll (3), kernel32.dll (35), user32.dll (1)
+  nt31rtm PASS
+  nt31 PASS
+  nt35 PASS
+  nt351 PASS
+  nt4 PASS

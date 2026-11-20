@@ -1,0 +1,54 @@
+Microsoft ICHAUD.SYS, x86 Integrated Controller Hub Audio Driver (WDM), version 4.90.2509.1.
+The file version resource names Microsoft Corporation. The supplied WDMA_INT.INF lists Intel as the hardware
+manufacturer, Microsoft as the provider and PCI\VEN_8086&DEV_2415 among the matching devices.
+The driver is from the Millennium generation. The separate 98 SE cabinets on the utility ISO were not installed.
+Source: https://github.com/gaijin213/Win98-on-Qemu3dfx/blob/5b83682e5f4ef02a59898b90128e626ff108014b/3dfx-ac97-drivers.iso
+Container SHA-256 f8ed56e00e26f46046ff2acd0a94f1694f6a1cedc8aa3bd63e4486f15f31607e
+ICHAUD.SYS SHA-256 06f87017fd0ea01e6203418864c6819990edc85ee54ed8199e3f37ccc73a3f15
+WDMA_INT.INF SHA-256 a8377c50a29797ff829781060875411a0145cc2e4515419aa6bbfcd8fabee635
+PE32 section and file alignment: 32 bytes. Native subsystem version: 5.0.
+Named dependencies: hal.dll (9), ntoskrnl.exe (10), portcls.sys (11).
+
+Independent NT guests used their own IDE system disk and attached a QEMU AC97 at PCI slot 5 with matching
+vendor and device IDs. The QA floppy held the original binary. The native Service Control Manager attempted
+the load and removed its temporary service. The installed WINWDM 6.0 SYS matched the distribution in all four guests.
+
+Windows NT 3.1
+Audio controller: PCI device 8086:2415
+GetVersion 0x02100A03
+Native StartService result failed, Windows error 193
+Temporary service removal succeeded
+ntoskrnl.exe: 3/10 native names present. Missing: ExAllocatePoolWithTag, InterlockedDecrement, InterlockedIncrement, KefAcquireSpinLockAtDpcLevel, KefReleaseSpinLockFromDpcLevel, _alldiv, _allmul
+hal.dll: 7/9 native names present. Missing: KfAcquireSpinLock, KfReleaseSpinLock
+PORTCLS.SYS absent from System32 and System32\Drivers.
+
+Windows NT 3.50
+Audio controller: PCI device 8086:2415
+GetVersion 0x03273203
+Native StartService result failed, Windows error 127
+Temporary service removal succeeded
+ntoskrnl.exe: 6/10 native names present. Missing: InterlockedDecrement, InterlockedIncrement, _alldiv, _allmul
+hal.dll: 9/9 native names present. Missing: none
+PORTCLS.SYS absent from System32 and System32\Drivers.
+
+Windows NT 3.51
+Audio controller: PCI device 8086:2415
+GetVersion 0x04213303
+Native StartService result failed, Windows error 127
+Temporary service removal succeeded
+ntoskrnl.exe: 8/10 native names present. Missing: _alldiv, _allmul
+hal.dll: 9/9 native names present. Missing: none
+PORTCLS.SYS absent from System32 and System32\Drivers.
+
+Windows NT 4.0
+Audio controller: PCI device 8086:2415
+GetVersion 0x05650004
+Native StartService result failed, Windows error 317
+Temporary service removal succeeded
+ntoskrnl.exe: 10/10 native names present. Missing: none
+hal.dll: 9/9 native names present. Missing: none
+PORTCLS.SYS absent from System32 and System32\Drivers.
+
+NT 3.51 named _allmul in its loader dialog. NT 4.0 reported NTSTATUS 0xC0000034 (object name not found).
+The Windows error 317 on NT 4.0 is the actual StartService result. Its kernel and HAL export all 19 required
+names. The driver also requires eleven PortCls functions. No guest reached device I/O with this driver.

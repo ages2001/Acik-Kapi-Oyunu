@@ -1,0 +1,17 @@
+The guest shutdown stalled at a blank screen. QEMU reset the machine and NT 3.51 loaded the installed service on the following boot.
+
+GetVersion 0x04213303
+Open WINWDM service 0
+Service type 1, current state 4
+Start type 1, image \SystemRoot\WINWDM\WINWDM.SYS
+GetVersion 0x04213303
+Uninstall registry open 2
+Matching WDM targets 1, active 6.0
+Requested WDM target 6.0
+DeviceIoControl error 0, bytes 4, reply 0x574B
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 4, reply 0x3
+PCI PnP, power and device counter: error 0, bytes 4, reply 2
+Pending I/O completed before device removal
+Overlapped request start 997, completion 0, bytes 4, reply 0x574B
+Kernel check PASS

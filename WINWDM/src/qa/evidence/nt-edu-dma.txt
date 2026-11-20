@@ -1,0 +1,64 @@
+Common-buffer DMA round trip on Microsoft x86 Windows NT and QEMU 10.0.13 TCG.
+Devices: QEMU EDU 1234:11e8, default 28-bit DMA mask, 64 MiB guest, one Pentium.
+The identical native WKEDUDMA.SYS used the WINWDM SDK, the guest HAL and its bus-visible address.
+One 8192-byte common buffer supplied two disjoint 4096-byte regions. The driver initialized
+the destination with the complement of the expected data, copied the source to the device,
+cleared the source on the CPU, read the device buffer into the destination, compared every
+byte, restored the PCI command register, and released the allocation.
+Payload SHA-256 40f84d65a2a29072d55f76641f45fb793bc871dbed4f8411fd7402f9ef33ffa8
+Independent expected FNV-1a 0x103909c5
+Probe SYS SHA-256 f4609a2da057332c9673d67016e783fb775187b7f735f30c2724f584228f60dc
+A successful probe creates no devices and declines the native service start with Windows error 20.
+
+NT 3.1
+GetVersion 0x02100A03
+WdmEduQa StartService error 20
+Finished
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU result 00000000
+
+NT 3.50
+GetVersion 0x03273203
+WdmEduQa StartService error 20
+Finished
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU result 00000000
+
+NT 3.51
+GetVersion 0x04213303
+WdmEduQa StartService error 20
+Finished
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU result 00000000
+
+NT 4.0
+GetVersion 0x05650004
+WdmEduQa StartService error 20
+Finished
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU result 00000000
+

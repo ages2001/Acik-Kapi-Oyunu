@@ -1,0 +1,4 @@
+GetVersion 0xC0000004
+Uninstall registry open 2
+Open device error 2
+Kernel check FAIL

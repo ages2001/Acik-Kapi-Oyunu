@@ -1,0 +1,13 @@
+GetVersion 0xC0000004
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.05
+Requested WDM target 1.05
+DeviceIoControl error 0, bytes 0, reply 0x0
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
