@@ -42,6 +42,31 @@ static BOOLEAN check_version(void)
     return RtlGetVersion((PRTL_OSVERSIONINFOW)&v) == STATUS_INVALID_PARAMETER;
 }
 
+static BOOLEAN check_routines(void)
+{
+    extern PVOID bound_event __asm__("__imp__KeSetEvent@12");
+    extern PVOID bound_clock __asm__("__imp__KeStallExecutionProcessor@4");
+    extern PVOID bound_pci __asm__("__imp__HalGetBusDataByOffset@24");
+    UNICODE_STRING s;
+    RtlInitUnicodeString(&s, L"KeSetEvent#");
+    s.Length -= sizeof(WCHAR);
+    if (MmGetSystemRoutineAddress(&s) != bound_event) return FALSE;
+    RtlInitUnicodeString(&s, L"KeStallExecutionProcessor");
+    if (MmGetSystemRoutineAddress(&s) != bound_clock) return FALSE;
+    RtlInitUnicodeString(&s, L"HalGetBusDataByOffset");
+    if (MmGetSystemRoutineAddress(&s) != bound_pci) return FALSE;
+    RtlInitUnicodeString(&s, L"KeQueryActiveProcessors");
+    KAFFINITY (NTAPI *cpu_mask)(void) = MmGetSystemRoutineAddress(&s);
+    if (!cpu_mask || cpu_mask() != KeQueryActiveProcessors()) return FALSE;
+    RtlInitUnicodeString(&s, L"MmGetSystemRoutineAddress");
+    PVOID (NTAPI *lookup)(PUNICODE_STRING) = MmGetSystemRoutineAddress(&s);
+    if (!lookup || lookup(&s) != (PVOID)lookup) return FALSE;
+    RtlInitUnicodeString(&s, L"kesetevent");
+    if (lookup(&s)) return FALSE;
+    RtlInitUnicodeString(&s, L"VideoPortInitialize");
+    return !lookup(&s);
+}
+
 static BOOLEAN apcs(void)
 {
     volatile LONG *count = (volatile LONG *)((PUCHAR)KeGetCurrentThread() + 0x194);
@@ -171,6 +196,8 @@ NTSTATUS NTAPI DriverEntry(PDRIVER_OBJECT driver, PUNICODE_STRING path)
     msg("NT 3.1 extended kernel probe entered\n");
     if (check_version()) msg("Native version, product type and both OSVERSIONINFO sizes PASS\n");
     else { msg("Version FAIL\n"); ok = FALSE; }
+    if (check_routines()) msg("Counted kernel and HAL routine names, companion calls and unknown names PASS\n");
+    else { msg("System routine lookup FAIL\n"); ok = FALSE; }
     if (RtlAnsiCharToUnicodeChar(&p) == L'A' && p == source + 1 &&
         RtlAnsiCharToUnicodeChar(&p) == 0xe9 && p == source + 2 &&
         RtlAnsiCharToUnicodeChar(&p) == 0 && p == source + 3)

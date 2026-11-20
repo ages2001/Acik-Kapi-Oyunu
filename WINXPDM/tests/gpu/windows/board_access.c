@@ -170,7 +170,7 @@ static void number(board_word value)
 
 static int run(void)
 {
-    Mapping mem[5] = {{0}};
+    Mapping mem[6] = {{0}};
     board_word id = cfg(0, 4, 0, 0), ctl = cfg(4, 2, 0, 0), fb, regs, high;
     unsigned i;
     int nv = (uint16_t)id == 0x10de, ok = 0;
@@ -191,6 +191,10 @@ static int run(void)
         emit("GeForce windows mapped\n");
         ok = board_pramin(mem[0].regs + 0x700 / 4, mem[1].regs, mem[2].regs, mem[3].regs + 6);
         if (ok) emit("GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS\n");
+        if (ok && (id == 0x13c010deUL || id == 0x13c210deUL)) {
+            ok = map(&mem[5], regs + 0x10a000UL) && board_falcon(mem[5].regs);
+            if (ok) emit("GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS\n");
+        }
     } else {
         if (!map(&mem[0], regs + 0x4000) || !map(&mem[1], fb + 0x400000)) goto done;
         emit("Radeon windows mapped\n");
@@ -202,7 +206,7 @@ static int run(void)
         if (ok) emit("Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS\n");
     } else ok = 0;
 done:
-    for (i = 0; i < 5; ++i) unmap(&mem[i]);
+    for (i = 0; i < sizeof(mem) / sizeof(*mem); ++i) unmap(&mem[i]);
     if (!(ctl & 2)) cfg(4, 2, ctl, 1);
     return ok;
 }

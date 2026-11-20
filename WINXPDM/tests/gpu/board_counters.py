@@ -29,12 +29,16 @@ def main():
             request(channel, "qmp_capabilities")
             path = "/machine/peripheral/" + args.device
             available = {entry["name"] for entry in request(channel, "qom-list", path=path)}
-            for name in ("mmio-reads", "mmio-writes", "identity-reads", "prom-reads", "shadow-reads", "aux-requests", "unknown-reads",
-                         "unknown-writes", "first-unknown-read", "first-unknown-write", "pmu-dmem-reads", "pmu-dmem-writes"):
-                if name in ("aux-requests", "pmu-dmem-reads", "pmu-dmem-writes") and name not in available:
-                    continue
+            common = ("mmio-reads", "mmio-writes", "identity-reads", "prom-reads", "shadow-reads",
+                      "unknown-reads", "unknown-writes", "first-unknown-read", "first-unknown-write")
+            optional = ("aux-requests", "pmu-dmem-reads", "pmu-dmem-writes", "pmu-imem-writes", "pmu-imem-pages",
+                        "pmu-starts", "pmu-instructions", "pmu-exits", "pmu-entry", "pmu-pc", "pmu-blocked",
+                        "pmu-opcode", "pmu-code-loads", "pmu-data-loads", "pmu-data-stores",
+                        "pmu-dma-address", "pmu-dma-target")
+            for name in (*common, *(name for name in optional if name in available)):
                 value = request(channel, "qom-get", path=path, property=name)
-                print(f"{name}\t{hex(value) if name.startswith('first-') else value}")
+                address = name.startswith("first-") or name in ("pmu-entry", "pmu-pc", "pmu-opcode", "pmu-dma-address")
+                print(f"{name}\t{hex(value) if address else value}")
 
 
 if __name__ == "__main__":

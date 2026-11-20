@@ -12,3 +12,4 @@ IoGetStackLimits@8
 PsGetCurrentProcessId@0
 MmUserProbeAddress DATA
 RtlCaptureStackBackTrace@16
+MmGetSystemRoutineAddress@4

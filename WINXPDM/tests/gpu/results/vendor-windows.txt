@@ -3,6 +3,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -30,6 +31,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -60,6 +62,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -84,6 +87,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -109,6 +113,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -136,6 +141,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -163,6 +169,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -189,6 +196,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -213,6 +221,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -237,6 +246,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -261,6 +271,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -285,6 +296,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -309,6 +321,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -333,6 +346,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+GM204 Falcon: two inputs returned input plus seven, EXIT and page release PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 

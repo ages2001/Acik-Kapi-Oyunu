@@ -78,3 +78,64 @@ static int board_pramin(board_regs selector, board_regs window, board_regs page,
     }
     return actual == (board_word)~old_word && mirrored == old_word && after != before;
 }
+
+/* Exercise an unused instruction page on the dedicated, idle GM204 test board. */
+static int board_falcon(board_regs pmu)
+{
+    /* mov r1,0x100; ld r2,D[r1]; add r2,r2,7; st D[r1+4],r2; exit */
+    static const unsigned char code[] = {0x41,0,1, 0xbf,0x12, 0x90,0x22,7,
+                                          0xb5,0x12,1, 0xf8,2};
+    board_regs entry = pmu + 0x104/4, tlb = pmu + 0x140/4;
+    board_regs imem = pmu + 0x180/4, dmem = pmu + 0x1c0/4;
+    board_word old_entry, old_index, old_tag, old_data, input, old_words[2], word;
+    unsigned i, j, trial;
+    int ok = 0;
+    if (!(board_read(pmu + 0x100/4) & 16) || (board_read(pmu + 2) & 16) ||
+        (board_read(pmu + 0x108/4) & 0x1ff) != 128) return 0;
+    board_write(tlb, 0x0200007fUL);
+    if (board_read(tlb + 1)) return 0;
+    board_write(tlb, 0x03010000UL);
+    if (board_read(tlb + 1) != 0x80000000UL) return 0;
+    old_entry = board_read(entry);
+    old_index = board_read(imem);
+    old_tag = board_read(imem + 2);
+    old_data = board_read(dmem);
+    board_write(dmem, 0x02000100UL);
+    for (i = 0; i < 2; ++i) old_words[i] = board_read(dmem + 1);
+    board_write(imem, 0x01007f00UL);
+    board_write(imem + 2, 0x100);
+    for (i = 0; i < 256; i += 4) {
+        word = 0;
+        for (j = 0; j < 4 && i + j < sizeof(code); ++j)
+            word |= (board_word)code[i + j] << (j * 8);
+        board_write(imem + 1, word);
+    }
+    board_write(tlb, 0x03010000UL);
+    if (board_read(tlb + 1) != 0x0100007fUL) goto restore;
+    for (trial = 0; trial < 2; ++trial) {
+        input = trial ? 0xfffffffcUL : 0x61a87d33UL;
+        board_write(dmem, 0x01000100UL);
+        board_write(dmem + 1, input);
+        board_write(dmem + 1, input ^ 0x5a5a5a5aUL);
+        board_write(entry, 0x10000UL);
+        board_write(pmu + 0x100/4, 2);
+        for (i = 0; i < 1000 && !(board_read(pmu + 0x100/4) & 16); ++i)
+            board_delay();
+        if (!(board_read(pmu + 0x100/4) & 16)) return 0;
+        board_write(dmem, 0x104);
+        if (!(board_read(pmu + 2) & 16) || board_read(dmem + 1) != input + 7) goto restore;
+        board_write(pmu + 1, 16);
+    }
+    ok = 1;
+restore:
+    board_write(tlb, 0x0100007fUL);
+    board_write(tlb, 0x0200007fUL);
+    if (board_read(tlb + 1)) ok = 0;
+    board_write(dmem, 0x01000100UL);
+    for (i = 0; i < 2; ++i) board_write(dmem + 1, old_words[i]);
+    board_write(dmem, old_data);
+    board_write(imem, old_index);
+    board_write(imem + 2, old_tag);
+    board_write(entry, old_entry);
+    return ok;
+}

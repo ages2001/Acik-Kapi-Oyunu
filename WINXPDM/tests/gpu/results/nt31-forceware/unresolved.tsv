@@ -13,7 +13,6 @@ NVIDIA 368.81 x86	w3port.sys	MmAllocateContiguousMemorySpecifyCache
 NVIDIA 368.81 x86	w3port.sys	MmAllocatePagesForMdl
 NVIDIA 368.81 x86	w3port.sys	MmFreeContiguousMemorySpecifyCache
 NVIDIA 368.81 x86	w3port.sys	MmFreePagesFromMdl
-NVIDIA 368.81 x86	w3port.sys	MmGetSystemRoutineAddress
 NVIDIA 368.81 x86	w3port.sys	MmMapLockedPagesSpecifyCache
 NVIDIA 368.81 x86	w3port.sys	MmMapUserAddressesToPage
 NVIDIA 368.81 x86	w3port.sys	ObReferenceObjectByName
@@ -41,7 +40,6 @@ SupraGSX 382.69 x86	w3port.sys	MmAllocateContiguousMemorySpecifyCache
 SupraGSX 382.69 x86	w3port.sys	MmAllocatePagesForMdl
 SupraGSX 382.69 x86	w3port.sys	MmFreeContiguousMemorySpecifyCache
 SupraGSX 382.69 x86	w3port.sys	MmFreePagesFromMdl
-SupraGSX 382.69 x86	w3port.sys	MmGetSystemRoutineAddress
 SupraGSX 382.69 x86	w3port.sys	MmMapLockedPagesSpecifyCache
 SupraGSX 382.69 x86	w3port.sys	MmMapUserAddressesToPage
 SupraGSX 382.69 x86	w3port.sys	ObReferenceObjectByName

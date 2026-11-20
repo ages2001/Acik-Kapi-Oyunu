@@ -1,49 +1,49 @@
-machine	profile	pci_id	chip	pci_bar_mmio_vram	aux_transactions	pci_link
-pc	gtx950	10de:1402	126	PASS	PASS	conventional PCI
-pc	gtx960	10de:1401	126	PASS	PASS	conventional PCI
-pc	gtx970	10de:13c2	124	PASS	PASS	conventional PCI
-pc	gtx980	10de:13c0	124	PASS	PASS	conventional PCI
-pc	gtx980ti	10de:17c8	120	PASS	PASS	conventional PCI
-pc	gtx1050	10de:1c81	137	PASS	PASS	conventional PCI
-pc	gtx1050ti	10de:1c82	137	PASS	PASS	conventional PCI
-pc	gtx1060	10de:1c03	136	PASS	PASS	conventional PCI
-pc	gtx1060-gp104	10de:1b83	134	PASS	PASS	conventional PCI
-pc	gtx1070	10de:1b81	134	PASS	PASS	conventional PCI
-pc	gtx1070ti	10de:1b82	134	PASS	PASS	conventional PCI
-pc	gtx1080	10de:1b80	134	PASS	PASS	conventional PCI
-pc	gtx1080ti	10de:1b06	132	PASS	PASS	conventional PCI
-pc	rx9060xt	1002:7590	1200	PASS	PASS	conventional PCI
-pc	rx9070xt	1002:7550	1201	PASS	PASS	conventional PCI
-pc	r9700	1002:7551	1201	PASS	PASS	conventional PCI
-q35	gtx950	10de:1402	126	PASS	PASS	Gen3 x16
-q35	gtx960	10de:1401	126	PASS	PASS	Gen3 x16
-q35	gtx970	10de:13c2	124	PASS	PASS	Gen3 x16
-q35	gtx980	10de:13c0	124	PASS	PASS	Gen3 x16
-q35	gtx980ti	10de:17c8	120	PASS	PASS	Gen3 x16
-q35	gtx1050	10de:1c81	137	PASS	PASS	Gen3 x16
-q35	gtx1050ti	10de:1c82	137	PASS	PASS	Gen3 x16
-q35	gtx1060	10de:1c03	136	PASS	PASS	Gen3 x16
-q35	gtx1060-gp104	10de:1b83	134	PASS	PASS	Gen3 x16
-q35	gtx1070	10de:1b81	134	PASS	PASS	Gen3 x16
-q35	gtx1070ti	10de:1b82	134	PASS	PASS	Gen3 x16
-q35	gtx1080	10de:1b80	134	PASS	PASS	Gen3 x16
-q35	gtx1080ti	10de:1b06	132	PASS	PASS	Gen3 x16
-q35	rx9060xt	1002:7590	1200	PASS	PASS	Gen5 x16
-q35	rx9070xt	1002:7550	1201	PASS	PASS	Gen5 x16
-q35	r9700	1002:7551	1201	PASS	PASS	Gen5 x16
-q35-root-port	gtx950	10de:1402	126	PASS	PASS	Gen2 x4
-q35-root-port	gtx960	10de:1401	126	PASS	PASS	Gen2 x4
-q35-root-port	gtx970	10de:13c2	124	PASS	PASS	Gen2 x4
-q35-root-port	gtx980	10de:13c0	124	PASS	PASS	Gen2 x4
-q35-root-port	gtx980ti	10de:17c8	120	PASS	PASS	Gen2 x4
-q35-root-port	gtx1050	10de:1c81	137	PASS	PASS	Gen2 x4
-q35-root-port	gtx1050ti	10de:1c82	137	PASS	PASS	Gen2 x4
-q35-root-port	gtx1060	10de:1c03	136	PASS	PASS	Gen2 x4
-q35-root-port	gtx1060-gp104	10de:1b83	134	PASS	PASS	Gen2 x4
-q35-root-port	gtx1070	10de:1b81	134	PASS	PASS	Gen2 x4
-q35-root-port	gtx1070ti	10de:1b82	134	PASS	PASS	Gen2 x4
-q35-root-port	gtx1080	10de:1b80	134	PASS	PASS	Gen2 x4
-q35-root-port	gtx1080ti	10de:1b06	132	PASS	PASS	Gen2 x4
-q35-root-port	rx9060xt	1002:7590	1200	PASS	PASS	Gen2 x4
-q35-root-port	rx9070xt	1002:7550	1201	PASS	PASS	Gen2 x4
-q35-root-port	r9700	1002:7551	1201	PASS	PASS	Gen2 x4
+machine	profile	pci_id	chip	pci_bar_mmio_vram	aux_transactions	pci_link	gm204_pmu_program
+pc	gtx950	10de:1402	126	PASS	PASS	conventional PCI	-
+pc	gtx960	10de:1401	126	PASS	PASS	conventional PCI	-
+pc	gtx970	10de:13c2	124	PASS	PASS	conventional PCI	PASS
+pc	gtx980	10de:13c0	124	PASS	PASS	conventional PCI	PASS
+pc	gtx980ti	10de:17c8	120	PASS	PASS	conventional PCI	-
+pc	gtx1050	10de:1c81	137	PASS	PASS	conventional PCI	-
+pc	gtx1050ti	10de:1c82	137	PASS	PASS	conventional PCI	-
+pc	gtx1060	10de:1c03	136	PASS	PASS	conventional PCI	-
+pc	gtx1060-gp104	10de:1b83	134	PASS	PASS	conventional PCI	-
+pc	gtx1070	10de:1b81	134	PASS	PASS	conventional PCI	-
+pc	gtx1070ti	10de:1b82	134	PASS	PASS	conventional PCI	-
+pc	gtx1080	10de:1b80	134	PASS	PASS	conventional PCI	-
+pc	gtx1080ti	10de:1b06	132	PASS	PASS	conventional PCI	-
+pc	rx9060xt	1002:7590	1200	PASS	PASS	conventional PCI	-
+pc	rx9070xt	1002:7550	1201	PASS	PASS	conventional PCI	-
+pc	r9700	1002:7551	1201	PASS	PASS	conventional PCI	-
+q35	gtx950	10de:1402	126	PASS	PASS	Gen3 x16	-
+q35	gtx960	10de:1401	126	PASS	PASS	Gen3 x16	-
+q35	gtx970	10de:13c2	124	PASS	PASS	Gen3 x16	PASS
+q35	gtx980	10de:13c0	124	PASS	PASS	Gen3 x16	PASS
+q35	gtx980ti	10de:17c8	120	PASS	PASS	Gen3 x16	-
+q35	gtx1050	10de:1c81	137	PASS	PASS	Gen3 x16	-
+q35	gtx1050ti	10de:1c82	137	PASS	PASS	Gen3 x16	-
+q35	gtx1060	10de:1c03	136	PASS	PASS	Gen3 x16	-
+q35	gtx1060-gp104	10de:1b83	134	PASS	PASS	Gen3 x16	-
+q35	gtx1070	10de:1b81	134	PASS	PASS	Gen3 x16	-
+q35	gtx1070ti	10de:1b82	134	PASS	PASS	Gen3 x16	-
+q35	gtx1080	10de:1b80	134	PASS	PASS	Gen3 x16	-
+q35	gtx1080ti	10de:1b06	132	PASS	PASS	Gen3 x16	-
+q35	rx9060xt	1002:7590	1200	PASS	PASS	Gen5 x16	-
+q35	rx9070xt	1002:7550	1201	PASS	PASS	Gen5 x16	-
+q35	r9700	1002:7551	1201	PASS	PASS	Gen5 x16	-
+q35-root-port	gtx950	10de:1402	126	PASS	PASS	Gen2 x4	-
+q35-root-port	gtx960	10de:1401	126	PASS	PASS	Gen2 x4	-
+q35-root-port	gtx970	10de:13c2	124	PASS	PASS	Gen2 x4	PASS
+q35-root-port	gtx980	10de:13c0	124	PASS	PASS	Gen2 x4	PASS
+q35-root-port	gtx980ti	10de:17c8	120	PASS	PASS	Gen2 x4	-
+q35-root-port	gtx1050	10de:1c81	137	PASS	PASS	Gen2 x4	-
+q35-root-port	gtx1050ti	10de:1c82	137	PASS	PASS	Gen2 x4	-
+q35-root-port	gtx1060	10de:1c03	136	PASS	PASS	Gen2 x4	-
+q35-root-port	gtx1060-gp104	10de:1b83	134	PASS	PASS	Gen2 x4	-
+q35-root-port	gtx1070	10de:1b81	134	PASS	PASS	Gen2 x4	-
+q35-root-port	gtx1070ti	10de:1b82	134	PASS	PASS	Gen2 x4	-
+q35-root-port	gtx1080	10de:1b80	134	PASS	PASS	Gen2 x4	-
+q35-root-port	gtx1080ti	10de:1b06	132	PASS	PASS	Gen2 x4	-
+q35-root-port	rx9060xt	1002:7590	1200	PASS	PASS	Gen2 x4	-
+q35-root-port	rx9070xt	1002:7550	1201	PASS	PASS	Gen2 x4	-
+q35-root-port	r9700	1002:7551	1201	PASS	PASS	Gen2 x4	-

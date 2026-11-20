@@ -4,6 +4,7 @@
 #include "qemu/osdep.h"
 #include "qemu/timer.h"
 #include "qemu/bswap.h"
+#include "qemu/bitops.h"
 #include "qemu/units.h"
 #include "qemu/host-utils.h"
 #include "qemu/log.h"
@@ -17,6 +18,7 @@
 #include "migration/vmstate.h"
 #include "winxpdm-sdma.h"
 #include "winxpdm-dp-aux.h"
+#include "winxpdm-gm204-pmu.h"
 
 #define TYPE_WXP_BOARD "winxpdm-probe-gpu"
 OBJECT_DECLARE_SIMPLE_TYPE(WxpBoard, WXP_BOARD)
@@ -25,7 +27,6 @@ OBJECT_DECLARE_SIMPLE_TYPE(WxpBoard, WXP_BOARD)
 #define PROM_START 0x300000
 #define VBIOS_SHADOW (VRAM_SIZE - PROM_SIZE)
 #define GM204_PMU_DMEM_PORT0 0x10a1c0
-#define GM204_PMU_DMEM_SIZE 0x6000
 #define FALCON_DMEM_ADDR 0x0000fffc
 #define FALCON_DMEM_WRITE_INC (1U << 24)
 #define FALCON_DMEM_READ_INC (1U << 25)
@@ -63,6 +64,9 @@ struct WxpBoard {
     uint32_t index, index_hi, scratch, numerator, denominator, pramin;
     uint32_t straps[2], ring[RB_REGS];
     uint32_t pmu_dmem_index[4], pmu_dmem[GM204_PMU_DMEM_SIZE / 4];
+    Gm204Falcon falcon;
+    Gm204FalconStats falcon_stats;
+    QEMUTimer *falcon_timer;
     WxpAux dp[WXP_AUX_CHANNELS];
     uint8_t connected;
     QEMUTimer *sdma_timer;
@@ -110,6 +114,119 @@ static bool prom_window(WxpBoard *s, hwaddr offset, unsigned size)
 {
     return s->board->vendor == 0x10de && offset >= PROM_START &&
            offset + size <= PROM_START + PROM_SIZE;
+}
+
+static bool falcon_transfer(void *opaque, unsigned target, uint64_t address,
+                            uint8_t *bytes, unsigned size, bool write)
+{
+    WxpBoard *s = opaque;
+    if (target == 4 && address <= VRAM_SIZE - size) {
+        uint8_t *vram = memory_region_get_ram_ptr(&s->aperture);
+        if (write) {
+            memcpy(vram + address, bytes, size);
+            memory_region_set_dirty(&s->aperture, address, size);
+        } else {
+            memcpy(bytes, vram + address, size);
+        }
+        return true;
+    }
+    if (target == 5 || target == 6) {
+        MemTxAttrs attrs = { .memory = true, .requester_id = pci_requester_id(&s->parent_obj) };
+        return pci_dma_rw(&s->parent_obj, address, bytes, size,
+                          write ? DMA_DIRECTION_FROM_DEVICE : DMA_DIRECTION_TO_DEVICE, attrs) == MEMTX_OK;
+    }
+    return false;
+}
+
+static void falcon_run(void *opaque)
+{
+    WxpBoard *s = opaque;
+    gm204_execute(&s->falcon, &s->falcon_stats, s->pmu_dmem, falcon_transfer, s);
+    if (s->falcon.running && !s->falcon.blocked) {
+        timer_mod(s->falcon_timer, qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL) + 10000);
+    } else if (s->falcon.blocked) {
+        qemu_log_mask(LOG_UNIMP, "winxpdm: Falcon stopped progressing at PC 0x%x, reason %u, opcode 0x%x\n",
+                      s->falcon.pc, s->falcon.blocked, s->falcon.opcode);
+    }
+}
+
+static bool falcon_port(WxpBoard *s, hwaddr offset, bool write, uint32_t *value)
+{
+    Gm204Falcon *f = &s->falcon;
+    if (s->board->chip != 0x124 || offset < GM204_PMU_BASE) {
+        return false;
+    }
+    if (offset >= GM204_PMU_BASE + 0xe00 && offset < GM204_PMU_BASE + 0xe20) {
+        unsigned port = (offset - GM204_PMU_BASE - 0xe00) / 4;
+        if (write) f->dma_config[port] = *value & 7;
+        else *value = f->dma_config[port];
+        return true;
+    }
+    switch (offset - GM204_PMU_BASE) {
+    case 0x004: /* IRQ acknowledgement */
+        if (write) f->irq &= ~*value;
+        else *value = 0;
+        break;
+    case 0x008:
+        if (!write) *value = f->irq;
+        break;
+    case 0x040: case 0x044: {
+        unsigned i = (offset & 4) >> 2;
+        if (write) f->mailbox[i] = *value;
+        else *value = f->mailbox[i];
+        break;
+    }
+    case 0x100: case 0x130:
+        if (!write) {
+            *value = f->running ? 0 : 0x10;
+        } else if ((*value & 2) && !f->running) {
+            f->pc = f->entry;
+            f->running = true;
+            f->blocked = FALCON_READY;
+            f->opcode = 0;
+            s->falcon_stats.starts++;
+            falcon_run(s);
+        }
+        break;
+    case 0x104:
+        if (write) f->entry = *value;
+        else *value = f->entry;
+        break;
+    case 0x108:
+        if (!write) *value = GM204_IMEM_PAGES | ((GM204_PMU_DMEM_SIZE / 256) << 9) | (3 << 18);
+        break;
+    case 0x140:
+        if (write) gm204_tlb_command(f, *value);
+        else *value = f->tlb_command;
+        break;
+    case 0x144:
+        if (!write) *value = f->tlb_result;
+        break;
+    case 0x180:
+        if (write) f->index = *value & 0x1300fffc;
+        else *value = f->index;
+        break;
+    case 0x184:
+        if (write) {
+            uint64_t pages = s->falcon_stats.pages;
+            gm204_code_write(f, &s->falcon_stats, *value);
+            if (f->running && f->blocked == FALCON_FETCH_UNAVAILABLE &&
+                pages != s->falcon_stats.pages) {
+                f->blocked = FALCON_READY;
+                falcon_run(s);
+            }
+        } else {
+            *value = gm204_code_read(f);
+        }
+        break;
+    case 0x188:
+        if (write) f->next_tag = *value & (GM204_VIRTUAL_PAGES - 1);
+        else *value = f->next_tag;
+        break;
+    default:
+        return false;
+    }
+    return true;
 }
 
 static uint32_t read_prom(WxpBoard *s, hwaddr offset, unsigned size)
@@ -225,6 +342,8 @@ static void sdma_run(void *opaque)
 
 static uint32_t read32(WxpBoard *s, hwaddr offset)
 {
+    uint32_t value = 0;
+    if (falcon_port(s, offset, false, &value)) return value;
     if (gm204_dmem_port(s, offset)) {
         return gm204_dmem_access(s, offset, false, 0);
     }
@@ -320,6 +439,7 @@ static void write_mmio(void *opaque, hwaddr offset, uint64_t data, unsigned size
     WxpBoard *s = opaque;
     uint32_t value = data;
     s->mmio_writes++;
+    if (falcon_port(s, offset, true, &value)) return;
     if (gm204_dmem_port(s, offset)) {
         gm204_dmem_access(s, offset, true, value);
         return;
@@ -426,6 +546,8 @@ static void reset(DeviceState *dev)
     s->straps[0] = s->straps[1] = 0;
     memset(s->pmu_dmem_index, 0, sizeof(s->pmu_dmem_index));
     memset(s->pmu_dmem, 0, sizeof(s->pmu_dmem));
+    memset(&s->falcon, 0, sizeof(s->falcon));
+    if (s->falcon_timer) timer_del(s->falcon_timer);
     for (unsigned n = 0; n < WXP_AUX_CHANNELS; ++n) {
         wxp_aux_reset(&s->dp[n], n);
     }
@@ -516,6 +638,21 @@ static void realize(PCIDevice *dev, Error **errp)
     object_property_add_uint64_ptr(obj,"prom-reads",&s->prom_reads,OBJ_PROP_FLAG_READ);
     object_property_add_uint64_ptr(obj,"aux-requests",&s->aux_requests,OBJ_PROP_FLAG_READ);
     if (m->chip == 0x124) {
+        s->falcon_timer = timer_new_ns(QEMU_CLOCK_VIRTUAL, falcon_run, s);
+        object_property_add_uint64_ptr(obj, "pmu-imem-writes", &s->falcon_stats.writes, OBJ_PROP_FLAG_READ);
+        object_property_add_uint64_ptr(obj, "pmu-imem-pages", &s->falcon_stats.pages, OBJ_PROP_FLAG_READ);
+        object_property_add_uint64_ptr(obj, "pmu-starts", &s->falcon_stats.starts, OBJ_PROP_FLAG_READ);
+        object_property_add_uint64_ptr(obj, "pmu-instructions", &s->falcon_stats.instructions, OBJ_PROP_FLAG_READ);
+        object_property_add_uint64_ptr(obj, "pmu-exits", &s->falcon_stats.exits, OBJ_PROP_FLAG_READ);
+        object_property_add_uint64_ptr(obj, "pmu-code-loads", &s->falcon_stats.code_loads, OBJ_PROP_FLAG_READ);
+        object_property_add_uint64_ptr(obj, "pmu-data-loads", &s->falcon_stats.data_loads, OBJ_PROP_FLAG_READ);
+        object_property_add_uint64_ptr(obj, "pmu-data-stores", &s->falcon_stats.data_stores, OBJ_PROP_FLAG_READ);
+        object_property_add_uint64_ptr(obj, "pmu-dma-address", &s->falcon.last_dma_address, OBJ_PROP_FLAG_READ);
+        object_property_add_uint32_ptr(obj, "pmu-dma-target", &s->falcon.last_dma_target, OBJ_PROP_FLAG_READ);
+        object_property_add_uint32_ptr(obj, "pmu-entry", &s->falcon.entry, OBJ_PROP_FLAG_READ);
+        object_property_add_uint32_ptr(obj, "pmu-pc", &s->falcon.pc, OBJ_PROP_FLAG_READ);
+        object_property_add_uint32_ptr(obj, "pmu-blocked", &s->falcon.blocked, OBJ_PROP_FLAG_READ);
+        object_property_add_uint32_ptr(obj, "pmu-opcode", &s->falcon.opcode, OBJ_PROP_FLAG_READ);
         object_property_add_uint64_ptr(obj, "pmu-dmem-reads", &s->pmu_dmem_reads, OBJ_PROP_FLAG_READ);
         object_property_add_uint64_ptr(obj, "pmu-dmem-writes", &s->pmu_dmem_writes, OBJ_PROP_FLAG_READ);
     }
@@ -572,6 +709,10 @@ static void board_exit(PCIDevice *dev)
     if (s->sdma_timer) {
         timer_free(s->sdma_timer);
         s->sdma_timer = NULL;
+    }
+    if (s->falcon_timer) {
+        timer_free(s->falcon_timer);
+        s->falcon_timer = NULL;
     }
 }
 

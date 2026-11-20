@@ -100,6 +100,110 @@ def gm204_pmu_dmem(run):
     assert run("readl", base + 4) == 0
 
 
+def gm204_pmu_dma(run, cfg):
+    base = 0xf010a000
+    def reg(offset, value):
+        run("writel", base + offset, value)
+
+    # This project-authored program copies two words in, adds seven, and copies
+    # both words back out. The bootstrap itself loads the program using XCLD.
+    payload = bytes.fromhex("00 00 d1 00 01 01 00 fa 01 05 f8 03 42 00 01 "
+                           "bf 23 90 33 07 a0 23 00 08 fa 01 06 f8 03 f8 02")
+    program_base, data_base = 0x300000, 0x350000
+    loader = (b"\xd0" + struct.pack("<I", program_base >> 8) + bytes.fromhex("fe 06 00") +
+              b"\xd0" + struct.pack("<I", data_base >> 8) + bytes.fromhex("fe 07 00") +
+              bytes.fromhex("40 00 11 fe 0b 00 00 00 41 00 01 fa 01 04 f8 07 3e 00 00 00"))
+    command = cfg(4, width=2)
+    cfg(4, command | 4, width=2)
+    for code_target, data_target in ((4, 5), (5, 4), (6, 6)):
+        code = program_base + (0xc0000000 if code_target == 4 else 0)
+        data = data_base + (0xc0000000 if data_target == 4 else 0)
+        reg(0xe00, code_target)
+        reg(0xe04, data_target)
+        for i, (word,) in enumerate(struct.iter_unpack("<I", payload.ljust(256, b"\0"))):
+            run("writel", code + 4*i, word)
+        pattern = [0xfffffffd, 0xd71359b2, 0xbad0cafe, 0x3504a1ce, 0x693fad11]
+        for i, value in enumerate(pattern):
+            run("writel", data + 4*i, value)
+        reg(0x180, 0x01000200)
+        reg(0x188, 0x102)
+        for word, in struct.iter_unpack("<I", loader.ljust(256, b"\0")):
+            reg(0x184, word)
+        reg(0x104, 0x10200)
+        reg(0x100, 2)
+        assert run("readl", base + 0x100) & 16 and run("readl", base + 8) & 16
+        assert [run("readl", data + 4*i) for i in range(5)] == [*pattern[:2], 4, pattern[1], pattern[4]]
+        reg(0x140, 0x03000000)
+        assert run("readl", base + 0x144) == 0x01000001
+        for page in (1, 2):
+            reg(0x140, 0x01000000 | page)
+        reg(4, 16)
+    cfg(4, command, width=2)
+
+
+def gm204_pmu_code(run):
+    base = 0xf010a000
+    def write(reg, value):
+        run("writel", base + reg, value)
+
+    def read(reg):
+        return run("readl", base + reg)
+
+    cap = read(0x108)
+    code_size = (cap & 0x1ff) * 256
+    assert code_size == 32768 and (cap >> 9 & 0x1ff) * 256 == 24576
+    assert cap >> 18 & 0x1f == 3
+    first = code_size - 512
+    source, marker = 0x09697432, 0x09697432 * 2 + 7
+    write(0x1c0, 0x5c)
+    write(0x1c4, source)
+
+    # The call straddles two virtual pages. Its subroutine reads a host-supplied
+    # operand from Falcon data RAM, shifts it, adds seven and returns via the stack.
+    code = bytearray(512)
+    main = bytes.fromhex("44 24 10 fe 44 00 01 58 02 fe 7e 35 01 01 "
+                         "a0 12 bf 14 b5 14 02 a6 42 f4 1b 07 f8 02")
+    subroutine = bytes.fromhex("98 13 01 94 33 01 90 32 07 f8 00")
+    code[0xf4:0xf4 + len(main)] = main
+    code[0x135:0x135 + len(subroutine)] = subroutine
+    words = struct.unpack("<128I", code)
+    write(0x180, 0x01000000 | first)
+    write(0x188, 0x100)
+    for word in words[:64]:
+        write(0x184, word)
+    write(0x104, 0x100f4)
+    assert read(0x100) & 16 and read(0x104) == 0x100f4
+    write(0x100, 2)
+    assert read(0x100) & 16 == 0 and read(0x008) & 16 == 0
+    write(0x188, 0x101)
+    for word in words[64:127]:
+        write(0x184, word)
+    write(0x140, 0x0200007f)
+    assert read(0x144) == 0x02010100
+    assert read(0x100) & 16 == 0
+    write(0x184, words[-1])
+    assert read(0x180) == 0x01000000 | code_size
+    assert read(0x100) & 16 and read(0x008) & 16
+    for address, value in ((0x58, marker), (0x5c, source), (0x60, marker), (0x1020, 0x10102)):
+        write(0x1c0, address)
+        assert read(0x1c4) == value
+    write(0x004, 16)
+    assert read(0x008) & 16 == 0
+    write(0x180, 0x02000000 | first | 0xfc)
+    assert [read(0x184), read(0x184)] == list(words[63:65])
+    assert read(0x180) == (0x02000000 | first + 0x104)
+
+    # Two complete physical pages for the same virtual address prevent execution.
+    write(0x180, 0x01000000)
+    write(0x188, 0x100)
+    for word in words[:64]:
+        write(0x184, word)
+    write(0x140, 0x03010000)
+    assert read(0x144) == 0x4100007e
+    write(0x130, 2)
+    assert read(0x100) & 16 == 0 and read(0x008) & 16 == 0
+
+
 def geforce_firmware(run, cfg, raw, device):
     pcir = int.from_bytes(raw[24:26], "little")
     assert raw[:2] == b"\x55\xaa" and raw[pcir:pcir+4] == b"PCIR"
@@ -272,6 +376,8 @@ def check(qemu, firmware, machine, name, device, chip, rom=None, subsystem=None,
             if nv:
                 if chip == 0x124:
                     gm204_pmu_dmem(run)
+                    gm204_pmu_dma(run, cfg)
+                    gm204_pmu_code(run)
                 if rom:
                     geforce_firmware(run, cfg, rom.read_bytes(), device)
                 else:
@@ -325,7 +431,8 @@ def check(qemu, firmware, machine, name, device, chip, rom=None, subsystem=None,
                 run("writel",0xf0000018,1);run("writel",0xf0000004,0)
                 assert run("readl",0xc0001000)==0xdf097b5a
             topology = "q35-root-port" if slot else machine
-            print(f"{topology}\t{name}\t{vendor:04x}:{device:04x}\t{chip:x}\tPASS\tPASS\t{link}",flush=True)
+            falcon = "PASS" if chip == 0x124 else "-"
+            print(f"{topology}\t{name}\t{vendor:04x}:{device:04x}\t{chip:x}\tPASS\tPASS\t{link}\t{falcon}",flush=True)
         finally:
             proc.terminate()
 
@@ -347,7 +454,7 @@ if __name__=="__main__":
                 raise ValueError()
         except ValueError:
             p.error("--subsystem requires --profile and two nonzero 16-bit IDs, e.g. 1043:8506")
-    print("machine\tprofile\tpci_id\tchip\tpci_bar_mmio_vram\taux_transactions\tpci_link")
+    print("machine\tprofile\tpci_id\tchip\tpci_bar_mmio_vram\taux_transactions\tpci_link\tgm204_pmu_program")
     for m, slot in (("pc",False),("q35",False),("q35",True)):
         for n,(d,c) in PROFILES.items():
             if not args.profile or n == args.profile:
