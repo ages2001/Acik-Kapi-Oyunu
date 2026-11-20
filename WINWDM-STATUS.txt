@@ -30,12 +30,12 @@ evidence, three setup editions and a 1.44 MB install floppy. The cloud build
 uses MinGW-w64, Open Watcom, NASM, JWlink, NSIS and mtools. The repository
 game was also built and smoke-tested during cloud setup.
 
-The graphical wizard has Back/Next navigation and six choices: 1.00, 1.05,
-1.10, 1.20, 1.30 and 6.0 (default). Info reads the active target from the
-loaded driver. The 1.x startup test uses two devices and 64-byte extensions.
-The 6.0 test uses seven devices, a 5,000-byte extension and at least 12 I/O
-request stack locations. Enhanced-mode builds initially reserve four or
-sixteen data pages respectively.
+The graphical wizard has Back/Next navigation and offers 1.00, 1.05, 1.10,
+1.20, 1.30 and 6.0 (default). Info reads the active target from the loaded
+driver. The 1.x startup test uses two devices and 64-byte extensions. The 6.0
+test uses seven devices, a 5,000-byte extension and at least 12 I/O request
+stack locations. Enhanced-mode builds initially reserve four or sixteen data
+pages respectively.
 
 On Windows 3.x and NT 3.x, Program Manager receives Info and Uninstall items.
 On Windows 95, 98 FE and NT 4.0, setup creates an Info desktop shortcut and
@@ -192,12 +192,14 @@ registration, Wave and Topology ports, general packet probing/queuing and
 working audio endpoints for ICHAUD and WDMHDA on pre-WDM NT.
 
 WINXPDM and WINWDDM have local project scaffolds with English README, MIT
-license and reserved src/bin directories. Implementations and guest-tested
-display binaries are pending. WDDM 1.x and 2.x still need graphics-kernel
-services, memory management, scheduling and matching user-mode components. No
-GTX 900, GTX 1000 or RTX driver, hardware acceleration or faithful QEMU GPU
-emulation has been verified. Matching x86 architecture alone supplies none of
-these display services.
+license and reserved src/bin directories. Reference PCI IDs and Nouveau chip
+descriptions were identified for the GTX 960 (GM206, 10de:1401) and GTX 1060
+6GB (GP106, 10de:1c03). Implementations and guest-tested display binaries are
+pending. WDDM 1.x and 2.x still need graphics-kernel services, memory
+management, scheduling and matching user-mode components. No GTX 900, GTX 1000
+or RTX driver, hardware acceleration or faithful QEMU GPU emulation has been
+verified. Matching x86 architecture alone supplies none of these display
+services.
 
 Reproducibility and evidence
 ----------------------------
