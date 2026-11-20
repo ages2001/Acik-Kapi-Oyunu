@@ -141,11 +141,17 @@ static int application(HINSTANCE instance, const char *args)
     WNDCLASS wc = {0};
     DLGPROC callback;
     int result;
+#ifdef WXP_WIN16
+    int temporary = !lstrcmpi(args, "/remove-temp");
+#endif
     wxp_instance = instance;
 #ifdef BUILD_INFO
     info = 1;
 #endif
     removing = (lstrcmpi(args, "/remove") == 0);
+#ifdef WXP_WIN16
+    if (temporary) removing = 1;
+#endif
     if (!platform_init()) {
         MessageBox(NULL, wxp_error, "WINXPDM", MB_OK | MB_ICONEXCLAMATION);
         return 1;
@@ -154,8 +160,7 @@ static int application(HINSTANCE instance, const char *args)
     /* Run the removal wizard from a separate module so Info and Setup can
        both be removed from the product directory. */
     if (removing) {
-        char src[PATH_CAP], tmp[PATH_CAP], exe[PATH_CAP], cmd[PATH_CAP+20];
-        char *dot;
+        char src[PATH_CAP], tmp[PATH_CAP], cmd[PATH_CAP+20];
 #ifdef _WIN32
         char tempdir[PATH_CAP];
         unsigned n=GetTempPath(sizeof(tempdir),tempdir);
@@ -163,26 +168,28 @@ static int application(HINSTANCE instance, const char *args)
 #else
         if (!GetTempFileName(0,"WXP",0,tmp)) return 1;
 #endif
-        lstrcpy(exe,tmp);
-        for (dot=exe+lstrlen(exe); dot>exe && *dot!='.'; --dot) {}
-        if (dot==exe) { delete_owned(tmp); return 1; }
-        lstrcpy(dot,".EXE");
-        if (!path_join(src,wxp_folder,"SETUP.EXE") || !copy_new(src,exe)) {
+        /* GetTempFileName reserves this exact path. The native loader accepts
+           an explicit filename with its temporary extension. */
+        if (!path_join(src,wxp_folder,"SETUP.EXE") || !copy_reserved(src,tmp)) {
             delete_owned(tmp);
             MessageBox(NULL,"Cannot start the removal wizard. Run SETUP.EXE /remove from the package.","WINXPDM",MB_OK);
             return 1;
         }
-        delete_owned(tmp);
 #ifdef _WIN32
-        wsprintf(cmd,"\"%s\" /remove",exe);
+        wsprintf(cmd,"\"%s\" /remove",tmp);
 #else
-        wsprintf(cmd,"%s /remove",exe);
+        wsprintf(cmd,"%s /remove-temp",tmp);
 #endif
         if (WinExec(cmd,SW_SHOWNORMAL)<32) {
-            delete_owned(exe);
+            delete_owned(tmp);
             MessageBox(NULL,"Windows could not start the removal wizard.","WINXPDM",MB_OK);
             return 1;
         }
+#if defined(WXP_NT3) || defined(WXP_NT4) || defined(WXP_NT5)
+        MoveFileEx(tmp,NULL,MOVEFILE_DELAY_UNTIL_REBOOT);
+#elif defined(WXP_9X)
+        queue_temp_delete(tmp);
+#endif
         return 0;
     }
 #endif
@@ -200,6 +207,12 @@ static int application(HINSTANCE instance, const char *args)
     result = DialogBox(instance, MAKEINTRESOURCE(ID_WIZARD), NULL, callback);
 #ifndef _WIN32
     FreeProcInstance((FARPROC)callback);
+    if (temporary) {
+        char path[PATH_CAP];
+        UINT len = GetModuleFileName(instance,path,sizeof(path));
+        if (len > 4 && len < sizeof(path) && !lstrcmpi(path+len-4,".TMP"))
+            delete_owned(path);
+    }
 #endif
     return result < 0;
 }

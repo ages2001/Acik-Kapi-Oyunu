@@ -1,0 +1,15 @@
+Windows Me 4.90.3000
+
+WININIT.INI before restart
+[Rename]
+C:\WXPQA4.TXT=C:\WXPQA3.TXT
+
+
+NUL=C:\WXPQA1.TMP
+
+NUL=C:\WXPQA2.TMP
+[WinxpdmDiagnostic]
+Marker=Keep
+
+Guest file checks after restart
+Windows Me WININIT queue: first delete PASS, second delete PASS, existing rename PASS

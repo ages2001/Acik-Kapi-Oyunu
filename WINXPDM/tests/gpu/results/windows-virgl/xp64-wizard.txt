@@ -1,0 +1,12 @@
+XP wizard remove PASS
+XP wizard cleanup PASS
+XP wizard install PASS
+Viewer samples: black=736 green=32 red=80 blue=80
+XP wizard viewer PASS
+XP wizard remove PASS
+XP wizard cleanup PASS
+XP wizard install PASS
+Viewer samples: black=736 green=32 red=80 blue=80
+XP wizard viewer PASS
+XP wizard remove PASS
+XP wizard cleanup PASS

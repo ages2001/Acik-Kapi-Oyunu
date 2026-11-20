@@ -8,6 +8,8 @@ WINXPDM submits programmable vertex and fragment shaders to a VirtIO GPU from na
 2. Run the native package's `SETUP.EXE`. On the confirmation page, choose **Keep my display driver and install VirtIO 3D** to use the existing desktop with the new 3D interface. Restart NT so its kernel service loads.
 3. Open **WINXPDM Info** and choose **Test 3D**. A green triangle appears in front of a red-to-blue triangle. The window reports the number of requests the GPU completed and the number of configured outputs.
 
+On Windows XP Professional x64, the native installer created the desktop Info shortcut and the Add/Remove Programs entry. After restart, opening the shortcut and pressing Test 3D rendered the scene in the viewer. The test sampled 736 black, 32 green, 80 red-dominant and 80 blue-dominant pixels. The Add/Remove Programs command opened the removal wizard. After a second restart the desktop shortcut, installation record, kernel image, service and uninstall registration were gone. Both successive installation, viewer and removal cycles passed on the same guest, which already had a temporary executable left by an older wizard. [XP x64 viewer](../results/windows-virgl/xp64-viewer.png) · [Installer, viewer and removal transcript](../results/windows-virgl/xp64-wizard.txt)
+
 The Win16 entry is `WXPDRAWTRIANGLES` in `WXPGPU.DRV`. The NT device is `\\.\WxpGpu` and accepts `WXP_GPU_IOCTL`. The input contains clip coordinates, vertex colors, optional UVs and up to 48 vertices. The caller receives a 32 × 32 RGBA8 frame and command status. The interface uses the published VirtIO GPU control queue, VirGL shader commands, RGBA8 and a 24-bit depth attachment. Windows 3.x and 9x lock DMA pages using Virtual DMA Services. NT obtains addresses from locked nonpaged memory. The NT 3.1 variant uses the uniprocessor PCI configuration mechanism. Newer NT versions use HAL PCI services. [Public interface](../../../src/drivers/virtio/gpu.h) · [Viewer](../../../src/drivers/virtio/demo.c)
 
 ## Guest checks
@@ -26,7 +28,11 @@ The NVIDIA, AMD and connector checks use QEMU lab function `1b36:ff01`. Its NVID
 
 ## Windows runs
 
-All fourteen booted installations passed the two rendering checks and six vendor-command and connector checks. On Windows 3.0, the native wizard installed the accelerator while preserving the existing display driver. Opening Info and choosing Test 3D displayed the scene on the 640 × 480, 16-color desktop. The removal wizard also completed. The Win16 API reports 3.95 on all three Windows 9x guests. Kernel version resources and file hashes distinguish their images. [Guest system-file identities](../results/windows-virgl/guest-images.tsv)
+All fourteen booted installations passed the two rendering checks and six vendor-command and connector checks. The Win16 API reports 3.95 on all three Windows 9x guests. Kernel version resources and file hashes distinguish their images. [Guest system-file identities](../results/windows-virgl/guest-images.tsv)
+
+On Windows 3.0, the native wizard installed the accelerator while preserving the existing display driver. Opening Info and choosing Test 3D displayed the scene on the 640 × 480, 16-color desktop. The removal wizard displayed the red-cross icon and removed the installation directory. Choosing Finish returned to Program Manager and deleted the running wizard's temporary file. [Windows 3.0 removal at 16 colors](../results/windows-virgl/win30-removal.png)
+
+The 32-bit Windows 9x wizard queues its temporary executable for deletion in WININIT.INI. On Windows Me the cleanup test scheduled two deletions while another rename and an unrelated INI section were present. After reboot both temporary paths were gone and the other rename had completed. [Windows Me queue and results](../results/windows-virgl/winme-cleanup.txt)
 
 | Windows installation | Guest log |
 | --- | --- |
@@ -50,6 +56,13 @@ All fourteen booted installations passed the two rendering checks and six vendor
 Build with Open Watcom, the two MinGW-w64 cross-compilers and Python with pefile. From the WINXPDM directory run `sh tools/build_virtio.sh` and `sh tools/build_ui.sh`. The driver build also creates the native probes under `build/legacy-gpu`. Build QEMU 10.0.13 with SDL, OpenGL, virglrenderer and the project patches. Add `-device winxpdm-engines` to exercise the NVIDIA, SDMA and link protocol cases. [QEMU build instructions](../../../src/emulation/README.md)
 
 On Win16 and Windows 9x put `GPUCHECK.EXE` alongside `WXPGPU.DRV` and run it inside Windows. Results appear in `C:\WXPGPU.TXT` and at QEMU debug port 0xe9. On NT, install the GPU service with Setup. In a disposable test installation, copy the matching `WXPGTST.SYS` to `system32\drivers`, create a kernel service named `WXPGTST` with Type 1, Start 1 and ImagePath `system32\drivers\wxpgtst.sys`, then restart with `-debugcon file:guest.log`. Its system thread opens the installed device and sends the production IOCTL. The diagnostic PCI function is used only by the guest probes.
+
+The native Explorer wizard test runs in a disposable XP guest. Compile it with the appropriate MinGW-w64 compiler and place the test executable in the same directory as SETUP.EXE. From that directory run `WIZTEST install`, restart, then run `WIZTEST viewer viewer.ppm` and `WIZTEST remove`. Restart again and run `WIZTEST cleanup`. The viewer phase accepts an optional PPM capture path. The test opens the desktop shortcut, samples the visible 3D window and invokes the uninstall command registered with Add/Remove Programs. Cleanup checks the shortcut, installation record, driver image and both registry entries. [Native wizard test source](wizard.c)
+
+```sh
+x86_64-w64-mingw32-gcc -std=gnu99 -Os -s -Wl,--subsystem,console:5.2 \
+    tests/gpu/windows/wizard.c -o WIZTEST.EXE -lshell32 -luser32 -lgdi32 -ladvapi32
+```
 
 The host pixel verifier requires an X11 display, xwininfo, ImageMagick, a C compiler, Python and Pillow. Its two SDL windows must be visible for the capture. If firmware is outside QEMU's normal path, supply each search directory as a separate `--firmware` option.
 

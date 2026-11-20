@@ -110,10 +110,10 @@ int delete_owned(const char *path)
 #endif
 }
 
-int copy_new(const char *from, const char *to)
+static int copy_payload(const char *from, const char *to, int reserved)
 {
 #ifdef _WIN32
-    if (CopyFile(from, to, TRUE)) {
+    if (CopyFile(from, to, !reserved)) {
         SetFileAttributes(to, FILE_ATTRIBUTE_NORMAL);
         return 1;
     }
@@ -122,7 +122,7 @@ int copy_new(const char *from, const char *to)
     HFILE in, out;
     UINT count;
     int ok = 1;
-    if (exists(to)) return 0;
+    if (!reserved && exists(to)) return 0;
     in = _lopen(from, OF_READ | OF_SHARE_DENY_WRITE);
     if (in == HFILE_ERROR) return 0;
     out = _lcreat(to, 0);
@@ -137,6 +137,16 @@ int copy_new(const char *from, const char *to)
     return ok;
 #endif
     return 0;
+}
+
+int copy_new(const char *from, const char *to)
+{
+    return copy_payload(from, to, 0);
+}
+
+int copy_reserved(const char *from, const char *to)
+{
+    return copy_payload(from, to, 1);
 }
 
 static void undo_copies(int count)
@@ -221,3 +231,57 @@ void describe_display(char *text)
              GetDeviceCaps(dc,BITSPIXEL)*GetDeviceCaps(dc,PLANES),GetDeviceCaps(dc,LOGPIXELSX));
     ReleaseDC(NULL,dc);
 }
+
+#ifdef WXP_9X
+/* Win9x processes NUL=short-path entries in WININIT.INI at boot. Keep the
+   existing entries in order, including duplicate keys from other installers. */
+void queue_temp_delete(const char *path)
+{
+    char windows[PATH_CAP], ini[PATH_CAP], short_path[PATH_CAP], entry[PATH_CAP+24];
+    char *data;
+    HANDLE file;
+    DWORD length, count, at, end, insert, size;
+    int in_rename = 0, found = 0, ok;
+    size = GetShortPathName(path,short_path,sizeof(short_path));
+    if (!size || size >= sizeof(short_path)) return;
+    size = GetWindowsDirectory(windows,sizeof(windows));
+    if (!size || size >= sizeof(windows) || !path_join(ini,windows,"WININIT.INI")) return;
+    file = CreateFile(ini,GENERIC_READ|GENERIC_WRITE,0,NULL,OPEN_ALWAYS,FILE_ATTRIBUTE_NORMAL,NULL);
+    if (file == INVALID_HANDLE_VALUE) return;
+    length = GetFileSize(file,NULL);
+    data = length < 0x7fffffffUL ? LocalAlloc(LPTR,length+1) : NULL;
+    if (!data) { CloseHandle(file); return; }
+    if (!ReadFile(file,data,length,&count,NULL) || count != length) goto done;
+    insert = 0;
+    for (at = 0; at < length && data[at] != 0x1a; at = end) {
+        DWORD start = at, stop;
+        while (start < length && (data[start] == ' ' || data[start] == '\t')) ++start;
+        end = start;
+        while (end < length && data[end] != '\r' && data[end] != '\n' && data[end] != 0x1a) ++end;
+        stop = end;
+        while (stop > start && (data[stop-1] == ' ' || data[stop-1] == '\t')) --stop;
+        if (start < stop && data[start] == '[') {
+            char save = data[stop];
+            if (in_rename) break;
+            data[stop] = 0;
+            in_rename = !lstrcmpi(data+start,"[Rename]");
+            data[stop] = save;
+            if (in_rename) found = 1;
+        }
+        while (end < length && (data[end] == '\r' || data[end] == '\n')) ++end;
+        insert = end;
+    }
+    wsprintf(entry,found ? "\r\nNUL=%s\r\n" : "\r\n[Rename]\r\nNUL=%s\r\n",short_path);
+    size = lstrlen(entry);
+    if (SetFilePointer(file,insert,NULL,FILE_BEGIN) == INVALID_SET_FILE_POINTER) goto done;
+    ok = WriteFile(file,entry,size,&count,NULL) && count == size &&
+         WriteFile(file,data+insert,length-insert,&count,NULL) && count == length-insert &&
+         FlushFileBuffers(file);
+    if (!ok && SetFilePointer(file,insert,NULL,FILE_BEGIN) != INVALID_SET_FILE_POINTER &&
+        WriteFile(file,data+insert,length-insert,&count,NULL) && count == length-insert)
+        SetEndOfFile(file);
+done:
+    LocalFree(data);
+    CloseHandle(file);
+}
+#endif
