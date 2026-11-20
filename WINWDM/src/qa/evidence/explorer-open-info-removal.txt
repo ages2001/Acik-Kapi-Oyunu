@@ -1,0 +1,64 @@
+Explorer shell: open-Info removal regression, QEMU 10.0.13.
+Installed from the distribution floppy with A:\DESKTOP\SETUP.EXE /S /WDM=1.05. The QA app opened Info and confirmed its top-level window before removal.
+The test invoked the command actually registered in Add/Remove Programs. It waited for the window, registry entry, file and installation directory to disappear.
+The First Edition disk started with an empty WINWDM directory left over after the older uninstaller scheduled deletion of a running Info at reboot.
+New installer SHA-256 ab9627d79e1695c6e7c816e560f35f93fb53c70379e387038c39aae47deaa57d
+New floppy SHA-256 47f12a7205027a023dba6410643485a5d3a75af9899998d9cecd807d5449a664
+UNTEST.EXE SHA-256 ad6b4c1cad80313339c2ba42ca3916ccf7bbb4fde30fe4e9cbbf366fff545453
+
+Windows 95 retail
+GetVersion 0xC0000004
+Setup /S /WDM=1.05 returned 0
+Removal test returned 0
+Registered command "C:\WINDOWS\WINWDM\UNINST.EXE"
+Info window open before uninstall yes
+Launcher exit 0
+Info window after removal absent
+Installation directory after removal absent
+Uninstall registration and Info file removal PASS
+
+Windows 95 OSR2
+GetVersion 0xC0000004
+Setup /S /WDM=1.05 returned 0
+Removal test returned 0
+Registered command "C:\WINDOWS\WINWDM\UNINST.EXE"
+Info window open before uninstall yes
+Launcher exit 0
+Info window after removal absent
+Installation directory after removal absent
+Uninstall registration and Info file removal PASS
+
+Windows 98 First Edition
+GetVersion 0xC0000A04
+Setup /S /WDM=1.05 returned 0
+Removal test returned 0
+Registered command "C:\WINDOWS\WINWDM\UNINST.EXE"
+Info window open before uninstall yes
+Launcher exit 0
+Info window after removal absent
+Installation directory after removal absent
+Uninstall registration and Info file removal PASS
+
+Windows NT 4.0
+GetVersion 0x05650004
+Setup /S /WDM=1.05 returned 0
+Removal test returned 0
+Registered command "C:\WINNT\WINWDM\UNINST.EXE"
+Info window open before uninstall yes
+Launcher exit 0
+Info window after removal absent
+Installation directory after removal absent
+Uninstall registration and Info file removal PASS
+
+First Edition before the correction: REG and Info file removal passed after Windows processed the following WININIT.INI records:
+[Rename]
+NUL=C:\WINDOWS\TEMP\~NSU1.TMP
+NUL=C:\WINDOWS\TEMP\~NSU1.TMP\UN.EXE
+NUL=C:\WINDOWS\WINWDM\INFO.EXE
+NUL=C:\WINDOWS\WINWDM\
+Uninstall registration and Info file removal PASS
+The old directory remained empty. Setup now accepts an empty destination, and uninstall requests a normal close of the Info window.
+
+On First Edition, Setup also refused a directory containing a test user file without changing its bytes or creating an uninstall entry.
+Setup returned 2, original file retained yes, registration result 2
+PASS

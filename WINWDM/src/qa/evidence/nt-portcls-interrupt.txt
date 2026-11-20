@@ -1,0 +1,127 @@
+WINWDM PortCls export driver on QEMU 10.0.13, TCG, one x86 CPU and EDU 1234:11e8 in slot 5.
+The native SCM started and stopped the provider and its separately compiled SYS client. The client imports both PortCls names.
+The QEMU debug console records native 100 ns time, the callbacks on the asserted line and the first subsequent unclaimed pass.
+The hexadecimal digits 1, 2, 3 represent the first member, the acknowledging member and the final member. A shared line can cause additional unclaimed dispatches.
+Normal required 12 while asserted. All and Repeat required 123. Repeat also required a complete unclaimed pass (123).
+The host test independently exercises the exact dispatch loop through multiple successful passes until idle. The native client also verified QueryInterface,
+reference counts, synchronized calls, disconnection, and a 4096-byte DMA round trip in both directions. Nonaggregated line interrupts only.
+PORTCLS.SYS SHA-256 d03f00a76a53871b02854b49c77817620c9fc8bebe1f69aea7d8088e70b50ccc
+WKPCINT.SYS SHA-256 562cbc8a49cb056f691dbeef81974d00b648e89f7ae85d6353f574d998ae97fc
+
+Windows NT 3.1
+GetVersion 0x02100A03
+PORTCLS.SYS start error 0
+WKPCINT.SYS start error 0
+PASS
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU firmware IRQ 0000000a
+WINWDM EDU translated vector 0000003a
+WINWDM EDU PortCls time high 01bc6e83
+WINWDM EDU PortCls interval (100 ns) 00100590
+WINWDM EDU PortCls ISR order 00000012
+WINWDM EDU PortCls first unclaimed pass 00000123
+WINWDM EDU PortCls ISR order 00000123
+WINWDM EDU PortCls first unclaimed pass 00000123
+WINWDM EDU PortCls ISR order 00000123
+WINWDM EDU PortCls first unclaimed pass 00000123
+WINWDM EDU ISR acknowledged mask 00000001
+WINWDM EDU ISR acknowledged mask 00000002
+WINWDM EDU handled interrupts 00000002
+WINWDM EDU result 00000000
+
+Windows NT 3.50
+GetVersion 0x03273203
+PORTCLS.SYS start error 0
+WKPCINT.SYS start error 0
+PASS
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU firmware IRQ 0000000a
+WINWDM EDU PCI HAL IRQ 0000000a
+WINWDM EDU translated vector 0000003a
+WINWDM EDU PortCls time high 01bc6e6a
+WINWDM EDU PortCls interval (100 ns) 000f47e0
+WINWDM EDU PortCls ISR order 00000012
+WINWDM EDU PortCls first unclaimed pass 00000123
+WINWDM EDU PortCls ISR order 00000123
+WINWDM EDU PortCls first unclaimed pass 00000123
+WINWDM EDU PortCls ISR order 00000123
+WINWDM EDU PortCls first unclaimed pass 00000123
+WINWDM EDU ISR acknowledged mask 00000001
+WINWDM EDU ISR acknowledged mask 00000002
+WINWDM EDU handled interrupts 00000002
+WINWDM EDU result 00000000
+
+Windows NT 3.51
+GetVersion 0x04213303
+PORTCLS.SYS start error 0
+WKPCINT.SYS start error 0
+PASS
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU firmware IRQ 0000000a
+WINWDM EDU PCI HAL IRQ 00000014
+WINWDM EDU translated vector 00000051
+WINWDM EDU PortCls time high 01bc6e83
+WINWDM EDU PortCls interval (100 ns) 0010b076
+WINWDM EDU PortCls ISR order 00000012
+WINWDM EDU PortCls first unclaimed pass 00000000
+WINWDM EDU PortCls ISR order 00000123
+WINWDM EDU PortCls first unclaimed pass 00000000
+WINWDM EDU PortCls ISR order 00000123
+WINWDM EDU PortCls first unclaimed pass 00000123
+WINWDM EDU ISR acknowledged mask 00000001
+WINWDM EDU ISR acknowledged mask 00000002
+WINWDM EDU handled interrupts 00000002
+WINWDM EDU result 00000000
+
+Windows NT 4.0
+GetVersion 0x05650004
+PORTCLS.SYS start error 0
+WKPCINT.SYS start error 0
+PASS
+WINWDM EDU device ID 010000ed
+WINWDM EDU map registers 00000003
+WINWDM EDU buffer length 00002000
+WINWDM EDU RAM to EDU bytes 00001000
+WINWDM EDU EDU to RAM bytes 00001000
+WINWDM EDU readback FNV-1a 103909c5
+WINWDM EDU mismatched bytes 00000000
+WINWDM EDU firmware IRQ 0000000a
+WINWDM EDU PCI HAL IRQ 0000000a
+WINWDM EDU translated vector 0000003a
+WINWDM EDU PortCls time high 01bc6e7b
+WINWDM EDU PortCls interval (100 ns) 000f47e0
+WINWDM EDU PortCls ISR order 00000012
+WINWDM EDU PortCls first unclaimed pass 00000000
+WINWDM EDU PortCls ISR order 00000123
+WINWDM EDU PortCls first unclaimed pass 00000000
+WINWDM EDU PortCls ISR order 00000123
+WINWDM EDU PortCls first unclaimed pass 00000123
+WINWDM EDU ISR acknowledged mask 00000001
+WINWDM EDU ISR acknowledged mask 00000002
+WINWDM EDU handled interrupts 00000002
+WINWDM EDU result 00000000
+
+Independent Microsoft ICHAUD.SYS on NT 4.0, QEMU AC97 8086:2415.
+GetVersion 0x05650004
+PORTCLS.SYS start error 0
+ICHAUD.SYS start error 127
+FAIL
+The native loader identified PcRegisterSubdevice as the unresolved import in PORTCLS.SYS. The audio miniport did not start.

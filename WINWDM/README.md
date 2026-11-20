@@ -8,11 +8,11 @@ The NT backend loads a native x86 PE driver (`WINWDM.SYS`). The enhanced-mode ba
 
 Microsoft's unchanged `ICHAUD.SYS` 4.90.2509.1 also failed its native load test on NT 3.1, 3.50, 3.51 and 4.0 with WINWDM 6.0 installed. QEMU exposed the Intel AC’97 controller listed in its INF. NT 4.0 supplied all 19 imported kernel and HAL names. The driver also imports eleven PortCls services. [AC’97 driver identity, loader results and imported services](src/qa/evidence/ich-audio-nt.txt)
 
-In a separate native SCSI test, NCR Corporation's unchanged NT 3.5 `NCRC810.SYS` drove the emulated 53C810 on NT 3.51 and NT 4.0 with WINWDM installed. Both guests read a 65,536-byte file from the SCSI disk and returned the exact original bytes. On NT 3.50 the miniport service ran, but four PCI configurations produced zero SCSI disk reads. On NT 3.1 it stopped with Windows error 31 using both sets of boot files. This driver uses the NT SCSIPORT interface. [NCR miniport and disk measurements](src/qa/evidence/ncr810-nt.txt)
+On Windows 98 First Edition, Microsoft's original USB host and hub drivers used the built-in NTKERN to enumerate two external hubs while WINWDM was active. The original FE USB audio driver played 48,000 stereo frames through the stock FE streaming stack. A separate Windows 98 Second Edition reference played through the original Intel AC’97 driver and the SE class stack. Both QEMU recordings contained the requested tones on the correct channels. On NT 4.0 with WINWDM's optional PortCls provider, the loader stopped at the missing `PcRegisterSubdevice` import. [First Edition USB transfers](src/qa/evidence/win98fe-usb-native.txt) · [First Edition USB audio](src/qa/evidence/win98fe-usb-audio.txt) · [Second Edition AC’97 audio](src/qa/evidence/win98se-ichaud-native.txt) · [NT loader result](src/qa/evidence/nt4-portcls-ichaud.png)
 
 Installers and SDK archives are in [bin](bin/). The source, build scripts and QEMU evidence are in [src](src/).
 
-All six selectable targets passed live PCI I/O on ten Microsoft guest configurations. These were Windows 3.0, 3.1, standard 3.11, Windows for Workgroups 3.11, Windows 95 retail and OSR2, and NT 3.1, 3.50, 3.51 and 4.0. Each of the 60 installed images matched its selected distribution image. Standard Windows 3.11 ran from a clean six-disk installation. NT 3.50 ran from its own x86 image deployed to an empty disk. Windows 98 First Edition still requires a guest test. [Guest results](src/qa/RESULTS.md) · [Standard Windows 3.11](src/qa/evidence/win311-standard-targets.txt) · [NT 3.50 media and boot](src/qa/evidence/nt350-media.txt)
+All six selectable targets passed live PCI I/O in eleven Microsoft guest configurations. Each of the 66 installed kernel images matched its selected distribution image. The matrix covers Windows 3.0, 3.1, standard 3.11, Windows for Workgroups 3.11, Windows 95 retail and OSR2, Windows 98 First Edition, and NT 3.1, 3.50, 3.51 and 4.0. The First Edition kernel and USER32 both identified build 4.10.1998. [Guest results](src/qa/RESULTS.md) · [Windows 98 FE disk identity and six targets](src/qa/evidence/win98fe-targets.txt) · [NT 3.50 installation](src/qa/evidence/nt350-media.txt)
 
 ## Install
 
@@ -66,6 +66,18 @@ Source-built x86 NT drivers can call `IoConnectInterruptEx` and `IoDisconnectInt
 
 In QEMU, the same SYS connected and disconnected twice on NT 3.1, 3.50, 3.51 and 4.0. Each interrupt raised by the EDU device reached the handler and was acknowledged. The NT 3.51 HAL reported its own PCI interrupt number, 0x14, for the firmware line numbered 10. This test used the vector supplied by each guest HAL. [Driver and source-level interface](src/kernel/interrupt.c) · [Interrupt measurements](src/qa/evidence/nt-edu-interrupt.txt)
 
+### PortCls on native NT
+
+The development kit includes an x86 audio class driver in `bin/AUDIO/PORTCLS.SYS`. Its two exports are `PcGetTimeInterval` and `PcNewInterruptSync`. The latter accepts a translated line-interrupt resource and supports the Normal, All and Repeat service modes. In Microsoft NT 3.1, 3.50, 3.51 and 4.0, a separately linked SYS called both exports, synchronized a callback at the hardware interrupt level and handled QEMU EDU interrupts. Use this module on a test disk with no existing PortCls installation. The setup wizard installs the main WINWDM driver. [Native audio class results](src/qa/evidence/nt-portcls-interrupt.txt)
+
+### Kernel Streaming on native NT
+
+The optional x86 module `bin/AUDIO/KS.SYS` implements seven static pin queries through `KsPinPropertyHandler` and three topology queries through `KsTopologyPropertyHandler`. A driver can query pin count, direction, communication type, category, interfaces, media and supported data ranges. The topology handler returns categories, node types and directed connections. Both handlers receive the captured property and system-mapped output from their caller. They report the required buffer size and leave IRP completion to the caller. Extended data ranges retain their format bytes and eight-byte alignment. Attribute lists, localized names and dynamic pin queries remain unsupported. [Native NT 3.1, 3.50, 3.51 and 4.0 results](src/qa/evidence/nt-ks-properties.txt)
+
+`KsPinDataIntersection` matches a caller’s ordered data ranges to the selected pin descriptor and invokes the minidriver’s x86 callback. On all four NT releases an independent client rejected an unsupported sample rate, negotiated stereo 16-bit PCM at 48,000 Hz, and verified wildcard, size-query and short-buffer behavior. Attribute lists remain unsupported. [Format negotiation results](src/qa/evidence/nt-ks-properties.txt) · [Microsoft KS intersection contract](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ks/nf-ks-kspindataintersection)
+
+The original First Edition KS module exports 101 names. Its PortCls module imports 29 of them, including the three supplied here. Audio miniports still require filter and pin creation, stream transport, adapter registration and the Wave and Topology ports. WINWDM also lacks an independent Win3.x/Win95 PE WDM loader equivalent to NTKERN. End-to-end playback through WINWDM on the pre-WDM hosts remains open. Both optional modules belong on disposable native NT installations without an existing provider of the same name. [First Edition class comparison](src/qa/evidence/win98fe-class-coverage.txt)
+
 ## PCI test device
 
 Attach QEMU's `pci-testdev` to the root PCI bus, then choose **PCI test** in WINWDM Info. The diagnostic finds PCI ID `1b36:0005`, reads its assigned I/O BAR, and supplies a translated port resource to the function driver in `src/kernel/pci_device.c`. The driver validates the device's test header and reads its counter after two writes. The legacy bus adapter sends start, stop, restart, remove and D3/D0 requests. The test checks that I/O is rejected while stopped, powered down, and after removal. Removal also waits for a protected asynchronous request to complete. These transitions belong to this device's private test bus. On a uniprocessor x86 PC whose NT HAL has no PCI bus handler, the explicit diagnostic reads PCI configuration mechanism 1 and restores the selector after each cycle. It translates the assigned I/O range through the PC's ISA port space. This path was exercised on Microsoft NT 3.1. [QEMU device specification](https://www.qemu.org/docs/master/specs/pci-testdev.html)
@@ -104,10 +116,14 @@ Use QEMU system emulation with an installed x86 OS image. The launcher creates a
 
 ```sh
 python3 src/qa/qemu_guest.py win95 win95-installed.img win95-test.qcow2 --pci-test
+python3 src/qa/qemu_guest.py win98fe win98FE_AHCI_test_1.vhd win98fe-test.qcow2 --pci-test --usb --headless
+python3 src/qa/qemu_guest.py win98fe win98FE_AHCI_test_1.vhd win98fe-test.qcow2 --pci-test --usb-audio playback.wav --headless
 python3 src/qa/qemu_guest.py win3 win31-installed.img win31-test.qcow2 --boot-floppy dos.img --chs 128 16 63
 ```
 
 The launcher attaches the kit floppy read-only. Add `--headless` to open the QEMU monitor in the terminal. Use `screendump screen.ppm` there to capture the guest and `quit` to close QEMU. The development archive contains the kit and its test evidence. Supply an OS disk for each guest. The [guest test matrix](src/qa/RESULTS.md) records which systems actually booted and which flows ran.
+
+For USB audio on Windows 98 FE, copy `bin/FEAUDIO/QEMUAUD.INF` into the guest's Windows INF directory before attaching QEMU's USB audio device. This optional file matches VID 46F4 and PID 0002 to the audio class driver on the original FE media. Supply that media if Windows asks for files. Boot with `--usb-audio playback.wav` using a new WAV filename for each run. To repeat the measurement, build `build/W9DEVS.EXE` and `build/ICHWAVE.EXE`, run each with `/usb` in the guest, close QEMU and run `python3 src/qa/ich_wave_capture.py playback.wav` on the host. [Guest report, binary checks and recording measurements](src/qa/evidence/win98fe-usb-audio.txt)
 
 ## License
 

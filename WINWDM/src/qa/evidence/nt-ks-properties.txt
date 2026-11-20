@@ -1,0 +1,59 @@
+Native x86 Kernel Streaming properties and format intersection on QEMU 10.0.13 and Microsoft NT.
+One separately linked SYS imports KsPinPropertyHandler, KsTopologyPropertyHandler and KsPinDataIntersection by name from KS.SYS.
+The client allocates an IRP with the native I/O manager and supplies captured inputs and system-mapped output as in a KS property callback.
+Both images have 4096-byte alignment and local memory routines for NT 3.1.
+The tests cover seven static pin properties, three topology properties and their length, padding and ownership contracts.
+The minidriver callback negotiates stereo 16-bit PCM at 48000 Hz. A non-PCM candidate never reaches it.
+It rejects 44100 Hz and accepts the next candidate. Tests also cover caller and factory wildcard GUIDs,
+size queries, truncated data, unsupported attributes, callback stack convention and short output.
+These kernel requests negotiate a format. They do not open a streaming pin or submit media packets.
+KS.SYS SHA-256 24b4875bc1c986c3f3238fe7ab9a4b22e9f3d11e94e857f684cfd9c409fb0179
+WKKS.SYS SHA-256 bef484795e99706eaf1639b56167f65ff3cf7d071be3fbc53dd2dad792eea9da
+
+Windows NT 3.1
+GetVersion 0x02100A03
+KS.SYS start error 0
+WKKS.SYS start error 0
+PASS
+KS pin count, dataflow, communication, category, interface and medium PASS
+KS extended data ranges, length query, alignment, padding and short buffer PASS
+KS topology categories, node types and directed connections PASS
+KS empty descriptors, invalid pin, oversized and unsupported ranges, IRP ownership PASS
+KS ordered PCM intersection, 48000 Hz stereo 16-bit format and callback ABI PASS
+KS wildcards, size query, short buffer, no match and invalid packed input PASS
+
+Windows NT 3.50
+GetVersion 0x03273203
+KS.SYS start error 0
+WKKS.SYS start error 0
+PASS
+KS pin count, dataflow, communication, category, interface and medium PASS
+KS extended data ranges, length query, alignment, padding and short buffer PASS
+KS topology categories, node types and directed connections PASS
+KS empty descriptors, invalid pin, oversized and unsupported ranges, IRP ownership PASS
+KS ordered PCM intersection, 48000 Hz stereo 16-bit format and callback ABI PASS
+KS wildcards, size query, short buffer, no match and invalid packed input PASS
+
+Windows NT 3.51
+GetVersion 0x04213303
+KS.SYS start error 0
+WKKS.SYS start error 0
+PASS
+KS pin count, dataflow, communication, category, interface and medium PASS
+KS extended data ranges, length query, alignment, padding and short buffer PASS
+KS topology categories, node types and directed connections PASS
+KS empty descriptors, invalid pin, oversized and unsupported ranges, IRP ownership PASS
+KS ordered PCM intersection, 48000 Hz stereo 16-bit format and callback ABI PASS
+KS wildcards, size query, short buffer, no match and invalid packed input PASS
+
+Windows NT 4.0
+GetVersion 0x05650004
+KS.SYS start error 0
+WKKS.SYS start error 0
+PASS
+KS pin count, dataflow, communication, category, interface and medium PASS
+KS extended data ranges, length query, alignment, padding and short buffer PASS
+KS topology categories, node types and directed connections PASS
+KS empty descriptors, invalid pin, oversized and unsupported ranges, IRP ownership PASS
+KS ordered PCM intersection, 48000 Hz stereo 16-bit format and callback ABI PASS
+KS wildcards, size query, short buffer, no match and invalid packed input PASS

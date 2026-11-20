@@ -119,6 +119,10 @@ timeout:
     return STATUS_IO_TIMEOUT;
 }
 
+#ifdef WK_EDU_PORTCLS
+static VOID NTAPI finished(PDRIVER_OBJECT driver) { (void)driver; }
+#endif
+
 NTSTATUS NTAPI DriverEntry(PDRIVER_OBJECT driver, PUNICODE_STRING path)
 {
     DEVICE_DESCRIPTION description = {0};
@@ -158,6 +162,11 @@ NTSTATUS NTAPI DriverEntry(PDRIVER_OBJECT driver, PUNICODE_STRING path)
     }
     MmUnmapIoSpace(registers, PAGE_SIZE);
     trace("result ", (ULONG)status);
+#ifdef WK_EDU_PORTCLS
+    if (NT_SUCCESS(status)) driver->DriverUnload = finished;
+    return status;
+#else
     /* The QA service creates no device and can be started again. */
     return NT_SUCCESS(status) ? STATUS_NO_SUCH_DEVICE : status;
+#endif
 }

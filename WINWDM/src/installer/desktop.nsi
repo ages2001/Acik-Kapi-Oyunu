@@ -97,7 +97,8 @@ Section "WDM software driver and WINWDM Info"
     Abort "An uninstall entry for this kit already exists."
   IfFileExists "$DESKTOP\WINWDM Info.lnk" 0 +2
     Abort "A WINWDM Info desktop shortcut already exists."
-  IfFileExists "$INSTDIR\*.*" 0 empty
+  ${DirState} "$INSTDIR" $0
+  StrCmp $0 1 0 empty
     MessageBox MB_OK|MB_ICONSTOP "The WINWDM folder is already in use. Remove the installed kit before installing again." /SD IDOK
     Abort
   empty:
@@ -153,6 +154,14 @@ Section "WDM software driver and WINWDM Info"
   finished:
 SectionEnd
 Section "Uninstall"
+  ; Info has no editable data. Close its windows so Win9x can release INFO.EXE.
+  close_info:
+    FindWindow $0 "WINWDM Info" "WINWDM Info"
+    StrCmp $0 0 info_closed
+    SendMessage $0 ${WM_CLOSE} 0 0 /TIMEOUT=1000
+    FindWindow $1 "WINWDM Info" "WINWDM Info"
+    StrCmp $1 $0 info_closed close_info
+  info_closed:
   ${If} ${IsNT}
     ClearErrors
     ExecWait '"$INSTDIR\NTSVC.EXE" remove' $0
@@ -165,7 +174,12 @@ Section "Uninstall"
   ${EndIf}
   Delete "$DESKTOP\WINWDM Info.lnk"
   DeleteRegKey HKLM "${ARP}"
-  Delete /REBOOTOK "$INSTDIR\INFO.EXE"
+  ClearErrors
+  Delete "$INSTDIR\INFO.EXE"
+  IfErrors 0 info_removed
+    Sleep 250
+    Delete /REBOOTOK "$INSTDIR\INFO.EXE"
+  info_removed:
   Delete /REBOOTOK "$INSTDIR\WINWDM.386"
   Delete /REBOOTOK "$INSTDIR\WINWDM.SYS"
   Delete /REBOOTOK "$INSTDIR\NTSVC.EXE"

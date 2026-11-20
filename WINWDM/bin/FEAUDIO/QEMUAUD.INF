@@ -1,0 +1,28 @@
+; Windows 98 First Edition binding for QEMU's USB Audio Class device.
+; The matching driver and its streaming components come from the Windows media.
+[Version]
+Signature="$CHICAGO$"
+Class=MEDIA
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider=%Provider%
+LayoutFile=layout.inf,layout1.inf,layout2.inf
+
+[Manufacturer]
+%Manufacturer%=Models
+
+[Models]
+%Speaker%=Render,USB\VID_46F4&PID_0002
+
+[Render]
+; Win98 needs the shared registrations at this level to set DevLoader.
+Include=KS.INF,WDMAUDIO.INF,WDMA_USB.INF
+Needs=KS.Registration,WDMAUDIO.Registration,USBAudio
+
+[Render.Interfaces]
+Include=WDMA_USB.INF
+Needs=USBAudio.Interfaces
+
+[Strings]
+Provider="WINWDM"
+Manufacturer="QEMU"
+Speaker="QEMU USB Audio Interface"

@@ -1,0 +1,174 @@
+Windows 98 First Edition 4.10.1998, native WDM USB, QEMU 10.0.13.
+Booted the user-supplied First Edition disk copy on the i440FX PC with its PIIX3 USB 1.1 host controller.
+The WINWDM 6.0 kit VxD had loaded and passed its own PCI diagnostic before either USB hub was hot-plugged.
+Microsoft USB.INF bound the host, root hub and external hubs through the operating system’s original NTKERN.
+UHCD.SYS (installed bytes match First Edition BASE5.CAB) SHA-256 2199cb6c2930bbe64e5260b16c3b78afc78759f1064a32a43fed225a96c67ffb
+USBD.SYS (installed bytes match First Edition BASE5.CAB) SHA-256 25e843c95221cf5a6a464f2373e7f99f7164a1a451e2e1ee670ff81e1a4a9c59
+USBHUB.SYS (installed bytes match First Edition BASE5.CAB) SHA-256 20f095f3e9dcd79bc8e42e2ce9bdae8e1c8e0ba0f21f6df860b8d134356d585f
+
+QEMU monitor commands:
+device_add usb-hub,id=winwdmhub,port=1
+device_add usb-hub,id=winwdmleaf,port=1.3
+info usb
+Device 0.2, Port 1, Speed 12 Mb/s, Product QEMU USB Hub, ID: winwdmhub
+  Device 0.3, Port 1.3, Speed 12 Mb/s, Product QEMU USB Hub, ID: winwdmleaf
+device_del winwdmleaf
+
+Guest registry from W9DEVS.EXE /usb:
+GetVersion 0xC0000A04
+Enum\PCI\VEN_8086&DEV_7020&SUBSYS_11001AF4&REV_01\BUS_00&DEV_01&FUNC_02
+  DeviceDesc = Intel 82371SB PCI to USB Universal Host Controller
+  Class = USB
+  Driver = USB\0000
+  DriverDesc = Intel 82371SB PCI to USB Universal Host Controller
+  InfPath = USB.INF
+  InfSection = UniversalHCD.Dev
+  DevLoader = *NTKERN
+  NTMPDriver = uhcd.sys
+Enum\USB\ROOT_HUB\PCI&VEN_8086&DEV_7020&SUBSYS_11001AF4&REV_01&BUS_00&DEV_01&FUNC_02
+  DeviceDesc = USB Root Hub
+  Class = USB
+  Driver = USB\0001
+  DriverDesc = USB Root Hub
+  InfPath = USB.INF
+  InfSection = StandardHub.Dev
+  DevLoader = *NTKERN
+  NTMPDriver = usbhub.sys
+Enum\USB\VID_0409&PID_55AA\314159-0000:00:01.2-1
+  DeviceDesc = NEC USB Hub
+  Class = USB
+  Driver = USB\0002
+  DriverDesc = NEC USB Hub
+  InfPath = USB.INF
+  InfSection = StandardHub.Dev
+  DevLoader = *NTKERN
+  NTMPDriver = usbhub.sys
+Enum\USB\VID_0409&PID_55AA\314159-0000:00:01.2-1.3
+  DeviceDesc = NEC USB Hub
+  Class = USB
+  Driver = USB\0003
+  DriverDesc = NEC USB Hub
+  InfPath = USB.INF
+  InfSection = StandardHub.Dev
+  DevLoader = *NTKERN
+  NTMPDriver = usbhub.sys
+Matching controllers 1, USB instance records 3
+
+Host USB trace from the post-install boot:
+usb_uhci_reset === RESET ===
+usb_uhci_reset === RESET ===
+usb_uhci_schedule_start
+usb_uhci_schedule_stop
+usb_uhci_reset === RESET ===
+usb_uhci_schedule_start
+usb_uhci_schedule_stop
+usb_uhci_schedule_start
+usb_desc_device dev 0 query device, len 64, ret 18
+usb_desc_device dev 2 query device, len 18, ret 18
+usb_desc_string dev 2 query string 0, len 255, ret 4
+usb_desc_string dev 2 query string 3, len 255, ret 44
+usb_desc_config dev 2 query config 0, len 255, ret 25
+usb_desc_device dev 2 query device, len 18, ret 18
+usb_desc_config dev 2 query config 0, len 255, ret 25
+usb_hub_set_port_feature dev 2, port 1, feature power
+usb_hub_set_port_feature dev 2, port 2, feature power
+usb_hub_set_port_feature dev 2, port 3, feature power
+usb_hub_set_port_feature dev 2, port 4, feature power
+usb_hub_set_port_feature dev 2, port 5, feature power
+usb_hub_set_port_feature dev 2, port 6, feature power
+usb_hub_set_port_feature dev 2, port 7, feature power
+usb_hub_set_port_feature dev 2, port 8, feature power
+usb_hub_clear_port_feature dev 2, port 1, feature change-connection
+usb_hub_clear_port_feature dev 2, port 2, feature change-connection
+usb_hub_clear_port_feature dev 2, port 3, feature change-connection
+usb_hub_clear_port_feature dev 2, port 4, feature change-connection
+usb_hub_clear_port_feature dev 2, port 5, feature change-connection
+usb_hub_clear_port_feature dev 2, port 6, feature change-connection
+usb_hub_clear_port_feature dev 2, port 7, feature change-connection
+usb_hub_clear_port_feature dev 2, port 8, feature change-connection
+usb_hub_get_port_status dev 2, port 1, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 2, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 3, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 4, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 5, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 6, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 7, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 8, status 0x100, changed 0x0
+usb_hub_attach dev 2, port 3
+usb_hub_status_report dev 2, status 0x8
+usb_hub_get_port_status dev 2, port 3, status 0x101, changed 0x1
+usb_hub_get_port_status dev 2, port 3, status 0x101, changed 0x1
+usb_hub_clear_port_feature dev 2, port 3, feature change-connection
+usb_hub_get_port_status dev 2, port 1, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 2, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 3, status 0x101, changed 0x0
+usb_hub_set_port_feature dev 2, port 3, feature reset
+usb_hub_status_report dev 2, status 0x8
+usb_hub_get_port_status dev 2, port 3, status 0x103, changed 0x12
+usb_hub_clear_port_feature dev 2, port 3, feature change-reset
+usb_hub_get_port_status dev 2, port 3, status 0x103, changed 0x2
+usb_desc_device dev 0 query device, len 64, ret 18
+usb_hub_set_port_feature dev 2, port 3, feature reset
+usb_hub_status_report dev 2, status 0x8
+usb_hub_get_port_status dev 2, port 3, status 0x103, changed 0x12
+usb_hub_clear_port_feature dev 2, port 3, feature change-reset
+usb_desc_device dev 3 query device, len 18, ret 18
+usb_hub_status_report dev 2, status 0x8
+usb_hub_get_port_status dev 2, port 3, status 0x103, changed 0x2
+usb_desc_string dev 3 query string 0, len 255, ret 4
+usb_hub_get_port_status dev 2, port 3, status 0x103, changed 0x2
+usb_desc_string dev 3 query string 3, len 255, ret 48
+usb_hub_clear_port_feature dev 2, port 3, feature change-enable
+usb_desc_config dev 3 query config 0, len 255, ret 25
+usb_hub_get_port_status dev 2, port 4, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 5, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 6, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 7, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 8, status 0x100, changed 0x0
+usb_desc_string dev 3 query string 0, len 255, ret 4
+usb_desc_string dev 3 query string 2, len 255, ret 26
+usb_desc_device dev 3 query device, len 18, ret 18
+usb_desc_config dev 3 query config 0, len 255, ret 25
+usb_hub_set_port_feature dev 3, port 1, feature power
+usb_hub_set_port_feature dev 3, port 2, feature power
+usb_hub_set_port_feature dev 3, port 3, feature power
+usb_hub_set_port_feature dev 3, port 4, feature power
+usb_hub_set_port_feature dev 3, port 5, feature power
+usb_hub_set_port_feature dev 3, port 6, feature power
+usb_hub_set_port_feature dev 3, port 7, feature power
+usb_hub_set_port_feature dev 3, port 8, feature power
+usb_hub_clear_port_feature dev 3, port 1, feature change-connection
+usb_hub_clear_port_feature dev 3, port 2, feature change-connection
+usb_hub_clear_port_feature dev 3, port 3, feature change-connection
+usb_hub_clear_port_feature dev 3, port 4, feature change-connection
+usb_hub_clear_port_feature dev 3, port 5, feature change-connection
+usb_hub_clear_port_feature dev 3, port 6, feature change-connection
+usb_hub_clear_port_feature dev 3, port 7, feature change-connection
+usb_hub_clear_port_feature dev 3, port 8, feature change-connection
+usb_hub_get_port_status dev 3, port 1, status 0x100, changed 0x0
+usb_hub_get_port_status dev 3, port 2, status 0x100, changed 0x0
+usb_hub_get_port_status dev 3, port 3, status 0x100, changed 0x0
+usb_hub_get_port_status dev 3, port 4, status 0x100, changed 0x0
+usb_hub_get_port_status dev 3, port 5, status 0x100, changed 0x0
+usb_hub_get_port_status dev 3, port 6, status 0x100, changed 0x0
+usb_hub_get_port_status dev 3, port 7, status 0x100, changed 0x0
+usb_hub_get_port_status dev 3, port 8, status 0x100, changed 0x0
+usb_hub_detach dev 2, port 3
+usb_hub_status_report dev 2, status 0x8
+usb_hub_get_port_status dev 2, port 3, status 0x100, changed 0x3
+usb_hub_get_port_status dev 2, port 3, status 0x100, changed 0x3
+usb_hub_clear_port_feature dev 2, port 3, feature change-connection
+usb_hub_get_port_status dev 2, port 1, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 2, status 0x100, changed 0x0
+usb_hub_status_report dev 2, status 0x8
+usb_hub_get_port_status dev 2, port 3, status 0x100, changed 0x2
+usb_hub_get_port_status dev 2, port 3, status 0x100, changed 0x2
+usb_hub_get_port_status dev 2, port 4, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 3, status 0x100, changed 0x2
+usb_hub_get_port_status dev 2, port 5, status 0x100, changed 0x0
+usb_hub_clear_port_feature dev 2, port 3, feature change-enable
+usb_hub_get_port_status dev 2, port 6, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 7, status 0x100, changed 0x0
+usb_hub_get_port_status dev 2, port 8, status 0x100, changed 0x0
+
+The two addresses, downstream port reset, descriptor/configuration transfers and disconnect acknowledgement came from the stock First Edition USB stack. The kit did not supply those Microsoft drivers.

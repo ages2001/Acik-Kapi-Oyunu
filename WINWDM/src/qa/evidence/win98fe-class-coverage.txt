@@ -1,0 +1,42 @@
+Comparison against the original Windows 98 First Edition installation cabinets, build 4.10.1998.
+Symbols from the installed development kit are x86 NT test providers. They are not installed over the Win9x system files.
+The First Edition reference describes that release only. Export counts are not a WDM conformance percentage.
+
+DRIVER20.CAB: KS.SYS 41728 bytes, SHA-256 ee3656eed9045f0aa7b6de402e0c180922265f12be2342e7379e042e976fdb3b
+DRIVER20.CAB: PORTCLS.SYS 106928 bytes, SHA-256 255e3ffba8704391078572cc099b56639e3e30e88b396b7dcedaea28154c0809
+WIN98_48.CAB: NTKERN.VXD 194494 bytes, SHA-256 2feadb0da9cca62dceb0d326e32e59c685d424f3b3488ace05f5314ea5f98f60
+
+Native FE KS.SYS has 101 named exports. WINWDM implements selected pin and topology requests and data range intersection through 3 of those entry points.
+  KsPinDataIntersection, KsPinPropertyHandler, KsTopologyPropertyHandler
+Native FE PORTCLS.SYS has 39 named exports. The optional WINWDM provider exports 2 of those names.
+  PcGetTimeInterval, PcNewInterruptSync
+Native FE PORTCLS.SYS imports 29 names from KS.SYS. The following 26 have no WINWDM KS export:
+  KoCreateInstance
+  KsAddIrpToCancelableQueue
+  KsAddObjectCreateItemToDeviceHeader
+  KsAllocateDeviceHeader
+  KsAllocateObjectHeader
+  KsCancelIo
+  KsCancelRoutine
+  KsCreateDefaultAllocator
+  KsDefaultDeviceIoCompletion
+  KsDisableEvent
+  KsDispatchInvalidDeviceRequest
+  KsDispatchIrp
+  KsEnableEvent
+  KsFreeDeviceHeader
+  KsFreeEventList
+  KsFreeObjectHeader
+  KsGenerateEvent
+  KsGenerateEventList
+  KsProbeStreamIrp
+  KsPropertyHandler
+  KsReleaseIrpOnCancelableQueue
+  KsRemoveIrpFromCancelableQueue
+  KsRemoveSpecificIrpFromCancelableQueue
+  KsSetMajorFunctionHandler
+  KsValidateClockCreateRequest
+  KsValidateConnectRequest
+
+The Win3.x and Win9x kit VxD links the project function driver at build time. The independent PE WDM loader from NTKERN.VXD has not been ported.
+The Windows 98 FE USB audio and hub tests exercised the original system loader. On native NT the kit negotiates formats through a minidriver callback. A pin factory, PortCls wave port and packet transport remain unimplemented.

@@ -14,18 +14,23 @@ def info(path, env):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    memory = {"win3": 16, "win95": 64, "win98": 64, "nt31": 32,
+    memory = {"win3": 16, "win95": 64, "win98": 64, "win98fe": 96, "nt31": 32,
               "nt35": 32, "nt351": 32, "nt4": 64}
     parser.add_argument("system", choices=memory)
     parser.add_argument("installed_disk", type=Path)
     parser.add_argument("overlay", type=Path, help="create once, reuse after reboot")
-    parser.add_argument("--media", type=Path, default=Path(__file__).resolve().parents[1] /
-                        "build" / "WINWDM.IMA")
+    project = Path(__file__).resolve().parents[2]
+    media = project / "bin" / "WINWDM.IMA"
+    parser.add_argument("--media", type=Path, default=media if media.is_file() else
+                        project / "src" / "build" / "WINWDM.IMA")
     parser.add_argument("--boot-floppy", type=Path, help="optional raw DOS boot floppy in A:")
     parser.add_argument("--chs", nargs=3, metavar=("CYLS", "HEADS", "SECS"), type=int,
                         help="match the installed IDE drive's BIOS geometry")
     parser.add_argument("--headless", action="store_true", help="run the QEMU monitor in this terminal")
     parser.add_argument("--pci-test", action="store_true", help="attach QEMU's optional port-I/O test device")
+    parser.add_argument("--usb", action="store_true", help="enable the PIIX3 UHCI controller for USB hotplug tests")
+    parser.add_argument("--usb-audio", metavar="WAV", type=Path,
+                        help="attach QEMU USB Audio on port 1 and record this boot to a new WAV file")
     args = parser.parse_args()
     env = os.environ.copy()
     firmware = []
@@ -41,6 +46,9 @@ def main():
     base = args.installed_disk.resolve(strict=True)
     media = args.media.resolve(strict=True)
     overlay = args.overlay.resolve()
+    capture = args.usb_audio.resolve() if args.usb_audio is not None else None
+    if capture is not None and (capture.exists() or capture == overlay):
+        parser.error("choose a new WAV output path distinct from the disk overlay")
     if overlay.exists():
         existing = info(overlay, env)
         backing = existing.get("full-backing-filename")
@@ -56,11 +64,16 @@ def main():
     ide = "ide-hd,drive=osdisk"
     if args.chs:
         ide += ",cyls=%d,heads=%d,secs=%d" % tuple(args.chs)
-    cmd = ["qemu-system-i386", "-machine", "pc,accel=tcg,acpi=off", "-cpu", "pentium",
+    machine = "pc,accel=tcg,acpi=off" + (",usb=on" if args.usb or capture is not None else "")
+    cpu = "pentium2" if args.system == "win98fe" else "pentium"
+    cmd = ["qemu-system-i386", "-machine", machine, "-cpu", cpu,
            "-m", str(memory[args.system]), "-smp", "1", "-vga", "std", "-nic", "none"]
     cmd += firmware
     if args.pci_test:
         cmd += ["-device", "pci-testdev"]
+    if capture is not None:
+        cmd += ["-audiodev", "wav,id=usbsound,path=" + str(capture).replace(",", ",,"),
+                "-device", "usb-audio,id=speaker,port=1,audiodev=usbsound"]
     if args.headless:
         cmd += ["-display", "none", "-monitor", "stdio", "-serial", "none", "-parallel", "none"]
     cmd += drive(overlay, "format=qcow2,if=none,id=osdisk") + ["-device", ide]

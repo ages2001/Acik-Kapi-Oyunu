@@ -1,0 +1,45 @@
+Windows 98 First Edition on the supplied VHD copy, QEMU AC97 at 8086:2415, WINWDM target 6.0.
+Test audio driver: independent Microsoft ICHAUD.SYS 4.90.2509.1 with its original WDMA_INT.INF.
+Original INF SHA-256 a8377c50a29797ff829781060875411a0145cc2e4515419aa6bbfcd8fabee635
+Original SYS SHA-256 06f87017fd0ea01e6203418864c6819990edc85ee54ed8199e3f37ccc73a3f15
+
+First Edition installed its native KS.Registration and WDMAUDIO.Registration sections from the local 4.10.1998 cabinets.
+KS.SYS matched FE installation CAB bytes, SHA-256 ee3656eed9045f0aa7b6de402e0c180922265f12be2342e7379e042e976fdb3b
+PORTCLS.SYS matched FE installation CAB bytes, SHA-256 255e3ffba8704391078572cc099b56639e3e30e88b396b7dcedaea28154c0809
+WDMAUD.SYS matched FE installation CAB bytes, SHA-256 948f2cab00764a5a70c29492e7ed6368ab6a13e0e7f92253384596958bddfe1a
+
+The original INF produced a compatible SetupAPI model for the enumerated Intel device. Its device installation returned ERROR_FILE_NOT_FOUND.
+Instance PCI\VEN_8086&DEV_2415&SUBSYS_11001AF4&REV_01\BUS_00&DEV_05&FUNC_00
+PCI PCI\VEN_8086&DEV_2415&SUBSYS_11001AF4&REV_01
+Compatible driver AC'97 Driver for Intel(r) 82801AA Controller, manufacturer Intel
+Stopped, Windows error 2
+
+After rechecking the class and restarting the guest, the PCI instance had no bound NTMPDriver and waveOut exposed no endpoint:
+GetVersion 0xC0000A04
+Enum\PCI\VEN_8086&DEV_2415&SUBSYS_11001AF4&REV_01\BUS_00&DEV_05&FUNC_00
+  DeviceDesc = PCI Multimedia Audio Device
+  Class = MEDIA
+Matching controllers 1, USB instance records 0
+GetVersion 0xC0000A04
+waveOut devices 0
+Matching AC'97 endpoints 0
+
+This First Edition run did not produce AC97 playback. The same unmodified SYS and original INF passed the separate Windows 98 SE positive control.
+
+Second FE run with the same AC97 controller, fresh guest copy and a QA-only hardware-specific INF.
+An explicit include of the FE multimedia registration sections bound the MEDIA instance and installed the same ICHAUD.SYS bytes.
+The system still exposed zero waveOut endpoints after restart. The test INF is not included in the kit.
+GetVersion 0xC0000A04
+Enum\PCI\VEN_8086&DEV_2415&SUBSYS_11001AF4&REV_01\BUS_00&DEV_05&FUNC_00
+  DeviceDesc = Intel 82801AA AC97 Audio Controller (QEMU)
+  Class = MEDIA
+  Driver = MEDIA\0000
+  DriverDesc = Intel 82801AA AC97 Audio Controller (QEMU)
+  InfPath = QEMUICH.INF
+  InfSection = Ac97
+  DevLoader = *ntkern,mmdevldr.vxd
+  NTMPDriver = ichaud.sys,sbemul.sys
+Matching controllers 1, USB instance records 0
+GetVersion 0xC0000A04
+waveOut devices 0
+Matching AC'97 endpoints 0

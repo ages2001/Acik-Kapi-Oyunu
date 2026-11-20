@@ -1,0 +1,136 @@
+Windows 98 First Edition, user-supplied split ZIP exported as a dynamic VHD.
+All eight source volumes passed ZIP entry CRC validation after concatenation in numerical order.
+ZIP length: 237105858 bytes. SHA-256 d8fdbcf2a1b2af850ea33e93a5538e2d78e1f66b5a53a9051bd507c1c10c0769
+VHD entry: win98FE_AHCI_test_1.vhd, 375504384 bytes, CRC32 2d20407a.
+VHD SHA-256 ddee452e4312028970dc834894fc45bc85520e9d30dd1a235f2d439e34ce4052
+QEMU virtual size: 10737418240 bytes. Active FAT32 volume at LBA 63.
+cb02c03edd34c285c9d4aeee61cb7037a3e8913a39dcc15d95f8316ad6f39c9d  win98FE_AHCI_test_1_29M.zip.001
+c2a00de52ab628d30c6c6cdd5e6b08f104766ba5a568fb03167164fd06dc18f6  win98FE_AHCI_test_1_29M.zip.002
+f127a500fada541bbc78fed5b35f1f7c9277f2d699d8f254427b607b6f0ab074  win98FE_AHCI_test_1_29M.zip.003
+ba35cc1c46522b6264bfe88ee90ea6ea7b8795fec6b50b958ebb341d81a18e8b  win98FE_AHCI_test_1_29M.zip.004
+5470595d4759e4dbdcf316f78e8cfe1998424578f57b504cca933588854a976f  win98FE_AHCI_test_1_29M.zip.005
+679c0526078ab111b13565c539596d932095838affa3d669ec46c47682154193  win98FE_AHCI_test_1_29M.zip.006
+b63adfca1d6f09105f19a0baf2e77319001c8b64fc3f581e9f7fd5a746dd0d95  win98FE_AHCI_test_1_29M.zip.007
+11c693b98f8f502d6581677f62afd17972a5ae0d301d123a80c647f6cf960434  win98FE_AHCI_test_1_29M.zip.008
+
+WINDOWS/SYSTEM/KERNEL32.DLL 4.10.0.1998 SHA-256 0abdeb4f100471da4084da71fa6f08292c08a6d2500133f0c4286de24caeb2e6
+WINDOWS/SYSTEM/USER32.DLL 4.10.0.1998 SHA-256 cfb78da3e129256575d1dd29e2830c8aec519b3798829bf0b5f21aef71e958d9
+
+The original upload and VHD were retained. Each run started from a separate copy of that same First Edition installation.
+QEMU 10.0.13, x86 i440FX PC, one Pentium II, 96 MB, IDE disk, PCI test device 1b36:0005.
+Setup ran from the read-only kit floppy. Cold QEMU starts completed guest-requested restarts when DOS stopped waiting for BIOS timer ticks.
+Each installed VxD was compared byte for byte with the selected image. GetVersion from a Win9x process is also recorded below.
+
+WINWDM 1.00 from W100.386 SHA-256 595d3ec267b3dfebaea8d93701c2361cab4cf8373f7a4a63412a46b191c4b18f
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000A04
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.00
+Requested WDM target 1.00
+DeviceIoControl error 0, bytes 0, reply 0x0
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+Desktop: WINWDM Info.lnk
+
+WINWDM 1.05 from W105.386 SHA-256 26153ddf6a0eaae94c452dbe6baa9c7f925a9f1c623a54cfdca16a2892f249e9
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000A04
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.05
+Requested WDM target 1.05
+DeviceIoControl error 0, bytes 0, reply 0x0
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+Desktop: WINWDM Info.lnk
+
+WINWDM 1.10 from W110.386 SHA-256 e64c28a0f26f9933c20619dd987a259cfa2d83b2d058375f551025813af85959
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000A04
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.10
+Requested WDM target 1.10
+DeviceIoControl error 0, bytes 0, reply 0x0
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+Desktop: WINWDM Info.lnk
+
+WINWDM 1.20 from W120.386 SHA-256 7006cae185dca3fb1f244b36bfd66fe9fe254282ce80025649845388c69704d1
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000A04
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.20
+Requested WDM target 1.20
+DeviceIoControl error 0, bytes 0, reply 0x0
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+Desktop: WINWDM Info.lnk
+
+WINWDM 1.30 from W130.386 SHA-256 0624151d90c601db8a6b5c4d3f86062f481e8b981b91211c3e0c5cc00d1f4102
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000A04
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 1.30
+Requested WDM target 1.30
+DeviceIoControl error 0, bytes 0, reply 0x0
+Two-device startup check and stack-sized IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+Desktop: WINWDM Info.lnk
+
+WINWDM 6.0 from WINWDM.386 SHA-256 dbb17435362c4ab7a3ddee7431d6d86e4aeb427fb72dfb52d5b6a55aedfde244
+Setup exit 0
+VxD registration found
+QA after restart 0
+GetVersion 0xC0000A04
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 6.0
+Requested WDM target 6.0
+DeviceIoControl error 0, bytes 0, reply 0x0
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+Desktop: WINWDM Info.lnk

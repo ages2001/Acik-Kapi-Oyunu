@@ -1,0 +1,62 @@
+Windows 98 First Edition, build 4.10.1998, QEMU 10.0.13, TCG, Pentium II, 96 MB and PIIX3 UHCI.
+The eight-part user-supplied VHD is identified in win98fe-targets.txt. Each run used a separate writable copy.
+The optional WINWDM INF matches the QEMU speaker to the class sections in the original Windows 98 FE media.
+The operating system loaded the original Microsoft binaries. The WINWDM 6.0 VxD remained active.
+Final shipping QEMUAUD.INF SHA-256 4ee8594a39721cf6f9df743a8e3405b918928d82439f126ccb0aef8fa5fd2c2d
+Installed WINWDM.386 SHA-256 dbb17435362c4ab7a3ddee7431d6d86e4aeb427fb72dfb52d5b6a55aedfde244
+
+Guest and original FE cabinet file sizes and SHA-256:
+USBAUDIO.SYS 34032 bytes  8ba7e18b48c7d053b03a02258badc7de282fcb8fc0d305b507b20e0337aaeb05
+STREAM.SYS 34480 bytes  649459e405a6f5ff76198fa4d1934ea31468f26be52d85b99288e07b1a9c4f3a
+KS.SYS 41728 bytes  ee3656eed9045f0aa7b6de402e0c180922265f12be2342e7379e042e976fdb3b
+PORTCLS.SYS 106928 bytes  255e3ffba8704391078572cc099b56639e3e30e88b396b7dcedaea28154c0809
+WDMAUD.SYS 63104 bytes  948f2cab00764a5a70c29492e7ed6368ab6a13e0e7f92253384596958bddfe1a
+SYSAUDIO.SYS 38928 bytes  997f8b347cf19e6dc6a5f4873f5ffc23b9fffcc3483e6fe34bdfbc413c6a5b3e
+KMIXER.SYS 91936 bytes  a53e08b8748f31e3d151bd9f1c55a5bd41b22da9a876dd0904a6ad6335ce81df
+
+Guest class registry after PnP installation:
+Enum\USB\VID_46F4&PID_0002\WINWDM-AUDIO
+  DeviceDesc = QEMU USB Audio Interface
+  Class = MEDIA
+  Driver = MEDIA\0000
+  DriverDesc = QEMU USB Audio Interface
+  InfPath = QEMUAUD.INF
+  InfSection = Render
+  DevLoader = *ntkern,mmdevldr.vxd
+  NTMPDriver = USBAUDIO.sys,sbemul.sys
+Matching controllers 1, USB instance records 4
+
+QEMU USB topology:
+Device 0.2, Port 1, Speed 12 Mb/s, Product QEMU USB Audio Interface, ID: wkaudio
+
+Guest audio client report:
+GetVersion 0xC0000A04
+waveOut devices 1
+Device 0: QEMU USB Audio Interface (1), manufacturer 1, product 100
+waveOutOpen 0
+waveOutPrepareHeader 0
+waveOutWrite 0, returned 48000 frames before reset
+
+Guest diagnostic:
+GetVersion 0xC0000A04
+Uninstall registry open 0
+DisplayName WINWDM
+UninstallString "C:\WINDOWS\WINWDM\UNINST.EXE"
+Matching WDM targets 1, active 6.0
+Requested WDM target 6.0
+DeviceIoControl error 0, bytes 0, reply 0x0
+Seven-device dispatch, 5000-byte extension and 12-location IRP reuse passed
+Attached filter request error 0, bytes 0, reply 0x0
+VMM deferred request error 0
+PCI PnP, power and device counter: error 0, bytes 0, reply 0
+Pending I/O completed before device removal
+Kernel check PASS
+
+Shipping INF: WAV 407087 frames, stereo 16-bit PCM at 44100 Hz, SHA-256 efbe4c61a4cf96e11e81c85d9337b0fe2be25f6e3436f64729b8f3f431feb84f.
+Three consecutive quarter-second analysis windows. Median left 996.99 Hz, right 1511.02 Hz.
+Earlier test INF: WAV 398664 frames, stereo 16-bit PCM at 44100 Hz, SHA-256 d741d405f372c01f20b89143b170cef49e247a741fd5de99149d25173a74f7cf.
+Three consecutive quarter-second analysis windows. Median left 996.97 Hz, right 1511.02 Hz.
+
+Reproduce with the QEMU USB audio device, the final QEMUAUD.INF and original FE media.
+Run W9DEVS.EXE /usb and ICHWAVE.EXE /usb in the guest. Close QEMU and run python3 qa/ich_wave_capture.py on its backend WAV.
+Both runs used the native First Edition NTKERN, USB and kernel streaming components for playback.

@@ -20,3 +20,7 @@ KRNL386.EXE also identifies the Workgroups edition. SHA-256 b2686eb8882e251e0047
 A separate NT350.WIM from Universal Windows Installer v0.2.0-beta was deployed onto
 a new empty disk. Its one index was NT350 Vanilla, x86 3.50.807. The guest booted.
 See nt350-media.txt for its provenance and comparison with the original Microsoft files.
+
+The user-supplied eight-volume win98FE_AHCI_test_1_29M ZIP reconstructs a genuine
+First Edition dynamic VHD. Both installed KERNEL32.DLL and USER32.DLL report
+4.10.0.1998. See win98fe-targets.txt for hashes, CRC and all six guest results.

@@ -1,0 +1,5 @@
+LIBRARY KS.SYS
+EXPORTS
+    KsPinDataIntersection@24
+    KsPinPropertyHandler@20
+    KsTopologyPropertyHandler@16

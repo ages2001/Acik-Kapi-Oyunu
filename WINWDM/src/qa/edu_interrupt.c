@@ -2,6 +2,10 @@
  * The interrupt handler acknowledges only the bits belonging to the test. */
 #include <ntddk.h>
 #include "wdm_interrupt.h"
+#ifdef WK_EDU_PORTCLS
+NTSTATUS WkTestPortCls(PULONG registers, ULONG vector, KIRQL level, KAFFINITY affinity,
+                       void (*report)(const char *, ULONG));
+#endif
 
 typedef struct {
     PULONG Registers;
@@ -63,6 +67,10 @@ NTSTATUS WkEduTestInterrupt(PDRIVER_OBJECT driver, PULONG registers, ULONG pciIn
         vector = HalGetInterruptVector(Isa, 0, number, number, &irql, &affinity);
     report("translated vector ", vector);
     if (!vector || !affinity) return STATUS_DEVICE_CONFIGURATION_ERROR;
+#ifdef WK_EDU_PORTCLS
+    status = WkTestPortCls(registers, vector, irql, affinity, report);
+    if (!NT_SUCCESS(status)) return status;
+#endif
     status = IoCreateDevice(driver, sizeof(*irq), NULL, FILE_DEVICE_UNKNOWN, 0, FALSE, &device);
     if (!NT_SUCCESS(status)) return status;
     irq = device->DeviceExtension;

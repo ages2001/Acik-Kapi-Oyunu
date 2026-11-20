@@ -1,0 +1,3 @@
+# Keep the INF source portable and preserve the exact DOS file tested by Setup.
+src/installer/QEMUAUD.INF text eol=lf
+bin/FEAUDIO/QEMUAUD.INF -text whitespace=trailing-space,space-before-tab,cr-at-eol

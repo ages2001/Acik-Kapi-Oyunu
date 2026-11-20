@@ -1,0 +1,33 @@
+Native positive control: Windows 98 Second Edition, QEMU 10.0.13, TCG, Pentium III, 384 MB RAM.
+The disk was freshly partitioned and installed with Windows 98 SE QuickInstall stock v1.1.0.
+Source: https://github.com/gaijin213/Win98-on-Qemu3dfx/releases/tag/v1.0.0
+Installer SHA-256 7df4d4ccc3bee09303f42eb4d02da22911b4c6f2b4b6f97d928202017b5aad7e
+SeaBIOS without PnP BIOS SHA-256 13faa266712b9f3cc74765fd08080307474ac49c10028163f0034e222c58a604
+Reference PCI audio controller 8086:2415. No other sound card was attached.
+Supplied WDMA_INT.INF SHA-256 a8377c50a29797ff829781060875411a0145cc2e4515419aa6bbfcd8fabee635
+Unchanged installed ICHAUD.SYS SHA-256 06f87017fd0ea01e6203418864c6819990edc85ee54ed8199e3f37ccc73a3f15
+Guest class registry and waveOut results:
+GetVersion 0xC0000A04
+Enum\PCI\VEN_8086&DEV_2415&SUBSYS_11001AF4&REV_01\BUS_00&DEV_03&FUNC_00
+  DeviceDesc = AC'97 Driver for Intel(r) 82801AA Controller
+  Class = MEDIA
+  Driver = MEDIA\0000
+  DriverDesc = AC'97 Driver for Intel(r) 82801AA Controller
+  InfPath = WDMA_INT.INF
+  InfSection = ICHAUD
+  DevLoader = *ntkern,mmdevldr.vxd
+  NTMPDriver = ichaud.sys,sbemul.sys
+Matching controllers 1, USB instance records 0
+GetVersion 0xC0000A04
+waveOut devices 1
+Device 0: AC'97 Sound Card, manufacturer 1, product 100
+waveOutOpen 0
+waveOutPrepareHeader 0
+waveOutWrite 0, returned 48000 frames before reset
+
+QEMU WAV output SHA-256 3beab259ffc48b830f697e24507b68fdb47e40658d2a4e701f3807cc15b26047
+WAV: stereo 16-bit PCM, 44100 Hz. Requested 997 and 1511 Hz for one second at 48000 Hz.
+Independent capture: three consecutive quarter-second windows. Median left 997.06 Hz, right 1511.02 Hz.
+Reproduce with ICHWAVE.EXE, the original ICHAUD driver, QEMU AC97 and the WAV audio backend.
+Close QEMU to finalize the recording, then run python3 qa/ich_wave_capture.py control.wav.
+The native Second Edition stack supplied Kernel Streaming and PortCls. WINWDM was not installed in this reference guest.

@@ -26,6 +26,9 @@ for platform, driver in (("WIN3", "WINWDM.386"), ("NT3", "WINWDM.SYS")):
     outputs += [Path(platform) / name for name in ("SETUP.EXE", "INFO.EXE", "UNINST.EXE", driver)]
     outputs += [Path(platform) / (stem + Path(driver).suffix) for stem in ("W100","W105","W110","W120","W130")]
 outputs.append(Path("DESKTOP/SETUP.EXE"))
+outputs.append(Path("AUDIO/PORTCLS.SYS"))
+outputs.append(Path("AUDIO/KS.SYS"))
+outputs.append(Path("FEAUDIO/QEMUAUD.INF"))
 
 for relative in outputs:
     target = project / "bin" / relative
@@ -39,7 +42,7 @@ for relative in outputs:
         temp_path.unlink(missing_ok=True)
 
 if args.destination is not None:
-    files = [project / name for name in ("README.md", "LICENSE", ".gitignore")]
+    files = [project / name for name in ("README.md", "LICENSE", ".gitignore", ".gitattributes")]
     files += [project / "bin" / relative for relative in outputs]
     files += sorted((project / "licenses").glob("*.txt"))
     files.append(source / "Makefile")
