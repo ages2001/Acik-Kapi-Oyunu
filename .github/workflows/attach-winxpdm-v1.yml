@@ -1,0 +1,24 @@
+name: Attach WINXPDM v1.0 ZIP
+on:
+  push:
+    branches: [delivery/winxpdm-v1.0]
+    paths:
+      - 'release-assets/WINXPDM-v1.0.zip'
+      - '.github/workflows/attach-winxpdm-v1.yml'
+permissions:
+  contents: write
+jobs:
+  attach:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify and attach ZIP
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          echo '70246354ae8d34de6c5ffdd5def93243a83931391f524d95ac59b973e00969c8  release-assets/WINXPDM-v1.0.zip' | sha256sum --check
+          gh release upload winxpdm-v1.0 release-assets/WINXPDM-v1.0.zip --repo "$GITHUB_REPOSITORY"
