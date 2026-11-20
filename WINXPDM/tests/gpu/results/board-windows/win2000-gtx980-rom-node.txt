@@ -1,0 +1,6 @@
+NativeBits=32
+HardwareID=PCI\VEN_10DE&DEV_13C0&SUBSYS_85061043&REV_A1
+Description=Video Controller (VGA Compatible)
+Service=
+NodeStatus=01806400
+Problem=1

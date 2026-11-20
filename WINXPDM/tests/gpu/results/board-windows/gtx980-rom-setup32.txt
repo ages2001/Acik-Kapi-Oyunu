@@ -1,0 +1,10 @@
+Windows XP x86 | setupapi.log excerpts
+#I063 Selected driver installs from section [Section021] in "d:\nv\nv4_dispi.inf".
+#I123 Doing full install of "PCI\VEN_10DE&DEV_13C0&SUBSYS_85061043&REV_A1\3&267A616A&0&30".
+#I121 Device install of "PCI\VEN_10DE&DEV_13C0&SUBSYS_85061043&REV_A1\3&267A616A&0&30" finished successfully.
+
+Windows 2000 x86 | setupapi.log excerpts
+Searching for hardware ID(s): pci\ven_10de&dev_13c0&subsys_85061043&rev_a1,pci\ven_10de&dev_13c0&subsys_85061043,pci\ven_10de&dev_13c0&cc_030000,pci\ven_10de&dev_13c0&cc_0300
+Selected driver installs from section Section021 in d:\nv\nv4_dispi.inf.
+Doing copy-only install of PCI\VEN_10DE&DEV_13C0&SUBSYS_85061043&REV_A1\3&267A616A&0&30.
+Copying file d:\nv\nv4_mini.sys to C:\WINNT\system32\DRIVERS\nv4_mini.sys.

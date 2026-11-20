@@ -62,6 +62,8 @@ cmp fragment-binaries.tsv tests/gpu/results/fragment-binaries.tsv
 
 Windows XP x86 installed community 382.69 for both GTX 980 and GTX 1050 Ti. Both x86 guests stopped with 0x7F after restart. XP Professional x64 installed stock 368.81 with the desktop Maxwell INF entry for the GTX 980. An early run stopped with 0x7E. With the running display counter and PCI configuration mirror the x64 guest reached the desktop. The GTX 980 reported Code 10 and was absent from the Direct3D adapter list. Windows 2000 installed its local GTX 980 port and stopped with 0x50. The Radeon trials used the original AMD display INFs. [Installations, stop screens and vendor register traces](results/board-windows/README.md) · [XP x64 Direct3D result](results/board-windows/xp64-gtx980-d3d9.txt)
 
+With an ASUS GTX 980 option ROM matching subsystem `1043:8506`, the XP x64 miniport read the PROM window 153,365 times and reported Code 10. XP x86 stopped at 0x7F on the Pentium III CPU model and 0x7E on the max CPU model. Windows 2000 stopped at 0x1E during installation. [OEM BIOS, native driver trials and CPU comparison](results/board-windows/README.md#gtx-980-option-rom)
+
 ## Monitor and acceleration acceptance
 
 An end-to-end native 3D pass requires commands from the Windows guest to execute on the target GPU or a validated complete model, with correct color, texture and depth readback. A DisplayPort HBR3 pass needs a connected sink and measured HBR3 training on hardware supporting that rate. HDMI 2.0 tests need measured active timing, link scrambling/SCDC where required, and a visible image. Multi-monitor tests require two active independent outputs, an extended desktop and successful mode changes on each output. A board's physical ports and transmitter limit which cases apply.

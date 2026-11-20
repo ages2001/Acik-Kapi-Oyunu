@@ -69,7 +69,7 @@ The 32-bit Windows 9x wizard queues its temporary executable for deletion in WIN
 
 ## Reproducing the runs
 
-Build with Open Watcom, the two MinGW-w64 cross-compilers and Python with pefile. From the WINXPDM directory run `sh tools/build_virtio.sh` and `sh tools/build_ui.sh`. The driver build also creates the native probes under `build/legacy-gpu`. Build QEMU 10.0.13 with SDL, OpenGL, virglrenderer and the project patches. Add `-device winxpdm-engines` to exercise the NVIDIA, SDMA and link protocol cases. [QEMU build instructions](../../../src/emulation/README.md)
+Build with Open Watcom, the two MinGW-w64 cross-compilers, GCC with 32-bit x86 code generation, GNU ld with i386 ELF support and Python with pefile. From the WINXPDM directory run `sh tools/build_virtio.sh` and `sh tools/build_ui.sh`. The driver build also creates the native probes under `build/legacy-gpu`. Build QEMU 10.0.13 with SDL, OpenGL, virglrenderer and the project patches. Add `-device winxpdm-engines` to exercise the NVIDIA, SDMA and link protocol cases. [QEMU build instructions](../../../src/emulation/README.md)
 
 On Win16 and Windows 9x put `GPUCHECK.EXE` alongside `WXPGPU.DRV` and run it inside Windows. Results appear in `C:\WXPGPU.TXT` and at QEMU debug port 0xe9. On NT, install the GPU service with Setup. In a disposable test installation, copy the matching `WXPGTST.SYS` to `system32\drivers`, create a kernel service named `WXPGTST` with Type 1, Start 1 and ImagePath `system32\drivers\wxpgtst.sys`, then restart with `-debugcon file:guest.log`. Its system thread opens the installed device and sends the production IOCTL. The diagnostic PCI function is used only by the guest probes.
 

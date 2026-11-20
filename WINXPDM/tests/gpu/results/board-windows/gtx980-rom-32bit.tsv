@@ -1,0 +1,5 @@
+guest	cpu	stage	outcome	mmio-reads	mmio-writes	identity-reads	prom-reads	shadow-reads	unknown-reads	unknown-writes
+Windows XP x86	pentium3	restart	STOP 0x7F (0x0D)	25	5	2	0	0	10	3
+Windows XP x86	max	restart	STOP 0x7E (0xC0000005)	25	5	2	0	0	10	3
+Windows 2000 x86	max	driver installation	STOP 0x1E (0xC0000005)	25	5	2	0	0	10	3
+Windows 2000 x86	max	next boot	Device problem 1, no service	0	0	0	0	0	0	0
