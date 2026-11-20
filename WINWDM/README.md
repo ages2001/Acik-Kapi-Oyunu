@@ -30,6 +30,14 @@ The 1.x images use two devices with 64-byte extensions for the startup diagnosti
 
 Use drive B: if A: holds a DOS boot disk. Use an administrator account on NT. The wizard installs into the WINWDM directory under Windows. On Windows 3.x and 9x, restart Windows before opening Info. The **Refresh** button issues another live kernel request. The two icon sizes (16 and 32 pixels) and the wizard illustration use the 16-color VGA palette. The removal icon draws a red cross over the application icon.
 
+### Loading a SYS on native NT
+
+Open **WINWDM Info → Drivers → Load SYS** and select the original x86 file. On NT 3.1, use the names shown by its FAT file picker. The Info application asks the Service Control Manager to start the driver from its existing path. The same operation is available as `INFO.EXE /load "C:\DRIVERS\EXAMPLE.SYS"`. **Unload SYS** and `/unload` use the same path. Run these commands with driver-management privileges. Each command returns the Windows error code to its caller.
+
+The registration is demand-start. Retry, conflicting filenames, third-party service ownership, failed starts and cleanup after restart were tested on NT 3.1, 3.50, 3.51 and 4.0. A driver without an unload entry can require a restart before its registration can be removed. The selected image must be acceptable to that NT loader and its dependencies must be present. [Native driver management](src/qa/evidence/native-driver-manager.txt)
+
+On NT 3.50, 3.51 and 4.0, the original Microsoft `HIDPARSE.SYS` from Windows 98 FE decoded three QEMU USB keyboard reports. NT 3.1 rejected the same image with error 193. Windows 98 FE also delivered live USB keyboard input to Notepad through its own HID stack. [Original driver identity, captured keys and per-guest results](src/qa/evidence/vendor-hid-input.txt)
+
 ## Source interface
 
 The same PCI function-driver source builds for NT and VMM. It shows device-start and power requests, a removal lock and I/O against an assigned resource. In the Makefile, `build/nt_pci_device.o` and `build/vxd_pci_device.o` compile this file with the appropriate declarations. The NT output is a native SYS. Enhanced-mode Windows uses the VxD output. [PCI function-driver example](src/kernel/pci_device.c) · [Build rules](src/Makefile)
@@ -68,7 +76,7 @@ In QEMU, the same SYS connected and disconnected twice on NT 3.1, 3.50, 3.51 and
 
 ### PortCls on native NT
 
-The development kit includes an x86 audio class driver in `bin/AUDIO/PORTCLS.SYS`. Its two exports are `PcGetTimeInterval` and `PcNewInterruptSync`. The latter accepts a translated line-interrupt resource and supports the Normal, All and Repeat service modes. In Microsoft NT 3.1, 3.50, 3.51 and 4.0, a separately linked SYS called both exports, synchronized a callback at the hardware interrupt level and handled QEMU EDU interrupts. Use this module on a test disk with no existing PortCls installation. The setup wizard installs the main WINWDM driver. [Native audio class results](src/qa/evidence/nt-portcls-interrupt.txt)
+The optional x86 driver `bin/AUDIO/PORTCLS.SYS` provides `PcGetTimeInterval`, `PcNewInterruptSync`, `PcNewResourceList` and `PcNewResourceSublist`. The resource objects copy raw and translated descriptors, preserve their association, and support bounded sublists. An independent SYS selected a real QEMU PCI interrupt from a sublist, synchronized callbacks at the hardware interrupt level, and verified Normal, All and Repeat dispatch on the four native NT releases. [Native audio class results](src/qa/evidence/nt-portcls-interrupt.txt)
 
 ### Kernel Streaming on native NT
 
@@ -76,7 +84,13 @@ The optional x86 module `bin/AUDIO/KS.SYS` implements seven static pin queries t
 
 `KsPinDataIntersection` matches a caller’s ordered data ranges to the selected pin descriptor and invokes the minidriver’s x86 callback. On all four NT releases an independent client rejected an unsupported sample rate, negotiated stereo 16-bit PCM at 48,000 Hz, and verified wildcard, size-query and short-buffer behavior. Attribute lists remain unsupported. [Format negotiation results](src/qa/evidence/nt-ks-properties.txt) · [Microsoft KS intersection contract](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ks/nf-ks-kspindataintersection)
 
-The original First Edition KS module exports 101 names. Its PortCls module imports 29 of them, including the three supplied here. Audio miniports still require filter and pin creation, stream transport, adapter registration and the Wave and Topology ports. WINWDM also lacks an independent Win3.x/Win95 PE WDM loader equivalent to NTKERN. End-to-end playback through WINWDM on the pre-WDM hosts remains open. Both optional modules belong on disposable native NT installations without an existing provider of the same name. [First Edition class comparison](src/qa/evidence/win98fe-class-coverage.txt)
+The native `KsCreatePin` and `KsValidateConnectRequest` implementations open a pin relative to a filter handle and validate the interface, medium, communication type and format. On NT 3.1, 3.50, 3.51 and 4.0, two independent pin handles exchanged 512 PCM bytes through a software loopback filter using the standard KS write and read controls. The test filter supplies the kernel-mode packet transport. [Native pin creation and packet verification](src/qa/evidence/nt-ks-properties.txt)
+
+The original First Edition KS module exports 101 names. Its PortCls module imports 29, of which the current KS provider supplies four. General packet capture and queuing, the PortCls Wave and Topology ports, adapter registration, hardware playback on pre-WDM NT and a Win3.x/Win95 PE loader equivalent to NTKERN remain open. Use the optional class modules on a native NT test disk without an existing provider of the same name. [First Edition class comparison](src/qa/evidence/win98fe-class-coverage.txt)
+
+### Native USB descriptor helpers
+
+`bin/USB/USBD.SYS` is an experimental x86 NT module for parsing USB configuration descriptors and constructing select-configuration requests. Its build and export names have been checked. Live hardware transfers through this module are unverified. Setup leaves it in the optional USB directory of the distribution.
 
 ## PCI test device
 

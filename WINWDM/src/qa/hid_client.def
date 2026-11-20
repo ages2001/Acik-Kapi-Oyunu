@@ -1,0 +1,6 @@
+LIBRARY HIDPARSE.SYS
+EXPORTS
+    HidP_FreeCollectionDescription@4
+    HidP_GetCaps@8
+    HidP_GetCollectionDescription@16
+    HidP_GetUsages@32

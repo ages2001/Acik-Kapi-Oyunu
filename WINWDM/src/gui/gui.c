@@ -5,6 +5,8 @@
 #define BTN_CANCEL 112
 #define BTN_PCI 113
 #define BOX_TARGET 114
+#define MENU_DRIVER_LOAD 120
+#define MENU_DRIVER_UNLOAD 121
 static HWND targetBox;
 static int selectionAtOpen=CB_ERR;
 static int activeTarget=-1;
@@ -171,6 +173,23 @@ LRESULT CALLBACK WK_EXPORT WkWindowProc(HWND w,UINT msg,WPARAM wp,LPARAM lp)
     case WM_CREATE:
         GetClientRect(w,&r);
 #ifdef WK_INFO
+#ifdef _WIN32
+        if (WkNtHost()) {
+            HMENU bar = CreateMenu(), drivers = CreatePopupMenu();
+            if (!bar || !drivers ||
+                !AppendMenuA(drivers, MF_STRING, MENU_DRIVER_LOAD, "&Load SYS...") ||
+                !AppendMenuA(drivers, MF_STRING, MENU_DRIVER_UNLOAD, "&Unload SYS...") ||
+                !AppendMenuA(bar, MF_POPUP, (UINT_PTR)drivers, "&Drivers")) {
+                if (drivers) DestroyMenu(drivers);
+                if (bar) DestroyMenu(bar);
+                return -1;
+            }
+            if (!SetMenu(w, bar)) {
+                DestroyMenu(bar);
+                return -1;
+            }
+        }
+#endif
         pciButton=CreateWindow("BUTTON","&PCI test",WS_CHILD|WS_VISIBLE|WS_TABSTOP,
                      108,r.bottom-32,78,23,w,(HMENU)BTN_PCI,app,NULL);
 #endif
@@ -230,6 +249,11 @@ LRESULT CALLBACK WK_EXPORT WkWindowProc(HWND w,UINT msg,WPARAM wp,LPARAM lp)
             }
             return 0;
 #ifdef WK_INFO
+#ifdef _WIN32
+        case MENU_DRIVER_LOAD: case MENU_DRIVER_UNLOAD:
+            WkChooseVendor(w, LOWORD(wp) == MENU_DRIVER_LOAD);
+            return 0;
+#endif
         case BTN_PCI:
             if (WkPciCheck())
                 MessageBox(w,"The QEMU PCI device counted two writes. Start, stop and D3/D0 passed. Pending I/O completed before removal.",
@@ -309,7 +333,12 @@ static int run(HINSTANCE instance, HINSTANCE previous, int show)
     height=bodyHeight*14+20; if (height<216) height=216;
     if (height>screenY-GetSystemMetrics(SM_CYCAPTION)-24)
         height=screenY-GetSystemMetrics(SM_CYCAPTION)-24;
-    SetRect(&r,0,0,width,height); AdjustWindowRect(&r,style,FALSE);
+    SetRect(&r,0,0,width,height);
+#if defined(WK_INFO) && defined(_WIN32)
+    AdjustWindowRect(&r,style,WkNtHost());
+#else
+    AdjustWindowRect(&r,style,FALSE);
+#endif
     w=CreateWindow(WINDOW_NAME,WINDOW_NAME,style,
         (GetSystemMetrics(SM_CXSCREEN)-(r.right-r.left))/2,
         (GetSystemMetrics(SM_CYSCREEN)-(r.bottom-r.top))/2,
@@ -340,6 +369,8 @@ int PASCAL WinMain(HINSTANCE h,HINSTANCE prev,LPSTR cmd,int show)
 #ifdef WK_REMOVE
     result=WkRemoveLauncher(h,cmd);
     if (result>=0) return result;
+#elif defined(WK_INFO) && defined(_WIN32)
+    if (cmd && *cmd) return (int)WkVendorCommand(cmd);
 #else
     (void)cmd;
 #endif

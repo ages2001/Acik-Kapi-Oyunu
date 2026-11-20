@@ -28,6 +28,7 @@ for platform, driver in (("WIN3", "WINWDM.386"), ("NT3", "WINWDM.SYS")):
 outputs.append(Path("DESKTOP/SETUP.EXE"))
 outputs.append(Path("AUDIO/PORTCLS.SYS"))
 outputs.append(Path("AUDIO/KS.SYS"))
+outputs.append(Path("USB/USBD.SYS"))
 outputs.append(Path("FEAUDIO/QEMUAUD.INF"))
 
 for relative in outputs:

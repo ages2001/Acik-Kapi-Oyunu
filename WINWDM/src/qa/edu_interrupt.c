@@ -3,7 +3,7 @@
 #include <ntddk.h>
 #include "wdm_interrupt.h"
 #ifdef WK_EDU_PORTCLS
-NTSTATUS WkTestPortCls(PULONG registers, ULONG vector, KIRQL level, KAFFINITY affinity,
+NTSTATUS WkTestPortCls(PULONG registers, ULONG rawLine, ULONG vector, KIRQL level, KAFFINITY affinity,
                        void (*report)(const char *, ULONG));
 #endif
 
@@ -68,7 +68,7 @@ NTSTATUS WkEduTestInterrupt(PDRIVER_OBJECT driver, PULONG registers, ULONG pciIn
     report("translated vector ", vector);
     if (!vector || !affinity) return STATUS_DEVICE_CONFIGURATION_ERROR;
 #ifdef WK_EDU_PORTCLS
-    status = WkTestPortCls(registers, vector, irql, affinity, report);
+    status = WkTestPortCls(registers, number, vector, irql, affinity, report);
     if (!NT_SUCCESS(status)) return status;
 #endif
     status = IoCreateDevice(driver, sizeof(*irq), NULL, FILE_DEVICE_UNKNOWN, 0, FALSE, &device);

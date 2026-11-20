@@ -1,5 +1,7 @@
 LIBRARY KS.SYS
 EXPORTS
+    KsCreatePin@16
+    KsValidateConnectRequest@16
     KsPinDataIntersection@24
     KsPinPropertyHandler@20
     KsTopologyPropertyHandler@16

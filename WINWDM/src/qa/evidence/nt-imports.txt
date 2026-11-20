@@ -47,8 +47,8 @@ SETUP.EXE 044fe2a8d4d78b8c3fe86a5f7fdafa062ae0e34592bafbcf7cded8bce669d78a
   nt35 PASS
   nt351 PASS
   nt4 PASS
-INFO.EXE 3e9190093a1b6ee38335483cd6ac2797c6f8630a450d7ac9f5c6fa798d5e8b5e
-  gdi32.dll (9), kernel32.dll (30), user32.dll (38)
+INFO.EXE 281387c00a81215696c7df9913accc445ff0ac2aeccc38d87b037d8e0c5abe97
+  advapi32.dll (13), comdlg32.dll (2), gdi32.dll (9), kernel32.dll (39), user32.dll (43)
   nt31rtm PASS
   nt31 PASS
   nt35 PASS
@@ -61,7 +61,7 @@ UNINST.EXE 2ca2520ee06fec6e66b2c9d99219c52c64e83c7d091f9953b1e3950da18cc14b
   nt35 PASS
   nt351 PASS
   nt4 PASS
-NTSVC.EXE addb2ebdbc925e04753db60348b3053911de8ca9e9ccec339f4129b1348c526a
+NTSVC.EXE 567e2359f445ffc358e2abd43be053b72da23fdb2ed33878a593e63fee8245bf
   advapi32.dll (8), kernel32.dll (36), user32.dll (1)
   nt31rtm PASS
   nt31 PASS

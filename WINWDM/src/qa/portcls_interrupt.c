@@ -2,11 +2,6 @@
 #include "../kernel/portcls_x86.h"
 
 typedef struct {
-    IResourceList Interface;
-    CM_PARTIAL_RESOURCE_DESCRIPTOR Line;
-} TEST_RESOURCES;
-
-typedef struct {
     PULONG Registers;
     volatile ULONG Sequence;
     volatile ULONG EmptyPass;
@@ -15,14 +10,8 @@ typedef struct {
     KIRQL Level;
 } TEST_INTERRUPT;
 
-static PCM_PARTIAL_RESOURCE_DESCRIPTOR NTAPI findLine(IResourceList *iface, CM_RESOURCE_TYPE type, ULONG index)
-{
-    TEST_RESOURCES *resources = CONTAINING_RECORD(iface, TEST_RESOURCES, Interface);
-    return type == CmResourceTypeInterrupt && !index ? &resources->Line : NULL;
-}
-
-static IResourceListVtbl resourceMethods = { .FindTranslatedEntry = findLine };
 static const GUID interruptId = {0x22c6ac63, 0x851b, 0x11d0, {0x9a,0x7f,0,0xaa,0,0x38,0xac,0xfe}};
+static const GUID resourceId = {0x22c6ac60, 0x851b, 0x11d0, {0x9a,0x7f,0,0xaa,0,0x38,0xac,0xfe}};
 
 static NTSTATUS NTAPI measureLevel(IInterruptSync *iface, PVOID context)
 {
@@ -77,16 +66,16 @@ static NTSTATUS NTAPI last(IInterruptSync *iface, PVOID context)
     return STATUS_UNSUCCESSFUL;
 }
 
-static NTSTATUS runMode(TEST_RESOURCES *resources, TEST_INTERRUPT *test, INTERRUPTSYNCMODE mode,
+static NTSTATUS runMode(PRESOURCELIST resources, KIRQL level, TEST_INTERRUPT *test, INTERRUPTSYNCMODE mode,
                         void (*report)(const char *, ULONG))
 {
     PINTERRUPTSYNC sync = NULL, queried = NULL;
     LARGE_INTEGER delay;
     NTSTATUS status;
     unsigned attempt, expected = mode == InterruptSyncModeNormal ? 0x12 : 0x123;
-    if (PcNewInterruptSync(&sync, NULL, &resources->Interface, 1, mode) != STATUS_INVALID_PARAMETER || sync)
+    if (PcNewInterruptSync(&sync, NULL, resources, 1, mode) != STATUS_INVALID_PARAMETER || sync)
         return STATUS_DEVICE_DATA_ERROR;
-    status = PcNewInterruptSync(&sync, NULL, &resources->Interface, 0, mode);
+    status = PcNewInterruptSync(&sync, NULL, resources, 0, mode);
     if (!NT_SUCCESS(status)) return status;
     status = sync->lpVtbl->QueryInterface(sync, &interruptId, (PVOID *)&queried);
     if (!NT_SUCCESS(status) || queried != sync || queried->lpVtbl->Release(queried) != 1 ||
@@ -98,7 +87,7 @@ static NTSTATUS runMode(TEST_RESOURCES *resources, TEST_INTERRUPT *test, INTERRU
     status = sync->lpVtbl->RegisterServiceRoutine(sync, last, test, FALSE);
     if (!NT_SUCCESS(status)) goto finish;
     if (sync->lpVtbl->CallSynchronizedRoutine(sync, measureLevel, test) != STATUS_DEVICE_BUSY ||
-        test->Level != resources->Line.u.Interrupt.Level) goto fail;
+        test->Level != level) goto fail;
     status = sync->lpVtbl->Connect(sync);
     if (!NT_SUCCESS(status)) goto finish;
     if (!sync->lpVtbl->GetKInterrupt(sync) ||
@@ -129,21 +118,67 @@ finish:
     return status;
 }
 
-NTSTATUS WkTestPortCls(PULONG registers, ULONG vector, KIRQL level, KAFFINITY affinity,
+static NTSTATUS makeResources(PRESOURCELIST *out, ULONG rawLine, ULONG vector, KIRQL level, KAFFINITY affinity)
+{
+    struct { CM_RESOURCE_LIST List; CM_PARTIAL_RESOURCE_DESCRIPTOR Second; } cooked = {0}, raw;
+    PCM_PARTIAL_RESOURCE_DESCRIPTOR irq = cooked.List.List[0].PartialResourceList.PartialDescriptors, entry;
+    PRESOURCELIST parent = NULL, sub = NULL, queried = NULL;
+    NTSTATUS status;
+    *out = NULL;
+    cooked.List.Count = 1;
+    cooked.List.List[0].InterfaceType = PCIBus;
+    cooked.List.List[0].PartialResourceList.Count = 2;
+    irq->Type = CmResourceTypeInterrupt;
+    irq->ShareDisposition = CmResourceShareShared;
+    irq->u.Interrupt.Level = level;
+    irq->u.Interrupt.Vector = vector;
+    irq->u.Interrupt.Affinity = affinity;
+    cooked.Second.Type = CmResourceTypeMemory;
+    cooked.Second.u.Memory.Start.QuadPart = 0x80001000;
+    raw = cooked;
+    raw.List.List[0].PartialResourceList.PartialDescriptors[0].u.Interrupt.Vector = rawLine;
+    raw.Second.Type = CmResourceTypePort;
+    raw.Second.u.Port.Start.QuadPart = 0x1000;
+    status = PcNewResourceList(&parent, NULL, PagedPool, &cooked.List, &raw.List);
+    if (!NT_SUCCESS(status)) return status;
+    irq->u.Interrupt.Vector = 0;
+    raw.Second.Type = CmResourceTypeNull;
+    status = PcNewResourceSublist(&sub, NULL, NonPagedPool, parent, 2);
+    if (!NT_SUCCESS(status)) goto done;
+    status = STATUS_DEVICE_DATA_ERROR;
+    if (!NT_SUCCESS(parent->lpVtbl->QueryInterface(parent, &resourceId, (PVOID *)&queried)) ||
+        queried != parent || queried->lpVtbl->Release(queried) != 1 ||
+        parent->lpVtbl->NumberOfEntries(parent) != 2 || sub->lpVtbl->NumberOfEntries(sub) ||
+        sub->lpVtbl->AddEntryFromParent(sub, parent, CmResourceTypeInterrupt, 1) != STATUS_INVALID_PARAMETER ||
+        !NT_SUCCESS(sub->lpVtbl->AddEntryFromParent(sub, parent, CmResourceTypeMemory, 0)) ||
+        !NT_SUCCESS(sub->lpVtbl->AddEntryFromParent(sub, parent, CmResourceTypeInterrupt, 0)) ||
+        sub->lpVtbl->AddEntryFromParent(sub, parent, CmResourceTypeInterrupt, 0) != STATUS_INSUFFICIENT_RESOURCES ||
+        sub->lpVtbl->NumberOfEntriesOfType(sub, CmResourceTypeMemory) != 1 ||
+        sub->lpVtbl->UntranslatedList(sub)->List[0].PartialResourceList.Count != 2) goto done;
+    entry = sub->lpVtbl->FindUntranslatedEntry(sub, CmResourceTypeMemory, 0);
+    if (!entry || entry->Type != CmResourceTypePort || entry->u.Port.Start.QuadPart != 0x1000) goto done;
+    entry = sub->lpVtbl->FindUntranslatedEntry(sub, CmResourceTypeInterrupt, 0);
+    if (!entry || entry->u.Interrupt.Vector != rawLine) goto done;
+    entry = sub->lpVtbl->FindTranslatedEntry(sub, CmResourceTypeInterrupt, 0);
+    if (!entry || entry->u.Interrupt.Vector != vector) goto done;
+    *out = sub;
+    sub = NULL;
+    status = STATUS_SUCCESS;
+done:
+    if (sub) sub->lpVtbl->Release(sub);
+    parent->lpVtbl->Release(parent);
+    return status;
+}
+
+NTSTATUS WkTestPortCls(PULONG registers, ULONG rawLine, ULONG vector, KIRQL level, KAFFINITY affinity,
                        void (*report)(const char *, ULONG))
 {
-    TEST_RESOURCES resources = {0};
+    PRESOURCELIST resources;
     TEST_INTERRUPT test = {0};
     ULONGLONG start, elapsed;
     LARGE_INTEGER delay;
     NTSTATUS status;
     INTERRUPTSYNCMODE mode;
-    resources.Interface.lpVtbl = &resourceMethods;
-    resources.Line.Type = CmResourceTypeInterrupt;
-    resources.Line.ShareDisposition = CmResourceShareShared;
-    resources.Line.u.Interrupt.Level = level;
-    resources.Line.u.Interrupt.Vector = vector;
-    resources.Line.u.Interrupt.Affinity = affinity;
     test.Registers = registers;
     start = PcGetTimeInterval(0);
     delay.QuadPart = -1000000;
@@ -152,9 +187,13 @@ NTSTATUS WkTestPortCls(PULONG registers, ULONG vector, KIRQL level, KAFFINITY af
     report("PortCls time high ", (ULONG)(start >> 32));
     report("PortCls interval (100 ns) ", (ULONG)elapsed);
     if (!(start >> 32) || elapsed < 100000 || elapsed > 30000000) return STATUS_DEVICE_DATA_ERROR;
+    status = makeResources(&resources, rawLine, vector, level, affinity);
+    if (!NT_SUCCESS(status)) return status;
+    report("PortCls child resource entries ", resources->lpVtbl->NumberOfEntries(resources));
     for (mode = InterruptSyncModeNormal; mode <= InterruptSyncModeRepeat; ++mode) {
-        status = runMode(&resources, &test, mode, report);
-        if (!NT_SUCCESS(status)) return status;
+        status = runMode(resources, level, &test, mode, report);
+        if (!NT_SUCCESS(status)) break;
     }
-    return STATUS_SUCCESS;
+    if (resources->lpVtbl->Release(resources)) return STATUS_DEVICE_DATA_ERROR;
+    return status;
 }

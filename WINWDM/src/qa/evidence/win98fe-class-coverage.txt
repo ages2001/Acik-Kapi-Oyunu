@@ -6,11 +6,11 @@ DRIVER20.CAB: KS.SYS 41728 bytes, SHA-256 ee3656eed9045f0aa7b6de402e0c180922265f
 DRIVER20.CAB: PORTCLS.SYS 106928 bytes, SHA-256 255e3ffba8704391078572cc099b56639e3e30e88b396b7dcedaea28154c0809
 WIN98_48.CAB: NTKERN.VXD 194494 bytes, SHA-256 2feadb0da9cca62dceb0d326e32e59c685d424f3b3488ace05f5314ea5f98f60
 
-Native FE KS.SYS has 101 named exports. WINWDM implements selected pin and topology requests and data range intersection through 3 of those entry points.
-  KsPinDataIntersection, KsPinPropertyHandler, KsTopologyPropertyHandler
-Native FE PORTCLS.SYS has 39 named exports. The optional WINWDM provider exports 2 of those names.
-  PcGetTimeInterval, PcNewInterruptSync
-Native FE PORTCLS.SYS imports 29 names from KS.SYS. The following 26 have no WINWDM KS export:
+Native FE KS.SYS has 101 named exports. WINWDM provides 5 of these names.
+  KsCreatePin, KsPinDataIntersection, KsPinPropertyHandler, KsTopologyPropertyHandler, KsValidateConnectRequest
+Native FE PORTCLS.SYS has 39 named exports. WINWDM provides 4 of these names.
+  PcGetTimeInterval, PcNewInterruptSync, PcNewResourceList, PcNewResourceSublist
+Native FE PORTCLS.SYS imports 29 names from KS.SYS. The following 25 lack a WINWDM KS export.
   KoCreateInstance
   KsAddIrpToCancelableQueue
   KsAddObjectCreateItemToDeviceHeader
@@ -36,7 +36,6 @@ Native FE PORTCLS.SYS imports 29 names from KS.SYS. The following 26 have no WIN
   KsRemoveSpecificIrpFromCancelableQueue
   KsSetMajorFunctionHandler
   KsValidateClockCreateRequest
-  KsValidateConnectRequest
 
-The Win3.x and Win9x kit VxD links the project function driver at build time. The independent PE WDM loader from NTKERN.VXD has not been ported.
-The Windows 98 FE USB audio and hub tests exercised the original system loader. On native NT the kit negotiates formats through a minidriver callback. A pin factory, PortCls wave port and packet transport remain unimplemented.
+The Win3.x and Win9x VxD links the project function driver at build time. A general independent PE WDM loader remains open.
+First Edition used its original NTKERN for the audio, hub and keyboard tests. The native NT pin test opened two real handles and looped back a packet through a QA filter. Hardware playback on pre-WDM NT, the PortCls wave port and general streaming transport remain open.

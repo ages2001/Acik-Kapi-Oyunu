@@ -22,4 +22,8 @@ LRESULT WkDdeMessage(HWND w, UINT msg, WPARAM wp, LPARAM lp);
 BOOL WkEditVxd(const char *driverPath, BOOL install);
 BOOL WkNtHost(void);
 BOOL WkService(const char *path, BOOL install);
+#if defined(_WIN32) && defined(WK_INFO)
+DWORD WkVendorCommand(const char *command);
+void WkChooseVendor(HWND owner, BOOL load);
+#endif
 #endif

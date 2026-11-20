@@ -8,4 +8,6 @@ typedef WCHAR TCHAR;
 #define _TCHAR_DEFINED
 #endif
 #include <portcls.h>
+#undef ExInterlockedAddUlong
+NTKERNELAPI ULONG NTAPI ExInterlockedAddUlong(PULONG value, ULONG increment, PKSPIN_LOCK lock);
 #endif

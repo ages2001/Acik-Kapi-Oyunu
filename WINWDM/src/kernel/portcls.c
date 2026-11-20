@@ -9,13 +9,11 @@
 #undef KeAcquireSpinLockAtDpcLevel
 #undef KeReleaseSpinLockFromDpcLevel
 #undef KeQuerySystemTime
-#undef ExInterlockedAddUlong
 NTHALAPI VOID NTAPI KeRaiseIrql(KIRQL newLevel, PKIRQL previous);
 NTHALAPI VOID NTAPI KeLowerIrql(KIRQL previous);
 NTKERNELAPI VOID NTAPI KeAcquireSpinLockAtDpcLevel(PKSPIN_LOCK lock);
 NTKERNELAPI VOID NTAPI KeReleaseSpinLockFromDpcLevel(PKSPIN_LOCK lock);
 NTKERNELAPI VOID NTAPI KeQuerySystemTime(PLARGE_INTEGER now);
-NTKERNELAPI ULONG NTAPI ExInterlockedAddUlong(PULONG value, ULONG increment, PKSPIN_LOCK lock);
 
 typedef struct {
     IInterruptSync Interface;

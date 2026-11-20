@@ -3,6 +3,8 @@
 #include <winsvc.h>
 #include <stdio.h>
 #include <string.h>
+#include <winioctl.h>
+#include "ks_pin_test.h"
 
 int PASCAL WinMain(HINSTANCE app, HINSTANCE previous, LPSTR args, int show)
 {
@@ -22,6 +24,12 @@ int PASCAL WinMain(HINSTANCE app, HINSTANCE previous, LPSTR args, int show)
         files[0] = "KS.SYS";
         files[1] = "WKKS.SYS";
         reportPath = "C:\\DMAQA\\KSQUERY.TXT";
+    } else if (!lstrcmpiA(args, "/hid")) {
+        names[0] = "WinWdmHidParserQa";
+        names[1] = "WinWdmHidInputQa";
+        files[0] = "HIDPARSE.SYS";
+        files[1] = "WKHID.SYS";
+        reportPath = "C:\\DMAQA\\HIDINPUT.TXT";
     } else if (!lstrcmpiA(args, "/ich")) {
         names[1] = "WinWdmPcIchQa";
         files[1] = "ICHAUD.SYS";
@@ -43,6 +51,16 @@ int PASCAL WinMain(HINSTANCE app, HINSTANCE previous, LPSTR args, int show)
         fprintf(report, "%s start error %lu\n", files[i], started[i] ? 0UL : GetLastError());
         fflush(report);
         passed = started[i];
+    }
+    if (passed && !lstrcmpiA(args, "/ks")) {
+        DWORD bytes;
+        HANDLE filter = CreateFileA("\\\\.\\WkKsPinQa", GENERIC_READ | GENERIC_WRITE,
+                                    FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, 0, NULL);
+        passed = filter != INVALID_HANDLE_VALUE &&
+                 DeviceIoControl(filter, WK_KS_ROUNDTRIP, NULL, 0, NULL, 0, &bytes, NULL);
+        fprintf(report, "Native filter pin round trip error %lu\n", passed ? 0UL : GetLastError());
+        if (filter != INVALID_HANDLE_VALUE) CloseHandle(filter);
+        fflush(report);
     }
     for (i = 2; i > 0; --i) {
         SC_HANDLE service = services[i-1];

@@ -17,6 +17,7 @@ for platform, target, cc in (("WIN3", "windows", "wcc"), ("NT3","nt","wcc386")):
     for role in ("INFO","SETUP","UNINST") + (() if win16 else ("NTSVC",)):
         objdir=out/"obj"/platform/role; objdir.mkdir(parents=True,exist_ok=True)
         sources=["gui","probe","target"]
+        if not win16 and role=="INFO": sources.append("vendor")
         if role in ("SETUP","UNINST"): sources+=["install","dde","ini" if win16 else "service"]
         if role=="NTSVC": sources=["service_tool","service","probe","target"]
         define={"INFO":"WK_INFO","UNINST":"WK_REMOVE"}.get(role,"WK_SETUP")

@@ -2,3 +2,5 @@ LIBRARY PORTCLS.SYS
 EXPORTS
     PcGetTimeInterval@8
     PcNewInterruptSync@20
+    PcNewResourceList@20
+    PcNewResourceSublist@20

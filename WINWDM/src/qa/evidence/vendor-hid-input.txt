@@ -1,0 +1,47 @@
+USB keyboard and unchanged Windows 98 First Edition HID class binaries. QEMU 10.0.13, x86 TCG.
+The FE guest started the 6.0 target. Its own UHCD, HIDUSB, HIDCLASS and HIDPARSE stack delivered keystrokes to Notepad.
+The keyboard was VID 0627 PID 0001, serial WINWDM-HID, HIDDEV.INF section USBHIDDevice, NTMPDriver hidusb.sys.
+Notepad saved C:\WDMQA\HIDKEY.TXT. Bytes on the guest disk: 6a 6a 6b 0d 0a.
+Host USB Linux-mmapped pcap from usb-kbd, including live control and interrupt IN transfers.
+Capture size 6864456 bytes, SHA-256 00f72390072d3ac8e3bc35872058b1e4fb8ccc4538daedbee879eb285fa6b028
+hid-keyboard.bin 89 bytes, SHA-256 35de75e04a393b9d3369b2f83aeefb569815d88c84601d56261ce7522f831fbd
+Original FE HIDPARSE.SYS 40352 bytes, SHA-256 eeda4a74b73c47324e7e00246b477bb4e12b6354c4f84e6992c3df130fa020f2
+Original FE HIDUSB.SYS 9168 bytes, SHA-256 916cdaf6e0665b1e5a5f4ea154c5422e2f084fa4ee5c7d149999093f79cc67bd
+Original FE HIDCLASS.SYS 19616 bytes, SHA-256 c561d157a8dd4970bbcd8f6a0414eca7fa98db72893ef42dbe1e8afb4c00878c
+WKHID.SYS SHA-256 3982a155e5ec982efa32f29675a0b46a63e4631ee81854b95cdcd9945410b0a4
+
+The separate NT tests replay the captured descriptor and three reports through the original Microsoft parser.
+The client imports HidP_GetCollectionDescription, HidP_GetCaps, HidP_GetUsages and HidP_FreeCollectionDescription.
+A driver without an unload entry returned native error 1052 when explicitly stopped. This is recorded separately from successful decoding.
+
+Windows NT 3.1
+GetVersion 0x02100A03
+HIDPARSE.SYS start error 193
+FAIL
+
+Windows NT 3.50
+GetVersion 0x03273203
+HIDPARSE.SYS start error 0
+WKHID.SYS start error 0
+HIDPARSE.SYS stop error 1052
+FAIL
+HID keyboard collection 01/06, nine-byte parser report PASS
+HID input usages: J=0d, J+K=0d/0e, released=empty PASS
+
+Windows NT 3.51
+GetVersion 0x04213303
+HIDPARSE.SYS start error 0
+WKHID.SYS start error 0
+HIDPARSE.SYS stop error 1052
+FAIL
+HID keyboard collection 01/06, nine-byte parser report PASS
+HID input usages: J=0d, J+K=0d/0e, released=empty PASS
+
+Windows NT 4.0
+GetVersion 0x05650004
+HIDPARSE.SYS start error 0
+WKHID.SYS start error 0
+HIDPARSE.SYS stop error 1052
+FAIL
+HID keyboard collection 01/06, nine-byte parser report PASS
+HID input usages: J=0d, J+K=0d/0e, released=empty PASS

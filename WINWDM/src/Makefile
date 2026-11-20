@@ -31,14 +31,21 @@ build/nt_dma.o: kernel/dma.c include/wdm_dma.h | build
 build/nt_interrupt.o: kernel/interrupt.c include/wdm_interrupt.h | build
 	$(CC32) $(DRIVER_CFLAGS) -I$(DDK_INCLUDE) -D_X86_=1 -c $< -o $@
 
-build/PORTCLS.SYS: kernel/portcls.c kernel/portcls_x86.h kernel/portcls_dispatch.h kernel/portcls.def | build
-	$(CC32) $(DDK_CFLAGS) $(NT_DRIVER_LDFLAGS) -Wl,--kill-at -o $@ kernel/portcls.c kernel/portcls.def -lntoskrnl -lhal
+build/PORTCLS.SYS: kernel/portcls.c kernel/portcls_resources.c kernel/portcls_x86.h kernel/portcls_dispatch.h kernel/portcls.def build/ks_memory.o | build
+	$(CC32) $(DDK_CFLAGS) $(NT_DRIVER_LDFLAGS) -Wl,--kill-at -o $@ $(filter %.c,$^) kernel/portcls.def build/ks_memory.o -lntoskrnl -lhal
 
 build/ks_intersection.o: kernel/ks_intersection.c kernel/nt_legacy.h | build
 	$(CC32) $(DDK_CFLAGS) -c $< -o $@
 
-build/KS.SYS: kernel/ks_property.c kernel/ks.def kernel/nt_legacy.h build/ks_memory.o build/ks_intersection.o | build
-	$(CC32) $(DDK_CFLAGS) $(NT_DRIVER_LDFLAGS) -Wl,--kill-at -o $@ kernel/ks_property.c kernel/ks.def $(filter %.o,$^)
+build/KS.SYS: kernel/ks_property.c kernel/ks_connect.c kernel/ks.def kernel/nt_legacy.h build/ks_memory.o build/ks_intersection.o | build
+	$(CC32) $(DDK_CFLAGS) $(NT_DRIVER_LDFLAGS) -Wl,--kill-at -o $@ $(filter %.c,$^) kernel/ks.def $(filter %.o,$^) -lntoskrnl
+
+build/USBD.SYS: kernel/usbd_legacy.c kernel/usbd.def build/ks_memory.o | build
+	$(CC32) $(DDK_CFLAGS) $(NT_DRIVER_LDFLAGS) -o $@ $^ -lntoskrnl
+
+build/USB/USBD.SYS: build/USBD.SYS
+	mkdir -p build/USB
+	cp $< $@
 
 build/AUDIO/PORTCLS.SYS build/AUDIO/KS.SYS: build/AUDIO/%.SYS: build/%.SYS
 	mkdir -p build/AUDIO
@@ -53,6 +60,12 @@ build/libportcls-legacy.a: kernel/portcls.def | build
 
 build/libks-legacy.a: kernel/ks.def | build
 	$(CROSS)dlltool -k -d $< -l $@
+
+build/libhidparse-qa.a: qa/hid_client.def | build
+	$(CROSS)dlltool -k -d $< -l $@
+
+build/WKHID.SYS: qa/hid_client.c build/libhidparse-qa.a build/ks_memory.o | build
+	$(CC32) $(NT_CFLAGS) $(NT_DRIVER_LDFLAGS) -o $@ $^ -lntoskrnl -lhal
 
 build/libwinwdm-vmm.a: build/bitmap.o build/vxd_csq.res.o build/vxd_remove_lock.res.o build/vxd_irp.res.o
 	$(CROSS)ar rcs $@ $^
@@ -156,7 +169,10 @@ build/WKPCINT.SYS: qa/edu_dma.c qa/edu_interrupt.c qa/portcls_interrupt.c kernel
 build/ks_intersection_test.o: qa/ks_intersection_test.c | build
 	$(CC32) $(NT_CFLAGS) -c $< -o $@
 
-build/WKKS.SYS: qa/ks_property_test.c build/ks_intersection_test.o build/libks-legacy.a build/ks_memory.o | build
+build/ks_pin_test.o: qa/ks_pin_io.c qa/ks_pin_test.h kernel/nt_legacy.h | build
+	$(CC32) $(DDK_CFLAGS) -c $< -o $@
+
+build/WKKS.SYS: qa/ks_property_test.c build/ks_intersection_test.o build/ks_pin_test.o build/libks-legacy.a build/ks_memory.o | build
 	$(CC32) $(NT_CFLAGS) $(NT_DRIVER_LDFLAGS) -o $@ $^ -lntoskrnl -lhal
 
 build/WKSPCI.SYS: SCSI_PROBE_FLAGS = -DWK_SCSI_PCI
@@ -165,7 +181,7 @@ build/WKSADPT.SYS build/WKSPCI.SYS build/WKSCTRL.SYS: qa/scsi_registration.c inc
 	$(CC32) $(DRIVER_CFLAGS) -I$(DDK_INCLUDE) -D_X86_=1 -DWK_SCSI_DESCRIPTOR_SIZE=80 -DWK_SCSI_ADAPT $(SCSI_PROBE_FLAGS) $(NT_DRIVER_LDFLAGS) -o $@ $< build/libwinwdm.a -lscsiport
 
 .PHONY: package
-package: kernel sdk build/AUDIO/PORTCLS.SYS build/AUDIO/KS.SYS build/FEAUDIO/QEMUAUD.INF
+package: kernel sdk build/AUDIO/PORTCLS.SYS build/AUDIO/KS.SYS build/USB/USBD.SYS build/FEAUDIO/QEMUAUD.INF
 	python3 installer/build_gui.py
 	mkdir -p build/DESKTOP
 	makensis -V2 installer/desktop.nsi
@@ -228,9 +244,13 @@ build/ICHWAVE.EXE: qa/ich_wave.c | build
 	INCLUDE="$(WATCOM)/h/nt:$(WATCOM)/h" wcc386 -zq -bt=nt -3r -fo=build/ich_wave.obj $<
 	wlink system nt_win option quiet runtime windows=3.10 name $@ file build/ich_wave.obj library winmm
 
-build/PCTEST.EXE: qa/portcls_service.c | build
+build/PCTEST.EXE: qa/portcls_service.c qa/ks_pin_test.h | build
 	INCLUDE="$(WATCOM)/h/nt:$(WATCOM)/h" wcc386 -zq -bt=nt -3r -fo=build/portcls_service.obj $<
 	wlink system nt_win option quiet runtime windows=3.10 name $@ file build/portcls_service.obj
+
+build/VENDTEST.EXE: qa/vendor_lifecycle.c | build
+	INCLUDE="$(WATCOM)/h/nt:$(WATCOM)/h" wcc386 -zq -bt=nt -3r -fo=build/vendor_lifecycle.obj $<
+	wlink system nt_win option quiet runtime windows=3.10 name $@ file build/vendor_lifecycle.obj
 
 build/NTCHECK.EXE: qa/native_controls.c | build
 	INCLUDE="$(WATCOM)/h/nt:$(WATCOM)/h" wcc386 -zq -bt=nt -3r -fo=build/native_controls.obj $<

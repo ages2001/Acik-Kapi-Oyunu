@@ -1,0 +1,116 @@
+WINWDM Info native x86 driver commands on QEMU 10.0.13.
+The Windows service manager owns the load, stop and unload operations. The selected files remain byte-identical.
+The test exercised demand start, same-path retry, a conflicting path with the same filename, a separately owned service with identical display name and image path, and a driver that declines startup.
+Error 20 came from the independent P000.SYS returning STATUS_NO_SUCH_DEVICE. Error 1073 preserved an existing service.
+NT 3.1 accessed the VFAT test directory by its 8.3 alias. The later guests exercised the long path with a space.
+The original Microsoft HIDPARSE.SYS and a static import client tested dependency resolution. A module lacking a native unload entry returned 1052. Its registration survived until restart.
+The NT 3.51 shutdown reached a blank desktop and required a QEMU reset to finish its reboot.
+INFO.EXE SHA-256 281387c00a81215696c7df9913accc445ff0ac2aeccc38d87b037d8e0c5abe97
+WKHID.SYS SHA-256 3982a155e5ec982efa32f29675a0b46a63e4631ee81854b95cdcd9945410b0a4
+
+Windows NT 3.1
+GetVersion 0x02100A03
+Info load C:\DMAQA\CLASSQ~1\KS.SYS returned 0
+Info load C:\DMAQA\CLASSQ~1\KS.SYS returned 0
+Info load C:\DMAQA\KS.SYS returned 1073
+Info unload C:\DMAQA\KS.SYS returned 1073
+Info unload C:\DMAQA\CLASSQ~1\KS.SYS returned 0
+Info unload C:\DMAQA\CLASSQ~1\KS.SYS returned 0
+Info load C:\DMAQA\P000.SYS returned 20
+Info load C:\DMAQA\CLASSQ~1\KS.SYS returned 1073
+Info unload C:\DMAQA\CLASSQ~1\KS.SYS returned 1073
+Demand start, retry, conflicting paths, failure cleanup and service ownership PASS
+Info load C:\winnt31\system32\DRIVERS\WKHID.SYS returned 193
+Client-only load without starting a provider service 193
+Info load C:\winnt31\system32\DRIVERS\HIDPARSE.SYS returned 193
+Original parser native loader error 193, remaining service 1060
+Overall PASS
+GetVersion 0x02100A03
+Provider state before cleanup 1060
+Info unload C:\winnt31\system32\DRIVERS\HIDPARSE.SYS returned 0
+Cleanup after boot PASS
+Overall PASS
+
+Windows NT 3.50
+GetVersion 0x03273203
+Info load C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info load C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info load C:\DMAQA\KS.SYS returned 1073
+Info unload C:\DMAQA\KS.SYS returned 1073
+Info unload C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info unload C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info load C:\DMAQA\P000.SYS returned 20
+Info load C:\DMAQA\CLASS QA\KS.SYS returned 1073
+Info unload C:\DMAQA\CLASS QA\KS.SYS returned 1073
+Demand start, retry, conflicting paths, failure cleanup and service ownership PASS
+Info load C:\WINNT350\System32\DRIVERS\WKHID.SYS returned 0
+Info unload C:\WINNT350\System32\DRIVERS\WKHID.SYS returned 0
+Client-only load without starting a provider service 0
+Info load C:\WINNT350\System32\DRIVERS\HIDPARSE.SYS returned 0
+Info load C:\WINNT350\System32\DRIVERS\WKHID.SYS returned 0
+Info unload C:\WINNT350\System32\DRIVERS\WKHID.SYS returned 0
+Original parser and input client load PASS
+Info unload C:\WINNT350\System32\DRIVERS\HIDPARSE.SYS returned 1052
+Original parser stop 1052, service state 1
+Overall PASS
+GetVersion 0x03273203
+Provider state before cleanup 1
+Info unload C:\WINNT350\System32\DRIVERS\HIDPARSE.SYS returned 0
+Cleanup after boot PASS
+Overall PASS
+
+Windows NT 3.51
+GetVersion 0x04213303
+Info load C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info load C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info load C:\DMAQA\KS.SYS returned 1073
+Info unload C:\DMAQA\KS.SYS returned 1073
+Info unload C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info unload C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info load C:\DMAQA\P000.SYS returned 20
+Info load C:\DMAQA\CLASS QA\KS.SYS returned 1073
+Info unload C:\DMAQA\CLASS QA\KS.SYS returned 1073
+Demand start, retry, conflicting paths, failure cleanup and service ownership PASS
+Info load C:\WINNT351\System32\DRIVERS\WKHID.SYS returned 0
+Info unload C:\WINNT351\System32\DRIVERS\WKHID.SYS returned 0
+Client-only load without starting a provider service 0
+Info load C:\WINNT351\System32\DRIVERS\HIDPARSE.SYS returned 0
+Info load C:\WINNT351\System32\DRIVERS\WKHID.SYS returned 0
+Info unload C:\WINNT351\System32\DRIVERS\WKHID.SYS returned 0
+Original parser and input client load PASS
+Info unload C:\WINNT351\System32\DRIVERS\HIDPARSE.SYS returned 1052
+Original parser stop 1052, service state 1
+Overall PASS
+GetVersion 0x04213303
+Provider state before cleanup 1
+Info unload C:\WINNT351\System32\DRIVERS\HIDPARSE.SYS returned 0
+Cleanup after boot PASS
+Overall PASS
+
+Windows NT 4.0
+GetVersion 0x05650004
+Info load C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info load C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info load C:\DMAQA\KS.SYS returned 1073
+Info unload C:\DMAQA\KS.SYS returned 1073
+Info unload C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info unload C:\DMAQA\CLASS QA\KS.SYS returned 0
+Info load C:\DMAQA\P000.SYS returned 20
+Info load C:\DMAQA\CLASS QA\KS.SYS returned 1073
+Info unload C:\DMAQA\CLASS QA\KS.SYS returned 1073
+Demand start, retry, conflicting paths, failure cleanup and service ownership PASS
+Info load C:\WINNT\System32\DRIVERS\WKHID.SYS returned 0
+Info unload C:\WINNT\System32\DRIVERS\WKHID.SYS returned 0
+Client-only load without starting a provider service 0
+Info load C:\WINNT\System32\DRIVERS\HIDPARSE.SYS returned 0
+Info load C:\WINNT\System32\DRIVERS\WKHID.SYS returned 0
+Info unload C:\WINNT\System32\DRIVERS\WKHID.SYS returned 0
+Original parser and input client load PASS
+Info unload C:\WINNT\System32\DRIVERS\HIDPARSE.SYS returned 1052
+Original parser stop 1052, service state 1
+Overall PASS
+GetVersion 0x05650004
+Provider state before cleanup 1
+Info unload C:\WINNT\System32\DRIVERS\HIDPARSE.SYS returned 0
+Cleanup after boot PASS
+Overall PASS

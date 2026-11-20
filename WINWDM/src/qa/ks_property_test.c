@@ -3,6 +3,7 @@
 #include <ks.h>
 
 BOOLEAN NTAPI WkTestIntersection(PIRP irp);
+NTSTATUS WkStartKsFilter(PDRIVER_OBJECT driver);
 
 static const GUID pinCategory = {0x62011f10, 0x7422, 0x4189, {0x8a,1,2,3,4,5,6,7}};
 static const GUID nodeType = {0x62011f11, 0x7422, 0x4189, {0x8a,1,2,3,4,5,6,7}};
@@ -126,11 +127,6 @@ static BOOLEAN run(PIRP irp)
     return TRUE;
 }
 
-static VOID NTAPI unload(PDRIVER_OBJECT driver)
-{
-    (void)driver;
-}
-
 NTSTATUS NTAPI DriverEntry(PDRIVER_OBJECT driver, PUNICODE_STRING registryPath)
 {
     PIRP irp = IoAllocateIrp(1, FALSE);
@@ -142,6 +138,5 @@ NTSTATUS NTAPI DriverEntry(PDRIVER_OBJECT driver, PUNICODE_STRING registryPath)
     passed = run(irp);
     IoFreeIrp(irp);
     if (!passed) { trace("KS property client FAIL"); return STATUS_UNSUCCESSFUL; }
-    driver->DriverUnload = unload;
-    return STATUS_SUCCESS;
+    return WkStartKsFilter(driver);
 }
