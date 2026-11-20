@@ -17,6 +17,24 @@ The 9x tests checked the actual VMM32, VMM and VCACHE files. The direct PATCHMEM
 
 On the original Windows 3.00 retail image the managed installer did not recognize the installation. On Windows 3.1 and Windows for Workgroups 3.11, the installer recognized each edition and also rejected its installed `SYSTEM\USER.EXE`. The English distribution copies and these two installed binaries differed in their Setup user and organization fields. WINRAM's release documentation includes independently booted high-memory results for its own 3.1 and WfW 3.11 images. Its results and the local 3.0a result have different provenance. [Local managed-install transcripts](results/managed-detection.json)
 
+## Setup-personalized USER.EXE
+
+WINXPDM can build a local WINRAM executable for the English Windows 3.1, WfW 3.11, 95 OSR2, 98 SE and Me images used here. The original release's full-file SHA-256 check rejects their installed USER.EXE. Microsoft Setup writes the owner's name and organization into fixed-length string resources. Windows 9x also writes its product identifier. The local builder retains those exact bytes. It checks the entire file against the unpacked distribution fingerprint with just those fields normalized in memory. It applies the published WINRAM delta in memory, checks the resulting distribution fingerprint and adds the exact installed and patched hashes to a private copy of the catalog. The rebuilt installer keeps the upstream installer code and all normal digest checks. [Catalog builder](personalized.py)
+
+All five guests completed managed installation, `/VERIFY` and removal. Each restored its original USER.EXE byte for byte. All ten sampled system paths returned to their pre-installation state on each guest. The transcripts include the expected and restored hashes. [Five install and removal results](results/personalized/roundtrips.json)
+
+Windows 3.1 and WfW 3.11 booted in enhanced mode with 1 GiB. Each reported 262,003 physical pages through DPMI, wrote and read a marker on every page of 120 MiB of movable Win16 global memory, freed every block, and then ran the GPU, texture and dual-output checks in the same session. [Windows 3.1](results/personalized/win31-live.txt) · [WfW 3.11](results/personalized/wfw311-live.txt) · [Win16 memory probe](probe31.c)
+
+The three Windows 9x guests also booted the managed installation with 1 GiB. Each wrote and verified a marker on every 4 KiB page of a 128 MiB Win32 allocation and released it. [95 OSR2](results/personalized/win95osr-live.txt) · [98 SE](results/personalized/win98-live.txt) · [Me](results/personalized/winme-live.txt)
+
+The local build uses the published release ZIP, Open Watcom, NASM and a copy of USER.EXE from the intended guest. Choose a new output filename. The output includes a DOS executable and its Windows PIF. The public WINRAM v1.0 ZIP retains its original catalog.
+
+```sh
+python3 tests/winram/personalized.py WINRAM-v1.0.zip /path/to/SYSTEM/USER.EXE build/winram-local/WINRAM.EXE
+```
+
+For the automated install and removal checks below, use `--profile personalized`. The runner reads the guest's copy of USER.EXE directly. For the Win16 memory probe use `wcl -ml -3 -bt=windows -l=windows -os -fe=WR31TEST.EXE tests/winram/probe31.c`; put the executable and GPUCHECK.EXE in the Windows directory on a test copy. Boot with the installed HimemX manager and start `WIN /3 WR31TEST.EXE`. [GPU probe and driver setup](../gpu/windows/README.md)
+
 ## Reproduction
 
 Use a raw MBR disk with a primary FAT Windows partition and a FreeDOS 1.3 maintenance boot floppy. The runner copies the source disk into an empty per-system work directory, records pre-install SHA-256 hashes and runs the published executable in DOS. Use the same work directory for the removal pass. The install and removal summaries record the original presence or absence of files. A patched 9x system can have loose VMM and VCACHE VxDs where the original had only the compressed aggregate. [Maintenance runner](maintenance.py) · [FreeDOS 1.3 floppy images](https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.3/official/FD13-FloppyEdition.zip)

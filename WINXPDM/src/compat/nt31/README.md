@@ -6,6 +6,8 @@ Four fastcall entries adapt the XP spin-lock and IRQL conventions to the older H
 
 A separately linked system-start driver imported all six missing names on uniprocessor Windows NT 3.1 build 528. It verified IRQL transitions, spin-lock acquisition and release, aligned and unaligned reads, the configuration-space boundary and missing slots. It changed and restored the interrupt-line byte on the project's interrupt-free test device, and identified a second device behind a PCI bridge. The running guest passed all three checks. [Guest transcript](../../../tests/gpu/results/nt31-forceware/kernel.txt) · [Native probe](../../../tests/gpu/nt31/probe.c)
 
+On the MSI GTX 980 Gaming 4G, the manufacturer specifies three DisplayPort 1.2 connectors and one HDMI 2.0 connector. DisplayPort HBR2 is the maximum rate for those DisplayPort outputs. HBR3 qualification needs a board with a transmitter that supports it. [MSI board specifications](https://www.msi.com/Graphics-Card/GTX-980-GAMING-4G/Specification)
+
 ## Reproduction
 
 Use i686 MinGW-w64, its DDK headers, Python and pefile. Run the following from the WINXPDM directory. The second command creates a separate private file for one of the two recognized miniport builds.

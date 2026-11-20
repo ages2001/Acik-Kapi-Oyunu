@@ -1,0 +1,4 @@
+Windows 4.0.1111
+physical_KiB=1047944
+available_KiB=1014688
+committed_written_read_released_MiB=128

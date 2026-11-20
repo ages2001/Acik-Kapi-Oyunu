@@ -4,7 +4,7 @@ WINXPDM is a development port of the Windows XP display driver model to older Wi
 
 A second native driver submits vertex and fragment shaders to QEMU's VirtIO GPU. The Windows probes check interpolation, depth and texture sampling. The dual-output test presents two different images. Install the matching package, select **Keep my display driver and install VirtIO 3D**, and choose **Test 3D** in Info. [Windows GPU results and instructions](tests/gpu/windows/README.md)
 
-The reference Windows driver supports PCI 1234:1111. Seven native packages include the English setup wizard, Info and shell-integrated removal. [Windows guest results](tests/README.md) · [WINRAM memory tests](tests/winram/README.md)
+The reference Windows driver supports PCI 1234:1111. Seven native packages include the English setup wizard, Info and shell-integrated removal. The optional WINRAM integration was tested with 1 GiB on enhanced Windows 3.0a, 3.1, WfW 3.11, 95 OSR2, 98 SE and Me. [Windows guest results](tests/README.md) · [WINRAM memory tests](tests/winram/README.md)
 
 QEMU exposes a linear framebuffer and the Bochs display registers. The display modules share the register programming code. Windows 3.x uses a Win16 display DDI, Windows 9x uses a display DRV and a VxD, and Windows NT uses a video miniport and a GDI display DLL. NT 3.x loads its display DLL into the windowing subsystem. NT 4.0 and later load the kernel-mode DLL. Loading independent vendors’ XPDM binaries on earlier systems also requires the operating-system interfaces those binaries call. The vendor compatibility work is in progress.
 

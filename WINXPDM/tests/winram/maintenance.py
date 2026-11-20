@@ -1,4 +1,4 @@
-"""Install or remove the verified WINRAM release on a disposable FAT Windows guest."""
+"""Install, verify or remove WINRAM on a disposable FAT Windows guest."""
 import argparse
 import hashlib
 import json
@@ -9,7 +9,8 @@ import subprocess
 import tempfile
 import zipfile
 
-WINRAM_SHA256 = "0475719cd4f86d5292a6fda6864db0923dce7b52f8f1746da157a25896494714"
+from personalized import WINRAM_SHA256, build as build_personalized
+
 CHECK_FILES = (
     "SYSTEM.INI", "WIN.COM", "SYSTEM/USER.EXE", "SYSTEM/KRNL386.EXE",
     "SYSTEM/WIN386.EXE", "SYSTEM/KERNEL32.DLL", "SYSTEM/SYSDM.CPL",
@@ -55,8 +56,8 @@ def write_guest(image, name, data, directory):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("phase", choices=("install", "remove"))
-    parser.add_argument("--profile", choices=("managed", "patchmem"), default="managed")
+    parser.add_argument("phase", choices=("install", "verify", "remove"))
+    parser.add_argument("--profile", choices=("managed", "patchmem", "personalized"), default="managed")
     parser.add_argument("--patchmem-option", action="append", choices=("/M", "/C:64", "/C:256"), default=[])
     parser.add_argument("--source-disk", required=True, type=Path)
     parser.add_argument("--work", required=True, type=Path, help="A separate directory for this guest")
@@ -65,7 +66,10 @@ def main():
     parser.add_argument("--windows", default="WINDOWS")
     parser.add_argument("--qemu", required=True, type=Path)
     parser.add_argument("--bios", action="append", default=[], type=Path)
+    parser.add_argument("--timeout", type=int, default=360, help="DOS maintenance timeout in seconds")
     args = parser.parse_args()
+    if args.phase == "verify" and args.profile == "patchmem":
+        parser.error("The direct PATCHMEM profile uses its own installation report")
     if hashlib.sha256(args.archive.read_bytes()).hexdigest() != WINRAM_SHA256:
         raise ValueError("Unexpected WINRAM release archive")
     args.work.mkdir(parents=True, exist_ok=True)
@@ -86,10 +90,21 @@ def main():
         raw = args.profile == "patchmem"
         if args.phase == "install":
             before.write_text(json.dumps(fingerprints(partition, args.windows), indent=2) + "\n")
-            with zipfile.ZipFile(args.archive) as z:
-                write_guest(partition, "WINRAM.EXE", z.read("bin/WINRAM.EXE"), temp)
+            if args.profile == "personalized":
+                binary = temp / "local.exe"
+                user = guest_file(partition, args.windows + "/SYSTEM/USER.EXE")
+                if user is None:
+                    raise ValueError("The guest is missing SYSTEM/USER.EXE")
+                variant = build_personalized(args.archive, user, binary)
+                (args.work / "catalog-entry.json").write_text(json.dumps(variant, indent=2) + "\n")
+                write_guest(partition, "WINRAM.EXE", binary.read_bytes(), temp)
+            else:
+                with zipfile.ZipFile(args.archive) as z:
+                    write_guest(partition, "WINRAM.EXE", z.read("bin/WINRAM.EXE"), temp)
             commands = [f"A:\\CAPTURE /I {target} >C:\\WRINST.TXT",
                         f"A:\\CAPTURE /VERIFY {target} >C:\\WRVERIFY.TXT"]
+        elif args.phase == "verify":
+            commands = [f"A:\\CAPTURE /VERIFY {target} >C:\\WRVERIFY.TXT"]
         else:
             commands = [f"A:\\CAPTURE /UNINSTALL /YES {target} >C:\\WRREMOVE.TXT"]
         if raw:
@@ -117,10 +132,12 @@ def main():
                "-monitor", "none", "-serial", "none", "-nic", "none", "-no-reboot"]
         for path in args.bios:
             cmd += ["-L", path]
-        p = subprocess.run(cmd, timeout=120)
+        p = subprocess.run(cmd, timeout=args.timeout)
         if p.returncode != 33:
             raise RuntimeError(f"DOS maintenance batch did not finish (QEMU {p.returncode})")
-    names = (("WRINST.TXT",) if raw else ("WRINST.TXT", "WRVERIFY.TXT")) if args.phase == "install" else ("WRREMOVE.TXT",)
+    names = ("WRINST.TXT",) if raw else ("WRINST.TXT", "WRVERIFY.TXT")
+    if args.phase == "remove":
+        names = ("WRREMOVE.TXT",)
     logs = {}
     for name in names:
         data = guest_file(partition, name)
@@ -133,8 +150,11 @@ def main():
         passed = "Patch Installed Successfully" in logs["WRINST.TXT"] and "SYSTEM/VMM32.VXD" in changes
     elif raw:
         passed = "Uninstall Completed" in logs["WRREMOVE.TXT"] and "SYSTEM/VMM32.VXD" not in changes
-    elif args.phase == "install":
+    elif args.phase != "remove":
         passed = state and bool(changes) and "Installation verified." in logs["WRVERIFY.TXT"]
+        if passed and args.profile == "personalized":
+            entry = json.loads((args.work / "catalog-entry.json").read_text())
+            passed = current["SYSTEM/USER.EXE"] == entry["modified"] and original["SYSTEM/USER.EXE"] == entry["original"]
     else:
         passed = not state and not changes and any("restored" in v.lower() or "uninstalled" in v.lower()
                                                    for v in logs["WRREMOVE.TXT"])

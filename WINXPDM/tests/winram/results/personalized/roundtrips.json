@@ -1,0 +1,218 @@
+{
+  "win31": {
+    "catalog": {
+      "profile": "windows31",
+      "original": "661584df9a03cdf74ab47acbe3d6880f4420a554354b3613d0697f8bec6f3d70",
+      "modified": "f015114d52c90b84cb88517d102eb840f9234264c801f841c0b506c20f2ff49e"
+    },
+    "installation_messages": [
+      "WINRAM 1.0",
+      "Microsoft Windows 3.1",
+      "C:\\WINDOWS",
+      "Installed. Restart the target system."
+    ],
+    "verification_messages": [
+      "WINRAM 1.0",
+      "Microsoft Windows 3.1",
+      "C:\\WINDOWS",
+      "Installation verified."
+    ],
+    "changed_by_installation": [
+      "SYSTEM.INI",
+      "WIN.COM",
+      "SYSTEM/USER.EXE",
+      "SYSTEM/KRNL386.EXE",
+      "SYSTEM/WIN386.EXE"
+    ],
+    "removal_messages": [
+      "WINRAM 1.0",
+      "Microsoft Windows 3.1",
+      "C:\\WINDOWS",
+      "Uninstalled. Original backups retained."
+    ],
+    "restored_user_exe_sha256": "661584df9a03cdf74ab47acbe3d6880f4420a554354b3613d0697f8bec6f3d70",
+    "files_from_baseline": 10,
+    "baseline_mismatches": []
+  },
+  "wfw311": {
+    "catalog": {
+      "profile": "wfw311",
+      "original": "d0a49f345df62480c3c2c1e5686b364aa45b96b78421f70e394992ea6026606c",
+      "modified": "1da78f1374f3c050cfcb17537adf62c06e342354ddacd30e682aab480fb805ee"
+    },
+    "installation_messages": [
+      "WINRAM 1.0",
+      "Windows for Workgroups 3.11",
+      "C:\\WINDOWS",
+      "Installed. Restart the target system."
+    ],
+    "verification_messages": [
+      "WINRAM 1.0",
+      "Windows for Workgroups 3.11",
+      "C:\\WINDOWS",
+      "Installation verified."
+    ],
+    "changed_by_installation": [
+      "SYSTEM.INI",
+      "SYSTEM/USER.EXE",
+      "SYSTEM/KRNL386.EXE",
+      "SYSTEM/WIN386.EXE"
+    ],
+    "removal_messages": [
+      "WINRAM 1.0",
+      "Windows for Workgroups 3.11",
+      "C:\\WINDOWS",
+      "Uninstalled. Original backups retained."
+    ],
+    "restored_user_exe_sha256": "d0a49f345df62480c3c2c1e5686b364aa45b96b78421f70e394992ea6026606c",
+    "files_from_baseline": 10,
+    "baseline_mismatches": []
+  },
+  "win95osr": {
+    "catalog": {
+      "profile": "win95",
+      "original": "73e6c90cc14484b38c83fe0418c5872e4508140cac02cf5cdfa9a0a8c0384d36",
+      "modified": "d2394b230d0c52694f521118fefbf4e0c6c691e564f2b976e705763a4a0cc6b0"
+    },
+    "installation_messages": [
+      "WINRAM 1.0",
+      "Windows 95 OSR2 (4.00.1111)",
+      "C:\\WINDOWS",
+      "",
+      "Windows 95/98/SE/ME RAM Limitation Patch  Version 7.2",
+      "Copyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.",
+      "",
+      "VMM File Extracted",
+      "VCACHE File Extracted",
+      "VMM32 Patched",
+      "VMM Patched",
+      "VCACHE Patched",
+      "",
+      "Patch Installed Successfully",
+      "",
+      "Installed. Restart the target system."
+    ],
+    "verification_messages": [
+      "WINRAM 1.0",
+      "Windows 95 OSR2 (4.00.1111)",
+      "C:\\WINDOWS",
+      "Installation verified."
+    ],
+    "changed_by_installation": [
+      "SYSTEM.INI",
+      "SYSTEM/USER.EXE",
+      "SYSTEM/KERNEL32.DLL",
+      "SYSTEM/SYSDM.CPL",
+      "SYSTEM/VMM32.VXD",
+      "SYSTEM/VMM32/VMM.VXD",
+      "SYSTEM/VMM32/VCACHE.VXD"
+    ],
+    "removal_messages": [
+      "WINRAM 1.0",
+      "Windows 95 OSR2 (4.00.1111)",
+      "C:\\WINDOWS",
+      "Uninstalled. Original backups retained."
+    ],
+    "restored_user_exe_sha256": "73e6c90cc14484b38c83fe0418c5872e4508140cac02cf5cdfa9a0a8c0384d36",
+    "files_from_baseline": 10,
+    "baseline_mismatches": []
+  },
+  "win98": {
+    "catalog": {
+      "profile": "win98",
+      "original": "6837ffb9cabbb5b42093a9c56a052e89b279276bc531ef5623d0fe30632e627c",
+      "modified": "133c6e58e53f5b07811e5a36287d538a44279904e523246b4199e57eb132ded3"
+    },
+    "installation_messages": [
+      "WINRAM 1.0",
+      "Windows 98 Second Edition (4.10.2222)",
+      "C:\\WINDOWS",
+      "",
+      "Windows 95/98/SE/ME RAM Limitation Patch  Version 7.2",
+      "Copyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.",
+      "",
+      "VMM File Extracted",
+      "VCACHE File Extracted",
+      "VMM32 Patched",
+      "VMM Patched",
+      "VCACHE Patched",
+      "",
+      "Patch Installed Successfully",
+      "",
+      "Installed. Restart the target system."
+    ],
+    "verification_messages": [
+      "WINRAM 1.0",
+      "Windows 98 Second Edition (4.10.2222)",
+      "C:\\WINDOWS",
+      "Installation verified."
+    ],
+    "changed_by_installation": [
+      "SYSTEM.INI",
+      "SYSTEM/USER.EXE",
+      "SYSTEM/KERNEL32.DLL",
+      "SYSTEM/SYSDM.CPL",
+      "SYSTEM/VMM32.VXD",
+      "SYSTEM/VMM32/VMM.VXD",
+      "SYSTEM/VMM32/VCACHE.VXD"
+    ],
+    "removal_messages": [
+      "WINRAM 1.0",
+      "Windows 98 Second Edition (4.10.2222)",
+      "C:\\WINDOWS",
+      "Uninstalled. Original backups retained."
+    ],
+    "restored_user_exe_sha256": "6837ffb9cabbb5b42093a9c56a052e89b279276bc531ef5623d0fe30632e627c",
+    "files_from_baseline": 10,
+    "baseline_mismatches": []
+  },
+  "winme": {
+    "catalog": {
+      "profile": "winme",
+      "original": "11d282ad3b270b2743360ce1e401ec2e736fd90a0fc82f9ac9a90cbc2089c2cd",
+      "modified": "9dd4e3fb59e444bec5d011037120a888d7de2b8667d10c509069c83db5e6a2bb"
+    },
+    "installation_messages": [
+      "WINRAM 1.0",
+      "Windows Millennium Edition (4.90.3000)",
+      "C:\\WINDOWS",
+      "",
+      "Windows 95/98/SE/ME RAM Limitation Patch  Version 7.2",
+      "Copyright (C) 2007-2013 by Rudolph R. Loew. All Rights Reserved.",
+      "",
+      "VMM File Extracted",
+      "VCACHE File Extracted",
+      "VMM32 Patched",
+      "VMM Patched",
+      "VCACHE Patched",
+      "",
+      "Patch Installed Successfully",
+      "",
+      "Installed. Restart the target system."
+    ],
+    "verification_messages": [
+      "WINRAM 1.0",
+      "Windows Millennium Edition (4.90.3000)",
+      "C:\\WINDOWS",
+      "Installation verified."
+    ],
+    "changed_by_installation": [
+      "SYSTEM.INI",
+      "SYSTEM/USER.EXE",
+      "SYSTEM/KERNEL32.DLL",
+      "SYSTEM/SYSDM.CPL",
+      "SYSTEM/VMM32.VXD",
+      "SYSTEM/VMM32/VMM.VXD",
+      "SYSTEM/VMM32/VCACHE.VXD"
+    ],
+    "removal_messages": [
+      "WINRAM 1.0",
+      "Windows Millennium Edition (4.90.3000)",
+      "C:\\WINDOWS",
+      "Uninstalled. Original backups retained."
+    ],
+    "restored_user_exe_sha256": "11d282ad3b270b2743360ce1e401ec2e736fd90a0fc82f9ac9a90cbc2089c2cd",
+    "files_from_baseline": 10,
+    "baseline_mismatches": []
+  }
+}
