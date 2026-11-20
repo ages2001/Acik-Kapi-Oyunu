@@ -30,7 +30,7 @@ static VkShaderModule load(VkDevice device,const char *path)
 
 int main(int argc,char **argv)
 {
-    if (argc!=4) { fprintf(stderr,"Usage: radv_pipeline FAMILY VERT.spv FRAG.spv\n"); return 2; }
+    if (argc!=4 && argc!=5) { fprintf(stderr,"Usage: radv_pipeline FAMILY VERT.spv FRAG.spv [FRAGMENT_OPCODE]\n"); return 2; }
     const char *family=argv[1];
     if (strcmp(family,"GFX1200") && strcmp(family,"GFX1201")) return 2;
     setenv("RADV_FORCE_FAMILY",family,1);
@@ -119,7 +119,7 @@ int main(int argc,char **argv)
             check(internals(device,&bin,&nr,reps),"assembly");
             const char *assembly=reps[j].pData;
             printf("Executable=%s Stages=0x%x Representation=%s\n%s\n",list[i].name,list[i].stages,reps[j].name,assembly);
-            if (strstr(assembly,"s_endpgm") && (strstr(assembly,"image_sample") || !(list[i].stages&VK_SHADER_STAGE_FRAGMENT_BIT)))
+            if (strstr(assembly,"s_endpgm") && (strstr(assembly,argc==5?argv[4]:"image_sample") || !(list[i].stages&VK_SHADER_STAGE_FRAGMENT_BIT)))
                 verified|=list[i].stages;
             free(reps[j].pData); reps[j].pData=NULL;
         }

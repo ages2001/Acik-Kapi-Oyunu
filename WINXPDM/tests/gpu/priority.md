@@ -13,6 +13,8 @@ Comparison of NVIDIA's x86 display INF with the community INF found 1,990 origin
 
 These are native class-driver enumerations from actual XP guests. SetupAPI coalesces some model aliases. Detecting the physical adapter, starting the miniport and rendering on it are further tests. [XP x86 transcript](results/forceware-382.69/setupapi-x86.tsv) · [XP x64 transcript](results/forceware-382.69/setupapi-amd64.tsv) · [Guest probe](vendor_list.c)
 
+The wider XP check lets native SetupAPI select a compatible driver for one representative hardware ID per graphics controller. It selected the expected installation section for all 750 x86 and 537 AMD64 entries. Together the runs cover 827 distinct PCI IDs, including the 793 in the original-media inventory and 34 additional community IDs. Each case uses one INF and records the rank and section. [x86 results](results/xp-selection-32.tsv) · [AMD64 results](results/xp-selection-64.tsv) · [Reproduction](README.md#native-xp-compatible-driver-selection)
+
 The upstream rebuild passed all extraction checks using stock 368.81 and six SHA-256-matched NVIDIA driver donors. It reproduced the release runtime, including 130 donor resources. It checked 636 non-generated files and 469 Control Panel comparison files. The outer repacked installer has a different SHA-256. For the Quadro 390.77 donor the international 32-bit download below supplied the required miniport hash. [Rebuild results](results/forceware-382.69/rebuild.json) · [Upstream rebuild instructions](https://github.com/SupraGSX/Forceware-382.69/blob/91ad42bc4fab7d710ce6861e044620fe63d28d38/REBUILDING.md) · [NVIDIA Quadro 390.77](https://us.download.nvidia.com/Windows/Quadro_Certified/390.77/390.77-quadro-grid-desktop-notebook-win8-win7-32bit-international-whql.exe)
 
 The original x86 community miniport imports 173 functions and the display DLL imports 82. Both resolve against XP x86. On Windows 2000 the display DLL resolves and the miniport needs five additional functions. NT 4.0, 3.51, 3.5 and 3.1 have larger import or module gaps. Resolving imports is only the loader portion of a port. [Operating-system import comparison](results/forceware-382.69/nt-imports.tsv)
@@ -27,9 +29,11 @@ The original x86 community miniport imports 173 functions and the display DLL im
 | Maxwell/Pascal hardware color methods | B097, B197 and C197 each returned 260 expected framebuffer words across two formats, including guard words and clipped channel clears. |
 | Mesa Nouveau graphics compiler | GM107, GM108, GM200, GM204, GM206, GP102, GP104, GP106, GP107 and GP108 each linked the vertex and textured fragment shader, emitted machine code for both stages and submitted a validation draw to the no-op DRM interface. Each renderer string matched the requested chipset. |
 | Mesa RADV graphics compiler | GFX1200 (Navi 44, including RX 9060 XT) and GFX1201 (Navi 48, including RX 9070 XT) each created a graphics pipeline. Both reported vertex and fragment assembly, texture sampling and program termination. |
+| Native fragment execution | Two GLSL programs compiled for ten Maxwell/Pascal and two Navi targets run inside the QEMU PCI fixture. All twelve targets passed gradient, texture, depth, changed-instruction and error-path checks on each of fourteen Windows installations. |
+| Vendor PCI registers and VRAM | All sixteen desktop profiles passed conventional PCI and PCI Express tests for identification, BAR sizing, MMIO and VRAM. NVIDIA profiles also passed chip ID and timer checks. AMD profiles passed direct and indirect VRAM coherence checks. [Results](results/board-pci.tsv) |
 | VirtIO/VirGL control | A guest drew and read back opaque red and blue pixels. The reported host renderer was LLVMpipe. |
 
-The compiler guests use Linux 6.12.107 and Mesa 25.0.7. The vertex and fragment inputs are shared across NVIDIA and AMD. The chipset compiler tests produce native GPU instructions without executing them on a board. The QEMU color target executes its supported methods independently of the compiler tests. None of these results verifies a Windows vendor miniport's complete path from draw submission to scanout. [Full guest transcript and machine code](results/priority-qemu.txt) · [QEMU color method implementation and reproduction](../../src/emulation/README.md) · [VirGL readback](results/virgl-linux.txt)
+The compiler guests use Linux 6.12.107 and Mesa 25.0.7. The vertex and fragment inputs are shared across NVIDIA and AMD. The original compiler validation draw uses a no-op DRM interface. The new fragment unit executes the actual gradient and texture binaries from these compiler guests. The Windows probes submit those programs over the lab PCI interface. Vendor miniport command submission and scanout have separate board tests. [Full guest transcript and machine code](results/priority-qemu.txt) · [QEMU color method implementation and reproduction](../../src/emulation/README.md) · [VirGL readback](results/virgl-linux.txt)
 
 ### Reproduce the compiler and display-policy tests
 
@@ -45,6 +49,18 @@ python3 tests/gpu/priority_guest.py --qemu "$QEMU" --linux "$KERNEL" --busybox "
 ## Native Windows guest command tests
 
 The guest probes now send NVIDIA B097/B197/C197 color-target commands and an NV902D solid triangle to a QEMU PCI test function. A separate RDNA 4 path executes SDMA 7 constant fill and unaligned linear copy from Linux's packet layout. The graphical scene uses a native VirtIO shader driver on each Windows family. Two independently presented scanouts and the GPU memory behind them are checked. The per-version logs distinguish the render and command paths. [Guest matrix and captures](windows/README.md)
+
+To regenerate the fragment fixtures, run the compiler-guest command above twice with `--fragment-program gradient` and `--fragment-program sample`, writing `gradient.log` and `sample.log`. Then run the extractor and compare the header and all 24 hashes.
+
+```sh
+python3 tests/gpu/shaders/fragment_words.py gradient.log sample.log fragments.h fragment-binaries.tsv
+cmp fragments.h tests/gpu/windows/fragment_words.h
+cmp fragment-binaries.tsv tests/gpu/results/fragment-binaries.tsv
+```
+
+## Vendor miniports on emulated boards
+
+Windows XP x86 installed community 382.69 for both GTX 980 and GTX 1050 Ti. XP Professional x64 installed stock 368.81 with the desktop Maxwell INF entry for the GTX 980. The original vendor miniport binaries were used on XP. The guest recorded PCI hardware ID, service and restart request. On reboot, both x86 cases stopped with 0x7F and the x64 case stopped with 0x7E. The QEMU model recorded chip identification and the first unimplemented register accesses. Windows 2000 installed its local port for the GTX 980 and reached MMIO. The Radeon trials used display INFs from the original AMD packages. [Installations, stop screens and register traces](results/board-windows/README.md)
 
 ## Monitor and acceleration acceptance
 
@@ -68,8 +84,8 @@ The Forceware publisher reports GDI, Direct3D and OpenGL rendering over HDMI wit
 
 ## Windows 2000 driver port
 
-The Windows 2000 companion supplies the five missing direct imports. A system-start probe exercised them successfully in the guest kernel. A second test actually entered the x86 Forceware miniport and observed its native video-port initialization. The XP miniport supplied an 84-byte structure and the Windows 2000 video port accepted its compatible 80-byte prefix. The VM had no matching NVIDIA PCI device and the driver service stayed stopped. [Source, binary and guest transcripts](../../src/compat/win2000/README.md)
+The Windows 2000 companion supplies the five missing direct imports. A system-start probe exercised them successfully in the guest kernel. A second test actually entered the x86 Forceware miniport and observed its native video-port initialization. The XP miniport supplied an 84-byte structure and the Windows 2000 video port accepted its compatible 80-byte prefix. The original control VM had no NVIDIA adapter. In a second Windows 2000 guest with the GTX 980 PCI profile, SetupAPI installed the adapted package, and the card received MMIO after restart. The guest did not reach a working desktop on that boot. [Source, binary and guest transcripts](../../src/compat/win2000/README.md)
 
 ## Windows NT 3.1 and GTX 980
 
-The native NT 3.1 HAL companion supplies the six missing hardware-abstraction functions shared by NVIDIA 368.81 and SupraGSX 382.69 x86. Both private miniport copies resolve all 15 HAL imports. A booted NT 3.1 kernel exercised the XP calling conventions and PCI configuration reads and writes on two virtual PCI buses. The remaining 66 kernel and video-port imports, display DLL integration and board bring-up still gate GTX 980 operation. [Companion source and results](../../src/compat/nt31/README.md)
+The native NT 3.1 HAL companion supplies the six missing hardware-abstraction functions shared by NVIDIA 368.81 and SupraGSX 382.69 x86. Both private miniport copies resolve all 15 HAL imports. A booted NT 3.1 kernel exercised the XP calling conventions and PCI configuration reads and writes on two virtual PCI buses. The service companion implements a further 18 kernel and video-port calls, each exercised in the running NT 3.1 kernel. Both miniports still have 48 unresolved direct imports. The display DLL also needs integration with the older user-mode display subsystem. [Companion source and results](../../src/compat/nt31/README.md)

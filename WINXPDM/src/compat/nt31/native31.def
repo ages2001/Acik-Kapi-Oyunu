@@ -1,0 +1,11 @@
+LIBRARY NTOSKRNL.EXE
+EXPORTS
+ExInitializeResource@4
+ExDeleteResource@4
+ExAcquireResourceShared@8
+ExAcquireResourceExclusive@8
+ExReleaseResource@4
+ObDereferenceObject@4
+IoCallDriver@8
+KeGetPreviousMode@0
+KeQueryTickCount@4

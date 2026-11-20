@@ -20,7 +20,7 @@ int PASCAL WinMain(HINSTANCE self, HINSTANCE previous, LPSTR args, int show)
     HINSTANCE driver;
     Draw draw;
     char msg[200];
-    int rc;
+    int rc, engines_ok;
     WORD version = LOWORD(GetVersion());
     (void)self; (void)previous; (void)args; (void)show;
     wsprintf(msg,"WINXPDM guest %u.%u enhanced=%u\r\n", LOBYTE(version), HIBYTE(version),
@@ -29,7 +29,7 @@ int PASCAL WinMain(HINSTANCE self, HINSTANCE previous, LPSTR args, int show)
     if ((UINT)(driver = LoadLibrary("WXPGPU.DRV")) < 32) { report("driver load failed\r\n"); return 1; }
     draw = (Draw)GetProcAddress(driver, "WXPDRAWTRIANGLES");
     if (!draw) { report("driver entry missing\r\n"); FreeLibrary(driver); return 1; }
-    check_engines(report);
+    engines_ok = check_engines(report);
     rc = draw(&scene, &frame);
     wsprintf(msg,"draw=%u request=%04x response=%04x commands=%lu fence=%lu outputs=%lu enabled=%lx edid=%lx scanouts=%lx center=%08lx\r\n",
              rc,(unsigned)frame.request,(unsigned)frame.response,frame.completed,frame.fence,frame.outputs,
@@ -42,5 +42,5 @@ int PASCAL WinMain(HINSTANCE self, HINSTANCE previous, LPSTR args, int show)
         report(rc ? "texture FAIL\r\n" : "texture PASS 1024 pixels\r\n");
     }
     FreeLibrary(driver);
-    return rc;
+    return rc || !engines_ok;
 }

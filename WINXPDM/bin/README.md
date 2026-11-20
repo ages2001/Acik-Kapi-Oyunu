@@ -16,8 +16,8 @@ The seven packages include `GPUVIEW.EXE`. The three Win16-compatible packages lo
 
 The same filenames identify different formats across Windows generations. Keep them with the other files in their package. These are development builds. The [guest test matrix](../tests/README.md) records which operations have run on each Windows version.
 
-`TESTX86` and `TESTX64` contain guest-only diagnostic executables. D3DTEST and D3D9TEST run the Direct3D 7 and 9 pixel checks, INFTEST checks the three Maxwell INF additions, VENDLIST enumerates native Windows class-driver matches, and XPPROBE reads the active display mode and binding. Build these with `sh tools/build_gpu_tests.sh`. [GPU test methods](../tests/gpu/README.md)
+`TESTX86` and `TESTX64` contain guest-only diagnostic executables. D3DTEST and D3D9TEST run the Direct3D 7 and 9 pixel checks, INFTEST checks the three Maxwell INF additions, VENDLIST enumerates native Windows class-driver matches, and XPPROBE reads the active display mode and binding. `SELECT.EXE` measures compatible INF sections and ranks for an inventory. `BIND.EXE` requests an actual installation on a disposable board VM and records the device status. Build these with `sh tools/build_gpu_tests.sh`. [GPU test methods](../tests/gpu/README.md)
 
 `W2KCOMP/WXP2KAPI.SYS` is the separately built Windows 2000 x86 compatibility module for private Forceware 382.69 tests. It is used with an adapted local miniport. [Build inputs and guest results](../src/compat/win2000/README.md)
 
-`NT31COMP/W3H.SYS` is the NT 3.1 x86 HAL companion for private tests of NVIDIA 368.81 and SupraGSX 382.69. [Build inputs and kernel results](../src/compat/nt31/README.md)
+`NT31COMP/W3H.SYS` supplies six HAL functions and `NT31COMP/W3PORT.SYS` supplies 18 kernel and video-port functions on NT 3.1 x86 for private tests of NVIDIA 368.81 and SupraGSX 382.69. [Build inputs and kernel results](../src/compat/nt31/README.md)

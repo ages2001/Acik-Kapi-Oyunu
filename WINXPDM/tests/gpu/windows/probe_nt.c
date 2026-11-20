@@ -34,7 +34,7 @@ static NTSTATUS check(void)
         KeDelayExecutionThread(KernelMode,FALSE,&delay);
     }
     if (!NT_SUCCESS(status)) { emit("open="); hex(status); emit("\n"); return status; }
-    check_engines(emit);
+    int engines_ok = check_engines(emit);
     status = ZwDeviceIoControlFile(device,NULL,NULL,NULL,&iosb,WXP_GPU_IOCTL,
                                    (PVOID)&scene,sizeof(scene),&frame,sizeof(frame));
     emit("ioctl="); hex(status); emit(" bytes="); hex((uint32_t)iosb.Information);
@@ -53,7 +53,7 @@ static NTSTATUS check(void)
         emit("texture FAIL\n"); return STATUS_UNSUCCESSFUL;
     }
     emit("texture PASS 1024 pixels\n");
-    return STATUS_SUCCESS;
+    return engines_ok ? STATUS_SUCCESS : STATUS_UNSUCCESSFUL;
 }
 
 static void NTAPI worker(PVOID arg)

@@ -1,0 +1,6 @@
+winxpdm gtx1050ti unimplemented read at 0x1070
+winxpdm gtx1050ti unimplemented read at 0x4
+winxpdm gtx1050ti unimplemented read at 0x1373a0
+winxpdm gtx1050ti unimplemented write at 0x1373a0
+winxpdm gtx1050ti unimplemented read at 0x21c04
+winxpdm gtx1050ti unimplemented read at 0x610018

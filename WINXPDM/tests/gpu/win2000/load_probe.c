@@ -28,7 +28,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR args, int show)
         CloseServiceHandle(manager);
         return 1;
     }
-    fputs("Requesting miniport start in a VM with no NVIDIA PCI adapter\n", log);
+    fputs("Requesting miniport start on the Windows 2000 video port\n", log);
     fflush(log);
     BOOL started = StartServiceA(service, 0, NULL);
     DWORD error = started ? ERROR_SUCCESS : GetLastError();

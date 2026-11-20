@@ -1,0 +1,19 @@
+NativeBits=64
+HardwareID=PCI\VEN_1002&DEV_7550&SUBSYS_24371458&REV_C0
+Description=Standard VGA Graphics Adapter
+Service=vga
+NodeStatus=01806502
+Problem=12
+ServiceState=4
+ServiceWin32Exit=0
+Requesting vendor INF binding
+UpdateResult=0
+UpdateError=e0000203
+RestartRequested=0
+HardwareID=PCI\VEN_1002&DEV_7550&SUBSYS_24371458&REV_C0
+Description=Standard VGA Graphics Adapter
+Service=vga
+NodeStatus=01806502
+Problem=12
+ServiceState=4
+ServiceWin32Exit=0

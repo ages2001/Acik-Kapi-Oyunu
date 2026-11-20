@@ -1,0 +1,12 @@
+WXP2K companion loaded
+WXP2K notification and synchronization event checks passed
+WXP2K version agrees with running Windows 2000 kernel
+WXP2K debug printing returned
+WXP2K PASS
+mmio-reads	0
+mmio-writes	0
+identity-reads	0
+unknown-reads	0
+unknown-writes	0
+first-unknown-read	0x0
+first-unknown-write	0x0

@@ -1,0 +1,20 @@
+LIBRARY W3PORT.SYS
+EXPORTS
+ExAllocatePoolWithTag=WxpAllocate@12
+ExFreePoolWithTag=WxpFree@8
+ExInitializeResourceLite=WxpInitializeResource@4
+ExDeleteResourceLite=WxpDeleteResource@4
+ExAcquireResourceSharedLite=WxpAcquireShared@8
+ExAcquireResourceExclusiveLite=WxpAcquireExclusive@8
+ExReleaseResourceLite=@WxpReleaseResource@4
+ExGetPreviousMode=WxpPreviousMode@0
+IofCallDriver=@WxpCallDriver@8
+IoAllocateWorkItem=WxpAllocateWorkItem@4
+IoQueueWorkItem=WxpQueueWorkItem@16
+IoFreeWorkItem=WxpFreeWorkItem@4
+KeClearEvent=WxpClearEvent@4
+KeQueryInterruptTime=WxpInterruptTime@0
+VideoPortGetCurrentIrql=WxpVideoIrql@4
+VideoPortCreateEvent=WxpCreateEvent@16
+VideoPortWaitForSingleObject=WxpWait@12
+VideoPortDeleteEvent=WxpDeleteEvent@8

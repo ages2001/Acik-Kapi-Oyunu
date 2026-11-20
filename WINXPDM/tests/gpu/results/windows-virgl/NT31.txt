@@ -5,6 +5,18 @@ Pascal B C197 + 902D PASS
 RDNA 4 SDMA 7 fill, unaligned copy and guards PASS
 DPCD sink model HBR3 x4 TPS1/TPS4 and adjust request PASS
 HDMI SCDC sink model 594 MHz 1:40 and 148.5 MHz 1:10 PASS
+GM107 gradient, texture, depth, changed multiply and invalid opcode PASS
+GM108 gradient, texture, depth, changed multiply and invalid opcode PASS
+GM200 gradient, texture, depth, changed multiply and invalid opcode PASS
+GM204 gradient, texture, depth, changed multiply and invalid opcode PASS
+GM206 gradient, texture, depth, changed multiply and invalid opcode PASS
+GP102 gradient, texture, depth, changed multiply and invalid opcode PASS
+GP104 gradient, texture, depth, changed multiply and invalid opcode PASS
+GP106 gradient, texture, depth, changed multiply and invalid opcode PASS
+GP107 gradient, texture, depth, changed multiply and invalid opcode PASS
+GP108 gradient, texture, depth, changed multiply and invalid opcode PASS
+GFX1200 Navi 44 gradient, texture, depth, changed multiply and invalid opcode PASS
+GFX1201 Navi 48 gradient, texture, depth, changed multiply and invalid opcode PASS
 ioctl=00000000 bytes=00001028 draw=00000000 command=00000201 response=00001100 commands=00000023 fence=00000005 outputs=00000002 enabled=00000001 edid=00000003 scanouts=00000003 center=ff00ff00
 interpolation and depth PASS 1024 pixels
 texture PASS 1024 pixels

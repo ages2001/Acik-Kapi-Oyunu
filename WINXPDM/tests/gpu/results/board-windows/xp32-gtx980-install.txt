@@ -1,0 +1,17 @@
+NativeBits=32
+HardwareID=PCI\VEN_10DE&DEV_13C0&SUBSYS_85041043&REV_A1
+Description=Video Controller (VGA Compatible)
+Service=
+NodeStatus=01806400
+Problem=1
+Requesting vendor INF binding
+UpdateResult=1
+UpdateError=00000000
+RestartRequested=1
+HardwareID=PCI\VEN_10DE&DEV_13C0&SUBSYS_85041043&REV_A1
+Description=NVIDIA GeForce GTX 980
+Service=nv
+NodeStatus=01806400
+Problem=1
+ServiceState=1
+ServiceWin32Exit=1077

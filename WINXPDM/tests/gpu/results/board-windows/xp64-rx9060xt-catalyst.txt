@@ -1,0 +1,15 @@
+NativeBits=64
+HardwareID=PCI\VEN_1002&DEV_7590&SUBSYS_06391043&REV_C0
+Description=Video Controller (VGA Compatible)
+Service=
+NodeStatus=01806400
+Problem=1
+Requesting vendor INF binding
+UpdateResult=0
+UpdateError=e0000203
+RestartRequested=0
+HardwareID=PCI\VEN_1002&DEV_7590&SUBSYS_06391043&REV_C0
+Description=Video Controller (VGA Compatible)
+Service=
+NodeStatus=01806400
+Problem=28

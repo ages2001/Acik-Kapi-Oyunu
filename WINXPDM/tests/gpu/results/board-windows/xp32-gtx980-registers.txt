@@ -1,0 +1,6 @@
+winxpdm gtx980 unimplemented read at 0x1070
+winxpdm gtx980 unimplemented read at 0x4
+winxpdm gtx980 unimplemented read at 0x1373a0
+winxpdm gtx980 unimplemented write at 0x1373a0
+winxpdm gtx980 unimplemented read at 0x21c04
+winxpdm gtx980 unimplemented read at 0x610018

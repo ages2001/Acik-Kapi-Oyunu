@@ -87,10 +87,13 @@ def build(miniport, native_port, native_kernel, destination, trace=False):
             "-fno-stack-protector", "-mno-stack-arg-probe", "-fno-asynchronous-unwind-tables",
             *(["-DWXP_TEST_TRACE"] if trace else []), "-I" + str(includes),
             "-c", HERE / "initialize.c", "-o", "initialize.o")
+        run("gcc", "-Os", "-Wall", "-Wno-multichar", "-ffreestanding", "-fno-builtin",
+            "-fno-stack-protector", "-mno-stack-arg-probe", "-march=i486", "-I" + str(includes),
+            "-c", HERE.parent / "video_events.c", "-o", "events.o")
         run("as", "relays.s", "-o", "relays.o")
         run("gcc", "-nostdlib", "-shared", "-Wl,--subsystem,native:5.0,-e,_WxpEntry@8,--image-base,0x10000",
             "-Wl,--kill-at,--major-os-version,5,--minor-os-version,0", "-s", "compat.o", "initialize.o",
-            "relays.o", "public.def", *libs, "-lvideoprt", "-lntoskrnl", "-o", MODULE)
+            "relays.o", "events.o", "public.def", *libs, "-lvideoprt", "-lntoskrnl", "-o", MODULE)
         subprocess.run([sys.executable, HERE.parents[1] / "drivers/nt/tools/pefix.py", work / MODULE, "nonpaged"], check=True)
         for offset in offsets:
             if data[offset:offset+13].lower() not in (b"videoprt.sys\0", b"ntoskrnl.exe\0"):

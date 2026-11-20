@@ -10,11 +10,14 @@
 #include "qom/object.h"
 #include "migration/vmstate.h"
 
+#include "winxpdm-fragment.h"
+
 #define TYPE_WXP_ENGINES "winxpdm-engines"
 OBJECT_DECLARE_SIMPLE_TYPE(WxpEngines, WXP_ENGINES)
 struct WxpEngines {
     PCIDevice parent_obj;
     MemoryRegion io;
+    WxpFragment fragments;
     Object *nv;
     uint8_t sdma_memory[65536];
     uint32_t packet[8], used, needed, read_address, error;
@@ -136,6 +139,7 @@ static uint64_t port_read(void *opaque, hwaddr reg, unsigned size)
 {
     WxpEngines *s = opaque;
     uint32_t address = s->read_address & 0x7fffffff;
+    if (reg >= 32) return wxp_fragment_read(&s->fragments, reg - 32);
     switch (reg) {
     case 0: return 0x31505857;
     case 12:
@@ -153,6 +157,10 @@ static void port_write(void *opaque, hwaddr reg, uint64_t val, unsigned size)
     WxpEngines *s = opaque;
     Error *err = NULL;
     uint32_t value = val;
+    if (reg >= 32) {
+        wxp_fragment_write(&s->fragments, reg - 32, value);
+        return;
+    }
     if (reg == 20 && !value) {
         s->error = 0; s->used = 0; return;
     }
@@ -190,14 +198,14 @@ static void port_write(void *opaque, hwaddr reg, uint64_t val, unsigned size)
  * PnP manager may disable unclaimed diagnostic I/O BARs. */
 static uint32_t config_read(PCIDevice *dev, uint32_t reg, int size)
 {
-    if (reg >= 0x80 && reg < 0xa0 && size == 4 && !(reg & 3)) {
+    if (reg >= 0x80 && reg < 0xc0 && size == 4 && !(reg & 3)) {
         return port_read(WXP_ENGINES(dev), reg - 0x80, size);
     }
     return pci_default_read_config(dev, reg, size);
 }
 static void config_write(PCIDevice *dev, uint32_t reg, uint32_t value, int size)
 {
-    if (reg >= 0x80 && reg < 0xa0 && size == 4 && !(reg & 3)) {
+    if (reg >= 0x80 && reg < 0xc0 && size == 4 && !(reg & 3)) {
         port_write(WXP_ENGINES(dev), reg - 0x80, value, size);
     } else {
         pci_default_write_config(dev, reg, value, size);
@@ -213,7 +221,7 @@ static void realize(PCIDevice *pci, Error **errp)
     s->nv = object_new("winxpdm-nv-color");
     object_property_add_child(OBJECT(s), "nvidia", s->nv);
     object_unref(s->nv);
-    memory_region_init_io(&s->io, OBJECT(s), &operations, s, "engine ports", 32);
+    memory_region_init_io(&s->io, OBJECT(s), &operations, s, "engine ports", 64);
     pci_register_bar(pci, 0, PCI_BASE_ADDRESS_SPACE_IO, &s->io);
 }
 static const VMStateDescription migration = {

@@ -10,7 +10,7 @@ The 382.69 community package, verified donor comparisons, native XP setup result
 
 The audited XP media and original NVIDIA and AMD XP packages contain **8,900 model matches covering 793 distinct PCI vendor/device IDs**. The compact inventory includes x86 and AMD64 package names and whether a package matches a bare device ID or requires a qualified board ID. [All audited IDs](results/xp-pci.tsv)
 
-The detailed sheet records community XP x86 matches separately from the stock packages. It covers **20 GeForce GTX 9xx IDs, 35 GTX 10xx IDs and three AMD Navi 44/48 IDs**. It records board names from the PCI ID database, original XP package matches, comparison packages and the QEMU or hardware execution status for each ID. Seven of the 20 GTX 9xx IDs have entries in the audited unmodified XP INFs for both architectures. [Per-device results](results/priority-pci.tsv)
+The detailed sheet records community XP x86 matches separately from the stock packages. It covers **20 GeForce GTX 9xx IDs, 34 GTX 10xx IDs and three AMD Navi 44/48 IDs**. It records board names from the PCI ID database, original XP package matches, comparison packages and the QEMU or hardware execution status for each ID. Seven of the 20 GTX 9xx IDs have entries in the audited unmodified XP INFs for both architectures. [Per-device results](results/priority-pci.tsv)
 
 | Desktop model | PCI ID | NVIDIA XP 355.82 / 368.81 or AMD XP Catalyst 14.4 | Other verified INF matches |
 | --- | --- | --- | --- |
@@ -50,11 +50,11 @@ A local build of QEMU 10.0.13 runs the guest Linux drivers. The Linux DRM source
 | ATI RV100, 1002:5159 | PCI and the radeon binding were observed. The guest timed out before a mode-setting result. |
 | VMware SVGA II, 15AD:0405 | PCI enumeration succeeded. The Linux probe did not get a usable DRM connector. |
 
-QEMU 10.0.13 supplies no native Maxwell, Pascal or Navi 44/48 display model. Linux nouveau identifies the GM and GP chipsets, and amdgpu contains GFX12 support. Those sources describe driver behavior. They cannot establish the execution results for an absent physical or emulated card. [Linux nouveau device source](https://github.com/torvalds/linux/blob/65e4fd942f72a9dba0e4e257290c4fa1aa756854/drivers/gpu/drm/nouveau/nvkm/engine/device/base.c) · [Linux amdgpu source](https://github.com/torvalds/linux/blob/65e4fd942f72a9dba0e4e257290c4fa1aa756854/drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c) · [PCI names used for this report](https://github.com/pciutils/pciids/blob/f56421679d662b6a6178adcf297f1a69b27db455/pci.ids)
+Stock QEMU 10.0.13 supplies no Maxwell, Pascal or Navi 44/48 display model. WINXPDM adds PCI register and aperture models for 16 boards and a separate native fragment-instruction fixture for 12 chipset targets. The models use Linux Nouveau and AMDGPU register definitions. [Linux nouveau device source](https://github.com/torvalds/linux/blob/65e4fd942f72a9dba0e4e257290c4fa1aa756854/drivers/gpu/drm/nouveau/nvkm/engine/device/base.c) · [Linux amdgpu source](https://github.com/torvalds/linux/blob/65e4fd942f72a9dba0e4e257290c4fa1aa756854/drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c) · [PCI names used for this report](https://github.com/pciutils/pciids/blob/f56421679d662b6a6178adcf297f1a69b27db455/pci.ids)
 
 ## Reproducing the comparisons
 
-`xp_models.py --source NAME x86|amd64 DIRECTORY --out results.tsv` reads the applicable manufacturer/model sections and resolves localized model strings. Supply multiple sources by repeating `--source`. Its default target is XP SP3 (x86) or XP Professional x64 SP2. The control runs used `--nt-version 6.1.7601` and `--nt-version 10.0.26100`. `coverage.py` joins these results with pci.ids and writes both short and detailed tables. `binary_imports.py --help` lists the arguments for comparing the actual Windows binaries.
+`xp_models.py --source NAME x86|amd64 DIRECTORY --out results.tsv` reads the applicable manufacturer/model sections and resolves localized model strings. Supply multiple sources by repeating `--source`. Its default target is XP SP3 (x86) or XP Professional x64 SP2. The control runs used `--nt-version 6.1.7601` and `--nt-version 10.0.26100`. `coverage.py` joins these results with pci.ids and writes both short and detailed tables. Supply `--board-results tests/gpu/results/board-pci.tsv` and `--bindings tests/gpu/results/board-windows/bindings.tsv` to include the measured PCI and Windows results. `binary_imports.py --help` lists the arguments for comparing the actual Windows binaries.
 
 `linux_guest.py --help` documents the host tools and module tree needed to reproduce the hardware-model probes. It creates a temporary initramfs from the named kernel's modules, BusyBox and libdrm's modetest. The validation used Debian Linux 6.12.107, x86_64 TCG, one PCI display device per VM and SeaBIOS.
 
@@ -65,3 +65,19 @@ Windows 2000/XP guest probes use `nt_guest.c` and write the primary screen mode,
 The vendor packages are inputs to the test lab. Their installers and extracted drivers are not distributed with this project. [NVIDIA XP 355.82 x86](https://us.download.nvidia.com/Windows/355.82/355.82-desktop-winxp-32bit-international.exe) · [NVIDIA XP 355.82 x64](https://us.download.nvidia.com/Windows/355.82/355.82-desktop-winxp-64bit-international.exe) · [NVIDIA XP 368.81 x86](https://us.download.nvidia.com/Windows/368.81/368.81-desktop-winxp-32bit-international.exe) · [NVIDIA XP 368.81 x64](https://us.download.nvidia.com/Windows/368.81/368.81-desktop-winxp-64bit-international.exe) · [AMD Catalyst XP 14.4](https://drivers.amd.com/drivers/14-4-xp32-64-dd-ccc-pack2.exe)
 
 The comparison inputs were NVIDIA Windows 7 368.81 and 391.35, and AMD's published Windows 11 Radeon RX 9070 XT package, Adrenalin 26.11.2. [NVIDIA 368.81](https://us.download.nvidia.com/Windows/368.81/368.81-desktop-win8-win7-winvista-64bit-international-whql.exe) · [NVIDIA 391.35](https://us.download.nvidia.com/Windows/391.35/391.35-desktop-win8-win7-64bit-international-whql.exe) · [AMD RX 9070 XT drivers](https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-9000-series/amd-radeon-rx-9070-xt.html)
+
+## Native XP compatible-driver selection
+
+The guest test constructs a temporary display device information element for each hardware ID. XP builds the compatible driver list from one INF and selects the best match. Subsystem-qualified cases supply the required board ID. The guest writes the selected section and driver rank to `SELECT.TSV`. This checks live SetupAPI matching without registering 827 fictitious adapters. Across both architectures the tests cover all 793 IDs in the original inventory and 34 additional IDs from the community driver. [XP x86, 750 selections](results/xp-selection-32.tsv) · [XP AMD64, 537 selections](results/xp-selection-64.tsv)
+
+Build the inventories with `xp_models.py`. Stage the appropriate extracted package directories for each architecture. The XP installation supplies its own in-box INF files. Copy the staged directory to a writable location inside the matching guest and run `SELECT.EXE` there.
+
+```sh
+python3 tests/gpu/xp_selection.py x86 build/selection-x86 build/xp-driver-models.tsv build/forceware382.tsv \
+    --source NVIDIA_368.81="$NV368" --source NVIDIA_355.82="$NV355" \
+    --source Catalyst_14.4="$CATALYST" --source Forceware_382.69="$FORCEWARE382"
+i686-w64-mingw32-gcc -Os -s -Wl,--subsystem,console:5.01 tests/gpu/xp_select.c \
+    -lsetupapi -o build/selection-x86/SELECT.EXE
+```
+
+For XP Professional x64 use `amd64`, the AMD64 package paths, the x86-64 MinGW-w64 compiler and subsystem version `5.02`. The community package applies to x86.

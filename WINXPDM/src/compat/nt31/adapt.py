@@ -1,4 +1,4 @@
-"""Bind the HAL imports of a private XP x86 Forceware miniport to the NT 3.1 companion."""
+"""Bind supported XP x86 Forceware imports to the NT 3.1 companion drivers."""
 import argparse
 import hashlib
 from pathlib import Path
@@ -12,7 +12,7 @@ MINIPORTS = {
 }
 
 
-def adapt(source, companion, output):
+def adapt(source, companion, output, services=None):
     data = bytearray(source.read_bytes())
     package = MINIPORTS.get(hashlib.sha256(data).hexdigest())
     if not package:
@@ -27,17 +27,35 @@ def adapt(source, companion, output):
             raise ValueError('The companion must export the same HAL interface as this miniport imports')
         offset = pe.get_offset_from_rva(imports.struct.Name)
         checksum = pe.OPTIONAL_HEADER.get_field_absolute_offset('CheckSum')
-    data[offset:offset + 7] = b'W3H.SYS'
+        data[offset:offset + 7] = b'W3H.SYS'
+        if services:
+            with pefile.PE(str(services), fast_load=True) as port:
+                port.parse_data_directories(directories=[0])
+                if port.FILE_HEADER.Machine != 0x14c or port.DIRECTORY_ENTRY_EXPORT.name.lower() != b'w3port.sys':
+                    raise ValueError('Expected the x86 W3PORT.SYS companion')
+                exported = {e.name for e in port.DIRECTORY_ENTRY_EXPORT.symbols}
+            # The second, lowercase kernel descriptor imports debugger data and
+            # later NT interfaces. Retain its original binding and all IAT slots.
+            groups = [d for d in pe.DIRECTORY_ENTRY_IMPORT if d.dll in (b'NTOSKRNL.EXE', b'VIDEOPRT.SYS')]
+            wanted = {i.name for d in groups for i in d.imports}
+            if len(groups) != 2 or not exported or not exported <= wanted:
+                raise ValueError('The companion does not match the selected service descriptors')
+            for d in groups:
+                start = pe.get_offset_from_rva(d.struct.Name)
+                data[start:start + len(d.dll)] = b'W3PORT.SYS'.ljust(len(d.dll), b'\0')
     with pefile.PE(data=bytes(data), fast_load=True) as pe:
         struct.pack_into('<I', data, checksum, pe.generate_checksum())
     with output.open('xb') as destination:
         destination.write(data)
     print(f'{package} x86: {len(names)} HAL imports bound to W3H.SYS')
+    if services:
+        print(f'{len(groups)} kernel and video-port descriptors bound to W3PORT.SYS')
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for parameter in ('source', 'companion', 'output'):
         parser.add_argument(parameter, type=Path)
+    parser.add_argument('--services', type=Path, help='Bind the two service descriptors supported by W3PORT.SYS')
     args = parser.parse_args()
-    adapt(args.source, args.companion, args.output)
+    adapt(args.source, args.companion, args.output, args.services)

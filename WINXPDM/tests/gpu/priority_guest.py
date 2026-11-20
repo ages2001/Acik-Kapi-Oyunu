@@ -25,7 +25,7 @@ for t in gp107 dp-trained dp-startup hdmi-recovery; do
 done
 export VK_DRIVER_FILES=/tests/radeon_icd.json
 for chip in GFX1200 GFX1201; do
-    /tests/radv "$chip" /tests/vert.spv /tests/frag.spv >/tmp/assembly
+    /tests/radv "$chip" /tests/vert.spv /tests/frag.spv @FRAGMENT_OPCODE@ >/tmp/assembly
     result=$?
     cat /tmp/assembly
     echo "WXP RADV $chip exit=$result"
@@ -44,7 +44,7 @@ poweroff -f
 """
 
 
-def stage_nouveau(root, mesa, includes):
+def stage_nouveau(root, mesa, includes, fragment):
     """Use matching libEGL, GBM, Gallium and DRM shim from one Mesa build."""
     probe = root / "tests/nouveau"
     subprocess.run(["cc", "-std=gnu11", "-O2", "-Wall", "-Wextra", "-Werror", "-I" + str(includes),
@@ -62,7 +62,7 @@ def stage_nouveau(root, mesa, includes):
         stage_deps(root, mesa / relative)
     for extension in ("vert", "frag"):
         name = "triangle." + extension
-        stage(root, HERE / "shaders" / name, "tests/" + name)
+        stage(root, fragment if extension == "frag" else HERE / "shaders" / name, "tests/" + name)
 
 
 def main():
@@ -73,7 +73,9 @@ def main():
     p.add_argument("--vulkan-include", type=Path, default=Path("/usr/include"))
     p.add_argument("--nouveau-mesa-build", type=Path, help="Debug-enabled Mesa build with EGL, GBM and Nouveau DRM shim")
     p.add_argument("--gl-include", type=Path, default=Path("/usr/include"))
+    p.add_argument("--fragment-program", choices=("triangle", "gradient", "sample"), default="triangle")
     a = p.parse_args()
+    fragment = HERE / "shaders" / (a.fragment_program + ".frag")
     with tempfile.TemporaryDirectory() as temp:
         temp = Path(temp)
         root = temp / "root"
@@ -85,7 +87,7 @@ def main():
         (root / "bin/sh").symlink_to("busybox")
         for kind in ("vert", "frag"):
             spirv = root / "tests" / (kind + ".spv")
-            subprocess.run(["glslangValidator", "-V", HERE / "shaders" / ("triangle." + kind), "-o", spirv], check=True)
+            subprocess.run(["glslangValidator", "-V", fragment if kind == "frag" else HERE / "shaders/triangle.vert", "-o", spirv], check=True)
             subprocess.run(["spirv-val", spirv], check=True)
         probe = root / "tests/radv"
         subprocess.run(["cc", "-std=gnu11", "-O2", "-Wall", "-Wextra", "-Werror", "-I" + str(a.vulkan_include),
@@ -95,8 +97,9 @@ def main():
         stage_deps(root, a.radv)
         stage(root, a.radv_icd, "tests/radeon_icd.json")
         if a.nouveau_mesa_build:
-            stage_nouveau(root, a.nouveau_mesa_build.resolve(), a.gl_include)
-        (root / "init").write_text(INIT.replace("@NOUVEAU_CHIPS@", " ".join(NOUVEAU_CHIPS)))
+            stage_nouveau(root, a.nouveau_mesa_build.resolve(), a.gl_include, fragment)
+        (root / "init").write_text(INIT.replace("@NOUVEAU_CHIPS@", " ".join(NOUVEAU_CHIPS)).replace(
+            "@FRAGMENT_OPCODE@", "export" if a.fragment_program == "gradient" else "image_sample"))
         (root / "init").chmod(0o755)
         initrd = temp / "initrd.cpio.gz"
         packed = subprocess.check_output(["bsdtar", "--format=newc", "-cf", "-", "."], cwd=root)

@@ -1,0 +1,8 @@
+NativeBits=32
+HardwareID=PCI\VEN_10DE&DEV_1C82&SUBSYS_86131043&REV_A1
+Description=NVIDIA GeForce GTX 1050 Ti
+Service=nv
+NodeStatus=01806400
+Problem=10
+ServiceState=1
+ServiceWin32Exit=1077

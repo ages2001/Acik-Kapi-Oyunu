@@ -1,0 +1,20 @@
+LIBRARY W3PORT.SYS
+EXPORTS
+ExAllocatePoolWithTag@12
+ExFreePoolWithTag@8
+ExInitializeResourceLite@4
+ExDeleteResourceLite@4
+ExAcquireResourceSharedLite@8
+ExAcquireResourceExclusiveLite@8
+@ExReleaseResourceLite@4
+ExGetPreviousMode@0
+@IofCallDriver@8
+IoAllocateWorkItem@4
+IoQueueWorkItem@16
+IoFreeWorkItem@4
+KeClearEvent@4
+KeQueryInterruptTime@0
+VideoPortGetCurrentIrql@4
+VideoPortCreateEvent@16
+VideoPortWaitForSingleObject@12
+VideoPortDeleteEvent@8

@@ -38,8 +38,19 @@ def package_matches(rows, arch, plain):
     return ", ".join(matches) or "no match in audited INFs"
 
 
-def report(inventory, pci_ids, dest, comparisons=(), community=()):
+def report(inventory, pci_ids, dest, comparisons=(), community=(), board_results=None, bindings=None):
     database = graphics_database(pci_ids)
+    boards = defaultdict(set)
+    if board_results:
+        with board_results.open(encoding="utf-8") as src:
+            for row in csv.DictReader(src, delimiter="\t"):
+                if row["pci_bar_mmio_vram"] == "PASS":
+                    boards[row["pci_id"].upper()].add(row["machine"])
+    windows = defaultdict(set)
+    if bindings:
+        with bindings.open(encoding="utf-8") as src:
+            for row in csv.DictReader(src, delimiter="\t"):
+                windows[row["pci_id"].upper()].add(row["windows"] + " " + row["device_status"])
     by_id = defaultdict(list)
     community_by_id = defaultdict(list)
     for file in community:
@@ -76,6 +87,9 @@ def report(inventory, pci_ids, dest, comparisons=(), community=()):
             pci = vendor + ":" + dev
             rows = by_id[pci]
             if vendor == "10DE":
+                # Audio and USB functions can carry the same board marketing name.
+                if re.search(r"\b(audio|usb|xhci|ucsi)\b", name, re.I):
+                    continue
                 matches = [gtx.search(v) for v in models + [r["model"] for r in rows]]
                 matches = [m for m in matches if m]
                 if not matches:
@@ -90,8 +104,9 @@ def report(inventory, pci_ids, dest, comparisons=(), community=()):
             plain = f"PCI\\VEN_{vendor}&DEV_{dev}"
             hits = [package_matches(rows, arch, plain) for arch in ("x86", "amd64")]
             custom = package_matches(community_by_id[pci], "x86", plain) if community else "not audited"
+            board = "PCI registers and VRAM on " + ", ".join(sorted(boards[pci])) if boards[pci] else "no board profile tested"
             w.writerow((family, pci, name, " / ".join(selected), *hits, custom, ", ".join(sorted(other[pci])),
-                        "no full PCI model", "unverified in WINXPDM", "unverified in WINXPDM"))
+                        board, ", ".join(sorted(windows[pci])) or "unverified in WINXPDM", "unverified in WINXPDM"))
 
 
 if __name__ == "__main__":
@@ -101,5 +116,7 @@ if __name__ == "__main__":
     p.add_argument("output", type=Path)
     p.add_argument("--comparison", action="append", default=[], type=Path)
     p.add_argument("--community", action="append", default=[], type=Path, help="Additional XP inventory supplied by a third party")
+    p.add_argument("--board-results", type=Path, help="Source-built QEMU PCI test results")
+    p.add_argument("--bindings", type=Path, help="Native Windows vendor binding results")
     args = p.parse_args()
-    report(args.inventory, args.pci_ids, args.output, args.comparison, args.community)
+    report(args.inventory, args.pci_ids, args.output, args.comparison, args.community, args.board_results, args.bindings)

@@ -6,8 +6,8 @@ src=$root/tests/gpu
 for arch in i686 x86_64; do
     cc=$arch-w64-mingw32-gcc
     case "$arch" in
-        i686) out=$root/bin/TESTX86; cpu=-march=i486; subsystem=4.0; entry='_start@0';;
-        x86_64) out=$root/bin/TESTX64; cpu=; subsystem=5.02; entry=start;;
+        i686) out=$root/bin/TESTX86; cpu=-march=i486; subsystem=4.0; setupver=5.0; entry='_start@0';;
+        x86_64) out=$root/bin/TESTX64; cpu=; subsystem=5.02; setupver=5.02; entry=start;;
     esac
     mkdir -p "$out"
     "$cc" -Os -Wall -ffreestanding -fno-builtin -nostdlib -nostartfiles $cpu \
@@ -21,4 +21,8 @@ for arch in i686 x86_64; do
         "$src/vendor_list.c" -o "$out/VENDLIST.EXE" -lsetupapi
     "$cc" -Os -Wall $cpu "-Wl,--subsystem,windows:$subsystem" -s \
         "$src/nt_guest.c" -o "$out/XPPROBE.EXE" -lsetupapi -lgdi32 -luser32 -ladvapi32
+    "$cc" -Os -Wall $cpu "-Wl,--no-insert-timestamp,--subsystem,console:$setupver" -s \
+        "$src/xp_select.c" -o "$out/SELECT.EXE" -lsetupapi
+    "$cc" -Os -Wall $cpu "-Wl,--no-insert-timestamp,--subsystem,console:$setupver" -s \
+        "$src/xp_board.c" -o "$out/BIND.EXE" -lsetupapi -lcfgmgr32 -ladvapi32
 done

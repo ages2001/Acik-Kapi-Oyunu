@@ -209,19 +209,46 @@ static int check_hdmi_link(WxpLink *l)
     receive_link(l->context,WXP_SCDC,0x21,&scramble,1);
     return !config && !scramble && !wxp_hdmi_tmds(l,600001UL);
 }
-static void check_engines(void (*log_line)(const char *))
+#include "fragments.h"
+
+static int report_check(int passed, const char *label, void (*log_line)(const char *))
 {
+    log_line(label);
+    log_line(passed ? " PASS\n" : " FAIL\n");
+    return passed;
+}
+
+static int check_engines(void (*log_line)(const char *))
+{
+    static const char *const names[] = {
+        "GM107", "GM108", "GM200", "GM204", "GM206", "GP102", "GP104",
+        "GP106", "GP107", "GP108", "GFX1200 Navi 44", "GFX1201 Navi 48"
+    };
     WxpLink link;
-    unsigned port = engine_port();
-    if (!port) { log_line("Vendor command port absent\n"); return; }
+    unsigned i, port = engine_port();
+    int ok = 1;
+    if (!port) { log_line("Vendor command port absent\n"); return 0; }
     reg_write(port,20,0);
-    log_line(check_nv(port,0xb097) ? "Maxwell A B097 + 902D PASS\n" : "Maxwell A FAIL\n");
-    log_line(check_nv(port,0xb197) ? "Maxwell B B197 + 902D PASS\n" : "Maxwell B FAIL\n");
-    log_line(check_nv(port,0xc197) ? "Pascal B C197 + 902D PASS\n" : "Pascal B FAIL\n");
-    log_line(check_sdma(port) ? "RDNA 4 SDMA 7 fill, unaligned copy and guards PASS\n" : "RDNA 4 SDMA FAIL\n");
+    ok &= report_check(check_nv(port,0xb097), "Maxwell A B097 + 902D", log_line);
+    ok &= report_check(check_nv(port,0xb197), "Maxwell B B197 + 902D", log_line);
+    ok &= report_check(check_nv(port,0xc197), "Pascal B C197 + 902D", log_line);
+    ok &= report_check(check_sdma(port), "RDNA 4 SDMA 7 fill, unaligned copy and guards", log_line);
     link.context=&port; link.receive=receive_link; link.send=send_link;
     link.dp_source=dp_source; link.hdmi_source=hdmi_source; link.wait_us=link_delay;
-    log_line(check_dp_link(&link) ? "DPCD sink model HBR3 x4 TPS1/TPS4 and adjust request PASS\n" : "DPCD FAIL\n");
-    log_line(check_hdmi_link(&link) ? "HDMI SCDC sink model 594 MHz 1:40 and 148.5 MHz 1:10 PASS\n" : "SCDC FAIL\n");
+    ok &= report_check(check_dp_link(&link), "DPCD sink model HBR3 x4 TPS1/TPS4 and adjust request", log_line);
+    ok &= report_check(check_hdmi_link(&link), "HDMI SCDC sink model 594 MHz 1:40 and 148.5 MHz 1:10", log_line);
+    for (i = 0; i < FRAG_COUNT(fragment_targets); ++i) {
+        int stage = frag_case(port, fragment_targets[i]);
+        char error[] = " FAIL stage 0\n";
+        log_line(names[i]);
+        if (stage) {
+            error[12] = (char)('0'+stage);
+            log_line(error);
+            ok = 0;
+        } else {
+            log_line(" gradient, texture, depth, changed multiply and invalid opcode PASS\n");
+        }
+    }
+    return ok;
 }
 #endif
