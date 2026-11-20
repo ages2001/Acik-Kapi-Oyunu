@@ -5,9 +5,51 @@
 #include <setupapi.h>
 #include <cfgmgr32.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 typedef BOOL (WINAPI *UpdateDriver)(HWND, LPCSTR, LPCSTR, DWORD, PBOOL);
+
+static void address_range(FILE *log, const char *list, const char *type, ULONGLONG start, ULONGLONG end)
+{
+    fprintf(log, "%s%s=%08lx%08lx-%08lx%08lx\n", list, type,
+            (DWORD)(start >> 32), (DWORD)start, (DWORD)(end >> 32), (DWORD)end);
+}
+
+static void resources(FILE *log, DEVINST node, ULONG kind, const char *label)
+{
+    LOG_CONF config;
+    RES_DES current, next;
+    RESOURCEID type;
+    CONFIGRET result = CM_Get_First_Log_Conf(&config, node, kind);
+    fprintf(log, "%sLogConf=%08lx\n", label, result);
+    if (result != CR_SUCCESS) return;
+    current = (RES_DES)config;
+    while ((result = CM_Get_Next_Res_Des(&next, current, ResType_All, &type, 0)) == CR_SUCCESS) {
+        ULONG size;
+        void *data = NULL;
+        if (current != (RES_DES)config) CM_Free_Res_Des_Handle(current);
+        current = next;
+        if (CM_Get_Res_Des_Data_Size(&size, current, 0) != CR_SUCCESS || !size) continue;
+        data = malloc(size);
+        if (!data) break;
+        if (CM_Get_Res_Des_Data(current, data, size, 0) == CR_SUCCESS) {
+            if (type == ResType_Mem && size >= sizeof(MEM_DES)) {
+                const MEM_DES *mem = data;
+                address_range(log, label, "Memory", mem->MD_Alloc_Base, mem->MD_Alloc_End);
+            } else if (type == ResType_IO && size >= sizeof(IO_DES)) {
+                const IO_DES *io = data;
+                address_range(log, label, "IO", io->IOD_Alloc_Base, io->IOD_Alloc_End);
+            } else if (type == ResType_IRQ && size >= sizeof(IRQ_DES)) {
+                const IRQ_DES *irq = data;
+                fprintf(log, "%sIRQ=%lu\n", label, irq->IRQD_Alloc_Num);
+            }
+        }
+        free(data);
+    }
+    if (current != (RES_DES)config) CM_Free_Res_Des_Handle(current);
+    CM_Free_Log_Conf_Handle(config);
+}
 
 static int describe(FILE *log, char hardware[MAX_PATH])
 {
@@ -27,6 +69,8 @@ static int describe(FILE *log, char hardware[MAX_PATH])
         fprintf(log,"HardwareID=%s\nDescription=%s\nService=%s\n",hardware,name,service);
         if (CM_Get_DevNode_Status(&flags,&problem,dev.DevInst,0)==CR_SUCCESS)
             fprintf(log,"NodeStatus=%08lx\nProblem=%lu\n",flags,problem);
+        resources(log, dev.DevInst, BOOT_LOG_CONF, "Boot");
+        resources(log, dev.DevInst, ALLOC_LOG_CONF, "Allocated");
         if (*service) {
             SC_HANDLE scm=OpenSCManagerA(NULL,NULL,SC_MANAGER_CONNECT);
             SC_HANDLE svc=scm?OpenServiceA(scm,service,SERVICE_QUERY_STATUS):NULL;

@@ -10,6 +10,7 @@
 #include "qapi/error.h"
 #include "qapi/visitor.h"
 #include "qapi/qapi-builtin-visit.h"
+#include "hw/pci/pci_bridge.h"
 #include "hw/pci/pci_device.h"
 #include "hw/pci/pcie.h"
 #include "hw/qdev-properties.h"
@@ -23,6 +24,11 @@ OBJECT_DECLARE_SIMPLE_TYPE(WxpBoard, WXP_BOARD)
 #define PROM_SIZE MiB
 #define PROM_START 0x300000
 #define VBIOS_SHADOW (VRAM_SIZE - PROM_SIZE)
+#define GM204_PMU_DMEM_PORT0 0x10a1c0
+#define GM204_PMU_DMEM_SIZE 0x6000
+#define FALCON_DMEM_ADDR 0x0000fffc
+#define FALCON_DMEM_WRITE_INC (1U << 24)
+#define FALCON_DMEM_READ_INC (1U << 25)
 /* GC 12 segment 0 starts at byte offset 0x4980. Queue 0 starts at dword 0x80. */
 #define SDMA_RB_CNTL (0x4980 + 0x80 * 4)
 enum { RB_CONTROL, RB_BASE, RB_BASE_HI, RB_RPTR, RB_RPTR_HI,
@@ -56,6 +62,7 @@ struct WxpBoard {
     MemoryRegion registers, aperture, auxiliary, ports;
     uint32_t index, index_hi, scratch, numerator, denominator, pramin;
     uint32_t straps[2], ring[RB_REGS];
+    uint32_t pmu_dmem_index[4], pmu_dmem[GM204_PMU_DMEM_SIZE / 4];
     WxpAux dp[WXP_AUX_CHANNELS];
     uint8_t connected;
     QEMUTimer *sdma_timer;
@@ -63,7 +70,41 @@ struct WxpBoard {
     uint64_t mmio_reads, mmio_writes, identity_reads, unknown_reads, unknown_writes;
     uint64_t first_unknown_read, first_unknown_write;
     uint64_t prom_reads, shadow_reads, aux_requests;
+    uint64_t pmu_dmem_reads, pmu_dmem_writes;
 };
+
+static bool gm204_dmem_port(WxpBoard *s, hwaddr offset)
+{
+    return s->board->chip == 0x124 && offset >= GM204_PMU_DMEM_PORT0 &&
+           offset < GM204_PMU_DMEM_PORT0 + 8 * ARRAY_SIZE(s->pmu_dmem_index);
+}
+
+/* Four independent cursors address the same little-endian Falcon data SRAM. */
+static uint32_t gm204_dmem_access(WxpBoard *s, hwaddr offset, bool write, uint32_t value)
+{
+    uint32_t *index = &s->pmu_dmem_index[(offset - GM204_PMU_DMEM_PORT0) / 8];
+    if (!(offset & 4)) {
+        if (write) {
+            *index = value & (FALCON_DMEM_ADDR | FALCON_DMEM_READ_INC | FALCON_DMEM_WRITE_INC);
+        }
+        return *index;
+    }
+    uint32_t address = *index & FALCON_DMEM_ADDR;
+    uint32_t result = 0;
+    if (address < sizeof(s->pmu_dmem)) {
+        if (write) {
+            s->pmu_dmem[address / 4] = value;
+            s->pmu_dmem_writes++;
+        } else {
+            result = s->pmu_dmem[address / 4];
+            s->pmu_dmem_reads++;
+        }
+    }
+    if (*index & (write ? FALCON_DMEM_WRITE_INC : FALCON_DMEM_READ_INC)) {
+        *index = (*index & ~FALCON_DMEM_ADDR) | ((address + 4) & FALCON_DMEM_ADDR);
+    }
+    return result;
+}
 
 static bool prom_window(WxpBoard *s, hwaddr offset, unsigned size)
 {
@@ -184,6 +225,9 @@ static void sdma_run(void *opaque)
 
 static uint32_t read32(WxpBoard *s, hwaddr offset)
 {
+    if (gm204_dmem_port(s, offset)) {
+        return gm204_dmem_access(s, offset, false, 0);
+    }
     if (s->board->vendor == 0x10de) {
         if (wxp_aux_reg(offset)) {
             unsigned n = (offset - WXP_AUX_BASE) / WXP_AUX_STRIDE;
@@ -276,6 +320,10 @@ static void write_mmio(void *opaque, hwaddr offset, uint64_t data, unsigned size
     WxpBoard *s = opaque;
     uint32_t value = data;
     s->mmio_writes++;
+    if (gm204_dmem_port(s, offset)) {
+        gm204_dmem_access(s, offset, true, value);
+        return;
+    }
     if (prom_window(s, offset, size)) {
         return;
     }
@@ -376,6 +424,8 @@ static void reset(DeviceState *dev)
     s->numerator = s->denominator = 1;
     s->index = s->index_hi = s->scratch = s->pramin = 0;
     s->straps[0] = s->straps[1] = 0;
+    memset(s->pmu_dmem_index, 0, sizeof(s->pmu_dmem_index));
+    memset(s->pmu_dmem, 0, sizeof(s->pmu_dmem));
     for (unsigned n = 0; n < WXP_AUX_CHANNELS; ++n) {
         wxp_aux_reset(&s->dp[n], n);
     }
@@ -432,6 +482,19 @@ static void realize(PCIDevice *dev, Error **errp)
             error_setg(errp, "Cannot add PCI Express endpoint capability");
             return;
         }
+        PCIExpLinkSpeed speed = nv ? QEMU_PCI_EXP_LNK_8GT : QEMU_PCI_EXP_LNK_32GT;
+        PCIExpLinkWidth width = QEMU_PCI_EXP_LNK_X16;
+        PCIDevice *upstream = pci_bridge_get_device(pci_get_bus(dev));
+        pcie_cap_fill_link_ep_usp(dev, width, speed);
+        if (upstream && upstream->exp.exp_cap) {
+            uint8_t *port = upstream->config + upstream->exp.exp_cap;
+            uint32_t cap = pci_get_long(port + PCI_EXP_LNKCAP);
+            uint8_t *status = dev->config + dev->exp.exp_cap + PCI_EXP_LNKSTA;
+            width = MIN(width, (cap & PCI_EXP_LNKCAP_MLW) >> PCI_EXP_LNK_MLW_SHIFT);
+            speed = MIN(speed, cap & PCI_EXP_LNKCAP_SLS);
+            pci_word_test_and_clear_mask(status, PCI_EXP_LNKSTA_NLW | PCI_EXP_LNKSTA_CLS);
+            pci_word_test_and_set_mask(status, QEMU_PCI_EXP_LNKSTA_NLW(width) | speed);
+        }
     } else {
         dev->cap_present &= ~QEMU_PCI_CAP_EXPRESS;
     }
@@ -452,6 +515,10 @@ static void realize(PCIDevice *dev, Error **errp)
     object_property_add_uint64_ptr(obj,"identity-reads",&s->identity_reads,OBJ_PROP_FLAG_READ);
     object_property_add_uint64_ptr(obj,"prom-reads",&s->prom_reads,OBJ_PROP_FLAG_READ);
     object_property_add_uint64_ptr(obj,"aux-requests",&s->aux_requests,OBJ_PROP_FLAG_READ);
+    if (m->chip == 0x124) {
+        object_property_add_uint64_ptr(obj, "pmu-dmem-reads", &s->pmu_dmem_reads, OBJ_PROP_FLAG_READ);
+        object_property_add_uint64_ptr(obj, "pmu-dmem-writes", &s->pmu_dmem_writes, OBJ_PROP_FLAG_READ);
+    }
     object_property_add_uint64_ptr(obj,"shadow-reads",&s->shadow_reads,OBJ_PROP_FLAG_READ);
     object_property_add_uint64_ptr(obj,"unknown-reads",&s->unknown_reads,OBJ_PROP_FLAG_READ);
     object_property_add_uint64_ptr(obj,"unknown-writes",&s->unknown_writes,OBJ_PROP_FLAG_READ);

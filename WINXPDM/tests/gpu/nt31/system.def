@@ -8,3 +8,7 @@ RtlGetVersion@4
 RtlAnsiCharToUnicodeChar@4
 IoGetAttachedDeviceReference@4
 IoEnumerateDeviceObjectList@16
+IoGetStackLimits@8
+PsGetCurrentProcessId@0
+MmUserProbeAddress DATA
+RtlCaptureStackBackTrace@16

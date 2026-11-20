@@ -1,0 +1,72 @@
+Windows XP Professional x64 Edition, NVIDIA 368.81, GTX 980 1043:8506
+Q35 PCI Express root port, Gen3 x16
+PCI location 01:00.0
+
+SetupAPI installation
+NativeBits=64
+HardwareID=PCI\VEN_10DE&DEV_13C0&SUBSYS_85061043&REV_A1
+Description=Video Controller (VGA Compatible)
+Service=
+NodeStatus=01802400
+Problem=1
+BootLogConf=00000000
+BootMemory=00000000fc000000-00000000fcffffff
+BootMemory=00000000d0000000-00000000dfffffff
+BootMemory=00000000e0000000-00000000e1ffffff
+BootIO=000000000000c000-000000000000c07f
+BootIRQ=10
+AllocatedLogConf=0000000e
+Requesting vendor INF binding
+UpdateResult=1
+UpdateError=00000000
+RestartRequested=1
+HardwareID=PCI\VEN_10DE&DEV_13C0&SUBSYS_85061043&REV_A1
+Description=NVIDIA GeForce GTX 980
+Service=nv
+NodeStatus=01802400
+Problem=10
+BootLogConf=00000000
+BootMemory=00000000fc000000-00000000fcffffff
+BootMemory=00000000d0000000-00000000dfffffff
+BootMemory=00000000e0000000-00000000e1ffffff
+BootIO=000000000000c000-000000000000c07f
+BootIRQ=10
+AllocatedLogConf=0000000e
+ServiceState=1
+ServiceWin32Exit=1077
+
+Configuration Manager after restart
+NativeBits=64
+HardwareID=PCI\VEN_10DE&DEV_13C0&SUBSYS_85061043&REV_A1
+Description=NVIDIA GeForce GTX 980
+Service=nv
+NodeStatus=01802400
+Problem=10
+BootLogConf=00000000
+BootMemory=00000000fc000000-00000000fcffffff
+BootMemory=00000000d0000000-00000000dfffffff
+BootMemory=00000000e0000000-00000000e1ffffff
+BootIRQ=21
+AllocatedLogConf=0000000e
+ServiceState=1
+ServiceWin32Exit=1077
+
+Direct3D 9 after restart
+Direct3D 9 native 64-bit HAL test
+RequestedPCI=10de:13c0
+GDI[0]=Standard VGA Graphics Adapter PCI\VEN_1234&DEV_1111&SUBSYS_11001AF4&REV_02 flags=00000015
+GDI[1]=NetMeeting driver  flags=00000008
+GDI[2]=RDPDD Chained DD  flags=00000008
+D3D[0]=Standard VGA Graphics Adapter vga.dll PCI=1234:1111
+Requested adapter unavailable to Direct3D 9
+pixel checks: 0/9 executed, 0 failed
+result: FAIL
+
+QEMU cumulative MMIO counts
+mmio-reads	447476
+mmio-writes	221
+identity-reads	8490
+prom-reads	153365
+aux-requests	0
+unknown-reads	285589
+unknown-writes	208

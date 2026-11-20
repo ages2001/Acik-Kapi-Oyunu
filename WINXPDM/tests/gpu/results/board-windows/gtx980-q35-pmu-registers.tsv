@@ -1,0 +1,15 @@
+run	access	offset	register	unimplemented_accesses
+before data SRAM	read	0x10a100	Falcon CPU control	285443
+before data SRAM	write	0x10a100	Falcon CPU control	1
+before data SRAM	write	0x10a180	Instruction index	1
+before data SRAM	write	0x10a184	Instruction data	128
+before data SRAM	write	0x10a188	Instruction page tag	2
+before data SRAM	write	0x10a1c0	Data SRAM index	1
+before data SRAM	write	0x10a1c4	Data SRAM word	19
+with data SRAM	read	0x10a100	Falcon CPU control	333878
+with data SRAM	write	0x10a100	Falcon CPU control	1
+with data SRAM	write	0x10a180	Instruction index	1
+with data SRAM	write	0x10a184	Instruction data	128
+with data SRAM	write	0x10a188	Instruction page tag	2
+with data SRAM	write	0x10a1c0	Data SRAM index	0
+with data SRAM	write	0x10a1c4	Data SRAM word	0

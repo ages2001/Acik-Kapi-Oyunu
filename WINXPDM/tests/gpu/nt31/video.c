@@ -223,7 +223,7 @@ static VP_STATUS NTAPI find(PVOID ext, PVOID ctx, PWSTR args, PVIDEO_PORT_CONFIG
     if (!mmio(ext, id, ranges)) { msg(" MMIO/VRAM FAIL\n"); return ERROR_DEV_NOT_EXIST; }
     msg(" PCI config, BAR restore, register map and VRAM PASS\n");
     if (t->nvidia) msg("PRAMIN/BAR1 alias and running display clock PASS\n");
-    else msg("NBIO VRAM alias and SDMA7 wrapped fill/copy with pointer writeback PASS\n");
+    else msg("NBIO VRAM alias, SDMA7 wrapped fill/copy, 64-bit fence and pointer writeback PASS\n");
     {
         PULONG page = VideoPortGetDeviceBase(t, t->aux_page, 4096, 0);
         BOOLEAN ok;

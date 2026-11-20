@@ -56,6 +56,49 @@ def sdma_queue(run):
     register(5, 56)
     assert run("readl", rb + 12) == 56
 
+    # Linux emits two ordered uncached FENCE packets for a 64-bit sequence.
+    fence = ring + 992
+    sequence = [0x76543210, 0xfedcba98]
+    for i in range(2):
+        run("writel", vram + fence + i * 4, 0x55555555)
+    packet(56, [0x00030005, fence, 0, sequence[0], 0x00030005, fence + 4, 0, sequence[1]])
+    register(5, 68)
+    assert run("readl", vram + fence) == 0x55555555 and run("readl", rb + 12) == 56
+    register(5, 84)
+    assert run("readl", vram + fence) == sequence[0] and run("readl", rb + 12) == 72
+    assert run("readl", vram + fence + 4) == 0x55555555
+    register(5, 88)
+    assert run("readl", vram + fence + 4) == sequence[1] and run("readl", vram + ring + 960) == 88
+    for invalid_low, invalid_high in ((fence + 1, 0), (fence, 1), (0x10000000, 0)):
+        packet(88, [0x00030005, invalid_low, invalid_high, 0])
+        register(5, 104)
+        assert run("readl", rb + 12) == 88
+        assert [run("readl", vram + fence + i * 4) for i in range(2)] == sequence
+
+
+def gm204_pmu_dmem(run):
+    base = 0xf010a1c0
+    for port in range(4):
+        run("writel", base + port * 8, 0)
+    run("writel", base, 0x01000080)
+    for word in (0x769148e2, 0x173fce82):
+        run("writel", base + 4, word)
+    assert run("readl", base) == 0x01000088
+    for port in range(1, 4):
+        index = base + port * 8
+        run("writel", index, 0x02000080)
+        assert run("readl", index + 4) == 0x769148e2
+        assert run("readl", index + 4) == 0x173fce82
+        assert run("readl", index) == 0x02000088
+    assert run("readl", base) == 0x01000088
+    run("writel", base, 0x01005ffc)
+    run("writel", base + 4, 0x258b68f0)
+    run("writel", base + 4, 0xc8d161b5)
+    run("writel", base, 0x5fff)
+    assert run("readl", base) == 0x5ffc and run("readl", base + 4) == 0x258b68f0
+    run("writel", base, 0x6000)
+    assert run("readl", base + 4) == 0
+
 
 def geforce_firmware(run, cfg, raw, device):
     pcir = int.from_bytes(raw[24:26], "little")
@@ -146,16 +189,19 @@ def aux_replies(run, nv):
     assert transfer(0, 8, 0x600, b"\x01") == (0, b"")
 
 
-def check(qemu, firmware, machine, name, device, chip, rom=None, subsystem=None):
-    board = f"winxpdm-probe-gpu,model={name},addr=6"
+def check(qemu, firmware, machine, name, device, chip, rom=None, subsystem=None, slot=False):
+    location = "bus=wxpport,addr=0" if slot else "addr=6"
+    board = f"winxpdm-probe-gpu,model={name},{location}"
     if rom:
         board += ",romfile=" + str(rom.resolve()).replace(",", ",,")
     if subsystem:
         vendor_id, board_id = subsystem
         board += f",subsystem-vendor-id=0x{vendor_id:x},subsystem-id=0x{board_id:x}"
     cmd=[qemu,"-machine",machine+",accel=tcg","-nodefaults","-S","-display","none",
-         "-qtest","stdio","-qtest-log","none","-monitor","none",
-         "-device",board]
+         "-qtest","stdio","-qtest-log","none","-monitor","none"]
+    if slot:
+        cmd += ["-device", "pcie-root-port,id=wxpport,addr=5,chassis=1,x-speed=5,x-width=4"]
+    cmd += ["-device", board]
     for path in firmware: cmd += ["-L",path]
     with subprocess.Popen(cmd,stdin=subprocess.PIPE,stdout=subprocess.PIPE,text=True) as proc:
         def run(op, *args):
@@ -167,14 +213,21 @@ def check(qemu, firmware, machine, name, device, chip, rom=None, subsystem=None)
             if line=="OK":return None
             if not line.startswith("OK "):raise RuntimeError((name,op,line))
             return int(line.split()[1],0)
-        def cfg(reg,val=None,width=4):
-            run("outl",0xcf8,0x80003000 | (reg & ~3))
+        target = 0x80010000 if slot else 0x80003000
+        bridge = 0x80002800
+        def cfg(reg,val=None,width=4,address=target):
+            run("outl",0xcf8,address | (reg & ~3))
             port=0xcfc+(reg&3)
             suffix={1:"b",2:"w",4:"l"}[width]
             return run("in"+suffix,port) if val is None else run("out"+suffix,port,val)
         try:
             nv=chip<0x1200
             vendor=0x10de if nv else 0x1002
+            if slot:
+                cfg(0x18, 0x00010100, address=bridge)
+                cfg(0x20, 0xf0f0e000, address=bridge)
+                cfg(0x24, 0xcff0c000, address=bridge)
+                cfg(4, 2, width=2, address=bridge)
             assert cfg(0)==device<<16 | vendor and cfg(8)>>8==0x030000
             if subsystem:
                 assert cfg(0x2c) == (subsystem[1] << 16) | subsystem[0]
@@ -184,7 +237,23 @@ def check(qemu, firmware, machine, name, device, chip, rom=None, subsystem=None)
                 if pos in caps or pos<0x40 or pos&3:raise ValueError("Invalid PCI capability list")
                 caps.add(pos)
                 pos=cfg(pos+1,width=1)
-            assert any(cfg(c,width=1)==0x10 for c in caps)==(machine=="q35")
+            express = [c for c in caps if cfg(c,width=1)==0x10]
+            assert len(express) == int(machine == "q35")
+            link = "conventional PCI"
+            if express:
+                cap = express[0]
+                maximum = 3 if nv else 5
+                assert cfg(cap + 0x0c) & 0x3ff == (16 << 4) | maximum
+                assert cfg(cap + 0x2c) & 0x7e == (2 << maximum) - 2
+                speed, lanes = (2, 4) if slot else (maximum, 16)
+                negotiated = (lanes << 4) | speed
+                assert cfg(cap + 0x12, width=2) & 0x3ff == negotiated
+                if slot:
+                    pos = cfg(0x34, width=1, address=bridge)
+                    while pos and cfg(pos, width=1, address=bridge) != 0x10:
+                        pos = cfg(pos+1, width=1, address=bridge)
+                    assert pos and cfg(pos + 0x12, width=2, address=bridge) & 0x3ff == negotiated
+                link = f"Gen{speed} x{lanes}"
             mmio=0x10 if nv else 0x24
             aperture=0x14 if nv else 0x10
             aux=0x1c if nv else 0x18
@@ -201,6 +270,8 @@ def check(qemu, firmware, machine, name, device, chip, rom=None, subsystem=None)
                 run("writel",0xc0000000+offset,word)
                 assert run("readl",0xc0000000+offset)==word
             if nv:
+                if chip == 0x124:
+                    gm204_pmu_dmem(run)
                 if rom:
                     geforce_firmware(run, cfg, rom.read_bytes(), device)
                 else:
@@ -253,7 +324,8 @@ def check(qemu, firmware, machine, name, device, chip, rom=None, subsystem=None)
                 assert run("readl",0xc0001000)==0xdf097b5a
                 run("writel",0xf0000018,1);run("writel",0xf0000004,0)
                 assert run("readl",0xc0001000)==0xdf097b5a
-            print(f"{machine}\t{name}\t{vendor:04x}:{device:04x}\t{chip:x}\tPASS\tPASS",flush=True)
+            topology = "q35-root-port" if slot else machine
+            print(f"{topology}\t{name}\t{vendor:04x}:{device:04x}\t{chip:x}\tPASS\tPASS\t{link}",flush=True)
         finally:
             proc.terminate()
 
@@ -275,8 +347,8 @@ if __name__=="__main__":
                 raise ValueError()
         except ValueError:
             p.error("--subsystem requires --profile and two nonzero 16-bit IDs, e.g. 1043:8506")
-    print("machine\tprofile\tpci_id\tchip\tpci_bar_mmio_vram\taux_transactions")
-    for m in ("pc","q35"):
+    print("machine\tprofile\tpci_id\tchip\tpci_bar_mmio_vram\taux_transactions\tpci_link")
+    for m, slot in (("pc",False),("q35",False),("q35",True)):
         for n,(d,c) in PROFILES.items():
             if not args.profile or n == args.profile:
-                check(args.qemu,args.firmware,m,n,d,c,args.rom,subsystem)
+                check(args.qemu,args.firmware,m,n,d,c,args.rom,subsystem,slot)

@@ -1,0 +1,80 @@
+Windows XP Professional x64 Edition, NVIDIA 368.81, GTX 980 1043:8506
+Q35 root bus
+PCI location 00:06.0
+
+SetupAPI installation
+NativeBits=64
+HardwareID=PCI\VEN_10DE&DEV_13C0&SUBSYS_85061043&REV_A1
+Description=Video Controller (VGA Compatible)
+Service=
+NodeStatus=01802400
+Problem=1
+BootLogConf=00000000
+BootMemory=00000000fd000000-00000000fdffffff
+BootMemory=00000000e0000000-00000000efffffff
+BootMemory=00000000f0000000-00000000f1ffffff
+BootIO=000000000000c000-000000000000c07f
+BootIRQ=11
+AllocatedLogConf=0000000e
+Requesting vendor INF binding
+UpdateResult=1
+UpdateError=00000000
+RestartRequested=1
+HardwareID=PCI\VEN_10DE&DEV_13C0&SUBSYS_85061043&REV_A1
+Description=NVIDIA GeForce GTX 980
+Service=nv
+NodeStatus=0180200a
+Problem=0
+BootLogConf=00000000
+BootMemory=00000000fd000000-00000000fdffffff
+BootMemory=00000000e0000000-00000000efffffff
+BootMemory=00000000f0000000-00000000f1ffffff
+BootIO=000000000000c000-000000000000c07f
+BootIRQ=11
+AllocatedLogConf=00000000
+AllocatedMemory=00000000fd000000-00000000fdffffff
+AllocatedMemory=00000000e0000000-00000000efffffff
+AllocatedMemory=00000000f0000000-00000000f1ffffff
+AllocatedIO=000000000000c000-000000000000c07f
+AllocatedIO=00000000000003b0-00000000000003bb
+AllocatedIO=00000000000003c0-00000000000003df
+AllocatedMemory=00000000000a0000-00000000000bffff
+ServiceState=1
+ServiceWin32Exit=1077
+
+Configuration Manager after restart
+NativeBits=64
+HardwareID=PCI\VEN_10DE&DEV_13C0&SUBSYS_85061043&REV_A1
+Description=NVIDIA GeForce GTX 980
+Service=nv
+NodeStatus=01802402
+Problem=12
+BootLogConf=00000000
+BootMemory=00000000fd000000-00000000fdffffff
+BootMemory=00000000e0000000-00000000efffffff
+BootMemory=00000000f0000000-00000000f1ffffff
+BootIO=000000000000c000-000000000000c07f
+BootIRQ=11
+AllocatedLogConf=0000000e
+ServiceState=4
+ServiceWin32Exit=0
+
+Direct3D 9 after restart
+Direct3D 9 native 64-bit HAL test
+RequestedPCI=10de:13c0
+GDI[0]=Standard VGA Graphics Adapter PCI\VEN_1234&DEV_1111&SUBSYS_11001AF4&REV_02 flags=00000005
+GDI[1]=NetMeeting driver  flags=00000008
+GDI[2]=RDPDD Chained DD  flags=00000008
+D3D[0]=Standard VGA Graphics Adapter vga.dll PCI=1234:1111
+Requested adapter unavailable to Direct3D 9
+pixel checks: 0/9 executed, 0 failed
+result: FAIL
+
+QEMU cumulative MMIO counts
+mmio-reads	0
+mmio-writes	0
+identity-reads	0
+prom-reads	0
+aux-requests	0
+unknown-reads	0
+unknown-writes	0

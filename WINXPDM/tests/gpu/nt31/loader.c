@@ -10,16 +10,21 @@ static void msg(const char *s)
     while (*s) __asm__ volatile("outb %0,$0xe9" : : "a"(*s++));
 }
 
-static void report(const char *what, NTSTATUS status)
+static void hex(ULONG value, unsigned width)
 {
     char digits[9];
-    ULONG i, value = (ULONG)status;
-    for (i = 8; i; --i) {
+    unsigned i;
+    for (i = width; i; --i) {
         digits[i - 1] = "0123456789abcdef"[value & 15];
         value >>= 4;
     }
-    digits[8] = 0;
-    msg(what); msg(" NTSTATUS "); msg(digits); msg("\n");
+    digits[width] = 0;
+    msg(digits);
+}
+
+static void report(const char *what, NTSTATUS status)
+{
+    msg(what); msg(" NTSTATUS "); hex((ULONG)status, 8); msg("\n");
 }
 
 static NTSTATUS value(HANDLE key, PCWSTR name, ULONG type, PVOID data, ULONG size)
@@ -29,9 +34,9 @@ static NTSTATUS value(HANDLE key, PCWSTR name, ULONG type, PVOID data, ULONG siz
     return ZwSetValueKey(key, &n, 0, type, data, size);
 }
 
-static NTSTATUS load(PCWSTR path, PCWSTR image)
+static NTSTATUS load(PCWSTR path, PCWSTR image, ULONG pci)
 {
-    ULONG type = 1, start = 3, error = 1, pci = 0x13c010de;
+    ULONG type = 1, start = 3, error = 1;
     UNICODE_STRING service, file;
     OBJECT_ATTRIBUTES oa;
     NTSTATUS status;
@@ -60,26 +65,26 @@ static VOID NTAPI run(PVOID unused)
     delay.QuadPart = -20000000;
     KeDelayExecutionThread(KernelMode, FALSE, &delay);
     if (HalGetBusDataByOffset(PCIConfiguration, 0, 6, &id, 0, sizeof(id)) != sizeof(id) ||
-        id != 0x13c010de) { msg("TEST COMPLETE GTX 980 missing\n"); return; }
-    msg("PCI 10DE:13C0 at bus 0 slot 6\n");
+        (id & 0xffff) != 0x10de) { msg("TEST COMPLETE NVIDIA board missing\n"); return; }
+    msg("PCI "); hex(id & 0xffff, 4); msg(":"); hex(id >> 16, 4); msg(" at bus 0 slot 6\n");
     msg("Calling ZwLoadDriver for the control image\n");
     status = load(L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\WxpControl",
-                  L"\\SystemRoot\\System32\\Drivers\\W3CTRL.SYS");
+                  L"\\SystemRoot\\System32\\Drivers\\W3CTRL.SYS", id);
     report("Control ZwLoadDriver", status);
     if (!NT_SUCCESS(status)) { msg("TEST COMPLETE control failed\n"); return; }
     status = load(L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\WxpSmall",
-                  L"\\SystemRoot\\System32\\Drivers\\W3SMALL.SYS");
+                  L"\\SystemRoot\\System32\\Drivers\\W3SMALL.SYS", id);
     report("32-byte aligned control ZwLoadDriver", status);
     status = load(L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\WxpAligned",
-                  L"\\SystemRoot\\System32\\Drivers\\W3ALIGN.SYS");
+                  L"\\SystemRoot\\System32\\Drivers\\W3ALIGN.SYS", id);
     report("Repacked control ZwLoadDriver", status);
     if (!NT_SUCCESS(status)) { msg("TEST COMPLETE repacked control failed\n"); return; }
     status = load(L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\WxpMiss",
-                  L"\\SystemRoot\\System32\\Drivers\\W3MISS.SYS");
+                  L"\\SystemRoot\\System32\\Drivers\\W3MISS.SYS", id);
     report("Missing import control ZwLoadDriver", status);
-    msg("Calling ZwLoadDriver for the private GTX 980 miniport\n");
+    msg("Calling ZwLoadDriver for the private NVIDIA miniport\n");
     status = load(L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\WxpNvLab",
-                  L"\\SystemRoot\\System32\\Drivers\\NV4_MINI.SYS");
+                  L"\\SystemRoot\\System32\\Drivers\\NV4_MINI.SYS", id);
     report("Forceware ZwLoadDriver", status);
     msg("TEST COMPLETE loader returned\n");
 }

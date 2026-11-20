@@ -18,7 +18,7 @@ Windows 3.0 enhanced | rx9070xt | Win16 DPMI
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -51,7 +51,7 @@ WINRAM memory display ready
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -75,7 +75,7 @@ Windows 3.1 enhanced | rx9070xt | Win16 DPMI
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -99,7 +99,7 @@ Windows for Workgroups 3.11 | rx9070xt | Win16 DPMI
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -126,7 +126,7 @@ WINXPDM VMM Device_Init
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -153,7 +153,7 @@ WINXPDM VMM Device_Init
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -180,7 +180,7 @@ WINXPDM VMM Device_Init
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -204,7 +204,7 @@ Windows NT 3.1 | rx9070xt | NT DriverEntry
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -228,7 +228,7 @@ Windows NT 3.5 | rx9070xt | NT DriverEntry
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -252,7 +252,7 @@ Windows NT 3.51 | rx9070xt | NT DriverEntry
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -276,7 +276,7 @@ Windows NT 4.0 | rx9070xt | NT DriverEntry
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -300,7 +300,7 @@ Windows 2000 | rx9070xt | NT DriverEntry
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -324,7 +324,7 @@ Windows XP x86 | rx9070xt | NT DriverEntry
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
@@ -348,6 +348,6 @@ Windows XP x64 | rx9070xt | NT DriverEntry
 WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
-Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS
 Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS

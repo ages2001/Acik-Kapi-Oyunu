@@ -1,4 +1,4 @@
-/* SDMA 7 linear-copy and constant-fill packets emitted by amdgpu.
+/* SDMA 7 local memory packets emitted by amdgpu.
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 #ifndef WINXPDM_SDMA_H
@@ -10,6 +10,7 @@ static unsigned wxp_sdma_words(uint32_t header)
     switch (header) {
     case 0x0001000b: return 5; /* CONSTANT_FILL with COMPRESS set. */
     case 0x00080001: return 8; /* COPY_LINEAR with CPV set, no DCC metadata. */
+    case 0x00030005: return 4; /* FENCE using the uncached memory type. */
     default: return 0;
     }
 }
@@ -41,6 +42,13 @@ static bool wxp_sdma_execute(uint8_t *vram, uint32_t capacity, const uint32_t *p
             return false;
         }
         memmove(vram + dst, vram + p[3], count);
+    } else if (p[0] == 0x00030005) {
+        dst = p[1];
+        count = sizeof(uint32_t);
+        if (p[2] || (dst & 3) || !wxp_sdma_range(dst, count, capacity)) {
+            return false;
+        }
+        stl_le_p(vram + dst, p[3]);
     } else {
         return false;
     }

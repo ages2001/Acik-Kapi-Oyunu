@@ -195,7 +195,7 @@ static int run(void)
         if (!map(&mem[0], regs + 0x4000) || !map(&mem[1], fb + 0x400000)) goto done;
         emit("Radeon windows mapped\n");
         ok = board_sdma(mem[0].regs + 0xb80 / 4, mem[1].regs, saved_page);
-        if (ok) emit("Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS\n");
+        if (ok) emit("Radeon SDMA7 circular queue, fill, unaligned copy, 64-bit fence and pointer writeback PASS\n");
     }
     if (ok && map(&mem[4], regs + (nv ? 0xd000UL : 0x12000UL))) {
         ok = board_two_sinks(mem[4].regs + (nv ? 0x930/4 : 0xdc8/4), nv);

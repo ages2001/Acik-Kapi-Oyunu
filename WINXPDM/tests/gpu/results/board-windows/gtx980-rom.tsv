@@ -1,3 +1,4 @@
-machine	profile	pci_id	subsystem_id	firmware_version	pci_rom_prom_and_writable_shadow
-pc	gtx980	10de:13c0	1043:8506	84.04.1F.00.49	PASS
-q35	gtx980	10de:13c0	1043:8506	84.04.1F.00.49	PASS
+machine	profile	pci_id	subsystem_id	firmware_version	pci_rom_prom_and_writable_shadow	pci_link
+pc	gtx980	10de:13c0	1043:8506	84.04.1F.00.49	PASS	conventional PCI
+q35	gtx980	10de:13c0	1043:8506	84.04.1F.00.49	PASS	Gen3 x16
+q35-root-port	gtx980	10de:13c0	1043:8506	84.04.1F.00.49	PASS	Gen2 x4

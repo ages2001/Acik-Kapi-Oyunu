@@ -11,6 +11,64 @@ extern VOID NTAPI NativeCopy(PVOID, const VOID *, SIZE_T) __asm__("_RtlMoveMemor
 extern LONG_PTR NTAPI NativeDereference(PVOID) __asm__("_ObDereferenceObject@4");
 extern BOOLEAN wxp_kernel_version(PULONG, PULONG, PULONG, PBOOLEAN);
 
+/* Layout of the fields used here in the x86 NT 3.1 executive thread. */
+typedef struct {
+    UCHAR before_stack[0x178];
+    ULONG_PTR initial_stack;
+    UCHAR before_apc[0x194 - 0x17c];
+    volatile LONG kernel_apc_disable;
+    UCHAR before_id[0x208 - 0x198];
+    CLIENT_ID id;
+} WXP_THREAD31;
+C_ASSERT(FIELD_OFFSET(WXP_THREAD31, initial_stack) == 0x178);
+C_ASSERT(FIELD_OFFSET(WXP_THREAD31, kernel_apc_disable) == 0x194);
+C_ASSERT(FIELD_OFFSET(WXP_THREAD31, id) == 0x208);
+
+/* Both native NT 3.1 x86 probe routines exclude this address and above. */
+const ULONG WxpUserProbeAddress = 0x7fff0000;
+
+VOID NTAPI WxpStackLimits(PULONG_PTR low, PULONG_PTR high)
+{
+    const WXP_THREAD31 *thread = (const WXP_THREAD31 *)KeGetCurrentThread();
+    /* NT 3.1 uses two fixed x86 kernel stack pages, ending at InitialStack. */
+    *high = thread->initial_stack;
+    *low = *high - 2 * PAGE_SIZE;
+}
+
+HANDLE NTAPI WxpCurrentProcessId(void)
+{
+    const WXP_THREAD31 *thread = (const WXP_THREAD31 *)KeGetCurrentThread();
+    return thread->id.UniqueProcess;
+}
+
+USHORT NTAPI WxpCaptureStack(ULONG skip, ULONG count, PVOID *trace, PULONG hash)
+{
+    ULONG_PTR low, high, frame = (ULONG_PTR)__builtin_frame_address(0);
+    ULONG sum = 0;
+    USHORT captured = 0;
+    if (hash) *hash = 0;
+    /* XP limits the total number of skipped and returned frames to 62. */
+    if (!trace || !count || count >= 63 || skip >= 63 - count) return 0;
+    WxpStackLimits(&low, &high);
+    while (captured < count && !(frame & 3) && frame >= low &&
+           frame <= high - 2 * sizeof(ULONG_PTR)) {
+        const ULONG_PTR *saved = (const ULONG_PTR *)frame;
+        ULONG_PTR previous = saved[0], address = saved[1];
+        /* The x86 NT 3.1 address split is fixed at 2 GiB. */
+        if (address < 0x80000000UL) break;
+        if (skip) {
+            --skip;
+        } else {
+            trace[captured++] = (PVOID)address;
+            sum += (ULONG)address;
+        }
+        if (previous <= frame) break;
+        frame = previous;
+    }
+    if (hash) *hash = sum;
+    return captured;
+}
+
 ULONG __cdecl WxpPrint(ULONG component, ULONG level, PCSTR format, ...)
 {
     char text[512];
@@ -84,8 +142,8 @@ NTSTATUS NTAPI WxpDeviceList(PDRIVER_OBJECT driver, PDEVICE_OBJECT *list, ULONG 
    APCs when the outermost region exits. */
 VOID NTAPI WxpEnterCritical(void)
 {
-    volatile LONG *count = (volatile LONG *)((PUCHAR)KeGetCurrentThread() + 0x194);
-    --*count;
+    WXP_THREAD31 *thread = (WXP_THREAD31 *)KeGetCurrentThread();
+    --thread->kernel_apc_disable;
 }
 
 typedef struct {

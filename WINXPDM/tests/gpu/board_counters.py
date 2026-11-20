@@ -30,8 +30,8 @@ def main():
             path = "/machine/peripheral/" + args.device
             available = {entry["name"] for entry in request(channel, "qom-list", path=path)}
             for name in ("mmio-reads", "mmio-writes", "identity-reads", "prom-reads", "shadow-reads", "aux-requests", "unknown-reads",
-                         "unknown-writes", "first-unknown-read", "first-unknown-write"):
-                if name == "aux-requests" and name not in available:
+                         "unknown-writes", "first-unknown-read", "first-unknown-write", "pmu-dmem-reads", "pmu-dmem-writes"):
+                if name in ("aux-requests", "pmu-dmem-reads", "pmu-dmem-writes") and name not in available:
                     continue
                 value = request(channel, "qom-get", path=path, property=name)
                 print(f"{name}\t{hex(value) if name.startswith('first-') else value}")

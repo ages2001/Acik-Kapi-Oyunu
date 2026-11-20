@@ -43,3 +43,7 @@ IoEnumerateDeviceObjectList=WxpDeviceList@16
 KeEnterCriticalRegion=WxpEnterCritical@0
 PsGetVersion=WxpPsVersion@16
 RtlGetVersion=WxpRtlVersion@4
+IoGetStackLimits=WxpStackLimits@8
+PsGetCurrentProcessId=WxpCurrentProcessId@0
+MmUserProbeAddress=WxpUserProbeAddress DATA
+RtlCaptureStackBackTrace=WxpCaptureStack@16

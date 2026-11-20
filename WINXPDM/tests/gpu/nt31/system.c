@@ -3,6 +3,7 @@
  */
 #include <ntddk.h>
 extern WCHAR NTAPI RtlAnsiCharToUnicodeChar(PUCHAR *);
+extern USHORT NTAPI RtlCaptureStackBackTrace(ULONG, ULONG, PVOID *, PULONG);
 extern NTSTATUS NTAPI IoEnumerateDeviceObjectList(PDRIVER_OBJECT, PDEVICE_OBJECT *, ULONG, PULONG);
 extern LONG_PTR NTAPI native_release(PVOID) __asm__("_ObDereferenceObject@4");
 
@@ -53,6 +54,77 @@ static BOOLEAN apcs(void)
     ok = ok && *count == before - 1;
     KeLeaveCriticalRegion();
     return ok && *count == before;
+}
+
+typedef struct {
+    KEVENT done;
+    ULONG_PTR low, high;
+    HANDLE process;
+    BOOLEAN valid;
+} STACK_PROBE;
+
+static BOOLEAN stack_bounds(PULONG_PTR low, PULONG_PTR high)
+{
+    ULONG_PTR here = (ULONG_PTR)&here, raised_low, raised_high;
+    HANDLE pid = PsGetCurrentProcessId();
+    KIRQL irql;
+    IoGetStackLimits(low, high);
+    irql = KfRaiseIrql(DISPATCH_LEVEL);
+    IoGetStackLimits(&raised_low, &raised_high);
+    BOOLEAN same = pid == PsGetCurrentProcessId();
+    KfLowerIrql(irql);
+    return same && *low == raised_low && *high == raised_high &&
+           *high - *low == 2 * PAGE_SIZE && here >= *low && here < *high;
+}
+
+static VOID NTAPI check_worker(PVOID context)
+{
+    STACK_PROBE *probe = context;
+    probe->valid = stack_bounds(&probe->low, &probe->high);
+    probe->process = PsGetCurrentProcessId();
+    KeSetEvent(&probe->done, IO_NO_INCREMENT, FALSE);
+    PsTerminateSystemThread(STATUS_SUCCESS);
+}
+
+static BOOLEAN thread_services(void)
+{
+    ULONG_PTR low, high;
+    STACK_PROBE probe;
+    CLIENT_ID id;
+    HANDLE thread;
+    if (MmUserProbeAddress != 0x7fff0000 || !stack_bounds(&low, &high)) return FALSE;
+    KeInitializeEvent(&probe.done, NotificationEvent, FALSE);
+    if (!NT_SUCCESS(PsCreateSystemThread(&thread, THREAD_ALL_ACCESS, NULL, NULL,
+                                         &id, check_worker, &probe))) return FALSE;
+    KeWaitForSingleObject(&probe.done, Executive, KernelMode, FALSE, NULL);
+    ZwClose(thread);
+    return probe.valid && probe.process == id.UniqueProcess &&
+           (high <= probe.low || probe.high <= low);
+}
+
+/* Supply frame pointers and a repeatable call site on the x86 kernel stack. */
+__attribute__((noinline, noclone, optimize("no-omit-frame-pointer", "no-optimize-sibling-calls")))
+static USHORT collect_trace(unsigned depth, ULONG skip, ULONG count, PVOID *trace, PULONG hash)
+{
+    if (depth) return collect_trace(depth - 1, skip, count, trace, hash);
+    return RtlCaptureStackBackTrace(skip, count, trace, hash);
+}
+
+static BOOLEAN stack_trace(void)
+{
+    PVOID full[4] = {0}, tail[3] = {0};
+    ULONG full_hash, tail_hash, empty_hash = 1;
+    KIRQL old = KfRaiseIrql(DISPATCH_LEVEL);
+    USHORT first = collect_trace(3, 0, 3, full, &full_hash);
+    USHORT second = collect_trace(3, 1, 2, tail, &tail_hash);
+    KfLowerIrql(old);
+    if (first != 3 || second != 2 || !full[0] || full[0] == full[1] || full[3] || tail[2] ||
+        full[1] != tail[0] || full[2] != tail[1] ||
+        tail_hash != (ULONG)tail[0] + (ULONG)tail[1] ||
+        full_hash != (ULONG)full[0] + tail_hash) return FALSE;
+    return !collect_trace(0, 62, 1, tail + 2, &empty_hash) && !empty_hash &&
+           !collect_trace(0, MAXULONG, 2, tail, NULL) &&
+           !collect_trace(0, 0, 0, tail, NULL) && !tail[2];
 }
 
 static BOOLEAN device_objects(PDRIVER_OBJECT driver)
@@ -107,6 +179,10 @@ NTSTATUS NTAPI DriverEntry(PDRIVER_OBJECT driver, PUNICODE_STRING path)
     DbgPrintEx(0, 3, "WINXPDM NT %s %lu\n", "build", 528UL);
     if (KeQueryActiveProcessors() == 1 && apcs()) msg("Processor mask and nested APC disable/enable PASS\n");
     else { msg("Processor or APC FAIL\n"); ok = FALSE; }
+    if (thread_services()) msg("Two live stack ranges, original process ID at DISPATCH_LEVEL and user probe boundary PASS\n");
+    else { msg("Thread or address limit FAIL\n"); ok = FALSE; }
+    if (stack_trace()) msg("Kernel stack trace, skipped frames, hash and XP limits at DISPATCH_LEVEL PASS\n");
+    else { msg("Kernel stack trace FAIL\n"); ok = FALSE; }
     if (device_objects(driver)) msg("Referenced full and partial device lists, attach and detach PASS\n");
     else { msg("Device objects FAIL\n"); ok = FALSE; }
     msg(ok ? "TEST COMPLETE PASS\n" : "TEST COMPLETE FAIL\n");

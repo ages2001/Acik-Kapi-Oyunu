@@ -2,7 +2,6 @@ package	bound_module	unresolved_import
 NVIDIA 368.81 x86	w3port.sys	ExEventObjectType
 NVIDIA 368.81 x86	w3port.sys	IoDriverObjectType
 NVIDIA 368.81 x86	w3port.sys	IoGetDeviceProperty
-NVIDIA 368.81 x86	w3port.sys	IoGetStackLimits
 NVIDIA 368.81 x86	w3port.sys	IoRegisterPlugPlayNotification
 NVIDIA 368.81 x86	w3port.sys	IoUnregisterPlugPlayNotification
 NVIDIA 368.81 x86	w3port.sys	KeRestoreFloatingPointState
@@ -17,14 +16,11 @@ NVIDIA 368.81 x86	w3port.sys	MmFreePagesFromMdl
 NVIDIA 368.81 x86	w3port.sys	MmGetSystemRoutineAddress
 NVIDIA 368.81 x86	w3port.sys	MmMapLockedPagesSpecifyCache
 NVIDIA 368.81 x86	w3port.sys	MmMapUserAddressesToPage
-NVIDIA 368.81 x86	w3port.sys	MmUserProbeAddress
 NVIDIA 368.81 x86	w3port.sys	ObReferenceObjectByName
-NVIDIA 368.81 x86	w3port.sys	PsGetCurrentProcessId
 NVIDIA 368.81 x86	w3port.sys	PsLookupProcessByProcessId
 NVIDIA 368.81 x86	w3port.sys	PsReferenceImpersonationToken
 NVIDIA 368.81 x86	w3port.sys	PsReferencePrimaryToken
 NVIDIA 368.81 x86	w3port.sys	PsSetCreateProcessNotifyRoutine
-NVIDIA 368.81 x86	w3port.sys	RtlCaptureStackBackTrace
 NVIDIA 368.81 x86	w3port.sys	RtlRaiseException
 NVIDIA 368.81 x86	w3port.sys	SeTokenIsAdmin
 NVIDIA 368.81 x86	w3port.sys	ZwOpenProcess
@@ -34,7 +30,6 @@ NVIDIA 368.81 x86	w3port.sys	_purecall
 SupraGSX 382.69 x86	w3port.sys	ExEventObjectType
 SupraGSX 382.69 x86	w3port.sys	IoDriverObjectType
 SupraGSX 382.69 x86	w3port.sys	IoGetDeviceProperty
-SupraGSX 382.69 x86	w3port.sys	IoGetStackLimits
 SupraGSX 382.69 x86	w3port.sys	IoRegisterPlugPlayNotification
 SupraGSX 382.69 x86	w3port.sys	IoUnregisterPlugPlayNotification
 SupraGSX 382.69 x86	w3port.sys	KeRestoreFloatingPointState
@@ -49,14 +44,11 @@ SupraGSX 382.69 x86	w3port.sys	MmFreePagesFromMdl
 SupraGSX 382.69 x86	w3port.sys	MmGetSystemRoutineAddress
 SupraGSX 382.69 x86	w3port.sys	MmMapLockedPagesSpecifyCache
 SupraGSX 382.69 x86	w3port.sys	MmMapUserAddressesToPage
-SupraGSX 382.69 x86	w3port.sys	MmUserProbeAddress
 SupraGSX 382.69 x86	w3port.sys	ObReferenceObjectByName
-SupraGSX 382.69 x86	w3port.sys	PsGetCurrentProcessId
 SupraGSX 382.69 x86	w3port.sys	PsLookupProcessByProcessId
 SupraGSX 382.69 x86	w3port.sys	PsReferenceImpersonationToken
 SupraGSX 382.69 x86	w3port.sys	PsReferencePrimaryToken
 SupraGSX 382.69 x86	w3port.sys	PsSetCreateProcessNotifyRoutine
-SupraGSX 382.69 x86	w3port.sys	RtlCaptureStackBackTrace
 SupraGSX 382.69 x86	w3port.sys	RtlRaiseException
 SupraGSX 382.69 x86	w3port.sys	SeTokenIsAdmin
 SupraGSX 382.69 x86	w3port.sys	ZwOpenProcess

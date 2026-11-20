@@ -31,6 +31,19 @@ XP x86 SetupAPI completed the Forceware 382.69 installation for the same `1043:8
 
 Windows 2000 selected Section021 of the locally adapted Forceware package for this board. While installing the driver, the guest stopped with 0x1E (0xC0000005) after 25 MMIO reads and five writes. On the following boot, Windows enumerated the board with device problem 1 and no assigned service. [Installation stop](win2000-gtx980-rom-stop.png) · [Next-boot device status](win2000-gtx980-rom-node.txt)
 
+## GTX 980 on Windows XP Professional x64 and PCI Express
+
+Two disposable XP x64 installations used the same NVIDIA 368.81 driver, desktop Maxwell INF entry and ASUS GTX 980 ROM. Both installed the driver through SetupAPI and restarted before the OS queried the device and attempted the native Direct3D 9 pixel test.
+
+| Q35 attachment | Windows Configuration Manager after restart | Native Direct3D 9 |
+| --- | --- | --- |
+| Root bus, slot 6 | Code 12. Firmware supplied three memory windows, an I/O range and IRQ 11. Windows returned no allocated configuration, and the miniport issued zero MMIO requests. | Only the QEMU VGA device appeared. [Installation, resources and pixel-test transcript](xp64-gtx980-q35-root.txt) |
+| PCIe root port, bus 1 slot 0 | Code 10. Firmware supplied three memory windows and IRQ 21. The driver reached the board and read its PROM 153,365 times. | Only the QEMU VGA device appeared. [Installation, resources and pixel-test transcript](xp64-gtx980-q35-port.txt) |
+
+Both guests used `-cpu max -machine pc-q35-2.9,accel=tcg,sata=off -global q35-pcihost.pci-hole64-size=0`, a PIIX3 IDE disk and an independent VGA console. For the downstream case add `-device pcie-root-port,id=wxpport,addr=5,chassis=1,x-speed=8,x-width=16,pref32-reserve=512M,mem-reserve=32M,io-reserve=4K`, and attach the GTX 980 with `bus=wxpport,addr=0`. The test program records firmware and allocated resources separately using the Windows Configuration Manager API. [Probe source](../../xp_board.c)
+
+Before the GM204 data SRAM change, the driver polled Falcon CPU control at `0x10a100` 285,443 times. It wrote 128 instruction words, two page tags and 19 data words to the PMU ports. With data SRAM implemented, QEMU accepted all 19 data writes. The x64 driver again returned Code 10 after restart and never accessed DisplayPort AUX. The instruction port and microcontroller execution are still unimplemented. [Native guest, data SRAM counts and Direct3D result](xp64-gtx980-q35-pmu.txt) · [Unimplemented register access counts](gtx980-q35-pmu-registers.tsv) · [Linux PMU startup](https://github.com/torvalds/linux/blob/v6.15/drivers/gpu/drm/nouveau/nvkm/falcon/v1.c) · [GM200-family programmed I/O](https://github.com/torvalds/linux/blob/v6.15/drivers/gpu/drm/nouveau/nvkm/falcon/gm200.c)
+
 ## RDNA 4
 
 Windows enumerated each Radeon by its own vendor, device and subsystem ID. XP x86 tried the Catalyst 14.4 XP display INF. XP Professional x64 tried both the Catalyst 14.4 AMD64 display INF and Adrenalin 26.11.2's Windows display INF. All nine installation requests returned SetupAPI `0xe0000203`, meaning no driver was selected. No AMD miniport reached the register BAR in those runs. The modern INF includes RDNA 4 model sections for newer NT versions. The separate QEMU instruction tests cover the Navi 44 and Navi 48 shader and memory command forms. [GPU and operating-system matrix](../../priority.md)
@@ -52,4 +65,4 @@ Place the matching `bin/TESTX86/BIND.EXE` or `bin/TESTX64/BIND.EXE` next to an `
 Inf=AMD\CX171234.inf
 ```
 
-Run `BIND.EXE` as an administrator. The program records the incoming hardware ID, the result of `UpdateDriverForPlugAndPlayDevices`, the requested reboot and the updated service. If removable drive A contains `BOARD.TAG`, it writes `WXPBIND.TXT` there. Otherwise it writes to C. After restarting, run `BIND.EXE status` for a fresh `WXPNODE.TXT` when Windows reaches the desktop. Save receipts separately for each INF in a comparison. Use `python3 tests/gpu/board_counters.py /path/to/qmp` to read the device counters. Set the guest's Startup and Recovery preferences to retain a stop screen during diagnosis.
+Run `BIND.EXE` as an administrator. The program records the incoming hardware ID, the boot and allocated resources reported by Windows Configuration Manager, the result of `UpdateDriverForPlugAndPlayDevices`, the requested reboot and the updated service. If removable drive A contains `BOARD.TAG`, it writes `WXPBIND.TXT` there. Otherwise it writes to C. After restarting, run `BIND.EXE status` for a fresh `WXPNODE.TXT` when Windows reaches the desktop. Save receipts separately for each INF in a comparison. Use `python3 tests/gpu/board_counters.py /path/to/qmp` to read the device counters. Set the guest's Startup and Recovery preferences to retain a stop screen during diagnosis.

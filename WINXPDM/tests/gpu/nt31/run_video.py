@@ -93,7 +93,7 @@ def run(args, spec):
         if args.log_dir:
             (args.log_dir / f"{model}-{topology}.txt").write_text(log)
         match = IDENTITY.search(log)
-        aperture = "NBIO VRAM alias and SDMA7 wrapped fill/copy with pointer writeback PASS" if amd else "PRAMIN/BAR1 alias and running display clock PASS"
+        aperture = "NBIO VRAM alias, SDMA7 wrapped fill/copy, 64-bit fence and pointer writeback PASS" if amd else "PRAMIN/BAR1 alias and running display clock PASS"
         if (aperture not in log or not match or tuple(int(v, 16) for v in match.groups()) != expected or
                 CHILDREN not in log or SINKS not in log or
                 CALLBACKS not in log or DEFERRED not in log or COMPLETE + f"{identity:08x}" not in log):

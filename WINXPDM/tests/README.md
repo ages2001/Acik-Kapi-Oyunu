@@ -16,7 +16,7 @@ These results apply to the WINXPDM driver for PCI `1234:1111` on an emulated PC.
 | Windows NT 3.1 and 3.51, x86 | The wizard completed. After restarting with the new video service, Info opened in Program Manager and reported 800 × 600 at 16 bpp. Removal pending. |
 | Windows NT 3.5, x86 | The installer registered its video service. After restart Info opened at 800 × 600 in high color. |
 | Windows NT 4.0, x86 | The guest restarted and Info reported 800 × 600 at 16 bpp. |
-| Windows 2000 Professional, x86 | Reference installer opened. Full install and removal cycle pending. |
+| Windows 2000 Professional, x86 | The published setup installed `wxpdm.dll`. After restart, the desktop ran at 800 × 600, 16 bpp and 60 Hz. Direct3D 7, 8 and 9 each displayed a rotating textured cube using the reference adapter’s software rendering path. Removal remains open. |
 | Windows XP Professional, x86 | The guest bound the wxpdm service with no PnP problem. GDI passed at 800 × 600, 16 bpp. Native Direct3D results are recorded for the software HAL. [XP x86](gpu/results/qemu-std-xp86/PROBE.txt) |
 | Windows XP Professional x64 Edition | The native installer recorded the prior display INF, the desktop Info shortcut and the published WINXPDM OEM INF. The restarted guest bound wxpdm at 1280 × 800, 32 bpp, and passed GDI. Removal remains open. [XP x64](gpu/results/qemu-std-xp64/PROBE.txt) |
 
