@@ -27,9 +27,13 @@ def main():
             if "QMP" not in json.loads(channel.readline()):
                 raise RuntimeError("Missing QMP greeting")
             request(channel, "qmp_capabilities")
-            for name in ("mmio-reads", "mmio-writes", "identity-reads", "prom-reads", "shadow-reads", "unknown-reads",
+            path = "/machine/peripheral/" + args.device
+            available = {entry["name"] for entry in request(channel, "qom-list", path=path)}
+            for name in ("mmio-reads", "mmio-writes", "identity-reads", "prom-reads", "shadow-reads", "aux-requests", "unknown-reads",
                          "unknown-writes", "first-unknown-read", "first-unknown-write"):
-                value = request(channel, "qom-get", path="/machine/peripheral/" + args.device, property=name)
+                if name == "aux-requests" and name not in available:
+                    continue
+                value = request(channel, "qom-get", path=path, property=name)
                 print(f"{name}\t{hex(value) if name.startswith('first-') else value}")
 
 

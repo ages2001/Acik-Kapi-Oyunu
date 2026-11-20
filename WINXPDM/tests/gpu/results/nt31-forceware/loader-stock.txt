@@ -1,0 +1,12 @@
+NT 3.1 deferred driver-load test registered
+PCI 10DE:13C0 at bus 0 slot 6
+Calling ZwLoadDriver for the control image
+Control DriverEntry: kernel debugger data and W3PORT version PASS
+Control ZwLoadDriver NTSTATUS 00000000
+32-byte aligned control ZwLoadDriver NTSTATUS c000007b
+Control DriverEntry: kernel debugger data and W3PORT version PASS
+Repacked control ZwLoadDriver NTSTATUS 00000000
+Missing import control ZwLoadDriver NTSTATUS c000007a
+Calling ZwLoadDriver for the private GTX 980 miniport
+Forceware ZwLoadDriver NTSTATUS c000007a
+TEST COMPLETE loader returned

@@ -1,9 +1,38 @@
 """Count unresolved direct imports in the known private x86 Forceware miniports."""
 import argparse
+from collections import Counter
 import csv
 from pathlib import Path
+import struct
 import sys
 import pefile
+
+def verify_binding(original, adapted):
+    """Check the native data reference and every vendor function's original IAT address."""
+    with pefile.PE(str(original), fast_load=True) as src, pefile.PE(str(adapted), fast_load=True) as dst:
+        src.parse_data_directories(directories=[1])
+        dst.parse_data_directories(directories=[1, 5])
+        def imports(pe):
+            return [(d.dll.lower(), i.name, i.address)
+                    for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports]
+        before, after = imports(src), imports(dst)
+        data_name = b"KdDebuggerEnabled"
+        native_data, = [(dll, slot) for dll, name, slot in after if name == data_name]
+        old_data, = [slot for _, name, slot in before if name == data_name]
+        if native_data[0] != b"ntoskrnl.exe" or old_data == native_data[1]:
+            raise ValueError("Expected a relocated data import from the installed kernel")
+        expected = Counter((b"w3h.sys" if dll == b"hal.dll" else b"w3port.sys", name, slot)
+                           for dll, name, slot in before if name != data_name)
+        if Counter(group for group in after if group[1] != data_name) != expected:
+            raise ValueError("A vendor function or its IAT slot changed")
+        reference = struct.pack("<I", old_data)
+        source = original.read_bytes()
+        if source.count(reference) != 1:
+            raise ValueError("Unexpected original debugger reference count")
+        site = src.get_rva_from_offset(source.index(reference))
+        if (dst.get_dword_at_rva(site) != native_data[1] or
+                not any(e.rva == site and e.type == 3 for b in dst.DIRECTORY_ENTRY_BASERELOC for e in b.entries)):
+            raise ValueError("The vendor debugger reference lost its native data binding or relocation")
 
 def missing(image, modules):
     total = 0
@@ -45,8 +74,9 @@ def main():
                               ("SupraGSX 382.69 x86", a.community, a.community_adapted)):
         total, baseline = missing(raw, modules)
         count, qualified = missing(bound, modules)
+        verify_binding(raw, bound)
         if total != count or set(qualified) != {"w3h.sys", "w3port.sys", "ntoskrnl.exe"}:
-            raise ValueError("Expected the two bound service descriptors and the original secondary kernel descriptor")
+            raise ValueError("Expected both companions and the installed kernel data binding")
         initial = sum(map(len, baseline.values()))
         writer.writerow((name, total, initial, initial - len(baseline["hal.dll"]),
                          sum(map(len, qualified.values())), len(qualified["w3h.sys"])))

@@ -1,43 +1,43 @@
-guest	probe	profile	pci_id	operation	result
-Windows 3.0 enhanced	Win16 DPMI	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows 3.0 enhanced	Win16 DPMI	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows 3.0 enhanced	Win16 DPMI	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows 3.0a enhanced	Win16 DPMI	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows 3.0a enhanced	Win16 DPMI	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows 3.0a enhanced	Win16 DPMI	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows 3.1 enhanced	Win16 DPMI	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows 3.1 enhanced	Win16 DPMI	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows 3.1 enhanced	Win16 DPMI	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows for Workgroups 3.11	Win16 DPMI	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows for Workgroups 3.11	Win16 DPMI	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows for Workgroups 3.11	Win16 DPMI	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows 95 OSR2	VMM Device_Init	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows 95 OSR2	VMM Device_Init	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows 95 OSR2	VMM Device_Init	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows 98	VMM Device_Init	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows 98	VMM Device_Init	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows 98	VMM Device_Init	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows ME	VMM Device_Init	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows ME	VMM Device_Init	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows ME	VMM Device_Init	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows NT 3.1	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows NT 3.1	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows NT 3.1	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows NT 3.5	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows NT 3.5	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows NT 3.5	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows NT 3.51	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows NT 3.51	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows NT 3.51	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows NT 4.0	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows NT 4.0	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows NT 4.0	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows 2000	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows 2000	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows 2000	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows XP x86	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows XP x86	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows XP x86	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
-Windows XP x64	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	PASS
-Windows XP x64	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	PASS
-Windows XP x64	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	PASS
+guest	probe	profile	pci_id	operation	native_aux	result
+Windows 3.0 enhanced	Win16 DPMI	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 3.0 enhanced	Win16 DPMI	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 3.0 enhanced	Win16 DPMI	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 3.0a enhanced	Win16 DPMI	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 3.0a enhanced	Win16 DPMI	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 3.0a enhanced	Win16 DPMI	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 3.1 enhanced	Win16 DPMI	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 3.1 enhanced	Win16 DPMI	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 3.1 enhanced	Win16 DPMI	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows for Workgroups 3.11	Win16 DPMI	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows for Workgroups 3.11	Win16 DPMI	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows for Workgroups 3.11	Win16 DPMI	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 95 OSR2	VMM Device_Init	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 95 OSR2	VMM Device_Init	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 95 OSR2	VMM Device_Init	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 98	VMM Device_Init	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 98	VMM Device_Init	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 98	VMM Device_Init	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows ME	VMM Device_Init	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows ME	VMM Device_Init	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows ME	VMM Device_Init	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 3.1	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 3.1	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 3.1	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 3.5	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 3.5	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 3.5	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 3.51	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 3.51	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 3.51	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 4.0	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 4.0	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows NT 4.0	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 2000	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 2000	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows 2000	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows XP x86	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows XP x86	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows XP x86	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows XP x64	NT DriverEntry	gtx980	10de:13c0	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows XP x64	NT DriverEntry	gtx1050ti	10de:1c82	PRAMIN, BAR1 and display counter	2 sinks, 4 EDID blocks, 2 timings	PASS
+Windows XP x64	NT DriverEntry	rx9070xt	1002:7550	SDMA7 ring, fill, copy and read pointer writeback	2 sinks, 4 EDID blocks, 2 timings	PASS

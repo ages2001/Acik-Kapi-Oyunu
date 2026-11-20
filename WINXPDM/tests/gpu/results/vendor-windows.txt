@@ -3,6 +3,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 3.0 enhanced | gtx1050ti | Win16 DPMI
@@ -10,6 +11,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 3.0 enhanced | rx9070xt | Win16 DPMI
@@ -17,6 +19,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 3.0a enhanced | gtx980 | Win16 DPMI
@@ -27,6 +30,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 3.0a enhanced | gtx1050ti | Win16 DPMI
@@ -37,6 +41,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 3.0a enhanced | rx9070xt | Win16 DPMI
@@ -47,6 +52,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 3.1 enhanced | gtx980 | Win16 DPMI
@@ -54,6 +60,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 3.1 enhanced | gtx1050ti | Win16 DPMI
@@ -61,6 +68,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 3.1 enhanced | rx9070xt | Win16 DPMI
@@ -68,6 +76,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows for Workgroups 3.11 | gtx980 | Win16 DPMI
@@ -75,6 +84,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows for Workgroups 3.11 | gtx1050ti | Win16 DPMI
@@ -82,6 +92,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows for Workgroups 3.11 | rx9070xt | Win16 DPMI
@@ -89,6 +100,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 95 OSR2 | gtx980 | VMM Device_Init
@@ -97,6 +109,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 95 OSR2 | gtx1050ti | VMM Device_Init
@@ -105,6 +118,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 95 OSR2 | rx9070xt | VMM Device_Init
@@ -113,6 +127,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 98 | gtx980 | VMM Device_Init
@@ -121,6 +136,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 98 | gtx1050ti | VMM Device_Init
@@ -129,6 +145,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 98 | rx9070xt | VMM Device_Init
@@ -137,6 +154,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows ME | gtx980 | VMM Device_Init
@@ -145,6 +163,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows ME | gtx1050ti | VMM Device_Init
@@ -153,6 +172,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows ME | rx9070xt | VMM Device_Init
@@ -161,6 +181,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 3.1 | gtx980 | NT DriverEntry
@@ -168,6 +189,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 3.1 | gtx1050ti | NT DriverEntry
@@ -175,6 +197,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 3.1 | rx9070xt | NT DriverEntry
@@ -182,6 +205,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 3.5 | gtx980 | NT DriverEntry
@@ -189,6 +213,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 3.5 | gtx1050ti | NT DriverEntry
@@ -196,6 +221,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 3.5 | rx9070xt | NT DriverEntry
@@ -203,6 +229,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 3.51 | gtx980 | NT DriverEntry
@@ -210,6 +237,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 3.51 | gtx1050ti | NT DriverEntry
@@ -217,6 +245,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 3.51 | rx9070xt | NT DriverEntry
@@ -224,6 +253,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 4.0 | gtx980 | NT DriverEntry
@@ -231,6 +261,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 4.0 | gtx1050ti | NT DriverEntry
@@ -238,6 +269,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows NT 4.0 | rx9070xt | NT DriverEntry
@@ -245,6 +277,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 2000 | gtx980 | NT DriverEntry
@@ -252,6 +285,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 2000 | gtx1050ti | NT DriverEntry
@@ -259,6 +293,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows 2000 | rx9070xt | NT DriverEntry
@@ -266,6 +301,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows XP x86 | gtx980 | NT DriverEntry
@@ -273,6 +309,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows XP x86 | gtx1050ti | NT DriverEntry
@@ -280,6 +317,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows XP x86 | rx9070xt | NT DriverEntry
@@ -287,6 +325,7 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows XP x64 | gtx980 | NT DriverEntry
@@ -294,6 +333,7 @@ WINXPDM vendor PCI MMIO id=13c010de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows XP x64 | gtx1050ti | NT DriverEntry
@@ -301,6 +341,7 @@ WINXPDM vendor PCI MMIO id=1c8210de
 BAR registers=fd000000 framebuffer=e0000000
 GeForce windows mapped
 GeForce PRAMIN, BAR1 bidirectional readback and display counter PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS
 
 Windows XP x64 | rx9070xt | NT DriverEntry
@@ -308,4 +349,5 @@ WINXPDM vendor PCI MMIO id=75501002
 BAR registers=fea00000 framebuffer=e0000000
 Radeon windows mapped
 Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Vendor board test PASS

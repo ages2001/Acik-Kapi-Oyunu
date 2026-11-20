@@ -1,0 +1,10 @@
+mmio-reads	162007
+mmio-writes	37
+identity-reads	8489
+prom-reads	153365
+shadow-reads	0
+aux-requests	0
+unknown-reads	123
+unknown-writes	25
+first-unknown-read	0x1070
+first-unknown-write	0x1373a0

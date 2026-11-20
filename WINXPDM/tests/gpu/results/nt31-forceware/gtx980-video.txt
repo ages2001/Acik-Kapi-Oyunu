@@ -1,6 +1,10 @@
 NT 3.1 XP PCI video-port probe loaded
 PCI id=13c010de bus=00000000 VGA route=00000001 slot=00000006 identity=124000a1 PCI config, BAR restore, register map and VRAM PASS
 PRAMIN/BAR1 alias and running display clock PASS
+Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS
 Native registry round trip and miniport callback extension PASS
+AUX waiting for sink 2 disconnect
+AUX waiting for sink 2 reconnect
+Native child enumeration: two monitors, unplug, reconnect, stable extensions and EDID PASS
 Deferred callback, context, DISPATCH_LEVEL and duplicate rejection PASS
 Periodic timer, cancellation and restart PASS id=13c010de

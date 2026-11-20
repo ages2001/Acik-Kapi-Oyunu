@@ -91,6 +91,61 @@ def geforce_firmware(run, cfg, raw, device):
     cfg(0x50, control)
 
 
+def aux_replies(run, nv):
+    """Check receiver ACKs, native/I2C NACKs, and independence of the two sinks."""
+    def transfer(channel, cmd, address, data):
+        size = len(data)
+        read = cmd & 1
+        if nv:
+            base = 0xf000d930 + channel * 0x50
+            run("writel", base + 0x24, 0x100000)
+            assert run("readl", base + 0x24) & 0x7000000 == 0x1000000
+            run("writel", base + 0x20, address)
+            if not read:
+                for i in range(0, size, 4):
+                    run("writel", base + i, int.from_bytes(data[i:i+4], "little"))
+            run("writel", base + 0x24, 0x110000 | cmd << 12 | (size - 1 if size else 0x100))
+            status = run("readl", base + 0x28)
+            reply = status >> 16 & 15
+            out = b"".join(run("readl", base + 0x10 + i).to_bytes(4, "little")
+                           for i in range(0, status & 31, 4))[:status & 31]
+            run("writel", base + 0x24, 0)
+        else:
+            base = 0xf0012dc8 + channel * 0x70
+            run("writel", base, 1)
+            run("writel", base + 8, 0x10000)
+            assert run("readl", base + 8) & 12 == 4
+            run("writel", base + 12, 2)
+            request = bytearray((cmd << 4 | (address >> 16), address >> 8 & 255, address & 255))
+            if size:
+                request.append(size - 1)
+            if not read:
+                request.extend(data)
+            for i, value in enumerate(request):
+                run("writel", base + 24, (0 if i else 0x80000000) | value << 8)
+            run("writel", base + 4, len(request) << 16 | 1)
+            status = run("readl", base + 16)
+            assert status & 1 and (status >> 24) & 31
+            run("writel", base + 24, 0x80000001)
+            reply = run("readl", base + 24) >> 12 & 15
+            out = bytes(run("readl", base + 24) >> 8 & 255 for _ in range(((status >> 24) & 31) - 1))
+            run("writel", base + 8, 0x20000)
+        return reply, out
+
+    assert transfer(0, 8, 0x600, b"\x02") == (0, b"")
+    assert transfer(0, 9, 0x600, bytes(1)) == (0, b"\x02")
+    assert transfer(1, 9, 0x600, bytes(1)) == (0, b"\x01")
+    assert transfer(0, 8, 0, b"\x00") == (1, b"")
+    assert transfer(0, 1, 0x51, bytes(1)) == (4, b"")
+    assert transfer(0, 4, 0x50, b"") == (0, b"")
+    assert transfer(0, 4, 0x30, b"\x01") == (0, b"")
+    assert transfer(0, 1, 0x50, bytes(16)) == (4, b"")
+    assert transfer(0, 4, 0x30, b"\x00") == (0, b"")
+    assert transfer(0, 4, 0x50, b"\x00") == (0, b"")
+    assert transfer(0, 1, 0x50, bytes(8)) == (0, b"\x00" + 6 * b"\xff" + b"\x00")
+    assert transfer(0, 8, 0x600, b"\x01") == (0, b"")
+
+
 def check(qemu, firmware, machine, name, device, chip, rom=None, subsystem=None):
     board = f"winxpdm-probe-gpu,model={name},addr=6"
     if rom:
@@ -141,6 +196,7 @@ def check(qemu, firmware, machine, name, device, chip, rom=None, subsystem=None)
                 assert cfg(reg)==((-size & 0xffffffff)|flags),(name,reg,hex(cfg(reg)))
                 cfg(reg,0)
             cfg(mmio,0xf0000000); cfg(aperture,0xc0000000); cfg(aperture+4,0); cfg(4,2,width=2)
+            aux_replies(run, nv)
             for offset,word in ((0,0xa0536b10),(0x1000,0xef5379cc),(0xffffffc,0x6487dcf1)):
                 run("writel",0xc0000000+offset,word)
                 assert run("readl",0xc0000000+offset)==word
@@ -197,7 +253,7 @@ def check(qemu, firmware, machine, name, device, chip, rom=None, subsystem=None)
                 assert run("readl",0xc0001000)==0xdf097b5a
                 run("writel",0xf0000018,1);run("writel",0xf0000004,0)
                 assert run("readl",0xc0001000)==0xdf097b5a
-            print(f"{machine}\t{name}\t{vendor:04x}:{device:04x}\t{chip:x}\tPASS",flush=True)
+            print(f"{machine}\t{name}\t{vendor:04x}:{device:04x}\t{chip:x}\tPASS\tPASS",flush=True)
         finally:
             proc.terminate()
 
@@ -219,7 +275,7 @@ if __name__=="__main__":
                 raise ValueError()
         except ValueError:
             p.error("--subsystem requires --profile and two nonzero 16-bit IDs, e.g. 1043:8506")
-    print("machine\tprofile\tpci_id\tchip\tpci_bar_mmio_vram")
+    print("machine\tprofile\tpci_id\tchip\tpci_bar_mmio_vram\taux_transactions")
     for m in ("pc","q35"):
         for n,(d,c) in PROFILES.items():
             if not args.profile or n == args.profile:

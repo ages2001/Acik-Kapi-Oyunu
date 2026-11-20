@@ -8,11 +8,14 @@
 #include "qemu/host-utils.h"
 #include "qemu/log.h"
 #include "qapi/error.h"
+#include "qapi/visitor.h"
+#include "qapi/qapi-builtin-visit.h"
 #include "hw/pci/pci_device.h"
 #include "hw/pci/pcie.h"
 #include "hw/qdev-properties.h"
 #include "migration/vmstate.h"
 #include "winxpdm-sdma.h"
+#include "winxpdm-dp-aux.h"
 
 #define TYPE_WXP_BOARD "winxpdm-probe-gpu"
 OBJECT_DECLARE_SIMPLE_TYPE(WxpBoard, WXP_BOARD)
@@ -53,11 +56,13 @@ struct WxpBoard {
     MemoryRegion registers, aperture, auxiliary, ports;
     uint32_t index, index_hi, scratch, numerator, denominator, pramin;
     uint32_t straps[2], ring[RB_REGS];
+    WxpAux dp[WXP_AUX_CHANNELS];
+    uint8_t connected;
     QEMUTimer *sdma_timer;
     uint64_t tick_epoch, tick_value;
     uint64_t mmio_reads, mmio_writes, identity_reads, unknown_reads, unknown_writes;
     uint64_t first_unknown_read, first_unknown_write;
-    uint64_t prom_reads, shadow_reads;
+    uint64_t prom_reads, shadow_reads, aux_requests;
 };
 
 static bool prom_window(WxpBoard *s, hwaddr offset, unsigned size)
@@ -180,6 +185,10 @@ static void sdma_run(void *opaque)
 static uint32_t read32(WxpBoard *s, hwaddr offset)
 {
     if (s->board->vendor == 0x10de) {
+        if (wxp_aux_reg(offset)) {
+            unsigned n = (offset - WXP_AUX_BASE) / WXP_AUX_STRIDE;
+            return wxp_aux_read(&s->dp[n], (offset - WXP_AUX_BASE) % WXP_AUX_STRIDE, s->connected & (1 << n));
+        }
         switch (offset) {
         case 0:
             s->identity_reads++;
@@ -213,6 +222,10 @@ static uint32_t read32(WxpBoard *s, hwaddr offset)
         }
     } else {
         uint32_t addr = s->index & 0x7fffffff;
+        if (wxp_dcn_aux_reg(offset)) {
+            unsigned ch = (offset - DCN_AUX_BASE) / DCN_AUX_STRIDE;
+            return wxp_dcn_read(&s->dp[ch].dcn, (offset - DCN_AUX_BASE) % DCN_AUX_STRIDE);
+        }
         if (offset >= SDMA_RB_CNTL && offset < SDMA_RB_CNTL + RB_REGS * 4) {
             return s->ring[(offset - SDMA_RB_CNTL) / 4];
         }
@@ -271,6 +284,15 @@ static void write_mmio(void *opaque, hwaddr offset, uint64_t data, unsigned size
         return;
     }
     if (s->board->vendor == 0x10de) {
+        if (wxp_aux_reg(offset)) {
+            unsigned n = (offset - WXP_AUX_BASE) / WXP_AUX_STRIDE;
+            unsigned reg = (offset - WXP_AUX_BASE) % WXP_AUX_STRIDE;
+            if (reg == 0x24 && (value & 0x10000) && !(value & 0x80000000U)) {
+                s->aux_requests++;
+            }
+            wxp_aux_write(&s->dp[n], n, reg, value, s->connected & (1 << n));
+            return;
+        }
         if (offset >= 0x700000 && offset < 0x800000) {
             hwaddr address;
             uint8_t *p = pramin_pointer(s, offset, &address);
@@ -295,6 +317,15 @@ static void write_mmio(void *opaque, hwaddr offset, uint64_t data, unsigned size
         }
     } else {
         uint32_t addr = s->index & 0x7fffffff;
+        if (wxp_dcn_aux_reg(offset)) {
+            unsigned ch = (offset - DCN_AUX_BASE) / DCN_AUX_STRIDE;
+            unsigned reg = (offset - DCN_AUX_BASE) % DCN_AUX_STRIDE;
+            if (reg == 4 && (value & 1)) {
+                s->aux_requests++;
+            }
+            wxp_dcn_write(&s->dp[ch], ch, reg, value, s->connected & (1 << ch));
+            return;
+        }
         if (offset >= SDMA_RB_CNTL && offset < SDMA_RB_CNTL + RB_REGS * 4) {
             unsigned reg = (offset - SDMA_RB_CNTL) / 4;
             s->ring[reg] = value;
@@ -345,6 +376,9 @@ static void reset(DeviceState *dev)
     s->numerator = s->denominator = 1;
     s->index = s->index_hi = s->scratch = s->pramin = 0;
     s->straps[0] = s->straps[1] = 0;
+    for (unsigned n = 0; n < WXP_AUX_CHANNELS; ++n) {
+        wxp_aux_reset(&s->dp[n], n);
+    }
     if (s->board->vendor == 0x10de && s->parent_obj.has_rom) {
         PCIDevice *pci = &s->parent_obj;
         uint8_t *shadow = (uint8_t *)memory_region_get_ram_ptr(&s->aperture) + VBIOS_SHADOW;
@@ -417,6 +451,7 @@ static void realize(PCIDevice *dev, Error **errp)
     object_property_add_uint64_ptr(obj,"mmio-writes",&s->mmio_writes,OBJ_PROP_FLAG_READ);
     object_property_add_uint64_ptr(obj,"identity-reads",&s->identity_reads,OBJ_PROP_FLAG_READ);
     object_property_add_uint64_ptr(obj,"prom-reads",&s->prom_reads,OBJ_PROP_FLAG_READ);
+    object_property_add_uint64_ptr(obj,"aux-requests",&s->aux_requests,OBJ_PROP_FLAG_READ);
     object_property_add_uint64_ptr(obj,"shadow-reads",&s->shadow_reads,OBJ_PROP_FLAG_READ);
     object_property_add_uint64_ptr(obj,"unknown-reads",&s->unknown_reads,OBJ_PROP_FLAG_READ);
     object_property_add_uint64_ptr(obj,"unknown-writes",&s->unknown_writes,OBJ_PROP_FLAG_READ);
@@ -430,10 +465,38 @@ static const Property board_props[] = {
     DEFINE_PROP_UINT16("subsystem-id", WxpBoard, subsystem_device, 0),
 };
 static const VMStateDescription migration = {.name = TYPE_WXP_BOARD, .unmigratable = 1};
+static void get_sinks(Object *obj, Visitor *v, const char *name, void *opaque, Error **errp)
+{
+    visit_type_uint8(v, name, &WXP_BOARD(obj)->connected, errp);
+}
+
+static void set_sinks(Object *obj, Visitor *v, const char *name, void *opaque, Error **errp)
+{
+    WxpBoard *s = WXP_BOARD(obj);
+    uint8_t mask;
+    if (!visit_type_uint8(v, name, &mask, errp)) {
+        return;
+    }
+    if (mask >= (1U << WXP_DP_SINKS)) {
+        error_setg(errp, "dp-connected accepts bits 0 and 1 for the two monitor sinks");
+        return;
+    }
+    for (unsigned n = 0; n < WXP_DP_SINKS; ++n) {
+        if ((mask ^ s->connected) & (1 << n)) {
+            s->dp[n].offset = 0;
+            s->dp[n].segment = 0;
+            s->dp[n].power = 1;
+        }
+    }
+    s->connected = mask;
+}
+
 static void board_init(Object *obj)
 {
     /* PCI allocates configuration space before realize chooses the parent bus. */
     PCI_DEVICE(obj)->cap_present |= QEMU_PCI_CAP_EXPRESS;
+    WXP_BOARD(obj)->connected = 3;
+    object_property_add(obj, "dp-connected", "uint8", get_sinks, set_sinks, NULL, NULL);
 }
 
 static void board_exit(PCIDevice *dev)

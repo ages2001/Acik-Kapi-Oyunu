@@ -1,9 +1,11 @@
 """Boot the native NT 3.1 PCI miniport probe against the priority QEMU GPU profiles."""
 import argparse
 import csv
+import json
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import re
+import socket
 import subprocess
 import sys
 import tempfile
@@ -18,6 +20,26 @@ IDENTITY = re.compile(r"PCI id=([a-f0-9]{8}) bus=([a-f0-9]{8}) VGA route=([01]{8
 CALLBACKS = "Native registry round trip and miniport callback extension PASS"
 DEFERRED = "Deferred callback, context, DISPATCH_LEVEL and duplicate rejection PASS"
 COMPLETE = "Periodic timer, cancellation and restart PASS id="
+SINKS = "Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS"
+CHILDREN = "Native child enumeration: two monitors, unplug, reconnect, stable extensions and EDID PASS"
+
+
+def set_sinks(path, mask):
+    with socket.socket(socket.AF_UNIX) as sock:
+        sock.settimeout(4)
+        sock.connect(str(path))
+        with sock.makefile("rwb", buffering=0) as stream:
+            if "QMP" not in json.loads(stream.readline()):
+                raise RuntimeError("Missing QMP greeting")
+            for request in ({"execute": "qmp_capabilities"}, {"execute": "qom-set", "arguments": {
+                    "path": "/machine/peripheral/target", "property": "dp-connected", "value": mask}}):
+                stream.write(json.dumps(request).encode() + b"\n")
+                while True:
+                    reply = json.loads(stream.readline())
+                    if "error" in reply:
+                        raise RuntimeError(reply["error"])
+                    if "return" in reply:
+                        break
 
 
 def run(args, spec):
@@ -36,6 +58,7 @@ def run(args, spec):
         cmd = [args.qemu, "-machine", "pc,accel=tcg", "-cpu", "pentium", "-m", "96",
                "-nodefaults", "-device", "VGA,addr=2", "-display", "none", "-monitor", "none",
                "-drive", f"file={overlay},format=qcow2,if=ide", "-debugcon", f"file:{debug}",
+               "-qmp", f"unix:{work/'qmp'},server=on,wait=off",
                "-no-reboot", "-rtc", "base=2005-11-01"]
         for firmware in args.firmware_dir:
             cmd.extend(["-L", str(firmware)])
@@ -43,14 +66,21 @@ def run(args, spec):
         if bridge:
             cmd.extend(["-device", "pci-bridge,id=downstream,chassis_nr=1,addr=7"])
             location = "bus=downstream,addr=0"
-        cmd.extend(["-device", f"winxpdm-probe-gpu,model={model},{location}"])
+        cmd.extend(["-device", f"winxpdm-probe-gpu,id=target,model={model},{location}"])
         with stderr.open("wb") as errors, subprocess.Popen(cmd, stderr=errors) as proc:
             try:
                 deadline = time.monotonic() + args.timeout
+                disconnect, reconnect = True, True
                 while time.monotonic() < deadline and proc.poll() is None:
                     log = debug.read_text(errors="replace") if debug.exists() else ""
                     if COMPLETE in log or "FAIL" in log or "failed " in log:
                         break
+                    if disconnect and "AUX waiting for sink 2 disconnect\n" in log:
+                        set_sinks(work / "qmp", 1)
+                        disconnect = False
+                    if reconnect and "AUX waiting for sink 2 reconnect\n" in log:
+                        set_sinks(work / "qmp", 3)
+                        reconnect = False
                     time.sleep(0.1)
             finally:
                 if proc.poll() is None:
@@ -65,10 +95,12 @@ def run(args, spec):
         match = IDENTITY.search(log)
         aperture = "NBIO VRAM alias and SDMA7 wrapped fill/copy with pointer writeback PASS" if amd else "PRAMIN/BAR1 alias and running display clock PASS"
         if (aperture not in log or not match or tuple(int(v, 16) for v in match.groups()) != expected or
+                CHILDREN not in log or SINKS not in log or
                 CALLBACKS not in log or DEFERRED not in log or COMPLETE + f"{identity:08x}" not in log):
             raise RuntimeError(f"{model}/{topology}\n{log}\n{stderr.read_text(errors='replace')}")
     return (model, topology, f"{identity & 0xffff:04x}:{device:04x}", expected[1], expected[3],
-            expected[2], f"{expected[4]:08x}", "NBIO/SDMA7" if amd else "PRAMIN/PDISPLAY", "PASS", "PASS", "PASS", "PASS")
+            expected[2], f"{expected[4]:08x}", "NBIO/SDMA7" if amd else "PRAMIN/PDISPLAY", "PASS",
+            "PASS", "2/1/2 monitors", "4 blocks", "PASS", "PASS")
 
 
 def main():
@@ -91,7 +123,8 @@ def main():
         args.log_dir.mkdir(parents=True, exist_ok=True)
     writer = csv.writer(sys.stdout, delimiter="\t", lineterminator="\n")
     writer.writerow(("model", "attachment", "pci_id", "bus", "slot", "vga_route", "mmio_identity",
-                     "vendor_interface", "config_bars_vram", "registry_callback", "dpc", "timer_cancel_restart"))
+                     "vendor_interface", "config_bars_vram", "registry_callback", "child_enumeration",
+                     "native_aux_edid", "dpc", "timer_cancel_restart"))
     specs = [(name, bridge) for name in models for bridge in (False, True)]
     with ThreadPoolExecutor(max_workers=args.jobs) as workers:
         for row in workers.map(lambda spec: run(args, spec), specs):

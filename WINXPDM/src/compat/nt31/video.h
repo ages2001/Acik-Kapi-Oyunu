@@ -30,4 +30,26 @@ typedef struct {
 BOOLEAN wxp_find_display(ULONG id, WXP_PCI_ADDRESS *address);
 VP_STATUS wxp_pci_ranges(const WXP_PCI_ADDRESS *address, PVIDEO_ACCESS_RANGE ranges,
                          PULONG count);
+
+typedef struct {
+    ULONG index, uid, type;
+    UCHAR descriptor[256];
+} WXP_CHILD_RECORD;
+
+typedef struct {
+    ULONG version, count;
+    WXP_CHILD_RECORD child[1];
+} WXP_CHILD_LIST;
+
+typedef struct {
+    PVIDEO_HW_GET_CHILD_DESCRIPTOR describe;
+    PVOID hardware;
+    ULONG extension_size;
+    struct wxp_child_slot *slots;
+    WORK_QUEUE_ITEM work;
+    BOOLEAN busy, pending, ready;
+} WXP_CHILD_PORT;
+
+void wxp_children_init(WXP_CHILD_PORT *, PVOID, PVIDEO_HW_INITIALIZATION_DATA);
+void wxp_children_request(WXP_CHILD_PORT *, BOOLEAN);
 #endif

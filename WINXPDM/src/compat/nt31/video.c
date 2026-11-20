@@ -11,6 +11,7 @@ typedef struct {
     PVIDEO_HW_TIMER tick;
     KDPC dpc, timer_dpc;
     KTIMER timer;
+    WXP_CHILD_PORT children;
     BOOLEAN ticking, finding, registered;
 } ADAPTER;
 
@@ -176,6 +177,7 @@ static VP_STATUS NTAPI find_adapter(PVOID hw, PVOID ctx, PWSTR args,
     a->start_io = r->xp->HwStartIO;
     a->interrupt = r->xp->HwInterrupt;
     a->tick = r->xp->HwTimer;
+    wxp_children_init(&a->children, a + 1, r->xp);
     KeInitializeDpc(&a->dpc, dispatch_dpc, a);
     KeInitializeDpc(&a->timer_dpc, timer_dpc, a);
     KeInitializeTimer(&a->timer);
@@ -279,8 +281,16 @@ ULONG NTAPI WxpVideoInitialize(PVOID driver, PUNICODE_STRING key,
         r.adapter->registered = TRUE;
         if (r.adapter->ticking) arm_timer(r.adapter);
         KfLowerIrql(old);
+        wxp_children_request(&r.adapter->children, TRUE);
     }
     return status;
+}
+
+VP_STATUS NTAPI WxpVideoChildren(PVOID ext, PVOID reserved)
+{
+    if (!ext || reserved) return ERROR_INVALID_PARAMETER;
+    wxp_children_request(&adapter(ext)->children, FALSE);
+    return NO_ERROR;
 }
 
 PVOID NTAPI WxpDeviceBase(PVOID ext, PHYSICAL_ADDRESS address, ULONG size, UCHAR io)

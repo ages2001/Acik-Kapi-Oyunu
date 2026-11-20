@@ -1,6 +1,7 @@
 LIBRARY W3PORT.SYS
 EXPORTS
 VideoPortInitialize@16
+VideoPortEnumerateChildren@8
 VideoPortGetCurrentIrql@0
 VideoPortGetAccessRanges@32
 VideoPortQueueDpc@12

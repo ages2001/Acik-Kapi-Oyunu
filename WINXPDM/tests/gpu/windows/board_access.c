@@ -152,6 +152,7 @@ static void board_write(board_regs pointer, board_word value);
 #define board_write(p, v) (*(p) = (v))
 #endif
 #include "board_ops.h"
+#include "board_aux.h"
 
 static board_word saved_page[256];
 
@@ -169,7 +170,7 @@ static void number(board_word value)
 
 static int run(void)
 {
-    Mapping mem[4] = {{0}};
+    Mapping mem[5] = {{0}};
     board_word id = cfg(0, 4, 0, 0), ctl = cfg(4, 2, 0, 0), fb, regs, high;
     unsigned i;
     int nv = (uint16_t)id == 0x10de, ok = 0;
@@ -196,8 +197,12 @@ static int run(void)
         ok = board_sdma(mem[0].regs + 0xb80 / 4, mem[1].regs, saved_page);
         if (ok) emit("Radeon SDMA7 circular queue, fill, unaligned copy and pointer writeback PASS\n");
     }
+    if (ok && map(&mem[4], regs + (nv ? 0xd000UL : 0x12000UL))) {
+        ok = board_two_sinks(mem[4].regs + (nv ? 0x930/4 : 0xdc8/4), nv);
+        if (ok) emit("Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS\n");
+    } else ok = 0;
 done:
-    for (i = 0; i < 4; ++i) unmap(&mem[i]);
+    for (i = 0; i < 5; ++i) unmap(&mem[i]);
     if (!(ctl & 2)) cfg(4, 2, ctl, 1);
     return ok;
 }

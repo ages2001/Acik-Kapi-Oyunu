@@ -61,3 +61,14 @@ ZwOpenSection
 ZwQueryValueKey
 ZwSetValueKey
 ZwUnmapViewOfSection
+MmGetPhysicalAddress
+KeSetBasePriorityThread
+RtlCreateRegistryKey
+MmIsAddressValid
+ZwQueryInformationToken
+ObOpenObjectByPointer
+RtlConvertSidToUnicodeString
+RtlEqualSid
+RtlValidSid
+KeReadStateMutex
+RtlUnicodeToMultiByteN

@@ -1,0 +1,10 @@
+LIBRARY W3PORT.SYS
+EXPORTS
+DbgPrintEx
+KeEnterCriticalRegion@0
+KeQueryActiveProcessors@0
+PsGetVersion@16
+RtlGetVersion@4
+RtlAnsiCharToUnicodeChar@4
+IoGetAttachedDeviceReference@4
+IoEnumerateDeviceObjectList@16

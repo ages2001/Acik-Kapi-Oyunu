@@ -8,6 +8,7 @@ typedef PULONG board_regs;
 #define board_write VideoPortWriteRegisterUlong
 #define board_delay() VideoPortStallExecution(10)
 #include "../windows/board_ops.h"
+#include "../windows/board_aux.h"
 
 typedef VOID (NTAPI *STOP_TIMER)(PVOID);
 typedef struct {
@@ -15,6 +16,9 @@ typedef struct {
     KEVENT dpc_done, timer_done;
     ULONG dpcs, ticks;
     STOP_TIMER stop;
+    PHYSICAL_ADDRESS aux_page;
+    ULONG first_visits, second_visits;
+    BOOLEAN nvidia, child_error;
 } TEST_EXTENSION;
 static TEST_EXTENSION *found;
 static ULONG context_cookie;
@@ -213,10 +217,22 @@ static VP_STATUS NTAPI find(PVOID ext, PVOID ctx, PWSTR args, PVIDEO_PORT_CONFIG
     if (!resource_ranges(ext, ranges, &slot))
         { msg(" PCI resources FAIL\n"); return ERROR_DEV_NOT_EXIST; }
     field(" slot=", slot);
+    t->nvidia = (USHORT)id == 0x10de;
+    t->aux_page = ranges[t->nvidia ? 0 : 3].RangeStart;
+    t->aux_page.QuadPart += t->nvidia ? 0xd000 : 0x12000;
     if (!mmio(ext, id, ranges)) { msg(" MMIO/VRAM FAIL\n"); return ERROR_DEV_NOT_EXIST; }
     msg(" PCI config, BAR restore, register map and VRAM PASS\n");
-    if ((USHORT)id == 0x10de) msg("PRAMIN/BAR1 alias and running display clock PASS\n");
+    if (t->nvidia) msg("PRAMIN/BAR1 alias and running display clock PASS\n");
     else msg("NBIO VRAM alias and SDMA7 wrapped fill/copy with pointer writeback PASS\n");
+    {
+        PULONG page = VideoPortGetDeviceBase(t, t->aux_page, 4096, 0);
+        BOOLEAN ok;
+        if (!page) return ERROR_DEV_NOT_EXIST;
+        ok = board_two_sinks(page + (t->nvidia ? 0x930/4 : 0xdc8/4), t->nvidia);
+        VideoPortFreeDeviceBase(t, page);
+        if (!ok) { msg("AUX discovery FAIL\n"); return ERROR_DEV_NOT_EXIST; }
+        msg("Native AUX: two DPCD caps, four EDID blocks, two timings and absent sink PASS\n");
+    }
     t->stop = c->VideoPortGetProcAddress(ext, (PUCHAR)"VideoPortStopTimer");
     if (!t->stop || !c->VideoPortGetProcAddress(ext, (PUCHAR)"VideoPortGetCurrentIrql") ||
         !c->VideoPortGetProcAddress(ext, (PUCHAR)"VideoPortStallExecution") ||
@@ -239,6 +255,108 @@ static VP_STATUS NTAPI find(PVOID ext, PVOID ctx, PWSTR args, PVIDEO_PORT_CONFIG
 static BOOLEAN NTAPI initialize(PVOID ext)
 {
     return ext == found;
+}
+
+static VP_STATUS NTAPI child(PVOID ext, PVIDEO_CHILD_ENUM_INFO info, PVIDEO_CHILD_TYPE type,
+                             PUCHAR descriptor, PULONG uid, PULONG unused)
+{
+    TEST_EXTENSION *t = ext;
+    ULONG n = info->ChildIndex, *visits = info->ChildHwDeviceExtension;
+    PULONG page, aux;
+    UCHAR revision;
+    VP_STATUS result = VIDEO_ENUM_INVALID_DEVICE;
+    if (KeGetCurrentIrql() != PASSIVE_LEVEL || t != found || info->Size != sizeof(*info) ||
+        info->ACPIHwId || info->ChildDescriptorSize < 256 || !visits) {
+        t->child_error = TRUE;
+        return ERROR_INVALID_PARAMETER;
+    }
+    *unused = 0;
+    if (n > 3) return VIDEO_ENUM_NO_MORE_DEVICES;
+    if (n == 2) return VIDEO_ENUM_INVALID_DEVICE;
+    page = VideoPortGetDeviceBase(t, t->aux_page, 4096, 0);
+    if (!page) return ERROR_INVALID_FUNCTION;
+    aux = page + (t->nvidia ? 0x930/4 : 0xdc8/4) + (n == 3 ? (t->nvidia ? 0x50/4 : 0x70/4) : 0);
+    if (board_aux_transfer(aux, t->nvidia, 9, 0, &revision, 1)) {
+        if (!board_aux_edid(aux, t->nvidia, descriptor, 0) || !board_aux_edid(aux, t->nvidia, descriptor + 128, 1)) {
+            t->child_error = TRUE;
+            result = ERROR_INVALID_DATA;
+        } else {
+            *uid = 0x100 + descriptor[12];
+            *type = Monitor;
+            if (n == 1) t->first_visits = ++*visits;
+            else t->second_visits = ++*visits;
+            result = VIDEO_ENUM_MORE_DEVICES;
+        }
+    }
+    VideoPortFreeDeviceBase(t, page);
+    return result;
+}
+
+static VP_STATUS NTAPI check_snapshot(PVOID ext, PVOID ctx, PWSTR name, PVOID bytes, ULONG size)
+{
+    WXP_CHILD_LIST *list = bytes;
+    ULONG n = *(ULONG *)ctx, i;
+    UNREFERENCED_PARAMETER(ext);
+    UNREFERENCED_PARAMETER(name);
+    if (size != FIELD_OFFSET(WXP_CHILD_LIST, child) + n * sizeof(WXP_CHILD_RECORD) ||
+        list->version != 1 || list->count != n) return ERROR_INVALID_DATA;
+    for (i = 0; i < n; ++i) {
+        WXP_CHILD_RECORD *r = &list->child[i];
+        ULONG k, base = 0, extra = 0;
+        if (r->index != 1 + 2*i || r->type != Monitor || r->uid != 0x101 + i ||
+            r->descriptor[12] != i + 1 || r->descriptor[128] != 2) return ERROR_INVALID_DATA;
+        for (k = 0; k < 128; ++k) { base += r->descriptor[k]; extra += r->descriptor[k+128]; }
+        if ((base | extra) & 255) return ERROR_INVALID_DATA;
+    }
+    return NO_ERROR;
+}
+
+static BOOLEAN snapshot(TEST_EXTENSION *t, ULONG count)
+{
+    ULONG i;
+    LARGE_INTEGER delay;
+    delay.QuadPart = -100000;
+    for (i = 0; i < 500 && !t->child_error; ++i) {
+        if (get_registry(t, L"WinxpdmChildren", FALSE, check_snapshot, &count) == NO_ERROR) return TRUE;
+        KeDelayExecutionThread(KernelMode, FALSE, &delay);
+    }
+    return FALSE;
+}
+
+static BOOLEAN changed(TEST_EXTENSION *t, BOOLEAN connected)
+{
+    LARGE_INTEGER delay;
+    KIRQL old;
+    ULONG i;
+    PULONG page = VideoPortGetDeviceBase(t, t->aux_page, 4096, 0);
+    VP_STATUS first, second;
+    UCHAR version;
+    if (!page) return FALSE;
+    delay.QuadPart = -100000;
+    for (i = 0; i < 1200; ++i) {
+        PULONG aux = page + (t->nvidia ? (0x930+0x50)/4 : (0xdc8+0x70)/4);
+        if (board_aux_transfer(aux, t->nvidia, 9, 0, &version, 1) == connected) break;
+        KeDelayExecutionThread(KernelMode, FALSE, &delay);
+    }
+    VideoPortFreeDeviceBase(t, page);
+    if (i == 1200) return FALSE;
+    old = KfRaiseIrql(DISPATCH_LEVEL);
+    first = VideoPortEnumerateChildren(t, NULL);
+    second = VideoPortEnumerateChildren(t, NULL);
+    KfLowerIrql(old);
+    return !first && !second && snapshot(t, connected ? 2 : 1);
+}
+
+static BOOLEAN children(TEST_EXTENSION *t)
+{
+    if (!snapshot(t, 2)) return FALSE;
+    if (t->first_visits != 1 || t->second_visits != 1) return FALSE;
+    msg("AUX waiting for sink 2 disconnect\n");
+    if (!changed(t, FALSE) || t->first_visits != 2) return FALSE;
+    msg("AUX waiting for sink 2 reconnect\n");
+    if (!changed(t, TRUE) || t->first_visits != 3 || t->second_visits != 1) return FALSE;
+    msg("Native child enumeration: two monitors, unplug, reconnect, stable extensions and EDID PASS\n");
+    return TRUE;
 }
 
 static BOOLEAN NTAPI start(PVOID ext, PVIDEO_REQUEST_PACKET packet)
@@ -308,6 +426,8 @@ NTSTATUS NTAPI DriverEntry(PDRIVER_OBJECT driver, PUNICODE_STRING key)
     d.HwInitialize = initialize;
     d.HwStartIO = start;
     d.HwTimer = tick;
+    d.HwGetVideoChildDescriptor = child;
+    d.HwChildDeviceExtensionSize = sizeof(ULONG);
     if (!select_board(key, 0xfffefffeUL) ||
         VideoPortInitialize(driver, key, &d, &context_cookie) != (ULONG)STATUS_DEVICE_DOES_NOT_EXIST) {
         msg("Absent board selection FAIL\n");
@@ -323,7 +443,8 @@ NTSTATUS NTAPI DriverEntry(PDRIVER_OBJECT driver, PUNICODE_STRING key)
         return NT_SUCCESS(status) ? STATUS_NO_SUCH_DEVICE : status;
     }
     /* Once registered, the native video port owns the callbacks and extension. */
-    if (!asynchronous(found)) msg("DPC/timer FAIL\n");
+    if (!children(found)) msg("Child enumeration FAIL\n");
+    else if (!asynchronous(found)) msg("DPC/timer FAIL\n");
     else { field("Periodic timer, cancellation and restart PASS id=", requested_id); msg("\n"); }
     return STATUS_SUCCESS;
 }

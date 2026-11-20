@@ -1,0 +1,8 @@
+NT 3.1 extended kernel probe entered
+Reported NT version 00000003.0000000a build 00000210 status 00000000
+Native version, product type and both OSVERSIONINFO sizes PASS
+Installed ANSI code page and cursor advancement PASS
+Processor mask and nested APC disable/enable PASS
+Referenced device lists PASS
+Referenced full and partial device lists, attach and detach PASS
+TEST COMPLETE PASS
